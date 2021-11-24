@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
   28:Generated_Source\PSoC4/CAN_HFCLK.c **** * Summary:
   29:Generated_Source\PSoC4/CAN_HFCLK.c **** *  Starts the clock, aligned to the specified running clock.
   30:Generated_Source\PSoC4/CAN_HFCLK.c **** *
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 2
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 2
 
 
   31:Generated_Source\PSoC4/CAN_HFCLK.c **** * Parameters:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
   60              		.align	2
   61              		.global	CAN_HFCLK_Stop
   62              		.code	16
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 3
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 3
 
 
   63              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
   72              	.L6:
   97:Generated_Source\PSoC4/CAN_HFCLK.c **** #if defined CYREG_PERI_DIV_CMD
   98:Generated_Source\PSoC4/CAN_HFCLK.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 4
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 4
 
 
   99:Generated_Source\PSoC4/CAN_HFCLK.c ****     /* Make sure any previous start command has finished. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  125:Generated_Source\PSoC4/CAN_HFCLK.c **** * Parameters:
  126:Generated_Source\PSoC4/CAN_HFCLK.c **** *  clkDivider:  Divider register value (0-65535). This value is NOT the
  127:Generated_Source\PSoC4/CAN_HFCLK.c **** *    divider; the clock hardware divides by clkDivider plus one. For example,
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 5
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 5
 
 
  128:Generated_Source\PSoC4/CAN_HFCLK.c **** *    to divide the clock by 2, this parameter should be set to 1.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  151:Generated_Source\PSoC4/CAN_HFCLK.c ****     maskVal = CAN_HFCLK_DIV_REG & (uint32)(~(uint32)CAN_HFCLK__DIVIDER_MASK);
  152:Generated_Source\PSoC4/CAN_HFCLK.c ****     /* combine mask and new divider val into 32-bit value */
  153:Generated_Source\PSoC4/CAN_HFCLK.c ****     regVal = clkDivider | maskVal;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 6
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 6
 
 
  154:Generated_Source\PSoC4/CAN_HFCLK.c ****     
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  159 0006 80B2     		uxth	r0, r0
  179:Generated_Source\PSoC4/CAN_HFCLK.c ****         >> CAN_HFCLK_DIV_INT_SHIFT);
  180:Generated_Source\PSoC4/CAN_HFCLK.c **** }
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 7
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 7
 
 
  160              		.loc 1 180 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  187              		.cfi_endproc
  188              	.LFE4:
  189              		.size	CAN_HFCLK_GetFractionalDividerRegister, .-CAN_HFCLK_GetFractionalDividerRegister
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 8
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 8
 
 
  190              		.text
@@ -431,45 +431,45 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  197 0006 00000000 		.4byte	.Ldebug_abbrev0
  198 000a 04       		.byte	0x4
  199 000b 01       		.uleb128 0x1
- 200 000c 60010000 		.4byte	.LASF25
+ 200 000c 67010000 		.4byte	.LASF25
  201 0010 0C       		.byte	0xc
- 202 0011 6F000000 		.4byte	.LASF26
- 203 0015 00000000 		.4byte	.LASF27
+ 202 0011 26000000 		.4byte	.LASF26
+ 203 0015 7C000000 		.4byte	.LASF27
  204 0019 00000000 		.4byte	.Ldebug_ranges0+0
  205 001d 00000000 		.4byte	0
  206 0021 00000000 		.4byte	.Ldebug_line0
  207 0025 02       		.uleb128 0x2
  208 0026 01       		.byte	0x1
  209 0027 06       		.byte	0x6
- 210 0028 20020000 		.4byte	.LASF0
+ 210 0028 21020000 		.4byte	.LASF0
  211 002c 02       		.uleb128 0x2
  212 002d 01       		.byte	0x1
  213 002e 08       		.byte	0x8
- 214 002f 92000000 		.4byte	.LASF1
+ 214 002f 49000000 		.4byte	.LASF1
  215 0033 02       		.uleb128 0x2
  216 0034 02       		.byte	0x2
  217 0035 05       		.byte	0x5
- 218 0036 01020000 		.4byte	.LASF2
+ 218 0036 08020000 		.4byte	.LASF2
  219 003a 02       		.uleb128 0x2
  220 003b 02       		.byte	0x2
  221 003c 07       		.byte	0x7
- 222 003d B2000000 		.4byte	.LASF3
+ 222 003d 69000000 		.4byte	.LASF3
  223 0041 02       		.uleb128 0x2
  224 0042 04       		.byte	0x4
  225 0043 05       		.byte	0x5
- 226 0044 11020000 		.4byte	.LASF4
+ 226 0044 18020000 		.4byte	.LASF4
  227 0048 02       		.uleb128 0x2
  228 0049 04       		.byte	0x4
  229 004a 07       		.byte	0x7
- 230 004b A0000000 		.4byte	.LASF5
+ 230 004b 57000000 		.4byte	.LASF5
  231 004f 02       		.uleb128 0x2
  232 0050 08       		.byte	0x8
  233 0051 05       		.byte	0x5
- 234 0052 EE010000 		.4byte	.LASF6
+ 234 0052 F5010000 		.4byte	.LASF6
  235 0056 02       		.uleb128 0x2
  236 0057 08       		.byte	0x8
  237 0058 07       		.byte	0x7
- 238 0059 22010000 		.4byte	.LASF7
+ 238 0059 29010000 		.4byte	.LASF7
  239 005d 03       		.uleb128 0x3
  240 005e 04       		.byte	0x4
  241 005f 05       		.byte	0x5
@@ -477,46 +477,46 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  243 0064 02       		.uleb128 0x2
  244 0065 04       		.byte	0x4
  245 0066 07       		.byte	0x7
- 246 0067 15010000 		.4byte	.LASF8
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 9
+ 246 0067 1C010000 		.4byte	.LASF8
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 9
 
 
  247 006b 04       		.uleb128 0x4
- 248 006c 0B020000 		.4byte	.LASF9
+ 248 006c 12020000 		.4byte	.LASF9
  249 0070 02       		.byte	0x2
  250 0071 FB01     		.2byte	0x1fb
  251 0073 2C000000 		.4byte	0x2c
  252 0077 04       		.uleb128 0x4
- 253 0078 F8000000 		.4byte	.LASF10
+ 253 0078 FF000000 		.4byte	.LASF10
  254 007c 02       		.byte	0x2
  255 007d FC01     		.2byte	0x1fc
  256 007f 3A000000 		.4byte	0x3a
  257 0083 04       		.uleb128 0x4
- 258 0084 FF000000 		.4byte	.LASF11
+ 258 0084 06010000 		.4byte	.LASF11
  259 0088 02       		.byte	0x2
  260 0089 FD01     		.2byte	0x1fd
  261 008b 48000000 		.4byte	0x48
  262 008f 02       		.uleb128 0x2
  263 0090 04       		.byte	0x4
  264 0091 04       		.byte	0x4
- 265 0092 4F000000 		.4byte	.LASF12
+ 265 0092 06000000 		.4byte	.LASF12
  266 0096 02       		.uleb128 0x2
  267 0097 08       		.byte	0x8
  268 0098 04       		.byte	0x4
- 269 0099 D0000000 		.4byte	.LASF13
+ 269 0099 D7000000 		.4byte	.LASF13
  270 009d 02       		.uleb128 0x2
  271 009e 01       		.byte	0x1
  272 009f 08       		.byte	0x8
- 273 00a0 FC010000 		.4byte	.LASF14
+ 273 00a0 03020000 		.4byte	.LASF14
  274 00a4 04       		.uleb128 0x4
- 275 00a5 1A020000 		.4byte	.LASF15
+ 275 00a5 00000000 		.4byte	.LASF15
  276 00a9 02       		.byte	0x2
  277 00aa A702     		.2byte	0x2a7
  278 00ac B0000000 		.4byte	0xb0
  279 00b0 05       		.uleb128 0x5
  280 00b1 83000000 		.4byte	0x83
  281 00b5 06       		.uleb128 0x6
- 282 00b6 5D000000 		.4byte	.LASF16
+ 282 00b6 14000000 		.4byte	.LASF16
  283 00ba 01       		.byte	0x1
  284 00bb 27       		.byte	0x27
  285 00bc 00000000 		.4byte	.LFB0
@@ -525,25 +525,25 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  288 00c5 9C       		.byte	0x9c
  289 00c6 DA000000 		.4byte	0xda
  290 00ca 07       		.uleb128 0x7
- 291 00cb DE000000 		.4byte	.LASF18
+ 291 00cb E5000000 		.4byte	.LASF18
  292 00cf 01       		.byte	0x1
  293 00d0 27       		.byte	0x27
  294 00d1 83000000 		.4byte	0x83
  295 00d5 00000000 		.4byte	.LLST0
  296 00d9 00       		.byte	0
  297 00da 08       		.uleb128 0x8
- 298 00db 06010000 		.4byte	.LASF28
+ 298 00db 0D010000 		.4byte	.LASF28
  299 00df 01       		.byte	0x1
  300 00e0 5F       		.byte	0x5f
  301 00e1 00000000 		.4byte	.LFB1
  302 00e5 18000000 		.4byte	.LFE1-.LFB1
  303 00e9 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 10
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 10
 
 
  304 00ea 9C       		.byte	0x9c
  305 00eb 06       		.uleb128 0x6
- 306 00ec 2C020000 		.4byte	.LASF17
+ 306 00ec 2D020000 		.4byte	.LASF17
  307 00f0 01       		.byte	0x1
  308 00f1 86       		.byte	0x86
  309 00f2 00000000 		.4byte	.LFB2
@@ -552,25 +552,25 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  312 00fb 9C       		.byte	0x9c
  313 00fc 3B010000 		.4byte	0x13b
  314 0100 07       		.uleb128 0x7
- 315 0101 C5000000 		.4byte	.LASF19
+ 315 0101 CC000000 		.4byte	.LASF19
  316 0105 01       		.byte	0x1
  317 0106 86       		.byte	0x86
  318 0107 77000000 		.4byte	0x77
  319 010b 21000000 		.4byte	.LLST1
  320 010f 07       		.uleb128 0x7
- 321 0110 EA000000 		.4byte	.LASF20
+ 321 0110 F1000000 		.4byte	.LASF20
  322 0114 01       		.byte	0x1
  323 0115 86       		.byte	0x86
  324 0116 6B000000 		.4byte	0x6b
  325 011a 42000000 		.4byte	.LLST2
  326 011e 09       		.uleb128 0x9
- 327 011f 55000000 		.4byte	.LASF21
+ 327 011f 0C000000 		.4byte	.LASF21
  328 0123 01       		.byte	0x1
  329 0124 88       		.byte	0x88
  330 0125 83000000 		.4byte	0x83
  331 0129 63000000 		.4byte	.LLST3
  332 012d 0A       		.uleb128 0xa
- 333 012e D7000000 		.4byte	.LASF22
+ 333 012e DE000000 		.4byte	.LASF22
  334 0132 01       		.byte	0x1
  335 0133 89       		.byte	0x89
  336 0134 83000000 		.4byte	0x83
@@ -578,7 +578,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  338 0139 51       		.byte	0x51
  339 013a 00       		.byte	0
  340 013b 0B       		.uleb128 0xb
- 341 013c 53020000 		.4byte	.LASF23
+ 341 013c 54020000 		.4byte	.LASF23
  342 0140 01       		.byte	0x1
  343 0141 B0       		.byte	0xb0
  344 0142 77000000 		.4byte	0x77
@@ -587,7 +587,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  347 014e 01       		.uleb128 0x1
  348 014f 9C       		.byte	0x9c
  349 0150 0B       		.uleb128 0xb
- 350 0151 39010000 		.4byte	.LASF24
+ 350 0151 40010000 		.4byte	.LASF24
  351 0155 01       		.byte	0x1
  352 0156 C6       		.byte	0xc6
  353 0157 6B000000 		.4byte	0x6b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  358 0165 00       		.byte	0
  359              		.section	.debug_abbrev,"",%progbits
  360              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 11
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 11
 
 
  361 0000 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  415 0036 05       		.uleb128 0x5
  416 0037 35       		.uleb128 0x35
  417 0038 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 12
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 12
 
 
  418 0039 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  472 0070 0B       		.uleb128 0xb
  473 0071 27       		.uleb128 0x27
  474 0072 19       		.uleb128 0x19
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 13
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 13
 
 
  475 0073 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  529 00aa 13       		.uleb128 0x13
  530 00ab 11       		.uleb128 0x11
  531 00ac 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 14
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 14
 
 
  532 00ad 12       		.uleb128 0x12
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  586 0063 0A000000 		.4byte	.LVL3
  587 0067 10000000 		.4byte	.LVL5
  588 006b 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 15
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 15
 
 
  589 006d 53       		.byte	0x53
@@ -885,158 +885,158 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 1
  628      00000201 
  628      FB0E0D00 
  628      01010101 
- 629              	.LASF27:
- 630 0000 433A5C55 		.ascii	"C:\\Users\\mewin\\OneDrive\\Documents\\PSoC Creator"
- 630      73657273 
- 630      5C6D6577 
- 630      696E5C4F 
- 630      6E654472 
- 631 002e 5C536369 		.ascii	"\\Science Board\\science wow.cydsn\000"
- 631      656E6365 
- 631      20426F61 
- 631      72645C73 
- 631      6369656E 
- 632              	.LASF12:
- 633 004f 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 16
+ 629              	.LASF15:
+ 630 0000 72656733 		.ascii	"reg32\000"
+ 630      3200
+ 631              	.LASF12:
+ 632 0006 666C6F61 		.ascii	"float\000"
+ 632      7400
+ 633              	.LASF21:
+ 634 000c 6D61736B 		.ascii	"maskVal\000"
+ 634      56616C00 
+ 635              	.LASF16:
+ 636 0014 43414E5F 		.ascii	"CAN_HFCLK_StartEx\000"
+ 636      4846434C 
+ 636      4B5F5374 
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 16
 
 
- 633      7400
- 634              	.LASF21:
- 635 0055 6D61736B 		.ascii	"maskVal\000"
- 635      56616C00 
- 636              	.LASF16:
- 637 005d 43414E5F 		.ascii	"CAN_HFCLK_StartEx\000"
- 637      4846434C 
- 637      4B5F5374 
- 637      61727445 
- 637      7800
- 638              	.LASF26:
- 639 006f 47656E65 		.ascii	"Generated_Source\\PSoC4\\CAN_HFCLK.c\000"
- 639      72617465 
- 639      645F536F 
- 639      75726365 
- 639      5C50536F 
- 640              	.LASF1:
- 641 0092 756E7369 		.ascii	"unsigned char\000"
- 641      676E6564 
- 641      20636861 
- 641      7200
- 642              	.LASF5:
- 643 00a0 6C6F6E67 		.ascii	"long unsigned int\000"
- 643      20756E73 
- 643      69676E65 
- 643      6420696E 
- 643      7400
- 644              	.LASF3:
- 645 00b2 73686F72 		.ascii	"short unsigned int\000"
- 645      7420756E 
- 645      7369676E 
- 645      65642069 
- 645      6E7400
- 646              	.LASF19:
- 647 00c5 636C6B44 		.ascii	"clkDivider\000"
- 647      69766964 
- 647      657200
- 648              	.LASF13:
- 649 00d0 646F7562 		.ascii	"double\000"
- 649      6C6500
- 650              	.LASF22:
- 651 00d7 72656756 		.ascii	"regVal\000"
- 651      616C00
- 652              	.LASF18:
- 653 00de 616C6967 		.ascii	"alignClkDiv\000"
- 653      6E436C6B 
- 653      44697600 
- 654              	.LASF20:
- 655 00ea 636C6B46 		.ascii	"clkFractional\000"
- 655      72616374 
- 655      696F6E61 
- 655      6C00
- 656              	.LASF10:
- 657 00f8 75696E74 		.ascii	"uint16\000"
- 657      313600
- 658              	.LASF11:
- 659 00ff 75696E74 		.ascii	"uint32\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 17
+ 636      61727445 
+ 636      7800
+ 637              	.LASF26:
+ 638 0026 47656E65 		.ascii	"Generated_Source\\PSoC4\\CAN_HFCLK.c\000"
+ 638      72617465 
+ 638      645F536F 
+ 638      75726365 
+ 638      5C50536F 
+ 639              	.LASF1:
+ 640 0049 756E7369 		.ascii	"unsigned char\000"
+ 640      676E6564 
+ 640      20636861 
+ 640      7200
+ 641              	.LASF5:
+ 642 0057 6C6F6E67 		.ascii	"long unsigned int\000"
+ 642      20756E73 
+ 642      69676E65 
+ 642      6420696E 
+ 642      7400
+ 643              	.LASF3:
+ 644 0069 73686F72 		.ascii	"short unsigned int\000"
+ 644      7420756E 
+ 644      7369676E 
+ 644      65642069 
+ 644      6E7400
+ 645              	.LASF27:
+ 646 007c 433A5C55 		.ascii	"C:\\Users\\write\\Documents\\PSoC Creator\\Science_"
+ 646      73657273 
+ 646      5C777269 
+ 646      74655C44 
+ 646      6F63756D 
+ 647 00aa 426F6172 		.ascii	"Board_2021-2022\\science wow.cydsn\000"
+ 647      645F3230 
+ 647      32312D32 
+ 647      3032325C 
+ 647      73636965 
+ 648              	.LASF19:
+ 649 00cc 636C6B44 		.ascii	"clkDivider\000"
+ 649      69766964 
+ 649      657200
+ 650              	.LASF13:
+ 651 00d7 646F7562 		.ascii	"double\000"
+ 651      6C6500
+ 652              	.LASF22:
+ 653 00de 72656756 		.ascii	"regVal\000"
+ 653      616C00
+ 654              	.LASF18:
+ 655 00e5 616C6967 		.ascii	"alignClkDiv\000"
+ 655      6E436C6B 
+ 655      44697600 
+ 656              	.LASF20:
+ 657 00f1 636C6B46 		.ascii	"clkFractional\000"
+ 657      72616374 
+ 657      696F6E61 
+ 657      6C00
+ 658              	.LASF10:
+ 659 00ff 75696E74 		.ascii	"uint16\000"
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 17
 
 
- 659      333200
- 660              	.LASF28:
- 661 0106 43414E5F 		.ascii	"CAN_HFCLK_Stop\000"
- 661      4846434C 
- 661      4B5F5374 
- 661      6F7000
- 662              	.LASF8:
- 663 0115 756E7369 		.ascii	"unsigned int\000"
- 663      676E6564 
- 663      20696E74 
- 663      00
- 664              	.LASF7:
- 665 0122 6C6F6E67 		.ascii	"long long unsigned int\000"
- 665      206C6F6E 
- 665      6720756E 
- 665      7369676E 
- 665      65642069 
- 666              	.LASF24:
- 667 0139 43414E5F 		.ascii	"CAN_HFCLK_GetFractionalDividerRegister\000"
- 667      4846434C 
- 667      4B5F4765 
- 667      74467261 
- 667      6374696F 
- 668              	.LASF25:
- 669 0160 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 669      43313120 
- 669      352E342E 
- 669      31203230 
- 669      31363036 
- 670 0193 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 670      20726576 
- 670      6973696F 
- 670      6E203233 
- 670      37373135 
- 671 01c6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 671      66756E63 
- 671      74696F6E 
- 671      2D736563 
- 671      74696F6E 
- 672              	.LASF6:
- 673 01ee 6C6F6E67 		.ascii	"long long int\000"
- 673      206C6F6E 
- 673      6720696E 
- 673      7400
- 674              	.LASF14:
- 675 01fc 63686172 		.ascii	"char\000"
- 675      00
- 676              	.LASF2:
- 677 0201 73686F72 		.ascii	"short int\000"
- 677      7420696E 
- 677      7400
- 678              	.LASF9:
- 679 020b 75696E74 		.ascii	"uint8\000"
- 679      3800
- 680              	.LASF4:
- 681 0211 6C6F6E67 		.ascii	"long int\000"
- 681      20696E74 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccfdruev.s 			page 18
+ 659      313600
+ 660              	.LASF11:
+ 661 0106 75696E74 		.ascii	"uint32\000"
+ 661      333200
+ 662              	.LASF28:
+ 663 010d 43414E5F 		.ascii	"CAN_HFCLK_Stop\000"
+ 663      4846434C 
+ 663      4B5F5374 
+ 663      6F7000
+ 664              	.LASF8:
+ 665 011c 756E7369 		.ascii	"unsigned int\000"
+ 665      676E6564 
+ 665      20696E74 
+ 665      00
+ 666              	.LASF7:
+ 667 0129 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 667      206C6F6E 
+ 667      6720756E 
+ 667      7369676E 
+ 667      65642069 
+ 668              	.LASF24:
+ 669 0140 43414E5F 		.ascii	"CAN_HFCLK_GetFractionalDividerRegister\000"
+ 669      4846434C 
+ 669      4B5F4765 
+ 669      74467261 
+ 669      6374696F 
+ 670              	.LASF25:
+ 671 0167 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 671      43313120 
+ 671      352E342E 
+ 671      31203230 
+ 671      31363036 
+ 672 019a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 672      20726576 
+ 672      6973696F 
+ 672      6E203233 
+ 672      37373135 
+ 673 01cd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 673      66756E63 
+ 673      74696F6E 
+ 673      2D736563 
+ 673      74696F6E 
+ 674              	.LASF6:
+ 675 01f5 6C6F6E67 		.ascii	"long long int\000"
+ 675      206C6F6E 
+ 675      6720696E 
+ 675      7400
+ 676              	.LASF14:
+ 677 0203 63686172 		.ascii	"char\000"
+ 677      00
+ 678              	.LASF2:
+ 679 0208 73686F72 		.ascii	"short int\000"
+ 679      7420696E 
+ 679      7400
+ 680              	.LASF9:
+ 681 0212 75696E74 		.ascii	"uint8\000"
+ 681      3800
+ARM GAS  C:\Users\write\AppData\Local\Temp\cckP76cf.s 			page 18
 
 
- 681      00
- 682              	.LASF15:
- 683 021a 72656733 		.ascii	"reg32\000"
- 683      3200
+ 682              	.LASF4:
+ 683 0218 6C6F6E67 		.ascii	"long int\000"
+ 683      20696E74 
+ 683      00
  684              	.LASF0:
- 685 0220 7369676E 		.ascii	"signed char\000"
+ 685 0221 7369676E 		.ascii	"signed char\000"
  685      65642063 
  685      68617200 
  686              	.LASF17:
- 687 022c 43414E5F 		.ascii	"CAN_HFCLK_SetFractionalDividerRegister\000"
+ 687 022d 43414E5F 		.ascii	"CAN_HFCLK_SetFractionalDividerRegister\000"
  687      4846434C 
  687      4B5F5365 
  687      74467261 
  687      6374696F 
  688              	.LASF23:
- 689 0253 43414E5F 		.ascii	"CAN_HFCLK_GetDividerRegister\000"
+ 689 0254 43414E5F 		.ascii	"CAN_HFCLK_GetDividerRegister\000"
  689      4846434C 
  689      4B5F4765 
  689      74446976 
