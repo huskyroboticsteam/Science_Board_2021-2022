@@ -1,0 +1,875 @@
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB0:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** //#include "project.h"
+  13:main.c        **** #include "CANLibrary.h"
+  14:main.c        **** #include "CANScience.h"
+  15:main.c        **** 
+  16:main.c        **** //#include <stdint.h>
+  17:main.c        **** 
+  18:main.c        **** int main(void)
+  19:main.c        **** {
+  28              		.loc 1 19 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  20:main.c        ****     //CyGlobalIntEnable; /* Enable global interrupts. */
+  21:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  22:main.c        ****     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); 
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 2
+
+
+  36              		.loc 1 22 0
+  37 0002 0121     		movs	r1, #1
+  38 0004 0720     		movs	r0, #7
+  39 0006 FFF7FEFF 		bl	InitCAN
+  40              	.LVL0:
+  41              	.L3:
+  42              	.LBB2:
+  23:main.c        ****     //SCP_1_Start();
+  24:main.c        ****     for(;;)
+  25:main.c        ****     {
+  26:main.c        ****         /* Place your application code here. */
+  27:main.c        ****         CANPacket* current; 
+  28:main.c        ****         
+  29:main.c        ****         int poll = PollAndReceiveCANPacket(current); 
+  43              		.loc 1 29 0
+  44 000a 0024     		movs	r4, #0
+  45 000c 2000     		movs	r0, r4
+  46 000e FFF7FEFF 		bl	PollAndReceiveCANPacket
+  47              	.LVL1:
+  30:main.c        ****         if (poll == 0) {
+  48              		.loc 1 30 0
+  49 0012 0028     		cmp	r0, #0
+  50 0014 F9D1     		bne	.L3
+  51              	.LBB3:
+  31:main.c        ****             int ID = GetPacketID(current);
+  52              		.loc 1 31 0
+  53 0016 2000     		movs	r0, r4
+  54              	.LVL2:
+  55 0018 FFF7FEFF 		bl	GetPacketID
+  56              	.LVL3:
+  32:main.c        ****             switch (ID) {
+  57              		.loc 1 32 0
+  58 001c 0D28     		cmp	r0, #13
+  59 001e F4D1     		bne	.L3
+  60              	.LBB4:
+  33:main.c        ****                 case 0x0D : //servo set 
+  34:main.c        ****                     {    
+  35:main.c        ****                         uint8_t servoID = GetScienceServoIDFromPacket(current);
+  61              		.loc 1 35 0
+  62 0020 2000     		movs	r0, r4
+  63              	.LVL4:
+  64 0022 FFF7FEFF 		bl	GetScienceServoIDFromPacket
+  65              	.LVL5:
+  36:main.c        ****                         uint8_t angle = GetScienceServoAngleFromPacket(current);
+  66              		.loc 1 36 0
+  67 0026 2000     		movs	r0, r4
+  68 0028 FFF7FEFF 		bl	GetScienceServoAngleFromPacket
+  69              	.LVL6:
+  70              	.LBE4:
+  37:main.c        ****                         //send this stuff to i2c
+  38:main.c        ****                     }
+  39:main.c        ****                     break;
+  71              		.loc 1 39 0
+  72 002c EDE7     		b	.L3
+  73              	.LBE3:
+  74              	.LBE2:
+  75              		.cfi_endproc
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 3
+
+
+  76              	.LFE0:
+  77              		.size	main, .-main
+  78 002e C046     		.text
+  79              	.Letext0:
+  80              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  81              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  82              		.file 4 "CANPacket.h"
+  83              		.file 5 "CANScience.h"
+  84              		.file 6 "Port.h"
+  85              		.section	.debug_info,"",%progbits
+  86              	.Ldebug_info0:
+  87 0000 FB010000 		.4byte	0x1fb
+  88 0004 0400     		.2byte	0x4
+  89 0006 00000000 		.4byte	.Ldebug_abbrev0
+  90 000a 04       		.byte	0x4
+  91 000b 01       		.uleb128 0x1
+  92 000c 1E010000 		.4byte	.LASF25
+  93 0010 0C       		.byte	0xc
+  94 0011 C3010000 		.4byte	.LASF26
+  95 0015 1C000000 		.4byte	.LASF27
+  96 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  97 001d 00000000 		.4byte	0
+  98 0021 00000000 		.4byte	.Ldebug_line0
+  99 0025 02       		.uleb128 0x2
+ 100 0026 01       		.byte	0x1
+ 101 0027 06       		.byte	0x6
+ 102 0028 02020000 		.4byte	.LASF0
+ 103 002c 03       		.uleb128 0x3
+ 104 002d 6B000000 		.4byte	.LASF3
+ 105 0031 02       		.byte	0x2
+ 106 0032 1D       		.byte	0x1d
+ 107 0033 37000000 		.4byte	0x37
+ 108 0037 02       		.uleb128 0x2
+ 109 0038 01       		.byte	0x1
+ 110 0039 08       		.byte	0x8
+ 111 003a 9A000000 		.4byte	.LASF1
+ 112 003e 02       		.uleb128 0x2
+ 113 003f 02       		.byte	0x2
+ 114 0040 05       		.byte	0x5
+ 115 0041 D6010000 		.4byte	.LASF2
+ 116 0045 03       		.uleb128 0x3
+ 117 0046 D3000000 		.4byte	.LASF4
+ 118 004a 02       		.byte	0x2
+ 119 004b 2B       		.byte	0x2b
+ 120 004c 50000000 		.4byte	0x50
+ 121 0050 02       		.uleb128 0x2
+ 122 0051 02       		.byte	0x2
+ 123 0052 07       		.byte	0x7
+ 124 0053 BA000000 		.4byte	.LASF5
+ 125 0057 02       		.uleb128 0x2
+ 126 0058 04       		.byte	0x4
+ 127 0059 05       		.byte	0x5
+ 128 005a F9010000 		.4byte	.LASF6
+ 129 005e 02       		.uleb128 0x2
+ 130 005f 04       		.byte	0x4
+ 131 0060 07       		.byte	0x7
+ 132 0061 A8000000 		.4byte	.LASF7
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 4
+
+
+ 133 0065 02       		.uleb128 0x2
+ 134 0066 08       		.byte	0x8
+ 135 0067 05       		.byte	0x5
+ 136 0068 B5010000 		.4byte	.LASF8
+ 137 006c 02       		.uleb128 0x2
+ 138 006d 08       		.byte	0x8
+ 139 006e 07       		.byte	0x7
+ 140 006f FF000000 		.4byte	.LASF9
+ 141 0073 04       		.uleb128 0x4
+ 142 0074 04       		.byte	0x4
+ 143 0075 05       		.byte	0x5
+ 144 0076 696E7400 		.ascii	"int\000"
+ 145 007a 02       		.uleb128 0x2
+ 146 007b 04       		.byte	0x4
+ 147 007c 07       		.byte	0x7
+ 148 007d F2000000 		.4byte	.LASF10
+ 149 0081 03       		.uleb128 0x3
+ 150 0082 16010000 		.4byte	.LASF11
+ 151 0086 03       		.byte	0x3
+ 152 0087 18       		.byte	0x18
+ 153 0088 2C000000 		.4byte	0x2c
+ 154 008c 03       		.uleb128 0x3
+ 155 008d E8010000 		.4byte	.LASF12
+ 156 0091 03       		.byte	0x3
+ 157 0092 24       		.byte	0x24
+ 158 0093 45000000 		.4byte	0x45
+ 159 0097 05       		.uleb128 0x5
+ 160 0098 0C       		.byte	0xc
+ 161 0099 04       		.byte	0x4
+ 162 009a 0F       		.byte	0xf
+ 163 009b C3000000 		.4byte	0xc3
+ 164 009f 06       		.uleb128 0x6
+ 165 00a0 696400   		.ascii	"id\000"
+ 166 00a3 04       		.byte	0x4
+ 167 00a4 11       		.byte	0x11
+ 168 00a5 8C000000 		.4byte	0x8c
+ 169 00a9 00       		.byte	0
+ 170 00aa 06       		.uleb128 0x6
+ 171 00ab 646C6300 		.ascii	"dlc\000"
+ 172 00af 04       		.byte	0x4
+ 173 00b0 12       		.byte	0x12
+ 174 00b1 81000000 		.4byte	0x81
+ 175 00b5 02       		.byte	0x2
+ 176 00b6 07       		.uleb128 0x7
+ 177 00b7 95000000 		.4byte	.LASF13
+ 178 00bb 04       		.byte	0x4
+ 179 00bc 13       		.byte	0x13
+ 180 00bd C3000000 		.4byte	0xc3
+ 181 00c1 03       		.byte	0x3
+ 182 00c2 00       		.byte	0
+ 183 00c3 08       		.uleb128 0x8
+ 184 00c4 81000000 		.4byte	0x81
+ 185 00c8 D3000000 		.4byte	0xd3
+ 186 00cc 09       		.uleb128 0x9
+ 187 00cd D3000000 		.4byte	0xd3
+ 188 00d1 07       		.byte	0x7
+ 189 00d2 00       		.byte	0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 5
+
+
+ 190 00d3 02       		.uleb128 0x2
+ 191 00d4 04       		.byte	0x4
+ 192 00d5 07       		.byte	0x7
+ 193 00d6 AC010000 		.4byte	.LASF14
+ 194 00da 03       		.uleb128 0x3
+ 195 00db E3000000 		.4byte	.LASF15
+ 196 00df 04       		.byte	0x4
+ 197 00e0 14       		.byte	0x14
+ 198 00e1 97000000 		.4byte	0x97
+ 199 00e5 0A       		.uleb128 0xa
+ 200 00e6 DE000000 		.4byte	.LASF28
+ 201 00ea 01       		.byte	0x1
+ 202 00eb 12       		.byte	0x12
+ 203 00ec 73000000 		.4byte	0x73
+ 204 00f0 00000000 		.4byte	.LFB0
+ 205 00f4 2E000000 		.4byte	.LFE0-.LFB0
+ 206 00f8 01       		.uleb128 0x1
+ 207 00f9 9C       		.byte	0x9c
+ 208 00fa C1010000 		.4byte	0x1c1
+ 209 00fe 0B       		.uleb128 0xb
+ 210 00ff 0A000000 		.4byte	.LBB2
+ 211 0103 24000000 		.4byte	.LBE2-.LBB2
+ 212 0107 AC010000 		.4byte	0x1ac
+ 213 010b 0C       		.uleb128 0xc
+ 214 010c F1010000 		.4byte	.LASF16
+ 215 0110 01       		.byte	0x1
+ 216 0111 1B       		.byte	0x1b
+ 217 0112 C1010000 		.4byte	0x1c1
+ 218 0116 01       		.uleb128 0x1
+ 219 0117 54       		.byte	0x54
+ 220 0118 0D       		.uleb128 0xd
+ 221 0119 ED000000 		.4byte	.LASF17
+ 222 011d 01       		.byte	0x1
+ 223 011e 1D       		.byte	0x1d
+ 224 011f 73000000 		.4byte	0x73
+ 225 0123 00000000 		.4byte	.LLST0
+ 226 0127 0B       		.uleb128 0xb
+ 227 0128 16000000 		.4byte	.LBB3
+ 228 012c 18000000 		.4byte	.LBE3-.LBB3
+ 229 0130 9B010000 		.4byte	0x19b
+ 230 0134 0E       		.uleb128 0xe
+ 231 0135 494400   		.ascii	"ID\000"
+ 232 0138 01       		.byte	0x1
+ 233 0139 1F       		.byte	0x1f
+ 234 013a 73000000 		.4byte	0x73
+ 235 013e 13000000 		.4byte	.LLST1
+ 236 0142 0B       		.uleb128 0xb
+ 237 0143 20000000 		.4byte	.LBB4
+ 238 0147 0C000000 		.4byte	.LBE4-.LBB4
+ 239 014b 8A010000 		.4byte	0x18a
+ 240 014f 0F       		.uleb128 0xf
+ 241 0150 75000000 		.4byte	.LASF18
+ 242 0154 01       		.byte	0x1
+ 243 0155 23       		.byte	0x23
+ 244 0156 81000000 		.4byte	0x81
+ 245 015a 0F       		.uleb128 0xf
+ 246 015b CD000000 		.4byte	.LASF19
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 6
+
+
+ 247 015f 01       		.byte	0x1
+ 248 0160 24       		.byte	0x24
+ 249 0161 81000000 		.4byte	0x81
+ 250 0165 10       		.uleb128 0x10
+ 251 0166 26000000 		.4byte	.LVL5
+ 252 016a C7010000 		.4byte	0x1c7
+ 253 016e 79010000 		.4byte	0x179
+ 254 0172 11       		.uleb128 0x11
+ 255 0173 01       		.uleb128 0x1
+ 256 0174 50       		.byte	0x50
+ 257 0175 02       		.uleb128 0x2
+ 258 0176 74       		.byte	0x74
+ 259 0177 00       		.sleb128 0
+ 260 0178 00       		.byte	0
+ 261 0179 12       		.uleb128 0x12
+ 262 017a 2C000000 		.4byte	.LVL6
+ 263 017e D2010000 		.4byte	0x1d2
+ 264 0182 11       		.uleb128 0x11
+ 265 0183 01       		.uleb128 0x1
+ 266 0184 50       		.byte	0x50
+ 267 0185 02       		.uleb128 0x2
+ 268 0186 74       		.byte	0x74
+ 269 0187 00       		.sleb128 0
+ 270 0188 00       		.byte	0
+ 271 0189 00       		.byte	0
+ 272 018a 12       		.uleb128 0x12
+ 273 018b 1C000000 		.4byte	.LVL3
+ 274 018f DD010000 		.4byte	0x1dd
+ 275 0193 11       		.uleb128 0x11
+ 276 0194 01       		.uleb128 0x1
+ 277 0195 50       		.byte	0x50
+ 278 0196 02       		.uleb128 0x2
+ 279 0197 74       		.byte	0x74
+ 280 0198 00       		.sleb128 0
+ 281 0199 00       		.byte	0
+ 282 019a 00       		.byte	0
+ 283 019b 12       		.uleb128 0x12
+ 284 019c 12000000 		.4byte	.LVL1
+ 285 01a0 E8010000 		.4byte	0x1e8
+ 286 01a4 11       		.uleb128 0x11
+ 287 01a5 01       		.uleb128 0x1
+ 288 01a6 50       		.byte	0x50
+ 289 01a7 02       		.uleb128 0x2
+ 290 01a8 74       		.byte	0x74
+ 291 01a9 00       		.sleb128 0
+ 292 01aa 00       		.byte	0
+ 293 01ab 00       		.byte	0
+ 294 01ac 12       		.uleb128 0x12
+ 295 01ad 0A000000 		.4byte	.LVL0
+ 296 01b1 F3010000 		.4byte	0x1f3
+ 297 01b5 11       		.uleb128 0x11
+ 298 01b6 01       		.uleb128 0x1
+ 299 01b7 50       		.byte	0x50
+ 300 01b8 01       		.uleb128 0x1
+ 301 01b9 37       		.byte	0x37
+ 302 01ba 11       		.uleb128 0x11
+ 303 01bb 01       		.uleb128 0x1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 7
+
+
+ 304 01bc 51       		.byte	0x51
+ 305 01bd 01       		.uleb128 0x1
+ 306 01be 31       		.byte	0x31
+ 307 01bf 00       		.byte	0
+ 308 01c0 00       		.byte	0
+ 309 01c1 13       		.uleb128 0x13
+ 310 01c2 04       		.byte	0x4
+ 311 01c3 DA000000 		.4byte	0xda
+ 312 01c7 14       		.uleb128 0x14
+ 313 01c8 00000000 		.4byte	.LASF20
+ 314 01cc 00000000 		.4byte	.LASF20
+ 315 01d0 05       		.byte	0x5
+ 316 01d1 23       		.byte	0x23
+ 317 01d2 14       		.uleb128 0x14
+ 318 01d3 0E020000 		.4byte	.LASF21
+ 319 01d7 0E020000 		.4byte	.LASF21
+ 320 01db 05       		.byte	0x5
+ 321 01dc 25       		.byte	0x25
+ 322 01dd 14       		.uleb128 0x14
+ 323 01de CA010000 		.4byte	.LASF22
+ 324 01e2 CA010000 		.4byte	.LASF22
+ 325 01e6 04       		.byte	0x4
+ 326 01e7 29       		.byte	0x29
+ 327 01e8 14       		.uleb128 0x14
+ 328 01e9 7D000000 		.4byte	.LASF23
+ 329 01ed 7D000000 		.4byte	.LASF23
+ 330 01f1 06       		.byte	0x6
+ 331 01f2 22       		.byte	0x22
+ 332 01f3 14       		.uleb128 0x14
+ 333 01f4 E0010000 		.4byte	.LASF24
+ 334 01f8 E0010000 		.4byte	.LASF24
+ 335 01fc 06       		.byte	0x6
+ 336 01fd 15       		.byte	0x15
+ 337 01fe 00       		.byte	0
+ 338              		.section	.debug_abbrev,"",%progbits
+ 339              	.Ldebug_abbrev0:
+ 340 0000 01       		.uleb128 0x1
+ 341 0001 11       		.uleb128 0x11
+ 342 0002 01       		.byte	0x1
+ 343 0003 25       		.uleb128 0x25
+ 344 0004 0E       		.uleb128 0xe
+ 345 0005 13       		.uleb128 0x13
+ 346 0006 0B       		.uleb128 0xb
+ 347 0007 03       		.uleb128 0x3
+ 348 0008 0E       		.uleb128 0xe
+ 349 0009 1B       		.uleb128 0x1b
+ 350 000a 0E       		.uleb128 0xe
+ 351 000b 55       		.uleb128 0x55
+ 352 000c 17       		.uleb128 0x17
+ 353 000d 11       		.uleb128 0x11
+ 354 000e 01       		.uleb128 0x1
+ 355 000f 10       		.uleb128 0x10
+ 356 0010 17       		.uleb128 0x17
+ 357 0011 00       		.byte	0
+ 358 0012 00       		.byte	0
+ 359 0013 02       		.uleb128 0x2
+ 360 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 8
+
+
+ 361 0015 00       		.byte	0
+ 362 0016 0B       		.uleb128 0xb
+ 363 0017 0B       		.uleb128 0xb
+ 364 0018 3E       		.uleb128 0x3e
+ 365 0019 0B       		.uleb128 0xb
+ 366 001a 03       		.uleb128 0x3
+ 367 001b 0E       		.uleb128 0xe
+ 368 001c 00       		.byte	0
+ 369 001d 00       		.byte	0
+ 370 001e 03       		.uleb128 0x3
+ 371 001f 16       		.uleb128 0x16
+ 372 0020 00       		.byte	0
+ 373 0021 03       		.uleb128 0x3
+ 374 0022 0E       		.uleb128 0xe
+ 375 0023 3A       		.uleb128 0x3a
+ 376 0024 0B       		.uleb128 0xb
+ 377 0025 3B       		.uleb128 0x3b
+ 378 0026 0B       		.uleb128 0xb
+ 379 0027 49       		.uleb128 0x49
+ 380 0028 13       		.uleb128 0x13
+ 381 0029 00       		.byte	0
+ 382 002a 00       		.byte	0
+ 383 002b 04       		.uleb128 0x4
+ 384 002c 24       		.uleb128 0x24
+ 385 002d 00       		.byte	0
+ 386 002e 0B       		.uleb128 0xb
+ 387 002f 0B       		.uleb128 0xb
+ 388 0030 3E       		.uleb128 0x3e
+ 389 0031 0B       		.uleb128 0xb
+ 390 0032 03       		.uleb128 0x3
+ 391 0033 08       		.uleb128 0x8
+ 392 0034 00       		.byte	0
+ 393 0035 00       		.byte	0
+ 394 0036 05       		.uleb128 0x5
+ 395 0037 13       		.uleb128 0x13
+ 396 0038 01       		.byte	0x1
+ 397 0039 0B       		.uleb128 0xb
+ 398 003a 0B       		.uleb128 0xb
+ 399 003b 3A       		.uleb128 0x3a
+ 400 003c 0B       		.uleb128 0xb
+ 401 003d 3B       		.uleb128 0x3b
+ 402 003e 0B       		.uleb128 0xb
+ 403 003f 01       		.uleb128 0x1
+ 404 0040 13       		.uleb128 0x13
+ 405 0041 00       		.byte	0
+ 406 0042 00       		.byte	0
+ 407 0043 06       		.uleb128 0x6
+ 408 0044 0D       		.uleb128 0xd
+ 409 0045 00       		.byte	0
+ 410 0046 03       		.uleb128 0x3
+ 411 0047 08       		.uleb128 0x8
+ 412 0048 3A       		.uleb128 0x3a
+ 413 0049 0B       		.uleb128 0xb
+ 414 004a 3B       		.uleb128 0x3b
+ 415 004b 0B       		.uleb128 0xb
+ 416 004c 49       		.uleb128 0x49
+ 417 004d 13       		.uleb128 0x13
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 9
+
+
+ 418 004e 38       		.uleb128 0x38
+ 419 004f 0B       		.uleb128 0xb
+ 420 0050 00       		.byte	0
+ 421 0051 00       		.byte	0
+ 422 0052 07       		.uleb128 0x7
+ 423 0053 0D       		.uleb128 0xd
+ 424 0054 00       		.byte	0
+ 425 0055 03       		.uleb128 0x3
+ 426 0056 0E       		.uleb128 0xe
+ 427 0057 3A       		.uleb128 0x3a
+ 428 0058 0B       		.uleb128 0xb
+ 429 0059 3B       		.uleb128 0x3b
+ 430 005a 0B       		.uleb128 0xb
+ 431 005b 49       		.uleb128 0x49
+ 432 005c 13       		.uleb128 0x13
+ 433 005d 38       		.uleb128 0x38
+ 434 005e 0B       		.uleb128 0xb
+ 435 005f 00       		.byte	0
+ 436 0060 00       		.byte	0
+ 437 0061 08       		.uleb128 0x8
+ 438 0062 01       		.uleb128 0x1
+ 439 0063 01       		.byte	0x1
+ 440 0064 49       		.uleb128 0x49
+ 441 0065 13       		.uleb128 0x13
+ 442 0066 01       		.uleb128 0x1
+ 443 0067 13       		.uleb128 0x13
+ 444 0068 00       		.byte	0
+ 445 0069 00       		.byte	0
+ 446 006a 09       		.uleb128 0x9
+ 447 006b 21       		.uleb128 0x21
+ 448 006c 00       		.byte	0
+ 449 006d 49       		.uleb128 0x49
+ 450 006e 13       		.uleb128 0x13
+ 451 006f 2F       		.uleb128 0x2f
+ 452 0070 0B       		.uleb128 0xb
+ 453 0071 00       		.byte	0
+ 454 0072 00       		.byte	0
+ 455 0073 0A       		.uleb128 0xa
+ 456 0074 2E       		.uleb128 0x2e
+ 457 0075 01       		.byte	0x1
+ 458 0076 3F       		.uleb128 0x3f
+ 459 0077 19       		.uleb128 0x19
+ 460 0078 03       		.uleb128 0x3
+ 461 0079 0E       		.uleb128 0xe
+ 462 007a 3A       		.uleb128 0x3a
+ 463 007b 0B       		.uleb128 0xb
+ 464 007c 3B       		.uleb128 0x3b
+ 465 007d 0B       		.uleb128 0xb
+ 466 007e 27       		.uleb128 0x27
+ 467 007f 19       		.uleb128 0x19
+ 468 0080 49       		.uleb128 0x49
+ 469 0081 13       		.uleb128 0x13
+ 470 0082 8701     		.uleb128 0x87
+ 471 0084 19       		.uleb128 0x19
+ 472 0085 11       		.uleb128 0x11
+ 473 0086 01       		.uleb128 0x1
+ 474 0087 12       		.uleb128 0x12
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 10
+
+
+ 475 0088 06       		.uleb128 0x6
+ 476 0089 40       		.uleb128 0x40
+ 477 008a 18       		.uleb128 0x18
+ 478 008b 9742     		.uleb128 0x2117
+ 479 008d 19       		.uleb128 0x19
+ 480 008e 01       		.uleb128 0x1
+ 481 008f 13       		.uleb128 0x13
+ 482 0090 00       		.byte	0
+ 483 0091 00       		.byte	0
+ 484 0092 0B       		.uleb128 0xb
+ 485 0093 0B       		.uleb128 0xb
+ 486 0094 01       		.byte	0x1
+ 487 0095 11       		.uleb128 0x11
+ 488 0096 01       		.uleb128 0x1
+ 489 0097 12       		.uleb128 0x12
+ 490 0098 06       		.uleb128 0x6
+ 491 0099 01       		.uleb128 0x1
+ 492 009a 13       		.uleb128 0x13
+ 493 009b 00       		.byte	0
+ 494 009c 00       		.byte	0
+ 495 009d 0C       		.uleb128 0xc
+ 496 009e 34       		.uleb128 0x34
+ 497 009f 00       		.byte	0
+ 498 00a0 03       		.uleb128 0x3
+ 499 00a1 0E       		.uleb128 0xe
+ 500 00a2 3A       		.uleb128 0x3a
+ 501 00a3 0B       		.uleb128 0xb
+ 502 00a4 3B       		.uleb128 0x3b
+ 503 00a5 0B       		.uleb128 0xb
+ 504 00a6 49       		.uleb128 0x49
+ 505 00a7 13       		.uleb128 0x13
+ 506 00a8 02       		.uleb128 0x2
+ 507 00a9 18       		.uleb128 0x18
+ 508 00aa 00       		.byte	0
+ 509 00ab 00       		.byte	0
+ 510 00ac 0D       		.uleb128 0xd
+ 511 00ad 34       		.uleb128 0x34
+ 512 00ae 00       		.byte	0
+ 513 00af 03       		.uleb128 0x3
+ 514 00b0 0E       		.uleb128 0xe
+ 515 00b1 3A       		.uleb128 0x3a
+ 516 00b2 0B       		.uleb128 0xb
+ 517 00b3 3B       		.uleb128 0x3b
+ 518 00b4 0B       		.uleb128 0xb
+ 519 00b5 49       		.uleb128 0x49
+ 520 00b6 13       		.uleb128 0x13
+ 521 00b7 02       		.uleb128 0x2
+ 522 00b8 17       		.uleb128 0x17
+ 523 00b9 00       		.byte	0
+ 524 00ba 00       		.byte	0
+ 525 00bb 0E       		.uleb128 0xe
+ 526 00bc 34       		.uleb128 0x34
+ 527 00bd 00       		.byte	0
+ 528 00be 03       		.uleb128 0x3
+ 529 00bf 08       		.uleb128 0x8
+ 530 00c0 3A       		.uleb128 0x3a
+ 531 00c1 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 11
+
+
+ 532 00c2 3B       		.uleb128 0x3b
+ 533 00c3 0B       		.uleb128 0xb
+ 534 00c4 49       		.uleb128 0x49
+ 535 00c5 13       		.uleb128 0x13
+ 536 00c6 02       		.uleb128 0x2
+ 537 00c7 17       		.uleb128 0x17
+ 538 00c8 00       		.byte	0
+ 539 00c9 00       		.byte	0
+ 540 00ca 0F       		.uleb128 0xf
+ 541 00cb 34       		.uleb128 0x34
+ 542 00cc 00       		.byte	0
+ 543 00cd 03       		.uleb128 0x3
+ 544 00ce 0E       		.uleb128 0xe
+ 545 00cf 3A       		.uleb128 0x3a
+ 546 00d0 0B       		.uleb128 0xb
+ 547 00d1 3B       		.uleb128 0x3b
+ 548 00d2 0B       		.uleb128 0xb
+ 549 00d3 49       		.uleb128 0x49
+ 550 00d4 13       		.uleb128 0x13
+ 551 00d5 00       		.byte	0
+ 552 00d6 00       		.byte	0
+ 553 00d7 10       		.uleb128 0x10
+ 554 00d8 898201   		.uleb128 0x4109
+ 555 00db 01       		.byte	0x1
+ 556 00dc 11       		.uleb128 0x11
+ 557 00dd 01       		.uleb128 0x1
+ 558 00de 31       		.uleb128 0x31
+ 559 00df 13       		.uleb128 0x13
+ 560 00e0 01       		.uleb128 0x1
+ 561 00e1 13       		.uleb128 0x13
+ 562 00e2 00       		.byte	0
+ 563 00e3 00       		.byte	0
+ 564 00e4 11       		.uleb128 0x11
+ 565 00e5 8A8201   		.uleb128 0x410a
+ 566 00e8 00       		.byte	0
+ 567 00e9 02       		.uleb128 0x2
+ 568 00ea 18       		.uleb128 0x18
+ 569 00eb 9142     		.uleb128 0x2111
+ 570 00ed 18       		.uleb128 0x18
+ 571 00ee 00       		.byte	0
+ 572 00ef 00       		.byte	0
+ 573 00f0 12       		.uleb128 0x12
+ 574 00f1 898201   		.uleb128 0x4109
+ 575 00f4 01       		.byte	0x1
+ 576 00f5 11       		.uleb128 0x11
+ 577 00f6 01       		.uleb128 0x1
+ 578 00f7 31       		.uleb128 0x31
+ 579 00f8 13       		.uleb128 0x13
+ 580 00f9 00       		.byte	0
+ 581 00fa 00       		.byte	0
+ 582 00fb 13       		.uleb128 0x13
+ 583 00fc 0F       		.uleb128 0xf
+ 584 00fd 00       		.byte	0
+ 585 00fe 0B       		.uleb128 0xb
+ 586 00ff 0B       		.uleb128 0xb
+ 587 0100 49       		.uleb128 0x49
+ 588 0101 13       		.uleb128 0x13
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 12
+
+
+ 589 0102 00       		.byte	0
+ 590 0103 00       		.byte	0
+ 591 0104 14       		.uleb128 0x14
+ 592 0105 2E       		.uleb128 0x2e
+ 593 0106 00       		.byte	0
+ 594 0107 3F       		.uleb128 0x3f
+ 595 0108 19       		.uleb128 0x19
+ 596 0109 3C       		.uleb128 0x3c
+ 597 010a 19       		.uleb128 0x19
+ 598 010b 6E       		.uleb128 0x6e
+ 599 010c 0E       		.uleb128 0xe
+ 600 010d 03       		.uleb128 0x3
+ 601 010e 0E       		.uleb128 0xe
+ 602 010f 3A       		.uleb128 0x3a
+ 603 0110 0B       		.uleb128 0xb
+ 604 0111 3B       		.uleb128 0x3b
+ 605 0112 0B       		.uleb128 0xb
+ 606 0113 00       		.byte	0
+ 607 0114 00       		.byte	0
+ 608 0115 00       		.byte	0
+ 609              		.section	.debug_loc,"",%progbits
+ 610              	.Ldebug_loc0:
+ 611              	.LLST0:
+ 612 0000 12000000 		.4byte	.LVL1
+ 613 0004 18000000 		.4byte	.LVL2
+ 614 0008 0100     		.2byte	0x1
+ 615 000a 50       		.byte	0x50
+ 616 000b 00000000 		.4byte	0
+ 617 000f 00000000 		.4byte	0
+ 618              	.LLST1:
+ 619 0013 1C000000 		.4byte	.LVL3
+ 620 0017 22000000 		.4byte	.LVL4
+ 621 001b 0100     		.2byte	0x1
+ 622 001d 50       		.byte	0x50
+ 623 001e 00000000 		.4byte	0
+ 624 0022 00000000 		.4byte	0
+ 625              		.section	.debug_aranges,"",%progbits
+ 626 0000 1C000000 		.4byte	0x1c
+ 627 0004 0200     		.2byte	0x2
+ 628 0006 00000000 		.4byte	.Ldebug_info0
+ 629 000a 04       		.byte	0x4
+ 630 000b 00       		.byte	0
+ 631 000c 0000     		.2byte	0
+ 632 000e 0000     		.2byte	0
+ 633 0010 00000000 		.4byte	.LFB0
+ 634 0014 2E000000 		.4byte	.LFE0-.LFB0
+ 635 0018 00000000 		.4byte	0
+ 636 001c 00000000 		.4byte	0
+ 637              		.section	.debug_ranges,"",%progbits
+ 638              	.Ldebug_ranges0:
+ 639 0000 00000000 		.4byte	.LFB0
+ 640 0004 2E000000 		.4byte	.LFE0
+ 641 0008 00000000 		.4byte	0
+ 642 000c 00000000 		.4byte	0
+ 643              		.section	.debug_line,"",%progbits
+ 644              	.Ldebug_line0:
+ 645 0000 60010000 		.section	.debug_str,"MS",%progbits,1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 13
+
+
+ 645      02004301 
+ 645      00000201 
+ 645      FB0E0D00 
+ 645      01010101 
+ 646              	.LASF20:
+ 647 0000 47657453 		.ascii	"GetScienceServoIDFromPacket\000"
+ 647      6369656E 
+ 647      63655365 
+ 647      72766F49 
+ 647      4446726F 
+ 648              	.LASF27:
+ 649 001c 433A5C55 		.ascii	"C:\\Users\\mewin\\OneDrive\\Documents\\PSoC Creator"
+ 649      73657273 
+ 649      5C6D6577 
+ 649      696E5C4F 
+ 649      6E654472 
+ 650 004a 5C536369 		.ascii	"\\Science Board\\science wow.cydsn\000"
+ 650      656E6365 
+ 650      20426F61 
+ 650      72645C73 
+ 650      6369656E 
+ 651              	.LASF3:
+ 652 006b 5F5F7569 		.ascii	"__uint8_t\000"
+ 652      6E74385F 
+ 652      7400
+ 653              	.LASF18:
+ 654 0075 73657276 		.ascii	"servoID\000"
+ 654      6F494400 
+ 655              	.LASF23:
+ 656 007d 506F6C6C 		.ascii	"PollAndReceiveCANPacket\000"
+ 656      416E6452 
+ 656      65636569 
+ 656      76654341 
+ 656      4E506163 
+ 657              	.LASF13:
+ 658 0095 64617461 		.ascii	"data\000"
+ 658      00
+ 659              	.LASF1:
+ 660 009a 756E7369 		.ascii	"unsigned char\000"
+ 660      676E6564 
+ 660      20636861 
+ 660      7200
+ 661              	.LASF7:
+ 662 00a8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 662      20756E73 
+ 662      69676E65 
+ 662      6420696E 
+ 662      7400
+ 663              	.LASF5:
+ 664 00ba 73686F72 		.ascii	"short unsigned int\000"
+ 664      7420756E 
+ 664      7369676E 
+ 664      65642069 
+ 664      6E7400
+ 665              	.LASF19:
+ 666 00cd 616E676C 		.ascii	"angle\000"
+ 666      6500
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 14
+
+
+ 667              	.LASF4:
+ 668 00d3 5F5F7569 		.ascii	"__uint16_t\000"
+ 668      6E743136 
+ 668      5F7400
+ 669              	.LASF28:
+ 670 00de 6D61696E 		.ascii	"main\000"
+ 670      00
+ 671              	.LASF15:
+ 672 00e3 43414E50 		.ascii	"CANPacket\000"
+ 672      61636B65 
+ 672      7400
+ 673              	.LASF17:
+ 674 00ed 706F6C6C 		.ascii	"poll\000"
+ 674      00
+ 675              	.LASF10:
+ 676 00f2 756E7369 		.ascii	"unsigned int\000"
+ 676      676E6564 
+ 676      20696E74 
+ 676      00
+ 677              	.LASF9:
+ 678 00ff 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 678      206C6F6E 
+ 678      6720756E 
+ 678      7369676E 
+ 678      65642069 
+ 679              	.LASF11:
+ 680 0116 75696E74 		.ascii	"uint8_t\000"
+ 680      385F7400 
+ 681              	.LASF25:
+ 682 011e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 682      43313120 
+ 682      352E342E 
+ 682      31203230 
+ 682      31363036 
+ 683 0151 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 683      20726576 
+ 683      6973696F 
+ 683      6E203233 
+ 683      37373135 
+ 684 0184 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 684      66756E63 
+ 684      74696F6E 
+ 684      2D736563 
+ 684      74696F6E 
+ 685              	.LASF14:
+ 686 01ac 73697A65 		.ascii	"sizetype\000"
+ 686      74797065 
+ 686      00
+ 687              	.LASF8:
+ 688 01b5 6C6F6E67 		.ascii	"long long int\000"
+ 688      206C6F6E 
+ 688      6720696E 
+ 688      7400
+ 689              	.LASF26:
+ 690 01c3 6D61696E 		.ascii	"main.c\000"
+ 690      2E6300
+ 691              	.LASF22:
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccipoXyB.s 			page 15
+
+
+ 692 01ca 47657450 		.ascii	"GetPacketID\000"
+ 692      61636B65 
+ 692      74494400 
+ 693              	.LASF2:
+ 694 01d6 73686F72 		.ascii	"short int\000"
+ 694      7420696E 
+ 694      7400
+ 695              	.LASF24:
+ 696 01e0 496E6974 		.ascii	"InitCAN\000"
+ 696      43414E00 
+ 697              	.LASF12:
+ 698 01e8 75696E74 		.ascii	"uint16_t\000"
+ 698      31365F74 
+ 698      00
+ 699              	.LASF16:
+ 700 01f1 63757272 		.ascii	"current\000"
+ 700      656E7400 
+ 701              	.LASF6:
+ 702 01f9 6C6F6E67 		.ascii	"long int\000"
+ 702      20696E74 
+ 702      00
+ 703              	.LASF0:
+ 704 0202 7369676E 		.ascii	"signed char\000"
+ 704      65642063 
+ 704      68617200 
+ 705              	.LASF21:
+ 706 020e 47657453 		.ascii	"GetScienceServoAngleFromPacket\000"
+ 706      6369656E 
+ 706      63655365 
+ 706      72766F41 
+ 706      6E676C65 
+ 707              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
