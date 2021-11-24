@@ -38,9 +38,9 @@
 <v>Science Board\science wow\Header Files\CANHeaders\CANPower.h</v>
 <v>Science Board\science wow\Header Files\CANHeaders\CANScience.h</v>
 <v>Science Board\science wow\Header Files\CANHeaders\CANSerialNumbers.h</v>
-<v>Science Board\science wow\Header Files\CANHeaders\Port.h</v>
 <v>Science Board\science wow\Header Files\cyapicallbacks.h</v>
 <v>Science Board\science wow\Source Files</v>
+<v>Science Board\science wow\Source Files\CANLibrary</v>
 <v>Science Board\science wow\Source Files\CANLibrary\CANCommon.c</v>
 <v>Science Board\science wow\Source Files\CANLibrary\CANGPIO.c</v>
 <v>Science Board\science wow\Source Files\CANLibrary\CANLocalization.c</v>
@@ -52,7 +52,44 @@
 <v>Science Board\science wow\Source Files\main.c</v>
 <v>Science Board\science wow\Generated_Source\PSoC4</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>Science Board</v>
+<v>Science Board\science wow</v>
+<v>Science Board\science wow\TopDesign</v>
+<v>Science Board\science wow\science wow.cydwr</v>
+<v>Science Board\science wow\science wow.cydwr\Pins</v>
+<v>Science Board\science wow\science wow.cydwr\Analog</v>
+<v>Science Board\science wow\science wow.cydwr\DMA</v>
+<v>Science Board\science wow\science wow.cydwr\Clocks</v>
+<v>Science Board\science wow\science wow.cydwr\Interrupts</v>
+<v>Science Board\science wow\science wow.cydwr\System</v>
+<v>Science Board\science wow\science wow.cydwr\Directives</v>
+<v>Science Board\science wow\science wow.cydwr\Flash Security</v>
+<v>Science Board\science wow\Header Files</v>
+<v>Science Board\science wow\Header Files\CANHeaders</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANCommon.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANGPIO.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANLibrary.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANLocalization.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANMotorUnit.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANPacket.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANPower.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANScience.h</v>
+<v>Science Board\science wow\Header Files\CANHeaders\CANSerialNumbers.h</v>
+<v>Science Board\science wow\Header Files\cyapicallbacks.h</v>
+<v>Science Board\science wow\Source Files</v>
+<v>Science Board\science wow\Source Files\CANLibrary</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANCommon.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANGPIO.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANLocalization.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANMotorUnit.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANPacket.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANPower.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANScience.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\PortPSOC_CY8C4248AZI_L485.c</v>
+<v>Science Board\science wow\Source Files\main.c</v>
+<v>Science Board\science wow\Generated_Source</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -61,7 +98,12 @@
 <v>Science Board\science wow\TopDesign</v>
 <v>Science Board\science wow\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>Science Board</v>
+<v>Science Board\science wow</v>
+<v>Science Board\science wow\TopDesign</v>
+<v>Science Board\science wow\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -121,7 +163,10 @@
 <v>Science Board\science wow\science wow.rpt</v>
 <v>Science Board\science wow\science wow_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>Science Board</v>
+<v>Science Board\science wow</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -145,7 +190,22 @@
 <v>Science Board\science wow\SCB_P4_v4_0\SCB_P4_v4_0.pdf</v>
 <v>Science Board\science wow\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>Science Board</v>
+<v>Science Board\science wow</v>
+<v>Science Board\science wow\PSoC 4 Architecture TRM</v>
+<v>Science Board\science wow\PSoC 4200L Family Datasheet</v>
+<v>Science Board\science wow\System Reference Guides</v>
+<v>Science Board\science wow\System Reference Guides\cy_boot_v6_0</v>
+<v>Science Board\science wow\System Reference Guides\cy_dmac_v1_10</v>
+<v>Science Board\science wow\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Science Board\science wow\CAN_v3_0.pdf</v>
+<v>Science Board\science wow\cy_pins_v2_20</v>
+<v>Science Board\science wow\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Science Board\science wow\SCB_P4_v4_0</v>
+<v>Science Board\science wow\SCB_P4_v4_0\SCB_P4_v4_0.pdf</v>
+<v>Science Board\science wow\UART_v2_50.pdf</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -154,26 +214,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\science wow.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\science wow.cydsn\cyapicallbacks.h" />
 <name v=".\science wow.cydsn\main.c" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANLibrary.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANPacket.c" />
-<name v=".\science wow.cydsn\science wow.cydwr" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANPacket.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANCommon.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\Port.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANScience.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANPower.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANMotorUnit.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANLocalization.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANGPIO.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANSerialNumbers.h" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANCommon.c" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANScience.c" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANMotorUnit.c" />
-<name v="..\HindsightCAN-master\HindsightCAN-master\CANPower.c" />
-<name v=".\science wow.cydsn\PortPSOC_CY8C4248AZI_L485.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -181,7 +222,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1693, 703" SelectedTabbedMdiWindow="4455aa84-ff22-48aa-8634-52296346b0ea"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ea4087bb-e838-44b2-94b7-2bea84f5f49d" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science Board\science wow.cydsn\TopDesign\TopDesign.cysch" Guid="11abe8c2-6828-48e6-8fb3-497e42f85ade" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science Board\science wow.cydsn\cyapicallbacks.h" Guid="5d1fbde6-fcf1-4d4c-a2e0-2f9c6f8cd1e3" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science Board\science wow.cydsn\main.c" Guid="82c1c490-0535-400a-a24d-a4430983efc0" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANLibrary.h" Guid="b825b5cf-2536-4be7-980a-bdb3b29e76e3" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANPacket.c" Guid="6ab27b0b-2ef6-4a93-ac04-f35fa1ac37f1" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science Board\science wow.cydsn\science wow.cydwr" Guid="4455aa84-ff22-48aa-8634-52296346b0ea" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANPacket.h" Guid="586b50eb-9103-40d8-8212-38ea71e4c37c" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANCommon.h" Guid="269da5bb-8c19-41eb-ac23-2f4af4af08f4" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\Port.h" Guid="d8e5e326-bb91-4307-9075-97c588c4c8fb" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANScience.h" Guid="09e57aa3-22dc-41ff-b5a5-3f2e3062a28f" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANPower.h" Guid="b57fd116-777d-47d7-9ddb-951786bf0a02" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANMotorUnit.h" Guid="cdad3230-5f37-4d06-af5c-fba976b87cc7" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANLocalization.h" Guid="144fc1ab-7be3-43ef-b470-b84266b9637a" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANGPIO.h" Guid="962809cc-3687-47ee-9876-bff01149a301" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANSerialNumbers.h" Guid="6a9eeff9-c389-4f97-b7c6-6e90fd1c4b48" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANCommon.c" Guid="6da87145-94a4-4165-9d56-c3740e4b4d1b" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANScience.c" Guid="e547749c-c08f-41a5-8fae-47e54668d700" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANMotorUnit.c" Guid="e894bcc4-759a-4630-92ab-09071e927e85" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\HindsightCAN-master\HindsightCAN-master\CANPower.c" Guid="11d58b46-8cf2-4973-8030-eed930a5343d" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science Board\science wow.cydsn\PortPSOC_CY8C4248AZI_L485.c" Guid="973247ea-e272-40cd-8654-e08903810493" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1439, 703" SelectedTabbedMdiWindow="ee2121c4-bbb0-4020-8a8e-1a520af82515"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ea4087bb-e838-44b2-94b7-2bea84f5f49d" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\main.c" Guid="ee2121c4-bbb0-4020-8a8e-1a520af82515" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
