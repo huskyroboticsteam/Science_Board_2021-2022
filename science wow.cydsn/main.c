@@ -16,12 +16,13 @@
 
 #define SERVO_SET_ID 0x0D
 #define SENSOR_PULL_ID 0xF5
+#define LED_COLOR_ID 0xF7
 
 int main(void)
 {
     //CyGlobalIntEnable; /* Enable global interrupts. */
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    InitCAN(DEVICE_GROUP_SCIENCE, 0x1); 
+    InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
     //SCP_1_Start();
     for(;;)
     {
@@ -46,9 +47,16 @@ int main(void)
                         //fetch sensor data with ADC method call and sensor read
                     }
                     break;
-                
+                case LED_COLOR_ID : 
+                    {
+                        uint8_t r = current->data[1]; //equivalent to (*current).data[1]
+                        uint8_t g = current->data[2];
+                        uint8_t b = current->data[3];
+                        uint8_t l = current->data[4]; //luminance
+                        
+                    }    
+                    break;
             }
-            
         }
     }
 }
