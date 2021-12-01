@@ -698,6 +698,7 @@
 <CyGuid_718b6b01-68ba-4a17-b632-d38dc61ebb3b type_name="CyDesigner.Gde.Schematic.Symbolcatalog.CyComponentCatalogControl+CyCompCatalogData" version="1" tab="FunLib">
 <tree_states_tab_names>
 <v>Cypress</v>
+<v>FunLib</v>
 <v>Off-Chip</v>
 </tree_states_tab_names>
 <tree_states>
@@ -729,6 +730,16 @@
 <v>Cypress Component Catalog\Power Supervision</v>
 <v>Cypress Component Catalog\System</v>
 <v>Cypress Component Catalog\Thermal Management</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="FunLib Component Catalog">
+<ExpandedNodeIds>
+<v>FunLib Component Catalog</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>FunLib Component Catalog</v>
+<v>FunLib Component Catalog\External</v>
+<v>FunLib Component Catalog\Lights</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">

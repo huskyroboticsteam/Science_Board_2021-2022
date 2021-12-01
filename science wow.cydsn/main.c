@@ -52,7 +52,7 @@ int main(void)
                         uint8_t r = current->data[1]; //equivalent to (*current).data[1]
                         uint8_t g = current->data[2];
                         uint8_t b = current->data[3];
-                        uint8_t l = current->data[4]; //luminance
+                        uint8_t num = current->data[4]; //LED Number
                         
                     }    
                     break;
