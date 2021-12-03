@@ -9,9 +9,10 @@
  *
  * ========================================
 */
-//#include "project.h"
+#include "project.h"
 #include "CANLibrary.h"
 #include "CANScience.h"
+#include "sensor.h"
 #include <stdint.h>
 
 #define SERVO_SET_ID 0x0D
@@ -34,27 +35,31 @@ int main(void)
             int ID = GetPacketID(current);
             switch (ID) {
                 case SERVO_SET_ID : //servo set 
-                    {    
+                    {   
+                        CAN_LED_Write(1);
+                        CyDelay(500);
+                        CAN_LED_Write(0);
                         uint8_t servoID = GetScienceServoIDFromPacket(current);
                         uint8_t angle = GetScienceServoAngleFromPacket(current);
                         //send this stuff to i2c
+                        
                     }
                     break;
                 case SENSOR_PULL_ID : //sensor pull
                     //packet will only have 1 piece of data so just use dot operator, no function exists
                     {
+                        CAN_LED_Write(1);
+                        CyDelay(500);
+                        CAN_LED_Write(0);                        
                         uint8_t sensor_type = DecodeTelemetryType(current);
+                        get_data(sensor_type);
                         //fetch sensor data with ADC method call and sensor read
                     }
                     break;
-                case LED_COLOR_ID : 
-                    {
-                        uint8_t r = current->data[1]; //equivalent to (*current).data[1]
-                        uint8_t g = current->data[2];
-                        uint8_t b = current->data[3];
-                        uint8_t num = current->data[4]; //LED Number
-                        
-                    }    
+                default : 
+                    ERR_LED_Write(0);
+                    CyDelay(500);
+                    ERR_LED_Write(1);
                     break;
             }
         }

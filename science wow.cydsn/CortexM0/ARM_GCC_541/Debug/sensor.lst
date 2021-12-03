@@ -1,0 +1,394 @@
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"sensor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.get_data,"ax",%progbits
+  20              		.align	2
+  21              		.global	get_data
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	get_data, %function
+  25              	get_data:
+  26              	.LFB0:
+  27              		.file 1 "sensor.c"
+   1:sensor.c      **** /* ========================================
+   2:sensor.c      ****  *
+   3:sensor.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:sensor.c      ****  * All Rights Reserved
+   5:sensor.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:sensor.c      ****  *
+   7:sensor.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:sensor.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:sensor.c      ****  *
+  10:sensor.c      ****  * ========================================
+  11:sensor.c      **** */
+  12:sensor.c      **** #include "CANLibrary.h"
+  13:sensor.c      **** #include "CANScience.h"
+  14:sensor.c      **** #include <stdint.h>
+  15:sensor.c      **** 
+  16:sensor.c      **** #define HUMIDITY (uint8_t) 0x16
+  17:sensor.c      **** #define TEMPERATURE (uint8_t) 0x17 //wrong
+  18:sensor.c      **** #define SPECTROMETER (uint8_t) 0x18 //wrong
+  19:sensor.c      **** 	
+  20:sensor.c      **** void get_data(uint8_t sensor_type) {
+  28              		.loc 1 20 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  21:sensor.c      ****     switch(sensor_type) {
+  22:sensor.c      ****         case HUMIDITY :       
+  23:sensor.c      ****         break;
+  24:sensor.c      ****         case TEMPERATURE :
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 2
+
+
+  25:sensor.c      ****         break;
+  26:sensor.c      ****         case SPECTROMETER :
+  27:sensor.c      ****         break;
+  28:sensor.c      ****     }
+  29:sensor.c      **** }
+  34              		.loc 1 29 0
+  35              		@ sp needed
+  36 0000 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE0:
+  39              		.size	get_data, .-get_data
+  40 0002 C046     		.text
+  41              	.Letext0:
+  42              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  43              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  44              		.section	.debug_info,"",%progbits
+  45              	.Ldebug_info0:
+  46 0000 A4000000 		.4byte	0xa4
+  47 0004 0400     		.2byte	0x4
+  48 0006 00000000 		.4byte	.Ldebug_abbrev0
+  49 000a 04       		.byte	0x4
+  50 000b 01       		.uleb128 0x1
+  51 000c E0000000 		.4byte	.LASF12
+  52 0010 0C       		.byte	0xc
+  53 0011 D7000000 		.4byte	.LASF13
+  54 0015 0A000000 		.4byte	.LASF14
+  55 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  56 001d 00000000 		.4byte	0
+  57 0021 00000000 		.4byte	.Ldebug_line0
+  58 0025 02       		.uleb128 0x2
+  59 0026 01       		.byte	0x1
+  60 0027 06       		.byte	0x6
+  61 0028 98010000 		.4byte	.LASF0
+  62 002c 03       		.uleb128 0x3
+  63 002d 00000000 		.4byte	.LASF9
+  64 0031 02       		.byte	0x2
+  65 0032 1D       		.byte	0x1d
+  66 0033 37000000 		.4byte	0x37
+  67 0037 02       		.uleb128 0x2
+  68 0038 01       		.byte	0x1
+  69 0039 08       		.byte	0x8
+  70 003a 78000000 		.4byte	.LASF1
+  71 003e 02       		.uleb128 0x2
+  72 003f 02       		.byte	0x2
+  73 0040 05       		.byte	0x5
+  74 0041 85010000 		.4byte	.LASF2
+  75 0045 02       		.uleb128 0x2
+  76 0046 02       		.byte	0x2
+  77 0047 07       		.byte	0x7
+  78 0048 98000000 		.4byte	.LASF3
+  79 004c 02       		.uleb128 0x2
+  80 004d 04       		.byte	0x4
+  81 004e 05       		.byte	0x5
+  82 004f 8F010000 		.4byte	.LASF4
+  83 0053 02       		.uleb128 0x2
+  84 0054 04       		.byte	0x4
+  85 0055 07       		.byte	0x7
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 3
+
+
+  86 0056 86000000 		.4byte	.LASF5
+  87 005a 02       		.uleb128 0x2
+  88 005b 08       		.byte	0x8
+  89 005c 05       		.byte	0x5
+  90 005d 77010000 		.4byte	.LASF6
+  91 0061 02       		.uleb128 0x2
+  92 0062 08       		.byte	0x8
+  93 0063 07       		.byte	0x7
+  94 0064 B8000000 		.4byte	.LASF7
+  95 0068 04       		.uleb128 0x4
+  96 0069 04       		.byte	0x4
+  97 006a 05       		.byte	0x5
+  98 006b 696E7400 		.ascii	"int\000"
+  99 006f 02       		.uleb128 0x2
+ 100 0070 04       		.byte	0x4
+ 101 0071 07       		.byte	0x7
+ 102 0072 AB000000 		.4byte	.LASF8
+ 103 0076 03       		.uleb128 0x3
+ 104 0077 CF000000 		.4byte	.LASF10
+ 105 007b 03       		.byte	0x3
+ 106 007c 18       		.byte	0x18
+ 107 007d 2C000000 		.4byte	0x2c
+ 108 0081 02       		.uleb128 0x2
+ 109 0082 04       		.byte	0x4
+ 110 0083 07       		.byte	0x7
+ 111 0084 6E010000 		.4byte	.LASF11
+ 112 0088 05       		.uleb128 0x5
+ 113 0089 6F000000 		.4byte	.LASF15
+ 114 008d 01       		.byte	0x1
+ 115 008e 14       		.byte	0x14
+ 116 008f 00000000 		.4byte	.LFB0
+ 117 0093 02000000 		.4byte	.LFE0-.LFB0
+ 118 0097 01       		.uleb128 0x1
+ 119 0098 9C       		.byte	0x9c
+ 120 0099 06       		.uleb128 0x6
+ 121 009a 63000000 		.4byte	.LASF16
+ 122 009e 01       		.byte	0x1
+ 123 009f 14       		.byte	0x14
+ 124 00a0 76000000 		.4byte	0x76
+ 125 00a4 01       		.uleb128 0x1
+ 126 00a5 50       		.byte	0x50
+ 127 00a6 00       		.byte	0
+ 128 00a7 00       		.byte	0
+ 129              		.section	.debug_abbrev,"",%progbits
+ 130              	.Ldebug_abbrev0:
+ 131 0000 01       		.uleb128 0x1
+ 132 0001 11       		.uleb128 0x11
+ 133 0002 01       		.byte	0x1
+ 134 0003 25       		.uleb128 0x25
+ 135 0004 0E       		.uleb128 0xe
+ 136 0005 13       		.uleb128 0x13
+ 137 0006 0B       		.uleb128 0xb
+ 138 0007 03       		.uleb128 0x3
+ 139 0008 0E       		.uleb128 0xe
+ 140 0009 1B       		.uleb128 0x1b
+ 141 000a 0E       		.uleb128 0xe
+ 142 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 4
+
+
+ 143 000c 17       		.uleb128 0x17
+ 144 000d 11       		.uleb128 0x11
+ 145 000e 01       		.uleb128 0x1
+ 146 000f 10       		.uleb128 0x10
+ 147 0010 17       		.uleb128 0x17
+ 148 0011 00       		.byte	0
+ 149 0012 00       		.byte	0
+ 150 0013 02       		.uleb128 0x2
+ 151 0014 24       		.uleb128 0x24
+ 152 0015 00       		.byte	0
+ 153 0016 0B       		.uleb128 0xb
+ 154 0017 0B       		.uleb128 0xb
+ 155 0018 3E       		.uleb128 0x3e
+ 156 0019 0B       		.uleb128 0xb
+ 157 001a 03       		.uleb128 0x3
+ 158 001b 0E       		.uleb128 0xe
+ 159 001c 00       		.byte	0
+ 160 001d 00       		.byte	0
+ 161 001e 03       		.uleb128 0x3
+ 162 001f 16       		.uleb128 0x16
+ 163 0020 00       		.byte	0
+ 164 0021 03       		.uleb128 0x3
+ 165 0022 0E       		.uleb128 0xe
+ 166 0023 3A       		.uleb128 0x3a
+ 167 0024 0B       		.uleb128 0xb
+ 168 0025 3B       		.uleb128 0x3b
+ 169 0026 0B       		.uleb128 0xb
+ 170 0027 49       		.uleb128 0x49
+ 171 0028 13       		.uleb128 0x13
+ 172 0029 00       		.byte	0
+ 173 002a 00       		.byte	0
+ 174 002b 04       		.uleb128 0x4
+ 175 002c 24       		.uleb128 0x24
+ 176 002d 00       		.byte	0
+ 177 002e 0B       		.uleb128 0xb
+ 178 002f 0B       		.uleb128 0xb
+ 179 0030 3E       		.uleb128 0x3e
+ 180 0031 0B       		.uleb128 0xb
+ 181 0032 03       		.uleb128 0x3
+ 182 0033 08       		.uleb128 0x8
+ 183 0034 00       		.byte	0
+ 184 0035 00       		.byte	0
+ 185 0036 05       		.uleb128 0x5
+ 186 0037 2E       		.uleb128 0x2e
+ 187 0038 01       		.byte	0x1
+ 188 0039 3F       		.uleb128 0x3f
+ 189 003a 19       		.uleb128 0x19
+ 190 003b 03       		.uleb128 0x3
+ 191 003c 0E       		.uleb128 0xe
+ 192 003d 3A       		.uleb128 0x3a
+ 193 003e 0B       		.uleb128 0xb
+ 194 003f 3B       		.uleb128 0x3b
+ 195 0040 0B       		.uleb128 0xb
+ 196 0041 27       		.uleb128 0x27
+ 197 0042 19       		.uleb128 0x19
+ 198 0043 11       		.uleb128 0x11
+ 199 0044 01       		.uleb128 0x1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 5
+
+
+ 200 0045 12       		.uleb128 0x12
+ 201 0046 06       		.uleb128 0x6
+ 202 0047 40       		.uleb128 0x40
+ 203 0048 18       		.uleb128 0x18
+ 204 0049 9742     		.uleb128 0x2117
+ 205 004b 19       		.uleb128 0x19
+ 206 004c 00       		.byte	0
+ 207 004d 00       		.byte	0
+ 208 004e 06       		.uleb128 0x6
+ 209 004f 05       		.uleb128 0x5
+ 210 0050 00       		.byte	0
+ 211 0051 03       		.uleb128 0x3
+ 212 0052 0E       		.uleb128 0xe
+ 213 0053 3A       		.uleb128 0x3a
+ 214 0054 0B       		.uleb128 0xb
+ 215 0055 3B       		.uleb128 0x3b
+ 216 0056 0B       		.uleb128 0xb
+ 217 0057 49       		.uleb128 0x49
+ 218 0058 13       		.uleb128 0x13
+ 219 0059 02       		.uleb128 0x2
+ 220 005a 18       		.uleb128 0x18
+ 221 005b 00       		.byte	0
+ 222 005c 00       		.byte	0
+ 223 005d 00       		.byte	0
+ 224              		.section	.debug_aranges,"",%progbits
+ 225 0000 1C000000 		.4byte	0x1c
+ 226 0004 0200     		.2byte	0x2
+ 227 0006 00000000 		.4byte	.Ldebug_info0
+ 228 000a 04       		.byte	0x4
+ 229 000b 00       		.byte	0
+ 230 000c 0000     		.2byte	0
+ 231 000e 0000     		.2byte	0
+ 232 0010 00000000 		.4byte	.LFB0
+ 233 0014 02000000 		.4byte	.LFE0-.LFB0
+ 234 0018 00000000 		.4byte	0
+ 235 001c 00000000 		.4byte	0
+ 236              		.section	.debug_ranges,"",%progbits
+ 237              	.Ldebug_ranges0:
+ 238 0000 00000000 		.4byte	.LFB0
+ 239 0004 02000000 		.4byte	.LFE0
+ 240 0008 00000000 		.4byte	0
+ 241 000c 00000000 		.4byte	0
+ 242              		.section	.debug_line,"",%progbits
+ 243              	.Ldebug_line0:
+ 244 0000 34010000 		.section	.debug_str,"MS",%progbits,1
+ 244      02001C01 
+ 244      00000201 
+ 244      FB0E0D00 
+ 244      01010101 
+ 245              	.LASF9:
+ 246 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 246      6E74385F 
+ 246      7400
+ 247              	.LASF14:
+ 248 000a 433A5C55 		.ascii	"C:\\Users\\mewin\\OneDrive\\Documents\\PSoC Creator"
+ 248      73657273 
+ 248      5C6D6577 
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 6
+
+
+ 248      696E5C4F 
+ 248      6E654472 
+ 249 0038 5C536369 		.ascii	"\\Science_Board_2021-2022\\science wow.cydsn\000"
+ 249      656E6365 
+ 249      5F426F61 
+ 249      72645F32 
+ 249      3032312D 
+ 250              	.LASF16:
+ 251 0063 73656E73 		.ascii	"sensor_type\000"
+ 251      6F725F74 
+ 251      79706500 
+ 252              	.LASF15:
+ 253 006f 6765745F 		.ascii	"get_data\000"
+ 253      64617461 
+ 253      00
+ 254              	.LASF1:
+ 255 0078 756E7369 		.ascii	"unsigned char\000"
+ 255      676E6564 
+ 255      20636861 
+ 255      7200
+ 256              	.LASF5:
+ 257 0086 6C6F6E67 		.ascii	"long unsigned int\000"
+ 257      20756E73 
+ 257      69676E65 
+ 257      6420696E 
+ 257      7400
+ 258              	.LASF3:
+ 259 0098 73686F72 		.ascii	"short unsigned int\000"
+ 259      7420756E 
+ 259      7369676E 
+ 259      65642069 
+ 259      6E7400
+ 260              	.LASF8:
+ 261 00ab 756E7369 		.ascii	"unsigned int\000"
+ 261      676E6564 
+ 261      20696E74 
+ 261      00
+ 262              	.LASF7:
+ 263 00b8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 263      206C6F6E 
+ 263      6720756E 
+ 263      7369676E 
+ 263      65642069 
+ 264              	.LASF10:
+ 265 00cf 75696E74 		.ascii	"uint8_t\000"
+ 265      385F7400 
+ 266              	.LASF13:
+ 267 00d7 73656E73 		.ascii	"sensor.c\000"
+ 267      6F722E63 
+ 267      00
+ 268              	.LASF12:
+ 269 00e0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 269      43313120 
+ 269      352E342E 
+ 269      31203230 
+ 269      31363036 
+ 270 0113 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 7
+
+
+ 270      20726576 
+ 270      6973696F 
+ 270      6E203233 
+ 270      37373135 
+ 271 0146 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 271      66756E63 
+ 271      74696F6E 
+ 271      2D736563 
+ 271      74696F6E 
+ 272              	.LASF11:
+ 273 016e 73697A65 		.ascii	"sizetype\000"
+ 273      74797065 
+ 273      00
+ 274              	.LASF6:
+ 275 0177 6C6F6E67 		.ascii	"long long int\000"
+ 275      206C6F6E 
+ 275      6720696E 
+ 275      7400
+ 276              	.LASF2:
+ 277 0185 73686F72 		.ascii	"short int\000"
+ 277      7420696E 
+ 277      7400
+ 278              	.LASF4:
+ 279 018f 6C6F6E67 		.ascii	"long int\000"
+ 279      20696E74 
+ 279      00
+ 280              	.LASF0:
+ 281 0198 7369676E 		.ascii	"signed char\000"
+ 281      65642063 
+ 281      68617200 
+ 282              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

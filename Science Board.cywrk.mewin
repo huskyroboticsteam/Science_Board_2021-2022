@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Science Board\science wow\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Science Board\science wow\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Science Board</v>
 <v>Science Board\science wow</v>
@@ -39,7 +39,9 @@
 <v>Science Board\science wow\Header Files\CANHeaders\CANScience.h</v>
 <v>Science Board\science wow\Header Files\CANHeaders\CANSerialNumbers.h</v>
 <v>Science Board\science wow\Header Files\cyapicallbacks.h</v>
+<v>Science Board\science wow\Header Files\sensor.h</v>
 <v>Science Board\science wow\Source Files</v>
+<v>Science Board\science wow\Source Files\CANLibrary</v>
 <v>Science Board\science wow\Source Files\CANLibrary\CANCommon.c</v>
 <v>Science Board\science wow\Source Files\CANLibrary\CANGPIO.c</v>
 <v>Science Board\science wow\Source Files\CANLibrary\CANLocalization.c</v>
@@ -49,6 +51,7 @@
 <v>Science Board\science wow\Source Files\CANLibrary\CANScience.c</v>
 <v>Science Board\science wow\Source Files\CANLibrary\PortPSOC_CY8C4248AZI_L485.c</v>
 <v>Science Board\science wow\Source Files\main.c</v>
+<v>Science Board\science wow\Source Files\sensor.c</v>
 <v>Science Board\science wow\Generated_Source\PSoC4</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
@@ -76,9 +79,19 @@
 <v>Science Board\science wow\Header Files\CANHeaders\CANScience.h</v>
 <v>Science Board\science wow\Header Files\CANHeaders\CANSerialNumbers.h</v>
 <v>Science Board\science wow\Header Files\cyapicallbacks.h</v>
+<v>Science Board\science wow\Header Files\sensor.h</v>
 <v>Science Board\science wow\Source Files</v>
 <v>Science Board\science wow\Source Files\CANLibrary</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANCommon.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANGPIO.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANLocalization.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANMotorUnit.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANPacket.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANPower.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\CANScience.c</v>
+<v>Science Board\science wow\Source Files\CANLibrary\PortPSOC_CY8C4248AZI_L485.c</v>
 <v>Science Board\science wow\Source Files\main.c</v>
+<v>Science Board\science wow\Source Files\sensor.c</v>
 <v>Science Board\science wow\Generated_Source</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
@@ -108,6 +121,8 @@
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_HFCLK.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_isr.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_LED.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_LED_PM.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANCommon.lst</v>
@@ -128,11 +143,15 @@
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\DBG_LED.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\DBG_LED_PM.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_BOOT.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_INT.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_IntClock.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_PM.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\ERR_LED.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\ERR_LED_PM.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_BOOT.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_I2C.lst</v>
@@ -163,6 +182,7 @@
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\PortPSOC_CY8C4248AZI_L485.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_1.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\RX_1_PM.lst</v>
+<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\sensor.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_1.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\TX_1_PM.lst</v>
 <v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\science wow.elf</v>
@@ -175,51 +195,6 @@
 <VisibleNodeIds>
 <v>Science Board</v>
 <v>Science Board\science wow</v>
-<v>Science Board\science wow\CortexM0</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_HFCLK.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_isr.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANCommon.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANGPIO.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANLocalization.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANMotorUnit.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANPacket.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANPower.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CANScience.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_BOOT.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_INT.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_IntClock.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\Debug_PM.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_BOOT.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_I2C.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_I2C_BOOT.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_I2C_INT.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_I2C_MASTER.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_PM.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_SCB_IRQ.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_SCBCLK.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_scl.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_scl_PM.lst</v>
-<v>Science Board\science wow\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_Servo_sda.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -286,6 +261,12 @@
 <name v=".\science wow.cydsn\CANLocalization.h" />
 <name v=".\science wow.cydsn\CANSerialNumbers.h" />
 <name v=".\science wow.cydsn\science wow.cydwr" />
+<name v=".\science wow.cydsn\sensor.c" />
+<name v=".\science wow.cydsn\sensor.h" />
+<name v=".\science wow.cydsn\cyapicallbacks.h" />
+<name v=".\science wow.cydsn\CANPower.h" />
+<name v=".\science wow.cydsn\CANPacket.h" />
+<name v=".\science wow.cydsn\CANScience.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -293,7 +274,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1439, 703" SelectedTabbedMdiWindow="52124383-ca86-4a0c-8008-66b4d723a34c"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ea4087bb-e838-44b2-94b7-2bea84f5f49d" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\main.c" Guid="74fb5ad2-4e26-4e45-b9dc-4f66ec4847ac" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\TopDesign\TopDesign.cysch" Guid="52124383-ca86-4a0c-8008-66b4d723a34c" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANCommon.h" Guid="a4b9c9f1-7256-4b38-8b45-d61a9a890ac3" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANLocalization.h" Guid="d962ee50-6775-477f-8957-6afbcfa5f223" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANSerialNumbers.h" Guid="1b02784c-2c38-4850-8216-f98f86808abb" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cydwr" Guid="41fbf5ac-a27c-429d-864f-ebfc1cc2918d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1439, 703" SelectedTabbedMdiWindow="74fb5ad2-4e26-4e45-b9dc-4f66ec4847ac"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ea4087bb-e838-44b2-94b7-2bea84f5f49d" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\main.c" Guid="74fb5ad2-4e26-4e45-b9dc-4f66ec4847ac" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\TopDesign\TopDesign.cysch" Guid="52124383-ca86-4a0c-8008-66b4d723a34c" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANCommon.h" Guid="a4b9c9f1-7256-4b38-8b45-d61a9a890ac3" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANLocalization.h" Guid="d962ee50-6775-477f-8957-6afbcfa5f223" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANSerialNumbers.h" Guid="1b02784c-2c38-4850-8216-f98f86808abb" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cydwr" Guid="41fbf5ac-a27c-429d-864f-ebfc1cc2918d" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\sensor.c" Guid="2005ad71-0681-492c-b6c0-b8f9a0848553" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\sensor.h" Guid="b6e1280a-7e57-4d21-83e1-94a7a03d70ab" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\cyapicallbacks.h" Guid="b65f4610-c469-43f2-9323-d3e84b94f9d7" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANPower.h" Guid="b4e77d5e-daaf-4891-aece-f7866c357dba" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANPacket.h" Guid="cf3a32aa-aeb9-4567-9fd4-6d1723f381da" /><DocumentWindow Key="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CANScience.h" Guid="98f2de1d-192d-48d8-9b13-7fcce073ac41" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
