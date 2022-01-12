@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
   28:Generated_Source\PSoC4/I2C_Spectrometer_sda_PM.c **** *  deep-sleep/hibernate modes. This function applies only to SIO and USBIO pins.
   29:Generated_Source\PSoC4/I2C_Spectrometer_sda_PM.c **** *  It should not be called for GPIO or GPIO_OVT pins.
   30:Generated_Source\PSoC4/I2C_Spectrometer_sda_PM.c **** *
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 2
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 2
 
 
   31:Generated_Source\PSoC4/I2C_Spectrometer_sda_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
   51              		.global	I2C_Spectrometer_sda_Wakeup
   52              		.code	16
   53              		.thumb_func
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 3
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 3
 
 
   54              		.type	I2C_Spectrometer_sda_Wakeup, %function
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
   72              	.L5:
   73 000c 00000000 		.word	.LANCHOR0
   74 0010 08060440 		.word	1074005512
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 4
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 4
 
 
   75              		.cfi_endproc
@@ -204,48 +204,48 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
   93 0006 00000000 		.4byte	.Ldebug_abbrev0
   94 000a 04       		.byte	0x4
   95 000b 01       		.uleb128 0x1
-  96 000c 5F010000 		.4byte	.LASF20
+  96 000c 56010000 		.4byte	.LASF20
   97 0010 0C       		.byte	0xc
-  98 0011 98000000 		.4byte	.LASF21
-  99 0015 06000000 		.4byte	.LASF22
+  98 0011 3F000000 		.4byte	.LASF21
+  99 0015 B1000000 		.4byte	.LASF22
  100 0019 00000000 		.4byte	.Ldebug_ranges0+0
  101 001d 00000000 		.4byte	0
  102 0021 00000000 		.4byte	.Ldebug_line0
  103 0025 02       		.uleb128 0x2
  104 0026 01       		.byte	0x1
  105 0027 06       		.byte	0x6
- 106 0028 24020000 		.4byte	.LASF0
+ 106 0028 1B020000 		.4byte	.LASF0
  107 002c 02       		.uleb128 0x2
  108 002d 01       		.byte	0x1
  109 002e 08       		.byte	0x8
- 110 002f 8A000000 		.4byte	.LASF1
+ 110 002f 31000000 		.4byte	.LASF1
  111 0033 02       		.uleb128 0x2
  112 0034 02       		.byte	0x2
  113 0035 05       		.byte	0x5
- 114 0036 09020000 		.4byte	.LASF2
+ 114 0036 00020000 		.4byte	.LASF2
  115 003a 02       		.uleb128 0x2
  116 003b 02       		.byte	0x2
  117 003c 07       		.byte	0x7
- 118 003d F7000000 		.4byte	.LASF3
+ 118 003d 9E000000 		.4byte	.LASF3
  119 0041 02       		.uleb128 0x2
  120 0042 04       		.byte	0x4
  121 0043 05       		.byte	0x5
- 122 0044 1B020000 		.4byte	.LASF4
+ 122 0044 12020000 		.4byte	.LASF4
  123 0048 02       		.uleb128 0x2
  124 0049 04       		.byte	0x4
  125 004a 07       		.byte	0x7
- 126 004b E5000000 		.4byte	.LASF5
+ 126 004b 8C000000 		.4byte	.LASF5
  127 004f 02       		.uleb128 0x2
  128 0050 08       		.byte	0x8
  129 0051 05       		.byte	0x5
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 5
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 5
 
 
- 130 0052 F6010000 		.4byte	.LASF6
+ 130 0052 ED010000 		.4byte	.LASF6
  131 0056 02       		.uleb128 0x2
  132 0057 08       		.byte	0x8
  133 0058 07       		.byte	0x7
- 134 0059 25010000 		.4byte	.LASF7
+ 134 0059 1C010000 		.4byte	.LASF7
  135 005d 03       		.uleb128 0x3
  136 005e 04       		.byte	0x4
  137 005f 05       		.byte	0x5
@@ -253,24 +253,24 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  139 0064 02       		.uleb128 0x2
  140 0065 04       		.byte	0x4
  141 0066 07       		.byte	0x7
- 142 0067 18010000 		.4byte	.LASF8
+ 142 0067 0F010000 		.4byte	.LASF8
  143 006b 04       		.uleb128 0x4
- 144 006c 11010000 		.4byte	.LASF12
+ 144 006c 08010000 		.4byte	.LASF12
  145 0070 02       		.byte	0x2
  146 0071 FD01     		.2byte	0x1fd
  147 0073 48000000 		.4byte	0x48
  148 0077 02       		.uleb128 0x2
  149 0078 04       		.byte	0x4
  150 0079 04       		.byte	0x4
- 151 007a 84000000 		.4byte	.LASF9
+ 151 007a 2B000000 		.4byte	.LASF9
  152 007e 02       		.uleb128 0x2
  153 007f 08       		.byte	0x8
  154 0080 04       		.byte	0x4
- 155 0081 0A010000 		.4byte	.LASF10
+ 155 0081 01010000 		.4byte	.LASF10
  156 0085 02       		.uleb128 0x2
  157 0086 01       		.byte	0x1
  158 0087 08       		.byte	0x8
- 159 0088 04020000 		.4byte	.LASF11
+ 159 0088 FB010000 		.4byte	.LASF11
  160 008c 04       		.uleb128 0x4
  161 008d 00000000 		.4byte	.LASF13
  162 0091 02       		.byte	0x2
@@ -284,21 +284,21 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  170 00a0 21       		.byte	0x21
  171 00a1 CA000000 		.4byte	0xca
  172 00a5 07       		.uleb128 0x7
- 173 00a6 13020000 		.4byte	.LASF14
+ 173 00a6 0A020000 		.4byte	.LASF14
  174 00aa 03       		.byte	0x3
  175 00ab 23       		.byte	0x23
  176 00ac 6B000000 		.4byte	0x6b
  177 00b0 00       		.byte	0
  178 00b1 07       		.uleb128 0x7
- 179 00b2 ED010000 		.4byte	.LASF15
+ 179 00b2 E4010000 		.4byte	.LASF15
  180 00b6 03       		.byte	0x3
  181 00b7 24       		.byte	0x24
  182 00b8 6B000000 		.4byte	0x6b
  183 00bc 04       		.byte	0x4
  184 00bd 07       		.uleb128 0x7
- 185 00be 5F000000 		.4byte	.LASF16
+ 185 00be 06000000 		.4byte	.LASF16
  186 00c2 03       		.byte	0x3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 6
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 6
 
 
  187 00c3 25       		.byte	0x25
@@ -306,12 +306,12 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  189 00c8 08       		.byte	0x8
  190 00c9 00       		.byte	0
  191 00ca 08       		.uleb128 0x8
- 192 00cb 3C010000 		.4byte	.LASF17
+ 192 00cb 33010000 		.4byte	.LASF17
  193 00cf 03       		.byte	0x3
  194 00d0 26       		.byte	0x26
  195 00d1 9D000000 		.4byte	0x9d
  196 00d5 09       		.uleb128 0x9
- 197 00d6 30020000 		.4byte	.LASF18
+ 197 00d6 27020000 		.4byte	.LASF18
  198 00da 01       		.byte	0x1
  199 00db 2C       		.byte	0x2c
  200 00dc 00000000 		.4byte	.LFB0
@@ -319,7 +319,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  202 00e4 01       		.uleb128 0x1
  203 00e5 9C       		.byte	0x9c
  204 00e6 09       		.uleb128 0x9
- 205 00e7 C9000000 		.4byte	.LASF19
+ 205 00e7 70000000 		.4byte	.LASF19
  206 00eb 01       		.byte	0x1
  207 00ec 52       		.byte	0x52
  208 00ed 00000000 		.4byte	.LFB1
@@ -327,7 +327,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  210 00f5 01       		.uleb128 0x1
  211 00f6 9C       		.byte	0x9c
  212 00f7 0A       		.uleb128 0xa
- 213 00f8 68000000 		.4byte	.LASF23
+ 213 00f8 0F000000 		.4byte	.LASF23
  214 00fc 01       		.byte	0x1
  215 00fd 14       		.byte	0x14
  216 00fe CA000000 		.4byte	0xca
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  241 0012 00       		.byte	0
  242 0013 02       		.uleb128 0x2
  243 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 7
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 7
 
 
  244 0015 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  298 004b 0D       		.uleb128 0xd
  299 004c 00       		.byte	0
  300 004d 03       		.uleb128 0x3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 8
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 8
 
 
  301 004e 0E       		.uleb128 0xe
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  355 0085 3B       		.uleb128 0x3b
  356 0086 0B       		.uleb128 0xb
  357 0087 49       		.uleb128 0x49
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 9
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 9
 
 
  358 0088 13       		.uleb128 0x13
@@ -519,133 +519,133 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 1
  389              	.LASF13:
  390 0000 72656733 		.ascii	"reg32\000"
  390      3200
- 391              	.LASF22:
- 392 0006 433A5C55 		.ascii	"C:\\Users\\mewin\\OneDrive\\Documents\\PSoC Creator"
- 392      73657273 
- 392      5C6D6577 
- 392      696E5C4F 
- 392      6E654472 
- 393 0034 5C536369 		.ascii	"\\Science_Board_2021-2022\\science wow.cydsn\000"
- 393      656E6365 
- 393      5F426F61 
- 393      72645F32 
- 393      3032312D 
- 394              	.LASF16:
- 395 005f 75736253 		.ascii	"usbState\000"
- 395      74617465 
- 395      00
- 396              	.LASF23:
- 397 0068 4932435F 		.ascii	"I2C_Spectrometer_sda_backup\000"
- 397      53706563 
- 397      74726F6D 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 10
+ 391              	.LASF16:
+ 392 0006 75736253 		.ascii	"usbState\000"
+ 392      74617465 
+ 392      00
+ 393              	.LASF23:
+ 394 000f 4932435F 		.ascii	"I2C_Spectrometer_sda_backup\000"
+ 394      53706563 
+ 394      74726F6D 
+ 394      65746572 
+ 394      5F736461 
+ 395              	.LASF9:
+ 396 002b 666C6F61 		.ascii	"float\000"
+ 396      7400
+ 397              	.LASF1:
+ 398 0031 756E7369 		.ascii	"unsigned char\000"
+ 398      676E6564 
+ 398      20636861 
+ 398      7200
+ 399              	.LASF21:
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 10
 
 
- 397      65746572 
- 397      5F736461 
- 398              	.LASF9:
- 399 0084 666C6F61 		.ascii	"float\000"
- 399      7400
- 400              	.LASF1:
- 401 008a 756E7369 		.ascii	"unsigned char\000"
- 401      676E6564 
- 401      20636861 
- 401      7200
- 402              	.LASF21:
- 403 0098 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_Spectrometer_sda_PM.c\000"
- 403      72617465 
- 403      645F536F 
- 403      75726365 
- 403      5C50536F 
- 404              	.LASF19:
- 405 00c9 4932435F 		.ascii	"I2C_Spectrometer_sda_Wakeup\000"
- 405      53706563 
- 405      74726F6D 
- 405      65746572 
- 405      5F736461 
- 406              	.LASF5:
- 407 00e5 6C6F6E67 		.ascii	"long unsigned int\000"
- 407      20756E73 
- 407      69676E65 
- 407      6420696E 
- 407      7400
- 408              	.LASF3:
- 409 00f7 73686F72 		.ascii	"short unsigned int\000"
- 409      7420756E 
- 409      7369676E 
- 409      65642069 
- 409      6E7400
+ 400 003f 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_Spectrometer_sda_PM.c\000"
+ 400      72617465 
+ 400      645F536F 
+ 400      75726365 
+ 400      5C50536F 
+ 401              	.LASF19:
+ 402 0070 4932435F 		.ascii	"I2C_Spectrometer_sda_Wakeup\000"
+ 402      53706563 
+ 402      74726F6D 
+ 402      65746572 
+ 402      5F736461 
+ 403              	.LASF5:
+ 404 008c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 404      20756E73 
+ 404      69676E65 
+ 404      6420696E 
+ 404      7400
+ 405              	.LASF3:
+ 406 009e 73686F72 		.ascii	"short unsigned int\000"
+ 406      7420756E 
+ 406      7369676E 
+ 406      65642069 
+ 406      6E7400
+ 407              	.LASF22:
+ 408 00b1 433A5C55 		.ascii	"C:\\Users\\write\\Documents\\PSoC Creator\\Science_"
+ 408      73657273 
+ 408      5C777269 
+ 408      74655C44 
+ 408      6F63756D 
+ 409 00df 426F6172 		.ascii	"Board_2021-2022\\science wow.cydsn\000"
+ 409      645F3230 
+ 409      32312D32 
+ 409      3032325C 
+ 409      73636965 
  410              	.LASF10:
- 411 010a 646F7562 		.ascii	"double\000"
+ 411 0101 646F7562 		.ascii	"double\000"
  411      6C6500
  412              	.LASF12:
- 413 0111 75696E74 		.ascii	"uint32\000"
+ 413 0108 75696E74 		.ascii	"uint32\000"
  413      333200
  414              	.LASF8:
- 415 0118 756E7369 		.ascii	"unsigned int\000"
+ 415 010f 756E7369 		.ascii	"unsigned int\000"
  415      676E6564 
  415      20696E74 
  415      00
  416              	.LASF7:
- 417 0125 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 417 011c 6C6F6E67 		.ascii	"long long unsigned int\000"
  417      206C6F6E 
  417      6720756E 
  417      7369676E 
  417      65642069 
  418              	.LASF17:
- 419 013c 4932435F 		.ascii	"I2C_Spectrometer_sda_BACKUP_STRUCT\000"
+ 419 0133 4932435F 		.ascii	"I2C_Spectrometer_sda_BACKUP_STRUCT\000"
  419      53706563 
  419      74726F6D 
  419      65746572 
  419      5F736461 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cctx77dl.s 			page 11
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccIHoHix.s 			page 11
 
 
  420              	.LASF20:
- 421 015f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 421 0156 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  421      43313120 
  421      352E342E 
  421      31203230 
  421      31363036 
- 422 0192 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 422 0189 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
  422      20726576 
  422      6973696F 
  422      6E203233 
  422      37373135 
- 423 01c5 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 423 01bc 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  423      66756E63 
  423      74696F6E 
  423      2D736563 
  423      74696F6E 
  424              	.LASF15:
- 425 01ed 73696F53 		.ascii	"sioState\000"
+ 425 01e4 73696F53 		.ascii	"sioState\000"
  425      74617465 
  425      00
  426              	.LASF6:
- 427 01f6 6C6F6E67 		.ascii	"long long int\000"
+ 427 01ed 6C6F6E67 		.ascii	"long long int\000"
  427      206C6F6E 
  427      6720696E 
  427      7400
  428              	.LASF11:
- 429 0204 63686172 		.ascii	"char\000"
+ 429 01fb 63686172 		.ascii	"char\000"
  429      00
  430              	.LASF2:
- 431 0209 73686F72 		.ascii	"short int\000"
+ 431 0200 73686F72 		.ascii	"short int\000"
  431      7420696E 
  431      7400
  432              	.LASF14:
- 433 0213 70635374 		.ascii	"pcState\000"
+ 433 020a 70635374 		.ascii	"pcState\000"
  433      61746500 
  434              	.LASF4:
- 435 021b 6C6F6E67 		.ascii	"long int\000"
+ 435 0212 6C6F6E67 		.ascii	"long int\000"
  435      20696E74 
  435      00
  436              	.LASF0:
- 437 0224 7369676E 		.ascii	"signed char\000"
+ 437 021b 7369676E 		.ascii	"signed char\000"
  437      65642063 
  437      68617200 
  438              	.LASF18:
- 439 0230 4932435F 		.ascii	"I2C_Spectrometer_sda_Sleep\000"
+ 439 0227 4932435F 		.ascii	"I2C_Spectrometer_sda_Sleep\000"
  439      53706563 
  439      74726F6D 
  439      65746572 

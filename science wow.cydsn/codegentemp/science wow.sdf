@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2021-12-03T01:46:37Z")
+ (DATE "2022-01-12T02:52:08Z")
  (DESIGN "science wow")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -199,6 +199,8 @@
     (INTERCONNECT DBG_LED\(0\)_PAD DBG_LED\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT ERR_LED\(0\)_PAD ERR_LED\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT CAN_LED\(0\)_PAD CAN_LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LIM1\(0\)_PAD LIM1\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LIM2\(0\)_PAD LIM2\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

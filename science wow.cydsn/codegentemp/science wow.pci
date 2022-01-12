@@ -1,5 +1,5 @@
 # science wow
-# 2021-12-03 01:46:33Z
+# 2022-01-12 02:52:00Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -13,3 +13,5 @@ set_io "\I2C_Spectrometer:scl(0)\" iocell 6 0
 set_io "DBG_LED(0)" iocell 4 5
 set_io "ERR_LED(0)" iocell 4 6
 set_io "CAN_LED(0)" iocell 4 4
+set_io "LIM1(0)" iocell 3 5
+set_io "LIM2(0)" iocell 3 6

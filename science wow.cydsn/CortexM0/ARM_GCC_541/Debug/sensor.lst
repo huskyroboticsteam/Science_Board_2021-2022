@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
   22:sensor.c      ****         case HUMIDITY :       
   23:sensor.c      ****         break;
   24:sensor.c      ****         case TEMPERATURE :
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 2
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 2
 
 
   25:sensor.c      ****         break;
@@ -83,17 +83,17 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
   48 0006 00000000 		.4byte	.Ldebug_abbrev0
   49 000a 04       		.byte	0x4
   50 000b 01       		.uleb128 0x1
-  51 000c E0000000 		.4byte	.LASF12
+  51 000c D7000000 		.4byte	.LASF12
   52 0010 0C       		.byte	0xc
-  53 0011 D7000000 		.4byte	.LASF13
-  54 0015 0A000000 		.4byte	.LASF14
+  53 0011 CE000000 		.4byte	.LASF13
+  54 0015 52000000 		.4byte	.LASF14
   55 0019 00000000 		.4byte	.Ldebug_ranges0+0
   56 001d 00000000 		.4byte	0
   57 0021 00000000 		.4byte	.Ldebug_line0
   58 0025 02       		.uleb128 0x2
   59 0026 01       		.byte	0x1
   60 0027 06       		.byte	0x6
-  61 0028 98010000 		.4byte	.LASF0
+  61 0028 8F010000 		.4byte	.LASF0
   62 002c 03       		.uleb128 0x3
   63 002d 00000000 		.4byte	.LASF9
   64 0031 02       		.byte	0x2
@@ -102,34 +102,34 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
   67 0037 02       		.uleb128 0x2
   68 0038 01       		.byte	0x1
   69 0039 08       		.byte	0x8
-  70 003a 78000000 		.4byte	.LASF1
+  70 003a 1F000000 		.4byte	.LASF1
   71 003e 02       		.uleb128 0x2
   72 003f 02       		.byte	0x2
   73 0040 05       		.byte	0x5
-  74 0041 85010000 		.4byte	.LASF2
+  74 0041 7C010000 		.4byte	.LASF2
   75 0045 02       		.uleb128 0x2
   76 0046 02       		.byte	0x2
   77 0047 07       		.byte	0x7
-  78 0048 98000000 		.4byte	.LASF3
+  78 0048 3F000000 		.4byte	.LASF3
   79 004c 02       		.uleb128 0x2
   80 004d 04       		.byte	0x4
   81 004e 05       		.byte	0x5
-  82 004f 8F010000 		.4byte	.LASF4
+  82 004f 86010000 		.4byte	.LASF4
   83 0053 02       		.uleb128 0x2
   84 0054 04       		.byte	0x4
   85 0055 07       		.byte	0x7
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 3
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 3
 
 
-  86 0056 86000000 		.4byte	.LASF5
+  86 0056 2D000000 		.4byte	.LASF5
   87 005a 02       		.uleb128 0x2
   88 005b 08       		.byte	0x8
   89 005c 05       		.byte	0x5
-  90 005d 77010000 		.4byte	.LASF6
+  90 005d 6E010000 		.4byte	.LASF6
   91 0061 02       		.uleb128 0x2
   92 0062 08       		.byte	0x8
   93 0063 07       		.byte	0x7
-  94 0064 B8000000 		.4byte	.LASF7
+  94 0064 AF000000 		.4byte	.LASF7
   95 0068 04       		.uleb128 0x4
   96 0069 04       		.byte	0x4
   97 006a 05       		.byte	0x5
@@ -137,18 +137,18 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
   99 006f 02       		.uleb128 0x2
  100 0070 04       		.byte	0x4
  101 0071 07       		.byte	0x7
- 102 0072 AB000000 		.4byte	.LASF8
+ 102 0072 A2000000 		.4byte	.LASF8
  103 0076 03       		.uleb128 0x3
- 104 0077 CF000000 		.4byte	.LASF10
+ 104 0077 C6000000 		.4byte	.LASF10
  105 007b 03       		.byte	0x3
  106 007c 18       		.byte	0x18
  107 007d 2C000000 		.4byte	0x2c
  108 0081 02       		.uleb128 0x2
  109 0082 04       		.byte	0x4
  110 0083 07       		.byte	0x7
- 111 0084 6E010000 		.4byte	.LASF11
+ 111 0084 65010000 		.4byte	.LASF11
  112 0088 05       		.uleb128 0x5
- 113 0089 6F000000 		.4byte	.LASF15
+ 113 0089 16000000 		.4byte	.LASF15
  114 008d 01       		.byte	0x1
  115 008e 14       		.byte	0x14
  116 008f 00000000 		.4byte	.LFB0
@@ -156,7 +156,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
  118 0097 01       		.uleb128 0x1
  119 0098 9C       		.byte	0x9c
  120 0099 06       		.uleb128 0x6
- 121 009a 63000000 		.4byte	.LASF16
+ 121 009a 0A000000 		.4byte	.LASF16
  122 009e 01       		.byte	0x1
  123 009f 14       		.byte	0x14
  124 00a0 76000000 		.4byte	0x76
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
  140 0009 1B       		.uleb128 0x1b
  141 000a 0E       		.uleb128 0xe
  142 000b 55       		.uleb128 0x55
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 4
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 4
 
 
  143 000c 17       		.uleb128 0x17
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
  197 0042 19       		.uleb128 0x19
  198 0043 11       		.uleb128 0x11
  199 0044 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 5
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 5
 
 
  200 0045 12       		.uleb128 0x12
@@ -294,101 +294,101 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 1
  246 0000 5F5F7569 		.ascii	"__uint8_t\000"
  246      6E74385F 
  246      7400
- 247              	.LASF14:
- 248 000a 433A5C55 		.ascii	"C:\\Users\\mewin\\OneDrive\\Documents\\PSoC Creator"
- 248      73657273 
- 248      5C6D6577 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 6
+ 247              	.LASF16:
+ 248 000a 73656E73 		.ascii	"sensor_type\000"
+ 248      6F725F74 
+ 248      79706500 
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 6
 
 
- 248      696E5C4F 
- 248      6E654472 
- 249 0038 5C536369 		.ascii	"\\Science_Board_2021-2022\\science wow.cydsn\000"
- 249      656E6365 
- 249      5F426F61 
- 249      72645F32 
- 249      3032312D 
- 250              	.LASF16:
- 251 0063 73656E73 		.ascii	"sensor_type\000"
- 251      6F725F74 
- 251      79706500 
- 252              	.LASF15:
- 253 006f 6765745F 		.ascii	"get_data\000"
- 253      64617461 
- 253      00
- 254              	.LASF1:
- 255 0078 756E7369 		.ascii	"unsigned char\000"
- 255      676E6564 
- 255      20636861 
- 255      7200
- 256              	.LASF5:
- 257 0086 6C6F6E67 		.ascii	"long unsigned int\000"
- 257      20756E73 
- 257      69676E65 
- 257      6420696E 
- 257      7400
- 258              	.LASF3:
- 259 0098 73686F72 		.ascii	"short unsigned int\000"
- 259      7420756E 
- 259      7369676E 
- 259      65642069 
- 259      6E7400
+ 249              	.LASF15:
+ 250 0016 6765745F 		.ascii	"get_data\000"
+ 250      64617461 
+ 250      00
+ 251              	.LASF1:
+ 252 001f 756E7369 		.ascii	"unsigned char\000"
+ 252      676E6564 
+ 252      20636861 
+ 252      7200
+ 253              	.LASF5:
+ 254 002d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 254      20756E73 
+ 254      69676E65 
+ 254      6420696E 
+ 254      7400
+ 255              	.LASF3:
+ 256 003f 73686F72 		.ascii	"short unsigned int\000"
+ 256      7420756E 
+ 256      7369676E 
+ 256      65642069 
+ 256      6E7400
+ 257              	.LASF14:
+ 258 0052 433A5C55 		.ascii	"C:\\Users\\write\\Documents\\PSoC Creator\\Science_"
+ 258      73657273 
+ 258      5C777269 
+ 258      74655C44 
+ 258      6F63756D 
+ 259 0080 426F6172 		.ascii	"Board_2021-2022\\science wow.cydsn\000"
+ 259      645F3230 
+ 259      32312D32 
+ 259      3032325C 
+ 259      73636965 
  260              	.LASF8:
- 261 00ab 756E7369 		.ascii	"unsigned int\000"
+ 261 00a2 756E7369 		.ascii	"unsigned int\000"
  261      676E6564 
  261      20696E74 
  261      00
  262              	.LASF7:
- 263 00b8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 263 00af 6C6F6E67 		.ascii	"long long unsigned int\000"
  263      206C6F6E 
  263      6720756E 
  263      7369676E 
  263      65642069 
  264              	.LASF10:
- 265 00cf 75696E74 		.ascii	"uint8_t\000"
+ 265 00c6 75696E74 		.ascii	"uint8_t\000"
  265      385F7400 
  266              	.LASF13:
- 267 00d7 73656E73 		.ascii	"sensor.c\000"
+ 267 00ce 73656E73 		.ascii	"sensor.c\000"
  267      6F722E63 
  267      00
  268              	.LASF12:
- 269 00e0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 269 00d7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  269      43313120 
  269      352E342E 
  269      31203230 
  269      31363036 
- 270 0113 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccltl6J2.s 			page 7
+ 270 010a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ARM GAS  C:\Users\write\AppData\Local\Temp\cclbpTq5.s 			page 7
 
 
  270      20726576 
  270      6973696F 
  270      6E203233 
  270      37373135 
- 271 0146 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 271 013d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  271      66756E63 
  271      74696F6E 
  271      2D736563 
  271      74696F6E 
  272              	.LASF11:
- 273 016e 73697A65 		.ascii	"sizetype\000"
+ 273 0165 73697A65 		.ascii	"sizetype\000"
  273      74797065 
  273      00
  274              	.LASF6:
- 275 0177 6C6F6E67 		.ascii	"long long int\000"
+ 275 016e 6C6F6E67 		.ascii	"long long int\000"
  275      206C6F6E 
  275      6720696E 
  275      7400
  276              	.LASF2:
- 277 0185 73686F72 		.ascii	"short int\000"
+ 277 017c 73686F72 		.ascii	"short int\000"
  277      7420696E 
  277      7400
  278              	.LASF4:
- 279 018f 6C6F6E67 		.ascii	"long int\000"
+ 279 0186 6C6F6E67 		.ascii	"long int\000"
  279      20696E74 
  279      00
  280              	.LASF0:
- 281 0198 7369676E 		.ascii	"signed char\000"
+ 281 018f 7369676E 		.ascii	"signed char\000"
  281      65642063 
  281      68617200 
  282              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
