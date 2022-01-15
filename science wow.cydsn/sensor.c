@@ -16,7 +16,7 @@
 
 #define HUMIDITY (uint8_t) 0x16
 #define TEMPERATURE (uint8_t) 0x17 //wrong
-#define SPECTROMETER (uint8_t) 0x18 //wrong
+#define GAS (uint8_t) 0x18 //wrong
 
 //referenced John's past work
 void get_data(CANPacket* packet) {
@@ -30,7 +30,7 @@ void get_data(CANPacket* packet) {
         break;
         case TEMPERATURE :
         break;
-        case SPECTROMETER :
+        case GAS :
         break;
     }
     AssembleTelemetryReportPacket(&new_packet, target_group, target_serial, sensor_type, sensor_val);
@@ -39,5 +39,6 @@ void get_data(CANPacket* packet) {
         CyDelay(500);
         ERR_LED_Write(1);
 	}
+    // ADC_START, Convert, ISENDCONVERSION (use while loop), GetResult16, 
 }
 /* [] END OF FILE */

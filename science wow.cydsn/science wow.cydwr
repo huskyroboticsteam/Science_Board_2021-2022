@@ -14,14 +14,18 @@
     <Group key="Pin">
       <Data key="3dbba19d-7851-4a83-b204-a0a386fe8d68/5382e105-1382-4a2e-b9f4-3bb2feba71e0" value="I2C_Servo_sda" />
       <Data key="3dbba19d-7851-4a83-b204-a0a386fe8d68/22863ebe-a37b-476f-b252-6e49a8c00b12" value="I2C_Servo_scl" />
+      <Data key="3f204f59-8282-41b9-8e95-c56ae8f67a05" value="Humidity" />
+      <Data key="8e04208f-9879-4309-bd3b-5c704d2a2ee1" value="Gas" />
+      <Data key="9b323c85-1316-46c9-8e9b-59eb1823d8c7" value="Temp" />
+      <Data key="43db45b5-d010-43e3-80cd-9735539b1bc8/16a808f6-2e13-45b9-bce0-b001c8655113" value="ADC_SAR_Seq_1_Bypass" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="RX_1" />
       <Data key="8883325d-6fd0-4d84-bf56-a30422e219a2/5382e105-1382-4a2e-b9f4-3bb2feba71e0" value="I2C_Spectrometer_sda" />
       <Data key="8883325d-6fd0-4d84-bf56-a30422e219a2/22863ebe-a37b-476f-b252-6e49a8c00b12" value="I2C_Spectrometer_scl" />
-      <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="Lim1" />
+      <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="LIM1" />
       <Data key="a7fe6220-ad7e-4bef-8ee0-cbcc34b60f4d" value="Tx_2" />
       <Data key="a94963b1-1f41-40df-957b-9de684a05822" value="DBG_LED" />
       <Data key="aa7b3951-46cc-45cd-8703-af15b544fdcd" value="CAN_LED" />
-      <Data key="b423ae45-9981-4e41-8cc8-23bf79340c9b" value="Lim2" />
+      <Data key="b423ae45-9981-4e41-8cc8-23bf79340c9b" value="LIM2" />
       <Data key="d767c0bb-7608-4de5-9e25-353b7e0b9279" value="Rx_2" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="ERR_LED" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="TX_1" />
@@ -2105,6 +2109,21 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="3f204f59-8282-41b9-8e95-c56ae8f67a05">
+      <Group key="0">
+        <Data key="Port Format" value="2,4" />
+      </Group>
+    </Group>
+    <Group key="8e04208f-9879-4309-bd3b-5c704d2a2ee1">
+      <Group key="0">
+        <Data key="Port Format" value="2,6" />
+      </Group>
+    </Group>
+    <Group key="9b323c85-1316-46c9-8e9b-59eb1823d8c7">
+      <Group key="0">
+        <Data key="Port Format" value="2,5" />
+      </Group>
+    </Group>
     <Group key="8883325d-6fd0-4d84-bf56-a30422e219a2/5382e105-1382-4a2e-b9f4-3bb2feba71e0">
       <Group key="0">
         <Data key="Port Format" value="6,1" />

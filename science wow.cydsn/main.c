@@ -24,6 +24,7 @@ int main(void)
     //CyGlobalIntEnable; /* Enable global interrupts. */
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
+   
     //SCP_1_Start();
     for(;;)
     {
