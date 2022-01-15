@@ -46,13 +46,13 @@ int main(void)
                     }
                     break;
                 case SENSOR_PULL_ID : //sensor pull
-                    //packet will only have 1 piece of data so just use dot operator, no function exists
                     {
                         CAN_LED_Write(1);
                         CyDelay(500);
                         CAN_LED_Write(0);                        
-                        uint8_t sensor_type = DecodeTelemetryType(current);
-                        get_data(sensor_type);
+                        //uint8_t sensor_type = DecodeTelemetryType(current);
+                        
+                        get_data(current);
                         //fetch sensor data with ADC method call and sensor read
                     }
                     break;

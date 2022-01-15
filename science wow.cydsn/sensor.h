@@ -10,5 +10,8 @@
  * ========================================
 */
 #include <stdint.h>
-void get_data(uint8_t sensor_type);
+#include "CANLibrary.h"
+#include "CANScience.h"
+
+void get_data(CANPacket* packet);
 /* [] END OF FILE */
