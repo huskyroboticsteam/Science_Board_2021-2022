@@ -1,0 +1,11 @@
+--------------- Rebuild Started: 01/18/2022 21:25:48 Project: sensor.c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/sensor.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c sensor.c -o .\CortexM0\ARM_GCC_541\Debug\sensor.o
+sensor.c:47:9: error: conflicting types for 'read_ADC'
+ int16_t read_ADC(uint32 channel) {
+         ^
+In file included from sensor.c:15:0:
+sensor.h:18:10: note: previous declaration of 'read_ADC' was here
+ uint16_t read_ADC(uint32_t channel);
+          ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 01/18/2022 21:25:48 ---------------

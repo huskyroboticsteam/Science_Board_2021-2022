@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Jan 15 2022 13:05:30
+#File Generated:     Jan 18 2022 19:13:24
 
 #Purpose:            
 
@@ -54,7 +54,7 @@ Design Statistics after Packing
 
 Device Utilization Summary after Packing
     Macrocells                  :	24/64
-    UDBS                        :	5/8
+    UDBS                        :	4/8
     IOs                         :	17/76
 
 
@@ -76,20 +76,18 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
-Clock: ADC_intClock         | Frequency: N/A       | Target:   9.6 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   9.6 MHz
+Number of clocks: 11
+Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: CyHFClk              | Frequency:  45.9 MHz | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
-Clock: Debug_IntClock       | Frequency:  40.3 MHz | Target:   0.5 MHz
+Clock: Debug_IntClock       | Frequency:  41.7 MHz | Target:   0.5 MHz
 Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
 Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -128,9 +126,9 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
-Clock: ADC_intClock         | Frequency: N/A       | Target:   9.6 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   9.6 MHz
+Number of clocks: 11
+Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: CyHFClk              | Frequency:   2.4 MHz | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -140,8 +138,6 @@ Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
 Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
 Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -160,9 +156,9 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
-Clock: ADC_intClock         | Frequency: N/A       | Target:   9.6 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   9.6 MHz
+Number of clocks: 11
+Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: CyHFClk              | Frequency:   2.4 MHz | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -172,8 +168,6 @@ Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
 Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
 Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -185,25 +179,23 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
-Clock: ADC_intClock         | Frequency: N/A       | Target:   9.6 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   9.6 MHz
-Clock: CyHFClk              | Frequency:   2.5 MHz | Target:  48.0 MHz
+Number of clocks: 11
+Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
+Clock: CyHFClk              | Frequency:   2.4 MHz | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
-Clock: Debug_IntClock       | Frequency:   2.5 MHz | Target:   0.5 MHz
+Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
 Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
 Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.3 (sec)
+D2088: Phase 7, elapsed time : 0.1 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	8
@@ -233,20 +225,18 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
-Clock: ADC_intClock         | Frequency: N/A       | Target:   9.6 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   9.6 MHz
-Clock: CyHFClk              | Frequency:   2.6 MHz | Target:  48.0 MHz
+Number of clocks: 11
+Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
+Clock: CyHFClk              | Frequency:   2.4 MHz | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
-Clock: Debug_IntClock       | Frequency:   2.6 MHz | Target:   0.5 MHz
+Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
 Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
 Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Spectrometer_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary

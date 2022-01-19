@@ -1,19 +1,14 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
+/* File:         main.c
+ * Authors:      Oliver Huang, Jordan Smith.
+ * Organization: Husky Robotics Team
+ * Firmware for Science Sensors Board (2022)
+ */
 #include "project.h"
 #include "CANLibrary.h"
 #include "CANScience.h"
 #include "sensor.h"
 #include <stdint.h>
+
 
 #define SERVO_SET_ID 0x0D
 #define SENSOR_PULL_ID 0xF5
@@ -21,10 +16,10 @@
 
 int main(void)
 {
-    //CyGlobalIntEnable; /* Enable global interrupts. */
+    CyGlobalIntEnable;
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
-   
+    ADC_Start();
     //SCP_1_Start();
     for(;;)
     {
@@ -50,14 +45,11 @@ int main(void)
                     {
                         CAN_LED_Write(1);
                         CyDelay(500);
-                        CAN_LED_Write(0);                        
-                        //uint8_t sensor_type = DecodeTelemetryType(current);
-                        
-                        get_data(current);
-                        //fetch sensor data with ADC method call and sensor read
+                        CAN_LED_Write(0);
+                        get_data(current); //fetch sensor data with ADC read & send new Telemetry Packet to CAN
                     }
                     break;
-                default : 
+                default :
                     ERR_LED_Write(0);
                     CyDelay(500);
                     ERR_LED_Write(1);
