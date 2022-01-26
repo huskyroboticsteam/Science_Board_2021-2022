@@ -24188,7 +24188,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>I2C_Servo</name>
+      <name>I2C</name>
       <description>Serial Communication Block</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>

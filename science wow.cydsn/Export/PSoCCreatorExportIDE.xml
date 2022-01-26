@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="science wow" Path="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" Version="6.0" Type="Normal">
+  <Project Name="science wow" Path="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" Version="6.0" Type="Normal">
     <CMSIS_SVD_File>science wow.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,8 +34,8 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC4\Cm0Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="STRICT" Path="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn">
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">PortPSOC_CY8C4248AZI_L485.c</File>
           <File BuildType="BUILD" Toolchain="">CANCommon.c</File>
@@ -46,6 +46,7 @@
           <File BuildType="BUILD" Toolchain="">CANPower.c</File>
           <File BuildType="BUILD" Toolchain="">CANScience.c</File>
           <File BuildType="BUILD" Toolchain="">sensor.c</File>
+          <File BuildType="BUILD" Toolchain="">PCA9685.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">CANCommon.h</File>
           <File BuildType="BUILD" Toolchain="">CANGPIO.h</File>
@@ -57,10 +58,11 @@
           <File BuildType="BUILD" Toolchain="">CANScience.h</File>
           <File BuildType="BUILD" Toolchain="">CANSerialNumbers.h</File>
           <File BuildType="BUILD" Toolchain="">sensor.h</File>
+          <File BuildType="BUILD" Toolchain="">PCA9685.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\Generated_Source\PSoC4">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\Generated_Source\PSoC4">
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cymetadata.c</File>
@@ -115,36 +117,11 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cycodeshareimport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cycodeshareexport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cycodeshareimport.scat</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_I2C.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_I2C_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_I2C.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_I2C_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_I2C_MASTER.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_PINS.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_I2C_PVT.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_PVT.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_BOOT.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug_INT.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_SCBCLK.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_SCBCLK.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_sda.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_sda.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_sda_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_sda_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_scl.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_scl.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_scl_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_scl_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_SCB_IRQ.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_Servo_SCB_IRQ.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug_IntClock.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debug_IntClock.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\DBG_LED.c</File>
@@ -203,37 +180,62 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C_MASTER.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_PINS.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_BOOT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCBCLK.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCBCLK.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_sda.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_sda.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_sda_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_sda_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_scl.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_scl.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_scl_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_scl_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCB_IRQ.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCB_IRQ.h</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0p">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM4">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM7">
-        <Files Root="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
+        <Files Root="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn" />
       </Folder>
     </Folders>
   </Project>

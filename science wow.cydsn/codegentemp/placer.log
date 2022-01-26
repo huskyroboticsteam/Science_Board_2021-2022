@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Jan 18 2022 19:13:24
+#File Generated:     Jan 25 2022 18:30:31
 
 #Purpose:            
 
@@ -86,8 +86,8 @@ Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:  41.7 MHz | Target:   0.5 MHz
-Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK           | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK(FFB)      | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -136,8 +136,8 @@ Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
-Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK           | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK(FFB)      | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -166,14 +166,14 @@ Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
-Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK           | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK(FFB)      | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.0 (sec)
+D2088: Phase 6, elapsed time : 0.1 (sec)
 
 Phase 7
 ######################################################################
@@ -189,13 +189,13 @@ Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
-Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK           | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK(FFB)      | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.1 (sec)
+D2088: Phase 7, elapsed time : 0.2 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	8
@@ -235,8 +235,8 @@ Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
 Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
 Clock: Debug_IntClock       | Frequency:   2.4 MHz | Target:   0.5 MHz
-Clock: I2C_Servo_SCBCLK     | Frequency: N/A       | Target:   1.6 MHz
-Clock: I2C_Servo_SCBCLK(FFB) | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK           | Frequency: N/A       | Target:   1.6 MHz
+Clock: I2C_SCBCLK(FFB)      | Frequency: N/A       | Target:   1.6 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -247,5 +247,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.8 sec.
+I2076: Total run-time: 1.6 sec.
 

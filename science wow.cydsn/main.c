@@ -8,6 +8,7 @@
 #include "CANScience.h"
 #include "sensor.h"
 #include <stdint.h>
+#include "PCA9685.h"
 
 
 #define SERVO_SET_ID 0x0D
@@ -37,8 +38,8 @@ int main(void)
                         CAN_LED_Write(0);
                         uint8_t servoID = GetScienceServoIDFromPacket(current);
                         uint8_t angle = GetScienceServoAngleFromPacket(current);
-                        //send this stuff to i2c
-                        
+                        //setPWMFromDutyCycle(servoID, Angle Math);
+                      
                     }
                     break;
                 case SENSOR_PULL_ID : //sensor pull
