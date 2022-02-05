@@ -15,6 +15,12 @@
 #define TEMPERATURE (uint8_t) 0x17 //wrong
 #define GAS (uint8_t) 0x18 //wrong
 
+#define VEML6070_ADDR_ARA 0x18
+#define VEML6070_ADDR_CMD 0x70
+#define VEML6070_ADDR_DATA_LSB 0x71
+#define VEML6070_ADDR_DATA_MSB 0x73
+
+
 //referenced John's past work
 void get_data(CANPacket* packet) {
     CANPacket new_packet;
@@ -51,9 +57,33 @@ uint16_t read_ADC(uint32_t channel) {
 }
 
 
+
+
+//void VEML6070_init(){
+//	wdt_reset();
+//	VEML6070_read_byte(VEML6070_ADDR_ARA);
+//	VEML6070_write_byte(VEML6070_ADDR_CMD, 0x04); //Integration time = 1 //Possibly 06
+//}
+
+uint16_t read_uv_sensor(){
+	uint8_t lsb;
+    uint8_t msb;
+    uint8_t lsberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_LSB, &lsb, 1);
+	uint8_t msberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_MSB, &msb, 1);
+    
+    if (lsberror != I2C_I2C_MSTR_NO_ERROR || msberror != I2C_I2C_MSTR_NO_ERROR){
+        ERR_LED_Write(0);
+        CyDelay(500);
+        ERR_LED_Write(1);
+    }
+	return (msb << 8) | lsb;
+}
+
+
+
 //yoinked from davis
 //read byte(s) from i2C and store in array
-uint8_t BNO055_I2C_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
+uint8_t I2C_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
 {
     I2C_I2CMasterClearStatus(); //clear the garbage
   
