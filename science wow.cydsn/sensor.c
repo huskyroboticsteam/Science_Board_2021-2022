@@ -29,6 +29,8 @@ void get_data(CANPacket* packet) {
         case TEMPERATURE :
             sensor_val = read_ADC(1); 
             break;
+        case CAN_SCIENCE_SENSOR_UV :
+            break;
     }
     //assemble and send telemetry packet
     AssembleTelemetryReportPacket(&new_packet, target_group, target_serial, sensor_type, sensor_val);
@@ -37,7 +39,8 @@ void get_data(CANPacket* packet) {
 		ERR_LED_Write(0);
         CyDelay(500);
         ERR_LED_Write(1);
-	} 
+	}
+    
 }
 
 uint16_t read_ADC(uint32_t channel) {
@@ -46,4 +49,40 @@ uint16_t read_ADC(uint32_t channel) {
     ADC_StopConvert();
     return ADC_GetResult16(channel); //channel 0 for humidity and 1 for temperature
 }
+
+
+//yoinked from davis
+//read byte(s) from i2C and store in array
+uint8_t BNO055_I2C_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
+{
+    I2C_I2CMasterClearStatus(); //clear the garbage
+  
+    int ms_timeout = 20; 
+    int32_t BNO055_iERROR = 0; // this is the "status" we usually use in our R/W functions 
+	uint8_t idx;
+	BNO055_iERROR = I2C_I2CMasterSendStart(dev_addr, I2C_I2C_WRITE_XFER_MODE, ms_timeout);
+	// Check for BNO055_iERROR before proceeding
+	BNO055_iERROR = I2C_I2CMasterWriteByte(reg_addr, ms_timeout);
+	// Check for BNO055_iERROR before proceeding
+	BNO055_iERROR = I2C_I2CMasterSendStop(10);
+	
+	BNO055_iERROR = I2C_I2CMasterSendStart(dev_addr, I2C_I2C_READ_XFER_MODE, ms_timeout);
+    //PrintInt(BNO055_iERROR);
+	for (idx = 0; (idx < cnt) && (BNO055_iERROR == 0); idx++)
+	{
+        if (idx < cnt-1)
+        {
+		    I2C_I2CMasterReadByte(I2C_I2C_ACK_DATA, &reg_data[idx], ms_timeout);
+        }
+        else
+        {
+            I2C_I2CMasterReadByte(I2C_I2C_NAK_DATA, &reg_data[idx], ms_timeout);
+        }
+	}
+	// Check for BNO055_iERROR before proceeding
+	BNO055_iERROR = I2C_I2CMasterSendStop(ms_timeout);
+
+	return (int8_t)BNO055_iERROR;
+}
+
 /* [] END OF FILE */

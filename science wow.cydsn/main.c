@@ -9,7 +9,7 @@
 #include "sensor.h"
 #include <stdint.h>
 #include "PCA9685.h"
-
+#include "servo.h"
 
 #define SERVO_SET_ID 0x0D
 #define SENSOR_PULL_ID 0xF5
@@ -21,6 +21,7 @@ int main(void)
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
     ADC_Start();
+    pca_init();
     //SCP_1_Start();
     for(;;)
     {
@@ -38,8 +39,7 @@ int main(void)
                         CAN_LED_Write(0);
                         uint8_t servoID = GetScienceServoIDFromPacket(current);
                         uint8_t angle = GetScienceServoAngleFromPacket(current);
-                        //setPWMFromDutyCycle(servoID, Angle Math);
-                      
+                        set_servo_position(servoID, angle);
                     }
                     break;
                 case SENSOR_PULL_ID : //sensor pull
@@ -55,6 +55,7 @@ int main(void)
                     CyDelay(500);
                     ERR_LED_Write(1);
                     break;
+                    
             }
         }
     }
