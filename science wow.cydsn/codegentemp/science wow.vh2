@@ -2,7 +2,7 @@
 --	Conversion of science wow.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat Feb 05 14:20:53 2022
+--	Sat Feb 12 13:54:22 2022
 --
 
 USE cypress.cypress.all;
@@ -1743,7 +1743,7 @@ LIM1:cy_psoc3_pins_v1_10
 		input_sync=>"0",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
-		intr_mode=>"00",
+		intr_mode=>"10",
 		invert_in_clock=>'0',
 		invert_in_clock_en=>'0',
 		invert_in_reset=>'0',

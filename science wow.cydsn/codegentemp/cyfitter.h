@@ -917,6 +917,7 @@
 #define LIM1__PORT 3u
 #define LIM1__PS CYREG_GPIO_PRT3_PS
 #define LIM1__SHIFT 1u
+#define LIM1__SNAP CYREG_GPIO_PRT3_INTR
 
 /* LIM2 */
 #define LIM2__0__DR CYREG_GPIO_PRT3_DR

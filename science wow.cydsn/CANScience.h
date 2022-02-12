@@ -36,4 +36,7 @@ uint8_t GetScienceServoIDFromPacket(CANPacket *packet);
 
 uint8_t GetScienceServoAngleFromPacket(CANPacket *packet);
 
+uint8_t GetScienceServoDirectionFromPacket(CANPacket *packet);
+
+uint8_t GetScienceServoSpeedFromPacket(CANPacket *packet);
 #endif

@@ -53,4 +53,11 @@ uint8_t GetScienceServoIDFromPacket(CANPacket *packet){
 	return packet->data[1];
 }
 
+uint8_t GetScienceServoSpeedFromPacket(CANPacket *packet){
+	return packet->data[2];
+}
+
+uint8_t GetScienceServoDirectionFromPacket(CANPacket *packet){
+	return packet->data[3];
+}
 

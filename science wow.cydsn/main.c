@@ -14,6 +14,7 @@
 #define SERVO_SET_ID 0x0D
 #define SENSOR_PULL_ID 0xF5
 #define LED_COLOR_ID 0xF7
+#define SERVO_CONTINOUS_ID 0x0E
 
 int main(void)
 {
@@ -42,6 +43,16 @@ int main(void)
                         set_servo_position(servoID, angle);
                     }
                     break;
+                case SERVO_CONTINOUS_ID :
+                    {
+                        CAN_LED_Write(1);
+                        CyDelay(500);
+                        CAN_LED_Write(0);
+                        uint8_t servoID = GetScienceServoIDFromPacket(current);
+                        uint8_t speed = GetScienceServoSpeedFromPacket(current);
+                        uint8_t direction = GetScienceServoDirectionFromPacket(current);
+                        set_servo_continuous(servoID, direction, speed);
+                    }
                 case SENSOR_PULL_ID : //sensor pull
                     {
                         CAN_LED_Write(1);
@@ -59,6 +70,7 @@ int main(void)
             }
         }
     }
+    
 }
 
 /* [] END OF FILE */

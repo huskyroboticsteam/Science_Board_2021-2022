@@ -1,5 +1,5 @@
 -- Project:   C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj
--- Generated: 02/05/2022 14:21:03
+-- Generated: 02/12/2022 13:54:32
 -- PSoC Creator  4.4
 
 ENTITY \science wow\ IS
@@ -1565,7 +1565,7 @@ BEGIN
             input_clk_en => 0,
             input_sync => "0",
             input_sync_mode => "0",
-            intr_mode => "00",
+            intr_mode => "10",
             invert_in_clock => 0,
             invert_in_clock_en => 0,
             invert_in_reset => 0,
