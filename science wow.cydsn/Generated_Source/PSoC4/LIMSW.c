@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LIM2.c  
+* File Name: LIMSW.c  
 * Version 2.20
 *
 * Description:
@@ -13,35 +13,35 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "LIM2.h"
+#include "LIMSW.h"
 
 
-#if defined(LIM2__PC)
-    #define LIM2_SetP4PinDriveMode(shift, mode)  \
+#if defined(LIMSW__PC)
+    #define LIMSW_SetP4PinDriveMode(shift, mode)  \
     do { \
-        LIM2_PC =   (LIM2_PC & \
-                                (uint32)(~(uint32)(LIM2_DRIVE_MODE_IND_MASK << \
-                                (LIM2_DRIVE_MODE_BITS * (shift))))) | \
+        LIMSW_PC =   (LIMSW_PC & \
+                                (uint32)(~(uint32)(LIMSW_DRIVE_MODE_IND_MASK << \
+                                (LIMSW_DRIVE_MODE_BITS * (shift))))) | \
                                 (uint32)((uint32)(mode) << \
-                                (LIM2_DRIVE_MODE_BITS * (shift))); \
+                                (LIMSW_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 #else
     #if (CY_PSOC4_4200L)
-        #define LIM2_SetP4PinDriveMode(shift, mode)  \
+        #define LIMSW_SetP4PinDriveMode(shift, mode)  \
         do { \
-            LIM2_USBIO_CTRL_REG = (LIM2_USBIO_CTRL_REG & \
-                                    (uint32)(~(uint32)(LIM2_DRIVE_MODE_IND_MASK << \
-                                    (LIM2_DRIVE_MODE_BITS * (shift))))) | \
+            LIMSW_USBIO_CTRL_REG = (LIMSW_USBIO_CTRL_REG & \
+                                    (uint32)(~(uint32)(LIMSW_DRIVE_MODE_IND_MASK << \
+                                    (LIMSW_DRIVE_MODE_BITS * (shift))))) | \
                                     (uint32)((uint32)(mode) << \
-                                    (LIM2_DRIVE_MODE_BITS * (shift))); \
+                                    (LIMSW_DRIVE_MODE_BITS * (shift))); \
         } while (0)
     #endif
 #endif
   
 
-#if defined(LIM2__PC) || (CY_PSOC4_4200L) 
+#if defined(LIMSW__PC) || (CY_PSOC4_4200L) 
     /*******************************************************************************
-    * Function Name: LIM2_SetDriveMode
+    * Function Name: LIMSW_SetDriveMode
     ****************************************************************************//**
     *
     * \brief Sets the drive mode for each of the Pins component's pins.
@@ -67,17 +67,17 @@
     *  APIs (primary method) or disable interrupts around this function.
     *
     * \funcusage
-    *  \snippet LIM2_SUT.c usage_LIM2_SetDriveMode
+    *  \snippet LIMSW_SUT.c usage_LIMSW_SetDriveMode
     *******************************************************************************/
-    void LIM2_SetDriveMode(uint8 mode)
+    void LIMSW_SetDriveMode(uint8 mode)
     {
-		LIM2_SetP4PinDriveMode(LIM2__0__SHIFT, mode);
+		LIMSW_SetP4PinDriveMode(LIMSW__0__SHIFT, mode);
     }
 #endif
 
 
 /*******************************************************************************
-* Function Name: LIM2_Write
+* Function Name: LIMSW_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -106,18 +106,18 @@
 *  this function.
 *
 * \funcusage
-*  \snippet LIM2_SUT.c usage_LIM2_Write
+*  \snippet LIMSW_SUT.c usage_LIMSW_Write
 *******************************************************************************/
-void LIM2_Write(uint8 value)
+void LIMSW_Write(uint8 value)
 {
-    uint8 drVal = (uint8)(LIM2_DR & (uint8)(~LIM2_MASK));
-    drVal = (drVal | ((uint8)(value << LIM2_SHIFT) & LIM2_MASK));
-    LIM2_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(LIMSW_DR & (uint8)(~LIMSW_MASK));
+    drVal = (drVal | ((uint8)(value << LIMSW_SHIFT) & LIMSW_MASK));
+    LIMSW_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: LIM2_Read
+* Function Name: LIMSW_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -131,16 +131,16 @@ void LIM2_Write(uint8 value)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet LIM2_SUT.c usage_LIM2_Read  
+*  \snippet LIMSW_SUT.c usage_LIMSW_Read  
 *******************************************************************************/
-uint8 LIM2_Read(void)
+uint8 LIMSW_Read(void)
 {
-    return (uint8)((LIM2_PS & LIM2_MASK) >> LIM2_SHIFT);
+    return (uint8)((LIMSW_PS & LIMSW_MASK) >> LIMSW_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: LIM2_ReadDataReg
+* Function Name: LIMSW_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -149,8 +149,8 @@ uint8 LIM2_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred LIM2_Read() API because the 
-* LIM2_ReadDataReg() reads the data register instead of the status 
+* preferred LIMSW_Read() API because the 
+* LIMSW_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -159,16 +159,16 @@ uint8 LIM2_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet LIM2_SUT.c usage_LIM2_ReadDataReg 
+*  \snippet LIMSW_SUT.c usage_LIMSW_ReadDataReg 
 *******************************************************************************/
-uint8 LIM2_ReadDataReg(void)
+uint8 LIMSW_ReadDataReg(void)
 {
-    return (uint8)((LIM2_DR & LIM2_MASK) >> LIM2_SHIFT);
+    return (uint8)((LIMSW_DR & LIMSW_MASK) >> LIMSW_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: LIM2_SetInterruptMode
+* Function Name: LIMSW_SetInterruptMode
 ****************************************************************************//**
 *
 * \brief Configures the interrupt mode for each of the Pins component's
@@ -181,12 +181,12 @@ uint8 LIM2_ReadDataReg(void)
 * \param position
 *  The pin position as listed in the Pins component. You may OR these to be 
 *  able to configure the interrupt mode of multiple pins within a Pins 
-*  component. Or you may use LIM2_INTR_ALL to configure the
+*  component. Or you may use LIMSW_INTR_ALL to configure the
 *  interrupt mode of all the pins in the Pins component.       
-*  - LIM2_0_INTR       (First pin in the list)
-*  - LIM2_1_INTR       (Second pin in the list)
+*  - LIMSW_0_INTR       (First pin in the list)
+*  - LIMSW_1_INTR       (Second pin in the list)
 *  - ...
-*  - LIM2_INTR_ALL     (All pins in Pins component)
+*  - LIMSW_INTR_ALL     (All pins in Pins component)
 *
 * \param mode
 *  Interrupt mode for the selected pins. Valid options are documented in
@@ -202,19 +202,19 @@ uint8 LIM2_ReadDataReg(void)
 *  port.
 *
 * \funcusage
-*  \snippet LIM2_SUT.c usage_LIM2_SetInterruptMode
+*  \snippet LIMSW_SUT.c usage_LIMSW_SetInterruptMode
 *******************************************************************************/
-void LIM2_SetInterruptMode(uint16 position, uint16 mode)
+void LIMSW_SetInterruptMode(uint16 position, uint16 mode)
 {
     uint32 intrCfg;
     
-    intrCfg =  LIM2_INTCFG & (uint32)(~(uint32)position);
-    LIM2_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+    intrCfg =  LIMSW_INTCFG & (uint32)(~(uint32)position);
+    LIMSW_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
 }
 
 
 /*******************************************************************************
-* Function Name: LIM2_ClearInterrupt
+* Function Name: LIMSW_ClearInterrupt
 ****************************************************************************//**
 *
 * \brief Clears any active interrupts attached with the component and returns 
@@ -231,13 +231,13 @@ void LIM2_SetInterruptMode(uint16 position, uint16 mode)
 *  those associated with the Pins component.
 *
 * \funcusage
-*  \snippet LIM2_SUT.c usage_LIM2_ClearInterrupt
+*  \snippet LIMSW_SUT.c usage_LIMSW_ClearInterrupt
 *******************************************************************************/
-uint8 LIM2_ClearInterrupt(void)
+uint8 LIMSW_ClearInterrupt(void)
 {
-	uint8 maskedStatus = (uint8)(LIM2_INTSTAT & LIM2_MASK);
-	LIM2_INTSTAT = maskedStatus;
-    return maskedStatus >> LIM2_SHIFT;
+	uint8 maskedStatus = (uint8)(LIMSW_INTSTAT & LIMSW_MASK);
+	LIMSW_INTSTAT = maskedStatus;
+    return maskedStatus >> LIMSW_SHIFT;
 }
 
 

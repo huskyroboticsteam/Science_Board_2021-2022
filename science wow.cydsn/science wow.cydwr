@@ -12,9 +12,9 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
-      <Data key="0f9a1003-45e5-4272-8b48-43abf973b4e1" value="LIM3" />
-      <Data key="3dbba19d-7851-4a83-b204-a0a386fe8d68/5382e105-1382-4a2e-b9f4-3bb2feba71e0" value="I2C_Servo_sda" />
-      <Data key="3dbba19d-7851-4a83-b204-a0a386fe8d68/22863ebe-a37b-476f-b252-6e49a8c00b12" value="I2C_Servo_scl" />
+      <Data key="0f9a1003-45e5-4272-8b48-43abf973b4e1" value="LIMSW" />
+      <Data key="3dbba19d-7851-4a83-b204-a0a386fe8d68/5382e105-1382-4a2e-b9f4-3bb2feba71e0" value="I2C_sda" />
+      <Data key="3dbba19d-7851-4a83-b204-a0a386fe8d68/22863ebe-a37b-476f-b252-6e49a8c00b12" value="I2C_scl" />
       <Data key="3f204f59-8282-41b9-8e95-c56ae8f67a05" value="Humidity" />
       <Data key="8e04208f-9879-4309-bd3b-5c704d2a2ee1" value="Gas" />
       <Data key="9b323c85-1316-46c9-8e9b-59eb1823d8c7" value="Temp" />
@@ -2114,7 +2114,7 @@
   <Group key="Pin2">
     <Group key="0f9a1003-45e5-4272-8b48-43abf973b4e1">
       <Group key="0">
-        <Data key="Port Format" value="3,5" />
+        <Data key="Port Format" value="3,1" />
       </Group>
     </Group>
     <Group key="3f204f59-8282-41b9-8e95-c56ae8f67a05">
@@ -2129,7 +2129,7 @@
     </Group>
     <Group key="7104d9e0-d0b9-45a8-a410-d2f37e5aa8e1">
       <Group key="0">
-        <Data key="Port Format" value="3,7" />
+        <Data key="Port Format" value="5,3" />
       </Group>
     </Group>
     <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">

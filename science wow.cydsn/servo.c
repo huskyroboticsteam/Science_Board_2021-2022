@@ -46,5 +46,7 @@ void set_servo_position(int servo, int degrees){
 	setPWMFromDutyCycle(servo, offset + (degrees * scalar) / divisor);
 }
 
-void set_servo_continuous(int servoID, int direction, int speed){};
+void set_servo_continuous(int servoID, int direction, int speed){
+//stable is 1.5, so use given direction and speed to determine what pulse length to use
+    };
 /* [] END OF FILE */

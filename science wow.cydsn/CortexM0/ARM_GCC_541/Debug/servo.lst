@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
   35              		.cfi_def_cfa_offset 8
   36              		.cfi_offset 4, -8
   37              		.cfi_offset 14, -4
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 2
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 2
 
 
   38 0002 0400     		movs	r4, r0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
   66 0024 6631     		adds	r1, r1, #102
   67 0026 2000     		movs	r0, r4
   68 0028 FFF7FEFF 		bl	setPWMFromDutyCycle
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 3
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 3
 
 
   69              	.LVL7:
@@ -140,14 +140,16 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
   84              	set_servo_continuous:
   85              	.LFB35:
   48:servo.c       **** 
-  49:servo.c       **** void set_servo_continuous(int servoID, int direction, int speed){};
+  49:servo.c       **** void set_servo_continuous(int servoID, int direction, int speed){
   86              		.loc 1 49 0
   87              		.cfi_startproc
   88              		@ args = 0, pretend = 0, frame = 0
   89              		@ frame_needed = 0, uses_anonymous_args = 0
   90              		@ link register save eliminated.
   91              	.LVL9:
-  92              		.loc 1 49 0
+  50:servo.c       **** //stable is 1.5, so use given direction and speed to determine what pulse length to use
+  51:servo.c       ****     };
+  92              		.loc 1 51 0
   93              		@ sp needed
   94 0000 7047     		bx	lr
   95              		.cfi_endproc
@@ -176,11 +178,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  118 0028 C5010000 		.4byte	.LASF0
  119 002c 02       		.uleb128 0x2
  120 002d 01       		.byte	0x1
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 4
+
+
  121 002e 08       		.byte	0x8
  122 002f 80000000 		.4byte	.LASF1
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 4
-
-
  123 0033 02       		.uleb128 0x2
  124 0034 02       		.byte	0x2
  125 0035 05       		.byte	0x5
@@ -236,11 +238,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  175 008e 04       		.uleb128 0x4
  176 008f 65000000 		.4byte	.LASF19
  177 0093 01       		.byte	0x1
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 5
+
+
  178 0094 14       		.byte	0x14
  179 0095 00000000 		.4byte	.LFB34
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 5
-
-
  180 0099 2E000000 		.4byte	.LFE34-.LFB34
  181 009d 01       		.uleb128 0x1
  182 009e 9C       		.byte	0x9c
@@ -296,11 +298,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  232 010f 9C       		.byte	0x9c
  233 0110 3C010000 		.4byte	0x13c
  234 0114 0A       		.uleb128 0xa
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 6
+
+
  235 0115 AC000000 		.4byte	.LASF21
  236 0119 01       		.byte	0x1
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 6
-
-
  237 011a 31       		.byte	0x31
  238 011b 5D000000 		.4byte	0x5d
  239 011f 01       		.uleb128 0x1
@@ -356,11 +358,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  289 0019 0B       		.uleb128 0xb
  290 001a 03       		.uleb128 0x3
  291 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 7
+
+
  292 001c 00       		.byte	0
  293 001d 00       		.byte	0
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 7
-
-
  294 001e 03       		.uleb128 0x3
  295 001f 24       		.uleb128 0x24
  296 0020 00       		.byte	0
@@ -416,11 +418,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  346 0053 34       		.uleb128 0x34
  347 0054 00       		.byte	0
  348 0055 03       		.uleb128 0x3
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 8
+
+
  349 0056 0E       		.uleb128 0xe
  350 0057 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 8
-
-
  351 0058 0B       		.uleb128 0xb
  352 0059 3B       		.uleb128 0x3b
  353 005a 0B       		.uleb128 0xb
@@ -476,11 +478,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  403 0092 0A       		.uleb128 0xa
  404 0093 05       		.uleb128 0x5
  405 0094 00       		.byte	0
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 9
+
+
  406 0095 03       		.uleb128 0x3
  407 0096 0E       		.uleb128 0xe
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 9
-
-
  408 0097 3A       		.uleb128 0x3a
  409 0098 0B       		.uleb128 0xb
  410 0099 3B       		.uleb128 0x3b
@@ -536,11 +538,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  460 0036 51       		.byte	0x51
  461 0037 0A000000 		.4byte	.LVL1
  462 003b 18000000 		.4byte	.LVL5
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 10
+
+
  463 003f 0100     		.2byte	0x1
  464 0041 51       		.byte	0x51
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 10
-
-
  465 0042 00000000 		.4byte	0
  466 0046 00000000 		.4byte	0
  467              	.LLST2:
@@ -596,11 +598,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  517              	.Ldebug_line0:
  518 0000 57000000 		.section	.debug_str,"MS",%progbits,1
  518      02002B00 
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 11
+
+
  518      00000201 
  518      FB0E0D00 
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 11
-
-
  518      01010101 
  519              	.LASF20:
  520 0000 7365745F 		.ascii	"set_servo_continuous\000"
@@ -656,11 +658,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  540      6F00
  541              	.LASF4:
  542 009a 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 12
+
+
  542      20696E74 
  542      00
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 12
-
-
  543              	.LASF9:
  544 00a3 73697A65 		.ascii	"sizetype\000"
  544      74797065 
@@ -716,11 +718,11 @@ ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 1
  562              	.LASF0:
  563 01c5 7369676E 		.ascii	"signed char\000"
  563      65642063 
+ARM GAS  C:\Users\write\AppData\Local\Temp\ccd5TKMh.s 			page 13
+
+
  563      68617200 
  564              	.LASF13:
-ARM GAS  C:\Users\write\AppData\Local\Temp\ccEiQFU3.s 			page 13
-
-
  565 01d1 6C6F6E67 		.ascii	"long double\000"
  565      20646F75 
  565      626C6500 

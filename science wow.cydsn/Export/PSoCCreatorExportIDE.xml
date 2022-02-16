@@ -138,14 +138,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CAN_LED.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CAN_LED_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CAN_LED_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM2_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_PM.c</File>
@@ -170,18 +162,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CAN_TX.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CAN_TX_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CAN_TX_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM4.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM4.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM4_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM4_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIM5_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_I2C.h</File>
@@ -207,6 +187,12 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_scl_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCB_IRQ.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCB_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIMSW.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIMSW.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIMSW_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIMSW_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIMSW_intr.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LIMSW_intr.h</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

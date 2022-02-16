@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LIM3.h  
+* File Name: LIMSW.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_LIM3_ALIASES_H) /* Pins LIM3_ALIASES_H */
-#define CY_PINS_LIM3_ALIASES_H
+#if !defined(CY_PINS_LIMSW_ALIASES_H) /* Pins LIMSW_ALIASES_H */
+#define CY_PINS_LIMSW_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -26,17 +26,17 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define LIM3_0			(LIM3__0__PC)
-#define LIM3_0_PS		(LIM3__0__PS)
-#define LIM3_0_PC		(LIM3__0__PC)
-#define LIM3_0_DR		(LIM3__0__DR)
-#define LIM3_0_SHIFT	(LIM3__0__SHIFT)
-#define LIM3_0_INTR	((uint16)((uint16)0x0003u << (LIM3__0__SHIFT*2u)))
+#define LIMSW_0			(LIMSW__0__PC)
+#define LIMSW_0_PS		(LIMSW__0__PS)
+#define LIMSW_0_PC		(LIMSW__0__PC)
+#define LIMSW_0_DR		(LIMSW__0__DR)
+#define LIMSW_0_SHIFT	(LIMSW__0__SHIFT)
+#define LIMSW_0_INTR	((uint16)((uint16)0x0003u << (LIMSW__0__SHIFT*2u)))
 
-#define LIM3_INTR_ALL	 ((uint16)(LIM3_0_INTR))
+#define LIMSW_INTR_ALL	 ((uint16)(LIMSW_0_INTR))
 
 
-#endif /* End Pins LIM3_ALIASES_H */
+#endif /* End Pins LIMSW_ALIASES_H */
 
 
 /* [] END OF FILE */

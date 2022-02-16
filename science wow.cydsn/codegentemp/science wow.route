@@ -311,12 +311,12 @@ net \Debug:BUART:rx_fifofull\
 	switch ":udbswitch@[UDB=(0,1)][side=top]:12,38_f"
 	switch "IStub-:udbswitch@[UDB=(0,1)][side=top]:v12"
 	switch "Stub-:udbswitch@[UDB=(0,1)][side=top]:v12==>:udb@[UDB=(0,1)]:pld0:input_permute.input_6"
-	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc0_main_1==>:udb@[UDB=(0,1)]:pld0:mc0.main_1"
-	term   ":udb@[UDB=(0,1)]:pld0:mc0.main_1"
+	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc1_main_1==>:udb@[UDB=(0,1)]:pld0:mc1.main_1"
+	term   ":udb@[UDB=(0,1)]:pld0:mc1.main_1"
 end \Debug:BUART:rx_fifofull\
 net \Debug:BUART:rx_status_4\
-	term   ":udb@[UDB=(0,1)]:pld0:mc0.q"
-	switch ":udb@[UDB=(0,1)]:pld0:mc0.q==>:udb@[UDB=(0,1)]:pld0:output_permute0.q_0"
+	term   ":udb@[UDB=(0,1)]:pld0:mc1.q"
+	switch ":udb@[UDB=(0,1)]:pld0:mc1.q==>:udb@[UDB=(0,1)]:pld0:output_permute0.q_1"
 	switch ":udb@[UDB=(0,1)]:pld0:output_permute0.output_0==>Stub-:udbswitch@[UDB=(0,1)][side=top]:v24"
 	switch "OStub-:udbswitch@[UDB=(0,1)][side=top]:v24"
 	switch ":udbswitch@[UDB=(0,1)][side=top]:24,74"
@@ -478,8 +478,8 @@ net \Debug:BUART:rx_load_fifo\
 	switch ":udbswitch@[UDB=(0,1)][side=top]:14,48_f"
 	switch "IStub-:udbswitch@[UDB=(0,1)][side=top]:v14"
 	switch "Stub-:udbswitch@[UDB=(0,1)][side=top]:v14==>:udb@[UDB=(0,1)]:pld0:input_permute.input_7"
-	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc0_main_0==>:udb@[UDB=(0,1)]:pld0:mc0.main_0"
-	term   ":udb@[UDB=(0,1)]:pld0:mc0.main_0"
+	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc1_main_0==>:udb@[UDB=(0,1)]:pld0:mc1.main_0"
+	term   ":udb@[UDB=(0,1)]:pld0:mc1.main_0"
 	switch ":udbswitch@[UDB=(0,1)][side=top]:14,51_b"
 	switch ":udbswitch@[UDB=(0,1)][side=top]:73,51_f"
 	switch "IStub-:udbswitch@[UDB=(0,1)][side=top]:v73"
@@ -800,6 +800,8 @@ net ClockBlock_HFClk
 	term   ":udb@[UDB=(1,1)]:dp_wrapper:datapath.busclk"
 	switch ":m0s8clockblockcell.hfclk==>:interrupt_17.clock"
 	term   ":interrupt_17.clock"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_3.clock"
+	term   ":interrupt_3.clock"
 end ClockBlock_HFClk
 net \Debug:BUART:tx_fifo_notfull\
 	term   ":udb@[UDB=(1,0)]:dp_wrapper:datapath.f0_bus_stat_comb"
@@ -835,12 +837,6 @@ net Net_12
 	switch ":ioport0:smartio_mux_in1.smartio_mux_in==>:ioport0:pin1.pin_input"
 	term   ":ioport0:pin1.pin_input"
 end Net_12
-net Net_19
-	term   ":m0s8scbcell_0.interrupt"
-	switch ":m0s8scbcell_0.interrupt==>:interrupt_idmux_9.in_0"
-	switch ":interrupt_idmux_9.interrupt_idmux_9__out==>:interrupt_9.interrupt"
-	term   ":interrupt_9.interrupt"
-end Net_19
 net Net_333
 	term   ":cancell_1.interrupt"
 	switch ":cancell_1.interrupt==>Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v25+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v27"
@@ -848,22 +844,35 @@ net Net_333
 	switch ":interrupt_idmux_29.interrupt_idmux_29__out==>:interrupt_29.interrupt"
 	term   ":interrupt_29.interrupt"
 end Net_333
-net Net_35
+net Net_373
+	term   ":m0s8scbcell_0.interrupt"
+	switch ":m0s8scbcell_0.interrupt==>:interrupt_idmux_9.in_0"
+	switch ":interrupt_idmux_9.interrupt_idmux_9__out==>:interrupt_9.interrupt"
+	term   ":interrupt_9.interrupt"
+end Net_373
+net Net_389
 	term   ":ioport1:pin0.fb"
 	switch ":ioport1:pin0.fb==>:ioport1:smartio_mux_out0.direct_in"
 	switch ":ioport1:smartio_mux_out0.smartio_mux_out==>:ioport1:hsiom_in0.hsiom0_in"
 	switch ":ioport1:hsiom_in0.fixed_DPSLP_2==>:m0s8scbcell_0__i2c_scl__hsiom_permute.ioport1__fixed_out_p0_DPSLP_2"
 	switch ":m0s8scbcell_0__i2c_scl__hsiom_permute.m0s8scbcell_0__i2c_scl==>:m0s8scbcell_0.i2c_scl"
 	term   ":m0s8scbcell_0.i2c_scl"
-end Net_35
-net Net_36
+end Net_389
+net Net_390
 	term   ":ioport1:pin1.fb"
 	switch ":ioport1:pin1.fb==>:ioport1:smartio_mux_out1.direct_in"
 	switch ":ioport1:smartio_mux_out1.smartio_mux_out==>:ioport1:hsiom_in1.hsiom1_in"
 	switch ":ioport1:hsiom_in1.fixed_DPSLP_2==>:m0s8scbcell_0__i2c_sda__hsiom_permute.ioport1__fixed_out_p1_DPSLP_2"
 	switch ":m0s8scbcell_0__i2c_sda__hsiom_permute.m0s8scbcell_0__i2c_sda==>:m0s8scbcell_0.i2c_sda"
 	term   ":m0s8scbcell_0.i2c_sda"
-end Net_36
+end Net_390
+net Net_414
+	term   ":logicalport_3.interrupt"
+	switch ":logicalport_3.interrupt==>Stub-:dsiswitch_bottom@[DSI=(1,2)][side=bottom]:dsihc_bottom:v21+:dsiswitch_bottom@[DSI=(1,2)][side=bottom]:dsihc_bottom:v23"
+	switch "Stub-:dsiswitch_bottom@[DSI=(1,2)][side=bottom]:dsihc_bottom:v21+:dsiswitch_bottom@[DSI=(1,2)][side=bottom]:dsihc_bottom:v23==>:interrupt_idmux_3.in_0"
+	switch ":interrupt_idmux_3.interrupt_idmux_3__out==>:interrupt_3.interrupt"
+	term   ":interrupt_3.interrupt"
+end Net_414
 net Net_47
 	term   ":udb@[UDB=(0,1)]:pld1:mc0.q"
 	switch ":udb@[UDB=(0,1)]:pld1:mc0.q==>:udb@[UDB=(0,1)]:pld1:output_permute0.q_0"
@@ -896,8 +905,8 @@ net \Debug:BUART:rx_fifonotempty\
 	switch ":udbswitch@[UDB=(0,1)][side=top]:20,11_f"
 	switch "IStub-:udbswitch@[UDB=(0,1)][side=top]:v20"
 	switch "Stub-:udbswitch@[UDB=(0,1)][side=top]:v20==>:udb@[UDB=(0,1)]:pld0:input_permute.input_10"
-	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc1_main_0==>:udb@[UDB=(0,1)]:pld0:mc1.main_0"
-	term   ":udb@[UDB=(0,1)]:pld0:mc1.main_0"
+	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc0_main_0==>:udb@[UDB=(0,1)]:pld0:mc0.main_0"
+	term   ":udb@[UDB=(0,1)]:pld0:mc0.main_0"
 end \Debug:BUART:rx_fifonotempty\
 net \Debug:BUART:rx_state_stop1_reg\
 	term   ":udb@[UDB=(1,1)]:pld1:mc3.q"
@@ -908,12 +917,12 @@ net \Debug:BUART:rx_state_stop1_reg\
 	switch ":udbswitch@[UDB=(0,1)][side=top]:18,65_f"
 	switch "IStub-:udbswitch@[UDB=(0,1)][side=top]:v18"
 	switch "Stub-:udbswitch@[UDB=(0,1)][side=top]:v18==>:udb@[UDB=(0,1)]:pld0:input_permute.input_9"
-	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc1_main_1==>:udb@[UDB=(0,1)]:pld0:mc1.main_1"
-	term   ":udb@[UDB=(0,1)]:pld0:mc1.main_1"
+	switch ":udb@[UDB=(0,1)]:pld0:input_permute.mc0_main_1==>:udb@[UDB=(0,1)]:pld0:mc0.main_1"
+	term   ":udb@[UDB=(0,1)]:pld0:mc0.main_1"
 end \Debug:BUART:rx_state_stop1_reg\
 net \Debug:BUART:rx_status_5\
-	term   ":udb@[UDB=(0,1)]:pld0:mc1.q"
-	switch ":udb@[UDB=(0,1)]:pld0:mc1.q==>:udb@[UDB=(0,1)]:pld0:output_permute2.q_1"
+	term   ":udb@[UDB=(0,1)]:pld0:mc0.q"
+	switch ":udb@[UDB=(0,1)]:pld0:mc0.q==>:udb@[UDB=(0,1)]:pld0:output_permute2.q_0"
 	switch ":udb@[UDB=(0,1)]:pld0:output_permute2.output_2==>Stub-:udbswitch@[UDB=(0,1)][side=top]:v28"
 	switch "OStub-:udbswitch@[UDB=(0,1)][side=top]:v28"
 	switch ":udbswitch@[UDB=(0,1)][side=top]:28,6"

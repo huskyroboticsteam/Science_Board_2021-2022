@@ -355,14 +355,14 @@ void cyfitter_cfg(void)
 			{0x04u, 0x08u},
 			{0x12u, 0x04u},
 			{0x15u, 0x01u},
-			{0x1Au, 0x01u},
-			{0x1Eu, 0x01u},
-			{0x26u, 0x02u},
-			{0x2Au, 0x02u},
-			{0x30u, 0x01u},
+			{0x1Au, 0x02u},
+			{0x1Eu, 0x02u},
+			{0x26u, 0x01u},
+			{0x2Au, 0x01u},
+			{0x30u, 0x02u},
 			{0x31u, 0x01u},
 			{0x32u, 0x08u},
-			{0x34u, 0x02u},
+			{0x34u, 0x01u},
 			{0x36u, 0x04u},
 			{0x3Eu, 0x15u},
 			{0x3Fu, 0x01u},
@@ -719,9 +719,9 @@ void cyfitter_cfg(void)
 	CY_SET_REG32((void *)(CYREG_GPIO_PRT2_PC2), 0x000000C0u);
 
 	/* IOPINS0_3 Starting address: CYDEV_GPIO_PRT3_BASE */
-	CY_SET_REG32((void *)(CYDEV_GPIO_PRT3_BASE), 0x000000F2u);
-	CY_SET_REG32((void *)(CYREG_GPIO_PRT3_PC), 0x00492D90u);
-	CY_SET_REG32((void *)(CYREG_GPIO_PRT3_INTR_CFG), 0x00000008u);
+	CY_SET_REG32((void *)(CYDEV_GPIO_PRT3_BASE), 0x00000002u);
+	CY_SET_REG32((void *)(CYREG_GPIO_PRT3_PC), 0x00000D90u);
+	CY_SET_REG32((void *)(CYREG_GPIO_PRT3_INTR_CFG), 0x00000004u);
 
 	/* IOPINS0_4 Starting address: CYDEV_GPIO_PRT4_BASE */
 	CY_SET_REG32((void *)(CYREG_GPIO_PRT4_PC), 0x001B6000u);
