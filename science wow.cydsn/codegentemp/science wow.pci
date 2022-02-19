@@ -1,5 +1,5 @@
 # science wow
-# 2022-02-16 06:27:16Z
+# 2022-02-19 03:20:44Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -16,5 +16,9 @@ set_io "CAN_LED(0)" iocell 4 4
 set_io "\ADC:Bypass(0)\" iocell 1 7
 set_io "Humidity(0)" iocell 2 6
 set_io "Temp(0)" iocell 2 7
-set_io "LIMSW(0)" iocell 3 1
+set_io "LIM1(0)" iocell 3 1
+set_io "LIM2(0)" iocell 3 4
+set_io "LIM3(0)" iocell 3 5
+set_io "LIM4(0)" iocell 3 6
+set_io "LIM5(0)" iocell 3 7
 set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0

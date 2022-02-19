@@ -16,16 +16,20 @@
 #define LED_COLOR_ID 0xF7
 #define SERVO_CONTINOUS_ID 0x0E
 
-CY_ISR(LIMSW_Handler){
-    //Stuff to do during interupt    
-    uint8 interruptedPIN = LIMSW_ClearInterrupt();
+CANPacket can_send;
+
+CY_ISR(Limit_Handler){
+    //Stuff to do during interupt
+    AssembleLimitSwitchAlertPacket(&can_send, DEVICE_GROUP_JETSON, 
+        DEVICE_SERIAL_JETSON, Status_Reg_LIM_Read() & 0b11);
+    SendCANPacket(&can_send);
 }
 
 int main(void)
 {
     CyGlobalIntEnable;
-    
-    LIMSW_intr_StartEx(LIMSW_Handler);
+    Status_Reg_LIM_InterruptEnable();
+    isr_LIM_StartEx(Limit_Handler);
     
     
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */

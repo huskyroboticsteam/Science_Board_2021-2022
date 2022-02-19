@@ -68,12 +68,32 @@
   <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Temp.h" value="HEADER;;;;;Temp" />
   <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Temp_aliases.h" value="HEADER;;;;;Temp" />
   <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Temp_PM.c" value="SOURCE_C;CortexM0;;;;Temp" />
-  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIMSW.c" value="SOURCE_C;CortexM0;;;;LIMSW" />
-  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIMSW.h" value="HEADER;;;;;LIMSW" />
-  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIMSW_aliases.h" value="HEADER;;;;;LIMSW" />
-  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIMSW_PM.c" value="SOURCE_C;CortexM0;;;;LIMSW" />
-  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIMSW_intr.c" value="SOURCE_C;CortexM0;;;;LIMSW_intr" />
-  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIMSW_intr.h" value="HEADER;;;;;LIMSW_intr" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM0;;;;Clock_1" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Status_Reg_LIM.c" value="SOURCE_C;CortexM0;;;;Status_Reg_LIM" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Status_Reg_LIM.h" value="HEADER;;;;;Status_Reg_LIM" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM1.c" value="SOURCE_C;CortexM0;;;;LIM1" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM1.h" value="HEADER;;;;;LIM1" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM1_aliases.h" value="HEADER;;;;;LIM1" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM1_PM.c" value="SOURCE_C;CortexM0;;;;LIM1" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM2.c" value="SOURCE_C;CortexM0;;;;LIM2" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM2.h" value="HEADER;;;;;LIM2" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM2_aliases.h" value="HEADER;;;;;LIM2" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM2_PM.c" value="SOURCE_C;CortexM0;;;;LIM2" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM3.c" value="SOURCE_C;CortexM0;;;;LIM3" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM3.h" value="HEADER;;;;;LIM3" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM3_aliases.h" value="HEADER;;;;;LIM3" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM3_PM.c" value="SOURCE_C;CortexM0;;;;LIM3" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM4.c" value="SOURCE_C;CortexM0;;;;LIM4" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM4.h" value="HEADER;;;;;LIM4" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM4_aliases.h" value="HEADER;;;;;LIM4" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM4_PM.c" value="SOURCE_C;CortexM0;;;;LIM4" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM5.c" value="SOURCE_C;CortexM0;;;;LIM5" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM5.h" value="HEADER;;;;;LIM5" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM5_aliases.h" value="HEADER;;;;;LIM5" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\LIM5_PM.c" value="SOURCE_C;CortexM0;;;;LIM5" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\isr_LIM.c" value="SOURCE_C;CortexM0;;;;isr_LIM" />
+  <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\isr_LIM.h" value="HEADER;;;;;isr_LIM" />
   <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_isr.c" value="SOURCE_C;CortexM0;;;;CAN_isr" />
   <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_isr.h" value="HEADER;;;;;CAN_isr" />
   <file name="C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_HFCLK.c" value="SOURCE_C;CortexM0;;;;CAN_HFCLK" />

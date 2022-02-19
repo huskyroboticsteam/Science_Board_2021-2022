@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LIMSW.c  
+* File Name: LIM4.c  
 * Version 2.20
 *
 * Description:
@@ -15,13 +15,13 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "LIMSW.h"
+#include "LIM4.h"
 
-static LIMSW_BACKUP_STRUCT  LIMSW_backup = {0u, 0u, 0u};
+static LIM4_BACKUP_STRUCT  LIM4_backup = {0u, 0u, 0u};
 
 
 /*******************************************************************************
-* Function Name: LIMSW_Sleep
+* Function Name: LIM4_Sleep
 ****************************************************************************//**
 *
 * \brief Stores the pin configuration and prepares the pin for entering chip 
@@ -39,30 +39,30 @@ static LIMSW_BACKUP_STRUCT  LIMSW_backup = {0u, 0u, 0u};
 *  deep-sleep/hibernate modes.
 *
 * \funcusage
-*  \snippet LIMSW_SUT.c usage_LIMSW_Sleep_Wakeup
+*  \snippet LIM4_SUT.c usage_LIM4_Sleep_Wakeup
 *******************************************************************************/
-void LIMSW_Sleep(void)
+void LIM4_Sleep(void)
 {
-    #if defined(LIMSW__PC)
-        LIMSW_backup.pcState = LIMSW_PC;
+    #if defined(LIM4__PC)
+        LIM4_backup.pcState = LIM4_PC;
     #else
         #if (CY_PSOC4_4200L)
             /* Save the regulator state and put the PHY into suspend mode */
-            LIMSW_backup.usbState = LIMSW_CR1_REG;
-            LIMSW_USB_POWER_REG |= LIMSW_USBIO_ENTER_SLEEP;
-            LIMSW_CR1_REG &= LIMSW_USBIO_CR1_OFF;
+            LIM4_backup.usbState = LIM4_CR1_REG;
+            LIM4_USB_POWER_REG |= LIM4_USBIO_ENTER_SLEEP;
+            LIM4_CR1_REG &= LIM4_USBIO_CR1_OFF;
         #endif
     #endif
-    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(LIMSW__SIO)
-        LIMSW_backup.sioState = LIMSW_SIO_REG;
+    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(LIM4__SIO)
+        LIM4_backup.sioState = LIM4_SIO_REG;
         /* SIO requires unregulated output buffer and single ended input buffer */
-        LIMSW_SIO_REG &= (uint32)(~LIMSW_SIO_LPM_MASK);
+        LIM4_SIO_REG &= (uint32)(~LIM4_SIO_LPM_MASK);
     #endif  
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_Wakeup
+* Function Name: LIM4_Wakeup
 ****************************************************************************//**
 *
 * \brief Restores the pin configuration that was saved during Pin_Sleep(). This 
@@ -77,22 +77,22 @@ void LIMSW_Sleep(void)
 *  None
 *  
 * \funcusage
-*  Refer to LIMSW_Sleep() for an example usage.
+*  Refer to LIM4_Sleep() for an example usage.
 *******************************************************************************/
-void LIMSW_Wakeup(void)
+void LIM4_Wakeup(void)
 {
-    #if defined(LIMSW__PC)
-        LIMSW_PC = LIMSW_backup.pcState;
+    #if defined(LIM4__PC)
+        LIM4_PC = LIM4_backup.pcState;
     #else
         #if (CY_PSOC4_4200L)
             /* Restore the regulator state and come out of suspend mode */
-            LIMSW_USB_POWER_REG &= LIMSW_USBIO_EXIT_SLEEP_PH1;
-            LIMSW_CR1_REG = LIMSW_backup.usbState;
-            LIMSW_USB_POWER_REG &= LIMSW_USBIO_EXIT_SLEEP_PH2;
+            LIM4_USB_POWER_REG &= LIM4_USBIO_EXIT_SLEEP_PH1;
+            LIM4_CR1_REG = LIM4_backup.usbState;
+            LIM4_USB_POWER_REG &= LIM4_USBIO_EXIT_SLEEP_PH2;
         #endif
     #endif
-    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(LIMSW__SIO)
-        LIMSW_SIO_REG = LIMSW_backup.sioState;
+    #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(LIM4__SIO)
+        LIM4_SIO_REG = LIM4_backup.sioState;
     #endif
 }
 

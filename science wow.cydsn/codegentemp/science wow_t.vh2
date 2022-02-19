@@ -1,5 +1,5 @@
 -- Project:   C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj
--- Generated: 02/15/2022 22:27:22
+-- Generated: 02/18/2022 19:20:46
 -- PSoC Creator  4.4
 
 ENTITY \science wow\ IS
@@ -13,7 +13,11 @@ ENTITY \science wow\ IS
         DBG_LED(0)_PAD : OUT std_ulogic;
         ERR_LED(0)_PAD : OUT std_ulogic;
         CAN_LED(0)_PAD : OUT std_ulogic;
-        LIMSW(0)_PAD : IN std_ulogic);
+        LIM1(0)_PAD : IN std_ulogic;
+        LIM2(0)_PAD : IN std_ulogic;
+        LIM3(0)_PAD : IN std_ulogic;
+        LIM4(0)_PAD : IN std_ulogic;
+        LIM5(0)_PAD : IN std_ulogic);
     ATTRIBUTE voltage_VDDIO_A_1 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_0 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_CTB OF __DEFAULT__ : ENTITY IS 3.3e0;
@@ -46,7 +50,11 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL DBG_LED(0)__PA : bit;
     SIGNAL ERR_LED(0)__PA : bit;
     SIGNAL Humidity(0)__PA : bit;
-    SIGNAL LIMSW(0)__PA : bit;
+    SIGNAL LIM1(0)__PA : bit;
+    SIGNAL LIM2(0)__PA : bit;
+    SIGNAL LIM3(0)__PA : bit;
+    SIGNAL LIM4(0)__PA : bit;
+    SIGNAL LIM5(0)__PA : bit;
     SIGNAL Net_11 : bit;
     SIGNAL Net_12 : bit;
     SIGNAL Net_327 : bit;
@@ -58,10 +66,28 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL Net_389 : bit;
     SIGNAL Net_390 : bit;
     SIGNAL Net_391 : bit;
-    SIGNAL Net_414 : bit;
+    SIGNAL Net_423_digital : bit;
+    ATTRIBUTE udbclken_assigned OF Net_423_digital : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_423_digital : SIGNAL IS true;
     SIGNAL Net_43 : bit;
+    SIGNAL Net_459 : bit;
+    SIGNAL Net_466 : bit;
     SIGNAL Net_47 : bit;
-    ATTRIBUTE placement_force OF Net_47 : SIGNAL IS "U(0,1,B)0";
+    ATTRIBUTE placement_force OF Net_47 : SIGNAL IS "U(0,1,A)0";
+    SIGNAL Net_470 : bit;
+    SIGNAL Net_474 : bit;
+    SIGNAL Net_478 : bit;
+    SIGNAL Net_500 : bit;
+    SIGNAL Net_513_0 : bit;
+    ATTRIBUTE placement_force OF Net_513_0 : SIGNAL IS "U(0,2,A)0";
+    SIGNAL Net_513_1 : bit;
+    ATTRIBUTE placement_force OF Net_513_1 : SIGNAL IS "U(0,1,A)2";
+    SIGNAL Net_513_2 : bit;
+    ATTRIBUTE placement_force OF Net_513_2 : SIGNAL IS "U(0,0,B)0";
+    SIGNAL Net_513_3 : bit;
+    ATTRIBUTE placement_force OF Net_513_3 : SIGNAL IS "U(0,1,B)1";
+    SIGNAL Net_513_4 : bit;
+    ATTRIBUTE placement_force OF Net_513_4 : SIGNAL IS "U(0,0,B)3";
     SIGNAL Temp(0)__PA : bit;
     SIGNAL UART_RX(0)__PA : bit;
     SIGNAL UART_TX(0)__PA : bit;
@@ -88,13 +114,13 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL \ADC:Net_3111_9\ : bit;
     SIGNAL \ADC:Net_3112\ : bit;
     SIGNAL \Debug:BUART:counter_load_not\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:counter_load_not\ : SIGNAL IS "U(0,0,B)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:counter_load_not\ : SIGNAL IS "U(1,0,B)1";
     SIGNAL \Debug:BUART:pollcount_0\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:pollcount_0\ : SIGNAL IS "U(1,0,B)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:pollcount_0\ : SIGNAL IS "U(1,1,B)2";
     SIGNAL \Debug:BUART:pollcount_1\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:pollcount_1\ : SIGNAL IS "U(1,0,A)2";
+    ATTRIBUTE placement_force OF \Debug:BUART:pollcount_1\ : SIGNAL IS "U(1,2,B)2";
     SIGNAL \Debug:BUART:rx_bitclk_enable\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_bitclk_enable\ : SIGNAL IS "U(1,0,B)2";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_bitclk_enable\ : SIGNAL IS "U(1,0,A)0";
     SIGNAL \Debug:BUART:rx_count7_tc\ : bit;
     SIGNAL \Debug:BUART:rx_count_0\ : bit;
     SIGNAL \Debug:BUART:rx_count_1\ : bit;
@@ -104,50 +130,50 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL \Debug:BUART:rx_count_5\ : bit;
     SIGNAL \Debug:BUART:rx_count_6\ : bit;
     SIGNAL \Debug:BUART:rx_counter_load\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_counter_load\ : SIGNAL IS "U(1,1,A)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_counter_load\ : SIGNAL IS "U(1,2,A)1";
     SIGNAL \Debug:BUART:rx_fifofull\ : bit;
     SIGNAL \Debug:BUART:rx_fifonotempty\ : bit;
     SIGNAL \Debug:BUART:rx_last\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_last\ : SIGNAL IS "U(0,1,A)2";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_last\ : SIGNAL IS "U(1,0,A)2";
     SIGNAL \Debug:BUART:rx_load_fifo\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_load_fifo\ : SIGNAL IS "U(1,1,A)3";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_load_fifo\ : SIGNAL IS "U(1,1,A)1";
     SIGNAL \Debug:BUART:rx_postpoll\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_postpoll\ : SIGNAL IS "U(1,0,B)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_postpoll\ : SIGNAL IS "U(1,1,B)1";
     SIGNAL \Debug:BUART:rx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_0\ : SIGNAL IS "U(1,1,A)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_0\ : SIGNAL IS "U(1,2,A)0";
     SIGNAL \Debug:BUART:rx_state_2\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_2\ : SIGNAL IS "U(1,1,B)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_2\ : SIGNAL IS "U(1,1,A)0";
     SIGNAL \Debug:BUART:rx_state_3\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_3\ : SIGNAL IS "U(1,1,A)2";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_3\ : SIGNAL IS "U(1,2,A)2";
     SIGNAL \Debug:BUART:rx_state_stop1_reg\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_stop1_reg\ : SIGNAL IS "U(1,1,B)3";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_state_stop1_reg\ : SIGNAL IS "U(1,1,B)0";
     SIGNAL \Debug:BUART:rx_status_3\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_status_3\ : SIGNAL IS "U(1,1,B)2";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_status_3\ : SIGNAL IS "U(1,1,A)2";
     SIGNAL \Debug:BUART:rx_status_4\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_status_4\ : SIGNAL IS "U(0,1,A)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_status_4\ : SIGNAL IS "U(1,0,B)0";
     SIGNAL \Debug:BUART:rx_status_5\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:rx_status_5\ : SIGNAL IS "U(0,1,A)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:rx_status_5\ : SIGNAL IS "U(1,1,B)3";
     SIGNAL \Debug:BUART:tx_bitclk\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_bitclk\ : SIGNAL IS "U(0,0,B)2";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_bitclk\ : SIGNAL IS "U(1,0,A)1";
     SIGNAL \Debug:BUART:tx_bitclk_enable_pre\ : bit;
     SIGNAL \Debug:BUART:tx_counter_dp\ : bit;
     SIGNAL \Debug:BUART:tx_ctrl_mark_last\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_ctrl_mark_last\ : SIGNAL IS "U(1,1,B)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_ctrl_mark_last\ : SIGNAL IS "U(1,2,A)3";
     SIGNAL \Debug:BUART:tx_fifo_empty\ : bit;
     SIGNAL \Debug:BUART:tx_fifo_notfull\ : bit;
     SIGNAL \Debug:BUART:tx_shift_out\ : bit;
     SIGNAL \Debug:BUART:tx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_state_0\ : SIGNAL IS "U(1,0,A)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_state_0\ : SIGNAL IS "U(0,2,B)3";
     SIGNAL \Debug:BUART:tx_state_1\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_state_1\ : SIGNAL IS "U(0,0,A)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_state_1\ : SIGNAL IS "U(1,0,B)2";
     SIGNAL \Debug:BUART:tx_state_2\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_state_2\ : SIGNAL IS "U(0,0,B)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_state_2\ : SIGNAL IS "U(1,2,B)0";
     SIGNAL \Debug:BUART:tx_status_0\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_status_0\ : SIGNAL IS "U(1,0,A)1";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_status_0\ : SIGNAL IS "U(1,2,B)1";
     SIGNAL \Debug:BUART:tx_status_2\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:tx_status_2\ : SIGNAL IS "U(0,1,A)3";
+    ATTRIBUTE placement_force OF \Debug:BUART:tx_status_2\ : SIGNAL IS "U(0,1,B)0";
     SIGNAL \Debug:BUART:txn\ : bit;
-    ATTRIBUTE placement_force OF \Debug:BUART:txn\ : SIGNAL IS "U(0,0,A)0";
+    ATTRIBUTE placement_force OF \Debug:BUART:txn\ : SIGNAL IS "U(0,0,A)1";
     SIGNAL \Debug:Net_9_digital\ : bit;
     ATTRIBUTE udbclken_assigned OF \Debug:Net_9_digital\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \Debug:Net_9_digital\ : SIGNAL IS true;
@@ -169,6 +195,7 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
     SIGNAL dclk_to_genclk : bit;
+    SIGNAL dclk_to_genclk_1 : bit;
     SIGNAL tmpOE__CAN_RX_net_0 : bit;
     ATTRIBUTE POWER OF tmpOE__CAN_RX_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
@@ -199,61 +226,70 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     ATTRIBUTE Location OF Humidity(0) : LABEL IS "P2[6]";
     ATTRIBUTE lib_model OF Temp(0) : LABEL IS "iocell12";
     ATTRIBUTE Location OF Temp(0) : LABEL IS "P2[7]";
-    ATTRIBUTE Location OF LIMSW : LABEL IS "F(PICU,3)";
-    ATTRIBUTE lib_model OF LIMSW(0) : LABEL IS "iocell13";
-    ATTRIBUTE Location OF LIMSW(0) : LABEL IS "P3[1]";
+    ATTRIBUTE lib_model OF LIM1(0) : LABEL IS "iocell13";
+    ATTRIBUTE Location OF LIM1(0) : LABEL IS "P3[1]";
+    ATTRIBUTE lib_model OF LIM2(0) : LABEL IS "iocell14";
+    ATTRIBUTE Location OF LIM2(0) : LABEL IS "P3[4]";
+    ATTRIBUTE lib_model OF LIM3(0) : LABEL IS "iocell15";
+    ATTRIBUTE Location OF LIM3(0) : LABEL IS "P3[5]";
+    ATTRIBUTE lib_model OF LIM4(0) : LABEL IS "iocell16";
+    ATTRIBUTE Location OF LIM4(0) : LABEL IS "P3[6]";
+    ATTRIBUTE lib_model OF LIM5(0) : LABEL IS "iocell17";
+    ATTRIBUTE Location OF LIM5(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF Net_47 : LABEL IS "macrocell1";
     ATTRIBUTE Location OF Net_47 : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:counter_load_not\ : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF \Debug:BUART:counter_load_not\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \Debug:BUART:counter_load_not\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_status_0\ : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF \Debug:BUART:tx_status_0\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:tx_status_0\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_status_2\ : LABEL IS "macrocell4";
     ATTRIBUTE Location OF \Debug:BUART:tx_status_2\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_counter_load\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \Debug:BUART:rx_counter_load\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_counter_load\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_postpoll\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \Debug:BUART:rx_postpoll\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_postpoll\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_status_4\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \Debug:BUART:rx_status_4\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_status_4\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_status_5\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \Debug:BUART:rx_status_5\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_status_5\ : LABEL IS "U(1,1)";
     ATTRIBUTE Location OF \CAN:isr\ : LABEL IS "[IntrContainer=(0)][IntrId=(29)]";
     ATTRIBUTE Location OF \CAN:CanIP\ : LABEL IS "F(CAN,1)";
     ATTRIBUTE Location OF \I2C:SCB_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(9)]";
     ATTRIBUTE Location OF \I2C:SCB\ : LABEL IS "F(SCB,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \Debug:BUART:sTX:TxShifter:u0\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:sTX:TxShifter:u0\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \Debug:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \Debug:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:sTX:TxSts\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \Debug:BUART:sTX:TxSts\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:sTX:TxSts\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell3";
     ATTRIBUTE Location OF \Debug:BUART:sRX:RxShifter:u0\ : LABEL IS "U(1,1)";
-    ATTRIBUTE Location OF \Debug:BUART:sRX:RxBitCounter\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \Debug:BUART:sRX:RxBitCounter\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:sRX:RxSts\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \Debug:BUART:sRX:RxSts\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \Debug:BUART:sRX:RxSts\ : LABEL IS "U(1,0)";
     ATTRIBUTE Location OF \ADC:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(17)]";
     ATTRIBUTE Location OF \ADC:cy_psoc4_sar\ : LABEL IS "F(SARADC,0)";
-    ATTRIBUTE Location OF LIMSW_intr : LABEL IS "[IntrContainer=(0)][IntrId=(3)]";
+    ATTRIBUTE lib_model OF \Status_Reg_LIM:sts_intr:sts_reg\ : LABEL IS "statusicell3";
+    ATTRIBUTE Location OF \Status_Reg_LIM:sts_intr:sts_reg\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF isr_LIM : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
     ATTRIBUTE lib_model OF \Debug:BUART:txn\ : LABEL IS "macrocell9";
     ATTRIBUTE Location OF \Debug:BUART:txn\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_state_1\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \Debug:BUART:tx_state_1\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \Debug:BUART:tx_state_1\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_state_0\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \Debug:BUART:tx_state_0\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:tx_state_0\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_state_2\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \Debug:BUART:tx_state_2\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \Debug:BUART:tx_state_2\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_bitclk\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \Debug:BUART:tx_bitclk\ : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF \Debug:BUART:tx_bitclk\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \Debug:BUART:tx_ctrl_mark_last\ : LABEL IS "macrocell14";
-    ATTRIBUTE Location OF \Debug:BUART:tx_ctrl_mark_last\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \Debug:BUART:tx_ctrl_mark_last\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_state_0\ : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF \Debug:BUART:rx_state_0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_state_0\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_load_fifo\ : LABEL IS "macrocell16";
     ATTRIBUTE Location OF \Debug:BUART:rx_load_fifo\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_state_3\ : LABEL IS "macrocell17";
-    ATTRIBUTE Location OF \Debug:BUART:rx_state_3\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_state_3\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_state_2\ : LABEL IS "macrocell18";
     ATTRIBUTE Location OF \Debug:BUART:rx_state_2\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_bitclk_enable\ : LABEL IS "macrocell19";
@@ -261,13 +297,23 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     ATTRIBUTE lib_model OF \Debug:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell20";
     ATTRIBUTE Location OF \Debug:BUART:rx_state_stop1_reg\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:pollcount_1\ : LABEL IS "macrocell21";
-    ATTRIBUTE Location OF \Debug:BUART:pollcount_1\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:pollcount_1\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \Debug:BUART:pollcount_0\ : LABEL IS "macrocell22";
-    ATTRIBUTE Location OF \Debug:BUART:pollcount_0\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Debug:BUART:pollcount_0\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_status_3\ : LABEL IS "macrocell23";
     ATTRIBUTE Location OF \Debug:BUART:rx_status_3\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Debug:BUART:rx_last\ : LABEL IS "macrocell24";
-    ATTRIBUTE Location OF \Debug:BUART:rx_last\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \Debug:BUART:rx_last\ : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF Net_513_0 : LABEL IS "macrocell25";
+    ATTRIBUTE Location OF Net_513_0 : LABEL IS "U(0,2)";
+    ATTRIBUTE lib_model OF Net_513_1 : LABEL IS "macrocell26";
+    ATTRIBUTE Location OF Net_513_1 : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF Net_513_2 : LABEL IS "macrocell27";
+    ATTRIBUTE Location OF Net_513_2 : LABEL IS "U(0,0)";
+    ATTRIBUTE lib_model OF Net_513_3 : LABEL IS "macrocell28";
+    ATTRIBUTE Location OF Net_513_3 : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF Net_513_4 : LABEL IS "macrocell29";
+    ATTRIBUTE Location OF Net_513_4 : LABEL IS "U(0,0)";
     COMPONENT cancell
         PORT (
             clock : IN std_ulogic;
@@ -687,14 +733,14 @@ BEGIN
 
     ClockGenBlock:m0s8clockgenblockcell
         PORT MAP(
-            gen_clk_out_0 => \Debug:Net_9_digital\,
-            gen_clk_in_0 => dclk_to_genclk,
-            gen_clk_in_1 => open,
-            gen_clk_out_1 => open,
+            gen_clk_out_0 => open,
+            gen_clk_in_0 => open,
+            gen_clk_out_1 => \Debug:Net_9_digital\,
+            gen_clk_in_1 => dclk_to_genclk,
             gen_clk_in_2 => open,
             gen_clk_out_2 => open,
-            gen_clk_in_3 => open,
-            gen_clk_out_3 => open,
+            gen_clk_in_3 => dclk_to_genclk_1,
+            gen_clk_out_3 => Net_423_digital,
             gen_clk_in_4 => open,
             gen_clk_out_4 => open,
             gen_clk_in_5 => open,
@@ -719,7 +765,9 @@ BEGIN
             dsi_in_0 => ClockBlock_Routed1,
             ff_div_10 => \ADC:Net_1845_ff10\,
             ff_div_2 => \I2C:Net_847_ff2\,
-            udb_div_0 => dclk_to_genclk);
+            udb_div_0 => open,
+            udb_div_1 => dclk_to_genclk,
+            udb_div_3 => dclk_to_genclk_1);
 
     CAN_RX:logicalport
         GENERIC MAP(
@@ -1809,17 +1857,17 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    LIMSW:logicalport
+    LIM1:logicalport
         GENERIC MAP(
             drive_mode => "010",
             ibuf_enabled => "1",
-            id => "0f9a1003-45e5-4272-8b48-43abf973b4e1",
+            id => "e5252b1f-3484-45e3-b6f0-b7cfeb8f1f34",
             init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "0",
             input_sync_mode => "0",
-            intr_mode => "01",
+            intr_mode => "00",
             invert_in_clock => 0,
             invert_in_clock_en => 0,
             invert_in_reset => 0,
@@ -1863,7 +1911,7 @@ BEGIN
             slew_rate => "0",
             spanning => 0,
             sw_only => 0,
-            use_annotation => "0",
+            use_annotation => "1",
             vtrip => "00",
             width => 1,
             in_clk_inv => 0,
@@ -1878,21 +1926,385 @@ BEGIN
             in_clock_en => open,
             in_reset => open,
             out_clock_en => open,
-            out_reset => open,
-            interrupt => Net_414);
+            out_reset => open);
 
-    LIMSW(0):iocell
+    LIM1(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "LIMSW",
+            logicalport => "LIM1",
             logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000001000000000000000000000000000000000001")
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
         PORT MAP(
-            pa_out => LIMSW(0)__PA,
+            pa_out => LIM1(0)__PA,
             oe => open,
-            pad_in => LIMSW(0)_PAD,
+            fb => Net_459,
+            pad_in => LIM1(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    LIM2:logicalport
+        GENERIC MAP(
+            drive_mode => "010",
+            ibuf_enabled => "1",
+            id => "b7fbb504-5be6-4885-bfda-b5acc506d219",
+            init_dr_st => "1",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "1",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    LIM2(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "LIM2",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => LIM2(0)__PA,
+            oe => open,
+            fb => Net_466,
+            pad_in => LIM2(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    LIM3:logicalport
+        GENERIC MAP(
+            drive_mode => "010",
+            ibuf_enabled => "1",
+            id => "170f5d35-5996-4460-b1ca-bfe35b46ac6d",
+            init_dr_st => "1",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "1",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    LIM3(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "LIM3",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => LIM3(0)__PA,
+            oe => open,
+            fb => Net_470,
+            pad_in => LIM3(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    LIM4:logicalport
+        GENERIC MAP(
+            drive_mode => "010",
+            ibuf_enabled => "1",
+            id => "df351c49-344a-4940-b72f-18969d3edd07",
+            init_dr_st => "1",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "1",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    LIM4(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "LIM4",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => LIM4(0)__PA,
+            oe => open,
+            fb => Net_474,
+            pad_in => LIM4(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    LIM5:logicalport
+        GENERIC MAP(
+            drive_mode => "010",
+            ibuf_enabled => "1",
+            id => "f8acc92a-bb64-4556-a0af-7a547119e39c",
+            init_dr_st => "1",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "1",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    LIM5(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "LIM5",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => LIM5(0)__PA,
+            oe => open,
+            fb => Net_478,
+            pad_in => LIM5(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -2259,12 +2671,29 @@ BEGIN
             input_mode => "00",
             muxin_width => 2);
 
-    LIMSW_intr:interrupt
+    \Status_Reg_LIM:sts_intr:sts_reg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "0011111",
+            cy_md_select => "0000000",
+            clken_mode => 1)
+        PORT MAP(
+            clock => open,
+            status_6 => open,
+            status_5 => open,
+            status_4 => Net_513_4,
+            status_3 => Net_513_3,
+            status_2 => Net_513_2,
+            status_1 => Net_513_1,
+            status_0 => Net_513_0,
+            interrupt => Net_500);
+
+    isr_LIM:interrupt
         GENERIC MAP(
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_414,
+            interrupt => Net_500,
             clock => ClockBlock_HFClk);
 
     \Debug:BUART:txn\:macrocell
@@ -2517,5 +2946,60 @@ BEGIN
             q => \Debug:BUART:rx_last\,
             clock_0 => \Debug:Net_9_digital\,
             main_0 => Net_43);
+
+    Net_513_0:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => Net_513_0,
+            clock_0 => Net_423_digital,
+            main_0 => Net_459);
+
+    Net_513_1:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => Net_513_1,
+            clock_0 => Net_423_digital,
+            main_0 => Net_466);
+
+    Net_513_2:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => Net_513_2,
+            clock_0 => Net_423_digital,
+            main_0 => Net_470);
+
+    Net_513_3:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => Net_513_3,
+            clock_0 => Net_423_digital,
+            main_0 => Net_474);
+
+    Net_513_4:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => Net_513_4,
+            clock_0 => Net_423_digital,
+            main_0 => Net_478);
 
 END __DEFAULT__;

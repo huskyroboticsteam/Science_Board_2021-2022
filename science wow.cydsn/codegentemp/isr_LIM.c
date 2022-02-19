@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LIMSW_intr.c  
+* File Name: isr_LIM.c  
 * Version 1.70
 *
 *  Description:
@@ -18,15 +18,15 @@
 
 #include <cydevice_trm.h>
 #include <CyLib.h>
-#include <LIMSW_intr.h>
+#include <isr_LIM.h>
 #include "cyapicallbacks.h"
 
-#if !defined(LIMSW_intr__REMOVED) /* Check for removal by optimization */
+#if !defined(isr_LIM__REMOVED) /* Check for removal by optimization */
 
 /*******************************************************************************
 *  Place your includes, defines and code here 
 ********************************************************************************/
-/* `#START LIMSW_intr_intc` */
+/* `#START isr_LIM_intc` */
 
 /* `#END` */
 
@@ -37,7 +37,7 @@ CY_ISR_PROTO(IntDefaultHandler);
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_Start
+* Function Name: isr_LIM_Start
 ********************************************************************************
 *
 * Summary:
@@ -53,24 +53,24 @@ CY_ISR_PROTO(IntDefaultHandler);
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_Start(void)
+void isr_LIM_Start(void)
 {
     /* For all we know the interrupt is active. */
-    LIMSW_intr_Disable();
+    isr_LIM_Disable();
 
-    /* Set the ISR to point to the LIMSW_intr Interrupt. */
-    LIMSW_intr_SetVector(&LIMSW_intr_Interrupt);
+    /* Set the ISR to point to the isr_LIM Interrupt. */
+    isr_LIM_SetVector(&isr_LIM_Interrupt);
 
     /* Set the priority. */
-    LIMSW_intr_SetPriority((uint8)LIMSW_intr_INTC_PRIOR_NUMBER);
+    isr_LIM_SetPriority((uint8)isr_LIM_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    LIMSW_intr_Enable();
+    isr_LIM_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_StartEx
+* Function Name: isr_LIM_StartEx
 ********************************************************************************
 *
 * Summary:
@@ -96,24 +96,24 @@ void LIMSW_intr_Start(void)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_StartEx(cyisraddress address)
+void isr_LIM_StartEx(cyisraddress address)
 {
     /* For all we know the interrupt is active. */
-    LIMSW_intr_Disable();
+    isr_LIM_Disable();
 
-    /* Set the ISR to point to the LIMSW_intr Interrupt. */
-    LIMSW_intr_SetVector(address);
+    /* Set the ISR to point to the isr_LIM Interrupt. */
+    isr_LIM_SetVector(address);
 
     /* Set the priority. */
-    LIMSW_intr_SetPriority((uint8)LIMSW_intr_INTC_PRIOR_NUMBER);
+    isr_LIM_SetPriority((uint8)isr_LIM_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    LIMSW_intr_Enable();
+    isr_LIM_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_Stop
+* Function Name: isr_LIM_Stop
 ********************************************************************************
 *
 * Summary:
@@ -126,22 +126,22 @@ void LIMSW_intr_StartEx(cyisraddress address)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_Stop(void)
+void isr_LIM_Stop(void)
 {
     /* Disable this interrupt. */
-    LIMSW_intr_Disable();
+    isr_LIM_Disable();
 
     /* Set the ISR to point to the passive one. */
-    LIMSW_intr_SetVector(&IntDefaultHandler);
+    isr_LIM_SetVector(&IntDefaultHandler);
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_Interrupt
+* Function Name: isr_LIM_Interrupt
 ********************************************************************************
 *
 * Summary:
-*   The default Interrupt Service Routine for LIMSW_intr.
+*   The default Interrupt Service Routine for isr_LIM.
 *
 *   Add custom code between the START and END comments to keep the next version
 *   of this file from over-writing your code.
@@ -156,27 +156,27 @@ void LIMSW_intr_Stop(void)
 *   None
 *
 *******************************************************************************/
-CY_ISR(LIMSW_intr_Interrupt)
+CY_ISR(isr_LIM_Interrupt)
 {
-    #ifdef LIMSW_intr_INTERRUPT_INTERRUPT_CALLBACK
-        LIMSW_intr_Interrupt_InterruptCallback();
-    #endif /* LIMSW_intr_INTERRUPT_INTERRUPT_CALLBACK */ 
+    #ifdef isr_LIM_INTERRUPT_INTERRUPT_CALLBACK
+        isr_LIM_Interrupt_InterruptCallback();
+    #endif /* isr_LIM_INTERRUPT_INTERRUPT_CALLBACK */ 
 
     /*  Place your Interrupt code here. */
-    /* `#START LIMSW_intr_Interrupt` */
+    /* `#START isr_LIM_Interrupt` */
 
     /* `#END` */
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_SetVector
+* Function Name: isr_LIM_SetVector
 ********************************************************************************
 *
 * Summary:
-*   Change the ISR vector for the Interrupt. Note calling LIMSW_intr_Start
+*   Change the ISR vector for the Interrupt. Note calling isr_LIM_Start
 *   will override any effect this method would have had. To set the vector 
-*   before the component has been started use LIMSW_intr_StartEx instead.
+*   before the component has been started use isr_LIM_StartEx instead.
 * 
 *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
 *   used to provide consistent definition across compilers:
@@ -196,14 +196,14 @@ CY_ISR(LIMSW_intr_Interrupt)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_SetVector(cyisraddress address)
+void isr_LIM_SetVector(cyisraddress address)
 {
-    CyRamVectors[CYINT_IRQ_BASE + LIMSW_intr__INTC_NUMBER] = address;
+    CyRamVectors[CYINT_IRQ_BASE + isr_LIM__INTC_NUMBER] = address;
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_GetVector
+* Function Name: isr_LIM_GetVector
 ********************************************************************************
 *
 * Summary:
@@ -216,22 +216,22 @@ void LIMSW_intr_SetVector(cyisraddress address)
 *   Address of the ISR in the interrupt vector table.
 *
 *******************************************************************************/
-cyisraddress LIMSW_intr_GetVector(void)
+cyisraddress isr_LIM_GetVector(void)
 {
-    return CyRamVectors[CYINT_IRQ_BASE + LIMSW_intr__INTC_NUMBER];
+    return CyRamVectors[CYINT_IRQ_BASE + isr_LIM__INTC_NUMBER];
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_SetPriority
+* Function Name: isr_LIM_SetPriority
 ********************************************************************************
 *
 * Summary:
 *   Sets the Priority of the Interrupt. 
 *
-*   Note calling LIMSW_intr_Start or LIMSW_intr_StartEx will 
+*   Note calling isr_LIM_Start or isr_LIM_StartEx will 
 *   override any effect this API would have had. This API should only be called
-*   after LIMSW_intr_Start or LIMSW_intr_StartEx has been called. 
+*   after isr_LIM_Start or isr_LIM_StartEx has been called. 
 *   To set the initial priority for the component, use the Design-Wide Resources
 *   Interrupt Editor.
 *
@@ -246,20 +246,20 @@ cyisraddress LIMSW_intr_GetVector(void)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_SetPriority(uint8 priority)
+void isr_LIM_SetPriority(uint8 priority)
 {
 	uint8 interruptState;
-    uint32 priorityOffset = ((LIMSW_intr__INTC_NUMBER % 4u) * 8u) + 6u;
+    uint32 priorityOffset = ((isr_LIM__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *LIMSW_intr_INTC_PRIOR = (*LIMSW_intr_INTC_PRIOR & (uint32)(~LIMSW_intr__INTC_PRIOR_MASK)) |
+    *isr_LIM_INTC_PRIOR = (*isr_LIM_INTC_PRIOR & (uint32)(~isr_LIM__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_GetPriority
+* Function Name: isr_LIM_GetPriority
 ********************************************************************************
 *
 * Summary:
@@ -274,19 +274,19 @@ void LIMSW_intr_SetPriority(uint8 priority)
 *    PSoC 4: Priority is from 0 to 3.
 *
 *******************************************************************************/
-uint8 LIMSW_intr_GetPriority(void)
+uint8 isr_LIM_GetPriority(void)
 {
     uint32 priority;
-	uint32 priorityOffset = ((LIMSW_intr__INTC_NUMBER % 4u) * 8u) + 6u;
+	uint32 priorityOffset = ((isr_LIM__INTC_NUMBER % 4u) * 8u) + 6u;
 
-    priority = (*LIMSW_intr_INTC_PRIOR & LIMSW_intr__INTC_PRIOR_MASK) >> priorityOffset;
+    priority = (*isr_LIM_INTC_PRIOR & isr_LIM__INTC_PRIOR_MASK) >> priorityOffset;
 
     return (uint8)priority;
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_Enable
+* Function Name: isr_LIM_Enable
 ********************************************************************************
 *
 * Summary:
@@ -301,15 +301,15 @@ uint8 LIMSW_intr_GetPriority(void)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_Enable(void)
+void isr_LIM_Enable(void)
 {
     /* Enable the general interrupt. */
-    *LIMSW_intr_INTC_SET_EN = LIMSW_intr__INTC_MASK;
+    *isr_LIM_INTC_SET_EN = isr_LIM__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_GetState
+* Function Name: isr_LIM_GetState
 ********************************************************************************
 *
 * Summary:
@@ -322,15 +322,15 @@ void LIMSW_intr_Enable(void)
 *   1 if enabled, 0 if disabled.
 *
 *******************************************************************************/
-uint8 LIMSW_intr_GetState(void)
+uint8 isr_LIM_GetState(void)
 {
     /* Get the state of the general interrupt. */
-    return ((*LIMSW_intr_INTC_SET_EN & (uint32)LIMSW_intr__INTC_MASK) != 0u) ? 1u:0u;
+    return ((*isr_LIM_INTC_SET_EN & (uint32)isr_LIM__INTC_MASK) != 0u) ? 1u:0u;
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_Disable
+* Function Name: isr_LIM_Disable
 ********************************************************************************
 *
 * Summary:
@@ -343,15 +343,15 @@ uint8 LIMSW_intr_GetState(void)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_Disable(void)
+void isr_LIM_Disable(void)
 {
     /* Disable the general interrupt. */
-    *LIMSW_intr_INTC_CLR_EN = LIMSW_intr__INTC_MASK;
+    *isr_LIM_INTC_CLR_EN = isr_LIM__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_SetPending
+* Function Name: isr_LIM_SetPending
 ********************************************************************************
 *
 * Summary:
@@ -370,14 +370,14 @@ void LIMSW_intr_Disable(void)
 *   interrupts).
 *
 *******************************************************************************/
-void LIMSW_intr_SetPending(void)
+void isr_LIM_SetPending(void)
 {
-    *LIMSW_intr_INTC_SET_PD = LIMSW_intr__INTC_MASK;
+    *isr_LIM_INTC_SET_PD = isr_LIM__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: LIMSW_intr_ClearPending
+* Function Name: isr_LIM_ClearPending
 ********************************************************************************
 *
 * Summary:
@@ -395,9 +395,9 @@ void LIMSW_intr_SetPending(void)
 *   None
 *
 *******************************************************************************/
-void LIMSW_intr_ClearPending(void)
+void isr_LIM_ClearPending(void)
 {
-    *LIMSW_intr_INTC_CLR_PD = LIMSW_intr__INTC_MASK;
+    *isr_LIM_INTC_CLR_PD = isr_LIM__INTC_MASK;
 }
 
 #endif /* End check for removal by optimization */
