@@ -1,5 +1,5 @@
 -- Project:   science wow
--- Generated: 02/18/2022 19:20:44
+-- Generated: 02/24/2022 19:30:15
 -- PSoC Creator  4.4
 
 ENTITY \science wow\ IS
@@ -8,8 +8,6 @@ ENTITY \science wow\ IS
         CAN_TX(0)_PAD : OUT std_ulogic;
         \I2C:sda(0)_PAD\ : INOUT std_ulogic;
         \I2C:scl(0)_PAD\ : INOUT std_ulogic;
-        UART_RX(0)_PAD : IN std_ulogic;
-        UART_TX(0)_PAD : OUT std_ulogic;
         DBG_LED(0)_PAD : OUT std_ulogic;
         ERR_LED(0)_PAD : OUT std_ulogic;
         CAN_LED(0)_PAD : OUT std_ulogic;
@@ -17,7 +15,13 @@ ENTITY \science wow\ IS
         LIM2(0)_PAD : IN std_ulogic;
         LIM3(0)_PAD : IN std_ulogic;
         LIM4(0)_PAD : IN std_ulogic;
-        LIM5(0)_PAD : IN std_ulogic);
+        LIM5(0)_PAD : IN std_ulogic;
+        ENC_1_B(0)_PAD : IN std_ulogic;
+        ENC_1_A(0)_PAD : IN std_ulogic;
+        ENC_2_A(0)_PAD : IN std_ulogic;
+        ENC_2_B(0)_PAD : IN std_ulogic;
+        \UART:tx(0)_PAD\ : INOUT std_ulogic;
+        \UART:rx(0)_PAD\ : IN std_ulogic);
     ATTRIBUTE voltage_VDDIO_A_1 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_0 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_CTB OF __DEFAULT__ : ENTITY IS 3.3e0;
@@ -48,6 +52,10 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL ClockBlock_SysClk : bit;
     SIGNAL ClockBlock_WCO : bit;
     SIGNAL DBG_LED(0)__PA : bit;
+    SIGNAL ENC_1_A(0)__PA : bit;
+    SIGNAL ENC_1_B(0)__PA : bit;
+    SIGNAL ENC_2_A(0)__PA : bit;
+    SIGNAL ENC_2_B(0)__PA : bit;
     SIGNAL ERR_LED(0)__PA : bit;
     SIGNAL Humidity(0)__PA : bit;
     SIGNAL LIM1(0)__PA : bit;
@@ -57,8 +65,6 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL LIM5(0)__PA : bit;
     SIGNAL Net_11 : bit;
     SIGNAL Net_12 : bit;
-    SIGNAL Net_327 : bit;
-    SIGNAL Net_328 : bit;
     SIGNAL Net_333 : bit;
     SIGNAL Net_334 : bit;
     SIGNAL Net_373 : bit;
@@ -66,25 +72,30 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL Net_389 : bit;
     SIGNAL Net_390 : bit;
     SIGNAL Net_391 : bit;
-    SIGNAL Net_423_digital : bit;
-    ATTRIBUTE udbclken_assigned OF Net_423_digital : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF Net_423_digital : SIGNAL IS true;
-    SIGNAL Net_43 : bit;
     SIGNAL Net_459 : bit;
     SIGNAL Net_466 : bit;
-    SIGNAL Net_47 : bit;
     SIGNAL Net_470 : bit;
     SIGNAL Net_474 : bit;
     SIGNAL Net_478 : bit;
-    SIGNAL Net_500 : bit;
-    SIGNAL Net_513_0 : bit;
-    SIGNAL Net_513_1 : bit;
-    SIGNAL Net_513_2 : bit;
-    SIGNAL Net_513_3 : bit;
-    SIGNAL Net_513_4 : bit;
+    SIGNAL Net_528 : bit;
+    SIGNAL Net_556_0 : bit;
+    SIGNAL Net_556_1 : bit;
+    SIGNAL Net_556_2 : bit;
+    SIGNAL Net_556_3 : bit;
+    SIGNAL Net_556_4 : bit;
+    SIGNAL Net_565_digital : bit;
+    ATTRIBUTE udbclken_assigned OF Net_565_digital : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_565_digital : SIGNAL IS true;
+    SIGNAL Net_569 : bit;
+    SIGNAL Net_570 : bit;
+    SIGNAL Net_572 : bit;
+    SIGNAL Net_573 : bit;
+    SIGNAL Net_687 : bit;
+    SIGNAL Net_696 : bit;
+    SIGNAL Net_705 : bit;
+    SIGNAL Net_759 : bit;
+    SIGNAL Net_760 : bit;
     SIGNAL Temp(0)__PA : bit;
-    SIGNAL UART_RX(0)__PA : bit;
-    SIGNAL UART_TX(0)__PA : bit;
     SIGNAL \\\ADC:Bypass(0)\\__PA\ : bit;
     SIGNAL \ADC:Net_1845_ff10\ : bit;
     ATTRIBUTE global_signal OF \ADC:Net_1845_ff10\ : SIGNAL IS true;
@@ -107,47 +118,6 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL \ADC:Net_3111_8\ : bit;
     SIGNAL \ADC:Net_3111_9\ : bit;
     SIGNAL \ADC:Net_3112\ : bit;
-    SIGNAL \Debug:BUART:counter_load_not\ : bit;
-    SIGNAL \Debug:BUART:pollcount_0\ : bit;
-    SIGNAL \Debug:BUART:pollcount_1\ : bit;
-    SIGNAL \Debug:BUART:rx_bitclk_enable\ : bit;
-    SIGNAL \Debug:BUART:rx_count7_tc\ : bit;
-    SIGNAL \Debug:BUART:rx_count_0\ : bit;
-    SIGNAL \Debug:BUART:rx_count_1\ : bit;
-    SIGNAL \Debug:BUART:rx_count_2\ : bit;
-    SIGNAL \Debug:BUART:rx_count_3\ : bit;
-    SIGNAL \Debug:BUART:rx_count_4\ : bit;
-    SIGNAL \Debug:BUART:rx_count_5\ : bit;
-    SIGNAL \Debug:BUART:rx_count_6\ : bit;
-    SIGNAL \Debug:BUART:rx_counter_load\ : bit;
-    SIGNAL \Debug:BUART:rx_fifofull\ : bit;
-    SIGNAL \Debug:BUART:rx_fifonotempty\ : bit;
-    SIGNAL \Debug:BUART:rx_last\ : bit;
-    SIGNAL \Debug:BUART:rx_load_fifo\ : bit;
-    SIGNAL \Debug:BUART:rx_postpoll\ : bit;
-    SIGNAL \Debug:BUART:rx_state_0\ : bit;
-    SIGNAL \Debug:BUART:rx_state_2\ : bit;
-    SIGNAL \Debug:BUART:rx_state_3\ : bit;
-    SIGNAL \Debug:BUART:rx_state_stop1_reg\ : bit;
-    SIGNAL \Debug:BUART:rx_status_3\ : bit;
-    SIGNAL \Debug:BUART:rx_status_4\ : bit;
-    SIGNAL \Debug:BUART:rx_status_5\ : bit;
-    SIGNAL \Debug:BUART:tx_bitclk\ : bit;
-    SIGNAL \Debug:BUART:tx_bitclk_enable_pre\ : bit;
-    SIGNAL \Debug:BUART:tx_counter_dp\ : bit;
-    SIGNAL \Debug:BUART:tx_ctrl_mark_last\ : bit;
-    SIGNAL \Debug:BUART:tx_fifo_empty\ : bit;
-    SIGNAL \Debug:BUART:tx_fifo_notfull\ : bit;
-    SIGNAL \Debug:BUART:tx_shift_out\ : bit;
-    SIGNAL \Debug:BUART:tx_state_0\ : bit;
-    SIGNAL \Debug:BUART:tx_state_1\ : bit;
-    SIGNAL \Debug:BUART:tx_state_2\ : bit;
-    SIGNAL \Debug:BUART:tx_status_0\ : bit;
-    SIGNAL \Debug:BUART:tx_status_2\ : bit;
-    SIGNAL \Debug:BUART:txn\ : bit;
-    SIGNAL \Debug:Net_9_digital\ : bit;
-    ATTRIBUTE udbclken_assigned OF \Debug:Net_9_digital\ : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF \Debug:Net_9_digital\ : SIGNAL IS true;
     SIGNAL \I2C:Net_847_ff2\ : bit;
     ATTRIBUTE global_signal OF \I2C:Net_847_ff2\ : SIGNAL IS true;
     SIGNAL \I2C:miso_s_wire\ : bit;
@@ -161,85 +131,225 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL \I2C:select_m_wire_2\ : bit;
     SIGNAL \I2C:select_m_wire_3\ : bit;
     SIGNAL \I2C:tx_wire\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:cmp_out_i\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_0\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_1\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_2\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_3\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_4\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_5\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_6\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:control_7\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:count_enable\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:count_stored_i\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:overflow\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:prevCompare\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:reload\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_0\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_1\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_2\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_3\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_5\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_6\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\ : bit;
+    SIGNAL \QuadDec_1:Net_1203\ : bit;
+    SIGNAL \QuadDec_1:Net_1251\ : bit;
+    SIGNAL \QuadDec_1:Net_1251_split\ : bit;
+    SIGNAL \QuadDec_1:Net_1260\ : bit;
+    SIGNAL \QuadDec_1:Net_1275\ : bit;
+    SIGNAL \QuadDec_1:Net_530\ : bit;
+    SIGNAL \QuadDec_1:Net_611\ : bit;
+    SIGNAL \QuadDec_1:bQuadDec:error\ : bit;
+    SIGNAL \QuadDec_1:bQuadDec:quad_A_filt\ : bit;
+    SIGNAL \QuadDec_1:bQuadDec:quad_B_filt\ : bit;
+    SIGNAL \QuadDec_1:bQuadDec:state_0\ : bit;
+    SIGNAL \QuadDec_1:bQuadDec:state_1\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:cmp_out_i\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_0\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_1\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_2\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_3\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_4\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_5\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_6\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:control_7\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:count_enable\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:count_stored_i\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:overflow\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:overflow_reg_i\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:prevCompare\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:reload\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:status_0\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:status_1\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:status_2\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:status_3\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:status_5\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:status_6\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:underflow_reg_i\ : bit;
+    SIGNAL \QuadDec_2:Net_1203\ : bit;
+    SIGNAL \QuadDec_2:Net_1251\ : bit;
+    SIGNAL \QuadDec_2:Net_1251_split\ : bit;
+    SIGNAL \QuadDec_2:Net_1260\ : bit;
+    SIGNAL \QuadDec_2:Net_1275\ : bit;
+    SIGNAL \QuadDec_2:Net_530\ : bit;
+    SIGNAL \QuadDec_2:Net_611\ : bit;
+    SIGNAL \QuadDec_2:bQuadDec:error\ : bit;
+    SIGNAL \QuadDec_2:bQuadDec:quad_A_filt\ : bit;
+    SIGNAL \QuadDec_2:bQuadDec:quad_B_filt\ : bit;
+    SIGNAL \QuadDec_2:bQuadDec:state_0\ : bit;
+    SIGNAL \QuadDec_2:bQuadDec:state_1\ : bit;
+    SIGNAL \UART:Net_847_ff3\ : bit;
+    ATTRIBUTE global_signal OF \UART:Net_847_ff3\ : SIGNAL IS true;
+    SIGNAL \UART:miso_s_wire\ : bit;
+    SIGNAL \UART:mosi_m_wire\ : bit;
+    SIGNAL \UART:rts_wire\ : bit;
+    SIGNAL \\\UART:rx(0)\\__PA\ : bit;
+    SIGNAL \UART:rx_wire\ : bit;
+    SIGNAL \UART:sclk_m_wire\ : bit;
+    SIGNAL \UART:select_m_wire_0\ : bit;
+    SIGNAL \UART:select_m_wire_1\ : bit;
+    SIGNAL \UART:select_m_wire_2\ : bit;
+    SIGNAL \UART:select_m_wire_3\ : bit;
+    SIGNAL \\\UART:tx(0)\\__PA\ : bit;
+    SIGNAL \UART:tx_wire\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
     SIGNAL dclk_to_genclk : bit;
-    SIGNAL dclk_to_genclk_1 : bit;
     SIGNAL tmpOE__CAN_RX_net_0 : bit;
     ATTRIBUTE POWER OF tmpOE__CAN_RX_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cl0__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.z0__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ff0__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ce1__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cl1__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.z1__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ff1__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.co_msb__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.sol_msb__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\ : bit;
+    SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cl0__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.z0__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ff0__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ce1__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cl1__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.z1__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ff1__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.co_msb__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.sol_msb__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\ : bit;
+    SIGNAL \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\ : bit;
     ATTRIBUTE Location OF ClockGenBlock : LABEL IS "F(CLK_GEN,0)";
     ATTRIBUTE lib_model OF CAN_RX(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF CAN_RX(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF CAN_TX(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CAN_TX(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF \I2C:sda(0)\ : LABEL IS "iocell3";
+    ATTRIBUTE Location OF \I2C:sda(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE lib_model OF \I2C:scl(0)\ : LABEL IS "iocell4";
-    ATTRIBUTE lib_model OF UART_RX(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF UART_RX(0) : LABEL IS "P2[0]";
-    ATTRIBUTE lib_model OF UART_TX(0) : LABEL IS "iocell6";
-    ATTRIBUTE Location OF UART_TX(0) : LABEL IS "P2[1]";
-    ATTRIBUTE lib_model OF DBG_LED(0) : LABEL IS "iocell7";
+    ATTRIBUTE Location OF \I2C:scl(0)\ : LABEL IS "P5[0]";
+    ATTRIBUTE lib_model OF DBG_LED(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF DBG_LED(0) : LABEL IS "P4[5]";
-    ATTRIBUTE lib_model OF ERR_LED(0) : LABEL IS "iocell8";
+    ATTRIBUTE lib_model OF ERR_LED(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF ERR_LED(0) : LABEL IS "P4[6]";
-    ATTRIBUTE lib_model OF CAN_LED(0) : LABEL IS "iocell9";
+    ATTRIBUTE lib_model OF CAN_LED(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF CAN_LED(0) : LABEL IS "P4[4]";
-    ATTRIBUTE lib_model OF \ADC:Bypass(0)\ : LABEL IS "iocell10";
+    ATTRIBUTE lib_model OF \ADC:Bypass(0)\ : LABEL IS "iocell8";
     ATTRIBUTE Location OF \ADC:Bypass(0)\ : LABEL IS "P1[7]";
-    ATTRIBUTE lib_model OF Humidity(0) : LABEL IS "iocell11";
+    ATTRIBUTE lib_model OF Humidity(0) : LABEL IS "iocell9";
     ATTRIBUTE Location OF Humidity(0) : LABEL IS "P2[6]";
-    ATTRIBUTE lib_model OF Temp(0) : LABEL IS "iocell12";
+    ATTRIBUTE lib_model OF Temp(0) : LABEL IS "iocell10";
     ATTRIBUTE Location OF Temp(0) : LABEL IS "P2[7]";
-    ATTRIBUTE lib_model OF LIM1(0) : LABEL IS "iocell13";
+    ATTRIBUTE lib_model OF LIM1(0) : LABEL IS "iocell11";
     ATTRIBUTE Location OF LIM1(0) : LABEL IS "P3[1]";
-    ATTRIBUTE lib_model OF LIM2(0) : LABEL IS "iocell14";
+    ATTRIBUTE lib_model OF LIM2(0) : LABEL IS "iocell12";
     ATTRIBUTE Location OF LIM2(0) : LABEL IS "P3[4]";
-    ATTRIBUTE lib_model OF LIM3(0) : LABEL IS "iocell15";
+    ATTRIBUTE lib_model OF LIM3(0) : LABEL IS "iocell13";
     ATTRIBUTE Location OF LIM3(0) : LABEL IS "P3[5]";
-    ATTRIBUTE lib_model OF LIM4(0) : LABEL IS "iocell16";
+    ATTRIBUTE lib_model OF LIM4(0) : LABEL IS "iocell14";
     ATTRIBUTE Location OF LIM4(0) : LABEL IS "P3[6]";
-    ATTRIBUTE lib_model OF LIM5(0) : LABEL IS "iocell17";
+    ATTRIBUTE lib_model OF LIM5(0) : LABEL IS "iocell15";
     ATTRIBUTE Location OF LIM5(0) : LABEL IS "P3[7]";
-    ATTRIBUTE lib_model OF Net_47 : LABEL IS "macrocell1";
-    ATTRIBUTE lib_model OF \Debug:BUART:counter_load_not\ : LABEL IS "macrocell2";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_status_0\ : LABEL IS "macrocell3";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_status_2\ : LABEL IS "macrocell4";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_counter_load\ : LABEL IS "macrocell5";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_postpoll\ : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_status_4\ : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_status_5\ : LABEL IS "macrocell8";
-    ATTRIBUTE lib_model OF \Debug:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE lib_model OF \Debug:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell2";
-    ATTRIBUTE lib_model OF \Debug:BUART:sTX:TxSts\ : LABEL IS "statusicell1";
-    ATTRIBUTE lib_model OF \Debug:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell3";
-    ATTRIBUTE lib_model OF \Debug:BUART:sRX:RxSts\ : LABEL IS "statusicell2";
+    ATTRIBUTE lib_model OF ENC_1_B(0) : LABEL IS "iocell16";
+    ATTRIBUTE Location OF ENC_1_B(0) : LABEL IS "P0[3]";
+    ATTRIBUTE lib_model OF ENC_1_A(0) : LABEL IS "iocell17";
+    ATTRIBUTE Location OF ENC_1_A(0) : LABEL IS "P0[2]";
+    ATTRIBUTE lib_model OF ENC_2_A(0) : LABEL IS "iocell18";
+    ATTRIBUTE Location OF ENC_2_A(0) : LABEL IS "P1[2]";
+    ATTRIBUTE lib_model OF ENC_2_B(0) : LABEL IS "iocell19";
+    ATTRIBUTE Location OF ENC_2_B(0) : LABEL IS "P1[3]";
+    ATTRIBUTE lib_model OF \UART:tx(0)\ : LABEL IS "iocell20";
+    ATTRIBUTE Location OF \UART:tx(0)\ : LABEL IS "P2[1]";
+    ATTRIBUTE lib_model OF \UART:rx(0)\ : LABEL IS "iocell21";
+    ATTRIBUTE Location OF \UART:rx(0)\ : LABEL IS "P2[0]";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell1";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell2";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell3";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell4";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell5";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_530\ : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_611\ : LABEL IS "macrocell7";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell9";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell10";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell12";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_530\ : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_611\ : LABEL IS "macrocell14";
     ATTRIBUTE Location OF \ADC:cy_psoc4_sar\ : LABEL IS "F(SARADC,0)";
-    ATTRIBUTE lib_model OF \Status_Reg_LIM:sts_intr:sts_reg\ : LABEL IS "statusicell3";
-    ATTRIBUTE lib_model OF \Debug:BUART:txn\ : LABEL IS "macrocell9";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_state_1\ : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_state_0\ : LABEL IS "macrocell11";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_state_2\ : LABEL IS "macrocell12";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_bitclk\ : LABEL IS "macrocell13";
-    ATTRIBUTE lib_model OF \Debug:BUART:tx_ctrl_mark_last\ : LABEL IS "macrocell14";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_state_0\ : LABEL IS "macrocell15";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_load_fifo\ : LABEL IS "macrocell16";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_state_3\ : LABEL IS "macrocell17";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_state_2\ : LABEL IS "macrocell18";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_bitclk_enable\ : LABEL IS "macrocell19";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell20";
-    ATTRIBUTE lib_model OF \Debug:BUART:pollcount_1\ : LABEL IS "macrocell21";
-    ATTRIBUTE lib_model OF \Debug:BUART:pollcount_0\ : LABEL IS "macrocell22";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_status_3\ : LABEL IS "macrocell23";
-    ATTRIBUTE lib_model OF \Debug:BUART:rx_last\ : LABEL IS "macrocell24";
-    ATTRIBUTE lib_model OF Net_513_0 : LABEL IS "macrocell25";
-    ATTRIBUTE lib_model OF Net_513_1 : LABEL IS "macrocell26";
-    ATTRIBUTE lib_model OF Net_513_2 : LABEL IS "macrocell27";
-    ATTRIBUTE lib_model OF Net_513_3 : LABEL IS "macrocell28";
-    ATTRIBUTE lib_model OF Net_513_4 : LABEL IS "macrocell29";
+    ATTRIBUTE lib_model OF \Status_Reg_LIM:sts_intr:sts_reg\ : LABEL IS "statusicell1";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sCTRLReg:ctrlreg\ : LABEL IS "controlcell1";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sSTSReg:stsreg\ : LABEL IS "statusicell2";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "datapathcell1";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "datapathcell2";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_filt\ : LABEL IS "macrocell15";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_filt\ : LABEL IS "macrocell16";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:Stsreg\ : LABEL IS "statusicell3";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:sCTRLReg:ctrlreg\ : LABEL IS "controlcell2";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:sSTSReg:stsreg\ : LABEL IS "statusicell4";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "datapathcell3";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "datapathcell4";
+    ATTRIBUTE lib_model OF \QuadDec_2:bQuadDec:quad_A_filt\ : LABEL IS "macrocell17";
+    ATTRIBUTE lib_model OF \QuadDec_2:bQuadDec:quad_B_filt\ : LABEL IS "macrocell18";
+    ATTRIBUTE lib_model OF \QuadDec_2:bQuadDec:Stsreg\ : LABEL IS "statusicell5";
+    ATTRIBUTE lib_model OF Net_556_0 : LABEL IS "macrocell19";
+    ATTRIBUTE lib_model OF Net_556_1 : LABEL IS "macrocell20";
+    ATTRIBUTE lib_model OF Net_556_2 : LABEL IS "macrocell21";
+    ATTRIBUTE lib_model OF Net_556_3 : LABEL IS "macrocell22";
+    ATTRIBUTE lib_model OF Net_556_4 : LABEL IS "macrocell23";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1251\ : LABEL IS "macrocell24";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell25";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell26";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1275\ : LABEL IS "macrocell27";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell28";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1251_split\ : LABEL IS "macrocell29";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell30";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1203\ : LABEL IS "macrocell31";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1260\ : LABEL IS "macrocell32";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:error\ : LABEL IS "macrocell33";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:state_1\ : LABEL IS "macrocell34";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:state_0\ : LABEL IS "macrocell35";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_1251\ : LABEL IS "macrocell36";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell37";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell38";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_1275\ : LABEL IS "macrocell39";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell40";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_1251_split\ : LABEL IS "macrocell41";
+    ATTRIBUTE lib_model OF \QuadDec_2:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell42";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_1203\ : LABEL IS "macrocell43";
+    ATTRIBUTE lib_model OF \QuadDec_2:Net_1260\ : LABEL IS "macrocell44";
+    ATTRIBUTE lib_model OF \QuadDec_2:bQuadDec:error\ : LABEL IS "macrocell45";
+    ATTRIBUTE lib_model OF \QuadDec_2:bQuadDec:state_1\ : LABEL IS "macrocell46";
+    ATTRIBUTE lib_model OF \QuadDec_2:bQuadDec:state_0\ : LABEL IS "macrocell47";
     COMPONENT cancell
         PORT (
             clock : IN std_ulogic;
@@ -248,28 +358,24 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
             can_tx_en : OUT std_ulogic;
             interrupt : OUT std_ulogic);
     END COMPONENT;
-    COMPONENT count7cell
+    COMPONENT controlcell
         PORT (
+            control_0 : OUT std_ulogic;
+            control_1 : OUT std_ulogic;
+            control_2 : OUT std_ulogic;
+            control_3 : OUT std_ulogic;
+            control_4 : OUT std_ulogic;
+            control_5 : OUT std_ulogic;
+            control_6 : OUT std_ulogic;
+            control_7 : OUT std_ulogic;
             clock : IN std_ulogic;
             reset : IN std_ulogic;
-            load : IN std_ulogic;
-            enable : IN std_ulogic;
             clk_en : IN std_ulogic;
-            count_0 : OUT std_ulogic;
-            count_1 : OUT std_ulogic;
-            count_2 : OUT std_ulogic;
-            count_3 : OUT std_ulogic;
-            count_4 : OUT std_ulogic;
-            count_5 : OUT std_ulogic;
-            count_6 : OUT std_ulogic;
-            tc : OUT std_ulogic;
-            clock_n : IN std_ulogic;
-            extclk : IN std_ulogic;
-            extclk_n : IN std_ulogic);
+            busclk : IN std_ulogic);
     END COMPONENT;
-    ATTRIBUTE udb_clk OF count7cell : COMPONENT IS "clock,clock_n,extclk,extclk_n";
-    ATTRIBUTE udb_clken OF count7cell : COMPONENT IS "clk_en";
-    ATTRIBUTE udb_reset OF count7cell : COMPONENT IS "reset";
+    ATTRIBUTE udb_clk OF controlcell : COMPONENT IS "clock";
+    ATTRIBUTE udb_clken OF controlcell : COMPONENT IS "clk_en";
+    ATTRIBUTE udb_reset OF controlcell : COMPONENT IS "reset";
     COMPONENT datapathcell
         PORT (
             clock : IN std_ulogic;
@@ -678,10 +784,8 @@ BEGIN
 
     ClockGenBlock:m0s8clockgenblockcell
         PORT MAP(
-            gen_clk_out_0 => \Debug:Net_9_digital\,
-            gen_clk_in_0 => dclk_to_genclk,
-            gen_clk_out_1 => Net_423_digital,
-            gen_clk_in_1 => dclk_to_genclk_1);
+            gen_clk_out_0 => Net_565_digital,
+            gen_clk_in_0 => dclk_to_genclk);
 
     ClockBlock:m0s8clockblockcell
         PORT MAP(
@@ -698,8 +802,8 @@ BEGIN
             dsi_in_0 => ClockBlock_Routed1,
             ff_div_10 => \ADC:Net_1845_ff10\,
             ff_div_2 => \I2C:Net_847_ff2\,
-            udb_div_0 => dclk_to_genclk,
-            udb_div_1 => dclk_to_genclk_1);
+            ff_div_3 => \UART:Net_847_ff3\,
+            udb_div_0 => dclk_to_genclk);
 
     CAN_RX:logicalport
         GENERIC MAP(
@@ -1061,190 +1165,6 @@ BEGIN
             fb => Net_389,
             pin_input => open,
             pad_in => \I2C:scl(0)_PAD\,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
-    UART_RX:logicalport
-        GENERIC MAP(
-            drive_mode => "001",
-            ibuf_enabled => "1",
-            id => "d767c0bb-7608-4de5-9e25-353b7e0b9279",
-            init_dr_st => "0",
-            input_buffer_sel => "00",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "0",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            ovt_hyst_trim => "0",
-            ovt_needed => "0",
-            ovt_slew_control => "00",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "I",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "00000000",
-            sio_hyst => "1",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vohsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "00",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open,
-            in_clock => open);
-
-    UART_RX(0):iocell
-        GENERIC MAP(
-            in_sync_mode => 2,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "UART_RX",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
-        PORT MAP(
-            pa_out => UART_RX(0)__PA,
-            oe => open,
-            fb => Net_43,
-            pad_in => UART_RX(0)_PAD,
-            in_clock => ClockBlock_HFClk,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
-    UART_TX:logicalport
-        GENERIC MAP(
-            drive_mode => "110",
-            ibuf_enabled => "1",
-            id => "a7fe6220-ad7e-4bef-8ee0-cbcc34b60f4d",
-            init_dr_st => "1",
-            input_buffer_sel => "00",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "1",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            ovt_hyst_trim => "0",
-            ovt_needed => "0",
-            ovt_slew_control => "00",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "O",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "00000000",
-            sio_hyst => "1",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vohsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open);
-
-    UART_TX(0):iocell
-        GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "UART_TX",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
-        PORT MAP(
-            pa_out => UART_TX(0)__PA,
-            oe => open,
-            pin_input => Net_47,
-            pad_out => UART_TX(0)_PAD,
-            pad_in => UART_TX(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -2244,91 +2164,700 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    Net_47:macrocell
+    ENC_1_B:logicalport
         GENERIC MAP(
-            eqn_main => "(!main_0)",
-            regmode => 0,
-            clken_mode => 1)
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "e5c61c2e-7d44-484b-9cd1-26457003906c",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
         PORT MAP(
-            q => Net_47,
-            main_0 => \Debug:BUART:txn\);
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
 
-    \Debug:BUART:counter_load_not\:macrocell
+    ENC_1_B(0):iocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * !main_1 * !main_3)",
-            regmode => 0,
-            clken_mode => 1)
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "ENC_1_B",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
         PORT MAP(
-            q => \Debug:BUART:counter_load_not\,
-            main_0 => \Debug:BUART:tx_state_1\,
-            main_1 => \Debug:BUART:tx_state_0\,
-            main_2 => \Debug:BUART:tx_bitclk_enable_pre\,
-            main_3 => \Debug:BUART:tx_state_2\);
+            pa_out => ENC_1_B(0)__PA,
+            oe => open,
+            fb => Net_573,
+            pad_in => ENC_1_B(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
 
-    \Debug:BUART:tx_status_0\:macrocell
+    ENC_1_A:logicalport
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3 * main_4)",
-            regmode => 0,
-            clken_mode => 1)
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "26167aca-9016-492a-8c0a-0279a45d1bef",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
         PORT MAP(
-            q => \Debug:BUART:tx_status_0\,
-            main_0 => \Debug:BUART:tx_state_1\,
-            main_1 => \Debug:BUART:tx_state_0\,
-            main_2 => \Debug:BUART:tx_bitclk_enable_pre\,
-            main_3 => \Debug:BUART:tx_fifo_empty\,
-            main_4 => \Debug:BUART:tx_state_2\);
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
 
-    \Debug:BUART:tx_status_2\:macrocell
+    ENC_1_A(0):iocell
         GENERIC MAP(
-            eqn_main => "(!main_0)",
-            regmode => 0,
-            clken_mode => 1)
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "ENC_1_A",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
         PORT MAP(
-            q => \Debug:BUART:tx_status_2\,
-            main_0 => \Debug:BUART:tx_fifo_notfull\);
+            pa_out => ENC_1_A(0)__PA,
+            oe => open,
+            fb => Net_572,
+            pad_in => ENC_1_A(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
 
-    \Debug:BUART:rx_counter_load\:macrocell
+    ENC_2_A:logicalport
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3)",
-            regmode => 0,
-            clken_mode => 1)
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "77715107-f8d5-47e5-a629-0fb83101ac6b",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
         PORT MAP(
-            q => \Debug:BUART:rx_counter_load\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_state_3\,
-            main_3 => \Debug:BUART:rx_state_2\);
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
 
-    \Debug:BUART:rx_postpoll\:macrocell
+    ENC_2_A(0):iocell
         GENERIC MAP(
-            eqn_main => "(main_0) + (main_1 * main_2)",
-            regmode => 0,
-            clken_mode => 1)
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "ENC_2_A",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
         PORT MAP(
-            q => \Debug:BUART:rx_postpoll\,
-            main_0 => \Debug:BUART:pollcount_1\,
-            main_1 => Net_43,
-            main_2 => \Debug:BUART:pollcount_0\);
+            pa_out => ENC_2_A(0)__PA,
+            oe => open,
+            fb => Net_569,
+            pad_in => ENC_2_A(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
 
-    \Debug:BUART:rx_status_4\:macrocell
+    ENC_2_B:logicalport
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1)",
-            regmode => 0,
-            clken_mode => 1)
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "9bb11e2d-a1e5-4e7e-a376-f6c7b6b581f6",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
         PORT MAP(
-            q => \Debug:BUART:rx_status_4\,
-            main_0 => \Debug:BUART:rx_load_fifo\,
-            main_1 => \Debug:BUART:rx_fifofull\);
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
 
-    \Debug:BUART:rx_status_5\:macrocell
+    ENC_2_B(0):iocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1)",
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "ENC_2_B",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => ENC_2_B(0)__PA,
+            oe => open,
+            fb => Net_570,
+            pad_in => ENC_2_B(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \UART:tx\:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "0",
+            id => "43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc",
+            init_dr_st => "1",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "1",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "B",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \UART:tx(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\UART:tx\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\UART:tx(0)\\__PA\,
+            oe => open,
+            pin_input => \UART:tx_wire\,
+            pad_out => \UART:tx(0)_PAD\,
+            pad_in => \UART:tx(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \UART:rx\:logicalport
+        GENERIC MAP(
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/78e33e5d-45ea-4b75-88d5-73274e8a7ce4",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \UART:rx(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\UART:rx\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\UART:rx(0)\\__PA\,
+            oe => open,
+            fb => \UART:rx_wire\,
+            pad_in => \UART:rx(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \QuadDec_1:Cnt16:CounterUDB:reload\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => \Debug:BUART:rx_status_5\,
-            main_0 => \Debug:BUART:rx_fifonotempty\,
-            main_1 => \Debug:BUART:rx_state_stop1_reg\);
+            q => \QuadDec_1:Cnt16:CounterUDB:reload\,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:Cnt16:CounterUDB:status_1\,
+            main_2 => \QuadDec_1:Cnt16:CounterUDB:overflow\);
+
+    \QuadDec_1:Cnt16:CounterUDB:status_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:status_0\,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:cmp_out_i\,
+            main_1 => \QuadDec_1:Cnt16:CounterUDB:prevCompare\);
+
+    \QuadDec_1:Cnt16:CounterUDB:status_2\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:status_2\,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:overflow\,
+            main_1 => \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\);
+
+    \QuadDec_1:Cnt16:CounterUDB:status_3\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:status_3\,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:status_1\,
+            main_1 => \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\);
+
+    \QuadDec_1:Cnt16:CounterUDB:count_enable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:count_enable\,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:control_7\,
+            main_1 => \QuadDec_1:Cnt16:CounterUDB:count_stored_i\,
+            main_2 => \QuadDec_1:Net_1203\);
+
+    \QuadDec_1:Net_530\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1 * !main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_530\,
+            main_0 => \QuadDec_1:Net_1251\,
+            main_1 => \QuadDec_1:Net_1275\,
+            main_2 => \QuadDec_1:Cnt16:CounterUDB:prevCompare\);
+
+    \QuadDec_1:Net_611\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_611\,
+            main_0 => \QuadDec_1:Net_1251\,
+            main_1 => \QuadDec_1:Net_1275\,
+            main_2 => \QuadDec_1:Cnt16:CounterUDB:prevCompare\);
+
+    \QuadDec_2:Cnt16:CounterUDB:reload\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:reload\,
+            main_0 => \QuadDec_2:Net_1260\,
+            main_1 => \QuadDec_2:Cnt16:CounterUDB:status_1\,
+            main_2 => \QuadDec_2:Cnt16:CounterUDB:overflow\);
+
+    \QuadDec_2:Cnt16:CounterUDB:status_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:status_0\,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:cmp_out_i\,
+            main_1 => \QuadDec_2:Cnt16:CounterUDB:prevCompare\);
+
+    \QuadDec_2:Cnt16:CounterUDB:status_2\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:status_2\,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:overflow\,
+            main_1 => \QuadDec_2:Cnt16:CounterUDB:overflow_reg_i\);
+
+    \QuadDec_2:Cnt16:CounterUDB:status_3\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:status_3\,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:status_1\,
+            main_1 => \QuadDec_2:Cnt16:CounterUDB:underflow_reg_i\);
+
+    \QuadDec_2:Cnt16:CounterUDB:count_enable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:count_enable\,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:control_7\,
+            main_1 => \QuadDec_2:Cnt16:CounterUDB:count_stored_i\,
+            main_2 => \QuadDec_2:Net_1203\);
+
+    \QuadDec_2:Net_530\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1 * !main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_530\,
+            main_0 => \QuadDec_2:Net_1251\,
+            main_1 => \QuadDec_2:Net_1275\,
+            main_2 => \QuadDec_2:Cnt16:CounterUDB:prevCompare\);
+
+    \QuadDec_2:Net_611\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_2)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_611\,
+            main_0 => \QuadDec_2:Net_1251\,
+            main_1 => \QuadDec_2:Net_1275\,
+            main_2 => \QuadDec_2:Cnt16:CounterUDB:prevCompare\);
 
     \CAN:isr\:interrupt
         GENERIC MAP(
@@ -2382,177 +2911,6 @@ BEGIN
             tr_tx_req => Net_391,
             tr_rx_req => Net_382);
 
-    \Debug:BUART:sTX:TxShifter:u0\:datapathcell
-        GENERIC MAP(
-            a0_init => "00000000",
-            a1_init => "00000000",
-            ce0_sync => 1,
-            ce1_sync => 1,
-            cl0_sync => 1,
-            cl1_sync => 1,
-            cmsb_sync => 1,
-            co_msb_sync => 1,
-            cy_dpconfig => "0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100",
-            d0_init => "00000000",
-            d1_init => "00000000",
-            f0_blk_sync => 1,
-            f0_bus_sync => 1,
-            f1_blk_sync => 1,
-            f1_bus_sync => 1,
-            ff0_sync => 1,
-            ff1_sync => 1,
-            ov_msb_sync => 1,
-            so_sync => 1,
-            z0_sync => 1,
-            z1_sync => 1,
-            uses_p_in => '0',
-            uses_p_out => '0',
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            reset => open,
-            clock => \Debug:Net_9_digital\,
-            cs_addr_2 => \Debug:BUART:tx_state_1\,
-            cs_addr_1 => \Debug:BUART:tx_state_0\,
-            cs_addr_0 => \Debug:BUART:tx_bitclk_enable_pre\,
-            so_comb => \Debug:BUART:tx_shift_out\,
-            f0_bus_stat_comb => \Debug:BUART:tx_fifo_notfull\,
-            f0_blk_stat_comb => \Debug:BUART:tx_fifo_empty\,
-            busclk => ClockBlock_HFClk);
-
-    \Debug:BUART:sTX:sCLOCK:TxBitClkGen\:datapathcell
-        GENERIC MAP(
-            a0_init => "00000000",
-            a1_init => "00000000",
-            ce0_sync => 1,
-            ce1_sync => 1,
-            cl0_sync => 1,
-            cl1_sync => 1,
-            cmsb_sync => 1,
-            co_msb_sync => 1,
-            cy_dpconfig => "1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000",
-            d0_init => "00000000",
-            d1_init => "00000000",
-            f0_blk_sync => 1,
-            f0_bus_sync => 1,
-            f1_blk_sync => 1,
-            f1_bus_sync => 1,
-            ff0_sync => 1,
-            ff1_sync => 1,
-            ov_msb_sync => 1,
-            so_sync => 1,
-            z0_sync => 1,
-            z1_sync => 1,
-            uses_p_in => '0',
-            uses_p_out => '0',
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            reset => open,
-            clock => \Debug:Net_9_digital\,
-            cs_addr_0 => \Debug:BUART:counter_load_not\,
-            ce0_reg => \Debug:BUART:tx_bitclk_enable_pre\,
-            ce1_reg => \Debug:BUART:tx_counter_dp\,
-            busclk => ClockBlock_HFClk);
-
-    \Debug:BUART:sTX:TxSts\:statusicell
-        GENERIC MAP(
-            cy_force_order => 1,
-            cy_int_mask => "1111111",
-            cy_md_select => "0000001",
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            reset => open,
-            clock => \Debug:Net_9_digital\,
-            status_6 => open,
-            status_5 => open,
-            status_4 => open,
-            status_3 => \Debug:BUART:tx_fifo_notfull\,
-            status_2 => \Debug:BUART:tx_status_2\,
-            status_1 => \Debug:BUART:tx_fifo_empty\,
-            status_0 => \Debug:BUART:tx_status_0\);
-
-    \Debug:BUART:sRX:RxShifter:u0\:datapathcell
-        GENERIC MAP(
-            a0_init => "00000000",
-            a1_init => "00000000",
-            ce0_sync => 1,
-            ce1_sync => 1,
-            cl0_sync => 1,
-            cl1_sync => 1,
-            cmsb_sync => 1,
-            co_msb_sync => 1,
-            cy_dpconfig => "0000000000000000000000000000000000000000000000000000001001000000000100000000000000010000001100000001000000000000000100100001000011111111000000001111111111111111101000000110001001000001111100000000000000001100",
-            d0_init => "00000000",
-            d1_init => "00000000",
-            f0_blk_sync => 1,
-            f0_bus_sync => 1,
-            f1_blk_sync => 1,
-            f1_bus_sync => 1,
-            ff0_sync => 1,
-            ff1_sync => 1,
-            ov_msb_sync => 1,
-            so_sync => 1,
-            z0_sync => 1,
-            z1_sync => 1,
-            uses_p_in => '0',
-            uses_p_out => '0',
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            reset => open,
-            clock => \Debug:Net_9_digital\,
-            cs_addr_2 => \Debug:BUART:tx_ctrl_mark_last\,
-            cs_addr_1 => \Debug:BUART:rx_state_0\,
-            cs_addr_0 => \Debug:BUART:rx_bitclk_enable\,
-            route_si => \Debug:BUART:rx_postpoll\,
-            f0_load => \Debug:BUART:rx_load_fifo\,
-            f0_bus_stat_comb => \Debug:BUART:rx_fifonotempty\,
-            f0_blk_stat_comb => \Debug:BUART:rx_fifofull\,
-            busclk => ClockBlock_HFClk);
-
-    \Debug:BUART:sRX:RxBitCounter\:count7cell
-        GENERIC MAP(
-            cy_alt_mode => 0,
-            cy_init_value => "0000000",
-            cy_period => "1110010",
-            cy_route_en => 1,
-            cy_route_ld => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            clock => \Debug:Net_9_digital\,
-            reset => open,
-            load => \Debug:BUART:rx_counter_load\,
-            enable => open,
-            count_6 => \Debug:BUART:rx_count_6\,
-            count_5 => \Debug:BUART:rx_count_5\,
-            count_4 => \Debug:BUART:rx_count_4\,
-            count_3 => \Debug:BUART:rx_count_3\,
-            count_2 => \Debug:BUART:rx_count_2\,
-            count_1 => \Debug:BUART:rx_count_1\,
-            count_0 => \Debug:BUART:rx_count_0\,
-            tc => \Debug:BUART:rx_count7_tc\);
-
-    \Debug:BUART:sRX:RxSts\:statusicell
-        GENERIC MAP(
-            cy_force_order => 1,
-            cy_int_mask => "1111111",
-            cy_md_select => "1011111",
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            reset => open,
-            clock => \Debug:Net_9_digital\,
-            status_6 => open,
-            status_5 => \Debug:BUART:rx_status_5\,
-            status_4 => \Debug:BUART:rx_status_4\,
-            status_3 => \Debug:BUART:rx_status_3\,
-            status_2 => open,
-            status_1 => open,
-            status_0 => open);
-
     \ADC:IRQ\:interrupt
         GENERIC MAP(
             int_type => "10",
@@ -2566,7 +2924,7 @@ BEGIN
             cy_registers => "")
         PORT MAP(
             clock => \ADC:Net_1845_ff10\,
-            sample_done => Net_328,
+            sample_done => Net_760,
             chan_id_valid => \ADC:Net_3108\,
             chan_id_3 => \ADC:Net_3109_3\,
             chan_id_2 => \ADC:Net_3109_2\,
@@ -2585,7 +2943,7 @@ BEGIN
             data_2 => \ADC:Net_3111_2\,
             data_1 => \ADC:Net_3111_1\,
             data_0 => \ADC:Net_3111_0\,
-            tr_sar_out => Net_327,
+            tr_sar_out => Net_759,
             irq => \ADC:Net_3112\,
             sw_negvref => open,
             cfg_st_sel_1 => open,
@@ -2613,325 +2971,791 @@ BEGIN
             clock => open,
             status_6 => open,
             status_5 => open,
-            status_4 => Net_513_4,
-            status_3 => Net_513_3,
-            status_2 => Net_513_2,
-            status_1 => Net_513_1,
-            status_0 => Net_513_0,
-            interrupt => Net_500);
+            status_4 => Net_556_4,
+            status_3 => Net_556_3,
+            status_2 => Net_556_2,
+            status_1 => Net_556_1,
+            status_0 => Net_556_0,
+            interrupt => Net_528);
 
     isr_LIM:interrupt
         GENERIC MAP(
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_500,
+            interrupt => Net_528,
             clock => ClockBlock_HFClk);
 
-    \Debug:BUART:txn\:macrocell
+    \QuadDec_1:Cnt16:CounterUDB:sCTRLReg:ctrlreg\:controlcell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * !main_6) + (main_0 * main_4) + (!main_1 * main_2 * !main_3 * !main_4) + (!main_1 * main_2 * !main_4 * !main_6) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5 * main_6)",
-            regmode => 1,
+            cy_ctrl_mode_0 => "11111111",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000000",
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => \Debug:BUART:txn\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:txn\,
-            main_1 => \Debug:BUART:tx_state_1\,
-            main_2 => \Debug:BUART:tx_state_0\,
-            main_3 => \Debug:BUART:tx_shift_out\,
-            main_4 => \Debug:BUART:tx_state_2\,
-            main_5 => \Debug:BUART:tx_counter_dp\,
-            main_6 => \Debug:BUART:tx_bitclk\);
+            clock => Net_565_digital,
+            control_7 => \QuadDec_1:Cnt16:CounterUDB:control_7\,
+            control_6 => \QuadDec_1:Cnt16:CounterUDB:control_6\,
+            control_5 => \QuadDec_1:Cnt16:CounterUDB:control_5\,
+            control_4 => \QuadDec_1:Cnt16:CounterUDB:control_4\,
+            control_3 => \QuadDec_1:Cnt16:CounterUDB:control_3\,
+            control_2 => \QuadDec_1:Cnt16:CounterUDB:control_2\,
+            control_1 => \QuadDec_1:Cnt16:CounterUDB:control_1\,
+            control_0 => \QuadDec_1:Cnt16:CounterUDB:control_0\,
+            busclk => ClockBlock_HFClk);
 
-    \Debug:BUART:tx_state_1\:macrocell
+    \QuadDec_1:Cnt16:CounterUDB:sSTSReg:stsreg\:statusicell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1 * main_2 * main_3) + (main_0 * !main_3 * main_4 * main_5) + (main_1 * !main_3 * main_5)",
-            regmode => 2,
+            cy_force_order => 1,
+            cy_int_mask => "1111111",
+            cy_md_select => "0011111",
+            clk_inv => '0',
+            clken_mode => 1,
+            reset_inv => '0')
+        PORT MAP(
+            reset => \QuadDec_1:Net_1260\,
+            clock => Net_565_digital,
+            status_6 => \QuadDec_1:Cnt16:CounterUDB:status_6\,
+            status_5 => \QuadDec_1:Cnt16:CounterUDB:status_5\,
+            status_4 => open,
+            status_3 => \QuadDec_1:Cnt16:CounterUDB:status_3\,
+            status_2 => \QuadDec_1:Cnt16:CounterUDB:status_2\,
+            status_1 => \QuadDec_1:Cnt16:CounterUDB:status_1\,
+            status_0 => \QuadDec_1:Cnt16:CounterUDB:status_0\);
+
+    \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000001000000001000000010000000000000010000000000000000100000000000000100000000010000001000000000000001000000011111111000000001111111111111111101000000000000000000001000000000000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => \Debug:BUART:tx_state_1\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_state_1\,
-            main_1 => \Debug:BUART:tx_state_0\,
-            main_2 => \Debug:BUART:tx_bitclk_enable_pre\,
-            main_3 => \Debug:BUART:tx_state_2\,
-            main_4 => \Debug:BUART:tx_counter_dp\,
-            main_5 => \Debug:BUART:tx_bitclk\);
+            clock => Net_565_digital,
+            cs_addr_2 => \QuadDec_1:Net_1251\,
+            cs_addr_1 => \QuadDec_1:Cnt16:CounterUDB:count_enable\,
+            cs_addr_0 => \QuadDec_1:Cnt16:CounterUDB:reload\,
+            busclk => ClockBlock_HFClk,
+            ce0 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\,
+            cl0 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cl0__sig\,
+            z0 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.z0__sig\,
+            ff0 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ff0__sig\,
+            ce1 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ce1__sig\,
+            cl1 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cl1__sig\,
+            z1 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.z1__sig\,
+            ff1 => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ff1__sig\,
+            co_msb => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.co_msb__sig\,
+            sol_msb => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.sol_msb__sig\,
+            cfbo => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\,
+            sil => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\,
+            cmsbi => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\);
 
-    \Debug:BUART:tx_state_0\:macrocell
+    \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1\:datapathcell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * !main_3) + (!main_0 * !main_1 * !main_3 * !main_4) + (main_0 * main_1 * main_2 * main_3 * main_4) + (main_1 * !main_4 * main_5)",
-            regmode => 2,
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000001000000001000000010000000000000010000000000000000100000000000000100000000010000001000000000000001000000011111111000000001111111111111111101011110000000000000001000001110000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => \Debug:BUART:tx_state_0\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_state_1\,
-            main_1 => \Debug:BUART:tx_state_0\,
-            main_2 => \Debug:BUART:tx_bitclk_enable_pre\,
-            main_3 => \Debug:BUART:tx_fifo_empty\,
-            main_4 => \Debug:BUART:tx_state_2\,
-            main_5 => \Debug:BUART:tx_bitclk\);
+            clock => Net_565_digital,
+            cs_addr_2 => \QuadDec_1:Net_1251\,
+            cs_addr_1 => \QuadDec_1:Cnt16:CounterUDB:count_enable\,
+            cs_addr_0 => \QuadDec_1:Cnt16:CounterUDB:reload\,
+            z0_comb => \QuadDec_1:Cnt16:CounterUDB:status_1\,
+            f0_comb => \QuadDec_1:Cnt16:CounterUDB:overflow\,
+            ce1_comb => \QuadDec_1:Cnt16:CounterUDB:cmp_out_i\,
+            f0_bus_stat_comb => \QuadDec_1:Cnt16:CounterUDB:status_6\,
+            f0_blk_stat_comb => \QuadDec_1:Cnt16:CounterUDB:status_5\,
+            busclk => ClockBlock_HFClk,
+            ce0i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\,
+            cl0i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cl0__sig\,
+            z0i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.z0__sig\,
+            ff0i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ff0__sig\,
+            ce1i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ce1__sig\,
+            cl1i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cl1__sig\,
+            z1i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.z1__sig\,
+            ff1i => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.ff1__sig\,
+            ci => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.co_msb__sig\,
+            sir => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.sol_msb__sig\,
+            cfbi => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\,
+            sor => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\,
+            cmsbo => \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\);
 
-    \Debug:BUART:tx_state_2\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3) + (main_0 * main_1 * main_2 * main_3) + (main_0 * main_1 * !main_3 * main_5) + (main_0 * !main_3 * main_4 * main_5)",
-            regmode => 2,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:tx_state_2\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_state_1\,
-            main_1 => \Debug:BUART:tx_state_0\,
-            main_2 => \Debug:BUART:tx_bitclk_enable_pre\,
-            main_3 => \Debug:BUART:tx_state_2\,
-            main_4 => \Debug:BUART:tx_counter_dp\,
-            main_5 => \Debug:BUART:tx_bitclk\);
-
-    \Debug:BUART:tx_bitclk\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_3) + (!main_2)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:tx_bitclk\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_state_1\,
-            main_1 => \Debug:BUART:tx_state_0\,
-            main_2 => \Debug:BUART:tx_bitclk_enable_pre\,
-            main_3 => \Debug:BUART:tx_state_2\);
-
-    \Debug:BUART:tx_ctrl_mark_last\:macrocell
-        GENERIC MAP(
-            eqn_main => "1'b0",
-            regmode => 2,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:tx_ctrl_mark_last\,
-            clock_0 => \Debug:Net_9_digital\);
-
-    \Debug:BUART:rx_state_0\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * !main_3 * main_4 * !main_8 * !main_9) + (!main_0 * !main_1 * main_2 * !main_3 * main_4 * !main_8 * !main_10) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_6) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_7)",
-            regmode => 2,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_state_0\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_bitclk_enable\,
-            main_3 => \Debug:BUART:rx_state_3\,
-            main_4 => \Debug:BUART:rx_state_2\,
-            main_5 => \Debug:BUART:rx_count_6\,
-            main_6 => \Debug:BUART:rx_count_5\,
-            main_7 => \Debug:BUART:rx_count_4\,
-            main_8 => \Debug:BUART:pollcount_1\,
-            main_9 => Net_43,
-            main_10 => \Debug:BUART:pollcount_0\);
-
-    \Debug:BUART:rx_load_fifo\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3 * !main_4) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_6) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_7)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_load_fifo\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_bitclk_enable\,
-            main_3 => \Debug:BUART:rx_state_3\,
-            main_4 => \Debug:BUART:rx_state_2\,
-            main_5 => \Debug:BUART:rx_count_6\,
-            main_6 => \Debug:BUART:rx_count_5\,
-            main_7 => \Debug:BUART:rx_count_4\);
-
-    \Debug:BUART:rx_state_3\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3 * main_4) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_6) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_7)",
-            regmode => 2,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_state_3\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_bitclk_enable\,
-            main_3 => \Debug:BUART:rx_state_3\,
-            main_4 => \Debug:BUART:rx_state_2\,
-            main_5 => \Debug:BUART:rx_count_6\,
-            main_6 => \Debug:BUART:rx_count_5\,
-            main_7 => \Debug:BUART:rx_count_4\);
-
-    \Debug:BUART:rx_state_2\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3) + (!main_0 * !main_1 * main_2 * main_4) + (!main_0 * !main_1 * !main_3 * !main_4 * !main_8 * main_9) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_6) + (!main_0 * main_1 * !main_3 * !main_4 * !main_5 * !main_7)",
-            regmode => 2,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_state_2\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_bitclk_enable\,
-            main_3 => \Debug:BUART:rx_state_3\,
-            main_4 => \Debug:BUART:rx_state_2\,
-            main_5 => \Debug:BUART:rx_count_6\,
-            main_6 => \Debug:BUART:rx_count_5\,
-            main_7 => \Debug:BUART:rx_count_4\,
-            main_8 => Net_43,
-            main_9 => \Debug:BUART:rx_last\);
-
-    \Debug:BUART:rx_bitclk_enable\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_bitclk_enable\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:rx_count_2\,
-            main_1 => \Debug:BUART:rx_count_1\,
-            main_2 => \Debug:BUART:rx_count_0\);
-
-    \Debug:BUART:rx_state_stop1_reg\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_state_stop1_reg\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_state_3\,
-            main_3 => \Debug:BUART:rx_state_2\);
-
-    \Debug:BUART:pollcount_1\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * main_3 * main_4) + (!main_0 * !main_1 * main_2 * !main_3) + (!main_0 * !main_1 * main_2 * !main_4)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:pollcount_1\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:rx_count_2\,
-            main_1 => \Debug:BUART:rx_count_1\,
-            main_2 => \Debug:BUART:pollcount_1\,
-            main_3 => Net_43,
-            main_4 => \Debug:BUART:pollcount_0\);
-
-    \Debug:BUART:pollcount_0\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * main_3) + (!main_0 * !main_1 * main_2 * !main_3)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:pollcount_0\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:rx_count_2\,
-            main_1 => \Debug:BUART:rx_count_1\,
-            main_2 => Net_43,
-            main_3 => \Debug:BUART:pollcount_0\);
-
-    \Debug:BUART:rx_status_3\:macrocell
-        GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_2 * main_3 * main_4 * !main_5 * !main_6) + (!main_0 * !main_1 * main_2 * main_3 * main_4 * !main_5 * !main_7)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => \Debug:BUART:rx_status_3\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => \Debug:BUART:tx_ctrl_mark_last\,
-            main_1 => \Debug:BUART:rx_state_0\,
-            main_2 => \Debug:BUART:rx_bitclk_enable\,
-            main_3 => \Debug:BUART:rx_state_3\,
-            main_4 => \Debug:BUART:rx_state_2\,
-            main_5 => \Debug:BUART:pollcount_1\,
-            main_6 => Net_43,
-            main_7 => \Debug:BUART:pollcount_0\);
-
-    \Debug:BUART:rx_last\:macrocell
+    \QuadDec_1:bQuadDec:quad_A_filt\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => \Debug:BUART:rx_last\,
-            clock_0 => \Debug:Net_9_digital\,
-            main_0 => Net_43);
+            q => \QuadDec_1:bQuadDec:quad_A_filt\,
+            clock_0 => Net_565_digital,
+            main_0 => Net_572);
 
-    Net_513_0:macrocell
+    \QuadDec_1:bQuadDec:quad_B_filt\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:bQuadDec:quad_B_filt\,
+            clock_0 => Net_565_digital,
+            main_0 => Net_573);
+
+    \QuadDec_1:bQuadDec:Stsreg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "0001111",
+            cy_md_select => "0001111",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => Net_565_digital,
+            status_6 => open,
+            status_5 => open,
+            status_4 => open,
+            status_3 => \QuadDec_1:bQuadDec:error\,
+            status_2 => \QuadDec_1:Net_1260\,
+            status_1 => \QuadDec_1:Net_611\,
+            status_0 => \QuadDec_1:Net_530\);
+
+    \QuadDec_2:Cnt16:CounterUDB:sCTRLReg:ctrlreg\:controlcell
+        GENERIC MAP(
+            cy_ctrl_mode_0 => "11111111",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000000",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => Net_565_digital,
+            control_7 => \QuadDec_2:Cnt16:CounterUDB:control_7\,
+            control_6 => \QuadDec_2:Cnt16:CounterUDB:control_6\,
+            control_5 => \QuadDec_2:Cnt16:CounterUDB:control_5\,
+            control_4 => \QuadDec_2:Cnt16:CounterUDB:control_4\,
+            control_3 => \QuadDec_2:Cnt16:CounterUDB:control_3\,
+            control_2 => \QuadDec_2:Cnt16:CounterUDB:control_2\,
+            control_1 => \QuadDec_2:Cnt16:CounterUDB:control_1\,
+            control_0 => \QuadDec_2:Cnt16:CounterUDB:control_0\,
+            busclk => ClockBlock_HFClk);
+
+    \QuadDec_2:Cnt16:CounterUDB:sSTSReg:stsreg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "1111111",
+            cy_md_select => "0011111",
+            clk_inv => '0',
+            clken_mode => 1,
+            reset_inv => '0')
+        PORT MAP(
+            reset => \QuadDec_2:Net_1260\,
+            clock => Net_565_digital,
+            status_6 => \QuadDec_2:Cnt16:CounterUDB:status_6\,
+            status_5 => \QuadDec_2:Cnt16:CounterUDB:status_5\,
+            status_4 => open,
+            status_3 => \QuadDec_2:Cnt16:CounterUDB:status_3\,
+            status_2 => \QuadDec_2:Cnt16:CounterUDB:status_2\,
+            status_1 => \QuadDec_2:Cnt16:CounterUDB:status_1\,
+            status_0 => \QuadDec_2:Cnt16:CounterUDB:status_0\);
+
+    \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000001000000001000000010000000000000010000000000000000100000000000000100000000010000001000000000000001000000011111111000000001111111111111111101000000000000000000001000000000000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => Net_565_digital,
+            cs_addr_2 => \QuadDec_2:Net_1251\,
+            cs_addr_1 => \QuadDec_2:Cnt16:CounterUDB:count_enable\,
+            cs_addr_0 => \QuadDec_2:Cnt16:CounterUDB:reload\,
+            busclk => ClockBlock_HFClk,
+            ce0 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\,
+            cl0 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cl0__sig\,
+            z0 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.z0__sig\,
+            ff0 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ff0__sig\,
+            ce1 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ce1__sig\,
+            cl1 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cl1__sig\,
+            z1 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.z1__sig\,
+            ff1 => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ff1__sig\,
+            co_msb => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.co_msb__sig\,
+            sol_msb => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.sol_msb__sig\,
+            cfbo => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\,
+            sil => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\,
+            cmsbi => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\);
+
+    \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000001000000001000000010000000000000010000000000000000100000000000000100000000010000001000000000000001000000011111111000000001111111111111111101011110000000000000001000001110000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => Net_565_digital,
+            cs_addr_2 => \QuadDec_2:Net_1251\,
+            cs_addr_1 => \QuadDec_2:Cnt16:CounterUDB:count_enable\,
+            cs_addr_0 => \QuadDec_2:Cnt16:CounterUDB:reload\,
+            z0_comb => \QuadDec_2:Cnt16:CounterUDB:status_1\,
+            f0_comb => \QuadDec_2:Cnt16:CounterUDB:overflow\,
+            ce1_comb => \QuadDec_2:Cnt16:CounterUDB:cmp_out_i\,
+            f0_bus_stat_comb => \QuadDec_2:Cnt16:CounterUDB:status_6\,
+            f0_blk_stat_comb => \QuadDec_2:Cnt16:CounterUDB:status_5\,
+            busclk => ClockBlock_HFClk,
+            ce0i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\,
+            cl0i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cl0__sig\,
+            z0i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.z0__sig\,
+            ff0i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ff0__sig\,
+            ce1i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ce1__sig\,
+            cl1i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cl1__sig\,
+            z1i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.z1__sig\,
+            ff1i => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.ff1__sig\,
+            ci => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.co_msb__sig\,
+            sir => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.sol_msb__sig\,
+            cfbi => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\,
+            sor => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\,
+            cmsbo => \QuadDec_2:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\);
+
+    \QuadDec_2:bQuadDec:quad_A_filt\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:bQuadDec:quad_A_filt\,
+            clock_0 => Net_565_digital,
+            main_0 => Net_569);
+
+    \QuadDec_2:bQuadDec:quad_B_filt\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:bQuadDec:quad_B_filt\,
+            clock_0 => Net_565_digital,
+            main_0 => Net_570);
+
+    \QuadDec_2:bQuadDec:Stsreg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "0001111",
+            cy_md_select => "0001111",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => Net_565_digital,
+            status_6 => open,
+            status_5 => open,
+            status_4 => open,
+            status_3 => \QuadDec_2:bQuadDec:error\,
+            status_2 => \QuadDec_2:Net_1260\,
+            status_1 => \QuadDec_2:Net_611\,
+            status_0 => \QuadDec_2:Net_530\);
+
+    \UART:SCB\:m0s8scbcell
+        GENERIC MAP(
+            cy_registers => "",
+            scb_mode => 2)
+        PORT MAP(
+            clock => \UART:Net_847_ff3\,
+            interrupt => Net_687,
+            uart_rx => \UART:rx_wire\,
+            uart_tx => \UART:tx_wire\,
+            uart_cts => open,
+            uart_rts => \UART:rts_wire\,
+            mosi_m => \UART:mosi_m_wire\,
+            miso_m => open,
+            select_m_3 => \UART:select_m_wire_3\,
+            select_m_2 => \UART:select_m_wire_2\,
+            select_m_1 => \UART:select_m_wire_1\,
+            select_m_0 => \UART:select_m_wire_0\,
+            sclk_m => \UART:sclk_m_wire\,
+            mosi_s => open,
+            miso_s => \UART:miso_s_wire\,
+            select_s => open,
+            sclk_s => open,
+            tr_tx_req => Net_705,
+            tr_rx_req => Net_696);
+
+    Net_556_0:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_513_0,
-            clock_0 => Net_423_digital,
+            q => Net_556_0,
+            clock_0 => Net_565_digital,
             main_0 => Net_459);
 
-    Net_513_1:macrocell
+    Net_556_1:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_513_1,
-            clock_0 => Net_423_digital,
+            q => Net_556_1,
+            clock_0 => Net_565_digital,
             main_0 => Net_466);
 
-    Net_513_2:macrocell
+    Net_556_2:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_513_2,
-            clock_0 => Net_423_digital,
+            q => Net_556_2,
+            clock_0 => Net_565_digital,
             main_0 => Net_470);
 
-    Net_513_3:macrocell
+    Net_556_3:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_513_3,
-            clock_0 => Net_423_digital,
+            q => Net_556_3,
+            clock_0 => Net_565_digital,
             main_0 => Net_474);
 
-    Net_513_4:macrocell
+    Net_556_4:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_513_4,
-            clock_0 => Net_423_digital,
+            q => Net_556_4,
+            clock_0 => Net_565_digital,
             main_0 => Net_478);
+
+    \QuadDec_1:Net_1251\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * !main_2 * !main_4 * !main_6) + (main_0 * !main_1 * main_2 * !main_4 * main_6) + (main_0 * !main_1 * !main_3 * !main_4 * main_5) + (main_7)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_1251\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1251\,
+            main_1 => \QuadDec_1:Net_1260\,
+            main_2 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_1:bQuadDec:error\,
+            main_5 => \QuadDec_1:bQuadDec:state_1\,
+            main_6 => \QuadDec_1:bQuadDec:state_0\,
+            main_7 => \QuadDec_1:Net_1251_split\);
+
+    \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:overflow\);
+
+    \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:status_1\);
+
+    \QuadDec_1:Net_1275\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_1275\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:status_1\,
+            main_1 => \QuadDec_1:Cnt16:CounterUDB:overflow\);
+
+    \QuadDec_1:Cnt16:CounterUDB:prevCompare\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:prevCompare\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Cnt16:CounterUDB:cmp_out_i\);
+
+    \QuadDec_1:Net_1251_split\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * main_3 * !main_4 * !main_5) + (main_0 * !main_1 * main_4 * !main_5 * !main_6) + (main_0 * !main_2 * !main_4 * !main_5 * !main_6) + (main_0 * main_3 * !main_4 * !main_5 * !main_6) + (!main_1 * !main_2 * !main_3 * !main_4 * main_5 * !main_6) + (!main_1 * main_2 * !main_3 * !main_4 * main_5 * main_6) + (!main_1 * main_2 * main_3 * !main_4 * !main_5 * main_6) + (!main_2 * main_3 * !main_4 * !main_5 * !main_6)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_1251_split\,
+            main_0 => \QuadDec_1:Net_1251\,
+            main_1 => \QuadDec_1:Net_1260\,
+            main_2 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_1:bQuadDec:error\,
+            main_5 => \QuadDec_1:bQuadDec:state_1\,
+            main_6 => \QuadDec_1:bQuadDec:state_0\);
+
+    \QuadDec_1:Cnt16:CounterUDB:count_stored_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Cnt16:CounterUDB:count_stored_i\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1203\);
+
+    \QuadDec_1:Net_1203\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_4 * !main_5 * !main_6) + (!main_0 * !main_2 * !main_3 * !main_4 * !main_5 * main_6) + (!main_0 * main_2 * !main_3 * !main_4 * main_5 * main_6) + (!main_0 * main_2 * main_3 * !main_4 * main_5 * !main_6) + (!main_2 * main_3 * !main_4 * !main_5 * !main_6)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_1203\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:Net_1203\,
+            main_2 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_1:bQuadDec:error\,
+            main_5 => \QuadDec_1:bQuadDec:state_1\,
+            main_6 => \QuadDec_1:bQuadDec:state_0\);
+
+    \QuadDec_1:Net_1260\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1) + (!main_0 * !main_2 * !main_3) + (!main_1 * !main_2 * !main_3)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_1260\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:bQuadDec:error\,
+            main_2 => \QuadDec_1:bQuadDec:state_1\,
+            main_3 => \QuadDec_1:bQuadDec:state_0\);
+
+    \QuadDec_1:bQuadDec:error\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_4 * main_5) + (!main_0 * !main_1 * main_2 * !main_3 * main_4 * !main_5) + (!main_0 * main_1 * !main_2 * !main_3 * !main_4 * main_5) + (main_1 * main_2 * !main_3 * !main_4 * !main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:bQuadDec:error\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_2 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_3 => \QuadDec_1:bQuadDec:error\,
+            main_4 => \QuadDec_1:bQuadDec:state_1\,
+            main_5 => \QuadDec_1:bQuadDec:state_0\);
+
+    \QuadDec_1:bQuadDec:state_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * !main_3 * main_5) + (!main_0 * main_1 * !main_3 * main_4) + (!main_0 * main_1 * main_3 * !main_4 * !main_5) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:bQuadDec:state_1\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_2 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_3 => \QuadDec_1:bQuadDec:error\,
+            main_4 => \QuadDec_1:bQuadDec:state_1\,
+            main_5 => \QuadDec_1:bQuadDec:state_0\);
+
+    \QuadDec_1:bQuadDec:state_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * !main_3 * main_4) + (!main_0 * main_2 * !main_3 * main_5) + (!main_0 * main_2 * main_3 * !main_4 * !main_5) + (!main_1 * main_2 * !main_3 * !main_4 * !main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:bQuadDec:state_0\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_2 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_3 => \QuadDec_1:bQuadDec:error\,
+            main_4 => \QuadDec_1:bQuadDec:state_1\,
+            main_5 => \QuadDec_1:bQuadDec:state_0\);
+
+    \QuadDec_2:Net_1251\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * !main_2 * !main_4 * !main_6) + (main_0 * !main_1 * main_2 * !main_4 * main_6) + (main_0 * !main_1 * !main_3 * !main_4 * main_5) + (main_7)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_1251\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1251\,
+            main_1 => \QuadDec_2:Net_1260\,
+            main_2 => \QuadDec_2:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_2:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_2:bQuadDec:error\,
+            main_5 => \QuadDec_2:bQuadDec:state_1\,
+            main_6 => \QuadDec_2:bQuadDec:state_0\,
+            main_7 => \QuadDec_2:Net_1251_split\);
+
+    \QuadDec_2:Cnt16:CounterUDB:overflow_reg_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:overflow_reg_i\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:overflow\);
+
+    \QuadDec_2:Cnt16:CounterUDB:underflow_reg_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:underflow_reg_i\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:status_1\);
+
+    \QuadDec_2:Net_1275\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_1275\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:status_1\,
+            main_1 => \QuadDec_2:Cnt16:CounterUDB:overflow\);
+
+    \QuadDec_2:Cnt16:CounterUDB:prevCompare\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:prevCompare\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Cnt16:CounterUDB:cmp_out_i\);
+
+    \QuadDec_2:Net_1251_split\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * main_3 * !main_4 * !main_5) + (main_0 * !main_1 * main_4 * !main_5 * !main_6) + (main_0 * !main_2 * !main_4 * !main_5 * !main_6) + (main_0 * main_3 * !main_4 * !main_5 * !main_6) + (!main_1 * !main_2 * !main_3 * !main_4 * main_5 * !main_6) + (!main_1 * main_2 * !main_3 * !main_4 * main_5 * main_6) + (!main_1 * main_2 * main_3 * !main_4 * !main_5 * main_6) + (!main_2 * main_3 * !main_4 * !main_5 * !main_6)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_1251_split\,
+            main_0 => \QuadDec_2:Net_1251\,
+            main_1 => \QuadDec_2:Net_1260\,
+            main_2 => \QuadDec_2:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_2:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_2:bQuadDec:error\,
+            main_5 => \QuadDec_2:bQuadDec:state_1\,
+            main_6 => \QuadDec_2:bQuadDec:state_0\);
+
+    \QuadDec_2:Cnt16:CounterUDB:count_stored_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Cnt16:CounterUDB:count_stored_i\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1203\);
+
+    \QuadDec_2:Net_1203\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_4 * !main_5 * !main_6) + (!main_0 * !main_2 * !main_3 * !main_4 * !main_5 * main_6) + (!main_0 * main_2 * !main_3 * !main_4 * main_5 * main_6) + (!main_0 * main_2 * main_3 * !main_4 * main_5 * !main_6) + (!main_2 * main_3 * !main_4 * !main_5 * !main_6)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_1203\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1260\,
+            main_1 => \QuadDec_2:Net_1203\,
+            main_2 => \QuadDec_2:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_2:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_2:bQuadDec:error\,
+            main_5 => \QuadDec_2:bQuadDec:state_1\,
+            main_6 => \QuadDec_2:bQuadDec:state_0\);
+
+    \QuadDec_2:Net_1260\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1) + (!main_0 * !main_2 * !main_3) + (!main_1 * !main_2 * !main_3)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:Net_1260\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1260\,
+            main_1 => \QuadDec_2:bQuadDec:error\,
+            main_2 => \QuadDec_2:bQuadDec:state_1\,
+            main_3 => \QuadDec_2:bQuadDec:state_0\);
+
+    \QuadDec_2:bQuadDec:error\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_4 * main_5) + (!main_0 * !main_1 * main_2 * !main_3 * main_4 * !main_5) + (!main_0 * main_1 * !main_2 * !main_3 * !main_4 * main_5) + (main_1 * main_2 * !main_3 * !main_4 * !main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:bQuadDec:error\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1260\,
+            main_1 => \QuadDec_2:bQuadDec:quad_A_filt\,
+            main_2 => \QuadDec_2:bQuadDec:quad_B_filt\,
+            main_3 => \QuadDec_2:bQuadDec:error\,
+            main_4 => \QuadDec_2:bQuadDec:state_1\,
+            main_5 => \QuadDec_2:bQuadDec:state_0\);
+
+    \QuadDec_2:bQuadDec:state_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * !main_3 * main_5) + (!main_0 * main_1 * !main_3 * main_4) + (!main_0 * main_1 * main_3 * !main_4 * !main_5) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:bQuadDec:state_1\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1260\,
+            main_1 => \QuadDec_2:bQuadDec:quad_A_filt\,
+            main_2 => \QuadDec_2:bQuadDec:quad_B_filt\,
+            main_3 => \QuadDec_2:bQuadDec:error\,
+            main_4 => \QuadDec_2:bQuadDec:state_1\,
+            main_5 => \QuadDec_2:bQuadDec:state_0\);
+
+    \QuadDec_2:bQuadDec:state_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * !main_3 * main_4) + (!main_0 * main_2 * !main_3 * main_5) + (!main_0 * main_2 * main_3 * !main_4 * !main_5) + (!main_1 * main_2 * !main_3 * !main_4 * !main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_2:bQuadDec:state_0\,
+            clock_0 => Net_565_digital,
+            main_0 => \QuadDec_2:Net_1260\,
+            main_1 => \QuadDec_2:bQuadDec:quad_A_filt\,
+            main_2 => \QuadDec_2:bQuadDec:quad_B_filt\,
+            main_3 => \QuadDec_2:bQuadDec:error\,
+            main_4 => \QuadDec_2:bQuadDec:state_1\,
+            main_5 => \QuadDec_2:bQuadDec:state_0\);
 
 END __DEFAULT__;

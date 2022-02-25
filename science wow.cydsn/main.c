@@ -64,7 +64,7 @@ int main(void)
                         uint8_t servoID = GetScienceServoIDFromPacket(current);
                         uint8_t speed = GetScienceServoSpeedFromPacket(current);
                         uint8_t direction = GetScienceServoDirectionFromPacket(current);
-                        set_servo_continuous(servoID, direction, speed);
+                        set_servo_continuous(servoID, direction, speed /*,angle for encoder*/ );
                     }
                 case SENSOR_PULL_ID : //sensor pull
                     {

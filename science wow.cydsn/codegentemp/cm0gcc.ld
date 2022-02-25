@@ -28,8 +28,8 @@ INCLUDE cycodeshareimport.ld
 
 MEMORY
 {
-    rom (rx) : ORIGIN = 0x0, LENGTH = 131072
-    ram (rwx) : ORIGIN = 0x20000000, LENGTH = 16384
+    rom (rx) : ORIGIN = 0x0, LENGTH = 262144
+    ram (rwx) : ORIGIN = 0x20000000, LENGTH = 32768
 }
 
 
