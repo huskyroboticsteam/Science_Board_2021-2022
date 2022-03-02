@@ -36,6 +36,8 @@ int main(void)
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
     ADC_Start();
     pca_init();
+    QuadDec_1_Start();
+    QuadDec_2_Start();
     //SCP_1_Start();
     for(;;)
     {

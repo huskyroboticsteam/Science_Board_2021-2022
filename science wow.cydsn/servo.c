@@ -46,7 +46,24 @@ void set_servo_position(int servo, int degrees){
 	setPWMFromDutyCycle(servo, offset + (degrees * scalar) / divisor);
 }
 
-void set_servo_continuous(int servoID, int direction, int speed){
-//stable is 1.5, so use given direction and speed to determine what pulse length to use
-    };
+void set_servo_continuous(int servoID, int direction, int speed, int miliDegrees){
+// Do math to control servo, stable is 1.5, so use given direction and speed to determine what pulse length to use
+    
+    // Start Servo setPWMFromDutyCycle();
+    
+    if (servoID == 1){
+        int32_t ticks = miliDegrees;
+        while (QuadDec_1_GetCounter() < ticks){};
+        // Stop Servo setPWNFromDutyCycle();
+        // Maybe Check if end position is too far from goal
+    }
+    
+    if (servoID == 2){
+        int32_t ticks = miliDegrees;
+        while (QuadDec_2_GetCounter() < ticks){};
+        // Stop Servo setPWNFromDutyCycle();
+        
+    }
+}
+
 /* [] END OF FILE */

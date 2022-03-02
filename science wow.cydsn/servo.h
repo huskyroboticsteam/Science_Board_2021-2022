@@ -17,4 +17,5 @@
 
 void set_servo_position(int servo, int degrees);
 void set_servo_continuous(int servoID,int direction,int speed);
+void continuous_Encoder_Control(int encoderID);
 /* [] END OF FILE */
