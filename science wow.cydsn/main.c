@@ -64,9 +64,10 @@ int main(void)
                         CyDelay(500);
                         CAN_LED_Write(0);
                         uint8_t servoID = GetScienceServoIDFromPacket(current);
+                        uint8_t miliDegrees = GetScienceServoAngleFromPacket(current); //tell davis SCUFFED CODE NOT IMPLEMENTED PLACEHOLDER
                         uint8_t speed = GetScienceServoSpeedFromPacket(current);
                         uint8_t direction = GetScienceServoDirectionFromPacket(current);
-                        set_servo_continuous(servoID, direction, speed /*,angle for encoder*/ );
+                        set_servo_continuous(servoID, direction, speed, miliDegrees);
                     }
                 case SENSOR_PULL_ID : //sensor pull
                     {

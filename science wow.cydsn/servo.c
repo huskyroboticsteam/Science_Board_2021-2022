@@ -27,17 +27,22 @@ void set_servo_position(int servo, int degrees){
 		return;
 	}
     switch(servo) {
-        /*case PIN0 :
+        case PIN0 : //Futaba S3003
+            offset = 113;
+            scalar = 82;
+            divisor = 179;
             break;
-        case PIN1 :
+        case PIN1 : //HSB-9380TH
+            offset = 72;
+            scalar = 164;
+            divisor = 205;
             break;
-        case PIN2 :
+        case PIN2 : //HiTEC HS-645MG
+            offset = 113;
+            scalar = 82;
+            divisor = 179;
             break;
-        case PIN3 :
-            break;
-        case PIN4 :
-            break; */
-        default: 
+        default: //john
             offset = 102;
             scalar = 99;
             divisor = 172;
@@ -46,19 +51,47 @@ void set_servo_position(int servo, int degrees){
 	setPWMFromDutyCycle(servo, offset + (degrees * scalar) / divisor);
 }
 
-void set_servo_continuous(int servoID, int direction, int speed, int miliDegrees){
+void set_servo_continuous(int servo, int direction, int speed, int miliDegrees){
 // Do math to control servo, stable is 1.5, so use given direction and speed to determine what pulse length to use
     
     // Start Servo setPWMFromDutyCycle();
-    
-    if (servoID == 1){
+    int range = 0;
+    double duty = 0;
+    int notfound = 0;
+    switch(servo) {
+        case PIN3 : //HSR-1425CR
+            range = 41;
+            break;
+        case PIN4: //Parallax Rotation
+            range = 20;
+            break;
+        default:
+            notfound = 1;
+            ERR_LED_Write(0);
+            CyDelay(500);
+            ERR_LED_Write(1);
+            break;
+    }
+    duty = (((double)range) * speed) / 100;
+    if (speed != 0) {        
+        if (direction == 0) { //clockwise
+            duty = 153 - duty;
+        } else if (direction == 1) { //counterclockwise
+            duty += 154;
+        }
+    }
+    if (notfound == 0) { //if correct servo id
+        setPWMFromDutyCycle(servo, duty);
+    }
+        
+    if (servo == PIN3){ //HSR-1425CR
         int32_t ticks = miliDegrees;
         while (QuadDec_1_GetCounter() < ticks){};
         // Stop Servo setPWNFromDutyCycle();
         // Maybe Check if end position is too far from goal
     }
     
-    if (servoID == 2){
+    if (servo == PIN4){ //Parallax Rotation
         int32_t ticks = miliDegrees;
         while (QuadDec_2_GetCounter() < ticks){};
         // Stop Servo setPWNFromDutyCycle();

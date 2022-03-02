@@ -2,7 +2,7 @@
 --	Conversion of science wow.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Feb 24 19:30:11 2022
+--	Tue Mar 01 19:05:53 2022
 --
 
 USE cypress.cypress.all;
@@ -2097,7 +2097,7 @@ Clock_1:cy_clock_v1_0
 		divisor=>0,
 		period=>"10000000000000",
 		is_direct=>'0',
-		is_digital=>'0')
+		is_digital=>'1')
 	PORT MAP(clock_out=>Net_565,
 		dig_domain_out=>open);
 GND_1:cy_annotation_universal_v1_0
