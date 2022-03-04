@@ -54,7 +54,7 @@ void set_servo_position(int servo, int degrees){
 void set_servo_continuous(int servo, int direction, int speed, int miliDegrees){
 // Do math to control servo, stable is 1.5, so use given direction and speed to determine what pulse length to use
     
-    // Start Servo setPWMFromDutyCycle();
+    int32_t tickGoal = miliDegrees;
     int range = 0;
     double duty = 0;
     int notfound = 0;
@@ -85,18 +85,32 @@ void set_servo_continuous(int servo, int direction, int speed, int miliDegrees){
     }
         
     if (servo == PIN3){ //HSR-1425CR
-        int32_t ticks = miliDegrees;
-        while (QuadDec_1_GetCounter() < ticks){};
-        // Stop Servo setPWNFromDutyCycle();
-        // Maybe Check if end position is too far from goal
+        while (QuadDec_1_GetCounter() < tickGoal){};
+        setPWMFromDutyCycle(servo, 0);
+        //if ((QuadDec_1_GetCounter() - tickGoal) >= 5){correctPosition(servo, 1);}
+        //if ((QuadDec_1_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
     }
-    
+           
     if (servo == PIN4){ //Parallax Rotation
-        int32_t ticks = miliDegrees;
-        while (QuadDec_2_GetCounter() < ticks){};
-        // Stop Servo setPWNFromDutyCycle();
-        
+        while (QuadDec_2_GetCounter() < tickGoal){};
+        setPWMFromDutyCycle(servo, 0);
+        //if ((QuadDec_2_GetCounter() - tickGoal) >= 5){correctPosition(servo, 1);}
+        //if ((QuadDec_2_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
     }
+}
+
+void correctPosition(int servo, int direction){
+    switch(servo){
+        case PIN3:
+            break;
+        case PIN4:
+            break;
+        default:
+            ERR_LED_Write(0);
+            CyDelay(500);
+            ERR_LED_Write(1);
+            break;
+    }   
 }
 
 /* [] END OF FILE */

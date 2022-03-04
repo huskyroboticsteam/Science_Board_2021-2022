@@ -1,8 +1,8 @@
-C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj|b609b093-9491-47b6-8651-a8dedfbd2f17
-C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\StripLightLib.cylib\StripLightLib.cyprj|43485aed-a8d9-4e54-8a65-b16befd86ea3
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f7b8d5df-ad94-4df0-817b-d59e37c0ba88
-C:\Users\mewin\OneDrive\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|3d44f40a-6fb9-4a12-aa9f-b1000f276ab0
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|886dff0d-4f96-4c73-a5ac-37868a6d3edb
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|3c74e71b-fb4a-4f73-895f-023c32e5d007
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9e575962-31a4-4427-9801-bb6603b2cbc2
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|69d40170-59d9-4a3a-8f1a-a1a886ca0e98
+C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj|8456fbae-5595-4184-b883-463548338aaf
+C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\StripLightLib.cylib\StripLightLib.cyprj|4ee7b640-9fbe-4002-a66c-f743c9af676b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7aee3dda-8911-4e76-bfda-6137ea6f6bf3
+C:\Users\write\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|75aa613e-504e-4a49-8add-eb7697c6841e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1ba54907-e8b5-4b8d-b22c-8dd03e9a5ccd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|cc70cff9-5fc3-4402-a834-528a6af6531c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a2ed999e-537c-40b2-aa88-22f9447f0543
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|46a4bd6b-5866-469b-98a9-130d65307180

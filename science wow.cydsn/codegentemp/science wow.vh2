@@ -2,7 +2,7 @@
 --	Conversion of science wow.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Mar 01 19:05:53 2022
+--	Thu Mar 03 18:43:53 2022
 --
 
 USE cypress.cypress.all;
@@ -14,13 +14,13 @@ END top_RTL;
 ARCHITECTURE R_T_L OF top_RTL IS
 SIGNAL tmpOE__CAN_RX_net_0 : bit;
 SIGNAL zero : bit;
-SIGNAL Net_11 : bit;
+SIGNAL Net_763 : bit;
 SIGNAL tmpIO_0__CAN_RX_net_0 : bit;
 TERMINAL tmpSIOVREF__CAN_RX_net_0 : bit;
 SIGNAL one : bit;
 SIGNAL tmpINTERRUPT_0__CAN_RX_net_0 : bit;
 SIGNAL tmpOE__CAN_TX_net_0 : bit;
-SIGNAL Net_12 : bit;
+SIGNAL Net_764 : bit;
 SIGNAL tmpFB_0__CAN_TX_net_0 : bit;
 SIGNAL tmpIO_0__CAN_TX_net_0 : bit;
 TERMINAL tmpSIOVREF__CAN_TX_net_0 : bit;
@@ -1037,7 +1037,7 @@ CAN_RX:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__CAN_RX_net_0),
 		y=>(zero),
-		fb=>Net_11,
+		fb=>Net_763,
 		analog=>(open),
 		io=>(tmpIO_0__CAN_RX_net_0),
 		siovref=>(tmpSIOVREF__CAN_RX_net_0),
@@ -1106,7 +1106,7 @@ CAN_TX:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__CAN_RX_net_0),
-		y=>Net_12,
+		y=>Net_764,
 		fb=>(tmpFB_0__CAN_TX_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__CAN_TX_net_0),
@@ -1135,8 +1135,8 @@ CAN_TX:cy_psoc3_pins_v1_10
 		dig_domain_out=>open);
 \CAN:CanIP\:cy_m0s8_can_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(can_rx=>Net_11,
-		can_tx=>Net_12,
+	PORT MAP(can_rx=>Net_763,
+		can_tx=>Net_764,
 		can_tx_en=>Net_334,
 		interrupt=>Net_333);
 \I2C:SCBCLK\:cy_clock_v1_0

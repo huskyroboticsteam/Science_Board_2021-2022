@@ -1,5 +1,5 @@
--- Project:   C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj
--- Generated: 03/01/2022 19:05:59
+-- Project:   C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj
+-- Generated: 03/03/2022 18:44:05
 -- PSoC Creator  4.4
 
 ENTITY \science wow\ IS
@@ -63,8 +63,6 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL LIM3(0)__PA : bit;
     SIGNAL LIM4(0)__PA : bit;
     SIGNAL LIM5(0)__PA : bit;
-    SIGNAL Net_11 : bit;
-    SIGNAL Net_12 : bit;
     SIGNAL Net_333 : bit;
     SIGNAL Net_334 : bit;
     SIGNAL Net_373 : bit;
@@ -100,6 +98,8 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL Net_705 : bit;
     SIGNAL Net_759 : bit;
     SIGNAL Net_760 : bit;
+    SIGNAL Net_763 : bit;
+    SIGNAL Net_764 : bit;
     SIGNAL Temp(0)__PA : bit;
     SIGNAL \\\ADC:Bypass(0)\\__PA\ : bit;
     SIGNAL \ADC:Net_1845_ff10\ : bit;
@@ -996,7 +996,7 @@ BEGIN
         PORT MAP(
             pa_out => CAN_RX(0)__PA,
             oe => open,
-            fb => Net_11,
+            fb => Net_763,
             pad_in => CAN_RX(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -1087,7 +1087,7 @@ BEGIN
         PORT MAP(
             pa_out => CAN_TX(0)__PA,
             oe => open,
-            pin_input => Net_12,
+            pin_input => Net_764,
             pad_out => CAN_TX(0)_PAD,
             pad_in => CAN_TX(0)_PAD,
             in_clock => open,
@@ -2980,8 +2980,8 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            can_rx => Net_11,
-            can_tx => Net_12,
+            can_rx => Net_763,
+            can_tx => Net_764,
             can_tx_en => Net_334,
             interrupt => Net_333);
 

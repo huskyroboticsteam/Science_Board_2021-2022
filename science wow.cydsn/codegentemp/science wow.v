@@ -1,6 +1,6 @@
 // ======================================================================
 // science wow.v generated from TopDesign.cysch
-// 03/01/2022 at 19:05
+// 03/03/2022 at 18:43
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -2045,8 +2045,8 @@ module top ;
           wire  Net_371;
           wire  Net_334;
           wire  Net_333;
-          wire  Net_11;
-          wire  Net_12;
+          wire  Net_764;
+          wire  Net_763;
           wire  Net_528;
           wire [4:0] Net_556;
           wire  Net_565;
@@ -2119,7 +2119,7 @@ module top ;
 		CAN_RX
 		 (.oe(tmpOE__CAN_RX_net),
 		  .y({1'b0}),
-		  .fb({Net_11}),
+		  .fb({Net_763}),
 		  .io({tmpIO_0__CAN_RX_net[0:0]}),
 		  .siovref(tmpSIOVREF__CAN_RX_net),
 		  .interrupt({tmpINTERRUPT_0__CAN_RX_net[0:0]}),
@@ -2193,7 +2193,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		CAN_TX
 		 (.oe(tmpOE__CAN_TX_net),
-		  .y({Net_12}),
+		  .y({Net_764}),
 		  .fb({tmpFB_0__CAN_TX_net[0:0]}),
 		  .io({tmpIO_0__CAN_TX_net[0:0]}),
 		  .siovref(tmpSIOVREF__CAN_TX_net),
@@ -2209,8 +2209,8 @@ module top ;
 
     CAN_v3_0_0 CAN (
         .interrupt(Net_333),
-        .rx(Net_11),
-        .tx(Net_12),
+        .rx(Net_763),
+        .tx(Net_764),
         .tx_en(Net_334));
 
     SCB_P4_v4_0_1 I2C (

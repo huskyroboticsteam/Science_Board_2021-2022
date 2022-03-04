@@ -13,7 +13,6 @@
 
 #define HUMIDITY (uint8_t) 0x16
 #define TEMPERATURE (uint8_t) 0x17 //wrong
-#define GAS (uint8_t) 0x18 //wrong
 
 #define VEML6070_ADDR_ARA 0x18
 #define VEML6070_ADDR_CMD 0x70
@@ -36,6 +35,7 @@ void get_data(CANPacket* packet) {
             sensor_val = read_ADC(1); 
             break;
         case CAN_SCIENCE_SENSOR_UV :
+            sensor_val = read_uv_sensor();
             break;
     }
     //assemble and send telemetry packet
