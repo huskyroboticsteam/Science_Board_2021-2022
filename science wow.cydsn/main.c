@@ -31,6 +31,7 @@ int main(void)
     Status_Reg_LIM_InterruptEnable();
     isr_LIM_StartEx(Limit_Handler);
     
+      
     
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
@@ -38,11 +39,35 @@ int main(void)
     pca_init();
     QuadDec_1_Start();
     QuadDec_2_Start();
-    //SCP_1_Start();
+    UART_Start();
+    
+     
     for(;;)
-    {
+    {           
+        
+        // Testing area
+        
+        //LEDs
+        for(int i = 1; i <=5; ++i){
+            DBG_LED_Write(1);
+            CyDelay(300);
+            DBG_LED_Write(0);
+            CyDelay(300);
+        }
+        
+        //Sensors
+        //uint32_t Hum_val = read_ADC(0);
+        //uint32_t Temp_val = read_ADC(1);
+        //uint32_t sensor_val = read_uv_sensor();
+        
+        
+        //Show Results
+        UART_UartPutChar(4); // print test_string
+        
+        
+        
         /* Place your application code here. */
-        CANPacket* current; 
+        /*CANPacket* current; 
         
         int poll = PollAndReceiveCANPacket(current); 
         if (poll == 0) {
@@ -84,9 +109,8 @@ int main(void)
                     break;
                     
             }
-        }
-    }
-    
+        }*/
+    }            
 }
 
 /* [] END OF FILE */
