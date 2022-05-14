@@ -1,4 +1,4 @@
-/* File:         main.c
+  /* File:         main.c
  * Authors:      Oliver Huang, Jordan Smith.
  * Organization: Husky Robotics Team
  * Firmware for Science Sensors Board (2022)
@@ -10,6 +10,7 @@
 #include <stdint.h>
 #include "PCA9685.h"
 #include "servo.h"
+#include <stdlib.h>
 
 #define SERVO_SET_ID 0x0D
 #define SENSOR_PULL_ID 0xF5
@@ -40,6 +41,7 @@ int main(void)
     QuadDec_1_Start();
     QuadDec_2_Start();
     UART_Start();
+    VEML6070_init();
     
      
     for(;;)
@@ -48,26 +50,30 @@ int main(void)
         // Testing area
         
         //LEDs
-        for(int i = 1; i <=5; ++i){
+       /* for(int i = 1; i <=5; ++i){
             DBG_LED_Write(1);
             CyDelay(300);
             DBG_LED_Write(0);
             CyDelay(300);
-        }
+        } */
         
         //Sensors
         //uint32_t Hum_val = read_ADC(0);
         //uint32_t Temp_val = read_ADC(1);
-        //uint32_t sensor_val = read_uv_sensor();
+//        VEML6070_init();
+//        uint32_t sensor_val = read_uv_sensor();
+//        
+//        char out[32];
+//        //Show Results
+//        UART_UartPutString(itoa(sensor_val, out, 10));
+//        UART_UartPutString("\n\r");
         
-        
-        //Show Results
-        UART_UartPutChar(4); // print test_string
-        
-        
-        
+//        int servo = 7;
+//        int degrees = 31;
+//        setPWMFromDutyCycle(9, 50);
+
         /* Place your application code here. */
-        /*CANPacket* current; 
+        CANPacket* current; 
         
         int poll = PollAndReceiveCANPacket(current); 
         if (poll == 0) {
@@ -109,7 +115,7 @@ int main(void)
                     break;
                     
             }
-        }*/
+        }
     }            
 }
 

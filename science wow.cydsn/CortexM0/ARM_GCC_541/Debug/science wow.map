@@ -10,10 +10,10 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o (CyIntEnable)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o) (CySysClkWcoEnabled)
-.\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
-                              .\CortexM0\ARM_GCC_541\Debug\main.o (DBG_LED_Write)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
-                              .\CortexM0\ARM_GCC_541\Debug\sensor.o (ERR_LED_Write)
+                              .\CortexM0\ARM_GCC_541\Debug\main.o (ERR_LED_Write)
+.\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+                              .\CortexM0\ARM_GCC_541\Debug\main.o (CAN_LED_Write)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
                               .\CortexM0\ARM_GCC_541\Debug\main.o (ADC_Start)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
@@ -38,8 +38,6 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o) (QuadDec_2_Cnt16_Stop)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
                               .\CortexM0\ARM_GCC_541\Debug\main.o (UART_Start)
-.\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
-                              .\CortexM0\ARM_GCC_541\Debug\main.o (UART_SpiUartWriteTxData)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o) (UART_UartInit)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
@@ -48,6 +46,8 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o) (CySysFlashSetWaitCycles)
 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o) (I2C_I2C_ISR)
+.\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+                              .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o) (UART_SpiUartReadRxData)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o) (__aeabi_uidiv)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
@@ -58,30 +58,54 @@ c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o) (__aeabi_ldivmod)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
                               .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o) (__aeabi_lmul)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_f2uiz)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_d2uiz)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
                               c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_aeabi_ldivmod.o) (__gnu_ldivmod_helper)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_fadd)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
-                              .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o) (__aeabi_fdiv)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_fdiv)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
-                              .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o) (__aeabi_fmul)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_fmul)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o) (__aeabi_fsub)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o) (__aeabi_f2iz)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
-                              .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o) (__aeabi_i2f)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_i2f)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
                               .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_dadd)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
                               .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_ddiv)
-c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
-                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_dmul)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
                               .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_dsub)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
-                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_d2iz)
-c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
-                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_i2d)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o) (__aeabi_d2iz)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+                              .\CortexM0\ARM_GCC_541\Debug\servo.o (__aeabi_f2d)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o) (__aeabi_dcmpge)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o) (__aeabi_fcmpge)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
-                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o) (__clzsi2)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o) (__clzsi2)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
                               c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o) (__divdi3)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o) (__eqsf2)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o) (__gesf2)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o) (__lesf2)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o) (__eqdf2)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o) (__gedf2)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o) (__ledf2)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzdi2.o)
                               c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o) (__clzdi2)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
@@ -135,12 +159,6 @@ Discarded input sections
  .data          0x00000000        0x1 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .text.getChipType
                 0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
- .text.FIFOSize
-                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
- .text.countRemoveFIFO
-                0x00000000       0x28 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
- .text.PollAndReceiveCANPacket
-                0x00000000       0x4c .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -174,16 +192,12 @@ Discarded input sections
                 0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .text.AssembleTelemetryPullPacket
                 0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
- .text.AssembleTelemetryReportPacket
-                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .text.DecodeTelemetryDataSigned
                 0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .text.DecodeTelemetryDataUnsigned
                 0x00000000        0x8 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .text.GetTelemetryTimingFromPacket
                 0x00000000        0x8 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
- .text.DecodeTelemetryType
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .text.AssembleRGBColorPacket
                 0x00000000       0x4c .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\CANGPIO.o
@@ -286,26 +300,18 @@ Discarded input sections
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.GetDeviceSerialNumber
                 0x00000000        0x8 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
- .text.GetSenderDeviceSerialNumber
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.GetDeviceGroupCode
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
- .text.GetSenderDeviceGroupCode
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.PacketIsInGroup
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.SenderPacketIsInGroup
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.SenderPacketIsOfDevice
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
- .text.GetPacketID
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.PacketIsOfID
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.TargetsDevice
                 0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
- .text.PackIntIntoDataMSBFirst
-                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.PackShortIntoDataMSBFirst
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
  .text.DecodeBytesToIntMSBFirst
@@ -334,54 +340,22 @@ Discarded input sections
                 0x00000000       0x24 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .text.GetScienceMotorPWMFromPacket
                 0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
- .text.GetScienceServoAngleFromPacket
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .text.GetScienceMotorIDFromPacket
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
- .text.GetScienceServoIDFromPacket
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
- .text.GetScienceServoSpeedFromPacket
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
- .text.GetScienceServoDirectionFromPacket
                 0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .text.TurnOnTimeL
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .text.TurnOnTimeH
-                0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .text.TurnOffTimeL
-                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .text.TurnOffTimeH
-                0x00000000       0x28 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .text.writeByte
-                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
  .text.setPWMFromBytes
                 0x00000000       0x38 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .text.setPWMFromDutyCycle
-                0x00000000       0x4c .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\sensor.o
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\sensor.o
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .text.read_ADC
-                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .text.I2C_bus_read
-                0x00000000       0x68 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .text.read_uv_sensor
-                0x00000000       0x50 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .text.get_data
-                0x00000000       0x74 .\CortexM0\ARM_GCC_541\Debug\sensor.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\servo.o
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\servo.o
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .text.set_servo_position
-                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .text.set_servo_continuous
-                0x00000000       0xc8 .\CortexM0\ARM_GCC_541\Debug\servo.o
  .text.correctPosition
                 0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\servo.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
@@ -632,25 +606,10 @@ Discarded input sections
  .text.CySysTimerDelay
                 0x00000000       0x3c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
  .rodata        0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .text.DBG_LED_SetDriveMode
-                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .text.DBG_LED_Read
-                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .text.DBG_LED_ReadDataReg
-                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .text.DBG_LED_SetInterruptMode
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .text.DBG_LED_ClearInterrupt
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .text.ERR_LED_SetDriveMode
-                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .text.ERR_LED_Write
                 0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .text.ERR_LED_Read
                 0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
@@ -660,18 +619,23 @@ Discarded input sections
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .text.ERR_LED_ClearInterrupt
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .text.CAN_LED_SetDriveMode
+                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .text.CAN_LED_Read
+                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .text.CAN_LED_ReadDataReg
+                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .text.CAN_LED_SetInterruptMode
+                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .text.CAN_LED_ClearInterrupt
+                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .text.ADC_Stop
                 0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .text.ADC_StartConvert
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .text.ADC_StopConvert
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .text.ADC_IsEndConversion
-                0x00000000       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .text.ADC_GetResult16
-                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .text.ADC_SetChanMask
                 0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .text.ADC_SetLowLimit
@@ -715,18 +679,6 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .text.I2C_I2CMasterWaitOneUnit
-                0x00000000       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .text.I2C_I2CMasterHandleStatus
-                0x00000000       0xc4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .text.I2C_I2CMasterSendStart
-                0x00000000       0xc4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .text.I2C_I2CMasterSendStop
-                0x00000000       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .text.I2C_I2CMasterWriteByte
-                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .text.I2C_I2CMasterReadByte
-                0x00000000       0x7c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
  .text.I2C_I2CMasterGetReadBufSize
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
  .text.I2C_I2CMasterClearReadBuf
@@ -771,8 +723,6 @@ Discarded input sections
                 0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
  .text.QuadDec_1_Stop
                 0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .text.QuadDec_1_GetCounter
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
  .text.QuadDec_1_SetCounter
                 0x00000000       0x24 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
  .text.QuadDec_1_GetInterruptMask
@@ -783,8 +733,6 @@ Discarded input sections
                 0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
  .text.QuadDec_2_Stop
                 0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .text.QuadDec_2_GetCounter
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
  .text.QuadDec_2_SetCounter
                 0x00000000       0x24 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
  .text.QuadDec_2_GetInterruptMask
@@ -797,8 +745,6 @@ Discarded input sections
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
  .text.QuadDec_1_Cnt16_WriteControlRegister
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .text.QuadDec_1_Cnt16_ReadCounter
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
  .text.QuadDec_1_Cnt16_ReadPeriod
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
  .text.QuadDec_1_Cnt16_ReadCompare
@@ -811,8 +757,6 @@ Discarded input sections
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
  .text.QuadDec_2_Cnt16_WriteControlRegister
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .text.QuadDec_2_Cnt16_ReadCounter
-                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
  .text.QuadDec_2_Cnt16_ReadPeriod
                 0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
  .text.QuadDec_2_Cnt16_ReadCompare
@@ -827,25 +771,6 @@ Discarded input sections
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
  .text.UART_SetTxFifoLevel
                 0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartReadRxData
-                0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartGetRxBufferSize
-                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartClearRxBuffer
-                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartPutArray
-                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartGetTxBufferSize
-                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartClearTxBuffer
-                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartDisableIntRx
-                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .text.UART_SpiUartDisableIntTx
-                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
@@ -891,13 +816,31 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
- .text          0x00000000      0x114 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartReadRxData
+                0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartGetRxBufferSize
+                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartClearRxBuffer
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartWriteTxData
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartPutArray
+                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartGetTxBufferSize
+                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartClearTxBuffer
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartDisableIntRx
+                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .text.UART_SpiUartDisableIntTx
+                0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
- .text          0x00000000      0x1d4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
- .text          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x48 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_aeabi_ldivmod.o)
@@ -906,41 +849,39 @@ Discarded input sections
  .text          0x00000000       0x58 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o)
  .text          0x00000000       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
- .text          0x00000000      0x234 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
- .rodata        0x00000000       0x80 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
- .text          0x00000000      0x228 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
- .rodata        0x00000000       0x40 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
- .text          0x00000000       0x90 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
- .text          0x00000000      0x658 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
- .text          0x00000000      0x62c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
- .rodata        0x00000000       0x40 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
- .text          0x00000000      0x4f4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
- .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
- .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
- .rodata        0x00000000       0x40 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
- .text          0x00000000      0x6a8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
- .text          0x00000000       0x6c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
- .text          0x00000000       0x84 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
- .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
- .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
- .text          0x00000000       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
  .text          0x00000000      0x1bc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
@@ -948,6 +889,18 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
  .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
  .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
  .text          0x00000000       0x18 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzdi2.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzdi2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzdi2.o)
@@ -1046,7 +999,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000     0x2236
+.text           0x00000000     0x52ae
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -1076,439 +1029,641 @@ END GROUP
  .text.getLocalDeviceGroup
                 0x000003cc        0xc .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
                 0x000003cc                getLocalDeviceGroup
+ .text.FIFOSize
+                0x000003d8       0x48 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
+                0x000003d8                FIFOSize
  .text.countAddFIFO
-                0x000003d8       0x50 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
-                0x000003d8                countAddFIFO
+                0x00000420       0x50 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
+                0x00000420                countAddFIFO
  .text.CAN_FLAG_ISR
-                0x00000428      0x12c .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
-                0x00000428                CAN_FLAG_ISR
+                0x00000470      0x12c .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
+                0x00000470                CAN_FLAG_ISR
+ .text.countRemoveFIFO
+                0x0000059c       0x28 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
+                0x0000059c                countRemoveFIFO
+ .text.PollAndReceiveCANPacket
+                0x000005c4       0x4c .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
+                0x000005c4                PollAndReceiveCANPacket
+ .text.AssembleTelemetryReportPacket
+                0x00000610       0x2c .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
+                0x00000610                AssembleTelemetryReportPacket
+ .text.DecodeTelemetryType
+                0x0000063c        0x4 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
+                0x0000063c                DecodeTelemetryType
  .text.AssembleLimitSwitchAlertPacket
-                0x00000554       0x20 .\CortexM0\ARM_GCC_541\Debug\CANMotorUnit.o
-                0x00000554                AssembleLimitSwitchAlertPacket
+                0x00000640       0x20 .\CortexM0\ARM_GCC_541\Debug\CANMotorUnit.o
+                0x00000640                AssembleLimitSwitchAlertPacket
  .text.ConstructCANID
-                0x00000574       0x1c .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
-                0x00000574                ConstructCANID
+                0x00000660       0x1c .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
+                0x00000660                ConstructCANID
  .text.WriteSenderSerialAndPacketID
-                0x00000590       0x18 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
-                0x00000590                WriteSenderSerialAndPacketID
+                0x0000067c       0x18 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
+                0x0000067c                WriteSenderSerialAndPacketID
+ .text.GetSenderDeviceSerialNumber
+                0x00000694        0x4 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
+                0x00000694                GetSenderDeviceSerialNumber
+ .text.GetSenderDeviceGroupCode
+                0x00000698        0x4 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
+                0x00000698                GetSenderDeviceGroupCode
+ .text.GetPacketID
+                0x0000069c        0x4 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
+                0x0000069c                GetPacketID
+ .text.PackIntIntoDataMSBFirst
+                0x000006a0       0x18 .\CortexM0\ARM_GCC_541\Debug\CANPacket.o
+                0x000006a0                PackIntIntoDataMSBFirst
+ .text.GetScienceServoAngleFromPacket
+                0x000006b8        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
+                0x000006b8                GetScienceServoAngleFromPacket
+ .text.GetScienceServoIDFromPacket
+                0x000006bc        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
+                0x000006bc                GetScienceServoIDFromPacket
+ .text.GetScienceServoSpeedFromPacket
+                0x000006c0        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
+                0x000006c0                GetScienceServoSpeedFromPacket
+ .text.GetScienceServoDirectionFromPacket
+                0x000006c4        0x4 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
+                0x000006c4                GetScienceServoDirectionFromPacket
+ .text.TurnOnTimeL
+                0x000006c8        0x4 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x000006c8                TurnOnTimeL
+ .text.TurnOnTimeH
+                0x000006cc        0x4 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x000006cc                TurnOnTimeH
+ .text.TurnOffTimeL
+                0x000006d0       0x30 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x000006d0                TurnOffTimeL
+ .text.TurnOffTimeH
+                0x00000700       0x28 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x00000700                TurnOffTimeH
  .text.writeBuffer
-                0x000005a8       0x44 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
-                0x000005a8                writeBuffer
+                0x00000728       0x44 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x00000728                writeBuffer
  .text.pca_init
-                0x000005ec       0x20 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
-                0x000005ec                pca_init
+                0x0000076c       0x20 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x0000076c                pca_init
+ .text.writeByte
+                0x0000078c       0x18 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x0000078c                writeByte
+ .text.setPWMFromDutyCycle
+                0x000007a4       0x4c .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+                0x000007a4                setPWMFromDutyCycle
  .text.Limit_Handler
-                0x0000060c       0x24 .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x0000060c                Limit_Handler
- .text.main     0x00000630       0x5c .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x00000630                main
+                0x000007f0       0x24 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x000007f0                Limit_Handler
+ .text.main     0x00000814       0xf0 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000814                main
+ .text.read_ADC
+                0x00000904       0x1c .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x00000904                read_ADC
+ .text.I2C_bus_read
+                0x00000920       0x68 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x00000920                I2C_bus_read
+ .text.read_uv_sensor
+                0x00000988       0x30 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x00000988                read_uv_sensor
+ .text.get_data
+                0x000009b8       0x74 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x000009b8                get_data
+ .text.I2C_bus_write
+                0x00000a2c       0x50 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x00000a2c                I2C_bus_write
+ .text.VEML6070_init
+                0x00000a7c       0x30 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x00000a7c                VEML6070_init
+ .text.set_servo_position
+                0x00000aac       0x70 .\CortexM0\ARM_GCC_541\Debug\servo.o
+                0x00000aac                set_servo_position
+ .text.set_servo_continuous
+                0x00000b1c       0xec .\CortexM0\ARM_GCC_541\Debug\servo.o
+                0x00000b1c                set_servo_continuous
  .text.cfg_write_bytes32
-                0x0000068c       0x34 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c08       0x34 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x000006c0        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c3c        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.SetAnalogRoutingPumps
-                0x000006cc       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x000006cc                SetAnalogRoutingPumps
+                0x00000c48       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c48                SetAnalogRoutingPumps
  .text.AnalogSetDefault
-                0x000006ec       0x44 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c68       0x44 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.IntDefaultHandler
-                0x00000730       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000730                IntDefaultHandler
- .text.Start_c  0x00000740       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000740                Start_c
+                0x00000cac       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000cac                IntDefaultHandler
+ .text.Start_c  0x00000cbc       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000cbc                Start_c
  .text.initialize_psoc
-                0x00000788       0x4c .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000788                initialize_psoc
+                0x00000d04       0x4c .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000d04                initialize_psoc
  .text.CAN_GlobalIntEnable
-                0x000007d4       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x000007d4                CAN_GlobalIntEnable
+                0x00000d50       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000d50                CAN_GlobalIntEnable
  .text.CAN_Enable
-                0x000007f0       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x000007f0                CAN_Enable
+                0x00000d6c       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000d6c                CAN_Enable
  .text.CAN_SetPreScaler
-                0x00000838       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000838                CAN_SetPreScaler
+                0x00000db4       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000db4                CAN_SetPreScaler
  .text.CAN_SetArbiter
-                0x00000870       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000870                CAN_SetArbiter
+                0x00000dec       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000dec                CAN_SetArbiter
  .text.CAN_SetTsegSample
-                0x000008b0       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x000008b0                CAN_SetTsegSample
+                0x00000e2c       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000e2c                CAN_SetTsegSample
  .text.CAN_SetRestartType
-                0x00000950       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000950                CAN_SetRestartType
+                0x00000ecc       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000ecc                CAN_SetRestartType
  .text.CAN_SetEdgeMode
-                0x00000988       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000988                CAN_SetEdgeMode
+                0x00000f04       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000f04                CAN_SetEdgeMode
  .text.CAN_SetIrqMask
-                0x000009c0       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x000009c0                CAN_SetIrqMask
+                0x00000f3c       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000f3c                CAN_SetIrqMask
  .text.CAN_RxBufConfig
-                0x000009dc       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x000009dc                CAN_RxBufConfig
+                0x00000f58       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000f58                CAN_RxBufConfig
  .text.CAN_TxBufConfig
-                0x00000a74       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000a74                CAN_TxBufConfig
+                0x00000ff0       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00000ff0                CAN_TxBufConfig
  .text.CAN_RxTxBuffersConfig
-                0x00000acc       0x54 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000acc                CAN_RxTxBuffersConfig
+                0x00001048       0x54 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x00001048                CAN_RxTxBuffersConfig
  .text.CAN_SetSwapDataEndianness
-                0x00000b20       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000b20                CAN_SetSwapDataEndianness
+                0x0000109c       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x0000109c                CAN_SetSwapDataEndianness
  .text.CAN_Init
-                0x00000b60       0xe4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000b60                CAN_Init
+                0x000010dc       0xe4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x000010dc                CAN_Init
  .text.CAN_Start
-                0x00000c44       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
-                0x00000c44                CAN_Start
- .text.CAN_ISR  0x00000c6c        0x4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
-                0x00000c6c                CAN_ISR
+                0x000011c0       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x000011c0                CAN_Start
+ .text.CAN_ISR  0x000011e8        0x4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+                0x000011e8                CAN_ISR
  .text.CAN_SendMsg
-                0x00000c70      0x154 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
-                0x00000c70                CAN_SendMsg
+                0x000011ec      0x154 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+                0x000011ec                CAN_SendMsg
  .text.CySysClkImoSetPwrBgTrim5
-                0x00000dc4       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001340       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
  .text.CySysClkImoSetImoTrims
-                0x00000df4       0xb0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001370       0xb0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
  .text.CySysClkImoDisableWcoLock
-                0x00000ea4       0x54 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000ea4                CySysClkImoDisableWcoLock
+                0x00001420       0x54 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001420                CySysClkImoDisableWcoLock
  .text.CySysClkImoGetWcoLock
-                0x00000ef8       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000ef8                CySysClkImoGetWcoLock
+                0x00001474       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001474                CySysClkImoGetWcoLock
  .text.CySysClkImoEnableUsbLock
-                0x00000f0c       0x44 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000f0c                CySysClkImoEnableUsbLock
+                0x00001488       0x44 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001488                CySysClkImoEnableUsbLock
  .text.CySysClkImoDisableUsbLock
-                0x00000f50       0x74 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000f50                CySysClkImoDisableUsbLock
+                0x000014cc       0x74 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x000014cc                CySysClkImoDisableUsbLock
  .text.CySysClkImoGetUsbLock
-                0x00000fc4       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000fc4                CySysClkImoGetUsbLock
+                0x00001540       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001540                CySysClkImoGetUsbLock
  .text.CyIntEnable
-                0x00000fd8       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000fd8                CyIntEnable
+                0x00001554       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001554                CyIntEnable
  .text.CyIntDisable
-                0x00000fec       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00000fec                CyIntDisable
- .text.CyHalt   0x00001000        0x4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00001000                CyHalt
+                0x00001568       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001568                CyIntDisable
+ .text.CyHalt   0x0000157c        0x4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x0000157c                CyHalt
  .text.CyIntSetVector
-                0x00001004       0x24 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00001004                CyIntSetVector
+                0x00001580       0x24 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001580                CyIntSetVector
  .text.CyIntSetPriority
-                0x00001028       0x4c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00001028                CyIntSetPriority
- .text.CyDelay  0x00001074       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x00001074                CyDelay
+                0x000015a4       0x4c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x000015a4                CyIntSetPriority
+ .text.CyDelay  0x000015f0       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x000015f0                CyDelay
  .text.CySysClkImoEnableWcoLock
-                0x000010a4      0x104 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x000010a4                CySysClkImoEnableWcoLock
+                0x00001620      0x104 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001620                CySysClkImoEnableWcoLock
  .text.CyDelayUs
-                0x000011a8       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x000011a8                CyDelayUs
+                0x00001724       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001724                CyDelayUs
  .text.CySysClkWriteImoFreq
-                0x000011bc      0x1bc .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x000011bc                CySysClkWriteImoFreq
+                0x00001738      0x1bc .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00001738                CySysClkWriteImoFreq
  .text.CySysWdtLocked
-                0x00001378       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x000018f4       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
  .text.CySysClkWcoEnabled
-                0x0000138c       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
-                0x0000138c                CySysClkWcoEnabled
+                0x00001908       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x00001908                CySysClkWcoEnabled
  .text.CySysWdtLock
-                0x000013a0       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
-                0x000013a0                CySysWdtLock
+                0x0000191c       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x0000191c                CySysWdtLock
  .text.CySysWdtUnlock
-                0x000013bc       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
-                0x000013bc                CySysWdtUnlock
+                0x00001938       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x00001938                CySysWdtUnlock
  .text.CySysWdtClearInterrupt
-                0x000013ec       0x4c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
-                0x000013ec                CySysWdtClearInterrupt
+                0x00001968       0x4c .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x00001968                CySysWdtClearInterrupt
  .text.CySysWdtIsr
-                0x00001438       0xa4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
-                0x00001438                CySysWdtIsr
- .text.DBG_LED_Write
-                0x000014dc       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
-                0x000014dc                DBG_LED_Write
+                0x000019b4       0xa4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x000019b4                CySysWdtIsr
+ .text.ERR_LED_Write
+                0x00001a58       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+                0x00001a58                ERR_LED_Write
+ .text.CAN_LED_Write
+                0x00001a70       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+                0x00001a70                CAN_LED_Write
  .text.ADC_Init
-                0x000014f4      0x180 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
-                0x000014f4                ADC_Init
+                0x00001a88      0x180 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001a88                ADC_Init
  .text.ADC_Enable
-                0x00001674       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
-                0x00001674                ADC_Enable
+                0x00001c08       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001c08                ADC_Enable
  .text.ADC_Start
-                0x000016a4       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
-                0x000016a4                ADC_Start
- .text.ADC_ISR  0x000016c4        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
-                0x000016c4                ADC_ISR
+                0x00001c38       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001c38                ADC_Start
+ .text.ADC_StartConvert
+                0x00001c58       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001c58                ADC_StartConvert
+ .text.ADC_StopConvert
+                0x00001c6c       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001c6c                ADC_StopConvert
+ .text.ADC_IsEndConversion
+                0x00001c80       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001c80                ADC_IsEndConversion
+ .text.ADC_GetResult16
+                0x00001ca8       0x2c .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00001ca8                ADC_GetResult16
+ .text.ADC_ISR  0x00001cd4        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+                0x00001cd4                ADC_ISR
  .text.I2C_ScbEnableIntr
-                0x000016d0        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+                0x00001ce0        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
  .text.I2C_Init
-                0x000016dc        0x8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
-                0x000016dc                I2C_Init
+                0x00001cec        0x8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+                0x00001cec                I2C_Init
  .text.I2C_Enable
-                0x000016e4       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
-                0x000016e4                I2C_Enable
+                0x00001cf4       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+                0x00001cf4                I2C_Enable
  .text.I2C_Start
-                0x000016fc       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
-                0x000016fc                I2C_Start
+                0x00001d0c       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+                0x00001d0c                I2C_Start
  .text.I2C_I2CInit
-                0x0000171c       0xb8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
-                0x0000171c                I2C_I2CInit
+                0x00001d2c       0xb8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+                0x00001d2c                I2C_I2CInit
  .text.I2C_I2CFwBlockReset
-                0x000017d4       0x5c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
-                0x000017d4                I2C_I2CFwBlockReset
+                0x00001de4       0x5c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+                0x00001de4                I2C_I2CFwBlockReset
+ .text.I2C_I2CMasterWaitOneUnit
+                0x00001e40       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .text.I2C_I2CMasterHandleStatus
+                0x00001e68       0xc4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .text.I2C_I2CMasterSendStart
+                0x00001f2c       0xc4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00001f2c                I2C_I2CMasterSendStart
+ .text.I2C_I2CMasterSendStop
+                0x00001ff0       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00001ff0                I2C_I2CMasterSendStop
+ .text.I2C_I2CMasterWriteByte
+                0x00002048       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00002048                I2C_I2CMasterWriteByte
+ .text.I2C_I2CMasterReadByte
+                0x00002090       0x7c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00002090                I2C_I2CMasterReadByte
  .text.I2C_I2CMasterGetWriteBufSize
-                0x00001830        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
-                0x00001830                I2C_I2CMasterGetWriteBufSize
+                0x0000210c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x0000210c                I2C_I2CMasterGetWriteBufSize
  .text.I2C_I2CMasterStatus
-                0x0000183c       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
-                0x0000183c                I2C_I2CMasterStatus
+                0x00002118       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00002118                I2C_I2CMasterStatus
  .text.I2C_I2CMasterClearStatus
-                0x0000186c       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
-                0x0000186c                I2C_I2CMasterClearStatus
+                0x00002148       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00002148                I2C_I2CMasterClearStatus
  .text.I2C_I2CReStartGeneration
-                0x0000188c       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
-                0x0000188c                I2C_I2CReStartGeneration
+                0x00002168       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00002168                I2C_I2CReStartGeneration
  .text.I2C_I2CMasterWriteBuf
-                0x000018ac       0xf8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
-                0x000018ac                I2C_I2CMasterWriteBuf
+                0x00002188       0xf8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00002188                I2C_I2CMasterWriteBuf
  .text.Status_Reg_LIM_Read
-                0x000019a4        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
-                0x000019a4                Status_Reg_LIM_Read
+                0x00002280        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+                0x00002280                Status_Reg_LIM_Read
  .text.Status_Reg_LIM_InterruptEnable
-                0x000019b0       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
-                0x000019b0                Status_Reg_LIM_InterruptEnable
+                0x0000228c       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+                0x0000228c                Status_Reg_LIM_InterruptEnable
  .text.isr_LIM_SetVector
-                0x000019cc        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
-                0x000019cc                isr_LIM_SetVector
+                0x000022a8        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+                0x000022a8                isr_LIM_SetVector
  .text.isr_LIM_SetPriority
-                0x000019d8       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
-                0x000019d8                isr_LIM_SetPriority
+                0x000022b4       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+                0x000022b4                isr_LIM_SetPriority
  .text.isr_LIM_Enable
-                0x000019f8        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
-                0x000019f8                isr_LIM_Enable
+                0x000022d4        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+                0x000022d4                isr_LIM_Enable
  .text.isr_LIM_Disable
-                0x00001a04        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
-                0x00001a04                isr_LIM_Disable
+                0x000022e0        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+                0x000022e0                isr_LIM_Disable
  .text.isr_LIM_StartEx
-                0x00001a10       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
-                0x00001a10                isr_LIM_StartEx
+                0x000022ec       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+                0x000022ec                isr_LIM_StartEx
+ .text.QuadDec_1_GetCounter
+                0x00002308       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+                0x00002308                QuadDec_1_GetCounter
  .text.QuadDec_1_GetEvents
-                0x00001a2c       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
-                0x00001a2c                QuadDec_1_GetEvents
+                0x0000231c       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+                0x0000231c                QuadDec_1_GetEvents
  .text.QuadDec_1_SetInterruptMask
-                0x00001a3c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
-                0x00001a3c                QuadDec_1_SetInterruptMask
+                0x0000232c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+                0x0000232c                QuadDec_1_SetInterruptMask
  .text.QuadDec_1_Enable
-                0x00001a48       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
-                0x00001a48                QuadDec_1_Enable
+                0x00002338       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+                0x00002338                QuadDec_1_Enable
  .text.QuadDec_1_Start
-                0x00001a70       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
-                0x00001a70                QuadDec_1_Start
+                0x00002360       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+                0x00002360                QuadDec_1_Start
+ .text.QuadDec_2_GetCounter
+                0x00002388       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+                0x00002388                QuadDec_2_GetCounter
  .text.QuadDec_2_GetEvents
-                0x00001a98       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
-                0x00001a98                QuadDec_2_GetEvents
+                0x0000239c       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+                0x0000239c                QuadDec_2_GetEvents
  .text.QuadDec_2_SetInterruptMask
-                0x00001aa8        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
-                0x00001aa8                QuadDec_2_SetInterruptMask
+                0x000023ac        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+                0x000023ac                QuadDec_2_SetInterruptMask
  .text.QuadDec_2_Enable
-                0x00001ab4       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
-                0x00001ab4                QuadDec_2_Enable
+                0x000023b8       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+                0x000023b8                QuadDec_2_Enable
  .text.QuadDec_2_Start
-                0x00001adc       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
-                0x00001adc                QuadDec_2_Start
+                0x000023e0       0x28 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+                0x000023e0                QuadDec_2_Start
  .text.QuadDec_1_Cnt16_Enable
-                0x00001b04       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b04                QuadDec_1_Cnt16_Enable
+                0x00002408       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002408                QuadDec_1_Cnt16_Enable
  .text.QuadDec_1_Cnt16_SetInterruptMode
-                0x00001b18        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b18                QuadDec_1_Cnt16_SetInterruptMode
+                0x0000241c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x0000241c                QuadDec_1_Cnt16_SetInterruptMode
  .text.QuadDec_1_Cnt16_ReadStatusRegister
-                0x00001b24        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b24                QuadDec_1_Cnt16_ReadStatusRegister
+                0x00002428        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002428                QuadDec_1_Cnt16_ReadStatusRegister
  .text.QuadDec_1_Cnt16_WriteCounter
-                0x00001b30        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b30                QuadDec_1_Cnt16_WriteCounter
+                0x00002434        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002434                QuadDec_1_Cnt16_WriteCounter
+ .text.QuadDec_1_Cnt16_ReadCounter
+                0x00002440       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002440                QuadDec_1_Cnt16_ReadCounter
  .text.QuadDec_1_Cnt16_ReadCapture
-                0x00001b3c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b3c                QuadDec_1_Cnt16_ReadCapture
+                0x00002454        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002454                QuadDec_1_Cnt16_ReadCapture
  .text.QuadDec_1_Cnt16_WritePeriod
-                0x00001b48        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b48                QuadDec_1_Cnt16_WritePeriod
+                0x00002460        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002460                QuadDec_1_Cnt16_WritePeriod
  .text.QuadDec_1_Cnt16_WriteCompare
-                0x00001b54        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b54                QuadDec_1_Cnt16_WriteCompare
+                0x0000246c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x0000246c                QuadDec_1_Cnt16_WriteCompare
  .text.QuadDec_1_Cnt16_ClearFIFO
-                0x00001b60       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b60                QuadDec_1_Cnt16_ClearFIFO
+                0x00002478       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00002478                QuadDec_1_Cnt16_ClearFIFO
  .text.QuadDec_1_Cnt16_Init
-                0x00001b74       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001b74                QuadDec_1_Cnt16_Init
+                0x0000248c       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x0000248c                QuadDec_1_Cnt16_Init
  .text.QuadDec_1_Cnt16_Start
-                0x00001bcc       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
-                0x00001bcc                QuadDec_1_Cnt16_Start
+                0x000024e4       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x000024e4                QuadDec_1_Cnt16_Start
  .text.QuadDec_2_Cnt16_Enable
-                0x00001bec       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001bec                QuadDec_2_Cnt16_Enable
+                0x00002504       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002504                QuadDec_2_Cnt16_Enable
  .text.QuadDec_2_Cnt16_SetInterruptMode
-                0x00001c00        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c00                QuadDec_2_Cnt16_SetInterruptMode
+                0x00002518        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002518                QuadDec_2_Cnt16_SetInterruptMode
  .text.QuadDec_2_Cnt16_ReadStatusRegister
-                0x00001c0c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c0c                QuadDec_2_Cnt16_ReadStatusRegister
+                0x00002524        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002524                QuadDec_2_Cnt16_ReadStatusRegister
  .text.QuadDec_2_Cnt16_WriteCounter
-                0x00001c18        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c18                QuadDec_2_Cnt16_WriteCounter
+                0x00002530        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002530                QuadDec_2_Cnt16_WriteCounter
+ .text.QuadDec_2_Cnt16_ReadCounter
+                0x0000253c       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x0000253c                QuadDec_2_Cnt16_ReadCounter
  .text.QuadDec_2_Cnt16_ReadCapture
-                0x00001c24        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c24                QuadDec_2_Cnt16_ReadCapture
+                0x00002550        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002550                QuadDec_2_Cnt16_ReadCapture
  .text.QuadDec_2_Cnt16_WritePeriod
-                0x00001c30        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c30                QuadDec_2_Cnt16_WritePeriod
+                0x0000255c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x0000255c                QuadDec_2_Cnt16_WritePeriod
  .text.QuadDec_2_Cnt16_WriteCompare
-                0x00001c3c        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c3c                QuadDec_2_Cnt16_WriteCompare
+                0x00002568        0xc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002568                QuadDec_2_Cnt16_WriteCompare
  .text.QuadDec_2_Cnt16_ClearFIFO
-                0x00001c48       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c48                QuadDec_2_Cnt16_ClearFIFO
+                0x00002574       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002574                QuadDec_2_Cnt16_ClearFIFO
  .text.QuadDec_2_Cnt16_Init
-                0x00001c5c       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001c5c                QuadDec_2_Cnt16_Init
+                0x00002588       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00002588                QuadDec_2_Cnt16_Init
  .text.QuadDec_2_Cnt16_Start
-                0x00001cb4       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
-                0x00001cb4                QuadDec_2_Cnt16_Start
+                0x000025e0       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x000025e0                QuadDec_2_Cnt16_Start
  .text.UART_ScbModePostEnable
-                0x00001cd4        0x8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+                0x00002600        0x8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
  .text.UART_Init
-                0x00001cdc        0x8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
-                0x00001cdc                UART_Init
+                0x00002608        0x8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+                0x00002608                UART_Init
  .text.UART_Enable
-                0x00001ce4       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
-                0x00001ce4                UART_Enable
+                0x00002610       0x18 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+                0x00002610                UART_Enable
  .text.UART_Start
-                0x00001cfc       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
-                0x00001cfc                UART_Start
- .text.UART_SpiUartWriteTxData
-                0x00001d1c       0x1c .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
-                0x00001d1c                UART_SpiUartWriteTxData
+                0x00002628       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+                0x00002628                UART_Start
  .text.UART_UartInit
-                0x00001d38       0xa8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
-                0x00001d38                UART_UartInit
+                0x00002648       0xa8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+                0x00002648                UART_UartInit
  .text.UART_UartPostEnable
-                0x00001de0       0x24 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
-                0x00001de0                UART_UartPostEnable
- *fill*         0x00001e04        0x4 
- .text          0x00001e08       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
-                0x00001e08                CyDelayCycles
-                0x00001e1a                CyEnterCriticalSection
-                0x00001e22                CyExitCriticalSection
+                0x000026f0       0x24 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+                0x000026f0                UART_UartPostEnable
+ *fill*         0x00002714        0x4 
+ .text          0x00002718       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
+                0x00002718                CyDelayCycles
+                0x0000272a                CyEnterCriticalSection
+                0x00002732                CyExitCriticalSection
  .text.CySysFlashSetWaitCycles
-                0x00001e28       0x54 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
-                0x00001e28                CySysFlashSetWaitCycles
+                0x00002738       0x54 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+                0x00002738                CySysFlashSetWaitCycles
  .text.I2C_I2C_ISR
-                0x00001e7c      0x340 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
-                0x00001e7c                I2C_I2C_ISR
- .text.__errno  0x000021bc        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x000021bc                __errno
+                0x0000278c      0x340 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+                0x0000278c                I2C_I2C_ISR
+ .text          0x00002acc      0x114 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x00002acc                __aeabi_uidiv
+                0x00002acc                __udivsi3
+                0x00002bd8                __aeabi_uidivmod
+ .text          0x00002be0      0x1d4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+                0x00002be0                __divsi3
+                0x00002be0                __aeabi_idiv
+                0x00002dac                __aeabi_idivmod
+ .text          0x00002db4        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00002db4                __aeabi_idiv0
+                0x00002db4                __aeabi_ldiv0
+ .text          0x00002db8       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+                0x00002db8                __fixunssfsi
+                0x00002db8                __aeabi_f2uiz
+ .text          0x00002de8       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o)
+                0x00002de8                __aeabi_d2uiz
+                0x00002de8                __fixunsdfsi
+ .text          0x00002e24      0x2ec c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+                0x00002e24                __aeabi_fadd
+ .text          0x00003110      0x234 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+                0x00003110                __aeabi_fdiv
+ .text          0x00003344      0x228 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+                0x00003344                __aeabi_fmul
+ .text          0x0000356c      0x30c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+                0x0000356c                __aeabi_fsub
+ .text          0x00003878       0x44 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+                0x00003878                __aeabi_f2iz
+ .text          0x000038bc       0x90 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+                0x000038bc                __aeabi_i2f
+ .text          0x0000394c      0x658 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+                0x0000394c                __aeabi_dadd
+ .text          0x00003fa4      0x62c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+                0x00003fa4                __aeabi_ddiv
+ .text          0x000045d0      0x6a8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+                0x000045d0                __aeabi_dsub
+ .text          0x00004c78       0x6c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
+                0x00004c78                __aeabi_d2iz
+ .text          0x00004ce4       0xa8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+                0x00004ce4                __aeabi_f2d
+ .text          0x00004d8c       0x7c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
+                0x00004d8c                __aeabi_cdrcmple
+                0x00004d9c                __aeabi_cdcmple
+                0x00004d9c                __aeabi_cdcmpeq
+                0x00004dac                __aeabi_dcmpeq
+                0x00004db8                __aeabi_dcmplt
+                0x00004dcc                __aeabi_dcmple
+                0x00004de0                __aeabi_dcmpgt
+                0x00004df4                __aeabi_dcmpge
+ .text          0x00004e08       0x74 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
+                0x00004e08                __aeabi_cfrcmple
+                0x00004e10                __aeabi_cfcmpeq
+                0x00004e10                __aeabi_cfcmple
+                0x00004e20                __aeabi_fcmpeq
+                0x00004e2c                __aeabi_fcmplt
+                0x00004e40                __aeabi_fcmple
+                0x00004e54                __aeabi_fcmpgt
+                0x00004e68                __aeabi_fcmpge
+ .text          0x00004e7c       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+                0x00004e7c                __clzsi2
+ .text          0x00004eb8       0x50 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+                0x00004eb8                __eqsf2
+                0x00004eb8                __nesf2
+ .text          0x00004f08       0x88 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+                0x00004f08                __gesf2
+                0x00004f08                __gtsf2
+ .text          0x00004f90       0x88 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+                0x00004f90                __ltsf2
+                0x00004f90                __lesf2
+ .text          0x00005018       0x80 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+                0x00005018                __nedf2
+                0x00005018                __eqdf2
+ .text          0x00005098       0xc8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+                0x00005098                __gedf2
+                0x00005098                __gtdf2
+ .text          0x00005160       0xd4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+                0x00005160                __ledf2
+                0x00005160                __ltdf2
+ .text.__errno  0x00005234        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00005234                __errno
  .text.__libc_init_array
-                0x000021c8       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x000021c8                __libc_init_array
- .text.memcpy   0x00002214       0x12 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x00002214                memcpy
- .text.memset   0x00002226       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
-                0x00002226                memset
+                0x00005240       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00005240                __libc_init_array
+ .text.memcpy   0x0000528c       0x12 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x0000528c                memcpy
+ .text.memset   0x0000529e       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x0000529e                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00002236        0x0 linker stubs
+ .glue_7t       0x000052ae        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00002236        0x0 linker stubs
+ .glue_7        0x000052ae        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00002236        0x0 linker stubs
+ .vfp11_veneer  0x000052ae        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00002238        0x0
- .v4_bx         0x00002238        0x0 linker stubs
+.v4_bx          0x000052b0        0x0
+ .v4_bx         0x000052b0        0x0 linker stubs
 
-.iplt           0x00002238        0x0
- .iplt          0x00002238        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x000052b0        0x0
+ .iplt          0x000052b0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00002238        0x4
+.eh_frame       0x000052b0        0x4
  *(.eh_frame)
- .eh_frame      0x00002238        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .eh_frame      0x00002238        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .eh_frame      0x000052b0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x000052b0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000223c                __exidx_end = .
+                0x000052b4                __exidx_end = .
 
-.rodata         0x0000223c      0x734
+.rodata         0x000052b4      0x834
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000223c      0x560 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .rodata        0x0000279c      0x160 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .rodata        0x000028fc       0x2e .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
-                0x000028fc                cyImoFreqMhz2Reg
- *fill*         0x0000292a        0x2 
- .rodata        0x0000292c        0xa .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .rodata        0x000052b4      0x560 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x00005814      0x160 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .rodata        0x00005974       0x2e .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x00005974                cyImoFreqMhz2Reg
+ *fill*         0x000059a2        0x2 
+ .rodata        0x000059a4        0xa .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ *fill*         0x000059ae        0x2 
+ .rodata        0x000059b0       0x80 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .rodata        0x00005a30       0x40 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .rodata        0x00005a70       0x40 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
  .rodata.str1.1
-                0x00002936        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x00002938                . = ALIGN (0x4)
+                0x00005ab0        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00005ab4                . = ALIGN (0x4)
+ *fill*         0x00005ab2        0x2 
  *(.init)
- .init          0x00002938        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00002938                _init
- .init          0x0000293c        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00002944                . = ALIGN (0x4)
-                0x00002944                __preinit_array_start = .
+ .init          0x00005ab4        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00005ab4                _init
+ .init          0x00005ab8        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00005ac0                . = ALIGN (0x4)
+                0x00005ac0                __preinit_array_start = .
  *(.preinit_array)
-                0x00002944                __preinit_array_end = .
-                0x00002944                . = ALIGN (0x4)
-                0x00002944                __init_array_start = .
+                0x00005ac0                __preinit_array_end = .
+                0x00005ac0                . = ALIGN (0x4)
+                0x00005ac0                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00002944        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .init_array    0x00002948        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x0000294c                __init_array_end = .
-                0x0000294c                . = ALIGN (0x4)
+ .init_array    0x00005ac0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x00005ac4        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00005ac8                __init_array_end = .
+                0x00005ac8                . = ALIGN (0x4)
  *(.fini)
- .fini          0x0000294c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x0000294c                _fini
- .fini          0x00002950        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00002958                . = ALIGN (0x4)
-                0x00002958                __fini_array_start = .
+ .fini          0x00005ac8        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00005ac8                _fini
+ .fini          0x00005acc        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00005ad4                . = ALIGN (0x4)
+                0x00005ad4                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00002958        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .fini_array    0x00005ad4        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x0000295c                __fini_array_end = .
-                0x0000295c                . = ALIGN (0x4)
+                0x00005ad8                __fini_array_end = .
+                0x00005ad8                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x0000295c                . = ALIGN (0x4)
+                0x00005ad8                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x0000295c                . = ALIGN (0x4)
-                0x0000295c                __cy_regions = .
-                0x0000295c        0x4 LONG 0x2970 __cy_region_init_ram
-                0x00002960        0x4 LONG 0x200000c0 __cy_region_start_data
-                0x00002964        0x4 LONG 0x88 __cy_region_init_size_ram
-                0x00002968        0x4 LONG 0x198 __cy_region_zero_size_ram
-                0x0000296c                __cy_regions_end = .
-                0x00002970                . = ALIGN (0x8)
- *fill*         0x0000296c        0x4 
-                0x00002970                _etext = .
+                0x00005ad8                . = ALIGN (0x4)
+                0x00005ad8                __cy_regions = .
+                0x00005ad8        0x4 LONG 0x5ae8 __cy_region_init_ram
+                0x00005adc        0x4 LONG 0x200000c0 __cy_region_start_data
+                0x00005ae0        0x4 LONG 0x88 __cy_region_init_size_ram
+                0x00005ae4        0x4 LONG 0x198 __cy_region_zero_size_ram
+                0x00005ae8                __cy_regions_end = .
+                0x00005ae8                . = ALIGN (0x8)
+                0x00005ae8                _etext = .
 
 .cy_checksum_exclude
-                0x00002970        0x0
+                0x00005ae8        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0xc0
@@ -1520,7 +1675,7 @@ END GROUP
 .noinit
  *(.noinit)
 
-.data           0x200000c0       0x88 load address 0x00002970
+.data           0x200000c0       0x88 load address 0x00005ae8
                 0x200000c0                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
@@ -1546,10 +1701,10 @@ END GROUP
  *(.ram)
                 0x20000148                _edata = .
 
-.igot.plt       0x20000148        0x0 load address 0x000029f8
+.igot.plt       0x20000148        0x0 load address 0x00005b70
  .igot.plt      0x20000148        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x20000148      0x198 load address 0x000029f8
+.bss            0x20000148      0x198 load address 0x00005b70
                 0x20000148                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -1614,11 +1769,11 @@ END GROUP
                 0x200002e0                __end = .
                 0x200002e0                PROVIDE (end, .)
                 0x200002e0                PROVIDE (__bss_end__, .)
-                0x00002970                __cy_region_init_ram = LOADADDR (.data)
+                0x00005ae8                __cy_region_init_ram = LOADADDR (.data)
                 0x00000088                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000198                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x200002e0       0x80 load address 0x000029f8
+.heap           0x200002e0       0x80 load address 0x00005b70
                 0x200002e0                . = _end
                 0x20000360                . = (. + 0x80)
  *fill*         0x200002e0       0x80 
@@ -1658,8 +1813,8 @@ END GROUP
                 0x90600000        0x1 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x000029f8        0x0 load address 0x90600004
- .rel.iplt      0x000029f8        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x00005b70        0x0 load address 0x90600004
+ .rel.iplt      0x00005b70        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -1679,7 +1834,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000     0x11c0
+.debug_aranges  0x00000000     0x11d0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x68 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
@@ -1702,68 +1857,68 @@ END GROUP
  .debug_aranges
                 0x00000460       0x28 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_aranges
-                0x00000488       0x38 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                0x00000488       0x48 .\CortexM0\ARM_GCC_541\Debug\sensor.o
  .debug_aranges
-                0x000004c0       0x30 .\CortexM0\ARM_GCC_541\Debug\servo.o
+                0x000004d0       0x30 .\CortexM0\ARM_GCC_541\Debug\servo.o
  .debug_aranges
-                0x000004f0       0x48 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000500       0x48 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_aranges
-                0x00000538       0x18 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+                0x00000548       0x18 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
  .debug_aranges
-                0x00000550       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000560       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
  .debug_aranges
-                0x00000598       0xe8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+                0x000005a8       0xe8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
  .debug_aranges
-                0x00000680       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+                0x00000690       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
  .debug_aranges
-                0x000006a0       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+                0x000006b0       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
  .debug_aranges
-                0x000006d0      0x270 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+                0x000006e0      0x270 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
  .debug_aranges
-                0x00000940      0x188 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+                0x00000950      0x188 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
  .debug_aranges
-                0x00000ac8       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
+                0x00000ad8       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .debug_aranges
-                0x00000b10       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+                0x00000b20       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
  .debug_aranges
-                0x00000b58       0xa8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+                0x00000b68       0xa8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .debug_aranges
-                0x00000c00       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+                0x00000c10       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
  .debug_aranges
-                0x00000c20       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+                0x00000c30       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
  .debug_aranges
-                0x00000c80       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+                0x00000c90       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
  .debug_aranges
-                0x00000cb0       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+                0x00000cc0       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
  .debug_aranges
-                0x00000d48       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+                0x00000d58       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
  .debug_aranges
-                0x00000d88       0x80 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+                0x00000d98       0x80 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
  .debug_aranges
-                0x00000e08       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+                0x00000e18       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
  .debug_aranges
-                0x00000e68       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+                0x00000e78       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
  .debug_aranges
-                0x00000ec8       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+                0x00000ed8       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
  .debug_aranges
-                0x00000f60       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+                0x00000f70       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
  .debug_aranges
-                0x00000ff8       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+                0x00001008       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
  .debug_aranges
-                0x00001050       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+                0x00001060       0x90 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
  .debug_aranges
-                0x000010b0       0x90 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+                0x000010f0       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00001140       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
+                0x00001110       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
  .debug_aranges
-                0x00001160       0x40 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+                0x00001150       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
  .debug_aranges
-                0x000011a0       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+                0x00001170       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xb39c
+.debug_info     0x00000000     0xb806
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x639 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .debug_info    0x00000639      0xa46 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -1774,38 +1929,38 @@ END GROUP
  .debug_info    0x00002940      0x2ff .\CortexM0\ARM_GCC_541\Debug\CANPower.o
  .debug_info    0x00002c3f      0x3f0 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .debug_info    0x0000302f      0x4c9 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .debug_info    0x000034f8      0x2fa .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_info    0x000037f2      0x5c5 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .debug_info    0x00003db7      0x2d5 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .debug_info    0x0000408c      0x406 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00004492       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x0000458a      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_info    0x0000492c      0x9c6 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .debug_info    0x000052f2       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
- .debug_info    0x00005392      0x37e .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
- .debug_info    0x00005710     0x17e4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
- .debug_info    0x00006ef4     0x1058 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .debug_info    0x00007f4c      0x19d .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .debug_info    0x000080e9      0x19d .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .debug_info    0x00008286      0x5a5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .debug_info    0x0000882b       0xcb .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
- .debug_info    0x000088f6      0x298 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
- .debug_info    0x00008b8e      0x195 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
- .debug_info    0x00008d23      0x813 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .debug_info    0x00009536      0x17f .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
- .debug_info    0x000096b5      0x305 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
- .debug_info    0x000099ba      0x2d4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .debug_info    0x00009c8e      0x2d4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .debug_info    0x00009f62      0x345 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .debug_info    0x0000a2a7      0x345 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .debug_info    0x0000a5ec      0x23a .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .debug_info    0x0000a826      0x220 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .debug_info    0x0000aa46      0x3b5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
- .debug_info    0x0000adfb       0xa7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
- .debug_info    0x0000aea2      0x352 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
- .debug_info    0x0000b1f4      0x1a8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_info    0x000034f8      0x570 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00003a68      0x763 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+ .debug_info    0x000041cb      0x32b .\CortexM0\ARM_GCC_541\Debug\servo.o
+ .debug_info    0x000044f6      0x406 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x000048fc       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x000049f4      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_info    0x00004d96      0x9c6 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_info    0x0000575c       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+ .debug_info    0x000057fc      0x37e .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_info    0x00005b7a     0x17e4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_info    0x0000735e     0x1058 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_info    0x000083b6      0x19d .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_info    0x00008553      0x19d .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .debug_info    0x000086f0      0x5a5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_info    0x00008c95       0xcb .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+ .debug_info    0x00008d60      0x298 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_info    0x00008ff8      0x195 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+ .debug_info    0x0000918d      0x813 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_info    0x000099a0      0x17f .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_info    0x00009b1f      0x305 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_info    0x00009e24      0x2d4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_info    0x0000a0f8      0x2d4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_info    0x0000a3cc      0x345 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_info    0x0000a711      0x345 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_info    0x0000aa56      0x23a .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_info    0x0000ac90      0x3b5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_info    0x0000b045       0xa7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
+ .debug_info    0x0000b0ec      0x352 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_info    0x0000b43e      0x1a8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_info    0x0000b5e6      0x220 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
-.debug_abbrev   0x00000000     0x2d96
+.debug_abbrev   0x00000000     0x2e13
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1ad .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .debug_abbrev  0x000001ad      0x149 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -1816,38 +1971,38 @@ END GROUP
  .debug_abbrev  0x0000069f      0x124 .\CortexM0\ARM_GCC_541\Debug\CANPower.o
  .debug_abbrev  0x000007c3      0x106 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .debug_abbrev  0x000008c9      0x17f .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .debug_abbrev  0x00000a48      0x136 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_abbrev  0x00000b7e      0x187 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .debug_abbrev  0x00000d05       0xc9 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .debug_abbrev  0x00000dce      0x1d8 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x00000fa6       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x00001003      0x1d7 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_abbrev  0x000011da      0x186 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .debug_abbrev  0x00001360       0x42 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
- .debug_abbrev  0x000013a2      0x159 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
- .debug_abbrev  0x000014fb      0x293 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
- .debug_abbrev  0x0000178e      0x248 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .debug_abbrev  0x000019d6       0xc8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .debug_abbrev  0x00001a9e       0xc8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .debug_abbrev  0x00001b66      0x184 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .debug_abbrev  0x00001cea       0x65 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
- .debug_abbrev  0x00001d4f      0x118 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
- .debug_abbrev  0x00001e67       0xc7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
- .debug_abbrev  0x00001f2e      0x1c2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .debug_abbrev  0x000020f0       0xac .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
- .debug_abbrev  0x0000219c      0x19a .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
- .debug_abbrev  0x00002336      0x151 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .debug_abbrev  0x00002487      0x151 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .debug_abbrev  0x000025d8      0x117 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .debug_abbrev  0x000026ef      0x117 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .debug_abbrev  0x00002806       0xd5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .debug_abbrev  0x000028db      0x14f .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .debug_abbrev  0x00002a2a      0x132 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
- .debug_abbrev  0x00002b5c       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00002b70      0x182 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
- .debug_abbrev  0x00002cf2       0xa4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_abbrev  0x00000a48      0x13f .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x00000b87      0x1df .\CortexM0\ARM_GCC_541\Debug\sensor.o
+ .debug_abbrev  0x00000d66       0xe5 .\CortexM0\ARM_GCC_541\Debug\servo.o
+ .debug_abbrev  0x00000e4b      0x1d8 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00001023       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00001080      0x1d7 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_abbrev  0x00001257      0x186 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_abbrev  0x000013dd       0x42 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+ .debug_abbrev  0x0000141f      0x159 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_abbrev  0x00001578      0x293 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_abbrev  0x0000180b      0x248 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_abbrev  0x00001a53       0xc8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_abbrev  0x00001b1b       0xc8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .debug_abbrev  0x00001be3      0x184 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_abbrev  0x00001d67       0x65 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+ .debug_abbrev  0x00001dcc      0x118 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_abbrev  0x00001ee4       0xc7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+ .debug_abbrev  0x00001fab      0x1c2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_abbrev  0x0000216d       0xac .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_abbrev  0x00002219      0x19a .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_abbrev  0x000023b3      0x151 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_abbrev  0x00002504      0x151 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_abbrev  0x00002655      0x117 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_abbrev  0x0000276c      0x117 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_abbrev  0x00002883       0xd5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_abbrev  0x00002958      0x132 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_abbrev  0x00002a8a       0x14 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00002a9e      0x182 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_abbrev  0x00002c20       0xa4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_abbrev  0x00002cc4      0x14f .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
-.debug_line     0x00000000     0x4b39
+.debug_line     0x00000000     0x4ba1
  *(.debug_line)
  .debug_line    0x00000000      0x2c8 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .debug_line    0x000002c8      0x2e9 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -1858,38 +2013,38 @@ END GROUP
  .debug_line    0x00000e29      0x193 .\CortexM0\ARM_GCC_541\Debug\CANPower.o
  .debug_line    0x00000fbc      0x1e9 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .debug_line    0x000011a5      0x21d .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .debug_line    0x000013c2      0x251 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_line    0x00001613      0x214 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .debug_line    0x00001827      0x1f2 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .debug_line    0x00001a19      0x1ad .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00001bc6      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00001d07      0x236 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x00001f3d      0x3e7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .debug_line    0x00002324       0x53 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
- .debug_line    0x00002377       0xfc .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
- .debug_line    0x00002473      0x8ef .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
- .debug_line    0x00002d62      0x5d1 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .debug_line    0x00003333       0xbf .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .debug_line    0x000033f2       0xbf .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .debug_line    0x000034b1      0x292 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .debug_line    0x00003743       0x62 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
- .debug_line    0x000037a5      0x124 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
- .debug_line    0x000038c9       0xc2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
- .debug_line    0x0000398b      0x2fc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .debug_line    0x00003c87       0xbd .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
- .debug_line    0x00003d44      0x14f .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
- .debug_line    0x00003e93      0x127 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .debug_line    0x00003fba      0x127 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .debug_line    0x000040e1      0x198 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .debug_line    0x00004279      0x198 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .debug_line    0x00004411      0x108 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .debug_line    0x00004519      0x11a .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .debug_line    0x00004633      0x1cf .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
- .debug_line    0x00004802       0x68 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
- .debug_line    0x0000486a      0x173 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
- .debug_line    0x000049dd      0x15c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_line    0x000013c2      0x25b .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_line    0x0000161d      0x26c .\CortexM0\ARM_GCC_541\Debug\sensor.o
+ .debug_line    0x00001889      0x1f8 .\CortexM0\ARM_GCC_541\Debug\servo.o
+ .debug_line    0x00001a81      0x1ad .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00001c2e      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00001d6f      0x236 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x00001fa5      0x3e7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_line    0x0000238c       0x53 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+ .debug_line    0x000023df       0xfc .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_line    0x000024db      0x8ef .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_line    0x00002dca      0x5d1 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_line    0x0000339b       0xbf .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_line    0x0000345a       0xbf .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .debug_line    0x00003519      0x292 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_line    0x000037ab       0x62 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+ .debug_line    0x0000380d      0x124 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_line    0x00003931       0xc2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+ .debug_line    0x000039f3      0x2fc .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_line    0x00003cef       0xbd .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_line    0x00003dac      0x14f .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_line    0x00003efb      0x127 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_line    0x00004022      0x127 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_line    0x00004149      0x198 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_line    0x000042e1      0x198 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_line    0x00004479      0x108 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_line    0x00004581      0x1cf .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_line    0x00004750       0x68 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
+ .debug_line    0x000047b8      0x173 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_line    0x0000492b      0x15c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_line    0x00004a87      0x11a .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
-.debug_frame    0x00000000     0x2fa4
+.debug_frame    0x00000000     0x31bc
  *(.debug_frame)
  .debug_frame   0x00000000       0xfc .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .debug_frame   0x000000fc      0x27c .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -1899,55 +2054,65 @@ END GROUP
  .debug_frame   0x0000097c       0x8c .\CortexM0\ARM_GCC_541\Debug\CANPower.o
  .debug_frame   0x00000a08       0xe0 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .debug_frame   0x00000ae8      0x108 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .debug_frame   0x00000bf0       0x4c .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_frame   0x00000c3c       0x98 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .debug_frame   0x00000cd4       0x74 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .debug_frame   0x00000d48       0xb4 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_frame   0x00000dfc       0xbc .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_frame   0x00000eb8      0x238 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .debug_frame   0x000010f0       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
- .debug_frame   0x00001110       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
- .debug_frame   0x00001170      0x718 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
- .debug_frame   0x00001888      0x4a4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .debug_frame   0x00001d2c       0x70 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .debug_frame   0x00001d9c       0x70 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .debug_frame   0x00001e0c      0x1b0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .debug_frame   0x00001fbc       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
- .debug_frame   0x00001fdc       0xe8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
- .debug_frame   0x000020c4       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
- .debug_frame   0x0000211c      0x1d8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .debug_frame   0x000022f4       0x78 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
- .debug_frame   0x0000236c      0x110 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
- .debug_frame   0x0000247c       0xdc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .debug_frame   0x00002558       0xdc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .debug_frame   0x00002634      0x134 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .debug_frame   0x00002768      0x134 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .debug_frame   0x0000289c       0xd8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .debug_frame   0x00002974       0xb0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .debug_frame   0x00002a24      0x144 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
- .debug_frame   0x00002b68       0x90 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
- .debug_frame   0x00002bf8       0x2c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
- .debug_frame   0x00002c24       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00002c44       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
- .debug_frame   0x00002c64       0x34 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
- .debug_frame   0x00002c98       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
- .debug_frame   0x00002cc8       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
- .debug_frame   0x00002d04       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
- .debug_frame   0x00002d3c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
- .debug_frame   0x00002d68       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
- .debug_frame   0x00002da4       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
- .debug_frame   0x00002de0       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
- .debug_frame   0x00002e1c       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
- .debug_frame   0x00002e54       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
- .debug_frame   0x00002e80       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
- .debug_frame   0x00002eac       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
- .debug_frame   0x00002ee8       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00002f08       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00002f30       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x00002f5c       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00002f84       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000bf0       0x54 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x00000c44       0xe0 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+ .debug_frame   0x00000d24       0x70 .\CortexM0\ARM_GCC_541\Debug\servo.o
+ .debug_frame   0x00000d94       0xb4 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x00000e48       0xbc .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_frame   0x00000f04      0x238 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_frame   0x0000113c       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+ .debug_frame   0x0000115c       0x60 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_frame   0x000011bc      0x718 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_frame   0x000018d4      0x4a4 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_frame   0x00001d78       0x70 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_frame   0x00001de8       0x70 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .debug_frame   0x00001e58      0x1b0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_frame   0x00002008       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+ .debug_frame   0x00002028       0xe8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_frame   0x00002110       0x58 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+ .debug_frame   0x00002168      0x1d8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_frame   0x00002340       0x78 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_frame   0x000023b8      0x110 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_frame   0x000024c8       0xdc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_frame   0x000025a4       0xdc .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_frame   0x00002680      0x134 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_frame   0x000027b4      0x134 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_frame   0x000028e8       0xd8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_frame   0x000029c0      0x144 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_frame   0x00002b04       0x90 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_frame   0x00002b94       0x2c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_frame   0x00002bc0       0xb0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+ .debug_frame   0x00002c70       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00002c90       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+ .debug_frame   0x00002cb0       0x34 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
+ .debug_frame   0x00002ce4       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
+ .debug_frame   0x00002d0c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o)
+ .debug_frame   0x00002d38       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
+ .debug_frame   0x00002d68       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
+ .debug_frame   0x00002d98       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+ .debug_frame   0x00002dd4       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+ .debug_frame   0x00002e0c       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
+ .debug_frame   0x00002e3c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
+ .debug_frame   0x00002e5c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+ .debug_frame   0x00002e88       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+ .debug_frame   0x00002ec4       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+ .debug_frame   0x00002f00       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+ .debug_frame   0x00002f38       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
+ .debug_frame   0x00002f64       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
+ .debug_frame   0x00002f90       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
+ .debug_frame   0x00002fcc       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
+ .debug_frame   0x00002ff8       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
+ .debug_frame   0x00003028       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .debug_frame   0x00003058       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .debug_frame   0x00003090       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .debug_frame   0x000030c8       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .debug_frame   0x00003100       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00003120       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00003148       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00003174       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000319c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x3d37
+.debug_str      0x00000000     0x3d64
  *(.debug_str)
  .debug_str     0x00000000      0x402 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
                                 0x478 (size before relaxing)
@@ -1967,66 +2132,66 @@ END GROUP
                                 0x3a2 (size before relaxing)
  .debug_str     0x000010a5      0x171 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
                                 0x335 (size before relaxing)
- .debug_str     0x00001216       0xc9 .\CortexM0\ARM_GCC_541\Debug\main.o
-                                0x2cc (size before relaxing)
- .debug_str     0x000012df      0x178 .\CortexM0\ARM_GCC_541\Debug\sensor.o
-                                0x400 (size before relaxing)
- .debug_str     0x00001457       0xb2 .\CortexM0\ARM_GCC_541\Debug\servo.o
-                                0x28c (size before relaxing)
- .debug_str     0x00001509      0x124 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00001216      0x135 .\CortexM0\ARM_GCC_541\Debug\main.o
+                                0x3db (size before relaxing)
+ .debug_str     0x0000134b      0x179 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+                                0x499 (size before relaxing)
+ .debug_str     0x000014c4       0x6a .\CortexM0\ARM_GCC_541\Debug\servo.o
+                                0x2b9 (size before relaxing)
+ .debug_str     0x0000152e      0x124 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x30b (size before relaxing)
- .debug_str     0x0000162d       0x59 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00001652       0x59 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                                 0x1df (size before relaxing)
- .debug_str     0x00001686      0x135 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_str     0x000016ab      0x135 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
                                 0x318 (size before relaxing)
- .debug_str     0x000017bb      0x2dd .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_str     0x000017e0      0x2dd .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
                                 0x54d (size before relaxing)
- .debug_str     0x00001a98       0x29 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+ .debug_str     0x00001abd       0x29 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
                                 0x1bb (size before relaxing)
- .debug_str     0x00001ac1       0x69 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_str     0x00001ae6       0x69 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
                                 0x2e0 (size before relaxing)
- .debug_str     0x00001b2a      0x8f3 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_str     0x00001b4f      0x8eb .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
                                 0xb5f (size before relaxing)
- .debug_str     0x0000241d      0x6d9 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_str     0x0000243a      0x6d9 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
                                 0x934 (size before relaxing)
- .debug_str     0x00002af6       0xa2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
+ .debug_str     0x00002b13       0xa2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
                                 0x25b (size before relaxing)
- .debug_str     0x00002b98       0x87 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_str     0x00002bb5       0x87 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
                                 0x25b (size before relaxing)
- .debug_str     0x00002c1f      0x188 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_str     0x00002c3c      0x180 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
                                 0x3ef (size before relaxing)
- .debug_str     0x00002da7       0x35 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+ .debug_str     0x00002dbc       0x35 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
                                 0x1d4 (size before relaxing)
- .debug_str     0x00002ddc       0xf0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_str     0x00002df1       0xf0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
                                 0x2d5 (size before relaxing)
- .debug_str     0x00002ecc       0x74 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+ .debug_str     0x00002ee1       0x74 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
                                 0x265 (size before relaxing)
- .debug_str     0x00002f40      0x1dd .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_str     0x00002f55      0x1dd .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
                                 0x4cd (size before relaxing)
- .debug_str     0x0000311d       0x79 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_str     0x00003132       0x79 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
                                 0x28a (size before relaxing)
- .debug_str     0x00003196      0x101 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_str     0x000031ab      0x101 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
                                 0x31d (size before relaxing)
- .debug_str     0x00003297      0x13f .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_str     0x000032ac      0x13f .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
                                 0x352 (size before relaxing)
- .debug_str     0x000033d6      0x127 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_str     0x000033eb      0x127 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
                                 0x352 (size before relaxing)
- .debug_str     0x000034fd      0x1f8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_str     0x00003512      0x1f8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
                                 0x42d (size before relaxing)
- .debug_str     0x000036f5      0x1bf .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_str     0x0000370a      0x1bf .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
                                 0x42d (size before relaxing)
- .debug_str     0x000038b4       0xdb .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_str     0x000038c9       0xdb .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
                                 0x2ae (size before relaxing)
- .debug_str     0x0000398f      0x11d .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
-                                0x2e5 (size before relaxing)
- .debug_str     0x00003aac      0x199 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_str     0x000039a4      0x1eb .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
                                 0x3df (size before relaxing)
- .debug_str     0x00003c45       0xab .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_str     0x00003b8f       0xab .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
                                 0x2c7 (size before relaxing)
- .debug_str     0x00003cf0       0x47 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_str     0x00003c3a       0x47 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
                                 0x2d5 (size before relaxing)
+ .debug_str     0x00003c81       0xe3 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+                                0x2e5 (size before relaxing)
 
-.debug_loc      0x00000000     0x7c7c
+.debug_loc      0x00000000     0x7e87
  *(.debug_loc)
  .debug_loc     0x00000000      0x112 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .debug_loc     0x00000112      0x926 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -2036,36 +2201,36 @@ END GROUP
  .debug_loc     0x000020b4      0x1bb .\CortexM0\ARM_GCC_541\Debug\CANPower.o
  .debug_loc     0x0000226f      0x310 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .debug_loc     0x0000257f      0x3b9 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
- .debug_loc     0x00002938       0x1f .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_loc     0x00002957      0x215 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .debug_loc     0x00002b6c      0x31b .\CortexM0\ARM_GCC_541\Debug\servo.o
- .debug_loc     0x00002e87      0x136 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x00002fbd      0x14f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_loc     0x0000310c      0xa5d .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .debug_loc     0x00003b69      0x17f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
- .debug_loc     0x00003ce8     0x18f5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
- .debug_loc     0x000055dd      0xdb7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .debug_loc     0x00006394       0xa2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .debug_loc     0x00006436       0xa2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .debug_loc     0x000064d8      0x4ba .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .debug_loc     0x00006992       0x7e .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
- .debug_loc     0x00006a10      0xa49 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .debug_loc     0x00007459       0x44 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
- .debug_loc     0x0000749d       0x82 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
- .debug_loc     0x0000751f       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .debug_loc     0x000075bf       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .debug_loc     0x0000765f       0x3d .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .debug_loc     0x0000769c       0x3d .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .debug_loc     0x000076d9       0x7e .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .debug_loc     0x00007757       0x96 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .debug_loc     0x000077ed      0x223 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
- .debug_loc     0x00007a10      0x160 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
- .debug_loc     0x00007b70      0x10c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_loc     0x00002938       0xbb .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_loc     0x000029f3      0x317 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+ .debug_loc     0x00002d0a      0x388 .\CortexM0\ARM_GCC_541\Debug\servo.o
+ .debug_loc     0x00003092      0x136 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x000031c8      0x14f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_loc     0x00003317      0xa5d .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_loc     0x00003d74      0x17f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_loc     0x00003ef3     0x18f5 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_loc     0x000057e8      0xdb7 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_loc     0x0000659f       0xa2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_loc     0x00006641       0xa2 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .debug_loc     0x000066e3      0x4ba .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_loc     0x00006b9d       0x7e .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_loc     0x00006c1b      0xa49 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_loc     0x00007664       0x44 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_loc     0x000076a8       0x82 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_loc     0x0000772a       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_loc     0x000077ca       0xa0 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_loc     0x0000786a       0x3d .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_loc     0x000078a7       0x3d .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_loc     0x000078e4       0x7e .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_loc     0x00007962      0x223 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_loc     0x00007b85      0x160 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_loc     0x00007ce5      0x10c .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_loc     0x00007df1       0x96 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0xf60
+.debug_ranges   0x00000000      0xf70
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x58 .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
  .debug_ranges  0x00000058       0xb0 .\CortexM0\ARM_GCC_541\Debug\CANCommon.o
@@ -2076,33 +2241,33 @@ END GROUP
  .debug_ranges  0x00000358       0x50 .\CortexM0\ARM_GCC_541\Debug\CANScience.o
  .debug_ranges  0x000003a8       0x50 .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
  .debug_ranges  0x000003f8       0x18 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_ranges  0x00000410       0x28 .\CortexM0\ARM_GCC_541\Debug\sensor.o
- .debug_ranges  0x00000438       0x20 .\CortexM0\ARM_GCC_541\Debug\servo.o
- .debug_ranges  0x00000458       0x38 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_ranges  0x00000490       0x38 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_ranges  0x000004c8       0xd8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
- .debug_ranges  0x000005a0       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
- .debug_ranges  0x000005b0       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
- .debug_ranges  0x000005d0      0x260 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
- .debug_ranges  0x00000830      0x178 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .debug_ranges  0x000009a8       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
- .debug_ranges  0x000009e0       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
- .debug_ranges  0x00000a18       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
- .debug_ranges  0x00000ab0       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
- .debug_ranges  0x00000ac0       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
- .debug_ranges  0x00000b10       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
- .debug_ranges  0x00000b30       0x88 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
- .debug_ranges  0x00000bb8       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
- .debug_ranges  0x00000be8       0x70 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
- .debug_ranges  0x00000c58       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
- .debug_ranges  0x00000ca8       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
- .debug_ranges  0x00000cf8       0x88 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
- .debug_ranges  0x00000d80       0x88 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
- .debug_ranges  0x00000e08       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .debug_ranges  0x00000e50       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
- .debug_ranges  0x00000ea0       0x80 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
- .debug_ranges  0x00000f20       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
- .debug_ranges  0x00000f50       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_ranges  0x00000410       0x38 .\CortexM0\ARM_GCC_541\Debug\sensor.o
+ .debug_ranges  0x00000448       0x20 .\CortexM0\ARM_GCC_541\Debug\servo.o
+ .debug_ranges  0x00000468       0x38 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x000004a0       0x38 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_ranges  0x000004d8       0xd8 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN.o)
+ .debug_ranges  0x000005b0       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_INT.o)
+ .debug_ranges  0x000005c0       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
+ .debug_ranges  0x000005e0      0x260 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
+ .debug_ranges  0x00000840      0x178 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
+ .debug_ranges  0x000009b8       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .debug_ranges  0x000009f0       0x38 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
+ .debug_ranges  0x00000a28       0x98 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
+ .debug_ranges  0x00000ac0       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
+ .debug_ranges  0x00000ad0       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
+ .debug_ranges  0x00000b20       0x20 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C.o)
+ .debug_ranges  0x00000b40       0x88 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_MASTER.o)
+ .debug_ranges  0x00000bc8       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(Status_Reg_LIM.o)
+ .debug_ranges  0x00000bf8       0x70 .\CortexM0\ARM_GCC_541\Debug\science wow.a(isr_LIM.o)
+ .debug_ranges  0x00000c68       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1.o)
+ .debug_ranges  0x00000cb8       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2.o)
+ .debug_ranges  0x00000d08       0x88 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
+ .debug_ranges  0x00000d90       0x88 .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
+ .debug_ranges  0x00000e18       0x48 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
+ .debug_ranges  0x00000e60       0x80 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+ .debug_ranges  0x00000ee0       0x30 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+ .debug_ranges  0x00000f10       0x10 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .debug_ranges  0x00000f20       0x50 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
@@ -2126,8 +2291,8 @@ END GROUP
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_TX_RX_func.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLib.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
- .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC_INT.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C.o)
@@ -2140,10 +2305,10 @@ END GROUP
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_1_Cnt16.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(QuadDec_2_Cnt16.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
- .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
  .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -2210,9 +2375,9 @@ END GROUP
  .ARM.attributes
                 0x00000408       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyLFClk.o)
  .ARM.attributes
-                0x00000439       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(DBG_LED.o)
+                0x00000439       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
  .ARM.attributes
-                0x0000046a       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ERR_LED.o)
+                0x0000046a       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CAN_LED.o)
  .ARM.attributes
                 0x0000049b       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(ADC.o)
  .ARM.attributes
@@ -2238,15 +2403,15 @@ END GROUP
  .ARM.attributes
                 0x000006b6       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART.o)
  .ARM.attributes
-                0x000006e7       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
+                0x000006e7       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
  .ARM.attributes
-                0x00000718       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_UART.o)
+                0x00000718       0x21 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
  .ARM.attributes
-                0x00000749       0x21 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyBootAsmGnu.o)
+                0x00000739       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
  .ARM.attributes
-                0x0000076a       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(CyFlash.o)
+                0x0000076a       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
  .ARM.attributes
-                0x0000079b       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(I2C_I2C_INT.o)
+                0x0000079b       0x31 .\CortexM0\ARM_GCC_541\Debug\science wow.a(UART_SPI_UART.o)
  .ARM.attributes
                 0x000007cc       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
  .ARM.attributes
@@ -2258,48 +2423,72 @@ END GROUP
  .ARM.attributes
                 0x00000844       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_muldi3.o)
  .ARM.attributes
-                0x00000870       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
+                0x00000870       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunssfsi.o)
  .ARM.attributes
-                0x0000089c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
+                0x0000089c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_fixunsdfsi.o)
  .ARM.attributes
-                0x000008c8       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
+                0x000008c8       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(bpabi.o)
  .ARM.attributes
-                0x000008f4       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
+                0x000008f4       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(addsf3.o)
  .ARM.attributes
-                0x00000920       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
+                0x00000920       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divsf3.o)
  .ARM.attributes
-                0x0000094c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
+                0x0000094c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(mulsf3.o)
  .ARM.attributes
-                0x00000978       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(muldf3.o)
+                0x00000978       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subsf3.o)
  .ARM.attributes
-                0x000009a4       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
+                0x000009a4       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixsfsi.o)
  .ARM.attributes
-                0x000009d0       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
+                0x000009d0       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsisf.o)
  .ARM.attributes
-                0x000009fc       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(floatsidf.o)
+                0x000009fc       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(adddf3.o)
  .ARM.attributes
-                0x00000a28       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
+                0x00000a28       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(divdf3.o)
  .ARM.attributes
-                0x00000a46       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
+                0x00000a54       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(subdf3.o)
  .ARM.attributes
-                0x00000a72       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzdi2.o)
+                0x00000a80       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(fixdfsi.o)
  .ARM.attributes
-                0x00000a90       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00000aac       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(extendsfdf2.o)
  .ARM.attributes
-                0x00000abc       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+                0x00000ad8       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x00000ae8       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00000af6       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_arm_cmpsf2.o)
  .ARM.attributes
-                0x00000b14       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00000b14       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzsi2.o)
  .ARM.attributes
-                0x00000b40       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000b32       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divdi3.o)
  .ARM.attributes
-                0x00000b6c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x00000b5e       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqsf2.o)
  .ARM.attributes
-                0x00000b98       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+                0x00000b8a       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gesf2.o)
  .ARM.attributes
-                0x00000bc4       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00000bb6       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(lesf2.o)
+ .ARM.attributes
+                0x00000be2       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(eqdf2.o)
+ .ARM.attributes
+                0x00000c0e       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(gedf2.o)
+ .ARM.attributes
+                0x00000c3a       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(ledf2.o)
+ .ARM.attributes
+                0x00000c66       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_clzdi2.o)
+ .ARM.attributes
+                0x00000c84       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000cb0       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000cdc       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000d08       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000d34       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000d60       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000d8c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .ARM.attributes
+                0x00000db8       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\write\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CortexM0\ARM_GCC_541\Debug\science wow.elf elf32-littlearm)
+OUTPUT(C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CortexM0\ARM_GCC_541\Debug\science wow.elf elf32-littlearm)

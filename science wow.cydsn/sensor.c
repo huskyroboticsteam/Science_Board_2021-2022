@@ -10,14 +10,15 @@
 #include "CANScience.h"
 #include "sensor.h"
 #include <stdint.h>
+#include "PCA9685.h"
 
 #define HUMIDITY (uint8_t) 0x16
 #define TEMPERATURE (uint8_t) 0x17 //wrong
 
-#define VEML6070_ADDR_ARA 0x18
-#define VEML6070_ADDR_CMD 0x70
-#define VEML6070_ADDR_DATA_LSB 0x71
-#define VEML6070_ADDR_DATA_MSB 0x73
+#define VEML6070_ADDR_ARA 0x18//(0x18 >> 1)
+#define VEML6070_ADDR_CMD 0x70//(0x70 >> 1)
+#define VEML6070_ADDR_DATA_LSB 0x71 //(0x71 >> 1)
+#define VEML6070_ADDR_DATA_MSB 0x73 //(0x73 >> 1)
 
 
 //referenced John's past work
@@ -59,32 +60,57 @@ uint16_t read_ADC(uint32_t channel) {
 
 
 
-//void VEML6070_init(){
-//	wdt_reset();
-//	VEML6070_read_byte(VEML6070_ADDR_ARA);
-//	VEML6070_write_byte(VEML6070_ADDR_CMD, 0x04); //Integration time = 1 //Possibly 06
-//}
-
-uint16_t read_uv_sensor(){
-	uint8_t lsb;
-    uint8_t msb;
-    uint8_t lsberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_LSB, &lsb, 1);
-	uint8_t msberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_MSB, &msb, 1);
+void VEML6070_init(){
+    I2C_Start();
+    I2C_Enable();
+    uint8_t address;
+    uint8_t error;
+    uint8_t data[1] = {0x06};
+    uint8 mode_buf[2] = {0x6,0x6};
+    //writeBuffer(mode_buf, VEML6070_ADDR_CMD);
+    I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_ARA, &address, 1);
+    I2C_bus_write(VEML6070_ADDR_CMD, VEML6070_ADDR_CMD, data, 1);    
+//    I2C_I2CMasterSendStart(VEML6070_ADDR_CMD, I2C_I2C_READ_XFER_MODE, 1);
+//    I2C_I2CMasterWriteByte(VEML6070_ADDR_ARA, 20);  //0x18, timeoutms     //read ARA to clear interrupt (ACK)
+//    I2C_I2CMasterReadByte(1u, &address, 20);         //ack, rdByte, timeoutms
+//    I2C_I2CMasterSendStop(10);
+//    
+//    I2C_I2CMasterSendStart(VEML6070_ADDR_CMD, I2C_I2C_WRITE_XFER_MODE, 1);
+//    I2C_I2CMasterWriteByte(VEML6070_ADDR_CMD, 20);  //0x70
+//    I2C_I2CMasterWriteByte(0x6, 1);  //wrByte, timeoutms
+//    I2C_I2CMasterSendStop(10);
     
-    if (lsberror != I2C_I2C_MSTR_NO_ERROR || msberror != I2C_I2C_MSTR_NO_ERROR){
-        ERR_LED_Write(0);
-        CyDelay(500);
-        ERR_LED_Write(1);
-    }
-	return (msb << 8) | lsb;
+}
+
+uint16_t read_uv_sensor() {
+    uint8_t msb, lsb;
+//    
+//    I2C_I2CMasterSendStart(VEML6070_ADDR_CMD, I2C_I2C_READ_XFER_MODE, 1);
+//    I2C_I2CMasterWriteByte(VEML6070_ADDR_DATA_MSB, 20);
+//    I2C_I2CMasterReadByte(I2C_I2C_NAK_DATA, &msb, 100);
+//    I2C_I2CMasterSendStop(20);
+//    
+//    I2C_I2CMasterSendStart(VEML6070_ADDR_CMD, I2C_I2C_READ_XFER_MODE, 1);
+//    I2C_I2CMasterWriteByte(VEML6070_ADDR_DATA_LSB, 20);
+//    I2C_I2CMasterReadByte(I2C_I2C_NAK_DATA, &lsb, 100);
+//    I2C_I2CMasterSendStop(20);
+
+     uint8_t msberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_MSB, &msb, 0);
+     uint8_t lsberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_LSB, &lsb, 0);
+
+    //if (lsberror != I2C_I2C_MSTR_NO_ERROR || msberror != I2C_I2C_MSTR_NO_ERROR){
+     //   ERR_LED_Write(0);
+       // CyDelay(500);
+        //ERR_LED_Write(1);
+    //}
+	return (((uint16_t) msb) << 8) | (uint16_t) lsb;
 }
 
 
 
-//yoinked from davis
+//yoinked from davis (imu)
 //read byte(s) from i2C and store in array
-uint8_t I2C_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt)
-{
+uint8_t I2C_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt) {
     I2C_I2CMasterClearStatus(); //clear the garbage
   
     int ms_timeout = 20; 
@@ -111,8 +137,26 @@ uint8_t I2C_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint
 	}
 	// Check for BNO055_iERROR before proceeding
 	BNO055_iERROR = I2C_I2CMasterSendStop(ms_timeout);
-
+    
 	return (int8_t)BNO055_iERROR;
 }
 
+//yoinked from davis (imu)
+uint8_t I2C_bus_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t *reg_data, uint8_t cnt) {
+    //Print("writing");
+    I2C_I2CMasterClearStatus(); //clear the garbage
+    uint8_t data_pack [cnt+1]; 
+    data_pack[0] = reg_addr;
+    for(int i = 1; i < cnt+1; i++){
+        data_pack[i] = reg_data[i-1];   
+    }
+    int status = I2C_I2CMasterWriteBuf(dev_addr, data_pack, cnt+1, I2C_I2C_MODE_COMPLETE_XFER);
+    while ((I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT) == 0u) //should wait for write buffer to complete
+    {
+        //Print("\r\nWRITE TO: \n\r");
+        //PrintChar(dev_addr);
+    }
+    
+	return status;  
+}
 /* [] END OF FILE */

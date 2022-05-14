@@ -16,54 +16,55 @@
 #include "project.h"
 #include "servo.h"
 
-//referenced John's past work
+#define PWM_PERIOD 5 //pwm period ms
+
 void set_servo_position(int servo, int degrees){
-    int offset;
-    int scalar;
-    int divisor;
-    if(degrees > 179) degrees = 179;
+    float32 min;
+    float32 range;
+    float32 offset;
+    uint16_t pwmDuty;
+    if(degrees > 179) degrees = 179; //may be different for each case
 	if(degrees < 1) degrees = 1;
 	if(servo < 0 || servo > 4){
 		return;
 	}
     switch(servo) {
-        case PIN0 : //Futaba S3003
-            offset = 113;
-            scalar = 82;
-            divisor = 179;
+        case PIN7 : //Tower Pro SG90
+            min = 1;
+            range = 1;
+            offset = ((float32)degrees / 180) * range; 
             break;
         case PIN1 : //HSB-9380TH
-            offset = 72;
-            scalar = 164;
-            divisor = 205;
             break;
         case PIN2 : //HiTEC HS-645MG
-            offset = 113;
-            scalar = 82;
-            divisor = 179;
             break;
-        default: //john
-            offset = 102;
-            scalar = 99;
-            divisor = 172;
+        default: 
+            min = 1;
+            range = 1;
+            offset = ((float32)degrees / 180) * range; 
             break;
     }    
-	setPWMFromDutyCycle(servo, offset + (degrees * scalar) / divisor);
+    //offset = ((float)degrees / 180) * range; 
+    pwmDuty = ((min + offset) / PWM_PERIOD) * 100;
+   	setPWMFromDutyCycle(servo, pwmDuty);
+    //setPWMFromBytes(servo, (4095 - pwm) & 0xFF, (4095 - pwm) >> 8, pwm & 0xFF, pwm >> 8);
+
 }
 
 void set_servo_continuous(int servo, int direction, int speed, int miliDegrees){
 // Do math to control servo, stable is 1.5, so use given direction and speed to determine what pulse length to use
     
     int32_t tickGoal = miliDegrees;
-    int range = 0;
-    double duty = 0;
+    float32 range = 0;
+    float32 offset = 0;
+    uint32_t pwmDuty = 0;
     int notfound = 0;
     switch(servo) {
-        case PIN3 : //HSR-1425CR
-            range = 41;
+        case PIN3 : //SM-S4303R
+            range = 0.5;
             break;
         case PIN4: //Parallax Rotation
-            range = 20;
+            range = 0.4;
             break;
         default:
             notfound = 1;
@@ -72,16 +73,17 @@ void set_servo_continuous(int servo, int direction, int speed, int miliDegrees){
             ERR_LED_Write(1);
             break;
     }
-    duty = (((double)range) * speed) / 100;
+    offset = ((float32)speed / 100) * range;
     if (speed != 0) {        
         if (direction == 0) { //clockwise
-            duty = 153 - duty;
+            pwmDuty = (1.5 - offset) / PWM_PERIOD;
         } else if (direction == 1) { //counterclockwise
-            duty += 154;
+            pwmDuty = (1.5 + offset) / PWM_PERIOD;
         }
     }
     if (notfound == 0) { //if correct servo id
-        setPWMFromDutyCycle(servo, duty);
+        //setPWMFromBytes(servo, ((int)(4095 - pwm) & 0xFF), (int)(4095 - pwm) >> 8, (int)pwm & 0xFF, (int)pwm >> 8);
+        setPWMFromDutyCycle(servo, pwmDuty);
     }
         
     if (servo == PIN3){ //HSR-1425CR
