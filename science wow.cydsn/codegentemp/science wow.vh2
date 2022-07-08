@@ -2,7 +2,7 @@
 --	Conversion of science wow.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed May 04 18:58:49 2022
+--	Thu Jul 07 20:26:05 2022
 --
 
 USE cypress.cypress.all;
@@ -796,6 +796,19 @@ SIGNAL Net_695 : bit;
 SIGNAL Net_698 : bit;
 SIGNAL Net_699 : bit;
 SIGNAL Net_706 : bit;
+SIGNAL \Sensor_Packet_Handler:Net_81\ : bit;
+SIGNAL \Sensor_Packet_Handler:Net_75\ : bit;
+SIGNAL \Sensor_Packet_Handler:Net_69\ : bit;
+SIGNAL \Sensor_Packet_Handler:Net_66\ : bit;
+SIGNAL \Sensor_Packet_Handler:Net_82\ : bit;
+SIGNAL \Sensor_Packet_Handler:Net_72\ : bit;
+SIGNAL Net_776 : bit;
+SIGNAL Net_772 : bit;
+SIGNAL Net_766 : bit;
+SIGNAL Net_770 : bit;
+SIGNAL Net_771 : bit;
+SIGNAL Net_769 : bit;
+SIGNAL Net_767 : bit;
 SIGNAL \LIM_Debouncer:DEBOUNCER[0]:d_sync_0\\D\ : bit;
 SIGNAL \LIM_Debouncer:DEBOUNCER[0]:d_sync_1\\D\ : bit;
 SIGNAL Net_490_0D : bit;
@@ -3395,6 +3408,34 @@ ENC_2_B:cy_psoc3_pins_v1_10
 		sda=>Net_704,
 		tx_req=>Net_705,
 		rx_req=>Net_696);
+\Sensor_Packet_Handler:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_767,
+		capture=>zero,
+		count=>tmpOE__CAN_RX_net_0,
+		reload=>zero,
+		stop=>zero,
+		start=>zero,
+		underflow=>Net_776,
+		overflow=>Net_772,
+		compare_match=>Net_766,
+		line_out=>Net_770,
+		line_out_compl=>Net_771,
+		interrupt=>Net_769);
+Clock_2:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"f0c36ffe-a996-4f29-b0e6-209b3dadc9e9",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"83333333.3333333",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_767,
+		dig_domain_out=>open);
+isr_sensor:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_769);
 \LIM_Debouncer:DEBOUNCER[0]:d_sync_0\:cy_dff
 	PORT MAP(d=>Net_467_0,
 		clk=>\LIM_Debouncer:op_clk\,

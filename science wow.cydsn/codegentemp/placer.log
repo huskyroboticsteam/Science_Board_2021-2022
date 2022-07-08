@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 4 2022 18:58:51
+#File Generated:     Jul 7 2022 20:26:07
 
 #Purpose:            
 
@@ -76,10 +76,12 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
+Number of clocks: 15
 Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: Clock_1              | Frequency:  32.6 MHz | Target:   0.0 MHz
+Clock: Clock_2              | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_2(FFB)         | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -95,16 +97,18 @@ Clock: UART_SCBCLK(FFB)     | Frequency: N/A       | Target:   1.4 MHz
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.0 (sec)
+D2088: Phase 6, elapsed time : 0.1 (sec)
 
 Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
+Number of clocks: 15
 Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: Clock_1              | Frequency:  32.6 MHz | Target:   0.0 MHz
+Clock: Clock_2              | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_2(FFB)         | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -149,10 +153,12 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
+Number of clocks: 15
 Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: Clock_1              | Frequency:  32.6 MHz | Target:   0.0 MHz
+Clock: Clock_2              | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_2(FFB)         | Frequency: N/A       | Target:  12.0 MHz
 Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -173,5 +179,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 1.1 sec.
+I2076: Total run-time: 1.2 sec.
 

@@ -1,17 +1,27 @@
---------------- Rebuild Started: 05/14/2022 14:42:35 Project: sensor.c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/sensor.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c sensor.c -o .\CortexM0\ARM_GCC_541\Debug\sensor.o
-sensor.c: In function 'VEML6070_init':
-sensor.c:69:11: warning: unused variable 'mode_buf' [-Wunused-variable]
-     uint8 mode_buf[2] = {0x6,0x6};
-           ^
-sensor.c:67:13: warning: unused variable 'error' [-Wunused-variable]
-     uint8_t error;
-             ^
-sensor.c: In function 'read_uv_sensor':
-sensor.c:99:14: warning: unused variable 'lsberror' [-Wunused-variable]
-      uint8_t lsberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_LSB, &lsb, 0);
-              ^
-sensor.c:98:14: warning: unused variable 'msberror' [-Wunused-variable]
-      uint8_t msberror = I2C_bus_read(VEML6070_ADDR_CMD, VEML6070_ADDR_DATA_MSB, &msb, 0);
-              ^
---------------- Rebuild Succeeded: 05/14/2022 14:42:35 ---------------
+--------------- Rebuild Started: 07/07/2022 20:39:34 Project: main.c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
+main.c: In function 'main':
+main.c:102:41: error: 'GetScience' undeclared (first use in this function)
+                         uint8_t power = GetScience
+                                         ^
+main.c:102:41: note: each undeclared identifier is reported only once for each function it appears in
+main.c:103:25: error: expected ',' or ';' before 'set_servo_continuous'
+                         set_servo_continuous(servoID, direction, speed, miliDegrees);
+                         ^
+main.c:102:33: warning: unused variable 'power' [-Wunused-variable]
+                         uint8_t power = GetScience
+                                 ^
+main.c:101:33: warning: unused variable 'direction' [-Wunused-variable]
+                         uint8_t direction = GetScienceServoDirectionFromPacket(current);
+                                 ^
+main.c:100:33: warning: unused variable 'speed' [-Wunused-variable]
+                         uint8_t speed = GetScienceServoSpeedFromPacket(current);
+                                 ^
+main.c:99:33: warning: unused variable 'miliDegrees' [-Wunused-variable]
+                         uint8_t miliDegrees = GetScienceServoAngleFromPacket(current); //tell davis SCUFFED CODE NOT IMPLEMENTED PLACEHOLDER
+                                 ^
+main.c:98:33: warning: unused variable 'servoID' [-Wunused-variable]
+                         uint8_t servoID = GetScienceServoIDFromPacket(current);
+                                 ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 07/07/2022 20:39:35 ---------------

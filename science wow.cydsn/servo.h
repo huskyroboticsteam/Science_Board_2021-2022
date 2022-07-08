@@ -16,6 +16,6 @@
 #include "project.h"
 
 void set_servo_position(int servo, int degrees);
-void set_servo_continuous(int servo, int direction, int speed, int miliDegrees);
-void correctPosition(int servo, int direction);
+void set_servo_continuous(int servo, int power);
+void correctPosition(int servo, int power);
 /* [] END OF FILE */
