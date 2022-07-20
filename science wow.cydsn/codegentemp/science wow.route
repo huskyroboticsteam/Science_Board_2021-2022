@@ -1584,12 +1584,12 @@ net Net_764
 	switch ":ioport0:smartio_mux_in1.smartio_mux_in==>:ioport0:pin1.pin_input"
 	term   ":ioport0:pin1.pin_input"
 end Net_764
-net Net_769
+net Net_796
 	term   ":m0s8tcpwmcell_0.interrupt"
 	switch ":m0s8tcpwmcell_0.interrupt==>:interrupt_idmux_20.in_0"
 	switch ":interrupt_idmux_20.interrupt_idmux_20__out==>:interrupt_20.interrupt"
 	term   ":interrupt_20.interrupt"
-end Net_769
+end Net_796
 net \ADC:Net_3112\
 	term   ":p4sarcell.irq"
 	switch ":p4sarcell.irq==>:interrupt_idmux_17.in_0"

@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Jul 7 2022 20:26:07
+#File Generated:     Jul 20 2022 15:41:21
 
 #Purpose:            
 
@@ -80,8 +80,8 @@ Number of clocks: 15
 Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: Clock_1              | Frequency:  32.6 MHz | Target:   0.0 MHz
-Clock: Clock_2              | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_2(FFB)         | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_1ms            | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_1ms(FFB)       | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -97,7 +97,7 @@ Clock: UART_SCBCLK(FFB)     | Frequency: N/A       | Target:   1.4 MHz
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.1 (sec)
+D2088: Phase 6, elapsed time : 0.0 (sec)
 
 Phase 7
 ######################################################################
@@ -107,8 +107,8 @@ Number of clocks: 15
 Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: Clock_1              | Frequency:  32.6 MHz | Target:   0.0 MHz
-Clock: Clock_2              | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_2(FFB)         | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_1ms            | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_1ms(FFB)       | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
@@ -157,8 +157,8 @@ Number of clocks: 15
 Clock: ADC_intClock         | Frequency: N/A       | Target:   6.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   6.0 MHz
 Clock: Clock_1              | Frequency:  32.6 MHz | Target:   0.0 MHz
-Clock: Clock_2              | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_2(FFB)         | Frequency: N/A       | Target:  12.0 MHz
+Clock: Clock_1ms            | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_1ms(FFB)       | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz

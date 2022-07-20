@@ -2,7 +2,7 @@
 --	Conversion of science wow.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Jul 07 20:26:05 2022
+--	Wed Jul 20 15:41:19 2022
 --
 
 USE cypress.cypress.all;
@@ -796,19 +796,19 @@ SIGNAL Net_695 : bit;
 SIGNAL Net_698 : bit;
 SIGNAL Net_699 : bit;
 SIGNAL Net_706 : bit;
-SIGNAL \Sensor_Packet_Handler:Net_81\ : bit;
-SIGNAL \Sensor_Packet_Handler:Net_75\ : bit;
-SIGNAL \Sensor_Packet_Handler:Net_69\ : bit;
-SIGNAL \Sensor_Packet_Handler:Net_66\ : bit;
-SIGNAL \Sensor_Packet_Handler:Net_82\ : bit;
-SIGNAL \Sensor_Packet_Handler:Net_72\ : bit;
-SIGNAL Net_776 : bit;
-SIGNAL Net_772 : bit;
-SIGNAL Net_766 : bit;
-SIGNAL Net_770 : bit;
-SIGNAL Net_771 : bit;
-SIGNAL Net_769 : bit;
-SIGNAL Net_767 : bit;
+SIGNAL \Timer_1ms:Net_81\ : bit;
+SIGNAL \Timer_1ms:Net_75\ : bit;
+SIGNAL \Timer_1ms:Net_69\ : bit;
+SIGNAL \Timer_1ms:Net_66\ : bit;
+SIGNAL \Timer_1ms:Net_82\ : bit;
+SIGNAL \Timer_1ms:Net_72\ : bit;
+SIGNAL Net_795 : bit;
+SIGNAL Net_791 : bit;
+SIGNAL Net_785 : bit;
+SIGNAL Net_789 : bit;
+SIGNAL Net_790 : bit;
+SIGNAL Net_796 : bit;
+SIGNAL Net_786 : bit;
 SIGNAL \LIM_Debouncer:DEBOUNCER[0]:d_sync_0\\D\ : bit;
 SIGNAL \LIM_Debouncer:DEBOUNCER[0]:d_sync_1\\D\ : bit;
 SIGNAL Net_490_0D : bit;
@@ -2110,7 +2110,7 @@ Clock_1:cy_clock_v1_0
 		divisor=>0,
 		period=>"10000000000000",
 		is_direct=>'0',
-		is_digital=>'1')
+		is_digital=>'0')
 	PORT MAP(clock_out=>Net_565,
 		dig_domain_out=>open);
 GND_1:cy_annotation_universal_v1_0
@@ -3408,34 +3408,34 @@ ENC_2_B:cy_psoc3_pins_v1_10
 		sda=>Net_704,
 		tx_req=>Net_705,
 		rx_req=>Net_696);
-\Sensor_Packet_Handler:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
+\Timer_1ms:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_767,
+	PORT MAP(clock=>Net_786,
 		capture=>zero,
 		count=>tmpOE__CAN_RX_net_0,
 		reload=>zero,
 		stop=>zero,
 		start=>zero,
-		underflow=>Net_776,
-		overflow=>Net_772,
-		compare_match=>Net_766,
-		line_out=>Net_770,
-		line_out_compl=>Net_771,
-		interrupt=>Net_769);
-Clock_2:cy_clock_v1_0
+		underflow=>Net_795,
+		overflow=>Net_791,
+		compare_match=>Net_785,
+		line_out=>Net_789,
+		line_out_compl=>Net_790,
+		interrupt=>Net_796);
+Clock_1ms:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
-		id=>"f0c36ffe-a996-4f29-b0e6-209b3dadc9e9",
+		id=>"4bbe510b-4ff8-491a-afb4-175021b4d7ae",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"83333333.3333333",
+		period=>"1000000000000",
 		is_direct=>'0',
 		is_digital=>'0')
-	PORT MAP(clock_out=>Net_767,
+	PORT MAP(clock_out=>Net_786,
 		dig_domain_out=>open);
-isr_sensor:cy_isr_v1_0
+isr_1ms:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_769);
+	PORT MAP(int_signal=>Net_796);
 \LIM_Debouncer:DEBOUNCER[0]:d_sync_0\:cy_dff
 	PORT MAP(d=>Net_467_0,
 		clk=>\LIM_Debouncer:op_clk\,

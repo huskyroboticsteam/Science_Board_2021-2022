@@ -23,8 +23,8 @@ Clock: ADC_intClock         | N/A                   | Target: 6.00 MHz    |
 Clock: ADC_intClock(FFB)    | N/A                   | Target: 6.00 MHz    | 
 Clock: ClockBlock/ff_div_4  | N/A                   | Target: 100.00 MHz  | 
 Clock: Clock_1              | Frequency: 32.93 MHz  | Target: 0.00 MHz    | 
-Clock: Clock_2              | N/A                   | Target: 12.00 MHz   | 
-Clock: Clock_2(FFB)         | N/A                   | Target: 12.00 MHz   | 
+Clock: Clock_1ms            | N/A                   | Target: 0.00 MHz    | 
+Clock: Clock_1ms(FFB)       | N/A                   | Target: 0.00 MHz    | 
 Clock: CyHFClk              | N/A                   | Target: 48.00 MHz   | 
 Clock: CyILO                | N/A                   | Target: 0.03 MHz    | 
 Clock: CyIMO                | N/A                   | Target: 48.00 MHz   | 

@@ -1,14 +1,10 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
+/* File:         sensor.c
+ * Authors:      Oliver Huang, Jordan Smith.
+ * Organization: Husky Robotics Team
+ * 
+ * This file includes fuction implementations for the servos on the 
+ * Science Board including continuous servos
+ */
 #include <stdint.h>
 #include "CANLibrary.h"
 #include "CANScience.h"

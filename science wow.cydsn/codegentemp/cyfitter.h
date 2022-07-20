@@ -80,7 +80,7 @@
 #define ADC_Bypass__PORT 1u
 #define ADC_Bypass__PS CYREG_GPIO_PRT1_PS
 #define ADC_Bypass__SHIFT 7u
-#define ADC_cy_psoc4_sar__CLOCK_DIV_ID 0x00000042u
+#define ADC_cy_psoc4_sar__CLOCK_DIV_ID 0x00000041u
 #define ADC_cy_psoc4_sar__SAR_ANA_TRIM CYREG_SAR_ANA_TRIM
 #define ADC_cy_psoc4_sar__SAR_AVG_STAT CYREG_SAR_AVG_STAT
 #define ADC_cy_psoc4_sar__SAR_CHAN_CONFIG00 CYREG_SAR_CHAN_CONFIG0
@@ -232,8 +232,8 @@
 #define ADC_cy_psoc4_sarmux_8__SAR_START_CTRL CYREG_SAR_START_CTRL
 #define ADC_cy_psoc4_sarmux_8__VNEG0 0
 #define ADC_intClock__CTRL_REGISTER CYREG_PERI_PCLK_CTL10
-#define ADC_intClock__DIV_ID 0x00000042u
-#define ADC_intClock__DIV_REGISTER CYREG_PERI_DIV_16_CTL2
+#define ADC_intClock__DIV_ID 0x00000041u
+#define ADC_intClock__DIV_REGISTER CYREG_PERI_DIV_16_CTL1
 #define ADC_intClock__PA_DIV_ID 0x000000FFu
 #define ADC_IRQ__INTC_CLR_EN_REG CYREG_CM0_ICER
 #define ADC_IRQ__INTC_CLR_PD_REG CYREG_CM0_ICPR
@@ -715,8 +715,8 @@
 #define I2C_SCB_IRQ__INTC_SET_EN_REG CYREG_CM0_ISER
 #define I2C_SCB_IRQ__INTC_SET_PD_REG CYREG_CM0_ISPR
 #define I2C_SCBCLK__CTRL_REGISTER CYREG_PERI_PCLK_CTL4
-#define I2C_SCBCLK__DIV_ID 0x00000043u
-#define I2C_SCBCLK__DIV_REGISTER CYREG_PERI_DIV_16_CTL3
+#define I2C_SCBCLK__DIV_ID 0x00000042u
+#define I2C_SCBCLK__DIV_REGISTER CYREG_PERI_DIV_16_CTL2
 #define I2C_SCBCLK__PA_DIV_ID 0x000000FFu
 #define I2C_scl__0__DR CYREG_GPIO_PRT5_DR
 #define I2C_scl__0__DR_CLR CYREG_GPIO_PRT5_DR_CLR
@@ -1386,8 +1386,8 @@
 #define UART_SCB__UART_RX_STATUS CYREG_SCB1_UART_RX_STATUS
 #define UART_SCB__UART_TX_CTRL CYREG_SCB1_UART_TX_CTRL
 #define UART_SCBCLK__CTRL_REGISTER CYREG_PERI_PCLK_CTL3
-#define UART_SCBCLK__DIV_ID 0x00000044u
-#define UART_SCBCLK__DIV_REGISTER CYREG_PERI_DIV_16_CTL4
+#define UART_SCBCLK__DIV_ID 0x00000043u
+#define UART_SCBCLK__DIV_REGISTER CYREG_PERI_DIV_16_CTL3
 #define UART_SCBCLK__PA_DIV_ID 0x000000FFu
 #define UART_tx__0__DR CYREG_GPIO_PRT2_DR
 #define UART_tx__0__DR_CLR CYREG_GPIO_PRT2_DR_CLR
@@ -1467,12 +1467,6 @@
 #define Clock_1__DIV_REGISTER CYREG_PERI_DIV_24_5_CTL
 #define Clock_1__FRAC_MASK 0x000000F8u
 #define Clock_1__PA_DIV_ID 0x000000FFu
-
-/* Clock_2 */
-#define Clock_2__CTRL_REGISTER CYREG_PERI_PCLK_CTL11
-#define Clock_2__DIV_ID 0x00000041u
-#define Clock_2__DIV_REGISTER CYREG_PERI_DIV_16_CTL1
-#define Clock_2__PA_DIV_ID 0x000000FFu
 
 /* DBG_LED */
 #define DBG_LED__0__DR CYREG_GPIO_PRT4_DR
@@ -1852,6 +1846,17 @@
 #define ERR_LED__PS CYREG_GPIO_PRT4_PS
 #define ERR_LED__SHIFT 6u
 
+/* isr_1ms */
+#define isr_1ms__INTC_CLR_EN_REG CYREG_CM0_ICER
+#define isr_1ms__INTC_CLR_PD_REG CYREG_CM0_ICPR
+#define isr_1ms__INTC_MASK 0x100000u
+#define isr_1ms__INTC_NUMBER 20u
+#define isr_1ms__INTC_PRIOR_MASK 0xC0u
+#define isr_1ms__INTC_PRIOR_NUM 3u
+#define isr_1ms__INTC_PRIOR_REG CYREG_CM0_IPR5
+#define isr_1ms__INTC_SET_EN_REG CYREG_CM0_ISER
+#define isr_1ms__INTC_SET_PD_REG CYREG_CM0_ISPR
+
 /* isr_LIM */
 #define isr_LIM__INTC_CLR_EN_REG CYREG_CM0_ICER
 #define isr_LIM__INTC_CLR_PD_REG CYREG_CM0_ICPR
@@ -1925,6 +1930,12 @@
 #define Humidity__PORT 2u
 #define Humidity__PS CYREG_GPIO_PRT2_PS
 #define Humidity__SHIFT 6u
+
+/* Clock_1ms */
+#define Clock_1ms__CTRL_REGISTER CYREG_PERI_PCLK_CTL11
+#define Clock_1ms__DIV_ID 0x00000044u
+#define Clock_1ms__DIV_REGISTER CYREG_PERI_DIV_16_CTL4
+#define Clock_1ms__PA_DIV_ID 0x000000FFu
 
 /* QuadDec_1 */
 #define QuadDec_1_bQuadDec_Stsreg__0__MASK 0x01u
@@ -2144,16 +2155,37 @@
 #define QuadDec_2_Cnt16_CounterUDB_sSTSReg_stsreg__STATUS_AUX_CTL_REG CYREG_UDB_W8_ACTL4
 #define QuadDec_2_Cnt16_CounterUDB_sSTSReg_stsreg__STATUS_REG CYREG_UDB_W8_ST4
 
-/* isr_sensor */
-#define isr_sensor__INTC_CLR_EN_REG CYREG_CM0_ICER
-#define isr_sensor__INTC_CLR_PD_REG CYREG_CM0_ICPR
-#define isr_sensor__INTC_MASK 0x100000u
-#define isr_sensor__INTC_NUMBER 20u
-#define isr_sensor__INTC_PRIOR_MASK 0xC0u
-#define isr_sensor__INTC_PRIOR_NUM 3u
-#define isr_sensor__INTC_PRIOR_REG CYREG_CM0_IPR5
-#define isr_sensor__INTC_SET_EN_REG CYREG_CM0_ISER
-#define isr_sensor__INTC_SET_PD_REG CYREG_CM0_ISPR
+/* Timer_1ms */
+#define Timer_1ms_cy_m0s8_tcpwm_1__CC CYREG_TCPWM_CNT0_CC
+#define Timer_1ms_cy_m0s8_tcpwm_1__CC_BUFF CYREG_TCPWM_CNT0_CC_BUFF
+#define Timer_1ms_cy_m0s8_tcpwm_1__COUNTER CYREG_TCPWM_CNT0_COUNTER
+#define Timer_1ms_cy_m0s8_tcpwm_1__CTRL CYREG_TCPWM_CNT0_CTRL
+#define Timer_1ms_cy_m0s8_tcpwm_1__INTR CYREG_TCPWM_CNT0_INTR
+#define Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASK CYREG_TCPWM_CNT0_INTR_MASK
+#define Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASKED CYREG_TCPWM_CNT0_INTR_MASKED
+#define Timer_1ms_cy_m0s8_tcpwm_1__INTR_SET CYREG_TCPWM_CNT0_INTR_SET
+#define Timer_1ms_cy_m0s8_tcpwm_1__PERIOD CYREG_TCPWM_CNT0_PERIOD
+#define Timer_1ms_cy_m0s8_tcpwm_1__PERIOD_BUFF CYREG_TCPWM_CNT0_PERIOD_BUFF
+#define Timer_1ms_cy_m0s8_tcpwm_1__STATUS CYREG_TCPWM_CNT0_STATUS
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMD CYREG_TCPWM_CMD
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK 0x01u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT 0u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK 0x100u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT 8u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK 0x1000000u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT 24u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK 0x10000u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT 16u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL CYREG_TCPWM_CTRL
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK 0x01u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT 0u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE CYREG_TCPWM_INTR_CAUSE
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK 0x01u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT 0u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_NUMBER 0u
+#define Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL0 CYREG_TCPWM_CNT0_TR_CTRL0
+#define Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL1 CYREG_TCPWM_CNT0_TR_CTRL1
+#define Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL2 CYREG_TCPWM_CNT0_TR_CTRL2
 
 /* Status_Reg_LIM */
 #define Status_Reg_LIM_sts_intr_sts_reg__0__MASK 0x01u
@@ -2170,38 +2202,6 @@
 #define Status_Reg_LIM_sts_intr_sts_reg__MASK_REG CYREG_UDB_W8_MSK7
 #define Status_Reg_LIM_sts_intr_sts_reg__STATUS_AUX_CTL_REG CYREG_UDB_W8_ACTL7
 #define Status_Reg_LIM_sts_intr_sts_reg__STATUS_REG CYREG_UDB_W8_ST7
-
-/* Sensor_Packet_Handler */
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__CC CYREG_TCPWM_CNT0_CC
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__CC_BUFF CYREG_TCPWM_CNT0_CC_BUFF
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__COUNTER CYREG_TCPWM_CNT0_COUNTER
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__CTRL CYREG_TCPWM_CNT0_CTRL
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR CYREG_TCPWM_CNT0_INTR
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR_MASK CYREG_TCPWM_CNT0_INTR_MASK
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR_MASKED CYREG_TCPWM_CNT0_INTR_MASKED
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR_SET CYREG_TCPWM_CNT0_INTR_SET
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__PERIOD CYREG_TCPWM_CNT0_PERIOD
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__PERIOD_BUFF CYREG_TCPWM_CNT0_PERIOD_BUFF
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__STATUS CYREG_TCPWM_CNT0_STATUS
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMD CYREG_TCPWM_CMD
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK 0x01u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT 0u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK 0x100u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT 8u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK 0x1000000u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT 24u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK 0x10000u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT 16u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CTRL CYREG_TCPWM_CTRL
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK 0x01u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT 0u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE CYREG_TCPWM_INTR_CAUSE
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK 0x01u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT 0u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_NUMBER 0u
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TR_CTRL0 CYREG_TCPWM_CNT0_TR_CTRL0
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TR_CTRL1 CYREG_TCPWM_CNT0_TR_CTRL1
-#define Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TR_CTRL2 CYREG_TCPWM_CNT0_TR_CTRL2
 
 /* Miscellaneous */
 #define CY_PROJECT_NAME "science wow"

@@ -1,9 +1,9 @@
 /*******************************************************************************
-* File Name: Sensor_Packet_Handler.c
+* File Name: Timer_1ms.c
 * Version 2.10
 *
 * Description:
-*  This file provides the source code to the API for the Sensor_Packet_Handler
+*  This file provides the source code to the API for the Timer_1ms
 *  component
 *
 * Note:
@@ -16,17 +16,17 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "Sensor_Packet_Handler.h"
+#include "Timer_1ms.h"
 
-uint8 Sensor_Packet_Handler_initVar = 0u;
+uint8 Timer_1ms_initVar = 0u;
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_Init
+* Function Name: Timer_1ms_Init
 ********************************************************************************
 *
 * Summary:
-*  Initialize/Restore default Sensor_Packet_Handler configuration.
+*  Initialize/Restore default Timer_1ms configuration.
 *
 * Parameters:
 *  None
@@ -35,137 +35,137 @@ uint8 Sensor_Packet_Handler_initVar = 0u;
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_Init(void)
+void Timer_1ms_Init(void)
 {
 
     /* Set values from customizer to CTRL */
-    #if (Sensor_Packet_Handler__QUAD == Sensor_Packet_Handler_CONFIG)
-        Sensor_Packet_Handler_CONTROL_REG = Sensor_Packet_Handler_CTRL_QUAD_BASE_CONFIG;
+    #if (Timer_1ms__QUAD == Timer_1ms_CONFIG)
+        Timer_1ms_CONTROL_REG = Timer_1ms_CTRL_QUAD_BASE_CONFIG;
         
         /* Set values from customizer to CTRL1 */
-        Sensor_Packet_Handler_TRIG_CONTROL1_REG  = Sensor_Packet_Handler_QUAD_SIGNALS_MODES;
+        Timer_1ms_TRIG_CONTROL1_REG  = Timer_1ms_QUAD_SIGNALS_MODES;
 
         /* Set values from customizer to INTR */
-        Sensor_Packet_Handler_SetInterruptMode(Sensor_Packet_Handler_QUAD_INTERRUPT_MASK);
+        Timer_1ms_SetInterruptMode(Timer_1ms_QUAD_INTERRUPT_MASK);
         
          /* Set other values */
-        Sensor_Packet_Handler_SetCounterMode(Sensor_Packet_Handler_COUNT_DOWN);
-        Sensor_Packet_Handler_WritePeriod(Sensor_Packet_Handler_QUAD_PERIOD_INIT_VALUE);
-        Sensor_Packet_Handler_WriteCounter(Sensor_Packet_Handler_QUAD_PERIOD_INIT_VALUE);
-    #endif  /* (Sensor_Packet_Handler__QUAD == Sensor_Packet_Handler_CONFIG) */
+        Timer_1ms_SetCounterMode(Timer_1ms_COUNT_DOWN);
+        Timer_1ms_WritePeriod(Timer_1ms_QUAD_PERIOD_INIT_VALUE);
+        Timer_1ms_WriteCounter(Timer_1ms_QUAD_PERIOD_INIT_VALUE);
+    #endif  /* (Timer_1ms__QUAD == Timer_1ms_CONFIG) */
 
-    #if (Sensor_Packet_Handler__TIMER == Sensor_Packet_Handler_CONFIG)
-        Sensor_Packet_Handler_CONTROL_REG = Sensor_Packet_Handler_CTRL_TIMER_BASE_CONFIG;
+    #if (Timer_1ms__TIMER == Timer_1ms_CONFIG)
+        Timer_1ms_CONTROL_REG = Timer_1ms_CTRL_TIMER_BASE_CONFIG;
         
         /* Set values from customizer to CTRL1 */
-        Sensor_Packet_Handler_TRIG_CONTROL1_REG  = Sensor_Packet_Handler_TIMER_SIGNALS_MODES;
+        Timer_1ms_TRIG_CONTROL1_REG  = Timer_1ms_TIMER_SIGNALS_MODES;
     
         /* Set values from customizer to INTR */
-        Sensor_Packet_Handler_SetInterruptMode(Sensor_Packet_Handler_TC_INTERRUPT_MASK);
+        Timer_1ms_SetInterruptMode(Timer_1ms_TC_INTERRUPT_MASK);
         
         /* Set other values from customizer */
-        Sensor_Packet_Handler_WritePeriod(Sensor_Packet_Handler_TC_PERIOD_VALUE );
+        Timer_1ms_WritePeriod(Timer_1ms_TC_PERIOD_VALUE );
 
-        #if (Sensor_Packet_Handler__COMPARE == Sensor_Packet_Handler_TC_COMP_CAP_MODE)
-            Sensor_Packet_Handler_WriteCompare(Sensor_Packet_Handler_TC_COMPARE_VALUE);
+        #if (Timer_1ms__COMPARE == Timer_1ms_TC_COMP_CAP_MODE)
+            Timer_1ms_WriteCompare(Timer_1ms_TC_COMPARE_VALUE);
 
-            #if (1u == Sensor_Packet_Handler_TC_COMPARE_SWAP)
-                Sensor_Packet_Handler_SetCompareSwap(1u);
-                Sensor_Packet_Handler_WriteCompareBuf(Sensor_Packet_Handler_TC_COMPARE_BUF_VALUE);
-            #endif  /* (1u == Sensor_Packet_Handler_TC_COMPARE_SWAP) */
-        #endif  /* (Sensor_Packet_Handler__COMPARE == Sensor_Packet_Handler_TC_COMP_CAP_MODE) */
+            #if (1u == Timer_1ms_TC_COMPARE_SWAP)
+                Timer_1ms_SetCompareSwap(1u);
+                Timer_1ms_WriteCompareBuf(Timer_1ms_TC_COMPARE_BUF_VALUE);
+            #endif  /* (1u == Timer_1ms_TC_COMPARE_SWAP) */
+        #endif  /* (Timer_1ms__COMPARE == Timer_1ms_TC_COMP_CAP_MODE) */
 
         /* Initialize counter value */
-        #if (Sensor_Packet_Handler_CY_TCPWM_V2 && Sensor_Packet_Handler_TIMER_UPDOWN_CNT_USED && !Sensor_Packet_Handler_CY_TCPWM_4000)
-            Sensor_Packet_Handler_WriteCounter(1u);
-        #elif(Sensor_Packet_Handler__COUNT_DOWN == Sensor_Packet_Handler_TC_COUNTER_MODE)
-            Sensor_Packet_Handler_WriteCounter(Sensor_Packet_Handler_TC_PERIOD_VALUE);
+        #if (Timer_1ms_CY_TCPWM_V2 && Timer_1ms_TIMER_UPDOWN_CNT_USED && !Timer_1ms_CY_TCPWM_4000)
+            Timer_1ms_WriteCounter(1u);
+        #elif(Timer_1ms__COUNT_DOWN == Timer_1ms_TC_COUNTER_MODE)
+            Timer_1ms_WriteCounter(Timer_1ms_TC_PERIOD_VALUE);
         #else
-            Sensor_Packet_Handler_WriteCounter(0u);
-        #endif /* (Sensor_Packet_Handler_CY_TCPWM_V2 && Sensor_Packet_Handler_TIMER_UPDOWN_CNT_USED && !Sensor_Packet_Handler_CY_TCPWM_4000) */
-    #endif  /* (Sensor_Packet_Handler__TIMER == Sensor_Packet_Handler_CONFIG) */
+            Timer_1ms_WriteCounter(0u);
+        #endif /* (Timer_1ms_CY_TCPWM_V2 && Timer_1ms_TIMER_UPDOWN_CNT_USED && !Timer_1ms_CY_TCPWM_4000) */
+    #endif  /* (Timer_1ms__TIMER == Timer_1ms_CONFIG) */
 
-    #if (Sensor_Packet_Handler__PWM_SEL == Sensor_Packet_Handler_CONFIG)
-        Sensor_Packet_Handler_CONTROL_REG = Sensor_Packet_Handler_CTRL_PWM_BASE_CONFIG;
+    #if (Timer_1ms__PWM_SEL == Timer_1ms_CONFIG)
+        Timer_1ms_CONTROL_REG = Timer_1ms_CTRL_PWM_BASE_CONFIG;
 
-        #if (Sensor_Packet_Handler__PWM_PR == Sensor_Packet_Handler_PWM_MODE)
-            Sensor_Packet_Handler_CONTROL_REG |= Sensor_Packet_Handler_CTRL_PWM_RUN_MODE;
-            Sensor_Packet_Handler_WriteCounter(Sensor_Packet_Handler_PWM_PR_INIT_VALUE);
+        #if (Timer_1ms__PWM_PR == Timer_1ms_PWM_MODE)
+            Timer_1ms_CONTROL_REG |= Timer_1ms_CTRL_PWM_RUN_MODE;
+            Timer_1ms_WriteCounter(Timer_1ms_PWM_PR_INIT_VALUE);
         #else
-            Sensor_Packet_Handler_CONTROL_REG |= Sensor_Packet_Handler_CTRL_PWM_ALIGN | Sensor_Packet_Handler_CTRL_PWM_KILL_EVENT;
+            Timer_1ms_CONTROL_REG |= Timer_1ms_CTRL_PWM_ALIGN | Timer_1ms_CTRL_PWM_KILL_EVENT;
             
             /* Initialize counter value */
-            #if (Sensor_Packet_Handler_CY_TCPWM_V2 && Sensor_Packet_Handler_PWM_UPDOWN_CNT_USED && !Sensor_Packet_Handler_CY_TCPWM_4000)
-                Sensor_Packet_Handler_WriteCounter(1u);
-            #elif (Sensor_Packet_Handler__RIGHT == Sensor_Packet_Handler_PWM_ALIGN)
-                Sensor_Packet_Handler_WriteCounter(Sensor_Packet_Handler_PWM_PERIOD_VALUE);
+            #if (Timer_1ms_CY_TCPWM_V2 && Timer_1ms_PWM_UPDOWN_CNT_USED && !Timer_1ms_CY_TCPWM_4000)
+                Timer_1ms_WriteCounter(1u);
+            #elif (Timer_1ms__RIGHT == Timer_1ms_PWM_ALIGN)
+                Timer_1ms_WriteCounter(Timer_1ms_PWM_PERIOD_VALUE);
             #else 
-                Sensor_Packet_Handler_WriteCounter(0u);
-            #endif  /* (Sensor_Packet_Handler_CY_TCPWM_V2 && Sensor_Packet_Handler_PWM_UPDOWN_CNT_USED && !Sensor_Packet_Handler_CY_TCPWM_4000) */
-        #endif  /* (Sensor_Packet_Handler__PWM_PR == Sensor_Packet_Handler_PWM_MODE) */
+                Timer_1ms_WriteCounter(0u);
+            #endif  /* (Timer_1ms_CY_TCPWM_V2 && Timer_1ms_PWM_UPDOWN_CNT_USED && !Timer_1ms_CY_TCPWM_4000) */
+        #endif  /* (Timer_1ms__PWM_PR == Timer_1ms_PWM_MODE) */
 
-        #if (Sensor_Packet_Handler__PWM_DT == Sensor_Packet_Handler_PWM_MODE)
-            Sensor_Packet_Handler_CONTROL_REG |= Sensor_Packet_Handler_CTRL_PWM_DEAD_TIME_CYCLE;
-        #endif  /* (Sensor_Packet_Handler__PWM_DT == Sensor_Packet_Handler_PWM_MODE) */
+        #if (Timer_1ms__PWM_DT == Timer_1ms_PWM_MODE)
+            Timer_1ms_CONTROL_REG |= Timer_1ms_CTRL_PWM_DEAD_TIME_CYCLE;
+        #endif  /* (Timer_1ms__PWM_DT == Timer_1ms_PWM_MODE) */
 
-        #if (Sensor_Packet_Handler__PWM == Sensor_Packet_Handler_PWM_MODE)
-            Sensor_Packet_Handler_CONTROL_REG |= Sensor_Packet_Handler_CTRL_PWM_PRESCALER;
-        #endif  /* (Sensor_Packet_Handler__PWM == Sensor_Packet_Handler_PWM_MODE) */
+        #if (Timer_1ms__PWM == Timer_1ms_PWM_MODE)
+            Timer_1ms_CONTROL_REG |= Timer_1ms_CTRL_PWM_PRESCALER;
+        #endif  /* (Timer_1ms__PWM == Timer_1ms_PWM_MODE) */
 
         /* Set values from customizer to CTRL1 */
-        Sensor_Packet_Handler_TRIG_CONTROL1_REG  = Sensor_Packet_Handler_PWM_SIGNALS_MODES;
+        Timer_1ms_TRIG_CONTROL1_REG  = Timer_1ms_PWM_SIGNALS_MODES;
     
         /* Set values from customizer to INTR */
-        Sensor_Packet_Handler_SetInterruptMode(Sensor_Packet_Handler_PWM_INTERRUPT_MASK);
+        Timer_1ms_SetInterruptMode(Timer_1ms_PWM_INTERRUPT_MASK);
 
         /* Set values from customizer to CTRL2 */
-        #if (Sensor_Packet_Handler__PWM_PR == Sensor_Packet_Handler_PWM_MODE)
-            Sensor_Packet_Handler_TRIG_CONTROL2_REG =
-                    (Sensor_Packet_Handler_CC_MATCH_NO_CHANGE    |
-                    Sensor_Packet_Handler_OVERLOW_NO_CHANGE      |
-                    Sensor_Packet_Handler_UNDERFLOW_NO_CHANGE);
+        #if (Timer_1ms__PWM_PR == Timer_1ms_PWM_MODE)
+            Timer_1ms_TRIG_CONTROL2_REG =
+                    (Timer_1ms_CC_MATCH_NO_CHANGE    |
+                    Timer_1ms_OVERLOW_NO_CHANGE      |
+                    Timer_1ms_UNDERFLOW_NO_CHANGE);
         #else
-            #if (Sensor_Packet_Handler__LEFT == Sensor_Packet_Handler_PWM_ALIGN)
-                Sensor_Packet_Handler_TRIG_CONTROL2_REG = Sensor_Packet_Handler_PWM_MODE_LEFT;
-            #endif  /* ( Sensor_Packet_Handler_PWM_LEFT == Sensor_Packet_Handler_PWM_ALIGN) */
+            #if (Timer_1ms__LEFT == Timer_1ms_PWM_ALIGN)
+                Timer_1ms_TRIG_CONTROL2_REG = Timer_1ms_PWM_MODE_LEFT;
+            #endif  /* ( Timer_1ms_PWM_LEFT == Timer_1ms_PWM_ALIGN) */
 
-            #if (Sensor_Packet_Handler__RIGHT == Sensor_Packet_Handler_PWM_ALIGN)
-                Sensor_Packet_Handler_TRIG_CONTROL2_REG = Sensor_Packet_Handler_PWM_MODE_RIGHT;
-            #endif  /* ( Sensor_Packet_Handler_PWM_RIGHT == Sensor_Packet_Handler_PWM_ALIGN) */
+            #if (Timer_1ms__RIGHT == Timer_1ms_PWM_ALIGN)
+                Timer_1ms_TRIG_CONTROL2_REG = Timer_1ms_PWM_MODE_RIGHT;
+            #endif  /* ( Timer_1ms_PWM_RIGHT == Timer_1ms_PWM_ALIGN) */
 
-            #if (Sensor_Packet_Handler__CENTER == Sensor_Packet_Handler_PWM_ALIGN)
-                Sensor_Packet_Handler_TRIG_CONTROL2_REG = Sensor_Packet_Handler_PWM_MODE_CENTER;
-            #endif  /* ( Sensor_Packet_Handler_PWM_CENTER == Sensor_Packet_Handler_PWM_ALIGN) */
+            #if (Timer_1ms__CENTER == Timer_1ms_PWM_ALIGN)
+                Timer_1ms_TRIG_CONTROL2_REG = Timer_1ms_PWM_MODE_CENTER;
+            #endif  /* ( Timer_1ms_PWM_CENTER == Timer_1ms_PWM_ALIGN) */
 
-            #if (Sensor_Packet_Handler__ASYMMETRIC == Sensor_Packet_Handler_PWM_ALIGN)
-                Sensor_Packet_Handler_TRIG_CONTROL2_REG = Sensor_Packet_Handler_PWM_MODE_ASYM;
-            #endif  /* (Sensor_Packet_Handler__ASYMMETRIC == Sensor_Packet_Handler_PWM_ALIGN) */
-        #endif  /* (Sensor_Packet_Handler__PWM_PR == Sensor_Packet_Handler_PWM_MODE) */
+            #if (Timer_1ms__ASYMMETRIC == Timer_1ms_PWM_ALIGN)
+                Timer_1ms_TRIG_CONTROL2_REG = Timer_1ms_PWM_MODE_ASYM;
+            #endif  /* (Timer_1ms__ASYMMETRIC == Timer_1ms_PWM_ALIGN) */
+        #endif  /* (Timer_1ms__PWM_PR == Timer_1ms_PWM_MODE) */
 
         /* Set other values from customizer */
-        Sensor_Packet_Handler_WritePeriod(Sensor_Packet_Handler_PWM_PERIOD_VALUE );
-        Sensor_Packet_Handler_WriteCompare(Sensor_Packet_Handler_PWM_COMPARE_VALUE);
+        Timer_1ms_WritePeriod(Timer_1ms_PWM_PERIOD_VALUE );
+        Timer_1ms_WriteCompare(Timer_1ms_PWM_COMPARE_VALUE);
 
-        #if (1u == Sensor_Packet_Handler_PWM_COMPARE_SWAP)
-            Sensor_Packet_Handler_SetCompareSwap(1u);
-            Sensor_Packet_Handler_WriteCompareBuf(Sensor_Packet_Handler_PWM_COMPARE_BUF_VALUE);
-        #endif  /* (1u == Sensor_Packet_Handler_PWM_COMPARE_SWAP) */
+        #if (1u == Timer_1ms_PWM_COMPARE_SWAP)
+            Timer_1ms_SetCompareSwap(1u);
+            Timer_1ms_WriteCompareBuf(Timer_1ms_PWM_COMPARE_BUF_VALUE);
+        #endif  /* (1u == Timer_1ms_PWM_COMPARE_SWAP) */
 
-        #if (1u == Sensor_Packet_Handler_PWM_PERIOD_SWAP)
-            Sensor_Packet_Handler_SetPeriodSwap(1u);
-            Sensor_Packet_Handler_WritePeriodBuf(Sensor_Packet_Handler_PWM_PERIOD_BUF_VALUE);
-        #endif  /* (1u == Sensor_Packet_Handler_PWM_PERIOD_SWAP) */
-    #endif  /* (Sensor_Packet_Handler__PWM_SEL == Sensor_Packet_Handler_CONFIG) */
+        #if (1u == Timer_1ms_PWM_PERIOD_SWAP)
+            Timer_1ms_SetPeriodSwap(1u);
+            Timer_1ms_WritePeriodBuf(Timer_1ms_PWM_PERIOD_BUF_VALUE);
+        #endif  /* (1u == Timer_1ms_PWM_PERIOD_SWAP) */
+    #endif  /* (Timer_1ms__PWM_SEL == Timer_1ms_CONFIG) */
     
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_Enable
+* Function Name: Timer_1ms_Enable
 ********************************************************************************
 *
 * Summary:
-*  Enables the Sensor_Packet_Handler.
+*  Enables the Timer_1ms.
 *
 * Parameters:
 *  None
@@ -174,42 +174,42 @@ void Sensor_Packet_Handler_Init(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_Enable(void)
+void Timer_1ms_Enable(void)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
-    Sensor_Packet_Handler_BLOCK_CONTROL_REG |= Sensor_Packet_Handler_MASK;
+    Timer_1ms_BLOCK_CONTROL_REG |= Timer_1ms_MASK;
     CyExitCriticalSection(enableInterrupts);
 
     /* Start Timer or PWM if start input is absent */
-    #if (Sensor_Packet_Handler__PWM_SEL == Sensor_Packet_Handler_CONFIG)
-        #if (0u == Sensor_Packet_Handler_PWM_START_SIGNAL_PRESENT)
-            Sensor_Packet_Handler_TriggerCommand(Sensor_Packet_Handler_MASK, Sensor_Packet_Handler_CMD_START);
-        #endif /* (0u == Sensor_Packet_Handler_PWM_START_SIGNAL_PRESENT) */
-    #endif /* (Sensor_Packet_Handler__PWM_SEL == Sensor_Packet_Handler_CONFIG) */
+    #if (Timer_1ms__PWM_SEL == Timer_1ms_CONFIG)
+        #if (0u == Timer_1ms_PWM_START_SIGNAL_PRESENT)
+            Timer_1ms_TriggerCommand(Timer_1ms_MASK, Timer_1ms_CMD_START);
+        #endif /* (0u == Timer_1ms_PWM_START_SIGNAL_PRESENT) */
+    #endif /* (Timer_1ms__PWM_SEL == Timer_1ms_CONFIG) */
 
-    #if (Sensor_Packet_Handler__TIMER == Sensor_Packet_Handler_CONFIG)
-        #if (0u == Sensor_Packet_Handler_TC_START_SIGNAL_PRESENT)
-            Sensor_Packet_Handler_TriggerCommand(Sensor_Packet_Handler_MASK, Sensor_Packet_Handler_CMD_START);
-        #endif /* (0u == Sensor_Packet_Handler_TC_START_SIGNAL_PRESENT) */
-    #endif /* (Sensor_Packet_Handler__TIMER == Sensor_Packet_Handler_CONFIG) */
+    #if (Timer_1ms__TIMER == Timer_1ms_CONFIG)
+        #if (0u == Timer_1ms_TC_START_SIGNAL_PRESENT)
+            Timer_1ms_TriggerCommand(Timer_1ms_MASK, Timer_1ms_CMD_START);
+        #endif /* (0u == Timer_1ms_TC_START_SIGNAL_PRESENT) */
+    #endif /* (Timer_1ms__TIMER == Timer_1ms_CONFIG) */
     
-    #if (Sensor_Packet_Handler__QUAD == Sensor_Packet_Handler_CONFIG)
-        #if (0u != Sensor_Packet_Handler_QUAD_AUTO_START)
-            Sensor_Packet_Handler_TriggerCommand(Sensor_Packet_Handler_MASK, Sensor_Packet_Handler_CMD_RELOAD);
-        #endif /* (0u != Sensor_Packet_Handler_QUAD_AUTO_START) */
-    #endif  /* (Sensor_Packet_Handler__QUAD == Sensor_Packet_Handler_CONFIG) */
+    #if (Timer_1ms__QUAD == Timer_1ms_CONFIG)
+        #if (0u != Timer_1ms_QUAD_AUTO_START)
+            Timer_1ms_TriggerCommand(Timer_1ms_MASK, Timer_1ms_CMD_RELOAD);
+        #endif /* (0u != Timer_1ms_QUAD_AUTO_START) */
+    #endif  /* (Timer_1ms__QUAD == Timer_1ms_CONFIG) */
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_Start
+* Function Name: Timer_1ms_Start
 ********************************************************************************
 *
 * Summary:
-*  Initializes the Sensor_Packet_Handler with default customizer
-*  values when called the first time and enables the Sensor_Packet_Handler.
+*  Initializes the Timer_1ms with default customizer
+*  values when called the first time and enables the Timer_1ms.
 *  For subsequent calls the configuration is left unchanged and the component is
 *  just enabled.
 *
@@ -220,31 +220,31 @@ void Sensor_Packet_Handler_Enable(void)
 *  None
 *
 * Global variables:
-*  Sensor_Packet_Handler_initVar: global variable is used to indicate initial
+*  Timer_1ms_initVar: global variable is used to indicate initial
 *  configuration of this component.  The variable is initialized to zero and set
-*  to 1 the first time Sensor_Packet_Handler_Start() is called. This allows
+*  to 1 the first time Timer_1ms_Start() is called. This allows
 *  enabling/disabling a component without re-initialization in all subsequent
-*  calls to the Sensor_Packet_Handler_Start() routine.
+*  calls to the Timer_1ms_Start() routine.
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_Start(void)
+void Timer_1ms_Start(void)
 {
-    if (0u == Sensor_Packet_Handler_initVar)
+    if (0u == Timer_1ms_initVar)
     {
-        Sensor_Packet_Handler_Init();
-        Sensor_Packet_Handler_initVar = 1u;
+        Timer_1ms_Init();
+        Timer_1ms_initVar = 1u;
     }
 
-    Sensor_Packet_Handler_Enable();
+    Timer_1ms_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_Stop
+* Function Name: Timer_1ms_Stop
 ********************************************************************************
 *
 * Summary:
-*  Disables the Sensor_Packet_Handler.
+*  Disables the Timer_1ms.
 *
 * Parameters:
 *  None
@@ -253,58 +253,58 @@ void Sensor_Packet_Handler_Start(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_Stop(void)
+void Timer_1ms_Stop(void)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_BLOCK_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_MASK;
+    Timer_1ms_BLOCK_CONTROL_REG &= (uint32)~Timer_1ms_MASK;
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetMode
+* Function Name: Timer_1ms_SetMode
 ********************************************************************************
 *
 * Summary:
-*  Sets the operation mode of the Sensor_Packet_Handler. This function is used when
-*  configured as a generic Sensor_Packet_Handler and the actual mode of operation is
+*  Sets the operation mode of the Timer_1ms. This function is used when
+*  configured as a generic Timer_1ms and the actual mode of operation is
 *  set at runtime. The mode must be set while the component is disabled.
 *
 * Parameters:
-*  mode: Mode for the Sensor_Packet_Handler to operate in
+*  mode: Mode for the Timer_1ms to operate in
 *   Values:
-*   - Sensor_Packet_Handler_MODE_TIMER_COMPARE - Timer / Counter with
+*   - Timer_1ms_MODE_TIMER_COMPARE - Timer / Counter with
 *                                                 compare capability
-*         - Sensor_Packet_Handler_MODE_TIMER_CAPTURE - Timer / Counter with
+*         - Timer_1ms_MODE_TIMER_CAPTURE - Timer / Counter with
 *                                                 capture capability
-*         - Sensor_Packet_Handler_MODE_QUAD - Quadrature decoder
-*         - Sensor_Packet_Handler_MODE_PWM - PWM
-*         - Sensor_Packet_Handler_MODE_PWM_DT - PWM with dead time
-*         - Sensor_Packet_Handler_MODE_PWM_PR - PWM with pseudo random capability
+*         - Timer_1ms_MODE_QUAD - Quadrature decoder
+*         - Timer_1ms_MODE_PWM - PWM
+*         - Timer_1ms_MODE_PWM_DT - PWM with dead time
+*         - Timer_1ms_MODE_PWM_PR - PWM with pseudo random capability
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetMode(uint32 mode)
+void Timer_1ms_SetMode(uint32 mode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_MODE_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= mode;
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_MODE_MASK;
+    Timer_1ms_CONTROL_REG |= mode;
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetQDMode
+* Function Name: Timer_1ms_SetQDMode
 ********************************************************************************
 *
 * Summary:
@@ -314,30 +314,30 @@ void Sensor_Packet_Handler_SetMode(uint32 mode)
 * Parameters:
 *  qdMode: Quadrature Decoder mode
 *   Values:
-*         - Sensor_Packet_Handler_MODE_X1 - Counts on phi 1 rising
-*         - Sensor_Packet_Handler_MODE_X2 - Counts on both edges of phi1 (2x faster)
-*         - Sensor_Packet_Handler_MODE_X4 - Counts on both edges of phi1 and phi2
+*         - Timer_1ms_MODE_X1 - Counts on phi 1 rising
+*         - Timer_1ms_MODE_X2 - Counts on both edges of phi1 (2x faster)
+*         - Timer_1ms_MODE_X4 - Counts on both edges of phi1 and phi2
 *                                        (4x faster)
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetQDMode(uint32 qdMode)
+void Timer_1ms_SetQDMode(uint32 qdMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_QUAD_MODE_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= qdMode;
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_QUAD_MODE_MASK;
+    Timer_1ms_CONTROL_REG |= qdMode;
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPrescaler
+* Function Name: Timer_1ms_SetPrescaler
 ********************************************************************************
 *
 * Summary:
@@ -347,40 +347,40 @@ void Sensor_Packet_Handler_SetQDMode(uint32 qdMode)
 * Parameters:
 *  prescaler: Prescaler divider value
 *   Values:
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY1    - Divide by 1 (no prescaling)
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY2    - Divide by 2
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY4    - Divide by 4
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY8    - Divide by 8
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY16   - Divide by 16
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY32   - Divide by 32
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY64   - Divide by 64
-*         - Sensor_Packet_Handler_PRESCALE_DIVBY128  - Divide by 128
+*         - Timer_1ms_PRESCALE_DIVBY1    - Divide by 1 (no prescaling)
+*         - Timer_1ms_PRESCALE_DIVBY2    - Divide by 2
+*         - Timer_1ms_PRESCALE_DIVBY4    - Divide by 4
+*         - Timer_1ms_PRESCALE_DIVBY8    - Divide by 8
+*         - Timer_1ms_PRESCALE_DIVBY16   - Divide by 16
+*         - Timer_1ms_PRESCALE_DIVBY32   - Divide by 32
+*         - Timer_1ms_PRESCALE_DIVBY64   - Divide by 64
+*         - Timer_1ms_PRESCALE_DIVBY128  - Divide by 128
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPrescaler(uint32 prescaler)
+void Timer_1ms_SetPrescaler(uint32 prescaler)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_PRESCALER_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= prescaler;
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_PRESCALER_MASK;
+    Timer_1ms_CONTROL_REG |= prescaler;
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetOneShot
+* Function Name: Timer_1ms_SetOneShot
 ********************************************************************************
 *
 * Summary:
-*  Writes the register that controls whether the Sensor_Packet_Handler runs
+*  Writes the register that controls whether the Timer_1ms runs
 *  continuously or stops when terminal count is reached.  By default the
-*  Sensor_Packet_Handler operates in the continuous mode.
+*  Timer_1ms operates in the continuous mode.
 *
 * Parameters:
 *  oneShotEnable
@@ -392,22 +392,22 @@ void Sensor_Packet_Handler_SetPrescaler(uint32 prescaler)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetOneShot(uint32 oneShotEnable)
+void Timer_1ms_SetOneShot(uint32 oneShotEnable)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_ONESHOT_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= ((uint32)((oneShotEnable & Sensor_Packet_Handler_1BIT_MASK) <<
-                                                               Sensor_Packet_Handler_ONESHOT_SHIFT));
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_ONESHOT_MASK;
+    Timer_1ms_CONTROL_REG |= ((uint32)((oneShotEnable & Timer_1ms_1BIT_MASK) <<
+                                                               Timer_1ms_ONESHOT_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPWMMode
+* Function Name: Timer_1ms_SetPWMMode
 ********************************************************************************
 *
 * Summary:
@@ -446,15 +446,15 @@ void Sensor_Packet_Handler_SetOneShot(uint32 oneShotEnable)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPWMMode(uint32 modeMask)
+void Timer_1ms_SetPWMMode(uint32 modeMask)
 {
-    Sensor_Packet_Handler_TRIG_CONTROL2_REG = (modeMask & Sensor_Packet_Handler_6BIT_MASK);
+    Timer_1ms_TRIG_CONTROL2_REG = (modeMask & Timer_1ms_6BIT_MASK);
 }
 
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPWMSyncKill
+* Function Name: Timer_1ms_SetPWMSyncKill
 ********************************************************************************
 *
 * Summary:
@@ -482,22 +482,22 @@ void Sensor_Packet_Handler_SetPWMMode(uint32 modeMask)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPWMSyncKill(uint32 syncKillEnable)
+void Timer_1ms_SetPWMSyncKill(uint32 syncKillEnable)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_PWM_SYNC_KILL_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= ((uint32)((syncKillEnable & Sensor_Packet_Handler_1BIT_MASK)  <<
-                                               Sensor_Packet_Handler_PWM_SYNC_KILL_SHIFT));
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_PWM_SYNC_KILL_MASK;
+    Timer_1ms_CONTROL_REG |= ((uint32)((syncKillEnable & Timer_1ms_1BIT_MASK)  <<
+                                               Timer_1ms_PWM_SYNC_KILL_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPWMStopOnKill
+* Function Name: Timer_1ms_SetPWMStopOnKill
 ********************************************************************************
 *
 * Summary:
@@ -516,22 +516,22 @@ void Sensor_Packet_Handler_SetPWMSyncKill(uint32 syncKillEnable)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPWMStopOnKill(uint32 stopOnKillEnable)
+void Timer_1ms_SetPWMStopOnKill(uint32 stopOnKillEnable)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_PWM_STOP_KILL_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= ((uint32)((stopOnKillEnable & Sensor_Packet_Handler_1BIT_MASK)  <<
-                                                         Sensor_Packet_Handler_PWM_STOP_KILL_SHIFT));
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_PWM_STOP_KILL_MASK;
+    Timer_1ms_CONTROL_REG |= ((uint32)((stopOnKillEnable & Timer_1ms_1BIT_MASK)  <<
+                                                         Timer_1ms_PWM_STOP_KILL_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPWMDeadTime
+* Function Name: Timer_1ms_SetPWMDeadTime
 ********************************************************************************
 *
 * Summary:
@@ -549,22 +549,22 @@ void Sensor_Packet_Handler_SetPWMStopOnKill(uint32 stopOnKillEnable)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPWMDeadTime(uint32 deadTime)
+void Timer_1ms_SetPWMDeadTime(uint32 deadTime)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_PRESCALER_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= ((uint32)((deadTime & Sensor_Packet_Handler_8BIT_MASK) <<
-                                                          Sensor_Packet_Handler_PRESCALER_SHIFT));
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_PRESCALER_MASK;
+    Timer_1ms_CONTROL_REG |= ((uint32)((deadTime & Timer_1ms_8BIT_MASK) <<
+                                                          Timer_1ms_PRESCALER_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPWMInvert
+* Function Name: Timer_1ms_SetPWMInvert
 ********************************************************************************
 *
 * Summary:
@@ -575,21 +575,21 @@ void Sensor_Packet_Handler_SetPWMDeadTime(uint32 deadTime)
 * Parameters:
 *  mask: Mask of outputs to invert.
 *   Values:
-*         - Sensor_Packet_Handler_INVERT_LINE   - Inverts the line output
-*         - Sensor_Packet_Handler_INVERT_LINE_N - Inverts the line_n output
+*         - Timer_1ms_INVERT_LINE   - Inverts the line output
+*         - Timer_1ms_INVERT_LINE_N - Inverts the line_n output
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPWMInvert(uint32 mask)
+void Timer_1ms_SetPWMInvert(uint32 mask)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_INV_OUT_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= mask;
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_INV_OUT_MASK;
+    Timer_1ms_CONTROL_REG |= mask;
 
     CyExitCriticalSection(enableInterrupts);
 }
@@ -597,7 +597,7 @@ void Sensor_Packet_Handler_SetPWMInvert(uint32 mask)
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_WriteCounter
+* Function Name: Timer_1ms_WriteCounter
 ********************************************************************************
 *
 * Summary:
@@ -612,14 +612,14 @@ void Sensor_Packet_Handler_SetPWMInvert(uint32 mask)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_WriteCounter(uint32 count)
+void Timer_1ms_WriteCounter(uint32 count)
 {
-    Sensor_Packet_Handler_COUNTER_REG = (count & Sensor_Packet_Handler_16BIT_MASK);
+    Timer_1ms_COUNTER_REG = (count & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadCounter
+* Function Name: Timer_1ms_ReadCounter
 ********************************************************************************
 *
 * Summary:
@@ -632,14 +632,14 @@ void Sensor_Packet_Handler_WriteCounter(uint32 count)
 *  Current counter value
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadCounter(void)
+uint32 Timer_1ms_ReadCounter(void)
 {
-    return (Sensor_Packet_Handler_COUNTER_REG & Sensor_Packet_Handler_16BIT_MASK);
+    return (Timer_1ms_COUNTER_REG & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetCounterMode
+* Function Name: Timer_1ms_SetCounterMode
 ********************************************************************************
 *
 * Summary:
@@ -649,11 +649,11 @@ uint32 Sensor_Packet_Handler_ReadCounter(void)
 * Parameters:
 *  counterMode: Enumerated counter type values
 *   Values:
-*     - Sensor_Packet_Handler_COUNT_UP       - Counts up
-*     - Sensor_Packet_Handler_COUNT_DOWN     - Counts down
-*     - Sensor_Packet_Handler_COUNT_UPDOWN0  - Counts up and down. Terminal count
+*     - Timer_1ms_COUNT_UP       - Counts up
+*     - Timer_1ms_COUNT_DOWN     - Counts down
+*     - Timer_1ms_COUNT_UPDOWN0  - Counts up and down. Terminal count
 *                                         generated when counter reaches 0
-*     - Sensor_Packet_Handler_COUNT_UPDOWN1  - Counts up and down. Terminal count
+*     - Timer_1ms_COUNT_UPDOWN1  - Counts up and down. Terminal count
 *                                         generated both when counter reaches 0
 *                                         and period
 *
@@ -661,21 +661,21 @@ uint32 Sensor_Packet_Handler_ReadCounter(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetCounterMode(uint32 counterMode)
+void Timer_1ms_SetCounterMode(uint32 counterMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_UPDOWN_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= counterMode;
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_UPDOWN_MASK;
+    Timer_1ms_CONTROL_REG |= counterMode;
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_WritePeriod
+* Function Name: Timer_1ms_WritePeriod
 ********************************************************************************
 *
 * Summary:
@@ -690,14 +690,14 @@ void Sensor_Packet_Handler_SetCounterMode(uint32 counterMode)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_WritePeriod(uint32 period)
+void Timer_1ms_WritePeriod(uint32 period)
 {
-    Sensor_Packet_Handler_PERIOD_REG = (period & Sensor_Packet_Handler_16BIT_MASK);
+    Timer_1ms_PERIOD_REG = (period & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadPeriod
+* Function Name: Timer_1ms_ReadPeriod
 ********************************************************************************
 *
 * Summary:
@@ -710,14 +710,14 @@ void Sensor_Packet_Handler_WritePeriod(uint32 period)
 *  Period value
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadPeriod(void)
+uint32 Timer_1ms_ReadPeriod(void)
 {
-    return (Sensor_Packet_Handler_PERIOD_REG & Sensor_Packet_Handler_16BIT_MASK);
+    return (Timer_1ms_PERIOD_REG & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetCompareSwap
+* Function Name: Timer_1ms_SetCompareSwap
 ********************************************************************************
 *
 * Summary:
@@ -736,21 +736,21 @@ uint32 Sensor_Packet_Handler_ReadPeriod(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetCompareSwap(uint32 swapEnable)
+void Timer_1ms_SetCompareSwap(uint32 swapEnable)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_RELOAD_CC_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= (swapEnable & Sensor_Packet_Handler_1BIT_MASK);
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_RELOAD_CC_MASK;
+    Timer_1ms_CONTROL_REG |= (swapEnable & Timer_1ms_1BIT_MASK);
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_WritePeriodBuf
+* Function Name: Timer_1ms_WritePeriodBuf
 ********************************************************************************
 *
 * Summary:
@@ -763,14 +763,14 @@ void Sensor_Packet_Handler_SetCompareSwap(uint32 swapEnable)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_WritePeriodBuf(uint32 periodBuf)
+void Timer_1ms_WritePeriodBuf(uint32 periodBuf)
 {
-    Sensor_Packet_Handler_PERIOD_BUF_REG = (periodBuf & Sensor_Packet_Handler_16BIT_MASK);
+    Timer_1ms_PERIOD_BUF_REG = (periodBuf & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadPeriodBuf
+* Function Name: Timer_1ms_ReadPeriodBuf
 ********************************************************************************
 *
 * Summary:
@@ -783,14 +783,14 @@ void Sensor_Packet_Handler_WritePeriodBuf(uint32 periodBuf)
 *  Period value
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadPeriodBuf(void)
+uint32 Timer_1ms_ReadPeriodBuf(void)
 {
-    return (Sensor_Packet_Handler_PERIOD_BUF_REG & Sensor_Packet_Handler_16BIT_MASK);
+    return (Timer_1ms_PERIOD_BUF_REG & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetPeriodSwap
+* Function Name: Timer_1ms_SetPeriodSwap
 ********************************************************************************
 *
 * Summary:
@@ -809,22 +809,22 @@ uint32 Sensor_Packet_Handler_ReadPeriodBuf(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetPeriodSwap(uint32 swapEnable)
+void Timer_1ms_SetPeriodSwap(uint32 swapEnable)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_CONTROL_REG &= (uint32)~Sensor_Packet_Handler_RELOAD_PERIOD_MASK;
-    Sensor_Packet_Handler_CONTROL_REG |= ((uint32)((swapEnable & Sensor_Packet_Handler_1BIT_MASK) <<
-                                                            Sensor_Packet_Handler_RELOAD_PERIOD_SHIFT));
+    Timer_1ms_CONTROL_REG &= (uint32)~Timer_1ms_RELOAD_PERIOD_MASK;
+    Timer_1ms_CONTROL_REG |= ((uint32)((swapEnable & Timer_1ms_1BIT_MASK) <<
+                                                            Timer_1ms_RELOAD_PERIOD_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_WriteCompare
+* Function Name: Timer_1ms_WriteCompare
 ********************************************************************************
 *
 * Summary:
@@ -846,20 +846,20 @@ void Sensor_Packet_Handler_SetPeriodSwap(uint32 swapEnable)
 *  compare value in the Down counting mode (except 0xFFFFu).
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_WriteCompare(uint32 compare)
+void Timer_1ms_WriteCompare(uint32 compare)
 {
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
+    #if (Timer_1ms_CY_TCPWM_4000)
         uint32 currentMode;
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
 
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
-        currentMode = ((Sensor_Packet_Handler_CONTROL_REG & Sensor_Packet_Handler_UPDOWN_MASK) >> Sensor_Packet_Handler_UPDOWN_SHIFT);
+    #if (Timer_1ms_CY_TCPWM_4000)
+        currentMode = ((Timer_1ms_CONTROL_REG & Timer_1ms_UPDOWN_MASK) >> Timer_1ms_UPDOWN_SHIFT);
 
-        if (((uint32)Sensor_Packet_Handler__COUNT_DOWN == currentMode) && (0xFFFFu != compare))
+        if (((uint32)Timer_1ms__COUNT_DOWN == currentMode) && (0xFFFFu != compare))
         {
             compare++;
         }
-        else if (((uint32)Sensor_Packet_Handler__COUNT_UP == currentMode) && (0u != compare))
+        else if (((uint32)Timer_1ms__COUNT_UP == currentMode) && (0u != compare))
         {
             compare--;
         }
@@ -868,14 +868,14 @@ void Sensor_Packet_Handler_WriteCompare(uint32 compare)
         }
         
     
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
     
-    Sensor_Packet_Handler_COMP_CAP_REG = (compare & Sensor_Packet_Handler_16BIT_MASK);
+    Timer_1ms_COMP_CAP_REG = (compare & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadCompare
+* Function Name: Timer_1ms_ReadCompare
 ********************************************************************************
 *
 * Summary:
@@ -897,23 +897,23 @@ void Sensor_Packet_Handler_WriteCompare(uint32 compare)
 *  Down counting mode (except 0x0u).
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadCompare(void)
+uint32 Timer_1ms_ReadCompare(void)
 {
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
+    #if (Timer_1ms_CY_TCPWM_4000)
         uint32 currentMode;
         uint32 regVal;
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
 
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
-        currentMode = ((Sensor_Packet_Handler_CONTROL_REG & Sensor_Packet_Handler_UPDOWN_MASK) >> Sensor_Packet_Handler_UPDOWN_SHIFT);
+    #if (Timer_1ms_CY_TCPWM_4000)
+        currentMode = ((Timer_1ms_CONTROL_REG & Timer_1ms_UPDOWN_MASK) >> Timer_1ms_UPDOWN_SHIFT);
         
-        regVal = Sensor_Packet_Handler_COMP_CAP_REG;
+        regVal = Timer_1ms_COMP_CAP_REG;
         
-        if (((uint32)Sensor_Packet_Handler__COUNT_DOWN == currentMode) && (0u != regVal))
+        if (((uint32)Timer_1ms__COUNT_DOWN == currentMode) && (0u != regVal))
         {
             regVal--;
         }
-        else if (((uint32)Sensor_Packet_Handler__COUNT_UP == currentMode) && (0xFFFFu != regVal))
+        else if (((uint32)Timer_1ms__COUNT_UP == currentMode) && (0xFFFFu != regVal))
         {
             regVal++;
         }
@@ -921,15 +921,15 @@ uint32 Sensor_Packet_Handler_ReadCompare(void)
         {
         }
 
-        return (regVal & Sensor_Packet_Handler_16BIT_MASK);
+        return (regVal & Timer_1ms_16BIT_MASK);
     #else
-        return (Sensor_Packet_Handler_COMP_CAP_REG & Sensor_Packet_Handler_16BIT_MASK);
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+        return (Timer_1ms_COMP_CAP_REG & Timer_1ms_16BIT_MASK);
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_WriteCompareBuf
+* Function Name: Timer_1ms_WriteCompareBuf
 ********************************************************************************
 *
 * Summary:
@@ -951,34 +951,34 @@ uint32 Sensor_Packet_Handler_ReadCompare(void)
 *  compare value in the Down counting mode (except 0xFFFFu).
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_WriteCompareBuf(uint32 compareBuf)
+void Timer_1ms_WriteCompareBuf(uint32 compareBuf)
 {
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
+    #if (Timer_1ms_CY_TCPWM_4000)
         uint32 currentMode;
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
 
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
-        currentMode = ((Sensor_Packet_Handler_CONTROL_REG & Sensor_Packet_Handler_UPDOWN_MASK) >> Sensor_Packet_Handler_UPDOWN_SHIFT);
+    #if (Timer_1ms_CY_TCPWM_4000)
+        currentMode = ((Timer_1ms_CONTROL_REG & Timer_1ms_UPDOWN_MASK) >> Timer_1ms_UPDOWN_SHIFT);
 
-        if (((uint32)Sensor_Packet_Handler__COUNT_DOWN == currentMode) && (0xFFFFu != compareBuf))
+        if (((uint32)Timer_1ms__COUNT_DOWN == currentMode) && (0xFFFFu != compareBuf))
         {
             compareBuf++;
         }
-        else if (((uint32)Sensor_Packet_Handler__COUNT_UP == currentMode) && (0u != compareBuf))
+        else if (((uint32)Timer_1ms__COUNT_UP == currentMode) && (0u != compareBuf))
         {
             compareBuf --;
         }
         else
         {
         }
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
     
-    Sensor_Packet_Handler_COMP_CAP_BUF_REG = (compareBuf & Sensor_Packet_Handler_16BIT_MASK);
+    Timer_1ms_COMP_CAP_BUF_REG = (compareBuf & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadCompareBuf
+* Function Name: Timer_1ms_ReadCompareBuf
 ********************************************************************************
 *
 * Summary:
@@ -997,23 +997,23 @@ void Sensor_Packet_Handler_WriteCompareBuf(uint32 compareBuf)
 *  Down counting mode (except 0x0u).
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadCompareBuf(void)
+uint32 Timer_1ms_ReadCompareBuf(void)
 {
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
+    #if (Timer_1ms_CY_TCPWM_4000)
         uint32 currentMode;
         uint32 regVal;
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
 
-    #if (Sensor_Packet_Handler_CY_TCPWM_4000)
-        currentMode = ((Sensor_Packet_Handler_CONTROL_REG & Sensor_Packet_Handler_UPDOWN_MASK) >> Sensor_Packet_Handler_UPDOWN_SHIFT);
+    #if (Timer_1ms_CY_TCPWM_4000)
+        currentMode = ((Timer_1ms_CONTROL_REG & Timer_1ms_UPDOWN_MASK) >> Timer_1ms_UPDOWN_SHIFT);
 
-        regVal = Sensor_Packet_Handler_COMP_CAP_BUF_REG;
+        regVal = Timer_1ms_COMP_CAP_BUF_REG;
         
-        if (((uint32)Sensor_Packet_Handler__COUNT_DOWN == currentMode) && (0u != regVal))
+        if (((uint32)Timer_1ms__COUNT_DOWN == currentMode) && (0u != regVal))
         {
             regVal--;
         }
-        else if (((uint32)Sensor_Packet_Handler__COUNT_UP == currentMode) && (0xFFFFu != regVal))
+        else if (((uint32)Timer_1ms__COUNT_UP == currentMode) && (0xFFFFu != regVal))
         {
             regVal++;
         }
@@ -1021,15 +1021,15 @@ uint32 Sensor_Packet_Handler_ReadCompareBuf(void)
         {
         }
 
-        return (regVal & Sensor_Packet_Handler_16BIT_MASK);
+        return (regVal & Timer_1ms_16BIT_MASK);
     #else
-        return (Sensor_Packet_Handler_COMP_CAP_BUF_REG & Sensor_Packet_Handler_16BIT_MASK);
-    #endif /* (Sensor_Packet_Handler_CY_TCPWM_4000) */
+        return (Timer_1ms_COMP_CAP_BUF_REG & Timer_1ms_16BIT_MASK);
+    #endif /* (Timer_1ms_CY_TCPWM_4000) */
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadCapture
+* Function Name: Timer_1ms_ReadCapture
 ********************************************************************************
 *
 * Summary:
@@ -1043,14 +1043,14 @@ uint32 Sensor_Packet_Handler_ReadCompareBuf(void)
 *  Capture value
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadCapture(void)
+uint32 Timer_1ms_ReadCapture(void)
 {
-    return (Sensor_Packet_Handler_COMP_CAP_REG & Sensor_Packet_Handler_16BIT_MASK);
+    return (Timer_1ms_COMP_CAP_REG & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadCaptureBuf
+* Function Name: Timer_1ms_ReadCaptureBuf
 ********************************************************************************
 *
 * Summary:
@@ -1064,14 +1064,14 @@ uint32 Sensor_Packet_Handler_ReadCapture(void)
 *  Capture buffer value
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadCaptureBuf(void)
+uint32 Timer_1ms_ReadCaptureBuf(void)
 {
-    return (Sensor_Packet_Handler_COMP_CAP_BUF_REG & Sensor_Packet_Handler_16BIT_MASK);
+    return (Timer_1ms_COMP_CAP_BUF_REG & Timer_1ms_16BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetCaptureMode
+* Function Name: Timer_1ms_SetCaptureMode
 ********************************************************************************
 *
 * Summary:
@@ -1082,30 +1082,30 @@ uint32 Sensor_Packet_Handler_ReadCaptureBuf(void)
 * Parameters:
 *  triggerMode: Enumerated trigger mode value
 *   Values:
-*     - Sensor_Packet_Handler_TRIG_LEVEL     - Level
-*     - Sensor_Packet_Handler_TRIG_RISING    - Rising edge
-*     - Sensor_Packet_Handler_TRIG_FALLING   - Falling edge
-*     - Sensor_Packet_Handler_TRIG_BOTH      - Both rising and falling edge
+*     - Timer_1ms_TRIG_LEVEL     - Level
+*     - Timer_1ms_TRIG_RISING    - Rising edge
+*     - Timer_1ms_TRIG_FALLING   - Falling edge
+*     - Timer_1ms_TRIG_BOTH      - Both rising and falling edge
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetCaptureMode(uint32 triggerMode)
+void Timer_1ms_SetCaptureMode(uint32 triggerMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG &= (uint32)~Sensor_Packet_Handler_CAPTURE_MASK;
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG |= triggerMode;
+    Timer_1ms_TRIG_CONTROL1_REG &= (uint32)~Timer_1ms_CAPTURE_MASK;
+    Timer_1ms_TRIG_CONTROL1_REG |= triggerMode;
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetReloadMode
+* Function Name: Timer_1ms_SetReloadMode
 ********************************************************************************
 *
 * Summary:
@@ -1115,30 +1115,30 @@ void Sensor_Packet_Handler_SetCaptureMode(uint32 triggerMode)
 * Parameters:
 *  triggerMode: Enumerated trigger mode value
 *   Values:
-*     - Sensor_Packet_Handler_TRIG_LEVEL     - Level
-*     - Sensor_Packet_Handler_TRIG_RISING    - Rising edge
-*     - Sensor_Packet_Handler_TRIG_FALLING   - Falling edge
-*     - Sensor_Packet_Handler_TRIG_BOTH      - Both rising and falling edge
+*     - Timer_1ms_TRIG_LEVEL     - Level
+*     - Timer_1ms_TRIG_RISING    - Rising edge
+*     - Timer_1ms_TRIG_FALLING   - Falling edge
+*     - Timer_1ms_TRIG_BOTH      - Both rising and falling edge
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetReloadMode(uint32 triggerMode)
+void Timer_1ms_SetReloadMode(uint32 triggerMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG &= (uint32)~Sensor_Packet_Handler_RELOAD_MASK;
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Sensor_Packet_Handler_RELOAD_SHIFT));
+    Timer_1ms_TRIG_CONTROL1_REG &= (uint32)~Timer_1ms_RELOAD_MASK;
+    Timer_1ms_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Timer_1ms_RELOAD_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetStartMode
+* Function Name: Timer_1ms_SetStartMode
 ********************************************************************************
 *
 * Summary:
@@ -1148,30 +1148,30 @@ void Sensor_Packet_Handler_SetReloadMode(uint32 triggerMode)
 * Parameters:
 *  triggerMode: Enumerated trigger mode value
 *   Values:
-*     - Sensor_Packet_Handler_TRIG_LEVEL     - Level
-*     - Sensor_Packet_Handler_TRIG_RISING    - Rising edge
-*     - Sensor_Packet_Handler_TRIG_FALLING   - Falling edge
-*     - Sensor_Packet_Handler_TRIG_BOTH      - Both rising and falling edge
+*     - Timer_1ms_TRIG_LEVEL     - Level
+*     - Timer_1ms_TRIG_RISING    - Rising edge
+*     - Timer_1ms_TRIG_FALLING   - Falling edge
+*     - Timer_1ms_TRIG_BOTH      - Both rising and falling edge
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetStartMode(uint32 triggerMode)
+void Timer_1ms_SetStartMode(uint32 triggerMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG &= (uint32)~Sensor_Packet_Handler_START_MASK;
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Sensor_Packet_Handler_START_SHIFT));
+    Timer_1ms_TRIG_CONTROL1_REG &= (uint32)~Timer_1ms_START_MASK;
+    Timer_1ms_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Timer_1ms_START_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetStopMode
+* Function Name: Timer_1ms_SetStopMode
 ********************************************************************************
 *
 * Summary:
@@ -1180,30 +1180,30 @@ void Sensor_Packet_Handler_SetStartMode(uint32 triggerMode)
 * Parameters:
 *  triggerMode: Enumerated trigger mode value
 *   Values:
-*     - Sensor_Packet_Handler_TRIG_LEVEL     - Level
-*     - Sensor_Packet_Handler_TRIG_RISING    - Rising edge
-*     - Sensor_Packet_Handler_TRIG_FALLING   - Falling edge
-*     - Sensor_Packet_Handler_TRIG_BOTH      - Both rising and falling edge
+*     - Timer_1ms_TRIG_LEVEL     - Level
+*     - Timer_1ms_TRIG_RISING    - Rising edge
+*     - Timer_1ms_TRIG_FALLING   - Falling edge
+*     - Timer_1ms_TRIG_BOTH      - Both rising and falling edge
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetStopMode(uint32 triggerMode)
+void Timer_1ms_SetStopMode(uint32 triggerMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG &= (uint32)~Sensor_Packet_Handler_STOP_MASK;
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Sensor_Packet_Handler_STOP_SHIFT));
+    Timer_1ms_TRIG_CONTROL1_REG &= (uint32)~Timer_1ms_STOP_MASK;
+    Timer_1ms_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Timer_1ms_STOP_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetCountMode
+* Function Name: Timer_1ms_SetCountMode
 ********************************************************************************
 *
 * Summary:
@@ -1213,30 +1213,30 @@ void Sensor_Packet_Handler_SetStopMode(uint32 triggerMode)
 * Parameters:
 *  triggerMode: Enumerated trigger mode value
 *   Values:
-*     - Sensor_Packet_Handler_TRIG_LEVEL     - Level
-*     - Sensor_Packet_Handler_TRIG_RISING    - Rising edge
-*     - Sensor_Packet_Handler_TRIG_FALLING   - Falling edge
-*     - Sensor_Packet_Handler_TRIG_BOTH      - Both rising and falling edge
+*     - Timer_1ms_TRIG_LEVEL     - Level
+*     - Timer_1ms_TRIG_RISING    - Rising edge
+*     - Timer_1ms_TRIG_FALLING   - Falling edge
+*     - Timer_1ms_TRIG_BOTH      - Both rising and falling edge
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetCountMode(uint32 triggerMode)
+void Timer_1ms_SetCountMode(uint32 triggerMode)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG &= (uint32)~Sensor_Packet_Handler_COUNT_MASK;
-    Sensor_Packet_Handler_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Sensor_Packet_Handler_COUNT_SHIFT));
+    Timer_1ms_TRIG_CONTROL1_REG &= (uint32)~Timer_1ms_COUNT_MASK;
+    Timer_1ms_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Timer_1ms_COUNT_SHIFT));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_TriggerCommand
+* Function Name: Timer_1ms_TriggerCommand
 ********************************************************************************
 *
 * Summary:
@@ -1253,33 +1253,33 @@ void Sensor_Packet_Handler_SetCountMode(uint32 triggerMode)
 *  command: Enumerated command values. Capture command only applicable for
 *           Timer/Counter with Capture and PWM modes.
 *   Values:
-*     - Sensor_Packet_Handler_CMD_CAPTURE    - Trigger Capture/Switch command
-*     - Sensor_Packet_Handler_CMD_RELOAD     - Trigger Reload/Index command
-*     - Sensor_Packet_Handler_CMD_STOP       - Trigger Stop/Kill command
-*     - Sensor_Packet_Handler_CMD_START      - Trigger Start/phiB command
+*     - Timer_1ms_CMD_CAPTURE    - Trigger Capture/Switch command
+*     - Timer_1ms_CMD_RELOAD     - Trigger Reload/Index command
+*     - Timer_1ms_CMD_STOP       - Trigger Stop/Kill command
+*     - Timer_1ms_CMD_START      - Trigger Start/phiB command
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_TriggerCommand(uint32 mask, uint32 command)
+void Timer_1ms_TriggerCommand(uint32 mask, uint32 command)
 {
     uint8 enableInterrupts;
 
     enableInterrupts = CyEnterCriticalSection();
 
-    Sensor_Packet_Handler_COMMAND_REG = ((uint32)(mask << command));
+    Timer_1ms_COMMAND_REG = ((uint32)(mask << command));
 
     CyExitCriticalSection(enableInterrupts);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ReadStatus
+* Function Name: Timer_1ms_ReadStatus
 ********************************************************************************
 *
 * Summary:
-*  Reads the status of the Sensor_Packet_Handler.
+*  Reads the status of the Timer_1ms.
 *
 * Parameters:
 *  None
@@ -1287,19 +1287,19 @@ void Sensor_Packet_Handler_TriggerCommand(uint32 mask, uint32 command)
 * Return:
 *  Status
 *   Values:
-*     - Sensor_Packet_Handler_STATUS_DOWN    - Set if counting down
-*     - Sensor_Packet_Handler_STATUS_RUNNING - Set if counter is running
+*     - Timer_1ms_STATUS_DOWN    - Set if counting down
+*     - Timer_1ms_STATUS_RUNNING - Set if counter is running
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_ReadStatus(void)
+uint32 Timer_1ms_ReadStatus(void)
 {
-    return ((Sensor_Packet_Handler_STATUS_REG >> Sensor_Packet_Handler_RUNNING_STATUS_SHIFT) |
-            (Sensor_Packet_Handler_STATUS_REG & Sensor_Packet_Handler_STATUS_DOWN));
+    return ((Timer_1ms_STATUS_REG >> Timer_1ms_RUNNING_STATUS_SHIFT) |
+            (Timer_1ms_STATUS_REG & Timer_1ms_STATUS_DOWN));
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetInterruptMode
+* Function Name: Timer_1ms_SetInterruptMode
 ********************************************************************************
 *
 * Summary:
@@ -1309,21 +1309,21 @@ uint32 Sensor_Packet_Handler_ReadStatus(void)
 * Parameters:
 *   interruptMask: Mask of bits to be enabled
 *   Values:
-*     - Sensor_Packet_Handler_INTR_MASK_TC       - Terminal count mask
-*     - Sensor_Packet_Handler_INTR_MASK_CC_MATCH - Compare count / capture mask
+*     - Timer_1ms_INTR_MASK_TC       - Terminal count mask
+*     - Timer_1ms_INTR_MASK_CC_MATCH - Compare count / capture mask
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetInterruptMode(uint32 interruptMask)
+void Timer_1ms_SetInterruptMode(uint32 interruptMask)
 {
-    Sensor_Packet_Handler_INTERRUPT_MASK_REG =  interruptMask;
+    Timer_1ms_INTERRUPT_MASK_REG =  interruptMask;
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_GetInterruptSourceMasked
+* Function Name: Timer_1ms_GetInterruptSourceMasked
 ********************************************************************************
 *
 * Summary:
@@ -1335,18 +1335,18 @@ void Sensor_Packet_Handler_SetInterruptMode(uint32 interruptMask)
 * Return:
 *  Masked interrupt source
 *   Values:
-*     - Sensor_Packet_Handler_INTR_MASK_TC       - Terminal count mask
-*     - Sensor_Packet_Handler_INTR_MASK_CC_MATCH - Compare count / capture mask
+*     - Timer_1ms_INTR_MASK_TC       - Terminal count mask
+*     - Timer_1ms_INTR_MASK_CC_MATCH - Compare count / capture mask
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_GetInterruptSourceMasked(void)
+uint32 Timer_1ms_GetInterruptSourceMasked(void)
 {
-    return (Sensor_Packet_Handler_INTERRUPT_MASKED_REG);
+    return (Timer_1ms_INTERRUPT_MASKED_REG);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_GetInterruptSource
+* Function Name: Timer_1ms_GetInterruptSource
 ********************************************************************************
 *
 * Summary:
@@ -1358,18 +1358,18 @@ uint32 Sensor_Packet_Handler_GetInterruptSourceMasked(void)
 * Return:
 *  Interrupt request value
 *   Values:
-*     - Sensor_Packet_Handler_INTR_MASK_TC       - Terminal count mask
-*     - Sensor_Packet_Handler_INTR_MASK_CC_MATCH - Compare count / capture mask
+*     - Timer_1ms_INTR_MASK_TC       - Terminal count mask
+*     - Timer_1ms_INTR_MASK_CC_MATCH - Compare count / capture mask
 *
 *******************************************************************************/
-uint32 Sensor_Packet_Handler_GetInterruptSource(void)
+uint32 Timer_1ms_GetInterruptSource(void)
 {
-    return (Sensor_Packet_Handler_INTERRUPT_REQ_REG);
+    return (Timer_1ms_INTERRUPT_REQ_REG);
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_ClearInterrupt
+* Function Name: Timer_1ms_ClearInterrupt
 ********************************************************************************
 *
 * Summary:
@@ -1378,21 +1378,21 @@ uint32 Sensor_Packet_Handler_GetInterruptSource(void)
 * Parameters:
 *   interruptMask: Mask of interrupts to clear
 *   Values:
-*     - Sensor_Packet_Handler_INTR_MASK_TC       - Terminal count mask
-*     - Sensor_Packet_Handler_INTR_MASK_CC_MATCH - Compare count / capture mask
+*     - Timer_1ms_INTR_MASK_TC       - Terminal count mask
+*     - Timer_1ms_INTR_MASK_CC_MATCH - Compare count / capture mask
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_ClearInterrupt(uint32 interruptMask)
+void Timer_1ms_ClearInterrupt(uint32 interruptMask)
 {
-    Sensor_Packet_Handler_INTERRUPT_REQ_REG = interruptMask;
+    Timer_1ms_INTERRUPT_REQ_REG = interruptMask;
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SetInterrupt
+* Function Name: Timer_1ms_SetInterrupt
 ********************************************************************************
 *
 * Summary:
@@ -1401,16 +1401,16 @@ void Sensor_Packet_Handler_ClearInterrupt(uint32 interruptMask)
 * Parameters:
 *   interruptMask: Mask of interrupts to set
 *   Values:
-*     - Sensor_Packet_Handler_INTR_MASK_TC       - Terminal count mask
-*     - Sensor_Packet_Handler_INTR_MASK_CC_MATCH - Compare count / capture mask
+*     - Timer_1ms_INTR_MASK_TC       - Terminal count mask
+*     - Timer_1ms_INTR_MASK_CC_MATCH - Compare count / capture mask
 *
 * Return:
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SetInterrupt(uint32 interruptMask)
+void Timer_1ms_SetInterrupt(uint32 interruptMask)
 {
-    Sensor_Packet_Handler_INTERRUPT_SET_REG = interruptMask;
+    Timer_1ms_INTERRUPT_SET_REG = interruptMask;
 }
 
 

@@ -80,7 +80,7 @@
 .set ADC_Bypass__PORT, 1
 .set ADC_Bypass__PS, CYREG_GPIO_PRT1_PS
 .set ADC_Bypass__SHIFT, 7
-.set ADC_cy_psoc4_sar__CLOCK_DIV_ID, 0x00000042
+.set ADC_cy_psoc4_sar__CLOCK_DIV_ID, 0x00000041
 .set ADC_cy_psoc4_sar__SAR_ANA_TRIM, CYREG_SAR_ANA_TRIM
 .set ADC_cy_psoc4_sar__SAR_AVG_STAT, CYREG_SAR_AVG_STAT
 .set ADC_cy_psoc4_sar__SAR_CHAN_CONFIG00, CYREG_SAR_CHAN_CONFIG0
@@ -232,8 +232,8 @@
 .set ADC_cy_psoc4_sarmux_8__SAR_START_CTRL, CYREG_SAR_START_CTRL
 .set ADC_cy_psoc4_sarmux_8__VNEG0, 0
 .set ADC_intClock__CTRL_REGISTER, CYREG_PERI_PCLK_CTL10
-.set ADC_intClock__DIV_ID, 0x00000042
-.set ADC_intClock__DIV_REGISTER, CYREG_PERI_DIV_16_CTL2
+.set ADC_intClock__DIV_ID, 0x00000041
+.set ADC_intClock__DIV_REGISTER, CYREG_PERI_DIV_16_CTL1
 .set ADC_intClock__PA_DIV_ID, 0x000000FF
 .set ADC_IRQ__INTC_CLR_EN_REG, CYREG_CM0_ICER
 .set ADC_IRQ__INTC_CLR_PD_REG, CYREG_CM0_ICPR
@@ -715,8 +715,8 @@
 .set I2C_SCB_IRQ__INTC_SET_EN_REG, CYREG_CM0_ISER
 .set I2C_SCB_IRQ__INTC_SET_PD_REG, CYREG_CM0_ISPR
 .set I2C_SCBCLK__CTRL_REGISTER, CYREG_PERI_PCLK_CTL4
-.set I2C_SCBCLK__DIV_ID, 0x00000043
-.set I2C_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL3
+.set I2C_SCBCLK__DIV_ID, 0x00000042
+.set I2C_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL2
 .set I2C_SCBCLK__PA_DIV_ID, 0x000000FF
 .set I2C_scl__0__DR, CYREG_GPIO_PRT5_DR
 .set I2C_scl__0__DR_CLR, CYREG_GPIO_PRT5_DR_CLR
@@ -1386,8 +1386,8 @@
 .set UART_SCB__UART_RX_STATUS, CYREG_SCB1_UART_RX_STATUS
 .set UART_SCB__UART_TX_CTRL, CYREG_SCB1_UART_TX_CTRL
 .set UART_SCBCLK__CTRL_REGISTER, CYREG_PERI_PCLK_CTL3
-.set UART_SCBCLK__DIV_ID, 0x00000044
-.set UART_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL4
+.set UART_SCBCLK__DIV_ID, 0x00000043
+.set UART_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL3
 .set UART_SCBCLK__PA_DIV_ID, 0x000000FF
 .set UART_tx__0__DR, CYREG_GPIO_PRT2_DR
 .set UART_tx__0__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
@@ -1467,12 +1467,6 @@
 .set Clock_1__DIV_REGISTER, CYREG_PERI_DIV_24_5_CTL
 .set Clock_1__FRAC_MASK, 0x000000F8
 .set Clock_1__PA_DIV_ID, 0x000000FF
-
-/* Clock_2 */
-.set Clock_2__CTRL_REGISTER, CYREG_PERI_PCLK_CTL11
-.set Clock_2__DIV_ID, 0x00000041
-.set Clock_2__DIV_REGISTER, CYREG_PERI_DIV_16_CTL1
-.set Clock_2__PA_DIV_ID, 0x000000FF
 
 /* DBG_LED */
 .set DBG_LED__0__DR, CYREG_GPIO_PRT4_DR
@@ -1852,6 +1846,17 @@
 .set ERR_LED__PS, CYREG_GPIO_PRT4_PS
 .set ERR_LED__SHIFT, 6
 
+/* isr_1ms */
+.set isr_1ms__INTC_CLR_EN_REG, CYREG_CM0_ICER
+.set isr_1ms__INTC_CLR_PD_REG, CYREG_CM0_ICPR
+.set isr_1ms__INTC_MASK, 0x100000
+.set isr_1ms__INTC_NUMBER, 20
+.set isr_1ms__INTC_PRIOR_MASK, 0xC0
+.set isr_1ms__INTC_PRIOR_NUM, 3
+.set isr_1ms__INTC_PRIOR_REG, CYREG_CM0_IPR5
+.set isr_1ms__INTC_SET_EN_REG, CYREG_CM0_ISER
+.set isr_1ms__INTC_SET_PD_REG, CYREG_CM0_ISPR
+
 /* isr_LIM */
 .set isr_LIM__INTC_CLR_EN_REG, CYREG_CM0_ICER
 .set isr_LIM__INTC_CLR_PD_REG, CYREG_CM0_ICPR
@@ -1925,6 +1930,12 @@
 .set Humidity__PORT, 2
 .set Humidity__PS, CYREG_GPIO_PRT2_PS
 .set Humidity__SHIFT, 6
+
+/* Clock_1ms */
+.set Clock_1ms__CTRL_REGISTER, CYREG_PERI_PCLK_CTL11
+.set Clock_1ms__DIV_ID, 0x00000044
+.set Clock_1ms__DIV_REGISTER, CYREG_PERI_DIV_16_CTL4
+.set Clock_1ms__PA_DIV_ID, 0x000000FF
 
 /* QuadDec_1 */
 .set QuadDec_1_bQuadDec_Stsreg__0__MASK, 0x01
@@ -2144,16 +2155,37 @@
 .set QuadDec_2_Cnt16_CounterUDB_sSTSReg_stsreg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL4
 .set QuadDec_2_Cnt16_CounterUDB_sSTSReg_stsreg__STATUS_REG, CYREG_UDB_W8_ST4
 
-/* isr_sensor */
-.set isr_sensor__INTC_CLR_EN_REG, CYREG_CM0_ICER
-.set isr_sensor__INTC_CLR_PD_REG, CYREG_CM0_ICPR
-.set isr_sensor__INTC_MASK, 0x100000
-.set isr_sensor__INTC_NUMBER, 20
-.set isr_sensor__INTC_PRIOR_MASK, 0xC0
-.set isr_sensor__INTC_PRIOR_NUM, 3
-.set isr_sensor__INTC_PRIOR_REG, CYREG_CM0_IPR5
-.set isr_sensor__INTC_SET_EN_REG, CYREG_CM0_ISER
-.set isr_sensor__INTC_SET_PD_REG, CYREG_CM0_ISPR
+/* Timer_1ms */
+.set Timer_1ms_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT0_CC
+.set Timer_1ms_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT0_CC_BUFF
+.set Timer_1ms_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT0_COUNTER
+.set Timer_1ms_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT0_CTRL
+.set Timer_1ms_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT0_INTR
+.set Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT0_INTR_MASK
+.set Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT0_INTR_MASKED
+.set Timer_1ms_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT0_INTR_SET
+.set Timer_1ms_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT0_PERIOD
+.set Timer_1ms_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT0_PERIOD_BUFF
+.set Timer_1ms_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT0_STATUS
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x01
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 0
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x100
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 8
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x1000000
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 24
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x10000
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 16
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x01
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 0
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x01
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 0
+.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 0
+.set Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT0_TR_CTRL0
+.set Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT0_TR_CTRL1
+.set Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT0_TR_CTRL2
 
 /* Status_Reg_LIM */
 .set Status_Reg_LIM_sts_intr_sts_reg__0__MASK, 0x01
@@ -2170,38 +2202,6 @@
 .set Status_Reg_LIM_sts_intr_sts_reg__MASK_REG, CYREG_UDB_W8_MSK7
 .set Status_Reg_LIM_sts_intr_sts_reg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL7
 .set Status_Reg_LIM_sts_intr_sts_reg__STATUS_REG, CYREG_UDB_W8_ST7
-
-/* Sensor_Packet_Handler */
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT0_CC
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT0_CC_BUFF
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT0_COUNTER
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT0_CTRL
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT0_INTR
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT0_INTR_MASK
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT0_INTR_MASKED
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT0_INTR_SET
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT0_PERIOD
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT0_PERIOD_BUFF
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT0_STATUS
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x01
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 0
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x100
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 8
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x1000000
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 24
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x10000
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 16
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x01
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 0
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x01
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 0
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 0
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT0_TR_CTRL0
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT0_TR_CTRL1
-.set Sensor_Packet_Handler_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT0_TR_CTRL2
 
 /* Miscellaneous */
 .set CYDEV_BCLK__HFCLK__HZ, 48000000

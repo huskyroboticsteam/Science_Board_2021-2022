@@ -1,5 +1,5 @@
 # science wow
-# 2022-07-08 03:26:09Z
+# 2022-07-20 22:41:23Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -65,8 +65,8 @@ set_location "\QuadDec_2:bQuadDec:quad_A_filt\" 0 2 0 3
 set_location "\QuadDec_2:bQuadDec:quad_B_filt\" 0 2 1 2
 set_location "\QuadDec_2:bQuadDec:Stsreg\" 0 2 4
 set_location "\UART:SCB\" m0s8scbcell -1 -1 1
-set_location "\Sensor_Packet_Handler:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
-set_location "isr_sensor" interrupt -1 -1 20
+set_location "\Timer_1ms:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
+set_location "isr_1ms" interrupt -1 -1 20
 set_location "Net_556_0" 0 0 0 1
 set_location "Net_556_1" 0 0 0 0
 set_location "Net_556_2" 0 2 1 0

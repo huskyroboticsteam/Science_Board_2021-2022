@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Sensor_Packet_Handler_PM.c
+* File Name: Timer_1ms_PM.c
 * Version 2.10
 *
 * Description:
@@ -16,13 +16,13 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "Sensor_Packet_Handler.h"
+#include "Timer_1ms.h"
 
-static Sensor_Packet_Handler_BACKUP_STRUCT Sensor_Packet_Handler_backup;
+static Timer_1ms_BACKUP_STRUCT Timer_1ms_backup;
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_SaveConfig
+* Function Name: Timer_1ms_SaveConfig
 ********************************************************************************
 *
 * Summary:
@@ -35,14 +35,14 @@ static Sensor_Packet_Handler_BACKUP_STRUCT Sensor_Packet_Handler_backup;
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_SaveConfig(void)
+void Timer_1ms_SaveConfig(void)
 {
 
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_Sleep
+* Function Name: Timer_1ms_Sleep
 ********************************************************************************
 *
 * Summary:
@@ -55,24 +55,24 @@ void Sensor_Packet_Handler_SaveConfig(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_Sleep(void)
+void Timer_1ms_Sleep(void)
 {
-    if(0u != (Sensor_Packet_Handler_BLOCK_CONTROL_REG & Sensor_Packet_Handler_MASK))
+    if(0u != (Timer_1ms_BLOCK_CONTROL_REG & Timer_1ms_MASK))
     {
-        Sensor_Packet_Handler_backup.enableState = 1u;
+        Timer_1ms_backup.enableState = 1u;
     }
     else
     {
-        Sensor_Packet_Handler_backup.enableState = 0u;
+        Timer_1ms_backup.enableState = 0u;
     }
 
-    Sensor_Packet_Handler_Stop();
-    Sensor_Packet_Handler_SaveConfig();
+    Timer_1ms_Stop();
+    Timer_1ms_SaveConfig();
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_RestoreConfig
+* Function Name: Timer_1ms_RestoreConfig
 ********************************************************************************
 *
 * Summary:
@@ -85,14 +85,14 @@ void Sensor_Packet_Handler_Sleep(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_RestoreConfig(void)
+void Timer_1ms_RestoreConfig(void)
 {
 
 }
 
 
 /*******************************************************************************
-* Function Name: Sensor_Packet_Handler_Wakeup
+* Function Name: Timer_1ms_Wakeup
 ********************************************************************************
 *
 * Summary:
@@ -105,13 +105,13 @@ void Sensor_Packet_Handler_RestoreConfig(void)
 *  None
 *
 *******************************************************************************/
-void Sensor_Packet_Handler_Wakeup(void)
+void Timer_1ms_Wakeup(void)
 {
-    Sensor_Packet_Handler_RestoreConfig();
+    Timer_1ms_RestoreConfig();
 
-    if(0u != Sensor_Packet_Handler_backup.enableState)
+    if(0u != Timer_1ms_backup.enableState)
     {
-        Sensor_Packet_Handler_Enable();
+        Timer_1ms_Enable();
     }
 }
 

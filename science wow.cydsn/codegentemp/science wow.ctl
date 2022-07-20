@@ -1,6 +1,6 @@
 -- ======================================================================
 -- science wow.ctl generated from science wow
--- 07/07/2022 at 20:26
+-- 07/20/2022 at 15:41
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

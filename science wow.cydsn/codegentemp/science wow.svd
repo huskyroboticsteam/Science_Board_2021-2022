@@ -22939,7 +22939,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Sensor_Packet_Handler</name>
+      <name>Timer_1ms</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>

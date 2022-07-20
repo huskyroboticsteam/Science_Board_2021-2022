@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 1
 
 
    1              		.syntax unified
@@ -33,39 +33,35 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
   30              	set_servo_position:
   31              	.LFB34:
   32              		.file 1 "servo.c"
-   1:servo.c       **** /* ========================================
-   2:servo.c       ****  *
-   3:servo.c       ****  * Copyright YOUR COMPANY, THE YEAR
-   4:servo.c       ****  * All Rights Reserved
-   5:servo.c       ****  * UNPUBLISHED, LICENSED SOFTWARE.
-   6:servo.c       ****  *
-   7:servo.c       ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
-   8:servo.c       ****  * WHICH IS THE PROPERTY OF your company.
-   9:servo.c       ****  *
-  10:servo.c       ****  * ========================================
-  11:servo.c       **** */
-  12:servo.c       **** #include <stdint.h>
-  13:servo.c       **** #include "CANLibrary.h"
-  14:servo.c       **** #include "CANScience.h"
-  15:servo.c       **** #include "PCA9685.h"
-  16:servo.c       **** #include "project.h"
-  17:servo.c       **** #include "servo.h"
-  18:servo.c       **** 
-  19:servo.c       **** #define PWM_PERIOD 5 //pwm period ms
+   1:servo.c       **** /* File:         sensor.c
+   2:servo.c       ****  * Authors:      Oliver Huang, Jordan Smith.
+   3:servo.c       ****  * Organization: Husky Robotics Team
+   4:servo.c       ****  * 
+   5:servo.c       ****  * This file includes fuction implementations for the servos on the 
+   6:servo.c       ****  * Science Board including continuous servos
+   7:servo.c       ****  */
+   8:servo.c       **** #include <stdint.h>
+   9:servo.c       **** #include "CANLibrary.h"
+  10:servo.c       **** #include "CANScience.h"
+  11:servo.c       **** #include "PCA9685.h"
+  12:servo.c       **** #include "project.h"
+  13:servo.c       **** #include "servo.h"
+  14:servo.c       **** 
+  15:servo.c       **** #define PWM_PERIOD 5 //pwm period ms
+  16:servo.c       **** 
+  17:servo.c       **** //constants for actual LED pin number on board
+  18:servo.c       **** #define CUP_LIDS_SERVO 6
+  19:servo.c       **** #define CAMERA_SERVO 2
   20:servo.c       **** 
-  21:servo.c       **** //constants for actual LED pin number on board
-  22:servo.c       **** #define CUP_LIDS_SERVO 6
-  23:servo.c       **** #define CAMERA_SERVO 2
+  21:servo.c       **** #define MSCOPE_CONT_SERVO 9  
+  22:servo.c       **** #define LSUSAN_CONT_SERVO 8
+  23:servo.c       **** #define CAMERA_CONT_SERVO 15
   24:servo.c       **** 
-  25:servo.c       **** #define MSCOPE_CONT_SERVO 9  
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 2
+  25:servo.c       **** void set_servo_position(int servo, int degrees){
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 2
 
 
-  26:servo.c       **** #define LSUSAN_CONT_SERVO 8
-  27:servo.c       **** #define CAMERA_CONT_SERVO 15
-  28:servo.c       **** 
-  29:servo.c       **** void set_servo_position(int servo, int degrees){
-  33              		.loc 1 29 0
+  33              		.loc 1 25 0
   34              		.cfi_startproc
   35              		@ args = 0, pretend = 0, frame = 0
   36              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -78,33 +74,33 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
   43              		.cfi_offset 14, -4
   44 0002 0400     		movs	r4, r0
   45              	.LVL1:
-  30:servo.c       ****     float32 min;
-  31:servo.c       ****     float32 range;
-  32:servo.c       ****     float32 offset;
-  33:servo.c       ****     uint16_t pwmDuty;
-  34:servo.c       ****     int found = 1;
-  35:servo.c       ****     if(degrees > 179) degrees = 179; //may be different for each case
-  46              		.loc 1 35 0
+  26:servo.c       ****     float32 min;
+  27:servo.c       ****     float32 range;
+  28:servo.c       ****     float32 offset;
+  29:servo.c       ****     uint16_t pwmDuty;
+  30:servo.c       ****     int found = 1;
+  31:servo.c       ****     if(degrees > 179) degrees = 179; //may be different for each case
+  46              		.loc 1 31 0
   47 0004 B329     		cmp	r1, #179
   48 0006 00DD     		ble	.L2
   49 0008 B321     		movs	r1, #179
   50              	.LVL2:
   51              	.L2:
-  36:servo.c       **** 	if(degrees < 1) degrees = 1;
-  52              		.loc 1 36 0
+  32:servo.c       **** 	if(degrees < 1) degrees = 1;
+  52              		.loc 1 32 0
   53 000a 0029     		cmp	r1, #0
   54 000c 00DC     		bgt	.L3
   55 000e 0121     		movs	r1, #1
   56              	.LVL3:
   57              	.L3:
-  37:servo.c       **** 	if(servo < 0 || servo > 4){
-  58              		.loc 1 37 0
+  33:servo.c       **** 	if(servo < 0 || servo > 4){
+  58              		.loc 1 33 0
   59 0010 042C     		cmp	r4, #4
   60 0012 37D8     		bhi	.L1
-  38:servo.c       **** 		return;
-  39:servo.c       **** 	}
-  40:servo.c       ****     switch(servo) {
-  61              		.loc 1 40 0
+  34:servo.c       **** 		return;
+  35:servo.c       **** 	}
+  36:servo.c       ****     switch(servo) {
+  61              		.loc 1 36 0
   62 0014 012C     		cmp	r4, #1
   63 0016 02D0     		beq	.L6
   64 0018 042C     		cmp	r4, #4
@@ -112,19 +108,19 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
   66 001c 19E0     		b	.L11
   67              	.L6:
   68              	.LVL4:
-  41:servo.c       ****         //case numbers were arbitrarily defined by software
-  42:servo.c       ****         case 1 : //Lids
-  43:servo.c       ****             servo = CUP_LIDS_SERVO;
-  44:servo.c       ****             min = 1.1;
-  45:servo.c       ****             range = 0.8;
-  46:servo.c       ****             offset = ((float32)degrees / 180) * range;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 3
-
-
-  69              		.loc 1 46 0
+  37:servo.c       ****         //case numbers were arbitrarily defined by software
+  38:servo.c       ****         case 1 : //Lids
+  39:servo.c       ****             servo = CUP_LIDS_SERVO;
+  40:servo.c       ****             min = 1.1;
+  41:servo.c       ****             range = 0.8;
+  42:servo.c       ****             offset = ((float32)degrees / 180) * range;
+  69              		.loc 1 42 0
   70 001e 0800     		movs	r0, r1
   71 0020 FFF7FEFF 		bl	__aeabi_i2f
   72              	.LVL5:
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 3
+
+
   73 0024 1849     		ldr	r1, .L12
   74 0026 FFF7FEFF 		bl	__aeabi_fdiv
   75              	.LVL6:
@@ -133,26 +129,26 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
   78              	.LVL7:
   79 0030 061C     		adds	r6, r0, #0
   80              	.LVL8:
-  34:servo.c       ****     if(degrees > 179) degrees = 179; //may be different for each case
-  81              		.loc 1 34 0
+  30:servo.c       ****     if(degrees > 179) degrees = 179; //may be different for each case
+  81              		.loc 1 30 0
   82 0032 0123     		movs	r3, #1
-  44:servo.c       ****             range = 0.8;
-  83              		.loc 1 44 0
+  40:servo.c       ****             range = 0.8;
+  83              		.loc 1 40 0
   84 0034 164D     		ldr	r5, .L12+8
-  43:servo.c       ****             min = 1.1;
-  85              		.loc 1 43 0
+  39:servo.c       ****             min = 1.1;
+  85              		.loc 1 39 0
   86 0036 0624     		movs	r4, #6
-  47:servo.c       ****             break;
-  87              		.loc 1 47 0
+  43:servo.c       ****             break;
+  87              		.loc 1 43 0
   88 0038 12E0     		b	.L8
   89              	.LVL9:
   90              	.L7:
-  48:servo.c       ****         case 4 : //Tower Pro SG90 //CAMERA TILT
-  49:servo.c       ****             servo = CAMERA_SERVO;
-  50:servo.c       ****             min = 1;
-  51:servo.c       ****             range = 1;
-  52:servo.c       ****             offset = ((float32)degrees / 180) * range; 
-  91              		.loc 1 52 0
+  44:servo.c       ****         case 4 : //Tower Pro SG90 //CAMERA TILT
+  45:servo.c       ****             servo = CAMERA_SERVO;
+  46:servo.c       ****             min = 1;
+  47:servo.c       ****             range = 1;
+  48:servo.c       ****             offset = ((float32)degrees / 180) * range; 
+  91              		.loc 1 48 0
   92 003a 0800     		movs	r0, r1
   93 003c FFF7FEFF 		bl	__aeabi_i2f
   94              	.LVL10:
@@ -161,52 +157,52 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
   97              	.LVL11:
   98 0046 061C     		adds	r6, r0, #0
   99              	.LVL12:
-  34:servo.c       ****     if(degrees > 179) degrees = 179; //may be different for each case
- 100              		.loc 1 34 0
+  30:servo.c       ****     if(degrees > 179) degrees = 179; //may be different for each case
+ 100              		.loc 1 30 0
  101 0048 0123     		movs	r3, #1
-  50:servo.c       ****             range = 1;
- 102              		.loc 1 50 0
+  46:servo.c       ****             range = 1;
+ 102              		.loc 1 46 0
  103 004a FE25     		movs	r5, #254
  104 004c AD05     		lsls	r5, r5, #22
-  49:servo.c       ****             min = 1;
- 105              		.loc 1 49 0
+  45:servo.c       ****             min = 1;
+ 105              		.loc 1 45 0
  106 004e 0224     		movs	r4, #2
-  53:servo.c       ****             break;
- 107              		.loc 1 53 0
+  49:servo.c       ****             break;
+ 107              		.loc 1 49 0
  108 0050 06E0     		b	.L8
  109              	.LVL13:
  110              	.L11:
-  54:servo.c       ****         default: 
-  55:servo.c       ****             found = 0;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 4
-
-
-  56:servo.c       ****             ERR_LED_Write(0);
- 111              		.loc 1 56 0
+  50:servo.c       ****         default: 
+  51:servo.c       ****             found = 0;
+  52:servo.c       ****             ERR_LED_Write(0);
+ 111              		.loc 1 52 0
  112 0052 0020     		movs	r0, #0
  113              	.LVL14:
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 4
+
+
  114 0054 FFF7FEFF 		bl	ERR_LED_Write
  115              	.LVL15:
-  57:servo.c       ****             //CyDelay(500);
-  58:servo.c       ****             ERR_LED_Write(1);
- 116              		.loc 1 58 0
+  53:servo.c       ****             //CyDelay(500);
+  54:servo.c       ****             ERR_LED_Write(1);
+ 116              		.loc 1 54 0
  117 0058 0120     		movs	r0, #1
  118 005a FFF7FEFF 		bl	ERR_LED_Write
  119              	.LVL16:
-  55:servo.c       ****             ERR_LED_Write(0);
- 120              		.loc 1 55 0
+  51:servo.c       ****             ERR_LED_Write(0);
+ 120              		.loc 1 51 0
  121 005e 0023     		movs	r3, #0
  122              	.LVL17:
  123              	.L8:
-  59:servo.c       ****             break;
-  60:servo.c       ****     }    
-  61:servo.c       ****     //offset = ((float)degrees / 180) * range; 
-  62:servo.c       ****     if (found) {
- 124              		.loc 1 62 0
+  55:servo.c       ****             break;
+  56:servo.c       ****     }    
+  57:servo.c       ****     //offset = ((float)degrees / 180) * range; 
+  58:servo.c       ****     if (found) {
+ 124              		.loc 1 58 0
  125 0060 002B     		cmp	r3, #0
  126 0062 0FD0     		beq	.L1
-  63:servo.c       ****         pwmDuty = ((min + offset) / PWM_PERIOD) * 100;
- 127              		.loc 1 63 0
+  59:servo.c       ****         pwmDuty = ((min + offset) / PWM_PERIOD) * 100;
+ 127              		.loc 1 59 0
  128 0064 311C     		adds	r1, r6, #0
  129 0066 281C     		adds	r0, r5, #0
  130 0068 FFF7FEFF 		bl	__aeabi_fadd
@@ -221,30 +217,30 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  139              	.LVL21:
  140 007c 81B2     		uxth	r1, r0
  141              	.LVL22:
-  64:servo.c       ****    	    setPWMFromDutyCycle(servo, pwmDuty);
- 142              		.loc 1 64 0
+  60:servo.c       ****    	    setPWMFromDutyCycle(servo, pwmDuty);
+ 142              		.loc 1 60 0
  143 007e 2000     		movs	r0, r4
  144 0080 FFF7FEFF 		bl	setPWMFromDutyCycle
  145              	.LVL23:
  146              	.L1:
-  65:servo.c       ****         //setPWMFromBytes(servo, (4095 - pwm) & 0xFF, (4095 - pwm) >> 8, pwm & 0xFF, pwm >> 8);
-  66:servo.c       ****     }
-  67:servo.c       **** 
-  68:servo.c       **** }
- 147              		.loc 1 68 0
+  61:servo.c       ****         //setPWMFromBytes(servo, (4095 - pwm) & 0xFF, (4095 - pwm) >> 8, pwm & 0xFF, pwm >> 8);
+  62:servo.c       ****     }
+  63:servo.c       **** 
+  64:servo.c       **** }
+ 147              		.loc 1 64 0
  148              		@ sp needed
  149              	.LVL24:
  150 0084 70BD     		pop	{r4, r5, r6, pc}
  151              	.L13:
  152 0086 C046     		.align	2
  153              	.L12:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 5
-
-
  154 0088 00003443 		.word	1127481344
  155 008c CDCC4C3F 		.word	1061997773
  156 0090 CDCC8C3F 		.word	1066192077
  157 0094 0000A040 		.word	1084227584
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 5
+
+
  158 0098 0000C842 		.word	1120403456
  159              		.cfi_endproc
  160              	.LFE34:
@@ -261,9 +257,9 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  171              		.type	set_servo_continuous, %function
  172              	set_servo_continuous:
  173              	.LFB35:
-  69:servo.c       **** 
-  70:servo.c       **** void set_servo_continuous(int servo, int power) {
- 174              		.loc 1 70 0
+  65:servo.c       **** 
+  66:servo.c       **** void set_servo_continuous(int servo, int power) {
+ 174              		.loc 1 66 0
  175              		.cfi_startproc
  176              		@ args = 0, pretend = 0, frame = 0
  177              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -279,104 +275,104 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  187 0002 0400     		movs	r4, r0
  188 0004 0F00     		movs	r7, r1
  189              	.LVL26:
-  71:servo.c       **** // Do math to control servo, stable is 1.5, so use given direction and speed to determine what puls
-  72:servo.c       ****     //vector gives speed and direction, from -100 to 100. negative is counter-clockwise
-  73:servo.c       ****     
-  74:servo.c       ****     //int32_t tickGoal = miliDegrees;
-  75:servo.c       ****     float32 range = 0;
-  76:servo.c       ****     float32 offset = 0;
-  77:servo.c       ****     uint32_t pwmDuty = 0;
-  78:servo.c       ****     int found = 1;
-  79:servo.c       ****     switch(servo) {
- 190              		.loc 1 79 0
+  67:servo.c       **** // Do math to control servo, stable is 1.5, so use given direction and speed to determine what puls
+  68:servo.c       ****     //vector gives speed and direction, from -100 to 100. negative is counter-clockwise
+  69:servo.c       ****     
+  70:servo.c       ****     //int32_t tickGoal = miliDegrees;
+  71:servo.c       ****     float32 range = 0;
+  72:servo.c       ****     float32 offset = 0;
+  73:servo.c       ****     uint32_t pwmDuty = 0;
+  74:servo.c       ****     int found = 1;
+  75:servo.c       ****     switch(servo) {
+ 190              		.loc 1 75 0
  191 0006 0228     		cmp	r0, #2
  192 0008 16D0     		beq	.L20
  193 000a 0428     		cmp	r0, #4
  194 000c 06D0     		beq	.L17
  195 000e 0028     		cmp	r0, #0
  196 0010 09D1     		bne	.L21
-  78:servo.c       ****     switch(servo) {
- 197              		.loc 1 78 0
+  74:servo.c       ****     switch(servo) {
+ 197              		.loc 1 74 0
  198 0012 0125     		movs	r5, #1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 6
+  76:servo.c       ****         case 0 : //SM-S4303R //Lazy Susan
+  77:servo.c       ****             servo = LSUSAN_CONT_SERVO;
+  78:servo.c       ****             range = 0.5;
+ 199              		.loc 1 78 0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 6
 
 
-  80:servo.c       ****         case 0 : //SM-S4303R //Lazy Susan
-  81:servo.c       ****             servo = LSUSAN_CONT_SERVO;
-  82:servo.c       ****             range = 0.5;
- 199              		.loc 1 82 0
  200 0014 FC26     		movs	r6, #252
  201 0016 B605     		lsls	r6, r6, #22
-  81:servo.c       ****             range = 0.5;
- 202              		.loc 1 81 0
+  77:servo.c       ****             range = 0.5;
+ 202              		.loc 1 77 0
  203 0018 0834     		adds	r4, r4, #8
  204 001a 10E0     		b	.L16
  205              	.L17:
  206              	.LVL27:
-  78:servo.c       ****     switch(servo) {
- 207              		.loc 1 78 0
+  74:servo.c       ****     switch(servo) {
+ 207              		.loc 1 74 0
  208 001c 0125     		movs	r5, #1
+  79:servo.c       ****             break;
+  80:servo.c       ****         case 2: //Parallax Rotation //Microscope
+  81:servo.c       ****             servo = MSCOPE_CONT_SERVO;
+  82:servo.c       ****             range = 0.4;
   83:servo.c       ****             break;
-  84:servo.c       ****         case 2: //Parallax Rotation //Microscope
-  85:servo.c       ****             servo = MSCOPE_CONT_SERVO;
-  86:servo.c       ****             range = 0.4;
-  87:servo.c       ****             break;
-  88:servo.c       ****         case 4 : //SM-S4303R //camera PAN
-  89:servo.c       ****             servo = CAMERA_CONT_SERVO;
-  90:servo.c       ****             range = 0.5;
- 209              		.loc 1 90 0
+  84:servo.c       ****         case 4 : //SM-S4303R //camera PAN
+  85:servo.c       ****             servo = CAMERA_CONT_SERVO;
+  86:servo.c       ****             range = 0.5;
+ 209              		.loc 1 86 0
  210 001e FC26     		movs	r6, #252
  211 0020 B605     		lsls	r6, r6, #22
-  89:servo.c       ****             range = 0.5;
- 212              		.loc 1 89 0
+  85:servo.c       ****             range = 0.5;
+ 212              		.loc 1 85 0
  213 0022 0F24     		movs	r4, #15
-  91:servo.c       ****             break;
- 214              		.loc 1 91 0
+  87:servo.c       ****             break;
+ 214              		.loc 1 87 0
  215 0024 0BE0     		b	.L16
  216              	.LVL28:
  217              	.L21:
-  92:servo.c       ****         default:
-  93:servo.c       ****             found = 0;
-  94:servo.c       ****             ERR_LED_Write(0);
- 218              		.loc 1 94 0
+  88:servo.c       ****         default:
+  89:servo.c       ****             found = 0;
+  90:servo.c       ****             ERR_LED_Write(0);
+ 218              		.loc 1 90 0
  219 0026 0020     		movs	r0, #0
  220              	.LVL29:
  221 0028 FFF7FEFF 		bl	ERR_LED_Write
  222              	.LVL30:
-  95:servo.c       ****             //CyDelay(500);
-  96:servo.c       ****             ERR_LED_Write(1);
- 223              		.loc 1 96 0
+  91:servo.c       ****             //CyDelay(500);
+  92:servo.c       ****             ERR_LED_Write(1);
+ 223              		.loc 1 92 0
  224 002c 0120     		movs	r0, #1
  225 002e FFF7FEFF 		bl	ERR_LED_Write
  226              	.LVL31:
-  93:servo.c       ****             ERR_LED_Write(0);
- 227              		.loc 1 93 0
+  89:servo.c       ****             ERR_LED_Write(0);
+ 227              		.loc 1 89 0
  228 0032 0025     		movs	r5, #0
-  75:servo.c       ****     float32 offset = 0;
- 229              		.loc 1 75 0
+  71:servo.c       ****     float32 offset = 0;
+ 229              		.loc 1 71 0
  230 0034 0026     		movs	r6, #0
-  97:servo.c       ****             break;
- 231              		.loc 1 97 0
+  93:servo.c       ****             break;
+ 231              		.loc 1 93 0
  232 0036 02E0     		b	.L16
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 7
-
-
  233              	.LVL32:
  234              	.L20:
-  78:servo.c       ****     switch(servo) {
- 235              		.loc 1 78 0
+  74:servo.c       ****     switch(servo) {
+ 235              		.loc 1 74 0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 7
+
+
  236 0038 0125     		movs	r5, #1
-  86:servo.c       ****             break;
- 237              		.loc 1 86 0
+  82:servo.c       ****             break;
+ 237              		.loc 1 82 0
  238 003a 0F4E     		ldr	r6, .L22
-  85:servo.c       ****             range = 0.4;
- 239              		.loc 1 85 0
+  81:servo.c       ****             range = 0.4;
+ 239              		.loc 1 81 0
  240 003c 0924     		movs	r4, #9
  241              	.LVL33:
  242              	.L16:
-  98:servo.c       ****     }
-  99:servo.c       ****     offset = ((float32)power / 100) * range;     
- 243              		.loc 1 99 0
+  94:servo.c       ****     }
+  95:servo.c       ****     offset = ((float32)power / 100) * range;     
+ 243              		.loc 1 95 0
  244 003e 3800     		movs	r0, r7
  245 0040 FFF7FEFF 		bl	__aeabi_i2f
  246              	.LVL34:
@@ -387,8 +383,8 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  251 004c 301C     		adds	r0, r6, #0
  252 004e FFF7FEFF 		bl	__aeabi_fmul
  253              	.LVL36:
- 100:servo.c       ****     pwmDuty = (1.5 + offset) / PWM_PERIOD;
- 254              		.loc 1 100 0
+  96:servo.c       ****     pwmDuty = (1.5 + offset) / PWM_PERIOD;
+ 254              		.loc 1 96 0
  255 0052 FFF7FEFF 		bl	__aeabi_f2d
  256              	.LVL37:
  257 0056 0022     		movs	r2, #0
@@ -401,44 +397,44 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  264              	.LVL39:
  265 0066 FFF7FEFF 		bl	__aeabi_d2uiz
  266              	.LVL40:
- 101:servo.c       ****     
- 102:servo.c       ****     if (found) { //if correct servo id
- 267              		.loc 1 102 0
+  97:servo.c       ****     
+  98:servo.c       ****     if (found) { //if correct servo id
+ 267              		.loc 1 98 0
  268 006a 002D     		cmp	r5, #0
  269 006c 03D0     		beq	.L14
- 103:servo.c       ****         //setPWMFromBytes(servo, ((int)(4095 - pwm) & 0xFF), (int)(4095 - pwm) >> 8, (int)pwm & 0xF
- 104:servo.c       ****         setPWMFromDutyCycle(servo, pwmDuty);
- 270              		.loc 1 104 0
+  99:servo.c       ****         //setPWMFromBytes(servo, ((int)(4095 - pwm) & 0xFF), (int)(4095 - pwm) >> 8, (int)pwm & 0xF
+ 100:servo.c       ****         setPWMFromDutyCycle(servo, pwmDuty);
+ 270              		.loc 1 100 0
  271 006e 0100     		movs	r1, r0
  272 0070 2000     		movs	r0, r4
  273              	.LVL41:
  274 0072 FFF7FEFF 		bl	setPWMFromDutyCycle
  275              	.LVL42:
  276              	.L14:
- 105:servo.c       ****     }
- 106:servo.c       ****         
- 107:servo.c       **** //    if (servo == PIN3){ //HSR-1425CR
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 8
+ 101:servo.c       ****     }
+ 102:servo.c       ****         
+ 103:servo.c       **** //    if (servo == PIN3){ //HSR-1425CR
+ 104:servo.c       **** //        while (QuadDec_1_GetCounter() < tickGoal){};
+ 105:servo.c       **** //        setPWMFromDutyCycle(servo, 0);
+ 106:servo.c       **** //        
+ 107:servo.c       **** //        //old
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 8
 
 
- 108:servo.c       **** //        while (QuadDec_1_GetCounter() < tickGoal){};
- 109:servo.c       **** //        setPWMFromDutyCycle(servo, 0);
- 110:servo.c       **** //        
- 111:servo.c       **** //        //old
- 112:servo.c       **** //        //if ((QuadDec_1_GetCounter() - tickGoal) >= 5){correctPosition(servo, 1);}
- 113:servo.c       **** //        //if ((QuadDec_1_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
- 114:servo.c       **** //    }
- 115:servo.c       ****            
- 116:servo.c       **** //    if (servo == PIN4){ //Parallax Rotation
- 117:servo.c       **** //        while (QuadDec_2_GetCounter() < tickGoal){};
- 118:servo.c       **** //        setPWMFromDutyCycle(servo, 0);
- 119:servo.c       **** //        
- 120:servo.c       **** //        //old
- 121:servo.c       **** //        //if ((QuadDec_2_GetCounter() - tickGoal) >= 5){correctPosition(servo, 1);}
- 122:servo.c       **** //        //if ((QuadDec_2_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
- 123:servo.c       **** //    }
- 124:servo.c       **** }
- 277              		.loc 1 124 0
+ 108:servo.c       **** //        //if ((QuadDec_1_GetCounter() - tickGoal) >= 5){correctPosition(servo, 1);}
+ 109:servo.c       **** //        //if ((QuadDec_1_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
+ 110:servo.c       **** //    }
+ 111:servo.c       ****            
+ 112:servo.c       **** //    if (servo == PIN4){ //Parallax Rotation
+ 113:servo.c       **** //        while (QuadDec_2_GetCounter() < tickGoal){};
+ 114:servo.c       **** //        setPWMFromDutyCycle(servo, 0);
+ 115:servo.c       **** //        
+ 116:servo.c       **** //        //old
+ 117:servo.c       **** //        //if ((QuadDec_2_GetCounter() - tickGoal) >= 5){correctPosition(servo, 1);}
+ 118:servo.c       **** //        //if ((QuadDec_2_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
+ 119:servo.c       **** //    }
+ 120:servo.c       **** }
+ 277              		.loc 1 120 0
  278              		@ sp needed
  279              	.LVL43:
  280              	.LVL44:
@@ -463,10 +459,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  299              		.type	correctPosition, %function
  300              	correctPosition:
  301              	.LFB36:
- 125:servo.c       **** 
- 126:servo.c       **** //not needed probably - Jordan
- 127:servo.c       **** void correctPosition(int servo, int power){
- 302              		.loc 1 127 0
+ 121:servo.c       **** 
+ 122:servo.c       **** //not needed probably - Jordan
+ 123:servo.c       **** void correctPosition(int servo, int power){
+ 302              		.loc 1 123 0
  303              		.cfi_startproc
  304              		@ args = 0, pretend = 0, frame = 0
  305              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -475,42 +471,42 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  308              		.cfi_def_cfa_offset 8
  309              		.cfi_offset 4, -8
  310              		.cfi_offset 14, -4
- 128:servo.c       ****     switch(servo){
- 311              		.loc 1 128 0
+ 124:servo.c       ****     switch(servo){
+ 311              		.loc 1 124 0
  312 0002 0338     		subs	r0, r0, #3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 9
-
-
  313              	.LVL48:
  314 0004 0128     		cmp	r0, #1
  315 0006 09D9     		bls	.L24
- 129:servo.c       ****         case PIN3:
- 130:servo.c       ****             break;
- 131:servo.c       ****         case PIN4:
- 132:servo.c       ****             break;
- 133:servo.c       ****         default:
- 134:servo.c       ****             ERR_LED_Write(0);
- 316              		.loc 1 134 0
+ 125:servo.c       ****         case PIN3:
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 9
+
+
+ 126:servo.c       ****             break;
+ 127:servo.c       ****         case PIN4:
+ 128:servo.c       ****             break;
+ 129:servo.c       ****         default:
+ 130:servo.c       ****             ERR_LED_Write(0);
+ 316              		.loc 1 130 0
  317 0008 0020     		movs	r0, #0
  318              	.LVL49:
  319 000a FFF7FEFF 		bl	ERR_LED_Write
  320              	.LVL50:
- 135:servo.c       ****             CyDelay(500);
- 321              		.loc 1 135 0
+ 131:servo.c       ****             CyDelay(500);
+ 321              		.loc 1 131 0
  322 000e FA20     		movs	r0, #250
  323 0010 4000     		lsls	r0, r0, #1
  324 0012 FFF7FEFF 		bl	CyDelay
  325              	.LVL51:
- 136:servo.c       ****             ERR_LED_Write(1);
- 326              		.loc 1 136 0
+ 132:servo.c       ****             ERR_LED_Write(1);
+ 326              		.loc 1 132 0
  327 0016 0120     		movs	r0, #1
  328 0018 FFF7FEFF 		bl	ERR_LED_Write
  329              	.LVL52:
  330              	.L24:
- 137:servo.c       ****             break;
- 138:servo.c       ****     }   
- 139:servo.c       **** }
- 331              		.loc 1 139 0
+ 133:servo.c       ****             break;
+ 134:servo.c       ****     }   
+ 135:servo.c       **** }
+ 331              		.loc 1 135 0
  332              		@ sp needed
  333 001c 10BD     		pop	{r4, pc}
  334              		.cfi_endproc
@@ -538,13 +534,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  356 0019 00000000 		.4byte	.Ldebug_ranges0+0
  357 001d 00000000 		.4byte	0
  358 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 10
-
-
  359 0025 02       		.uleb128 0x2
  360 0026 01       		.byte	0x1
  361 0027 06       		.byte	0x6
  362 0028 47020000 		.4byte	.LASF0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 10
+
+
  363 002c 02       		.uleb128 0x2
  364 002d 01       		.byte	0x1
  365 002e 08       		.byte	0x8
@@ -598,13 +594,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  413 0088 3A000000 		.4byte	0x3a
  414 008c 03       		.uleb128 0x3
  415 008d 23020000 		.4byte	.LASF12
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 11
-
-
  416 0091 03       		.byte	0x3
  417 0092 30       		.byte	0x30
  418 0093 53000000 		.4byte	0x53
  419 0097 02       		.uleb128 0x2
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 11
+
+
  420 0098 04       		.byte	0x4
  421 0099 07       		.byte	0x7
  422 009a EA010000 		.4byte	.LASF13
@@ -632,7 +628,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  444 00c6 06       		.uleb128 0x6
  445 00c7 75000000 		.4byte	.LASF25
  446 00cb 01       		.byte	0x1
- 447 00cc 1D       		.byte	0x1d
+ 447 00cc 19       		.byte	0x19
  448 00cd 00000000 		.4byte	.LFB34
  449 00d1 9C000000 		.4byte	.LFE34-.LFB34
  450 00d5 01       		.uleb128 0x1
@@ -641,46 +637,46 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  453 00db 07       		.uleb128 0x7
  454 00dc 41020000 		.4byte	.LASF19
  455 00e0 01       		.byte	0x1
- 456 00e1 1D       		.byte	0x1d
+ 456 00e1 19       		.byte	0x19
  457 00e2 73000000 		.4byte	0x73
  458 00e6 00000000 		.4byte	.LLST0
  459 00ea 07       		.uleb128 0x7
  460 00eb EC000000 		.4byte	.LASF20
  461 00ef 01       		.byte	0x1
- 462 00f0 1D       		.byte	0x1d
+ 462 00f0 19       		.byte	0x19
  463 00f1 73000000 		.4byte	0x73
  464 00f5 41000000 		.4byte	.LLST1
  465 00f9 08       		.uleb128 0x8
  466 00fa 6D696E00 		.ascii	"min\000"
  467 00fe 01       		.byte	0x1
- 468 00ff 1E       		.byte	0x1e
+ 468 00ff 1A       		.byte	0x1a
  469 0100 9E000000 		.4byte	0x9e
  470 0104 75000000 		.4byte	.LLST2
  471 0108 09       		.uleb128 0x9
  472 0109 E6000000 		.4byte	.LASF21
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 12
-
-
  473 010d 01       		.byte	0x1
- 474 010e 1F       		.byte	0x1f
+ 474 010e 1B       		.byte	0x1b
  475 010f 9E000000 		.4byte	0x9e
  476 0113 A8000000 		.4byte	.LLST3
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 12
+
+
  477 0117 09       		.uleb128 0x9
  478 0118 FE010000 		.4byte	.LASF22
  479 011c 01       		.byte	0x1
- 480 011d 20       		.byte	0x20
+ 480 011d 1C       		.byte	0x1c
  481 011e 9E000000 		.4byte	0x9e
  482 0122 D0000000 		.4byte	.LLST4
  483 0126 09       		.uleb128 0x9
  484 0127 DE000000 		.4byte	.LASF23
  485 012b 01       		.byte	0x1
- 486 012c 21       		.byte	0x21
+ 486 012c 1D       		.byte	0x1d
  487 012d 81000000 		.4byte	0x81
  488 0131 F9000000 		.4byte	.LLST5
  489 0135 09       		.uleb128 0x9
  490 0136 F3010000 		.4byte	.LASF24
  491 013a 01       		.byte	0x1
- 492 013b 22       		.byte	0x22
+ 492 013b 1E       		.byte	0x1e
  493 013c 73000000 		.4byte	0x73
  494 0140 0C010000 		.4byte	.LLST6
  495 0144 0A       		.uleb128 0xa
@@ -717,49 +713,49 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  526 017b 06       		.uleb128 0x6
  527 017c D5010000 		.4byte	.LASF26
  528 0180 01       		.byte	0x1
- 529 0181 46       		.byte	0x46
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 13
-
-
+ 529 0181 42       		.byte	0x42
  530 0182 00000000 		.4byte	.LFB35
  531 0186 88000000 		.4byte	.LFE35-.LFB35
  532 018a 01       		.uleb128 0x1
  533 018b 9C       		.byte	0x9c
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 13
+
+
  534 018c 21020000 		.4byte	0x221
  535 0190 07       		.uleb128 0x7
  536 0191 41020000 		.4byte	.LASF19
  537 0195 01       		.byte	0x1
- 538 0196 46       		.byte	0x46
+ 538 0196 42       		.byte	0x42
  539 0197 73000000 		.4byte	0x73
  540 019b 37010000 		.4byte	.LLST7
  541 019f 07       		.uleb128 0x7
  542 01a0 88000000 		.4byte	.LASF27
  543 01a4 01       		.byte	0x1
- 544 01a5 46       		.byte	0x46
+ 544 01a5 42       		.byte	0x42
  545 01a6 73000000 		.4byte	0x73
  546 01aa 82010000 		.4byte	.LLST8
  547 01ae 09       		.uleb128 0x9
  548 01af E6000000 		.4byte	.LASF21
  549 01b3 01       		.byte	0x1
- 550 01b4 4B       		.byte	0x4b
+ 550 01b4 47       		.byte	0x47
  551 01b5 9E000000 		.4byte	0x9e
  552 01b9 C4010000 		.4byte	.LLST9
  553 01bd 09       		.uleb128 0x9
  554 01be FE010000 		.4byte	.LASF22
  555 01c2 01       		.byte	0x1
- 556 01c3 4C       		.byte	0x4c
+ 556 01c3 48       		.byte	0x48
  557 01c4 9E000000 		.4byte	0x9e
  558 01c8 07020000 		.4byte	.LLST10
  559 01cc 09       		.uleb128 0x9
  560 01cd DE000000 		.4byte	.LASF23
  561 01d1 01       		.byte	0x1
- 562 01d2 4D       		.byte	0x4d
+ 562 01d2 49       		.byte	0x49
  563 01d3 8C000000 		.4byte	0x8c
  564 01d7 2A020000 		.4byte	.LLST11
  565 01db 09       		.uleb128 0x9
  566 01dc F3010000 		.4byte	.LASF24
  567 01e0 01       		.byte	0x1
- 568 01e1 4E       		.byte	0x4e
+ 568 01e1 4A       		.byte	0x4a
  569 01e2 73000000 		.4byte	0x73
  570 01e6 54020000 		.4byte	.LLST12
  571 01ea 0A       		.uleb128 0xa
@@ -778,13 +774,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  584 0206 10020000 		.4byte	0x210
  585 020a 0B       		.uleb128 0xb
  586 020b 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 14
-
-
  587 020c 50       		.byte	0x50
  588 020d 01       		.uleb128 0x1
  589 020e 31       		.byte	0x31
  590 020f 00       		.byte	0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 14
+
+
  591 0210 0C       		.uleb128 0xc
  592 0211 76000000 		.4byte	.LVL42
  593 0215 97020000 		.4byte	0x297
@@ -799,7 +795,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  602 0221 0D       		.uleb128 0xd
  603 0222 06010000 		.4byte	.LASF28
  604 0226 01       		.byte	0x1
- 605 0227 7F       		.byte	0x7f
+ 605 0227 7B       		.byte	0x7b
  606 0228 00000000 		.4byte	.LFB36
  607 022c 1E000000 		.4byte	.LFE36-.LFB36
  608 0230 01       		.uleb128 0x1
@@ -808,13 +804,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  611 0236 07       		.uleb128 0x7
  612 0237 41020000 		.4byte	.LASF19
  613 023b 01       		.byte	0x1
- 614 023c 7F       		.byte	0x7f
+ 614 023c 7B       		.byte	0x7b
  615 023d 73000000 		.4byte	0x73
  616 0241 8B020000 		.4byte	.LLST13
  617 0245 07       		.uleb128 0x7
  618 0246 88000000 		.4byte	.LASF27
  619 024a 01       		.byte	0x1
- 620 024b 7F       		.byte	0x7f
+ 620 024b 7B       		.byte	0x7b
  621 024c 73000000 		.4byte	0x73
  622 0250 B9020000 		.4byte	.LLST14
  623 0254 0A       		.uleb128 0xa
@@ -838,13 +834,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  641 0278 0A       		.byte	0xa
  642 0279 F401     		.2byte	0x1f4
  643 027b 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 15
-
-
  644 027c 0C       		.uleb128 0xc
  645 027d 1C000000 		.4byte	.LVL52
  646 0281 8C020000 		.4byte	0x28c
  647 0285 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 15
+
+
  648 0286 01       		.uleb128 0x1
  649 0287 50       		.byte	0x50
  650 0288 01       		.uleb128 0x1
@@ -898,13 +894,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  698 001a 03       		.uleb128 0x3
  699 001b 0E       		.uleb128 0xe
  700 001c 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 16
-
-
  701 001d 00       		.byte	0
  702 001e 03       		.uleb128 0x3
  703 001f 16       		.uleb128 0x16
  704 0020 00       		.byte	0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 16
+
+
  705 0021 03       		.uleb128 0x3
  706 0022 0E       		.uleb128 0xe
  707 0023 3A       		.uleb128 0x3a
@@ -958,13 +954,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  755 0053 06       		.uleb128 0x6
  756 0054 40       		.uleb128 0x40
  757 0055 18       		.uleb128 0x18
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 17
-
-
  758 0056 9642     		.uleb128 0x2116
  759 0058 19       		.uleb128 0x19
  760 0059 01       		.uleb128 0x1
  761 005a 13       		.uleb128 0x13
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 17
+
+
  762 005b 00       		.byte	0
  763 005c 00       		.byte	0
  764 005d 07       		.uleb128 0x7
@@ -1018,13 +1014,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  812 008f 11       		.uleb128 0x11
  813 0090 01       		.uleb128 0x1
  814 0091 31       		.uleb128 0x31
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 18
-
-
  815 0092 13       		.uleb128 0x13
  816 0093 01       		.uleb128 0x1
  817 0094 13       		.uleb128 0x13
  818 0095 00       		.byte	0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 18
+
+
  819 0096 00       		.byte	0
  820 0097 0B       		.uleb128 0xb
  821 0098 8A8201   		.uleb128 0x410a
@@ -1078,13 +1074,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  869 00ce 19       		.uleb128 0x19
  870 00cf 6E       		.uleb128 0x6e
  871 00d0 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 19
-
-
  872 00d1 03       		.uleb128 0x3
  873 00d2 0E       		.uleb128 0xe
  874 00d3 3A       		.uleb128 0x3a
  875 00d4 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 19
+
+
  876 00d5 3B       		.uleb128 0x3b
  877 00d6 0B       		.uleb128 0xb
  878 00d7 00       		.byte	0
@@ -1138,13 +1134,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  926 0071 00000000 		.4byte	0
  927              	.LLST2:
  928 0075 1E000000 		.4byte	.LVL4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 20
-
-
  929 0079 3A000000 		.4byte	.LVL9
  930 007d 0600     		.2byte	0x6
  931 007f 9E       		.byte	0x9e
  932 0080 04       		.uleb128 0x4
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 20
+
+
  933 0081 CDCC8C3F 		.4byte	0x3f8ccccd
  934 0085 3A000000 		.4byte	.LVL9
  935 0089 52000000 		.4byte	.LVL13
@@ -1198,13 +1194,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  983              	.LLST6:
  984 010c 04000000 		.4byte	.LVL1
  985 0110 52000000 		.4byte	.LVL13
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 21
-
-
  986 0114 0200     		.2byte	0x2
  987 0116 31       		.byte	0x31
  988 0117 9F       		.byte	0x9f
  989 0118 52000000 		.4byte	.LVL13
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 21
+
+
  990 011c 60000000 		.4byte	.LVL17
  991 0120 0200     		.2byte	0x2
  992 0122 30       		.byte	0x30
@@ -1258,13 +1254,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  1040 01a2 51       		.byte	0x51
  1041 01a3 3E000000 		.4byte	.LVL33
  1042 01a7 76000000 		.4byte	.LVL46
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 22
-
-
  1043 01ab 0100     		.2byte	0x1
  1044 01ad 57       		.byte	0x57
  1045 01ae 76000000 		.4byte	.LVL46
  1046 01b2 88000000 		.4byte	.LFE35
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 22
+
+
  1047 01b6 0400     		.2byte	0x4
  1048 01b8 F3       		.byte	0xf3
  1049 01b9 01       		.uleb128 0x1
@@ -1318,13 +1314,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  1097 0235 9F       		.byte	0x9f
  1098 0236 6A000000 		.4byte	.LVL40
  1099 023a 72000000 		.4byte	.LVL41
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 23
-
-
  1100 023e 0100     		.2byte	0x1
  1101 0240 50       		.byte	0x50
  1102 0241 72000000 		.4byte	.LVL41
  1103 0245 75000000 		.4byte	.LVL42-1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 23
+
+
  1104 0249 0100     		.2byte	0x1
  1105 024b 51       		.byte	0x51
  1106 024c 00000000 		.4byte	0
@@ -1378,13 +1374,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  1154 02c3 51       		.byte	0x51
  1155 02c4 0D000000 		.4byte	.LVL50-1
  1156 02c8 1E000000 		.4byte	.LFE36
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 24
-
-
  1157 02cc 0400     		.2byte	0x4
  1158 02ce F3       		.byte	0xf3
  1159 02cf 01       		.uleb128 0x1
  1160 02d0 51       		.byte	0x51
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 24
+
+
  1161 02d1 9F       		.byte	0x9f
  1162 02d2 00000000 		.4byte	0
  1163 02d6 00000000 		.4byte	0
@@ -1438,13 +1434,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  1197      72645F32 
  1197      3032312D 
  1198              	.LASF29:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 25
-
-
  1199 0067 4552525F 		.ascii	"ERR_LED_Write\000"
  1199      4C45445F 
  1199      57726974 
  1199      6500
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 25
+
+
  1200              	.LASF25:
  1201 0075 7365745F 		.ascii	"set_servo_position\000"
  1201      73657276 
@@ -1498,13 +1494,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  1223      5F7400
  1224              	.LASF28:
  1225 0106 636F7272 		.ascii	"correctPosition\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 26
-
-
  1225      65637450 
  1225      6F736974 
  1225      696F6E00 
  1226              	.LASF14:
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 26
+
+
  1227 0116 666C6F61 		.ascii	"float32\000"
  1227      74333200 
  1228              	.LASF10:
@@ -1558,13 +1554,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 1
  1247      657400
  1248              	.LASF2:
  1249 0205 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc1xGLas.s 			page 27
-
-
  1249      7420696E 
  1249      7400
  1250              	.LASF5:
  1251 020f 5F5F7569 		.ascii	"__uint16_t\000"
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccQ2UtjH.s 			page 27
+
+
  1251      6E743136 
  1251      5F7400
  1252              	.LASF11:

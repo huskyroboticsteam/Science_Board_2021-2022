@@ -11,15 +11,12 @@
 #include "PCA9685.h"
 #include "servo.h"
 #include <stdlib.h>
+#include "Milliseconds.h"
 
 #define LED_COLOR_ID 0xF7
 
 CANPacket can_send;
-int sensorGetFlag = 0;
-
-CY_ISR(Sensor_Handler) {
-    sensorGetFlag = 1;
-}
+uint32_t time_ms;
     
 CY_ISR(Limit_Handler){
     //Stuff to do during interupt
@@ -45,6 +42,8 @@ int main(void)
     QuadDec_2_Start();
     UART_Start();
     VEML6070_init();
+    
+    time_ms = 0;
     
     for(;;)
     {           
@@ -89,12 +88,21 @@ int main(void)
                 case ID_TELEMETRY_TIMING : //wip
                     {
                         CAN_LED_Write(1); 
+                        // the enableInterrupts variable saves the current interrupt 
+                        // masking state inside the cpu registers. We pause interrupts
+                        // so that it does not interfere with the reading of 32 bits
+                        uint8 enableInterrupts = CyEnterCriticalSection();
                         uint32_t time_ms = GetTelemetryTimingFromPacket(current);
-                        if (time_ms == 0) {
-                            isr_sensor_Disable();
+                        // restore the interrupt masking state
+                        CyExitCriticalSection(enableInterrupts);
+                        //if compare time is not 0
+                        if (time_ms) {
+                            //start millisecond counter
+                            init_milliseconds();
+                        } else {
+                            //stop millisecond counter
+                            isr_1ms_Stop();
                         }
-                        //configure interrupt to new time
-                        //isr_sensor_StartEx(Sensor_Handler);
                         CAN_LED_Write(0);
                     }
                     break;
@@ -135,10 +143,11 @@ int main(void)
                     ERR_LED_Write(1);
                     break;
             }
-            
-            if (sensorGetFlag) {
+            //when the compare time is greater than 0 and the current milliseconds is greater than
+            //or equal to the compare time, we send sensor data.
+            if ((time_ms > 0) && (milliseconds >= time_ms)) {
+                milliseconds = 0;
                 periodicSend();
-                sensorGetFlag = 0;
             }
         } 
     }            

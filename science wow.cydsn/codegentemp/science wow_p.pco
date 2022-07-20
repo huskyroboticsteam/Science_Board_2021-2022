@@ -68,7 +68,7 @@ set_io "CAN_RX(0)" iocell 0 0
 set_io "\I2C:sda(0)\" iocell 5 1
 set_location "\CAN:CanIP\" cancell -1 -1 1
 set_io "\UART:tx(0)\" iocell 2 1
-set_location "\Sensor_Packet_Handler:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
+set_location "\Timer_1ms:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
 set_location "\I2C:SCB\" m0s8scbcell -1 -1 2
 set_io "ENC_1_A(0)" iocell 0 2
 # Warning: unknown type "p4sarmuxcell"
@@ -77,7 +77,7 @@ set_location "\QuadDec_2:Cnt16:CounterUDB:sCTRLReg:ctrlreg\" controlcell 0 2 6
 set_location "\QuadDec_1:Cnt16:CounterUDB:sCTRLReg:ctrlreg\" controlcell 1 0 6 
 set_io "ENC_1_B(0)" iocell 0 3
 set_location "isr_LIM" interrupt -1 -1 0
-set_location "isr_sensor" interrupt -1 -1 20
+set_location "isr_1ms" interrupt -1 -1 20
 set_location "\I2C:SCB_IRQ\" interrupt -1 -1 11
 set_location "\CAN:isr\" interrupt -1 -1 29
 set_io "CAN_TX(0)" iocell 0 1
