@@ -231,12 +231,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_2.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_2_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_1_Cnt16.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_1_Cnt16.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_1_Cnt16_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_2_Cnt16.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_2_Cnt16.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec_2_Cnt16_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART_SPI_UART.h</File>
@@ -267,6 +261,10 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_1ms.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1ms.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isr_1ms.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC1_isr.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC1_isr.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC2_isr.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC2_isr.h</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

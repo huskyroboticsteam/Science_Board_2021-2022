@@ -1,4 +1,4 @@
-  /* File:         main.c
+   /* File:         main.c
  * Authors:      Oliver Huang, Jordan Smith.
  * Organization: Husky Robotics Team
  * Firmware for Science Sensors Board (2022)
@@ -14,10 +14,17 @@
 #include "Milliseconds.h"
 
 #define LED_COLOR_ID 0xF7
+#define TICKS_TO_NEXT_CUP 20
 
 CANPacket can_send;
 uint32_t time_ms;
-    
+uint8_t current_cup_pos;
+uint32_t encoder_val;
+
+CY_ISR(Enc2_Handler) {
+    QuadDec_2_ClearInterrupt(QuadDec_2_INTR_MASK_CC_MATCH);
+}    
+
 CY_ISR(Limit_Handler){
     //Stuff to do during interupt
     AssembleLimitSwitchAlertPacket(&can_send, DEVICE_GROUP_JETSON, 
@@ -27,9 +34,11 @@ CY_ISR(Limit_Handler){
 
 int main(void)
 {
+    CAN_LED_Write(1);
     CyGlobalIntEnable;
     Status_Reg_LIM_InterruptEnable();
     isr_LIM_StartEx(Limit_Handler);
+    CC2_isr_StartEx(Enc2_Handler);
     
     //wip
     //isr_sensor_StartEx(Sensor_Handler);
@@ -38,22 +47,31 @@ int main(void)
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
     ADC_Start();
     pca_init();
+    
     QuadDec_1_Start();
     QuadDec_2_Start();
+    //set index trigger
+    QuadDec_2_TriggerCommand(QuadDec_2_MASK, QuadDec_2_CMD_RELOAD);
+    
     UART_Start();
     VEML6070_init();
-    
+    reset_servo_cont();
     time_ms = 0;
     
+    encoder_val = QuadDec_2_ReadCounter();
+    current_cup_pos = 0;
+    
     for(;;)
-    {           
-        // Testing area
-        // encoder
-        char out[32];
-        uint16 value = QuadDec_1_GetCounter();
-        UART_UartPutString(itoa(value, out, 10));
-        UART_UartPutString("\n\r");
+    {      
         
+        //uint32 count = QuadDec_2_ReadCounter();
+//         Testing area
+//         encoder
+//        char out1[32];
+//        uint32_t value = QuadDec_2_ReadCounter();
+//        UART_UartPutString(itoa(value, out1, 10));
+//        UART_UartPutString("\n\r");
+//        
         //LEDs
        /* for(int i = 1; i <=5; ++i){
             DBG_LED_Write(1);
@@ -63,21 +81,26 @@ int main(void)
         } */
         
         //Sensors
-        //uint32_t Hum_val = read_ADC(0);
-        //uint32_t Temp_val = read_ADC(1);
+ //       uint32_t Hum_val = read_ADC(0);
+ //       uint32_t Temp_val = read_ADC(1);
 //        VEML6070_init();
 //        uint32_t sensor_val = read_uv_sensor();
 //        
 //        char out[32];
-//        //Show Results
-//        UART_UartPutString(itoa(sensor_val, out, 10));
+        //show results
+//        UART_UartPutString(itoa(Hum_val, out1, 10));
+        //UART_UartPutString("\n\r");
+        //UART_UartPutString(itoa(Temp_val, out2, 10));
+        //uart_uartputstring(itoa(sensor_val, out, 10));
 //        UART_UartPutString("\n\r");
         
 //        int servo = 7;
 //        int degrees = 31;
 //        setPWMFromDutyCycle(9, 50);
 
+        
         /* Place your application code here. */
+        
         CANPacket* current; 
         
         int poll = PollAndReceiveCANPacket(current); 
@@ -85,6 +108,14 @@ int main(void)
             ERR_LED_Write(0);
             int ID = GetPacketID(current);
             switch (ID) {
+                case ID_SCIENCE_LAZY_SUSAN_POS_SET : //pos set on lazy susan
+                    {
+                        CAN_LED_Write(1);
+                        current_cup_pos = GetScienceLazySusanPosFromPacket(current);
+//                        uint8_t goal_cup_pos = GetScienceLazySusanPosFromPacket(current);
+                        //uint32_t tick_goal = QuadDec_2_ReadCounter() + cups_forward(goal_cup_pos, current_cup_pos);
+                    }
+                    break;
                 case ID_TELEMETRY_TIMING : //wip
                     {
                         CAN_LED_Write(1); 
@@ -152,5 +183,18 @@ int main(void)
         } 
     }            
 }
+
+void nextCup() {
+    set_servo_continuous(LAZY_SUSAN, 100);
+    while(QuadDec_2_ReadCounter() < encoder_val + 12) {}
+    set_servo_continuous(LAZY_SUSAN, 0);
+}
+
+void prevCup() {
+    set_servo_continuous(LAZY_SUSAN, -100);
+    while(QuadDec_2_ReadCounter() > encoder_val - 12) {}
+    set_servo_continuous(LAZY_SUSAN, 0);
+} 
+
 
 /* [] END OF FILE */

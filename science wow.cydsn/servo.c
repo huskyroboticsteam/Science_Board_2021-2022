@@ -15,12 +15,14 @@
 #define PWM_PERIOD 5 //pwm period ms
 
 //constants for actual LED pin number on board
-#define CUP_LIDS_SERVO 6
-#define CAMERA_SERVO 2
+#define CUP_LIDS_SERVO 1
+#define CAMERA_SERVO 5
+#define DRILL_ARM 7
 
 #define MSCOPE_CONT_SERVO 9  
 #define LSUSAN_CONT_SERVO 8
 #define CAMERA_CONT_SERVO 15
+
 
 void set_servo_position(int servo, int degrees){
     float32 min;
@@ -47,6 +49,12 @@ void set_servo_position(int servo, int degrees){
             range = 1;
             offset = ((float32)degrees / 180) * range; 
             break;
+        case 5: //Tower Pro SG90 //DRILL ARM
+            servo = DRILL_ARM;
+            min = 1;
+            range = 1;
+            offset = ((float32)degrees / 180) * range; 
+            break;
         default: 
             found = 0;
             ERR_LED_Write(0);
@@ -62,6 +70,11 @@ void set_servo_position(int servo, int degrees){
     }
 
 }
+void reset_servo_cont() {
+    set_servo_continuous(0, 0);
+    set_servo_continuous(2, 0);
+    set_servo_continuous(4, 0);
+}
 
 void set_servo_continuous(int servo, int power) {
 // Do math to control servo, stable is 1.5, so use given direction and speed to determine what pulse length to use
@@ -73,7 +86,7 @@ void set_servo_continuous(int servo, int power) {
     uint32_t pwmDuty = 0;
     int found = 1;
     switch(servo) {
-        case 0 : //SM-S4303R //Lazy Susan
+        case 0: //SM-S4303R //Lazy Susan
             servo = LSUSAN_CONT_SERVO;
             range = 0.5;
             break;
@@ -81,7 +94,7 @@ void set_servo_continuous(int servo, int power) {
             servo = MSCOPE_CONT_SERVO;
             range = 0.4;
             break;
-        case 4 : //SM-S4303R //camera PAN
+        case 3: //SM-S4303R //camera PAN
             servo = CAMERA_CONT_SERVO;
             range = 0.5;
             break;
@@ -118,6 +131,14 @@ void set_servo_continuous(int servo, int power) {
 //        //if ((QuadDec_2_GetCounter() - tickGoal) <= 5){correctPosition(servo, 0);}
 //    }
 }
+
+  
+//wip
+//uint32_t cups_forward (uint8_t goal_cup_pos, uint32_t current_cup_pos) {
+//    if (goal_cup_pos < current_cup_pos) {
+//        6 * (12 - current_cup_pos) 
+//    }
+//}
 
 //not needed probably - Jordan
 void correctPosition(int servo, int power){
