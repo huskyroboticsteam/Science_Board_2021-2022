@@ -265,6 +265,24 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC1_isr.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC2_isr.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\CC2_isr.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Can_addr.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Can_addr.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_3.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_3_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_4.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_4.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_4_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Dip_4_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

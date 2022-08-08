@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Aug 7 2022 14:35:45
+#File Generated:     Aug 7 2022 20:25:27
 
 #Purpose:            
 
@@ -45,18 +45,18 @@ Phase 3
 I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
 
 Design Statistics after Packing
-    Number of Combinational MCs 	:	0
+    Number of Combinational MCs 	:	4
     Number of Sequential MCs    	:	5
     Number of DPs               	:	0
     Number of Controls          	:	0
-    Number of Status            	:	1
+    Number of Status            	:	2
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
 
 Device Utilization Summary after Packing
-    Macrocells                  :	5/64
-    UDBS                        :	1/8
-    IOs                         :	21/76
+    Macrocells                  :	9/64
+    UDBS                        :	2/8
+    IOs                         :	25/76
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -71,18 +71,18 @@ Phase 7
 D2088: Phase 7, elapsed time : 0.0 (sec)
 
 Final Design Statistics
-    Number of Combinational MCs 	:	0
+    Number of Combinational MCs 	:	4
     Number of Sequential MCs    	:	5
     Number of DPs               	:	0
     Number of Controls          	:	0
-    Number of Status            	:	1
+    Number of Status            	:	2
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
-    Number of IOs       	:	21
+    Number of IOs       	:	25
 
 Device Utilization Summary
-    Macrocells                  :	5/64
-    IOs                         :	21/76
+    Macrocells                  :	9/64
+    IOs                         :	25/76
 
 
 Phase 8
@@ -90,5 +90,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.4 sec.
+I2076: Total run-time: 0.6 sec.
 

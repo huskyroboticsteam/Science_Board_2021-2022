@@ -17,6 +17,7 @@
 #define TICKS_TO_NEXT_CUP 20
 
 CANPacket can_send;
+CANPacket current;
 uint32_t time_ms;
 uint8_t current_cup_pos;
 uint32_t encoder_val;
@@ -34,6 +35,7 @@ CY_ISR(Limit_Handler){
 
 int main(void)
 {
+    Can_addr_Read();
     CAN_LED_Write(1);
     CyGlobalIntEnable;
     Status_Reg_LIM_InterruptEnable();
@@ -67,7 +69,7 @@ int main(void)
         //uint32 count = QuadDec_2_ReadCounter();
 //         Testing area
 //         encoder
-//        char out1[32];
+        //char out1[32];
 //        uint32_t value = QuadDec_2_ReadCounter();
 //        UART_UartPutString(itoa(value, out1, 10));
 //        UART_UartPutString("\n\r");
@@ -82,7 +84,7 @@ int main(void)
         
         //Sensors
  //       uint32_t Hum_val = read_ADC(0);
- //       uint32_t Temp_val = read_ADC(1);
+        uint32_t Temp_val = read_ADC(1);
 //        VEML6070_init();
 //        uint32_t sensor_val = read_uv_sensor();
 //        
@@ -90,10 +92,11 @@ int main(void)
         //show results
 //        UART_UartPutString(itoa(Hum_val, out1, 10));
         //UART_UartPutString("\n\r");
-        //UART_UartPutString(itoa(Temp_val, out2, 10));
-        //uart_uartputstring(itoa(sensor_val, out, 10));
+//        UART_UartPutString(itoa(Temp_val, out1, 10));
+//        //uart_uartputstring(itoa(sensor_val, out, 10));
+//        UART_UartPutString("bababooey");
 //        UART_UartPutString("\n\r");
-        
+//        
 //        int servo = 7;
 //        int degrees = 31;
 //        setPWMFromDutyCycle(9, 50);
@@ -195,6 +198,7 @@ void prevCup() {
     while(QuadDec_2_ReadCounter() > encoder_val - 12) {}
     set_servo_continuous(LAZY_SUSAN, 0);
 } 
+
 
 
 /* [] END OF FILE */

@@ -1,6 +1,6 @@
 // ======================================================================
 // science wow.v generated from TopDesign.cysch
-// 08/07/2022 at 14:35
+// 08/07/2022 at 20:25
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -132,7 +132,7 @@
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v"
 `endif
 
-// CAN_v3_0(AckError=false, AckErrorUseHelper=true, AdvancedInterruptConfig=true, APIDictionary=0, Arbiter=0, ArbLost=false, ArbLostUseHelper=true, BaudRate=500, BitError=false, BitErrorUseHelper=true, Bitrate=0, BussOff=true, BussOffUseHelper=true, ClkFrequency=48, ConnectExtInterruptLine=false, ConnectTxEn=true, CrcError=false, CrcErrorUseHelper=true, DataGridSaved=0, EdgeMode=0, FormError=false, FormErrorUseHelper=true, FullCustomIntISR=true, IntEnable=true, IntISRDisable=false, M0S8CAN_BLOCK_VER=1, Overload=false, OverloadUseHelper=true, Reset=0, RTRAutomaticReply=false, RTRAutomaticReplyUseHelper=true, RxMsg=true, RxMsgLost=false, RxMsgLostUseHelper=true, RxMsgUseHelper=true, Sjw=1, Sm=0, SSTError=false, SSTErrorUseHelper=true, StuckAtZero=false, StuckAtZeroUseHelper=true, StuffError=false, StuffErrorUseHelper=true, SwapDataByteEndianness=false, Tseg1=13, Tseg2=2, TxMsg=false, TxMsgUseHelper=true, XMLMainData=<?xml version="1.0" encoding="utf-16"?><CyParameters xmlns:version="v1.50"><TXRegUnits><CyRegUnit Type="etTX" Name="0" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="1" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="2" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="3" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="4" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="5" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="6" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="7" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /></TXRegUnits><RXRegUnits><CyRegUnit Type="etRX" Name="0" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="1" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="2" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="3" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="4" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="5" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="6" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="7" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="8" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="9" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="10" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="11" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="12" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="13" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="14" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="15" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /></RXRegUnits></CyParameters>, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=CAN_v3_0, CY_CONFIG_TITLE=CAN, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=CAN, CY_INSTANCE_SHORT_NAME=CAN, CY_MAJOR_VERSION=3, CY_MINOR_VERSION=0, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=CAN, )
+// CAN_v3_0(AckError=false, AckErrorUseHelper=true, AdvancedInterruptConfig=true, APIDictionary=0, Arbiter=0, ArbLost=false, ArbLostUseHelper=true, BaudRate=125, BitError=false, BitErrorUseHelper=true, Bitrate=19, BussOff=false, BussOffUseHelper=true, ClkFrequency=40, ConnectExtInterruptLine=false, ConnectTxEn=false, CrcError=false, CrcErrorUseHelper=true, DataGridSaved=0, EdgeMode=0, FormError=false, FormErrorUseHelper=true, FullCustomIntISR=true, IntEnable=true, IntISRDisable=false, M0S8CAN_BLOCK_VER=1, Overload=false, OverloadUseHelper=true, Reset=1, RTRAutomaticReply=false, RTRAutomaticReplyUseHelper=true, RxMsg=true, RxMsgLost=false, RxMsgLostUseHelper=true, RxMsgUseHelper=true, Sjw=2, Sm=0, SSTError=false, SSTErrorUseHelper=true, StuckAtZero=false, StuckAtZeroUseHelper=true, StuffError=false, StuffErrorUseHelper=true, SwapDataByteEndianness=false, Tseg1=13, Tseg2=2, TxMsg=false, TxMsgUseHelper=true, XMLMainData=<?xml version="1.0" encoding="utf-16"?><CyParameters xmlns:version="v1.50"><TXRegUnits><CyRegUnit Type="etTX" Name="0" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="1" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="2" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="3" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="4" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="5" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="6" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etTX" Name="7" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /></TXRegUnits><RXRegUnits><CyRegUnit Type="etRX" Name="0" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="1" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="2" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="3" State="esBasic" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="true" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="4" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="5" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="6" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="7" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="8" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="9" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="10" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="11" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="12" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="13" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="14" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /><CyRegUnit Type="etRX" Name="15" State="esEmpty" Id="0" IDE="false" RTR="false" RTRReply="false" DLC="8" IRQ="false" Linking="false" SST="false" /></RXRegUnits></CyParameters>, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=CAN_v3_0, CY_CONFIG_TITLE=CAN, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=CAN, CY_INSTANCE_SHORT_NAME=CAN, CY_MAJOR_VERSION=3, CY_MINOR_VERSION=0, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=CAN, )
 module CAN_v3_0_0 (
     interrupt,
     rx,
@@ -554,7 +554,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_50\Bus_Connect_v2_50.v"
 `endif
 
-// ADC_SAR_SEQ_P4_v2_50(AdcAClock=4, AdcAdjust=0, AdcAlternateResolution=0, AdcAvgMode=1, AdcAvgSamplesNum=0, AdcBClock=4, AdcCClock=4, AdcChannelsEnConf=3, AdcChannelsModeConf=0, AdcClock=1, AdcClockFrequency=6399972, AdcCompareMode=0, AdcDataFormatJustification=0, AdcDClock=4, AdcDedicatedExtVref=false, AdcDifferentialResultFormat=1, AdcHighLimit=2047, AdcInjChannelEnabled=false, AdcInputBufGain=0, AdcLowLimit=0, AdcMaxResolution=12, AdcSampleMode=0, AdcSarMuxChannelConfig=00, AdcSequencedChannels=2, AdcSingleEndedNegativeInput=0, AdcSingleResultFormat=1, AdcSymbolHasSingleEndedInputChannel=false, AdcTotalChannels=2, AdcVrefSelect=3, AdcVrefVoltage_mV=1024, rm_int=false, SeqChannelsConfigTable=<?xml version="1.0" encoding="utf-16"?><CyChannelsConfigTable xmlns:Version="2_50"><m_channelsConfigTable><CyChannelsConfigTableRow><m_enabled>false</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow></m_channelsConfigTable></CyChannelsConfigTable>, TermMode_aclk=0, TermMode_eoc=0, TermMode_sdone=0, TermMode_soc=0, TermMode_vinMinus0=0, TermMode_vinMinus1=0, TermMode_vinMinus10=0, TermMode_vinMinus11=0, TermMode_vinMinus12=0, TermMode_vinMinus13=0, TermMode_vinMinus14=0, TermMode_vinMinus15=0, TermMode_vinMinus2=0, TermMode_vinMinus3=0, TermMode_vinMinus4=0, TermMode_vinMinus5=0, TermMode_vinMinus6=0, TermMode_vinMinus7=0, TermMode_vinMinus8=0, TermMode_vinMinus9=0, TermMode_vinMinusINJ=0, TermMode_vinNeg=0, TermMode_vinPlus0=0, TermMode_vinPlus1=0, TermMode_vinPlus10=0, TermMode_vinPlus11=0, TermMode_vinPlus12=0, TermMode_vinPlus13=0, TermMode_vinPlus14=0, TermMode_vinPlus15=0, TermMode_vinPlus2=0, TermMode_vinPlus3=0, TermMode_vinPlus4=0, TermMode_vinPlus5=0, TermMode_vinPlus6=0, TermMode_vinPlus7=0, TermMode_vinPlus8=0, TermMode_vinPlus9=0, TermMode_vinPlusINJ=0, TermMode_Vref=0, TermVisibility_aclk=false, TermVisibility_eoc=true, TermVisibility_sdone=true, TermVisibility_soc=false, TermVisibility_vinMinus0=false, TermVisibility_vinMinus1=false, TermVisibility_vinMinus10=false, TermVisibility_vinMinus11=false, TermVisibility_vinMinus12=false, TermVisibility_vinMinus13=false, TermVisibility_vinMinus14=false, TermVisibility_vinMinus15=false, TermVisibility_vinMinus2=false, TermVisibility_vinMinus3=false, TermVisibility_vinMinus4=false, TermVisibility_vinMinus5=false, TermVisibility_vinMinus6=false, TermVisibility_vinMinus7=false, TermVisibility_vinMinus8=false, TermVisibility_vinMinus9=false, TermVisibility_vinMinusINJ=false, TermVisibility_vinNeg=false, TermVisibility_vinPlus0=true, TermVisibility_vinPlus1=true, TermVisibility_vinPlus10=false, TermVisibility_vinPlus11=false, TermVisibility_vinPlus12=false, TermVisibility_vinPlus13=false, TermVisibility_vinPlus14=false, TermVisibility_vinPlus15=false, TermVisibility_vinPlus2=false, TermVisibility_vinPlus3=false, TermVisibility_vinPlus4=false, TermVisibility_vinPlus5=false, TermVisibility_vinPlus6=false, TermVisibility_vinPlus7=false, TermVisibility_vinPlus8=false, TermVisibility_vinPlus9=false, TermVisibility_vinPlusINJ=false, TermVisibility_Vref=false, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=ADC_SAR_SEQ_P4_v2_50, CY_CONFIG_TITLE=ADC, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=ADC, CY_INSTANCE_SHORT_NAME=ADC, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=ADC, )
+// ADC_SAR_SEQ_P4_v2_50(AdcAClock=2, AdcAdjust=0, AdcAlternateResolution=0, AdcAvgMode=1, AdcAvgSamplesNum=0, AdcBClock=2, AdcCClock=2, AdcChannelsEnConf=3, AdcChannelsModeConf=0, AdcClock=1, AdcClockFrequency=5000000, AdcCompareMode=0, AdcDataFormatJustification=0, AdcDClock=2, AdcDedicatedExtVref=false, AdcDifferentialResultFormat=1, AdcHighLimit=2047, AdcInjChannelEnabled=false, AdcInputBufGain=0, AdcLowLimit=0, AdcMaxResolution=12, AdcSampleMode=0, AdcSarMuxChannelConfig=00, AdcSequencedChannels=2, AdcSingleEndedNegativeInput=0, AdcSingleResultFormat=1, AdcSymbolHasSingleEndedInputChannel=false, AdcTotalChannels=2, AdcVrefSelect=3, AdcVrefVoltage_mV=1024, rm_int=false, SeqChannelsConfigTable=<?xml version="1.0" encoding="utf-16"?><CyChannelsConfigTable xmlns:Version="2_50"><m_channelsConfigTable><CyChannelsConfigTableRow><m_enabled>false</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow></m_channelsConfigTable></CyChannelsConfigTable>, TermMode_aclk=0, TermMode_eoc=0, TermMode_sdone=0, TermMode_soc=0, TermMode_vinMinus0=0, TermMode_vinMinus1=0, TermMode_vinMinus10=0, TermMode_vinMinus11=0, TermMode_vinMinus12=0, TermMode_vinMinus13=0, TermMode_vinMinus14=0, TermMode_vinMinus15=0, TermMode_vinMinus2=0, TermMode_vinMinus3=0, TermMode_vinMinus4=0, TermMode_vinMinus5=0, TermMode_vinMinus6=0, TermMode_vinMinus7=0, TermMode_vinMinus8=0, TermMode_vinMinus9=0, TermMode_vinMinusINJ=0, TermMode_vinNeg=0, TermMode_vinPlus0=0, TermMode_vinPlus1=0, TermMode_vinPlus10=0, TermMode_vinPlus11=0, TermMode_vinPlus12=0, TermMode_vinPlus13=0, TermMode_vinPlus14=0, TermMode_vinPlus15=0, TermMode_vinPlus2=0, TermMode_vinPlus3=0, TermMode_vinPlus4=0, TermMode_vinPlus5=0, TermMode_vinPlus6=0, TermMode_vinPlus7=0, TermMode_vinPlus8=0, TermMode_vinPlus9=0, TermMode_vinPlusINJ=0, TermMode_Vref=0, TermVisibility_aclk=false, TermVisibility_eoc=true, TermVisibility_sdone=true, TermVisibility_soc=false, TermVisibility_vinMinus0=false, TermVisibility_vinMinus1=false, TermVisibility_vinMinus10=false, TermVisibility_vinMinus11=false, TermVisibility_vinMinus12=false, TermVisibility_vinMinus13=false, TermVisibility_vinMinus14=false, TermVisibility_vinMinus15=false, TermVisibility_vinMinus2=false, TermVisibility_vinMinus3=false, TermVisibility_vinMinus4=false, TermVisibility_vinMinus5=false, TermVisibility_vinMinus6=false, TermVisibility_vinMinus7=false, TermVisibility_vinMinus8=false, TermVisibility_vinMinus9=false, TermVisibility_vinMinusINJ=false, TermVisibility_vinNeg=false, TermVisibility_vinPlus0=true, TermVisibility_vinPlus1=true, TermVisibility_vinPlus10=false, TermVisibility_vinPlus11=false, TermVisibility_vinPlus12=false, TermVisibility_vinPlus13=false, TermVisibility_vinPlus14=false, TermVisibility_vinPlus15=false, TermVisibility_vinPlus2=false, TermVisibility_vinPlus3=false, TermVisibility_vinPlus4=false, TermVisibility_vinPlus5=false, TermVisibility_vinPlus6=false, TermVisibility_vinPlus7=false, TermVisibility_vinPlus8=false, TermVisibility_vinPlus9=false, TermVisibility_vinPlusINJ=false, TermVisibility_Vref=false, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=ADC_SAR_SEQ_P4_v2_50, CY_CONFIG_TITLE=ADC, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=ADC, CY_INSTANCE_SHORT_NAME=ADC, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=ADC, )
 module ADC_SAR_SEQ_P4_v2_50_2 (
     aclk,
     eoc,
@@ -1150,7 +1150,7 @@ module ADC_SAR_SEQ_P4_v2_50_2 (
 		#(.id("43db45b5-d010-43e3-80cd-9735539b1bc8/5c71752a-e182-47ca-942c-9cb20adbdf2f"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("156250683.596741"),
+		  .period("200000000"),
 		  .is_direct(0),
 		  .is_digital(0))
 		intClock
@@ -1780,14 +1780,28 @@ endmodule
 // top
 module top ;
 
-          wire  Net_810;
-          wire  Net_809;
-          wire  Net_807;
-          wire  Net_806;
-          wire  Net_805;
-          wire  Net_804;
-          wire  Net_836;
-          wire  Net_799;
+          wire  Net_923;
+          wire  Net_922;
+          wire  Net_921;
+          wire  Net_920;
+          wire [7:0] Net_919;
+          wire  Net_918;
+          wire  Net_917;
+          wire  Net_916;
+          wire  Net_915;
+          wire  Net_914;
+          wire  Net_913;
+          wire  Net_912;
+          wire  Net_911;
+          wire  Net_910;
+          wire  Net_908;
+          wire  Net_907;
+          wire  Net_906;
+          wire  Net_905;
+          wire  Net_904;
+          wire  Net_903;
+          wire  Net_902;
+          wire  Net_901;
           wire  Net_782;
           wire  Net_795;
           wire  Net_794;
@@ -1821,21 +1835,21 @@ module top ;
           wire  Net_687;
           wire  Net_686;
           wire  Net_685;
-          wire  Net_835;
-          wire  Net_834;
-          wire  Net_833;
-          wire  Net_832;
-          wire  Net_831;
-          wire  Net_830;
-          wire  Net_837;
-          wire  Net_827;
+          wire  Net_873;
+          wire  Net_872;
+          wire  Net_871;
+          wire  Net_870;
+          wire  Net_869;
+          wire  Net_868;
+          wire  Net_867;
+          wire  Net_866;
           wire  Net_824;
           wire  Net_818;
-          wire  Net_478;
-          wire  Net_474;
-          wire  Net_470;
-          wire  Net_466;
-          wire  Net_459;
+          wire  Net_896;
+          wire  Net_897;
+          wire  Net_898;
+          wire  Net_899;
+          wire  Net_900;
           wire  Net_508;
           wire  Net_507;
           wire  Net_506;
@@ -1844,10 +1858,10 @@ module top ;
           wire  Net_503;
           wire  Net_502;
           wire  Net_501;
-          wire [4:0] Net_490;
-          wire [4:0] Net_489;
-          wire [4:0] Net_488;
-          wire  Net_511;
+          wire [4:0] Net_882;
+          wire [4:0] Net_881;
+          wire [4:0] Net_880;
+          wire  Net_884;
     electrical  Net_762;
     electrical  Net_181;
     electrical  Net_752;
@@ -1882,21 +1896,21 @@ module top ;
           wire  Net_764;
           wire  Net_763;
           wire  Net_829;
-          wire  Net_803;
-          wire  Net_802;
           wire  Net_813;
+          wire  Net_802;
+          wire  Net_803;
+    electrical  Net_457;
+    electrical  Net_465;
+    electrical  Net_469;
+    electrical  Net_473;
+    electrical  Net_477;
+    electrical  Net_462;
+          wire [4:0] Net_467;
+          wire [4:0] Net_565;
           wire  Net_811;
           wire  Net_796;
+          wire  Net_874;
           wire  Net_528;
-          wire [4:0] Net_556;
-          wire  Net_565;
-          wire [4:0] Net_467;
-    electrical  Net_462;
-    electrical  Net_477;
-    electrical  Net_473;
-    electrical  Net_469;
-    electrical  Net_465;
-    electrical  Net_457;
 
 	wire [0:0] tmpOE__CAN_RX_net;
 	wire [0:0] tmpIO_0__CAN_RX_net;
@@ -2472,7 +2486,7 @@ module top ;
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_1
-		 (.clock_out(Net_565));
+		 (.clock_out(Net_874));
 
 
     cy_annotation_universal_v1_0 GND_1 (
@@ -2485,19 +2499,19 @@ module top ;
     defparam GND_1.width = 1;
 
     Debouncer_v1_0 LIM_Debouncer (
-        .clock(Net_565),
+        .clock(Net_874),
         .d(Net_467[4:0]),
-        .either(Net_488[4:0]),
-        .neg(Net_489[4:0]),
-        .pos(Net_490[4:0]),
-        .q(Net_556[4:0]));
+        .either(Net_880[4:0]),
+        .neg(Net_881[4:0]),
+        .pos(Net_882[4:0]),
+        .q(Net_565[4:0]));
     defparam LIM_Debouncer.EitherEdgeDetect = 0;
     defparam LIM_Debouncer.NegEdgeDetect = 0;
     defparam LIM_Debouncer.PosEdgeDetect = 0;
     defparam LIM_Debouncer.SignalWidth = 5;
 
     CyStatusReg_v1_90 Status_Reg_LIM (
-        .clock(Net_565),
+        .clock(Net_874),
         .intr(Net_528),
         .status_0(1'b0),
         .status_1(1'b0),
@@ -2507,7 +2521,7 @@ module top ;
         .status_5(1'b0),
         .status_6(1'b0),
         .status_7(1'b0),
-        .status_bus(Net_556[4:0]));
+        .status_bus(Net_565[4:0]));
     defparam Status_Reg_LIM.Bit0Mode = 0;
     defparam Status_Reg_LIM.Bit1Mode = 0;
     defparam Status_Reg_LIM.Bit2Mode = 0;
@@ -2532,7 +2546,7 @@ module top ;
     defparam SW_1.width = 2;
 
 
-    assign Net_467[0] = ~Net_459;
+    assign Net_467[0] = ~Net_900;
 
 	wire [0:0] tmpOE__LIM1_net;
 	wire [0:0] tmpIO_0__LIM1_net;
@@ -2595,7 +2609,7 @@ module top ;
 		LIM1
 		 (.oe(tmpOE__LIM1_net),
 		  .y({1'b0}),
-		  .fb({Net_459}),
+		  .fb({Net_900}),
 		  .io({tmpIO_0__LIM1_net[0:0]}),
 		  .siovref(tmpSIOVREF__LIM1_net),
 		  .interrupt({tmpINTERRUPT_0__LIM1_net[0:0]}),
@@ -2680,7 +2694,7 @@ module top ;
 		LIM2
 		 (.oe(tmpOE__LIM2_net),
 		  .y({1'b0}),
-		  .fb({Net_466}),
+		  .fb({Net_899}),
 		  .io({tmpIO_0__LIM2_net[0:0]}),
 		  .siovref(tmpSIOVREF__LIM2_net),
 		  .interrupt({tmpINTERRUPT_0__LIM2_net[0:0]}),
@@ -2695,7 +2709,7 @@ module top ;
 	assign tmpOE__LIM2_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-    assign Net_467[1] = ~Net_466;
+    assign Net_467[1] = ~Net_899;
 
     cy_annotation_universal_v1_0 SW_3 (
         .connect({
@@ -2768,7 +2782,7 @@ module top ;
 		LIM3
 		 (.oe(tmpOE__LIM3_net),
 		  .y({1'b0}),
-		  .fb({Net_470}),
+		  .fb({Net_898}),
 		  .io({tmpIO_0__LIM3_net[0:0]}),
 		  .siovref(tmpSIOVREF__LIM3_net),
 		  .interrupt({tmpINTERRUPT_0__LIM3_net[0:0]}),
@@ -2783,7 +2797,7 @@ module top ;
 	assign tmpOE__LIM3_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-    assign Net_467[2] = ~Net_470;
+    assign Net_467[2] = ~Net_898;
 
     cy_annotation_universal_v1_0 SW_4 (
         .connect({
@@ -2856,7 +2870,7 @@ module top ;
 		LIM4
 		 (.oe(tmpOE__LIM4_net),
 		  .y({1'b0}),
-		  .fb({Net_474}),
+		  .fb({Net_897}),
 		  .io({tmpIO_0__LIM4_net[0:0]}),
 		  .siovref(tmpSIOVREF__LIM4_net),
 		  .interrupt({tmpINTERRUPT_0__LIM4_net[0:0]}),
@@ -2871,7 +2885,7 @@ module top ;
 	assign tmpOE__LIM4_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-    assign Net_467[3] = ~Net_474;
+    assign Net_467[3] = ~Net_897;
 
     cy_annotation_universal_v1_0 SW_5 (
         .connect({
@@ -2944,7 +2958,7 @@ module top ;
 		LIM5
 		 (.oe(tmpOE__LIM5_net),
 		  .y({1'b0}),
-		  .fb({Net_478}),
+		  .fb({Net_896}),
 		  .io({tmpIO_0__LIM5_net[0:0]}),
 		  .siovref(tmpSIOVREF__LIM5_net),
 		  .interrupt({tmpINTERRUPT_0__LIM5_net[0:0]}),
@@ -2959,7 +2973,7 @@ module top ;
 	assign tmpOE__LIM5_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-    assign Net_467[4] = ~Net_478;
+    assign Net_467[4] = ~Net_896;
 
 
 	cy_isr_v1_0
@@ -3266,17 +3280,17 @@ module top ;
 
     TCPWM_P4_v2_10_3 QuadDec_2 (
         .capture(1'b0),
-        .cc(Net_837),
-        .clock(Net_565),
+        .cc(Net_867),
+        .clock(Net_874),
         .count(Net_818),
         .interrupt(Net_829),
-        .line(Net_830),
-        .line_n(Net_831),
-        .ov(Net_832),
+        .line(Net_868),
+        .line_n(Net_869),
+        .ov(Net_870),
         .reload(1'b0),
         .start(Net_824),
         .stop(1'b0),
-        .un(Net_835));
+        .un(Net_873));
 
     SCB_P4_v4_0_4 UART (
         .clock(1'b0),
@@ -3351,17 +3365,350 @@ module top ;
 
     TCPWM_P4_v2_10_6 QuadDec_1 (
         .capture(1'b0),
-        .cc(Net_836),
-        .clock(Net_565),
+        .cc(Net_902),
+        .clock(Net_874),
         .count(Net_802),
         .interrupt(Net_803),
-        .line(Net_804),
-        .line_n(Net_805),
-        .ov(Net_806),
+        .line(Net_903),
+        .line_n(Net_904),
+        .ov(Net_905),
         .reload(1'b0),
         .start(Net_813),
         .stop(1'b0),
-        .un(Net_810));
+        .un(Net_908));
+
+    CyStatusReg_v1_90 Can_addr (
+        .clock(Net_874),
+        .intr(Net_910),
+        .status_0(Net_911),
+        .status_1(Net_912),
+        .status_2(Net_913),
+        .status_3(Net_914),
+        .status_4(1'b0),
+        .status_5(1'b0),
+        .status_6(1'b0),
+        .status_7(1'b0),
+        .status_bus(8'b0));
+    defparam Can_addr.Bit0Mode = 0;
+    defparam Can_addr.Bit1Mode = 0;
+    defparam Can_addr.Bit2Mode = 0;
+    defparam Can_addr.Bit3Mode = 0;
+    defparam Can_addr.Bit4Mode = 0;
+    defparam Can_addr.Bit5Mode = 0;
+    defparam Can_addr.Bit6Mode = 0;
+    defparam Can_addr.Bit7Mode = 0;
+    defparam Can_addr.BusDisplay = 0;
+    defparam Can_addr.Interrupt = 0;
+    defparam Can_addr.MaskValue = 0;
+    defparam Can_addr.NumInputs = 4;
+
+
+    assign Net_911 = ~Net_920;
+
+	wire [0:0] tmpOE__Dip_1_net;
+	wire [0:0] tmpIO_0__Dip_1_net;
+	wire [0:0] tmpINTERRUPT_0__Dip_1_net;
+	electrical [0:0] tmpSIOVREF__Dip_1_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("2191e2b0-f8f5-4999-991d-75baf300fdf4"),
+		  .drive_mode(3'b010),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b0),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b0),
+		  .vtrip(2'b00),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		Dip_1
+		 (.oe(tmpOE__Dip_1_net),
+		  .y({1'b0}),
+		  .fb({Net_920}),
+		  .io({tmpIO_0__Dip_1_net[0:0]}),
+		  .siovref(tmpSIOVREF__Dip_1_net),
+		  .interrupt({tmpINTERRUPT_0__Dip_1_net[0:0]}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__Dip_1_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+	wire [0:0] tmpOE__Dip_2_net;
+	wire [0:0] tmpIO_0__Dip_2_net;
+	wire [0:0] tmpINTERRUPT_0__Dip_2_net;
+	electrical [0:0] tmpSIOVREF__Dip_2_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("f4aa77f2-7f08-4cf0-a8ef-c2eec1eb35ad"),
+		  .drive_mode(3'b010),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b0),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b0),
+		  .vtrip(2'b00),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		Dip_2
+		 (.oe(tmpOE__Dip_2_net),
+		  .y({1'b0}),
+		  .fb({Net_921}),
+		  .io({tmpIO_0__Dip_2_net[0:0]}),
+		  .siovref(tmpSIOVREF__Dip_2_net),
+		  .interrupt({tmpINTERRUPT_0__Dip_2_net[0:0]}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__Dip_2_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+
+    assign Net_912 = ~Net_921;
+
+	wire [0:0] tmpOE__Dip_3_net;
+	wire [0:0] tmpIO_0__Dip_3_net;
+	wire [0:0] tmpINTERRUPT_0__Dip_3_net;
+	electrical [0:0] tmpSIOVREF__Dip_3_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("99a54865-2e0c-4e8b-8979-f2d08319ddba"),
+		  .drive_mode(3'b010),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b0),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b0),
+		  .vtrip(2'b00),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		Dip_3
+		 (.oe(tmpOE__Dip_3_net),
+		  .y({1'b0}),
+		  .fb({Net_922}),
+		  .io({tmpIO_0__Dip_3_net[0:0]}),
+		  .siovref(tmpSIOVREF__Dip_3_net),
+		  .interrupt({tmpINTERRUPT_0__Dip_3_net[0:0]}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__Dip_3_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+
+    assign Net_913 = ~Net_922;
+
+	wire [0:0] tmpOE__Dip_4_net;
+	wire [0:0] tmpIO_0__Dip_4_net;
+	wire [0:0] tmpINTERRUPT_0__Dip_4_net;
+	electrical [0:0] tmpSIOVREF__Dip_4_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("cc6bc75b-64eb-421a-ab21-42a67353811a"),
+		  .drive_mode(3'b010),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b0),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b0),
+		  .vtrip(2'b00),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		Dip_4
+		 (.oe(tmpOE__Dip_4_net),
+		  .y({1'b0}),
+		  .fb({Net_923}),
+		  .io({tmpIO_0__Dip_4_net[0:0]}),
+		  .siovref(tmpSIOVREF__Dip_4_net),
+		  .interrupt({tmpINTERRUPT_0__Dip_4_net[0:0]}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__Dip_4_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+
+    assign Net_914 = ~Net_923;
 
 
 

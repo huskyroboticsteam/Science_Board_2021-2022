@@ -135,6 +135,24 @@
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\QuadDec_1.c" value="SOURCE_C;CortexM0;;;;QuadDec_1" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\QuadDec_1.h" value="HEADER;;;;;QuadDec_1" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\QuadDec_1_PM.c" value="SOURCE_C;CortexM0;;;;QuadDec_1" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Can_addr.c" value="SOURCE_C;CortexM0;;;;Can_addr" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Can_addr.h" value="HEADER;;;;;Can_addr" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_1.c" value="SOURCE_C;CortexM0;;;;Dip_1" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_1.h" value="HEADER;;;;;Dip_1" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_1_aliases.h" value="HEADER;;;;;Dip_1" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_1_PM.c" value="SOURCE_C;CortexM0;;;;Dip_1" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_2.c" value="SOURCE_C;CortexM0;;;;Dip_2" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_2.h" value="HEADER;;;;;Dip_2" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_2_aliases.h" value="HEADER;;;;;Dip_2" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_2_PM.c" value="SOURCE_C;CortexM0;;;;Dip_2" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_3.c" value="SOURCE_C;CortexM0;;;;Dip_3" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_3.h" value="HEADER;;;;;Dip_3" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_3_aliases.h" value="HEADER;;;;;Dip_3" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_3_PM.c" value="SOURCE_C;CortexM0;;;;Dip_3" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4.c" value="SOURCE_C;CortexM0;;;;Dip_4" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4.h" value="HEADER;;;;;Dip_4" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4_aliases.h" value="HEADER;;;;;Dip_4" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4_PM.c" value="SOURCE_C;CortexM0;;;;Dip_4" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_isr.c" value="SOURCE_C;CortexM0;;;;CAN_isr" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_isr.h" value="HEADER;;;;;CAN_isr" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_HFCLK.c" value="SOURCE_C;CortexM0;;;;CAN_HFCLK" />
