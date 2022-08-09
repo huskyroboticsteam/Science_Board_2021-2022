@@ -35,8 +35,6 @@ CY_ISR(Limit_Handler){
 
 int main(void)
 {
-    Can_addr_Read();
-    CAN_LED_Write(1);
     CyGlobalIntEnable;
     Status_Reg_LIM_InterruptEnable();
     isr_LIM_StartEx(Limit_Handler);
@@ -84,7 +82,7 @@ int main(void)
         
         //Sensors
  //       uint32_t Hum_val = read_ADC(0);
-        uint32_t Temp_val = read_ADC(1);
+        //uint32_t Temp_val = read_ADC(1);
 //        VEML6070_init();
 //        uint32_t sensor_val = read_uv_sensor();
 //        
@@ -104,17 +102,16 @@ int main(void)
         
         /* Place your application code here. */
         
-        CANPacket* current; 
         
-        int poll = PollAndReceiveCANPacket(current); 
+        int poll = PollAndReceiveCANPacket(&current); 
         if (poll == 0) {
             ERR_LED_Write(0);
-            int ID = GetPacketID(current);
+            int ID = GetPacketID(&current);
             switch (ID) {
                 case ID_SCIENCE_LAZY_SUSAN_POS_SET : //pos set on lazy susan
                     {
                         CAN_LED_Write(1);
-                        current_cup_pos = GetScienceLazySusanPosFromPacket(current);
+                        current_cup_pos = GetScienceLazySusanPosFromPacket(&current);
 //                        uint8_t goal_cup_pos = GetScienceLazySusanPosFromPacket(current);
                         //uint32_t tick_goal = QuadDec_2_ReadCounter() + cups_forward(goal_cup_pos, current_cup_pos);
                     }
@@ -126,7 +123,7 @@ int main(void)
                         // masking state inside the cpu registers. We pause interrupts
                         // so that it does not interfere with the reading of 32 bits
                         uint8 enableInterrupts = CyEnterCriticalSection();
-                        uint32_t time_ms = GetTelemetryTimingFromPacket(current);
+                        uint32_t time_ms = GetTelemetryTimingFromPacket(&current);
                         // restore the interrupt masking state
                         CyExitCriticalSection(enableInterrupts);
                         //if compare time is not 0
@@ -144,8 +141,8 @@ int main(void)
                     {   
                         CAN_LED_Write(1);
                         //CyDelay(500);
-                        uint8_t servoID = GetScienceServoIDFromPacket(current);
-                        uint8_t angle = GetScienceServoAngleFromPacket(current);
+                        uint8_t servoID = GetScienceServoIDFromPacket(&current);
+                        uint8_t angle = GetScienceServoAngleFromPacket(&current);
                         set_servo_position(servoID, angle);
                         CAN_LED_Write(0);
                     }
@@ -154,9 +151,9 @@ int main(void)
                     {
                         CAN_LED_Write(1);
                         //CyDelay(500);
-                        uint8_t servoID = GetScienceServoIDFromPacket(current);
+                        uint8_t servoID = GetScienceServoIDFromPacket(&current);
                         //uint8_t miliDegrees = GetScienceServoAngleFromPacket(current); //tell davis SCUFFED CODE NOT IMPLEMENTED PLACEHOLDER
-                        uint8_t power = GetScienceContServoPowerFromPacket(current);
+                        uint8_t power = GetScienceContServoPowerFromPacket(&current);
                         set_servo_continuous(servoID, power);
                         CAN_LED_Write(0);
                     }
@@ -164,9 +161,9 @@ int main(void)
                     {
                         CAN_LED_Write(1);
                         //CyDelay(500);
-                        uint8_t sensor_type = DecodeTelemetryType(current);
-                        uint8_t target_group = GetSenderDeviceGroupCode(current);
-                        uint8_t target_serial = GetSenderDeviceSerialNumber(current);
+                        uint8_t sensor_type = DecodeTelemetryType(&current);
+                        uint8_t target_group = GetSenderDeviceGroupCode(&current);
+                        uint8_t target_serial = GetSenderDeviceSerialNumber(&current);
                         get_data(sensor_type, target_group, target_serial); //fetch sensor data with ADC read & send new Telemetry Packet to CAN
                         CAN_LED_Write(0);
                     }

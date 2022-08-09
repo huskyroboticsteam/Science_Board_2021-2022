@@ -1,10 +1,55 @@
---------------- Build Started: 08/07/2022 20:27:07 Project: science wow, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-The code generation step is up to date.
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
-main.c: In function 'main':
-main.c:107:13: warning: 'current' is used uninitialized in this function [-Wuninitialized]
-         int poll = PollAndReceiveCANPacket(current); 
+--------------- Build Started: 08/08/2022 21:26:15 Project: science wow, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\mewin\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj" -d CY8C4248AZI-L485 -s "C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0061: information: Info from component: ADC. The actual sample rate (158730 SPS) differs from the desired sample rate (156250 SPS) due to the clock configuration in the DWR.
+ * C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\TopDesign\TopDesign.cysch (Instance:ADC)
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/PortPSOC_CY8C4248AZI_L485.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c ..\HindsightCAN-master\PortFiles\PortPSOC_CY8C4248AZI_L485.c -o .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o
+In file included from Generated_Source\PSoC4/project.h:25:0,
+                 from ..\HindsightCAN-master\PortFiles\PortPSOC_CY8C4248AZI_L485.c:12:
+..\HindsightCAN-master\PortFiles\PortPSOC_CY8C4248AZI_L485.c: In function 'CAN_FLAG_ISR':
+Generated_Source\PSoC4/CAN.h:566:58: warning: 'mailbox' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define CAN_RX_CMD_REG(i)            (*(reg32 *) (&CAN_RX[i].rxcmd))
+                                                          ^
+..\HindsightCAN-master\PortFiles\PortPSOC_CY8C4248AZI_L485.c:172:13: note: 'mailbox' was declared here
+     uint8_t mailbox;
              ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/PCA9685.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c PCA9685.c -o .\CortexM0\ARM_GCC_541\Debug\PCA9685.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/sensor.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c sensor.c -o .\CortexM0\ARM_GCC_541\Debug\sensor.o
+sensor.c: In function 'VEML6070_init':
+sensor.c:67:13: warning: unused variable 'data' [-Wunused-variable]
+     uint8_t data[1] = {0x06};
+             ^
+sensor.c:66:13: warning: unused variable 'error' [-Wunused-variable]
+     uint8_t error;
+             ^
+sensor.c: In function 'read_uv_sensor':
+sensor.c:108:14: warning: unused variable 'lsberror' [-Wunused-variable]
+      uint8_t lsberror = I2C_bus_read(VEML6070_ADDR_DATA_LSB, VEML6070_ADDR_DATA_LSB, &lsb, 0);
+              ^
+sensor.c:107:14: warning: unused variable 'msberror' [-Wunused-variable]
+      uint8_t msberror = I2C_bus_read(VEML6070_ADDR_DATA_MSB, VEML6070_ADDR_DATA_MSB, &msb, 0);
+              ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/servo.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c servo.c -o .\CortexM0\ARM_GCC_541\Debug\servo.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/Milliseconds.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c Milliseconds.c -o .\CortexM0\ARM_GCC_541\Debug\Milliseconds.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/ADC.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c Generated_Source\PSoC4\ADC.c -o .\CortexM0\ARM_GCC_541\Debug\ADC.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/ADC_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c Generated_Source\PSoC4\ADC_PM.c -o .\CortexM0\ARM_GCC_541\Debug\ADC_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I..\HindsightCAN-master -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/ADC_INT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -DCHIP_TYPE=CHIP_TYPE_PSOC_CY8C4248AZI_L485 -c Generated_Source\PSoC4\ADC_INT.c -o .\CortexM0\ARM_GCC_541\Debug\ADC_INT.o
 arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_541\Debug\science wow.a" .\CortexM0\ARM_GCC_541\Debug\CAN.o .\CortexM0\ARM_GCC_541\Debug\CAN_INT.o .\CortexM0\ARM_GCC_541\Debug\CAN_PM.o .\CortexM0\ARM_GCC_541\Debug\CAN_TX_RX_func.o .\CortexM0\ARM_GCC_541\Debug\CAN_isr.o .\CortexM0\ARM_GCC_541\Debug\CAN_HFCLK.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyDMA.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\DBG_LED.o .\CortexM0\ARM_GCC_541\Debug\DBG_LED_PM.o .\CortexM0\ARM_GCC_541\Debug\ERR_LED.o .\CortexM0\ARM_GCC_541\Debug\ERR_LED_PM.o .\CortexM0\ARM_GCC_541\Debug\CAN_LED.o .\CortexM0\ARM_GCC_541\Debug\CAN_LED_PM.o .\CortexM0\ARM_GCC_541\Debug\LIM1.o .\CortexM0\ARM_GCC_541\Debug\LIM1_PM.o .\CortexM0\ARM_GCC_541\Debug\LIM2.o .\CortexM0\ARM_GCC_541\Debug\LIM2_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC.o .\CortexM0\ARM_GCC_541\Debug\ADC_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_INT.o .\CortexM0\ARM_GCC_541\Debug\Humidity.o .\CortexM0\ARM_GCC_541\Debug\Humidity_PM.o .\CortexM0\ARM_GCC_541\Debug\Temp.o .\CortexM0\ARM_GCC_541\Debug\Temp_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_IRQ.o .\CortexM0\ARM_GCC_541\Debug\ADC_intClock.o .\CortexM0\ARM_GCC_541\Debug\CAN_RX.o .\CortexM0\ARM_GCC_541\Debug\CAN_RX_PM.o .\CortexM0\ARM_GCC_541\Debug\CAN_TX.o .\CortexM0\ARM_GCC_541\Debug\CAN_TX_PM.o .\CortexM0\ARM_GCC_541\Debug\LIM3.o .\CortexM0\ARM_GCC_541\Debug\LIM3_PM.o .\CortexM0\ARM_GCC_541\Debug\LIM4.o .\CortexM0\ARM_GCC_541\Debug\LIM4_PM.o .\CortexM0\ARM_GCC_541\Debug\LIM5.o .\CortexM0\ARM_GCC_541\Debug\LIM5_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\I2C_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\I2C_sda.o .\CortexM0\ARM_GCC_541\Debug\I2C_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_scl.o .\CortexM0\ARM_GCC_541\Debug\I2C_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\Clock_1.o .\CortexM0\ARM_GCC_541\Debug\Status_Reg_LIM.o .\CortexM0\ARM_GCC_541\Debug\isr_LIM.o .\CortexM0\ARM_GCC_541\Debug\QuadDec_1.o .\CortexM0\ARM_GCC_541\Debug\QuadDec_1_PM.o .\CortexM0\ARM_GCC_541\Debug\ENC_1_B.o .\CortexM0\ARM_GCC_541\Debug\ENC_1_B_PM.o .\CortexM0\ARM_GCC_541\Debug\ENC_1_A.o .\CortexM0\ARM_GCC_541\Debug\ENC_1_A_PM.o .\CortexM0\ARM_GCC_541\Debug\ENC_2_A.o .\CortexM0\ARM_GCC_541\Debug\ENC_2_A_PM.o .\CortexM0\ARM_GCC_541\Debug\ENC_2_B.o .\CortexM0\ARM_GCC_541\Debug\ENC_2_B_PM.o .\CortexM0\ARM_GCC_541\Debug\QuadDec_2.o .\CortexM0\ARM_GCC_541\Debug\QuadDec_2_PM.o .\CortexM0\ARM_GCC_541\Debug\UART.o .\CortexM0\ARM_GCC_541\Debug\UART_SPI_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_SPI_UART_INT.o .\CortexM0\ARM_GCC_541\Debug\UART_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\UART_tx.o .\CortexM0\ARM_GCC_541\Debug\UART_tx_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_rx.o .\CortexM0\ARM_GCC_541\Debug\UART_rx_PM.o .\CortexM0\ARM_GCC_541\Debug\Timer_1ms.o .\CortexM0\ARM_GCC_541\Debug\Timer_1ms_PM.o .\CortexM0\ARM_GCC_541\Debug\Clock_1ms.o .\CortexM0\ARM_GCC_541\Debug\isr_1ms.o .\CortexM0\ARM_GCC_541\Debug\CC1_isr.o .\CortexM0\ARM_GCC_541\Debug\CC2_isr.o .\CortexM0\ARM_GCC_541\Debug\Can_addr.o .\CortexM0\ARM_GCC_541\Debug\Dip_1.o .\CortexM0\ARM_GCC_541\Debug\Dip_1_PM.o .\CortexM0\ARM_GCC_541\Debug\Dip_2.o .\CortexM0\ARM_GCC_541\Debug\Dip_2_PM.o .\CortexM0\ARM_GCC_541\Debug\Dip_3.o .\CortexM0\ARM_GCC_541\Debug\Dip_3_PM.o .\CortexM0\ARM_GCC_541\Debug\Dip_4.o .\CortexM0\ARM_GCC_541\Debug\Dip_4_PM.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\science wow.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CortexM0\ARM_GCC_541\Debug\science wow.elf" .\CortexM0\ARM_GCC_541\Debug\CANCommon.o .\CortexM0\ARM_GCC_541\Debug\CANGPIO.o .\CortexM0\ARM_GCC_541\Debug\CANLocalization.o .\CortexM0\ARM_GCC_541\Debug\CANMotorUnit.o .\CortexM0\ARM_GCC_541\Debug\CANPacket.o .\CortexM0\ARM_GCC_541\Debug\CANPower.o .\CortexM0\ARM_GCC_541\Debug\CANScience.o .\CortexM0\ARM_GCC_541\Debug\PortPSOC_CY8C4248AZI_L485.o .\CortexM0\ARM_GCC_541\Debug\PCA9685.o .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\sensor.o .\CortexM0\ARM_GCC_541\Debug\servo.o .\CortexM0\ARM_GCC_541\Debug\Milliseconds.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o ".\CortexM0\ARM_GCC_541\Debug\science wow.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 "-Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/science wow.map" -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
@@ -13,6 +58,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\CortexM0\ARM_GCC_541\Debug\science wow.elf"
-Flash used: 22864 of 262144 bytes (8.7%).
-SRAM used: 2928 of 32768 bytes (8.9%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 08/07/2022 20:27:09 ---------------
+Flash used: 22542 of 262144 bytes (8.6%).
+SRAM used: 2944 of 32768 bytes (9.0%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 08/08/2022 21:26:33 ---------------
