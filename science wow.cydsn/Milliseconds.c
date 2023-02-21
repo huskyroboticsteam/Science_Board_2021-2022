@@ -31,6 +31,7 @@ volatile uint32 milliseconds;
 
 CY_ISR(MillisecondInterrupt) {
     milliseconds++;
+    
 }
 
 void init_milliseconds() {

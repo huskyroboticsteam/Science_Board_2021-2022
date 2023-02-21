@@ -14157,7 +14157,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
   80              	.set ADC_Bypass__PORT, 1
   81              	.set ADC_Bypass__PS, CYREG_GPIO_PRT1_PS
   82              	.set ADC_Bypass__SHIFT, 7
-  83              	.set ADC_cy_psoc4_sar__CLOCK_DIV_ID, 0x00000041
+  83              	.set ADC_cy_psoc4_sar__CLOCK_DIV_ID, 0x00000042
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 237
 
 
@@ -14318,8 +14318,8 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  232              	.set ADC_cy_psoc4_sarmux_8__SAR_START_CTRL, CYREG_SAR_START_CTRL
  233              	.set ADC_cy_psoc4_sarmux_8__VNEG0, 0
  234              	.set ADC_intClock__CTRL_REGISTER, CYREG_PERI_PCLK_CTL10
- 235              	.set ADC_intClock__DIV_ID, 0x00000041
- 236              	.set ADC_intClock__DIV_REGISTER, CYREG_PERI_DIV_16_CTL1
+ 235              	.set ADC_intClock__DIV_ID, 0x00000042
+ 236              	.set ADC_intClock__DIV_REGISTER, CYREG_PERI_DIV_16_CTL2
  237              	.set ADC_intClock__PA_DIV_ID, 0x000000FF
  238              	.set ADC_IRQ__INTC_CLR_EN_REG, CYREG_CM0_ICER
  239              	.set ADC_IRQ__INTC_CLR_PD_REG, CYREG_CM0_ICPR
@@ -14431,8 +14431,8 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  339              	.set I2C_SCB_IRQ__INTC_SET_EN_REG, CYREG_CM0_ISER
  340              	.set I2C_SCB_IRQ__INTC_SET_PD_REG, CYREG_CM0_ISPR
  341              	.set I2C_SCBCLK__CTRL_REGISTER, CYREG_PERI_PCLK_CTL4
- 342              	.set I2C_SCBCLK__DIV_ID, 0x00000042
- 343              	.set I2C_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL2
+ 342              	.set I2C_SCBCLK__DIV_ID, 0x00000043
+ 343              	.set I2C_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL3
  344              	.set I2C_SCBCLK__PA_DIV_ID, 0x000000FF
  345              	.set I2C_scl__0__DR, CYREG_GPIO_PRT5_DR
  346              	.set I2C_scl__0__DR_CLR, CYREG_GPIO_PRT5_DR_CLR
@@ -15138,8 +15138,8 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1010              	.set UART_SCB__UART_RX_STATUS, CYREG_SCB1_UART_RX_STATUS
  1011              	.set UART_SCB__UART_TX_CTRL, CYREG_SCB1_UART_TX_CTRL
  1012              	.set UART_SCBCLK__CTRL_REGISTER, CYREG_PERI_PCLK_CTL3
- 1013              	.set UART_SCBCLK__DIV_ID, 0x00000043
- 1014              	.set UART_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL3
+ 1013              	.set UART_SCBCLK__DIV_ID, 0x00000044
+ 1014              	.set UART_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL4
  1015              	.set UART_SCBCLK__PA_DIV_ID, 0x000000FF
  1016              	.set UART_tx__0__DR, CYREG_GPIO_PRT2_DR
  1017              	.set UART_tx__0__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
@@ -15698,9 +15698,9 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1543              	/* CC1_isr */
  1544              	.set CC1_isr__INTC_CLR_EN_REG, CYREG_CM0_ICER
  1545              	.set CC1_isr__INTC_CLR_PD_REG, CYREG_CM0_ICPR
- 1546              	.set CC1_isr__INTC_MASK, 0x400000
- 1547              	.set CC1_isr__INTC_NUMBER, 22
- 1548              	.set CC1_isr__INTC_PRIOR_MASK, 0xC00000
+ 1546              	.set CC1_isr__INTC_MASK, 0x100000
+ 1547              	.set CC1_isr__INTC_NUMBER, 20
+ 1548              	.set CC1_isr__INTC_PRIOR_MASK, 0xC0
  1549              	.set CC1_isr__INTC_PRIOR_NUM, 3
  1550              	.set CC1_isr__INTC_PRIOR_REG, CYREG_CM0_IPR5
  1551              	.set CC1_isr__INTC_SET_EN_REG, CYREG_CM0_ISER
@@ -15721,7 +15721,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 263
 
 
- 1566              	.set Clock_1__CTRL_REGISTER, CYREG_PERI_PCLK_CTL19
+ 1566              	.set Clock_1__CTRL_REGISTER, CYREG_PERI_PCLK_CTL22
  1567              	.set Clock_1__DIV_ID, 0x000000C0
  1568              	.set Clock_1__DIV_REGISTER, CYREG_PERI_DIV_24_5_CTL
  1569              	.set Clock_1__FRAC_MASK, 0x000000F8
@@ -16126,23 +16126,23 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1950              	/* isr_1ms */
  1951              	.set isr_1ms__INTC_CLR_EN_REG, CYREG_CM0_ICER
  1952              	.set isr_1ms__INTC_CLR_PD_REG, CYREG_CM0_ICPR
- 1953              	.set isr_1ms__INTC_MASK, 0x100000
- 1954              	.set isr_1ms__INTC_NUMBER, 20
+ 1953              	.set isr_1ms__INTC_MASK, 0x01
+ 1954              	.set isr_1ms__INTC_NUMBER, 0
  1955              	.set isr_1ms__INTC_PRIOR_MASK, 0xC0
  1956              	.set isr_1ms__INTC_PRIOR_NUM, 3
- 1957              	.set isr_1ms__INTC_PRIOR_REG, CYREG_CM0_IPR5
+ 1957              	.set isr_1ms__INTC_PRIOR_REG, CYREG_CM0_IPR0
  1958              	.set isr_1ms__INTC_SET_EN_REG, CYREG_CM0_ISER
  1959              	.set isr_1ms__INTC_SET_PD_REG, CYREG_CM0_ISPR
  1960              	
  1961              	/* isr_LIM */
  1962              	.set isr_LIM__INTC_CLR_EN_REG, CYREG_CM0_ICER
  1963              	.set isr_LIM__INTC_CLR_PD_REG, CYREG_CM0_ICPR
- 1964              	.set isr_LIM__INTC_MASK, 0x01
+ 1964              	.set isr_LIM__INTC_MASK, 0x04
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 270
 
 
- 1965              	.set isr_LIM__INTC_NUMBER, 0
- 1966              	.set isr_LIM__INTC_PRIOR_MASK, 0xC0
+ 1965              	.set isr_LIM__INTC_NUMBER, 2
+ 1966              	.set isr_LIM__INTC_PRIOR_MASK, 0xC00000
  1967              	.set isr_LIM__INTC_PRIOR_NUM, 3
  1968              	.set isr_LIM__INTC_PRIOR_REG, CYREG_CM0_IPR0
  1969              	.set isr_LIM__INTC_SET_EN_REG, CYREG_CM0_ISER
@@ -16153,603 +16153,764 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1974              	.set Can_addr_sts_sts_reg__0__POS, 0
  1975              	.set Can_addr_sts_sts_reg__1__MASK, 0x02
  1976              	.set Can_addr_sts_sts_reg__1__POS, 1
- 1977              	.set Can_addr_sts_sts_reg__16BIT_STATUS_AUX_CTL_REG, CYREG_UDB_W16_ACTL6
- 1978              	.set Can_addr_sts_sts_reg__16BIT_STATUS_REG, CYREG_UDB_W16_ST6
+ 1977              	.set Can_addr_sts_sts_reg__16BIT_STATUS_AUX_CTL_REG, CYREG_UDB_W16_ACTL3
+ 1978              	.set Can_addr_sts_sts_reg__16BIT_STATUS_REG, CYREG_UDB_W16_ST3
  1979              	.set Can_addr_sts_sts_reg__2__MASK, 0x04
  1980              	.set Can_addr_sts_sts_reg__2__POS, 2
  1981              	.set Can_addr_sts_sts_reg__3__MASK, 0x08
  1982              	.set Can_addr_sts_sts_reg__3__POS, 3
- 1983              	.set Can_addr_sts_sts_reg__MASK, 0x0F
- 1984              	.set Can_addr_sts_sts_reg__MASK_REG, CYREG_UDB_W8_MSK6
- 1985              	.set Can_addr_sts_sts_reg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL6
- 1986              	.set Can_addr_sts_sts_reg__STATUS_REG, CYREG_UDB_W8_ST6
- 1987              	
- 1988              	/* Humidity */
- 1989              	.set Humidity__0__DR, CYREG_GPIO_PRT2_DR
- 1990              	.set Humidity__0__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
- 1991              	.set Humidity__0__DR_INV, CYREG_GPIO_PRT2_DR_INV
- 1992              	.set Humidity__0__DR_SET, CYREG_GPIO_PRT2_DR_SET
- 1993              	.set Humidity__0__HSIOM, CYREG_HSIOM_PORT_SEL2
- 1994              	.set Humidity__0__HSIOM_MASK, 0x0F000000
- 1995              	.set Humidity__0__HSIOM_SHIFT, 24
- 1996              	.set Humidity__0__INTCFG, CYREG_GPIO_PRT2_INTR_CFG
- 1997              	.set Humidity__0__INTR, CYREG_GPIO_PRT2_INTR
- 1998              	.set Humidity__0__INTR_CFG, CYREG_GPIO_PRT2_INTR_CFG
- 1999              	.set Humidity__0__INTSTAT, CYREG_GPIO_PRT2_INTR
- 2000              	.set Humidity__0__MASK, 0x40
- 2001              	.set Humidity__0__PA__CFG0, CYREG_UDB_PA2_CFG0
- 2002              	.set Humidity__0__PA__CFG1, CYREG_UDB_PA2_CFG1
- 2003              	.set Humidity__0__PA__CFG10, CYREG_UDB_PA2_CFG10
- 2004              	.set Humidity__0__PA__CFG11, CYREG_UDB_PA2_CFG11
- 2005              	.set Humidity__0__PA__CFG12, CYREG_UDB_PA2_CFG12
- 2006              	.set Humidity__0__PA__CFG13, CYREG_UDB_PA2_CFG13
- 2007              	.set Humidity__0__PA__CFG14, CYREG_UDB_PA2_CFG14
- 2008              	.set Humidity__0__PA__CFG2, CYREG_UDB_PA2_CFG2
- 2009              	.set Humidity__0__PA__CFG3, CYREG_UDB_PA2_CFG3
- 2010              	.set Humidity__0__PA__CFG4, CYREG_UDB_PA2_CFG4
- 2011              	.set Humidity__0__PA__CFG5, CYREG_UDB_PA2_CFG5
- 2012              	.set Humidity__0__PA__CFG6, CYREG_UDB_PA2_CFG6
- 2013              	.set Humidity__0__PA__CFG7, CYREG_UDB_PA2_CFG7
- 2014              	.set Humidity__0__PA__CFG8, CYREG_UDB_PA2_CFG8
- 2015              	.set Humidity__0__PA__CFG9, CYREG_UDB_PA2_CFG9
- 2016              	.set Humidity__0__PC, CYREG_GPIO_PRT2_PC
- 2017              	.set Humidity__0__PC2, CYREG_GPIO_PRT2_PC2
- 2018              	.set Humidity__0__PORT, 2
- 2019              	.set Humidity__0__PS, CYREG_GPIO_PRT2_PS
- 2020              	.set Humidity__0__SHIFT, 6
- 2021              	.set Humidity__DR, CYREG_GPIO_PRT2_DR
+ 1983              	.set Can_addr_sts_sts_reg__32BIT_MASK_REG, CYREG_UDB_W32_MSK3
+ 1984              	.set Can_addr_sts_sts_reg__32BIT_STATUS_AUX_CTL_REG, CYREG_UDB_W32_ACTL3
+ 1985              	.set Can_addr_sts_sts_reg__32BIT_STATUS_REG, CYREG_UDB_W32_ST3
+ 1986              	.set Can_addr_sts_sts_reg__MASK, 0x0F
+ 1987              	.set Can_addr_sts_sts_reg__MASK_REG, CYREG_UDB_W8_MSK3
+ 1988              	.set Can_addr_sts_sts_reg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL3
+ 1989              	.set Can_addr_sts_sts_reg__STATUS_REG, CYREG_UDB_W8_ST3
+ 1990              	
+ 1991              	/* Humidity */
+ 1992              	.set Humidity__0__DR, CYREG_GPIO_PRT2_DR
+ 1993              	.set Humidity__0__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
+ 1994              	.set Humidity__0__DR_INV, CYREG_GPIO_PRT2_DR_INV
+ 1995              	.set Humidity__0__DR_SET, CYREG_GPIO_PRT2_DR_SET
+ 1996              	.set Humidity__0__HSIOM, CYREG_HSIOM_PORT_SEL2
+ 1997              	.set Humidity__0__HSIOM_MASK, 0x0F000000
+ 1998              	.set Humidity__0__HSIOM_SHIFT, 24
+ 1999              	.set Humidity__0__INTCFG, CYREG_GPIO_PRT2_INTR_CFG
+ 2000              	.set Humidity__0__INTR, CYREG_GPIO_PRT2_INTR
+ 2001              	.set Humidity__0__INTR_CFG, CYREG_GPIO_PRT2_INTR_CFG
+ 2002              	.set Humidity__0__INTSTAT, CYREG_GPIO_PRT2_INTR
+ 2003              	.set Humidity__0__MASK, 0x40
+ 2004              	.set Humidity__0__PA__CFG0, CYREG_UDB_PA2_CFG0
+ 2005              	.set Humidity__0__PA__CFG1, CYREG_UDB_PA2_CFG1
+ 2006              	.set Humidity__0__PA__CFG10, CYREG_UDB_PA2_CFG10
+ 2007              	.set Humidity__0__PA__CFG11, CYREG_UDB_PA2_CFG11
+ 2008              	.set Humidity__0__PA__CFG12, CYREG_UDB_PA2_CFG12
+ 2009              	.set Humidity__0__PA__CFG13, CYREG_UDB_PA2_CFG13
+ 2010              	.set Humidity__0__PA__CFG14, CYREG_UDB_PA2_CFG14
+ 2011              	.set Humidity__0__PA__CFG2, CYREG_UDB_PA2_CFG2
+ 2012              	.set Humidity__0__PA__CFG3, CYREG_UDB_PA2_CFG3
+ 2013              	.set Humidity__0__PA__CFG4, CYREG_UDB_PA2_CFG4
+ 2014              	.set Humidity__0__PA__CFG5, CYREG_UDB_PA2_CFG5
+ 2015              	.set Humidity__0__PA__CFG6, CYREG_UDB_PA2_CFG6
+ 2016              	.set Humidity__0__PA__CFG7, CYREG_UDB_PA2_CFG7
+ 2017              	.set Humidity__0__PA__CFG8, CYREG_UDB_PA2_CFG8
+ 2018              	.set Humidity__0__PA__CFG9, CYREG_UDB_PA2_CFG9
+ 2019              	.set Humidity__0__PC, CYREG_GPIO_PRT2_PC
+ 2020              	.set Humidity__0__PC2, CYREG_GPIO_PRT2_PC2
+ 2021              	.set Humidity__0__PORT, 2
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 271
 
 
- 2022              	.set Humidity__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
- 2023              	.set Humidity__DR_INV, CYREG_GPIO_PRT2_DR_INV
- 2024              	.set Humidity__DR_SET, CYREG_GPIO_PRT2_DR_SET
- 2025              	.set Humidity__INTCFG, CYREG_GPIO_PRT2_INTR_CFG
- 2026              	.set Humidity__INTR, CYREG_GPIO_PRT2_INTR
- 2027              	.set Humidity__INTR_CFG, CYREG_GPIO_PRT2_INTR_CFG
- 2028              	.set Humidity__INTSTAT, CYREG_GPIO_PRT2_INTR
- 2029              	.set Humidity__MASK, 0x40
- 2030              	.set Humidity__PA__CFG0, CYREG_UDB_PA2_CFG0
- 2031              	.set Humidity__PA__CFG1, CYREG_UDB_PA2_CFG1
- 2032              	.set Humidity__PA__CFG10, CYREG_UDB_PA2_CFG10
- 2033              	.set Humidity__PA__CFG11, CYREG_UDB_PA2_CFG11
- 2034              	.set Humidity__PA__CFG12, CYREG_UDB_PA2_CFG12
- 2035              	.set Humidity__PA__CFG13, CYREG_UDB_PA2_CFG13
- 2036              	.set Humidity__PA__CFG14, CYREG_UDB_PA2_CFG14
- 2037              	.set Humidity__PA__CFG2, CYREG_UDB_PA2_CFG2
- 2038              	.set Humidity__PA__CFG3, CYREG_UDB_PA2_CFG3
- 2039              	.set Humidity__PA__CFG4, CYREG_UDB_PA2_CFG4
- 2040              	.set Humidity__PA__CFG5, CYREG_UDB_PA2_CFG5
- 2041              	.set Humidity__PA__CFG6, CYREG_UDB_PA2_CFG6
- 2042              	.set Humidity__PA__CFG7, CYREG_UDB_PA2_CFG7
- 2043              	.set Humidity__PA__CFG8, CYREG_UDB_PA2_CFG8
- 2044              	.set Humidity__PA__CFG9, CYREG_UDB_PA2_CFG9
- 2045              	.set Humidity__PC, CYREG_GPIO_PRT2_PC
- 2046              	.set Humidity__PC2, CYREG_GPIO_PRT2_PC2
- 2047              	.set Humidity__PORT, 2
- 2048              	.set Humidity__PS, CYREG_GPIO_PRT2_PS
- 2049              	.set Humidity__SHIFT, 6
- 2050              	
- 2051              	/* CAN_CanIP */
- 2052              	.set CAN_CanIP__BUFFER_STATUS, CYREG_CAN1_BUFFER_STATUS
- 2053              	.set CAN_CanIP__CAN_RX0_ACR, CYREG_CAN1_CAN_RX0_ACR
- 2054              	.set CAN_CanIP__CAN_RX0_ACR_DATA, CYREG_CAN1_CAN_RX0_ACR_DATA
- 2055              	.set CAN_CanIP__CAN_RX0_AMR, CYREG_CAN1_CAN_RX0_AMR
- 2056              	.set CAN_CanIP__CAN_RX0_AMR_DATA, CYREG_CAN1_CAN_RX0_AMR_DATA
- 2057              	.set CAN_CanIP__CAN_RX0_CONTROL, CYREG_CAN1_CAN_RX0_CONTROL
- 2058              	.set CAN_CanIP__CAN_RX0_DATA_HIGH, CYREG_CAN1_CAN_RX0_DATA_HIGH
- 2059              	.set CAN_CanIP__CAN_RX0_DATA_LOW, CYREG_CAN1_CAN_RX0_DATA_LOW
- 2060              	.set CAN_CanIP__CAN_RX0_ID, CYREG_CAN1_CAN_RX0_ID
- 2061              	.set CAN_CanIP__CAN_RX1_ACR, CYREG_CAN1_CAN_RX1_ACR
- 2062              	.set CAN_CanIP__CAN_RX1_ACR_DATA, CYREG_CAN1_CAN_RX1_ACR_DATA
- 2063              	.set CAN_CanIP__CAN_RX1_AMR, CYREG_CAN1_CAN_RX1_AMR
- 2064              	.set CAN_CanIP__CAN_RX1_AMR_DATA, CYREG_CAN1_CAN_RX1_AMR_DATA
- 2065              	.set CAN_CanIP__CAN_RX1_CONTROL, CYREG_CAN1_CAN_RX1_CONTROL
- 2066              	.set CAN_CanIP__CAN_RX1_DATA_HIGH, CYREG_CAN1_CAN_RX1_DATA_HIGH
- 2067              	.set CAN_CanIP__CAN_RX1_DATA_LOW, CYREG_CAN1_CAN_RX1_DATA_LOW
- 2068              	.set CAN_CanIP__CAN_RX1_ID, CYREG_CAN1_CAN_RX1_ID
- 2069              	.set CAN_CanIP__CAN_RX10_ACR, CYREG_CAN1_CAN_RX10_ACR
- 2070              	.set CAN_CanIP__CAN_RX10_ACR_DATA, CYREG_CAN1_CAN_RX10_ACR_DATA
- 2071              	.set CAN_CanIP__CAN_RX10_AMR, CYREG_CAN1_CAN_RX10_AMR
- 2072              	.set CAN_CanIP__CAN_RX10_AMR_DATA, CYREG_CAN1_CAN_RX10_AMR_DATA
- 2073              	.set CAN_CanIP__CAN_RX10_CONTROL, CYREG_CAN1_CAN_RX10_CONTROL
- 2074              	.set CAN_CanIP__CAN_RX10_DATA_HIGH, CYREG_CAN1_CAN_RX10_DATA_HIGH
- 2075              	.set CAN_CanIP__CAN_RX10_DATA_LOW, CYREG_CAN1_CAN_RX10_DATA_LOW
- 2076              	.set CAN_CanIP__CAN_RX10_ID, CYREG_CAN1_CAN_RX10_ID
- 2077              	.set CAN_CanIP__CAN_RX11_ACR, CYREG_CAN1_CAN_RX11_ACR
- 2078              	.set CAN_CanIP__CAN_RX11_ACR_DATA, CYREG_CAN1_CAN_RX11_ACR_DATA
+ 2022              	.set Humidity__0__PS, CYREG_GPIO_PRT2_PS
+ 2023              	.set Humidity__0__SHIFT, 6
+ 2024              	.set Humidity__DR, CYREG_GPIO_PRT2_DR
+ 2025              	.set Humidity__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
+ 2026              	.set Humidity__DR_INV, CYREG_GPIO_PRT2_DR_INV
+ 2027              	.set Humidity__DR_SET, CYREG_GPIO_PRT2_DR_SET
+ 2028              	.set Humidity__INTCFG, CYREG_GPIO_PRT2_INTR_CFG
+ 2029              	.set Humidity__INTR, CYREG_GPIO_PRT2_INTR
+ 2030              	.set Humidity__INTR_CFG, CYREG_GPIO_PRT2_INTR_CFG
+ 2031              	.set Humidity__INTSTAT, CYREG_GPIO_PRT2_INTR
+ 2032              	.set Humidity__MASK, 0x40
+ 2033              	.set Humidity__PA__CFG0, CYREG_UDB_PA2_CFG0
+ 2034              	.set Humidity__PA__CFG1, CYREG_UDB_PA2_CFG1
+ 2035              	.set Humidity__PA__CFG10, CYREG_UDB_PA2_CFG10
+ 2036              	.set Humidity__PA__CFG11, CYREG_UDB_PA2_CFG11
+ 2037              	.set Humidity__PA__CFG12, CYREG_UDB_PA2_CFG12
+ 2038              	.set Humidity__PA__CFG13, CYREG_UDB_PA2_CFG13
+ 2039              	.set Humidity__PA__CFG14, CYREG_UDB_PA2_CFG14
+ 2040              	.set Humidity__PA__CFG2, CYREG_UDB_PA2_CFG2
+ 2041              	.set Humidity__PA__CFG3, CYREG_UDB_PA2_CFG3
+ 2042              	.set Humidity__PA__CFG4, CYREG_UDB_PA2_CFG4
+ 2043              	.set Humidity__PA__CFG5, CYREG_UDB_PA2_CFG5
+ 2044              	.set Humidity__PA__CFG6, CYREG_UDB_PA2_CFG6
+ 2045              	.set Humidity__PA__CFG7, CYREG_UDB_PA2_CFG7
+ 2046              	.set Humidity__PA__CFG8, CYREG_UDB_PA2_CFG8
+ 2047              	.set Humidity__PA__CFG9, CYREG_UDB_PA2_CFG9
+ 2048              	.set Humidity__PC, CYREG_GPIO_PRT2_PC
+ 2049              	.set Humidity__PC2, CYREG_GPIO_PRT2_PC2
+ 2050              	.set Humidity__PORT, 2
+ 2051              	.set Humidity__PS, CYREG_GPIO_PRT2_PS
+ 2052              	.set Humidity__SHIFT, 6
+ 2053              	
+ 2054              	/* isr_LEDs */
+ 2055              	.set isr_LEDs__INTC_CLR_EN_REG, CYREG_CM0_ICER
+ 2056              	.set isr_LEDs__INTC_CLR_PD_REG, CYREG_CM0_ICPR
+ 2057              	.set isr_LEDs__INTC_MASK, 0x02
+ 2058              	.set isr_LEDs__INTC_NUMBER, 1
+ 2059              	.set isr_LEDs__INTC_PRIOR_MASK, 0xC000
+ 2060              	.set isr_LEDs__INTC_PRIOR_NUM, 3
+ 2061              	.set isr_LEDs__INTC_PRIOR_REG, CYREG_CM0_IPR0
+ 2062              	.set isr_LEDs__INTC_SET_EN_REG, CYREG_CM0_ISER
+ 2063              	.set isr_LEDs__INTC_SET_PD_REG, CYREG_CM0_ISPR
+ 2064              	
+ 2065              	/* CAN_CanIP */
+ 2066              	.set CAN_CanIP__BUFFER_STATUS, CYREG_CAN1_BUFFER_STATUS
+ 2067              	.set CAN_CanIP__CAN_RX0_ACR, CYREG_CAN1_CAN_RX0_ACR
+ 2068              	.set CAN_CanIP__CAN_RX0_ACR_DATA, CYREG_CAN1_CAN_RX0_ACR_DATA
+ 2069              	.set CAN_CanIP__CAN_RX0_AMR, CYREG_CAN1_CAN_RX0_AMR
+ 2070              	.set CAN_CanIP__CAN_RX0_AMR_DATA, CYREG_CAN1_CAN_RX0_AMR_DATA
+ 2071              	.set CAN_CanIP__CAN_RX0_CONTROL, CYREG_CAN1_CAN_RX0_CONTROL
+ 2072              	.set CAN_CanIP__CAN_RX0_DATA_HIGH, CYREG_CAN1_CAN_RX0_DATA_HIGH
+ 2073              	.set CAN_CanIP__CAN_RX0_DATA_LOW, CYREG_CAN1_CAN_RX0_DATA_LOW
+ 2074              	.set CAN_CanIP__CAN_RX0_ID, CYREG_CAN1_CAN_RX0_ID
+ 2075              	.set CAN_CanIP__CAN_RX1_ACR, CYREG_CAN1_CAN_RX1_ACR
+ 2076              	.set CAN_CanIP__CAN_RX1_ACR_DATA, CYREG_CAN1_CAN_RX1_ACR_DATA
+ 2077              	.set CAN_CanIP__CAN_RX1_AMR, CYREG_CAN1_CAN_RX1_AMR
+ 2078              	.set CAN_CanIP__CAN_RX1_AMR_DATA, CYREG_CAN1_CAN_RX1_AMR_DATA
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 272
 
 
- 2079              	.set CAN_CanIP__CAN_RX11_AMR, CYREG_CAN1_CAN_RX11_AMR
- 2080              	.set CAN_CanIP__CAN_RX11_AMR_DATA, CYREG_CAN1_CAN_RX11_AMR_DATA
- 2081              	.set CAN_CanIP__CAN_RX11_CONTROL, CYREG_CAN1_CAN_RX11_CONTROL
- 2082              	.set CAN_CanIP__CAN_RX11_DATA_HIGH, CYREG_CAN1_CAN_RX11_DATA_HIGH
- 2083              	.set CAN_CanIP__CAN_RX11_DATA_LOW, CYREG_CAN1_CAN_RX11_DATA_LOW
- 2084              	.set CAN_CanIP__CAN_RX11_ID, CYREG_CAN1_CAN_RX11_ID
- 2085              	.set CAN_CanIP__CAN_RX12_ACR, CYREG_CAN1_CAN_RX12_ACR
- 2086              	.set CAN_CanIP__CAN_RX12_ACR_DATA, CYREG_CAN1_CAN_RX12_ACR_DATA
- 2087              	.set CAN_CanIP__CAN_RX12_AMR, CYREG_CAN1_CAN_RX12_AMR
- 2088              	.set CAN_CanIP__CAN_RX12_AMR_DATA, CYREG_CAN1_CAN_RX12_AMR_DATA
- 2089              	.set CAN_CanIP__CAN_RX12_CONTROL, CYREG_CAN1_CAN_RX12_CONTROL
- 2090              	.set CAN_CanIP__CAN_RX12_DATA_HIGH, CYREG_CAN1_CAN_RX12_DATA_HIGH
- 2091              	.set CAN_CanIP__CAN_RX12_DATA_LOW, CYREG_CAN1_CAN_RX12_DATA_LOW
- 2092              	.set CAN_CanIP__CAN_RX12_ID, CYREG_CAN1_CAN_RX12_ID
- 2093              	.set CAN_CanIP__CAN_RX13_ACR, CYREG_CAN1_CAN_RX13_ACR
- 2094              	.set CAN_CanIP__CAN_RX13_ACR_DATA, CYREG_CAN1_CAN_RX13_ACR_DATA
- 2095              	.set CAN_CanIP__CAN_RX13_AMR, CYREG_CAN1_CAN_RX13_AMR
- 2096              	.set CAN_CanIP__CAN_RX13_AMR_DATA, CYREG_CAN1_CAN_RX13_AMR_DATA
- 2097              	.set CAN_CanIP__CAN_RX13_CONTROL, CYREG_CAN1_CAN_RX13_CONTROL
- 2098              	.set CAN_CanIP__CAN_RX13_DATA_HIGH, CYREG_CAN1_CAN_RX13_DATA_HIGH
- 2099              	.set CAN_CanIP__CAN_RX13_DATA_LOW, CYREG_CAN1_CAN_RX13_DATA_LOW
- 2100              	.set CAN_CanIP__CAN_RX13_ID, CYREG_CAN1_CAN_RX13_ID
- 2101              	.set CAN_CanIP__CAN_RX14_ACR, CYREG_CAN1_CAN_RX14_ACR
- 2102              	.set CAN_CanIP__CAN_RX14_ACR_DATA, CYREG_CAN1_CAN_RX14_ACR_DATA
- 2103              	.set CAN_CanIP__CAN_RX14_AMR, CYREG_CAN1_CAN_RX14_AMR
- 2104              	.set CAN_CanIP__CAN_RX14_AMR_DATA, CYREG_CAN1_CAN_RX14_AMR_DATA
- 2105              	.set CAN_CanIP__CAN_RX14_CONTROL, CYREG_CAN1_CAN_RX14_CONTROL
- 2106              	.set CAN_CanIP__CAN_RX14_DATA_HIGH, CYREG_CAN1_CAN_RX14_DATA_HIGH
- 2107              	.set CAN_CanIP__CAN_RX14_DATA_LOW, CYREG_CAN1_CAN_RX14_DATA_LOW
- 2108              	.set CAN_CanIP__CAN_RX14_ID, CYREG_CAN1_CAN_RX14_ID
- 2109              	.set CAN_CanIP__CAN_RX15_ACR, CYREG_CAN1_CAN_RX15_ACR
- 2110              	.set CAN_CanIP__CAN_RX15_ACR_DATA, CYREG_CAN1_CAN_RX15_ACR_DATA
- 2111              	.set CAN_CanIP__CAN_RX15_AMR, CYREG_CAN1_CAN_RX15_AMR
- 2112              	.set CAN_CanIP__CAN_RX15_AMR_DATA, CYREG_CAN1_CAN_RX15_AMR_DATA
- 2113              	.set CAN_CanIP__CAN_RX15_CONTROL, CYREG_CAN1_CAN_RX15_CONTROL
- 2114              	.set CAN_CanIP__CAN_RX15_DATA_HIGH, CYREG_CAN1_CAN_RX15_DATA_HIGH
- 2115              	.set CAN_CanIP__CAN_RX15_DATA_LOW, CYREG_CAN1_CAN_RX15_DATA_LOW
- 2116              	.set CAN_CanIP__CAN_RX15_ID, CYREG_CAN1_CAN_RX15_ID
- 2117              	.set CAN_CanIP__CAN_RX2_ACR, CYREG_CAN1_CAN_RX2_ACR
- 2118              	.set CAN_CanIP__CAN_RX2_ACR_DATA, CYREG_CAN1_CAN_RX2_ACR_DATA
- 2119              	.set CAN_CanIP__CAN_RX2_AMR, CYREG_CAN1_CAN_RX2_AMR
- 2120              	.set CAN_CanIP__CAN_RX2_AMR_DATA, CYREG_CAN1_CAN_RX2_AMR_DATA
- 2121              	.set CAN_CanIP__CAN_RX2_CONTROL, CYREG_CAN1_CAN_RX2_CONTROL
- 2122              	.set CAN_CanIP__CAN_RX2_DATA_HIGH, CYREG_CAN1_CAN_RX2_DATA_HIGH
- 2123              	.set CAN_CanIP__CAN_RX2_DATA_LOW, CYREG_CAN1_CAN_RX2_DATA_LOW
- 2124              	.set CAN_CanIP__CAN_RX2_ID, CYREG_CAN1_CAN_RX2_ID
- 2125              	.set CAN_CanIP__CAN_RX3_ACR, CYREG_CAN1_CAN_RX3_ACR
- 2126              	.set CAN_CanIP__CAN_RX3_ACR_DATA, CYREG_CAN1_CAN_RX3_ACR_DATA
- 2127              	.set CAN_CanIP__CAN_RX3_AMR, CYREG_CAN1_CAN_RX3_AMR
- 2128              	.set CAN_CanIP__CAN_RX3_AMR_DATA, CYREG_CAN1_CAN_RX3_AMR_DATA
- 2129              	.set CAN_CanIP__CAN_RX3_CONTROL, CYREG_CAN1_CAN_RX3_CONTROL
- 2130              	.set CAN_CanIP__CAN_RX3_DATA_HIGH, CYREG_CAN1_CAN_RX3_DATA_HIGH
- 2131              	.set CAN_CanIP__CAN_RX3_DATA_LOW, CYREG_CAN1_CAN_RX3_DATA_LOW
- 2132              	.set CAN_CanIP__CAN_RX3_ID, CYREG_CAN1_CAN_RX3_ID
- 2133              	.set CAN_CanIP__CAN_RX4_ACR, CYREG_CAN1_CAN_RX4_ACR
- 2134              	.set CAN_CanIP__CAN_RX4_ACR_DATA, CYREG_CAN1_CAN_RX4_ACR_DATA
- 2135              	.set CAN_CanIP__CAN_RX4_AMR, CYREG_CAN1_CAN_RX4_AMR
+ 2079              	.set CAN_CanIP__CAN_RX1_CONTROL, CYREG_CAN1_CAN_RX1_CONTROL
+ 2080              	.set CAN_CanIP__CAN_RX1_DATA_HIGH, CYREG_CAN1_CAN_RX1_DATA_HIGH
+ 2081              	.set CAN_CanIP__CAN_RX1_DATA_LOW, CYREG_CAN1_CAN_RX1_DATA_LOW
+ 2082              	.set CAN_CanIP__CAN_RX1_ID, CYREG_CAN1_CAN_RX1_ID
+ 2083              	.set CAN_CanIP__CAN_RX10_ACR, CYREG_CAN1_CAN_RX10_ACR
+ 2084              	.set CAN_CanIP__CAN_RX10_ACR_DATA, CYREG_CAN1_CAN_RX10_ACR_DATA
+ 2085              	.set CAN_CanIP__CAN_RX10_AMR, CYREG_CAN1_CAN_RX10_AMR
+ 2086              	.set CAN_CanIP__CAN_RX10_AMR_DATA, CYREG_CAN1_CAN_RX10_AMR_DATA
+ 2087              	.set CAN_CanIP__CAN_RX10_CONTROL, CYREG_CAN1_CAN_RX10_CONTROL
+ 2088              	.set CAN_CanIP__CAN_RX10_DATA_HIGH, CYREG_CAN1_CAN_RX10_DATA_HIGH
+ 2089              	.set CAN_CanIP__CAN_RX10_DATA_LOW, CYREG_CAN1_CAN_RX10_DATA_LOW
+ 2090              	.set CAN_CanIP__CAN_RX10_ID, CYREG_CAN1_CAN_RX10_ID
+ 2091              	.set CAN_CanIP__CAN_RX11_ACR, CYREG_CAN1_CAN_RX11_ACR
+ 2092              	.set CAN_CanIP__CAN_RX11_ACR_DATA, CYREG_CAN1_CAN_RX11_ACR_DATA
+ 2093              	.set CAN_CanIP__CAN_RX11_AMR, CYREG_CAN1_CAN_RX11_AMR
+ 2094              	.set CAN_CanIP__CAN_RX11_AMR_DATA, CYREG_CAN1_CAN_RX11_AMR_DATA
+ 2095              	.set CAN_CanIP__CAN_RX11_CONTROL, CYREG_CAN1_CAN_RX11_CONTROL
+ 2096              	.set CAN_CanIP__CAN_RX11_DATA_HIGH, CYREG_CAN1_CAN_RX11_DATA_HIGH
+ 2097              	.set CAN_CanIP__CAN_RX11_DATA_LOW, CYREG_CAN1_CAN_RX11_DATA_LOW
+ 2098              	.set CAN_CanIP__CAN_RX11_ID, CYREG_CAN1_CAN_RX11_ID
+ 2099              	.set CAN_CanIP__CAN_RX12_ACR, CYREG_CAN1_CAN_RX12_ACR
+ 2100              	.set CAN_CanIP__CAN_RX12_ACR_DATA, CYREG_CAN1_CAN_RX12_ACR_DATA
+ 2101              	.set CAN_CanIP__CAN_RX12_AMR, CYREG_CAN1_CAN_RX12_AMR
+ 2102              	.set CAN_CanIP__CAN_RX12_AMR_DATA, CYREG_CAN1_CAN_RX12_AMR_DATA
+ 2103              	.set CAN_CanIP__CAN_RX12_CONTROL, CYREG_CAN1_CAN_RX12_CONTROL
+ 2104              	.set CAN_CanIP__CAN_RX12_DATA_HIGH, CYREG_CAN1_CAN_RX12_DATA_HIGH
+ 2105              	.set CAN_CanIP__CAN_RX12_DATA_LOW, CYREG_CAN1_CAN_RX12_DATA_LOW
+ 2106              	.set CAN_CanIP__CAN_RX12_ID, CYREG_CAN1_CAN_RX12_ID
+ 2107              	.set CAN_CanIP__CAN_RX13_ACR, CYREG_CAN1_CAN_RX13_ACR
+ 2108              	.set CAN_CanIP__CAN_RX13_ACR_DATA, CYREG_CAN1_CAN_RX13_ACR_DATA
+ 2109              	.set CAN_CanIP__CAN_RX13_AMR, CYREG_CAN1_CAN_RX13_AMR
+ 2110              	.set CAN_CanIP__CAN_RX13_AMR_DATA, CYREG_CAN1_CAN_RX13_AMR_DATA
+ 2111              	.set CAN_CanIP__CAN_RX13_CONTROL, CYREG_CAN1_CAN_RX13_CONTROL
+ 2112              	.set CAN_CanIP__CAN_RX13_DATA_HIGH, CYREG_CAN1_CAN_RX13_DATA_HIGH
+ 2113              	.set CAN_CanIP__CAN_RX13_DATA_LOW, CYREG_CAN1_CAN_RX13_DATA_LOW
+ 2114              	.set CAN_CanIP__CAN_RX13_ID, CYREG_CAN1_CAN_RX13_ID
+ 2115              	.set CAN_CanIP__CAN_RX14_ACR, CYREG_CAN1_CAN_RX14_ACR
+ 2116              	.set CAN_CanIP__CAN_RX14_ACR_DATA, CYREG_CAN1_CAN_RX14_ACR_DATA
+ 2117              	.set CAN_CanIP__CAN_RX14_AMR, CYREG_CAN1_CAN_RX14_AMR
+ 2118              	.set CAN_CanIP__CAN_RX14_AMR_DATA, CYREG_CAN1_CAN_RX14_AMR_DATA
+ 2119              	.set CAN_CanIP__CAN_RX14_CONTROL, CYREG_CAN1_CAN_RX14_CONTROL
+ 2120              	.set CAN_CanIP__CAN_RX14_DATA_HIGH, CYREG_CAN1_CAN_RX14_DATA_HIGH
+ 2121              	.set CAN_CanIP__CAN_RX14_DATA_LOW, CYREG_CAN1_CAN_RX14_DATA_LOW
+ 2122              	.set CAN_CanIP__CAN_RX14_ID, CYREG_CAN1_CAN_RX14_ID
+ 2123              	.set CAN_CanIP__CAN_RX15_ACR, CYREG_CAN1_CAN_RX15_ACR
+ 2124              	.set CAN_CanIP__CAN_RX15_ACR_DATA, CYREG_CAN1_CAN_RX15_ACR_DATA
+ 2125              	.set CAN_CanIP__CAN_RX15_AMR, CYREG_CAN1_CAN_RX15_AMR
+ 2126              	.set CAN_CanIP__CAN_RX15_AMR_DATA, CYREG_CAN1_CAN_RX15_AMR_DATA
+ 2127              	.set CAN_CanIP__CAN_RX15_CONTROL, CYREG_CAN1_CAN_RX15_CONTROL
+ 2128              	.set CAN_CanIP__CAN_RX15_DATA_HIGH, CYREG_CAN1_CAN_RX15_DATA_HIGH
+ 2129              	.set CAN_CanIP__CAN_RX15_DATA_LOW, CYREG_CAN1_CAN_RX15_DATA_LOW
+ 2130              	.set CAN_CanIP__CAN_RX15_ID, CYREG_CAN1_CAN_RX15_ID
+ 2131              	.set CAN_CanIP__CAN_RX2_ACR, CYREG_CAN1_CAN_RX2_ACR
+ 2132              	.set CAN_CanIP__CAN_RX2_ACR_DATA, CYREG_CAN1_CAN_RX2_ACR_DATA
+ 2133              	.set CAN_CanIP__CAN_RX2_AMR, CYREG_CAN1_CAN_RX2_AMR
+ 2134              	.set CAN_CanIP__CAN_RX2_AMR_DATA, CYREG_CAN1_CAN_RX2_AMR_DATA
+ 2135              	.set CAN_CanIP__CAN_RX2_CONTROL, CYREG_CAN1_CAN_RX2_CONTROL
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 273
 
 
- 2136              	.set CAN_CanIP__CAN_RX4_AMR_DATA, CYREG_CAN1_CAN_RX4_AMR_DATA
- 2137              	.set CAN_CanIP__CAN_RX4_CONTROL, CYREG_CAN1_CAN_RX4_CONTROL
- 2138              	.set CAN_CanIP__CAN_RX4_DATA_HIGH, CYREG_CAN1_CAN_RX4_DATA_HIGH
- 2139              	.set CAN_CanIP__CAN_RX4_DATA_LOW, CYREG_CAN1_CAN_RX4_DATA_LOW
- 2140              	.set CAN_CanIP__CAN_RX4_ID, CYREG_CAN1_CAN_RX4_ID
- 2141              	.set CAN_CanIP__CAN_RX5_ACR, CYREG_CAN1_CAN_RX5_ACR
- 2142              	.set CAN_CanIP__CAN_RX5_ACR_DATA, CYREG_CAN1_CAN_RX5_ACR_DATA
- 2143              	.set CAN_CanIP__CAN_RX5_AMR, CYREG_CAN1_CAN_RX5_AMR
- 2144              	.set CAN_CanIP__CAN_RX5_AMR_DATA, CYREG_CAN1_CAN_RX5_AMR_DATA
- 2145              	.set CAN_CanIP__CAN_RX5_CONTROL, CYREG_CAN1_CAN_RX5_CONTROL
- 2146              	.set CAN_CanIP__CAN_RX5_DATA_HIGH, CYREG_CAN1_CAN_RX5_DATA_HIGH
- 2147              	.set CAN_CanIP__CAN_RX5_DATA_LOW, CYREG_CAN1_CAN_RX5_DATA_LOW
- 2148              	.set CAN_CanIP__CAN_RX5_ID, CYREG_CAN1_CAN_RX5_ID
- 2149              	.set CAN_CanIP__CAN_RX6_ACR, CYREG_CAN1_CAN_RX6_ACR
- 2150              	.set CAN_CanIP__CAN_RX6_ACR_DATA, CYREG_CAN1_CAN_RX6_ACR_DATA
- 2151              	.set CAN_CanIP__CAN_RX6_AMR, CYREG_CAN1_CAN_RX6_AMR
- 2152              	.set CAN_CanIP__CAN_RX6_AMR_DATA, CYREG_CAN1_CAN_RX6_AMR_DATA
- 2153              	.set CAN_CanIP__CAN_RX6_CONTROL, CYREG_CAN1_CAN_RX6_CONTROL
- 2154              	.set CAN_CanIP__CAN_RX6_DATA_HIGH, CYREG_CAN1_CAN_RX6_DATA_HIGH
- 2155              	.set CAN_CanIP__CAN_RX6_DATA_LOW, CYREG_CAN1_CAN_RX6_DATA_LOW
- 2156              	.set CAN_CanIP__CAN_RX6_ID, CYREG_CAN1_CAN_RX6_ID
- 2157              	.set CAN_CanIP__CAN_RX7_ACR, CYREG_CAN1_CAN_RX7_ACR
- 2158              	.set CAN_CanIP__CAN_RX7_ACR_DATA, CYREG_CAN1_CAN_RX7_ACR_DATA
- 2159              	.set CAN_CanIP__CAN_RX7_AMR, CYREG_CAN1_CAN_RX7_AMR
- 2160              	.set CAN_CanIP__CAN_RX7_AMR_DATA, CYREG_CAN1_CAN_RX7_AMR_DATA
- 2161              	.set CAN_CanIP__CAN_RX7_CONTROL, CYREG_CAN1_CAN_RX7_CONTROL
- 2162              	.set CAN_CanIP__CAN_RX7_DATA_HIGH, CYREG_CAN1_CAN_RX7_DATA_HIGH
- 2163              	.set CAN_CanIP__CAN_RX7_DATA_LOW, CYREG_CAN1_CAN_RX7_DATA_LOW
- 2164              	.set CAN_CanIP__CAN_RX7_ID, CYREG_CAN1_CAN_RX7_ID
- 2165              	.set CAN_CanIP__CAN_RX8_ACR, CYREG_CAN1_CAN_RX8_ACR
- 2166              	.set CAN_CanIP__CAN_RX8_ACR_DATA, CYREG_CAN1_CAN_RX8_ACR_DATA
- 2167              	.set CAN_CanIP__CAN_RX8_AMR, CYREG_CAN1_CAN_RX8_AMR
- 2168              	.set CAN_CanIP__CAN_RX8_AMR_DATA, CYREG_CAN1_CAN_RX8_AMR_DATA
- 2169              	.set CAN_CanIP__CAN_RX8_CONTROL, CYREG_CAN1_CAN_RX8_CONTROL
- 2170              	.set CAN_CanIP__CAN_RX8_DATA_HIGH, CYREG_CAN1_CAN_RX8_DATA_HIGH
- 2171              	.set CAN_CanIP__CAN_RX8_DATA_LOW, CYREG_CAN1_CAN_RX8_DATA_LOW
- 2172              	.set CAN_CanIP__CAN_RX8_ID, CYREG_CAN1_CAN_RX8_ID
- 2173              	.set CAN_CanIP__CAN_RX9_ACR, CYREG_CAN1_CAN_RX9_ACR
- 2174              	.set CAN_CanIP__CAN_RX9_ACR_DATA, CYREG_CAN1_CAN_RX9_ACR_DATA
- 2175              	.set CAN_CanIP__CAN_RX9_AMR, CYREG_CAN1_CAN_RX9_AMR
- 2176              	.set CAN_CanIP__CAN_RX9_AMR_DATA, CYREG_CAN1_CAN_RX9_AMR_DATA
- 2177              	.set CAN_CanIP__CAN_RX9_CONTROL, CYREG_CAN1_CAN_RX9_CONTROL
- 2178              	.set CAN_CanIP__CAN_RX9_DATA_HIGH, CYREG_CAN1_CAN_RX9_DATA_HIGH
- 2179              	.set CAN_CanIP__CAN_RX9_DATA_LOW, CYREG_CAN1_CAN_RX9_DATA_LOW
- 2180              	.set CAN_CanIP__CAN_RX9_ID, CYREG_CAN1_CAN_RX9_ID
- 2181              	.set CAN_CanIP__CAN_TX0_CONTROL, CYREG_CAN1_CAN_TX0_CONTROL
- 2182              	.set CAN_CanIP__CAN_TX0_DATA_HIGH, CYREG_CAN1_CAN_TX0_DATA_HIGH
- 2183              	.set CAN_CanIP__CAN_TX0_DATA_LOW, CYREG_CAN1_CAN_TX0_DATA_LOW
- 2184              	.set CAN_CanIP__CAN_TX0_ID, CYREG_CAN1_CAN_TX0_ID
- 2185              	.set CAN_CanIP__CAN_TX1_CONTROL, CYREG_CAN1_CAN_TX1_CONTROL
- 2186              	.set CAN_CanIP__CAN_TX1_DATA_HIGH, CYREG_CAN1_CAN_TX1_DATA_HIGH
- 2187              	.set CAN_CanIP__CAN_TX1_DATA_LOW, CYREG_CAN1_CAN_TX1_DATA_LOW
- 2188              	.set CAN_CanIP__CAN_TX1_ID, CYREG_CAN1_CAN_TX1_ID
- 2189              	.set CAN_CanIP__CAN_TX2_CONTROL, CYREG_CAN1_CAN_TX2_CONTROL
- 2190              	.set CAN_CanIP__CAN_TX2_DATA_HIGH, CYREG_CAN1_CAN_TX2_DATA_HIGH
- 2191              	.set CAN_CanIP__CAN_TX2_DATA_LOW, CYREG_CAN1_CAN_TX2_DATA_LOW
- 2192              	.set CAN_CanIP__CAN_TX2_ID, CYREG_CAN1_CAN_TX2_ID
+ 2136              	.set CAN_CanIP__CAN_RX2_DATA_HIGH, CYREG_CAN1_CAN_RX2_DATA_HIGH
+ 2137              	.set CAN_CanIP__CAN_RX2_DATA_LOW, CYREG_CAN1_CAN_RX2_DATA_LOW
+ 2138              	.set CAN_CanIP__CAN_RX2_ID, CYREG_CAN1_CAN_RX2_ID
+ 2139              	.set CAN_CanIP__CAN_RX3_ACR, CYREG_CAN1_CAN_RX3_ACR
+ 2140              	.set CAN_CanIP__CAN_RX3_ACR_DATA, CYREG_CAN1_CAN_RX3_ACR_DATA
+ 2141              	.set CAN_CanIP__CAN_RX3_AMR, CYREG_CAN1_CAN_RX3_AMR
+ 2142              	.set CAN_CanIP__CAN_RX3_AMR_DATA, CYREG_CAN1_CAN_RX3_AMR_DATA
+ 2143              	.set CAN_CanIP__CAN_RX3_CONTROL, CYREG_CAN1_CAN_RX3_CONTROL
+ 2144              	.set CAN_CanIP__CAN_RX3_DATA_HIGH, CYREG_CAN1_CAN_RX3_DATA_HIGH
+ 2145              	.set CAN_CanIP__CAN_RX3_DATA_LOW, CYREG_CAN1_CAN_RX3_DATA_LOW
+ 2146              	.set CAN_CanIP__CAN_RX3_ID, CYREG_CAN1_CAN_RX3_ID
+ 2147              	.set CAN_CanIP__CAN_RX4_ACR, CYREG_CAN1_CAN_RX4_ACR
+ 2148              	.set CAN_CanIP__CAN_RX4_ACR_DATA, CYREG_CAN1_CAN_RX4_ACR_DATA
+ 2149              	.set CAN_CanIP__CAN_RX4_AMR, CYREG_CAN1_CAN_RX4_AMR
+ 2150              	.set CAN_CanIP__CAN_RX4_AMR_DATA, CYREG_CAN1_CAN_RX4_AMR_DATA
+ 2151              	.set CAN_CanIP__CAN_RX4_CONTROL, CYREG_CAN1_CAN_RX4_CONTROL
+ 2152              	.set CAN_CanIP__CAN_RX4_DATA_HIGH, CYREG_CAN1_CAN_RX4_DATA_HIGH
+ 2153              	.set CAN_CanIP__CAN_RX4_DATA_LOW, CYREG_CAN1_CAN_RX4_DATA_LOW
+ 2154              	.set CAN_CanIP__CAN_RX4_ID, CYREG_CAN1_CAN_RX4_ID
+ 2155              	.set CAN_CanIP__CAN_RX5_ACR, CYREG_CAN1_CAN_RX5_ACR
+ 2156              	.set CAN_CanIP__CAN_RX5_ACR_DATA, CYREG_CAN1_CAN_RX5_ACR_DATA
+ 2157              	.set CAN_CanIP__CAN_RX5_AMR, CYREG_CAN1_CAN_RX5_AMR
+ 2158              	.set CAN_CanIP__CAN_RX5_AMR_DATA, CYREG_CAN1_CAN_RX5_AMR_DATA
+ 2159              	.set CAN_CanIP__CAN_RX5_CONTROL, CYREG_CAN1_CAN_RX5_CONTROL
+ 2160              	.set CAN_CanIP__CAN_RX5_DATA_HIGH, CYREG_CAN1_CAN_RX5_DATA_HIGH
+ 2161              	.set CAN_CanIP__CAN_RX5_DATA_LOW, CYREG_CAN1_CAN_RX5_DATA_LOW
+ 2162              	.set CAN_CanIP__CAN_RX5_ID, CYREG_CAN1_CAN_RX5_ID
+ 2163              	.set CAN_CanIP__CAN_RX6_ACR, CYREG_CAN1_CAN_RX6_ACR
+ 2164              	.set CAN_CanIP__CAN_RX6_ACR_DATA, CYREG_CAN1_CAN_RX6_ACR_DATA
+ 2165              	.set CAN_CanIP__CAN_RX6_AMR, CYREG_CAN1_CAN_RX6_AMR
+ 2166              	.set CAN_CanIP__CAN_RX6_AMR_DATA, CYREG_CAN1_CAN_RX6_AMR_DATA
+ 2167              	.set CAN_CanIP__CAN_RX6_CONTROL, CYREG_CAN1_CAN_RX6_CONTROL
+ 2168              	.set CAN_CanIP__CAN_RX6_DATA_HIGH, CYREG_CAN1_CAN_RX6_DATA_HIGH
+ 2169              	.set CAN_CanIP__CAN_RX6_DATA_LOW, CYREG_CAN1_CAN_RX6_DATA_LOW
+ 2170              	.set CAN_CanIP__CAN_RX6_ID, CYREG_CAN1_CAN_RX6_ID
+ 2171              	.set CAN_CanIP__CAN_RX7_ACR, CYREG_CAN1_CAN_RX7_ACR
+ 2172              	.set CAN_CanIP__CAN_RX7_ACR_DATA, CYREG_CAN1_CAN_RX7_ACR_DATA
+ 2173              	.set CAN_CanIP__CAN_RX7_AMR, CYREG_CAN1_CAN_RX7_AMR
+ 2174              	.set CAN_CanIP__CAN_RX7_AMR_DATA, CYREG_CAN1_CAN_RX7_AMR_DATA
+ 2175              	.set CAN_CanIP__CAN_RX7_CONTROL, CYREG_CAN1_CAN_RX7_CONTROL
+ 2176              	.set CAN_CanIP__CAN_RX7_DATA_HIGH, CYREG_CAN1_CAN_RX7_DATA_HIGH
+ 2177              	.set CAN_CanIP__CAN_RX7_DATA_LOW, CYREG_CAN1_CAN_RX7_DATA_LOW
+ 2178              	.set CAN_CanIP__CAN_RX7_ID, CYREG_CAN1_CAN_RX7_ID
+ 2179              	.set CAN_CanIP__CAN_RX8_ACR, CYREG_CAN1_CAN_RX8_ACR
+ 2180              	.set CAN_CanIP__CAN_RX8_ACR_DATA, CYREG_CAN1_CAN_RX8_ACR_DATA
+ 2181              	.set CAN_CanIP__CAN_RX8_AMR, CYREG_CAN1_CAN_RX8_AMR
+ 2182              	.set CAN_CanIP__CAN_RX8_AMR_DATA, CYREG_CAN1_CAN_RX8_AMR_DATA
+ 2183              	.set CAN_CanIP__CAN_RX8_CONTROL, CYREG_CAN1_CAN_RX8_CONTROL
+ 2184              	.set CAN_CanIP__CAN_RX8_DATA_HIGH, CYREG_CAN1_CAN_RX8_DATA_HIGH
+ 2185              	.set CAN_CanIP__CAN_RX8_DATA_LOW, CYREG_CAN1_CAN_RX8_DATA_LOW
+ 2186              	.set CAN_CanIP__CAN_RX8_ID, CYREG_CAN1_CAN_RX8_ID
+ 2187              	.set CAN_CanIP__CAN_RX9_ACR, CYREG_CAN1_CAN_RX9_ACR
+ 2188              	.set CAN_CanIP__CAN_RX9_ACR_DATA, CYREG_CAN1_CAN_RX9_ACR_DATA
+ 2189              	.set CAN_CanIP__CAN_RX9_AMR, CYREG_CAN1_CAN_RX9_AMR
+ 2190              	.set CAN_CanIP__CAN_RX9_AMR_DATA, CYREG_CAN1_CAN_RX9_AMR_DATA
+ 2191              	.set CAN_CanIP__CAN_RX9_CONTROL, CYREG_CAN1_CAN_RX9_CONTROL
+ 2192              	.set CAN_CanIP__CAN_RX9_DATA_HIGH, CYREG_CAN1_CAN_RX9_DATA_HIGH
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 274
 
 
- 2193              	.set CAN_CanIP__CAN_TX3_CONTROL, CYREG_CAN1_CAN_TX3_CONTROL
- 2194              	.set CAN_CanIP__CAN_TX3_DATA_HIGH, CYREG_CAN1_CAN_TX3_DATA_HIGH
- 2195              	.set CAN_CanIP__CAN_TX3_DATA_LOW, CYREG_CAN1_CAN_TX3_DATA_LOW
- 2196              	.set CAN_CanIP__CAN_TX3_ID, CYREG_CAN1_CAN_TX3_ID
- 2197              	.set CAN_CanIP__CAN_TX4_CONTROL, CYREG_CAN1_CAN_TX4_CONTROL
- 2198              	.set CAN_CanIP__CAN_TX4_DATA_HIGH, CYREG_CAN1_CAN_TX4_DATA_HIGH
- 2199              	.set CAN_CanIP__CAN_TX4_DATA_LOW, CYREG_CAN1_CAN_TX4_DATA_LOW
- 2200              	.set CAN_CanIP__CAN_TX4_ID, CYREG_CAN1_CAN_TX4_ID
- 2201              	.set CAN_CanIP__CAN_TX5_CONTROL, CYREG_CAN1_CAN_TX5_CONTROL
- 2202              	.set CAN_CanIP__CAN_TX5_DATA_HIGH, CYREG_CAN1_CAN_TX5_DATA_HIGH
- 2203              	.set CAN_CanIP__CAN_TX5_DATA_LOW, CYREG_CAN1_CAN_TX5_DATA_LOW
- 2204              	.set CAN_CanIP__CAN_TX5_ID, CYREG_CAN1_CAN_TX5_ID
- 2205              	.set CAN_CanIP__CAN_TX6_CONTROL, CYREG_CAN1_CAN_TX6_CONTROL
- 2206              	.set CAN_CanIP__CAN_TX6_DATA_HIGH, CYREG_CAN1_CAN_TX6_DATA_HIGH
- 2207              	.set CAN_CanIP__CAN_TX6_DATA_LOW, CYREG_CAN1_CAN_TX6_DATA_LOW
- 2208              	.set CAN_CanIP__CAN_TX6_ID, CYREG_CAN1_CAN_TX6_ID
- 2209              	.set CAN_CanIP__CAN_TX7_CONTROL, CYREG_CAN1_CAN_TX7_CONTROL
- 2210              	.set CAN_CanIP__CAN_TX7_DATA_HIGH, CYREG_CAN1_CAN_TX7_DATA_HIGH
- 2211              	.set CAN_CanIP__CAN_TX7_DATA_LOW, CYREG_CAN1_CAN_TX7_DATA_LOW
- 2212              	.set CAN_CanIP__CAN_TX7_ID, CYREG_CAN1_CAN_TX7_ID
- 2213              	.set CAN_CanIP__CNTL, CYREG_CAN1_CNTL
- 2214              	.set CAN_CanIP__COMMAND, CYREG_CAN1_COMMAND
- 2215              	.set CAN_CanIP__CONFIG, CYREG_CAN1_CONFIG
- 2216              	.set CAN_CanIP__ECR, CYREG_CAN1_ECR
- 2217              	.set CAN_CanIP__ERROR_STATUS, CYREG_CAN1_ERROR_STATUS
- 2218              	.set CAN_CanIP__INT_EBL, CYREG_CAN1_INT_EBL
- 2219              	.set CAN_CanIP__INT_STATUS, CYREG_CAN1_INT_STATUS
- 2220              	.set CAN_CanIP__INTR_CAN, CYREG_CAN1_INTR_CAN
- 2221              	.set CAN_CanIP__INTR_CAN_MASK, CYREG_CAN1_INTR_CAN_MASK
- 2222              	.set CAN_CanIP__INTR_CAN_MASKED, CYREG_CAN1_INTR_CAN_MASKED
- 2223              	.set CAN_CanIP__INTR_CAN_SET, CYREG_CAN1_INTR_CAN_SET
- 2224              	.set CAN_CanIP__TTCAN_CAPTURE, CYREG_CAN1_TTCAN_CAPTURE
- 2225              	.set CAN_CanIP__TTCAN_COMPARE, CYREG_CAN1_TTCAN_COMPARE
- 2226              	.set CAN_CanIP__TTCAN_COUNTER, CYREG_CAN1_TTCAN_COUNTER
- 2227              	.set CAN_CanIP__TTCAN_TIMING, CYREG_CAN1_TTCAN_TIMING
- 2228              	
- 2229              	/* CAN_HFCLK */
- 2230              	.set CAN_HFCLK__DIV_ID, 0x00000040
- 2231              	.set CAN_HFCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL0
- 2232              	.set CAN_HFCLK__PA_DIV_ID, 0x000000FF
- 2233              	
- 2234              	/* Clock_1ms */
- 2235              	.set Clock_1ms__CTRL_REGISTER, CYREG_PERI_PCLK_CTL11
- 2236              	.set Clock_1ms__DIV_ID, 0x00000044
- 2237              	.set Clock_1ms__DIV_REGISTER, CYREG_PERI_DIV_16_CTL4
- 2238              	.set Clock_1ms__PA_DIV_ID, 0x000000FF
- 2239              	
- 2240              	/* QuadDec_1 */
- 2241              	.set QuadDec_1_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT2_CC
- 2242              	.set QuadDec_1_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT2_CC_BUFF
- 2243              	.set QuadDec_1_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT2_COUNTER
- 2244              	.set QuadDec_1_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT2_CTRL
- 2245              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT2_INTR
- 2246              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT2_INTR_MASK
- 2247              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT2_INTR_MASKED
- 2248              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT2_INTR_SET
- 2249              	.set QuadDec_1_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT2_PERIOD
+ 2193              	.set CAN_CanIP__CAN_RX9_DATA_LOW, CYREG_CAN1_CAN_RX9_DATA_LOW
+ 2194              	.set CAN_CanIP__CAN_RX9_ID, CYREG_CAN1_CAN_RX9_ID
+ 2195              	.set CAN_CanIP__CAN_TX0_CONTROL, CYREG_CAN1_CAN_TX0_CONTROL
+ 2196              	.set CAN_CanIP__CAN_TX0_DATA_HIGH, CYREG_CAN1_CAN_TX0_DATA_HIGH
+ 2197              	.set CAN_CanIP__CAN_TX0_DATA_LOW, CYREG_CAN1_CAN_TX0_DATA_LOW
+ 2198              	.set CAN_CanIP__CAN_TX0_ID, CYREG_CAN1_CAN_TX0_ID
+ 2199              	.set CAN_CanIP__CAN_TX1_CONTROL, CYREG_CAN1_CAN_TX1_CONTROL
+ 2200              	.set CAN_CanIP__CAN_TX1_DATA_HIGH, CYREG_CAN1_CAN_TX1_DATA_HIGH
+ 2201              	.set CAN_CanIP__CAN_TX1_DATA_LOW, CYREG_CAN1_CAN_TX1_DATA_LOW
+ 2202              	.set CAN_CanIP__CAN_TX1_ID, CYREG_CAN1_CAN_TX1_ID
+ 2203              	.set CAN_CanIP__CAN_TX2_CONTROL, CYREG_CAN1_CAN_TX2_CONTROL
+ 2204              	.set CAN_CanIP__CAN_TX2_DATA_HIGH, CYREG_CAN1_CAN_TX2_DATA_HIGH
+ 2205              	.set CAN_CanIP__CAN_TX2_DATA_LOW, CYREG_CAN1_CAN_TX2_DATA_LOW
+ 2206              	.set CAN_CanIP__CAN_TX2_ID, CYREG_CAN1_CAN_TX2_ID
+ 2207              	.set CAN_CanIP__CAN_TX3_CONTROL, CYREG_CAN1_CAN_TX3_CONTROL
+ 2208              	.set CAN_CanIP__CAN_TX3_DATA_HIGH, CYREG_CAN1_CAN_TX3_DATA_HIGH
+ 2209              	.set CAN_CanIP__CAN_TX3_DATA_LOW, CYREG_CAN1_CAN_TX3_DATA_LOW
+ 2210              	.set CAN_CanIP__CAN_TX3_ID, CYREG_CAN1_CAN_TX3_ID
+ 2211              	.set CAN_CanIP__CAN_TX4_CONTROL, CYREG_CAN1_CAN_TX4_CONTROL
+ 2212              	.set CAN_CanIP__CAN_TX4_DATA_HIGH, CYREG_CAN1_CAN_TX4_DATA_HIGH
+ 2213              	.set CAN_CanIP__CAN_TX4_DATA_LOW, CYREG_CAN1_CAN_TX4_DATA_LOW
+ 2214              	.set CAN_CanIP__CAN_TX4_ID, CYREG_CAN1_CAN_TX4_ID
+ 2215              	.set CAN_CanIP__CAN_TX5_CONTROL, CYREG_CAN1_CAN_TX5_CONTROL
+ 2216              	.set CAN_CanIP__CAN_TX5_DATA_HIGH, CYREG_CAN1_CAN_TX5_DATA_HIGH
+ 2217              	.set CAN_CanIP__CAN_TX5_DATA_LOW, CYREG_CAN1_CAN_TX5_DATA_LOW
+ 2218              	.set CAN_CanIP__CAN_TX5_ID, CYREG_CAN1_CAN_TX5_ID
+ 2219              	.set CAN_CanIP__CAN_TX6_CONTROL, CYREG_CAN1_CAN_TX6_CONTROL
+ 2220              	.set CAN_CanIP__CAN_TX6_DATA_HIGH, CYREG_CAN1_CAN_TX6_DATA_HIGH
+ 2221              	.set CAN_CanIP__CAN_TX6_DATA_LOW, CYREG_CAN1_CAN_TX6_DATA_LOW
+ 2222              	.set CAN_CanIP__CAN_TX6_ID, CYREG_CAN1_CAN_TX6_ID
+ 2223              	.set CAN_CanIP__CAN_TX7_CONTROL, CYREG_CAN1_CAN_TX7_CONTROL
+ 2224              	.set CAN_CanIP__CAN_TX7_DATA_HIGH, CYREG_CAN1_CAN_TX7_DATA_HIGH
+ 2225              	.set CAN_CanIP__CAN_TX7_DATA_LOW, CYREG_CAN1_CAN_TX7_DATA_LOW
+ 2226              	.set CAN_CanIP__CAN_TX7_ID, CYREG_CAN1_CAN_TX7_ID
+ 2227              	.set CAN_CanIP__CNTL, CYREG_CAN1_CNTL
+ 2228              	.set CAN_CanIP__COMMAND, CYREG_CAN1_COMMAND
+ 2229              	.set CAN_CanIP__CONFIG, CYREG_CAN1_CONFIG
+ 2230              	.set CAN_CanIP__ECR, CYREG_CAN1_ECR
+ 2231              	.set CAN_CanIP__ERROR_STATUS, CYREG_CAN1_ERROR_STATUS
+ 2232              	.set CAN_CanIP__INT_EBL, CYREG_CAN1_INT_EBL
+ 2233              	.set CAN_CanIP__INT_STATUS, CYREG_CAN1_INT_STATUS
+ 2234              	.set CAN_CanIP__INTR_CAN, CYREG_CAN1_INTR_CAN
+ 2235              	.set CAN_CanIP__INTR_CAN_MASK, CYREG_CAN1_INTR_CAN_MASK
+ 2236              	.set CAN_CanIP__INTR_CAN_MASKED, CYREG_CAN1_INTR_CAN_MASKED
+ 2237              	.set CAN_CanIP__INTR_CAN_SET, CYREG_CAN1_INTR_CAN_SET
+ 2238              	.set CAN_CanIP__TTCAN_CAPTURE, CYREG_CAN1_TTCAN_CAPTURE
+ 2239              	.set CAN_CanIP__TTCAN_COMPARE, CYREG_CAN1_TTCAN_COMPARE
+ 2240              	.set CAN_CanIP__TTCAN_COUNTER, CYREG_CAN1_TTCAN_COUNTER
+ 2241              	.set CAN_CanIP__TTCAN_TIMING, CYREG_CAN1_TTCAN_TIMING
+ 2242              	
+ 2243              	/* CAN_HFCLK */
+ 2244              	.set CAN_HFCLK__DIV_ID, 0x00000040
+ 2245              	.set CAN_HFCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL0
+ 2246              	.set CAN_HFCLK__PA_DIV_ID, 0x000000FF
+ 2247              	
+ 2248              	/* QuadDec_1 */
+ 2249              	.set QuadDec_1_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT0_CC
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 275
 
 
- 2250              	.set QuadDec_1_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT2_PERIOD_BUFF
- 2251              	.set QuadDec_1_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT2_STATUS
- 2252              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
- 2253              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x04
- 2254              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 2
- 2255              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x400
- 2256              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 10
- 2257              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x4000000
- 2258              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 26
- 2259              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x40000
- 2260              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 18
- 2261              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
- 2262              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x04
- 2263              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 2
- 2264              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
- 2265              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x04
- 2266              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 2
- 2267              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 2
- 2268              	.set QuadDec_1_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT2_TR_CTRL0
- 2269              	.set QuadDec_1_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT2_TR_CTRL1
- 2270              	.set QuadDec_1_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT2_TR_CTRL2
- 2271              	
- 2272              	/* QuadDec_2 */
- 2273              	.set QuadDec_2_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT1_CC
- 2274              	.set QuadDec_2_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT1_CC_BUFF
- 2275              	.set QuadDec_2_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT1_COUNTER
- 2276              	.set QuadDec_2_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT1_CTRL
- 2277              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT1_INTR
- 2278              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT1_INTR_MASK
- 2279              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT1_INTR_MASKED
- 2280              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT1_INTR_SET
- 2281              	.set QuadDec_2_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT1_PERIOD
- 2282              	.set QuadDec_2_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT1_PERIOD_BUFF
- 2283              	.set QuadDec_2_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT1_STATUS
- 2284              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
- 2285              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x02
- 2286              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 1
- 2287              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x200
- 2288              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 9
- 2289              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x2000000
- 2290              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 25
- 2291              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x20000
- 2292              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 17
- 2293              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
- 2294              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x02
- 2295              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 1
- 2296              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
- 2297              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x02
- 2298              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 1
- 2299              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 1
- 2300              	.set QuadDec_2_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT1_TR_CTRL0
- 2301              	.set QuadDec_2_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT1_TR_CTRL1
- 2302              	.set QuadDec_2_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT1_TR_CTRL2
- 2303              	
- 2304              	/* Timer_1ms */
- 2305              	.set Timer_1ms_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT0_CC
- 2306              	.set Timer_1ms_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT0_CC_BUFF
+ 2250              	.set QuadDec_1_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT0_CC_BUFF
+ 2251              	.set QuadDec_1_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT0_COUNTER
+ 2252              	.set QuadDec_1_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT0_CTRL
+ 2253              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT0_INTR
+ 2254              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT0_INTR_MASK
+ 2255              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT0_INTR_MASKED
+ 2256              	.set QuadDec_1_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT0_INTR_SET
+ 2257              	.set QuadDec_1_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT0_PERIOD
+ 2258              	.set QuadDec_1_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT0_PERIOD_BUFF
+ 2259              	.set QuadDec_1_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT0_STATUS
+ 2260              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
+ 2261              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x01
+ 2262              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 0
+ 2263              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x100
+ 2264              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 8
+ 2265              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x1000000
+ 2266              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 24
+ 2267              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x10000
+ 2268              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 16
+ 2269              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
+ 2270              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x01
+ 2271              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 0
+ 2272              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
+ 2273              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x01
+ 2274              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 0
+ 2275              	.set QuadDec_1_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 0
+ 2276              	.set QuadDec_1_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT0_TR_CTRL0
+ 2277              	.set QuadDec_1_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT0_TR_CTRL1
+ 2278              	.set QuadDec_1_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT0_TR_CTRL2
+ 2279              	
+ 2280              	/* QuadDec_2 */
+ 2281              	.set QuadDec_2_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT1_CC
+ 2282              	.set QuadDec_2_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT1_CC_BUFF
+ 2283              	.set QuadDec_2_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT1_COUNTER
+ 2284              	.set QuadDec_2_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT1_CTRL
+ 2285              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT1_INTR
+ 2286              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT1_INTR_MASK
+ 2287              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT1_INTR_MASKED
+ 2288              	.set QuadDec_2_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT1_INTR_SET
+ 2289              	.set QuadDec_2_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT1_PERIOD
+ 2290              	.set QuadDec_2_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT1_PERIOD_BUFF
+ 2291              	.set QuadDec_2_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT1_STATUS
+ 2292              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
+ 2293              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x02
+ 2294              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 1
+ 2295              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x200
+ 2296              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 9
+ 2297              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x2000000
+ 2298              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 25
+ 2299              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x20000
+ 2300              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 17
+ 2301              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
+ 2302              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x02
+ 2303              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 1
+ 2304              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
+ 2305              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x02
+ 2306              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 1
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 276
 
 
- 2307              	.set Timer_1ms_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT0_COUNTER
- 2308              	.set Timer_1ms_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT0_CTRL
- 2309              	.set Timer_1ms_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT0_INTR
- 2310              	.set Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT0_INTR_MASK
- 2311              	.set Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT0_INTR_MASKED
- 2312              	.set Timer_1ms_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT0_INTR_SET
- 2313              	.set Timer_1ms_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT0_PERIOD
- 2314              	.set Timer_1ms_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT0_PERIOD_BUFF
- 2315              	.set Timer_1ms_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT0_STATUS
- 2316              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
- 2317              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x01
- 2318              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 0
- 2319              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x100
- 2320              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 8
- 2321              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x1000000
- 2322              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 24
- 2323              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x10000
- 2324              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 16
- 2325              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
- 2326              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x01
- 2327              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 0
- 2328              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
- 2329              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x01
- 2330              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 0
- 2331              	.set Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 0
- 2332              	.set Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT0_TR_CTRL0
- 2333              	.set Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT0_TR_CTRL1
- 2334              	.set Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT0_TR_CTRL2
- 2335              	
- 2336              	/* Status_Reg_LIM */
- 2337              	.set Status_Reg_LIM_sts_intr_sts_reg__0__MASK, 0x01
- 2338              	.set Status_Reg_LIM_sts_intr_sts_reg__0__POS, 0
- 2339              	.set Status_Reg_LIM_sts_intr_sts_reg__1__MASK, 0x02
- 2340              	.set Status_Reg_LIM_sts_intr_sts_reg__1__POS, 1
- 2341              	.set Status_Reg_LIM_sts_intr_sts_reg__2__MASK, 0x04
- 2342              	.set Status_Reg_LIM_sts_intr_sts_reg__2__POS, 2
- 2343              	.set Status_Reg_LIM_sts_intr_sts_reg__3__MASK, 0x08
- 2344              	.set Status_Reg_LIM_sts_intr_sts_reg__3__POS, 3
- 2345              	.set Status_Reg_LIM_sts_intr_sts_reg__4__MASK, 0x10
- 2346              	.set Status_Reg_LIM_sts_intr_sts_reg__4__POS, 4
- 2347              	.set Status_Reg_LIM_sts_intr_sts_reg__MASK, 0x1F
- 2348              	.set Status_Reg_LIM_sts_intr_sts_reg__MASK_REG, CYREG_UDB_W8_MSK7
- 2349              	.set Status_Reg_LIM_sts_intr_sts_reg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL7
- 2350              	.set Status_Reg_LIM_sts_intr_sts_reg__STATUS_REG, CYREG_UDB_W8_ST7
- 2351              	
- 2352              	/* Miscellaneous */
- 2353              	.set CYDEV_BCLK__HFCLK__HZ, 40000000
- 2354              	.set CYDEV_BCLK__HFCLK__KHZ, 40000
- 2355              	.set CYDEV_BCLK__HFCLK__MHZ, 40
- 2356              	.set CYDEV_BCLK__SYSCLK__HZ, 40000000
- 2357              	.set CYDEV_BCLK__SYSCLK__KHZ, 40000
- 2358              	.set CYDEV_BCLK__SYSCLK__MHZ, 40
- 2359              	.set CYDEV_CHIP_DIE_LEOPARD, 1
- 2360              	.set CYDEV_CHIP_DIE_PSOC4A, 26
- 2361              	.set CYDEV_CHIP_DIE_PSOC5LP, 2
- 2362              	.set CYDEV_CHIP_DIE_PSOC5TM, 3
- 2363              	.set CYDEV_CHIP_DIE_TMA4, 4
+ 2307              	.set QuadDec_2_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 1
+ 2308              	.set QuadDec_2_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT1_TR_CTRL0
+ 2309              	.set QuadDec_2_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT1_TR_CTRL1
+ 2310              	.set QuadDec_2_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT1_TR_CTRL2
+ 2311              	
+ 2312              	/* Timer_1ms */
+ 2313              	.set Timer_1ms_TimerUDB_rstSts_stsreg__0__MASK, 0x01
+ 2314              	.set Timer_1ms_TimerUDB_rstSts_stsreg__0__POS, 0
+ 2315              	.set Timer_1ms_TimerUDB_rstSts_stsreg__2__MASK, 0x04
+ 2316              	.set Timer_1ms_TimerUDB_rstSts_stsreg__2__POS, 2
+ 2317              	.set Timer_1ms_TimerUDB_rstSts_stsreg__3__MASK, 0x08
+ 2318              	.set Timer_1ms_TimerUDB_rstSts_stsreg__3__POS, 3
+ 2319              	.set Timer_1ms_TimerUDB_rstSts_stsreg__MASK, 0x0D
+ 2320              	.set Timer_1ms_TimerUDB_rstSts_stsreg__MASK_REG, CYREG_UDB_W8_MSK7
+ 2321              	.set Timer_1ms_TimerUDB_rstSts_stsreg__MASK_ST_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK7
+ 2322              	.set Timer_1ms_TimerUDB_rstSts_stsreg__PER_ST_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK7
+ 2323              	.set Timer_1ms_TimerUDB_rstSts_stsreg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL7
+ 2324              	.set Timer_1ms_TimerUDB_rstSts_stsreg__STATUS_CNT_REG, CYREG_UDB_CAT16_CTL_ST7
+ 2325              	.set Timer_1ms_TimerUDB_rstSts_stsreg__STATUS_CONTROL_REG, CYREG_UDB_CAT16_CTL_ST7
+ 2326              	.set Timer_1ms_TimerUDB_rstSts_stsreg__STATUS_REG, CYREG_UDB_W8_ST7
+ 2327              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__7__MASK, 0x80
+ 2328              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__7__POS, 7
+ 2329              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_AUX_CTL_REG, CYREG_UDB_W8_ACTL7
+ 2330              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG, CYREG_UDB_W8_CTL7
+ 2331              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_ST_REG, CYREG_UDB_CAT16_CTL_ST7
+ 2332              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__COUNT_REG, CYREG_UDB_W8_CTL7
+ 2333              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__COUNT_ST_REG, CYREG_UDB_CAT16_CTL_ST7
+ 2334              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__MASK, 0x80
+ 2335              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__MASK_CTL_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK7
+ 2336              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__PER_CTL_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK7
+ 2337              	.set Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__PERIOD_REG, CYREG_UDB_W8_MSK7
+ 2338              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG, CYREG_UDB_W16_A06
+ 2339              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_A1_REG, CYREG_UDB_W16_A16
+ 2340              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG, CYREG_UDB_W16_D06
+ 2341              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_D1_REG, CYREG_UDB_W16_D16
+ 2342              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_DP_AUX_CTL_REG, CYREG_UDB_W16_ACTL6
+ 2343              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG, CYREG_UDB_W16_F06
+ 2344              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_F1_REG, CYREG_UDB_W16_F16
+ 2345              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_A1_REG, CYREG_UDB_CAT16_A6
+ 2346              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG, CYREG_UDB_W8_A06
+ 2347              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__A1_REG, CYREG_UDB_W8_A16
+ 2348              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_D1_REG, CYREG_UDB_CAT16_D6
+ 2349              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG, CYREG_UDB_W8_D06
+ 2350              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__D1_REG, CYREG_UDB_W8_D16
+ 2351              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__DP_AUX_CTL_REG, CYREG_UDB_W8_ACTL6
+ 2352              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_F1_REG, CYREG_UDB_CAT16_F6
+ 2353              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG, CYREG_UDB_W8_F06
+ 2354              	.set Timer_1ms_TimerUDB_sT16_timerdp_u0__F1_REG, CYREG_UDB_W8_F16
+ 2355              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__A0_A1_REG, CYREG_UDB_CAT16_A7
+ 2356              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__A0_REG, CYREG_UDB_W8_A07
+ 2357              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__A1_REG, CYREG_UDB_W8_A17
+ 2358              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__D0_D1_REG, CYREG_UDB_CAT16_D7
+ 2359              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__D0_REG, CYREG_UDB_W8_D07
+ 2360              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__D1_REG, CYREG_UDB_W8_D17
+ 2361              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__DP_AUX_CTL_REG, CYREG_UDB_W8_ACTL7
+ 2362              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__F0_F1_REG, CYREG_UDB_CAT16_F7
+ 2363              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__F0_REG, CYREG_UDB_W8_F07
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 277
 
 
- 2364              	.set CYDEV_CHIP_DIE_UNKNOWN, 0
- 2365              	.set CYDEV_CHIP_FAMILY_FM0P, 5
- 2366              	.set CYDEV_CHIP_FAMILY_FM3, 6
- 2367              	.set CYDEV_CHIP_FAMILY_FM4, 7
- 2368              	.set CYDEV_CHIP_FAMILY_PSOC3, 1
- 2369              	.set CYDEV_CHIP_FAMILY_PSOC4, 2
- 2370              	.set CYDEV_CHIP_FAMILY_PSOC5, 3
- 2371              	.set CYDEV_CHIP_FAMILY_PSOC6, 4
- 2372              	.set CYDEV_CHIP_FAMILY_UNKNOWN, 0
- 2373              	.set CYDEV_CHIP_FAMILY_USED, CYDEV_CHIP_FAMILY_PSOC4
- 2374              	.set CYDEV_CHIP_JTAG_ID, 0x101111A0
- 2375              	.set CYDEV_CHIP_MEMBER_3A, 1
- 2376              	.set CYDEV_CHIP_MEMBER_4A, 26
- 2377              	.set CYDEV_CHIP_MEMBER_4AA, 25
- 2378              	.set CYDEV_CHIP_MEMBER_4AB, 30
- 2379              	.set CYDEV_CHIP_MEMBER_4AC, 14
- 2380              	.set CYDEV_CHIP_MEMBER_4AD, 15
- 2381              	.set CYDEV_CHIP_MEMBER_4AE, 16
- 2382              	.set CYDEV_CHIP_MEMBER_4D, 20
- 2383              	.set CYDEV_CHIP_MEMBER_4E, 6
- 2384              	.set CYDEV_CHIP_MEMBER_4F, 27
- 2385              	.set CYDEV_CHIP_MEMBER_4G, 4
- 2386              	.set CYDEV_CHIP_MEMBER_4H, 24
- 2387              	.set CYDEV_CHIP_MEMBER_4I, 32
- 2388              	.set CYDEV_CHIP_MEMBER_4J, 21
- 2389              	.set CYDEV_CHIP_MEMBER_4K, 22
- 2390              	.set CYDEV_CHIP_MEMBER_4L, 31
- 2391              	.set CYDEV_CHIP_MEMBER_4M, 29
- 2392              	.set CYDEV_CHIP_MEMBER_4N, 11
- 2393              	.set CYDEV_CHIP_MEMBER_4O, 8
- 2394              	.set CYDEV_CHIP_MEMBER_4P, 28
- 2395              	.set CYDEV_CHIP_MEMBER_4Q, 17
- 2396              	.set CYDEV_CHIP_MEMBER_4R, 9
- 2397              	.set CYDEV_CHIP_MEMBER_4S, 12
- 2398              	.set CYDEV_CHIP_MEMBER_4T, 10
- 2399              	.set CYDEV_CHIP_MEMBER_4U, 5
- 2400              	.set CYDEV_CHIP_MEMBER_4V, 23
- 2401              	.set CYDEV_CHIP_MEMBER_4W, 13
- 2402              	.set CYDEV_CHIP_MEMBER_4X, 7
- 2403              	.set CYDEV_CHIP_MEMBER_4Y, 18
- 2404              	.set CYDEV_CHIP_MEMBER_4Z, 19
- 2405              	.set CYDEV_CHIP_MEMBER_5A, 3
- 2406              	.set CYDEV_CHIP_MEMBER_5B, 2
- 2407              	.set CYDEV_CHIP_MEMBER_6A, 33
- 2408              	.set CYDEV_CHIP_MEMBER_FM3, 37
- 2409              	.set CYDEV_CHIP_MEMBER_FM4, 38
- 2410              	.set CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE1, 34
- 2411              	.set CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE2, 35
- 2412              	.set CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE3, 36
- 2413              	.set CYDEV_CHIP_MEMBER_UNKNOWN, 0
- 2414              	.set CYDEV_CHIP_MEMBER_USED, CYDEV_CHIP_MEMBER_4L
- 2415              	.set CYDEV_CHIP_DIE_EXPECT, CYDEV_CHIP_MEMBER_USED
- 2416              	.set CYDEV_CHIP_DIE_ACTUAL, CYDEV_CHIP_DIE_EXPECT
- 2417              	.set CYDEV_CHIP_REV_LEOPARD_ES1, 0
- 2418              	.set CYDEV_CHIP_REV_LEOPARD_ES2, 1
- 2419              	.set CYDEV_CHIP_REV_LEOPARD_ES3, 3
- 2420              	.set CYDEV_CHIP_REV_LEOPARD_PRODUCTION, 3
+ 2364              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__F1_REG, CYREG_UDB_W8_F17
+ 2365              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__MSK_DP_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK7
+ 2366              	.set Timer_1ms_TimerUDB_sT16_timerdp_u1__PER_DP_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK7
+ 2367              	
+ 2368              	/* Timer_LEDs */
+ 2369              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__0__MASK, 0x01
+ 2370              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__0__POS, 0
+ 2371              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__16BIT_STATUS_AUX_CTL_REG, CYREG_UDB_W16_ACTL5
+ 2372              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__16BIT_STATUS_REG, CYREG_UDB_W16_ST5
+ 2373              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__2__MASK, 0x04
+ 2374              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__2__POS, 2
+ 2375              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__3__MASK, 0x08
+ 2376              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__3__POS, 3
+ 2377              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__MASK, 0x0D
+ 2378              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__MASK_REG, CYREG_UDB_W8_MSK5
+ 2379              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL5
+ 2380              	.set Timer_LEDs_TimerUDB_rstSts_stsreg__STATUS_REG, CYREG_UDB_W8_ST5
+ 2381              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_CONTROL_AUX_CTL_REG, CYREG_UDB_W16_ACTL2
+ 2382              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_CONTROL_CONTROL_REG, CYREG_UDB_W16_CTL2
+ 2383              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_CONTROL_COUNT_REG, CYREG_UDB_W16_CTL2
+ 2384              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_COUNT_CONTROL_REG, CYREG_UDB_W16_CTL2
+ 2385              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_COUNT_COUNT_REG, CYREG_UDB_W16_CTL2
+ 2386              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_MASK_MASK_REG, CYREG_UDB_W16_MSK2
+ 2387              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_MASK_PERIOD_REG, CYREG_UDB_W16_MSK2
+ 2388              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_PERIOD_MASK_REG, CYREG_UDB_W16_MSK2
+ 2389              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__16BIT_PERIOD_PERIOD_REG, CYREG_UDB_W16_MSK2
+ 2390              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__32BIT_CONTROL_AUX_CTL_REG, CYREG_UDB_W32_ACTL2
+ 2391              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__32BIT_CONTROL_REG, CYREG_UDB_W32_CTL2
+ 2392              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__32BIT_COUNT_REG, CYREG_UDB_W32_CTL2
+ 2393              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__32BIT_PERIOD_REG, CYREG_UDB_W32_MSK2
+ 2394              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__7__MASK, 0x80
+ 2395              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__7__POS, 7
+ 2396              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_AUX_CTL_REG, CYREG_UDB_W8_ACTL2
+ 2397              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG, CYREG_UDB_W8_CTL2
+ 2398              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_ST_REG, CYREG_UDB_CAT16_CTL_ST2
+ 2399              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__COUNT_REG, CYREG_UDB_W8_CTL2
+ 2400              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__COUNT_ST_REG, CYREG_UDB_CAT16_CTL_ST2
+ 2401              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__MASK, 0x80
+ 2402              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__MASK_CTL_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK2
+ 2403              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__PER_CTL_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK2
+ 2404              	.set Timer_LEDs_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__PERIOD_REG, CYREG_UDB_W8_MSK2
+ 2405              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_A0_REG, CYREG_UDB_W16_A02
+ 2406              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_A1_REG, CYREG_UDB_W16_A12
+ 2407              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_D0_REG, CYREG_UDB_W16_D02
+ 2408              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_D1_REG, CYREG_UDB_W16_D12
+ 2409              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_DP_AUX_CTL_REG, CYREG_UDB_W16_ACTL2
+ 2410              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_F0_REG, CYREG_UDB_W16_F02
+ 2411              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__16BIT_F1_REG, CYREG_UDB_W16_F12
+ 2412              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_A0_REG, CYREG_UDB_W32_A02
+ 2413              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_A1_REG, CYREG_UDB_W32_A12
+ 2414              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_D0_REG, CYREG_UDB_W32_D02
+ 2415              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_D1_REG, CYREG_UDB_W32_D12
+ 2416              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_DP_AUX_CTL_REG, CYREG_UDB_W32_ACTL2
+ 2417              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_F0_REG, CYREG_UDB_W32_F02
+ 2418              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__32BIT_F1_REG, CYREG_UDB_W32_F12
+ 2419              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__A0_A1_REG, CYREG_UDB_CAT16_A2
+ 2420              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__A0_REG, CYREG_UDB_W8_A02
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 278
 
 
- 2421              	.set CYDEV_CHIP_REV_PSOC4A_ES0, 17
- 2422              	.set CYDEV_CHIP_REV_PSOC4A_PRODUCTION, 17
- 2423              	.set CYDEV_CHIP_REV_PSOC5LP_ES0, 0
- 2424              	.set CYDEV_CHIP_REV_PSOC5LP_PRODUCTION, 0
- 2425              	.set CYDEV_CHIP_REV_PSOC5TM_ES0, 0
- 2426              	.set CYDEV_CHIP_REV_PSOC5TM_ES1, 1
- 2427              	.set CYDEV_CHIP_REV_PSOC5TM_PRODUCTION, 1
- 2428              	.set CYDEV_CHIP_REV_TMA4_ES, 17
- 2429              	.set CYDEV_CHIP_REV_TMA4_ES2, 33
- 2430              	.set CYDEV_CHIP_REV_TMA4_PRODUCTION, 17
- 2431              	.set CYDEV_CHIP_REVISION_3A_ES1, 0
- 2432              	.set CYDEV_CHIP_REVISION_3A_ES2, 1
- 2433              	.set CYDEV_CHIP_REVISION_3A_ES3, 3
- 2434              	.set CYDEV_CHIP_REVISION_3A_PRODUCTION, 3
- 2435              	.set CYDEV_CHIP_REVISION_4A_ES0, 17
- 2436              	.set CYDEV_CHIP_REVISION_4A_PRODUCTION, 17
- 2437              	.set CYDEV_CHIP_REVISION_4AA_PRODUCTION, 0
- 2438              	.set CYDEV_CHIP_REVISION_4AB_PRODUCTION, 0
- 2439              	.set CYDEV_CHIP_REVISION_4AC_PRODUCTION, 0
- 2440              	.set CYDEV_CHIP_REVISION_4AD_PRODUCTION, 0
- 2441              	.set CYDEV_CHIP_REVISION_4AE_PRODUCTION, 0
- 2442              	.set CYDEV_CHIP_REVISION_4D_PRODUCTION, 0
- 2443              	.set CYDEV_CHIP_REVISION_4E_CCG2_NO_USBPD, 0
- 2444              	.set CYDEV_CHIP_REVISION_4E_PRODUCTION, 0
- 2445              	.set CYDEV_CHIP_REVISION_4F_PRODUCTION, 0
- 2446              	.set CYDEV_CHIP_REVISION_4F_PRODUCTION_256DMA, 0
- 2447              	.set CYDEV_CHIP_REVISION_4F_PRODUCTION_256K, 0
- 2448              	.set CYDEV_CHIP_REVISION_4G_ES, 17
- 2449              	.set CYDEV_CHIP_REVISION_4G_ES2, 33
- 2450              	.set CYDEV_CHIP_REVISION_4G_PRODUCTION, 17
- 2451              	.set CYDEV_CHIP_REVISION_4H_PRODUCTION, 0
- 2452              	.set CYDEV_CHIP_REVISION_4I_PRODUCTION, 0
- 2453              	.set CYDEV_CHIP_REVISION_4J_PRODUCTION, 0
- 2454              	.set CYDEV_CHIP_REVISION_4K_PRODUCTION, 0
- 2455              	.set CYDEV_CHIP_REVISION_4L_PRODUCTION, 0
- 2456              	.set CYDEV_CHIP_REVISION_4M_PRODUCTION, 0
- 2457              	.set CYDEV_CHIP_REVISION_4N_PRODUCTION, 0
- 2458              	.set CYDEV_CHIP_REVISION_4O_PRODUCTION, 0
- 2459              	.set CYDEV_CHIP_REVISION_4P_PRODUCTION, 0
- 2460              	.set CYDEV_CHIP_REVISION_4Q_PRODUCTION, 0
- 2461              	.set CYDEV_CHIP_REVISION_4R_PRODUCTION, 0
- 2462              	.set CYDEV_CHIP_REVISION_4S_PRODUCTION, 0
- 2463              	.set CYDEV_CHIP_REVISION_4T_PRODUCTION, 0
- 2464              	.set CYDEV_CHIP_REVISION_4U_PRODUCTION, 0
- 2465              	.set CYDEV_CHIP_REVISION_4V_PRODUCTION, 0
- 2466              	.set CYDEV_CHIP_REVISION_4W_PRODUCTION, 0
- 2467              	.set CYDEV_CHIP_REVISION_4X_PRODUCTION, 0
- 2468              	.set CYDEV_CHIP_REVISION_4Y_PRODUCTION, 0
- 2469              	.set CYDEV_CHIP_REVISION_4Z_PRODUCTION, 0
- 2470              	.set CYDEV_CHIP_REVISION_5A_ES0, 0
- 2471              	.set CYDEV_CHIP_REVISION_5A_ES1, 1
- 2472              	.set CYDEV_CHIP_REVISION_5A_PRODUCTION, 1
- 2473              	.set CYDEV_CHIP_REVISION_5B_ES0, 0
- 2474              	.set CYDEV_CHIP_REVISION_5B_PRODUCTION, 0
- 2475              	.set CYDEV_CHIP_REVISION_6A_ES, 17
- 2476              	.set CYDEV_CHIP_REVISION_6A_NO_UDB, 33
- 2477              	.set CYDEV_CHIP_REVISION_6A_PRODUCTION, 33
+ 2421              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__A1_REG, CYREG_UDB_W8_A12
+ 2422              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__D0_D1_REG, CYREG_UDB_CAT16_D2
+ 2423              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__D0_REG, CYREG_UDB_W8_D02
+ 2424              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__D1_REG, CYREG_UDB_W8_D12
+ 2425              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__DP_AUX_CTL_REG, CYREG_UDB_W8_ACTL2
+ 2426              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__F0_F1_REG, CYREG_UDB_CAT16_F2
+ 2427              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__F0_REG, CYREG_UDB_W8_F02
+ 2428              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__F1_REG, CYREG_UDB_W8_F12
+ 2429              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__MSK_DP_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK2
+ 2430              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u0__PER_DP_AUX_CTL_REG, CYREG_UDB_CAT16_ACTL_MSK2
+ 2431              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_A0_REG, CYREG_UDB_W16_A03
+ 2432              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_A1_REG, CYREG_UDB_W16_A13
+ 2433              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_D0_REG, CYREG_UDB_W16_D03
+ 2434              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_D1_REG, CYREG_UDB_W16_D13
+ 2435              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_DP_AUX_CTL_REG, CYREG_UDB_W16_ACTL3
+ 2436              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_F0_REG, CYREG_UDB_W16_F03
+ 2437              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__16BIT_F1_REG, CYREG_UDB_W16_F13
+ 2438              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_A0_REG, CYREG_UDB_W32_A03
+ 2439              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_A1_REG, CYREG_UDB_W32_A13
+ 2440              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_D0_REG, CYREG_UDB_W32_D03
+ 2441              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_D1_REG, CYREG_UDB_W32_D13
+ 2442              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_DP_AUX_CTL_REG, CYREG_UDB_W32_ACTL3
+ 2443              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_F0_REG, CYREG_UDB_W32_F03
+ 2444              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__32BIT_F1_REG, CYREG_UDB_W32_F13
+ 2445              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__A0_A1_REG, CYREG_UDB_CAT16_A3
+ 2446              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__A0_REG, CYREG_UDB_W8_A03
+ 2447              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__A1_REG, CYREG_UDB_W8_A13
+ 2448              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__D0_D1_REG, CYREG_UDB_CAT16_D3
+ 2449              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__D0_REG, CYREG_UDB_W8_D03
+ 2450              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__D1_REG, CYREG_UDB_W8_D13
+ 2451              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__DP_AUX_CTL_REG, CYREG_UDB_W8_ACTL3
+ 2452              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__F0_F1_REG, CYREG_UDB_CAT16_F3
+ 2453              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__F0_REG, CYREG_UDB_W8_F03
+ 2454              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u1__F1_REG, CYREG_UDB_W8_F13
+ 2455              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_A0_REG, CYREG_UDB_W16_A04
+ 2456              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_A1_REG, CYREG_UDB_W16_A14
+ 2457              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_D0_REG, CYREG_UDB_W16_D04
+ 2458              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_D1_REG, CYREG_UDB_W16_D14
+ 2459              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_DP_AUX_CTL_REG, CYREG_UDB_W16_ACTL4
+ 2460              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_F0_REG, CYREG_UDB_W16_F04
+ 2461              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__16BIT_F1_REG, CYREG_UDB_W16_F14
+ 2462              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_A0_REG, CYREG_UDB_W32_A04
+ 2463              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_A1_REG, CYREG_UDB_W32_A14
+ 2464              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_D0_REG, CYREG_UDB_W32_D04
+ 2465              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_D1_REG, CYREG_UDB_W32_D14
+ 2466              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_DP_AUX_CTL_REG, CYREG_UDB_W32_ACTL4
+ 2467              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_F0_REG, CYREG_UDB_W32_F04
+ 2468              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__32BIT_F1_REG, CYREG_UDB_W32_F14
+ 2469              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__A0_A1_REG, CYREG_UDB_CAT16_A4
+ 2470              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__A0_REG, CYREG_UDB_W8_A04
+ 2471              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__A1_REG, CYREG_UDB_W8_A14
+ 2472              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__D0_D1_REG, CYREG_UDB_CAT16_D4
+ 2473              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__D0_REG, CYREG_UDB_W8_D04
+ 2474              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__D1_REG, CYREG_UDB_W8_D14
+ 2475              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__DP_AUX_CTL_REG, CYREG_UDB_W8_ACTL4
+ 2476              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__F0_F1_REG, CYREG_UDB_CAT16_F4
+ 2477              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__F0_REG, CYREG_UDB_W8_F04
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 279
 
 
- 2478              	.set CYDEV_CHIP_REVISION_FM3_PRODUCTION, 0
- 2479              	.set CYDEV_CHIP_REVISION_FM4_PRODUCTION, 0
- 2480              	.set CYDEV_CHIP_REVISION_PDL_FM0P_TYPE1_PRODUCTION, 0
- 2481              	.set CYDEV_CHIP_REVISION_PDL_FM0P_TYPE2_PRODUCTION, 0
- 2482              	.set CYDEV_CHIP_REVISION_PDL_FM0P_TYPE3_PRODUCTION, 0
- 2483              	.set CYDEV_CHIP_REVISION_USED, CYDEV_CHIP_REVISION_4L_PRODUCTION
- 2484              	.set CYDEV_CHIP_REV_EXPECT, CYDEV_CHIP_REVISION_USED
- 2485              	.set CYDEV_CONFIG_READ_ACCELERATOR, 1
- 2486              	.set CYDEV_CONFIG_UNUSED_IO_AllowButWarn, 0
- 2487              	.set CYDEV_CONFIG_UNUSED_IO_AllowWithInfo, 1
- 2488              	.set CYDEV_CONFIG_UNUSED_IO_Disallowed, 2
- 2489              	.set CYDEV_CONFIG_UNUSED_IO, CYDEV_CONFIG_UNUSED_IO_Disallowed
- 2490              	.set CYDEV_CONFIGURATION_COMPRESSED, 1
- 2491              	.set CYDEV_CONFIGURATION_MODE_COMPRESSED, 0
- 2492              	.set CYDEV_CONFIGURATION_MODE, CYDEV_CONFIGURATION_MODE_COMPRESSED
- 2493              	.set CYDEV_CONFIGURATION_MODE_DMA, 2
- 2494              	.set CYDEV_CONFIGURATION_MODE_UNCOMPRESSED, 1
- 2495              	.set CYDEV_DEBUG_PROTECT_KILL, 4
- 2496              	.set CYDEV_DEBUG_PROTECT_OPEN, 1
- 2497              	.set CYDEV_DEBUG_PROTECT, CYDEV_DEBUG_PROTECT_OPEN
- 2498              	.set CYDEV_DEBUG_PROTECT_PROTECTED, 2
- 2499              	.set CYDEV_DEBUGGING_DPS_Disable, 3
- 2500              	.set CYDEV_DEBUGGING_DPS_SWD, 2
- 2501              	.set CYDEV_DEBUGGING_DPS, CYDEV_DEBUGGING_DPS_SWD
- 2502              	.set CYDEV_DEBUGGING_ENABLE, 1
- 2503              	.set CYDEV_DFT_SELECT_CLK0, 8
- 2504              	.set CYDEV_DFT_SELECT_CLK1, 9
- 2505              	.set CYDEV_DMA_CHANNELS_AVAILABLE, 32
- 2506              	.set CYDEV_HEAP_SIZE, 0x80
- 2507              	.set CYDEV_IMO_TRIMMED_BY_USB, 0
- 2508              	.set CYDEV_IMO_TRIMMED_BY_WCO, 0
- 2509              	.set CYDEV_INTR_NUMBER_DMA, 14
- 2510              	.set CYDEV_IS_EXPORTING_CODE, 0
- 2511              	.set CYDEV_IS_IMPORTING_CODE, 0
- 2512              	.set CYDEV_PROJ_TYPE, 0
- 2513              	.set CYDEV_PROJ_TYPE_BOOTLOADER, 1
- 2514              	.set CYDEV_PROJ_TYPE_LAUNCHER, 5
- 2515              	.set CYDEV_PROJ_TYPE_LOADABLE, 2
- 2516              	.set CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER, 4
- 2517              	.set CYDEV_PROJ_TYPE_MULTIAPPBOOTLOADER, 3
- 2518              	.set CYDEV_PROJ_TYPE_STANDARD, 0
- 2519              	.set CYDEV_STACK_SIZE, 0x0800
- 2520              	.set CYDEV_USE_BUNDLED_CMSIS, 1
- 2521              	.set CYDEV_VARIABLE_VDDA, 1
- 2522              	.set CYDEV_VBUS_MV, 5000
- 2523              	.set CYDEV_VDDA_MV, 3300
- 2524              	.set CYDEV_VDDD_MV, 3300
- 2525              	.set CYDEV_VDDIO_MV, 3300
- 2526              	.set CYDEV_WDT_GENERATE_ISR, 1
- 2527              	.set CYIPBLOCK_m0s8can_VERSION, 1
- 2528              	.set CYIPBLOCK_m0s8cpussv2_VERSION, 1
- 2529              	.set CYIPBLOCK_m0s8csd_VERSION, 1
- 2530              	.set CYIPBLOCK_m0s8ioss_VERSION, 1
- 2531              	.set CYIPBLOCK_m0s8lcd_VERSION, 2
- 2532              	.set CYIPBLOCK_m0s8lpcomp_VERSION, 2
- 2533              	.set CYIPBLOCK_m0s8peri_VERSION, 1
- 2534              	.set CYIPBLOCK_m0s8scb_VERSION, 2
+ 2478              	.set Timer_LEDs_TimerUDB_sT24_timerdp_u2__F1_REG, CYREG_UDB_W8_F14
+ 2479              	
+ 2480              	/* timer_clock */
+ 2481              	.set timer_clock__CTRL_REGISTER, CYREG_PERI_PCLK_CTL20
+ 2482              	.set timer_clock__DIV_ID, 0x00000041
+ 2483              	.set timer_clock__DIV_REGISTER, CYREG_PERI_DIV_16_CTL1
+ 2484              	.set timer_clock__PA_DIV_ID, 0x000000FF
+ 2485              	
+ 2486              	/* Status_Reg_LIM */
+ 2487              	.set Status_Reg_LIM_sts_intr_sts_reg__0__MASK, 0x01
+ 2488              	.set Status_Reg_LIM_sts_intr_sts_reg__0__POS, 0
+ 2489              	.set Status_Reg_LIM_sts_intr_sts_reg__1__MASK, 0x02
+ 2490              	.set Status_Reg_LIM_sts_intr_sts_reg__1__POS, 1
+ 2491              	.set Status_Reg_LIM_sts_intr_sts_reg__16BIT_STATUS_AUX_CTL_REG, CYREG_UDB_W16_ACTL4
+ 2492              	.set Status_Reg_LIM_sts_intr_sts_reg__16BIT_STATUS_REG, CYREG_UDB_W16_ST4
+ 2493              	.set Status_Reg_LIM_sts_intr_sts_reg__2__MASK, 0x04
+ 2494              	.set Status_Reg_LIM_sts_intr_sts_reg__2__POS, 2
+ 2495              	.set Status_Reg_LIM_sts_intr_sts_reg__3__MASK, 0x08
+ 2496              	.set Status_Reg_LIM_sts_intr_sts_reg__3__POS, 3
+ 2497              	.set Status_Reg_LIM_sts_intr_sts_reg__32BIT_MASK_REG, CYREG_UDB_W32_MSK4
+ 2498              	.set Status_Reg_LIM_sts_intr_sts_reg__32BIT_STATUS_AUX_CTL_REG, CYREG_UDB_W32_ACTL4
+ 2499              	.set Status_Reg_LIM_sts_intr_sts_reg__32BIT_STATUS_REG, CYREG_UDB_W32_ST4
+ 2500              	.set Status_Reg_LIM_sts_intr_sts_reg__4__MASK, 0x10
+ 2501              	.set Status_Reg_LIM_sts_intr_sts_reg__4__POS, 4
+ 2502              	.set Status_Reg_LIM_sts_intr_sts_reg__MASK, 0x1F
+ 2503              	.set Status_Reg_LIM_sts_intr_sts_reg__MASK_REG, CYREG_UDB_W8_MSK4
+ 2504              	.set Status_Reg_LIM_sts_intr_sts_reg__STATUS_AUX_CTL_REG, CYREG_UDB_W8_ACTL4
+ 2505              	.set Status_Reg_LIM_sts_intr_sts_reg__STATUS_REG, CYREG_UDB_W8_ST4
+ 2506              	
+ 2507              	/* Miscellaneous */
+ 2508              	.set CYDEV_BCLK__HFCLK__HZ, 40000000
+ 2509              	.set CYDEV_BCLK__HFCLK__KHZ, 40000
+ 2510              	.set CYDEV_BCLK__HFCLK__MHZ, 40
+ 2511              	.set CYDEV_BCLK__SYSCLK__HZ, 40000000
+ 2512              	.set CYDEV_BCLK__SYSCLK__KHZ, 40000
+ 2513              	.set CYDEV_BCLK__SYSCLK__MHZ, 40
+ 2514              	.set CYDEV_CHIP_DIE_LEOPARD, 1
+ 2515              	.set CYDEV_CHIP_DIE_PSOC4A, 26
+ 2516              	.set CYDEV_CHIP_DIE_PSOC5LP, 2
+ 2517              	.set CYDEV_CHIP_DIE_PSOC5TM, 3
+ 2518              	.set CYDEV_CHIP_DIE_TMA4, 4
+ 2519              	.set CYDEV_CHIP_DIE_UNKNOWN, 0
+ 2520              	.set CYDEV_CHIP_FAMILY_FM0P, 5
+ 2521              	.set CYDEV_CHIP_FAMILY_FM3, 6
+ 2522              	.set CYDEV_CHIP_FAMILY_FM4, 7
+ 2523              	.set CYDEV_CHIP_FAMILY_PSOC3, 1
+ 2524              	.set CYDEV_CHIP_FAMILY_PSOC4, 2
+ 2525              	.set CYDEV_CHIP_FAMILY_PSOC5, 3
+ 2526              	.set CYDEV_CHIP_FAMILY_PSOC6, 4
+ 2527              	.set CYDEV_CHIP_FAMILY_UNKNOWN, 0
+ 2528              	.set CYDEV_CHIP_FAMILY_USED, CYDEV_CHIP_FAMILY_PSOC4
+ 2529              	.set CYDEV_CHIP_JTAG_ID, 0x101111A0
+ 2530              	.set CYDEV_CHIP_MEMBER_3A, 1
+ 2531              	.set CYDEV_CHIP_MEMBER_4A, 26
+ 2532              	.set CYDEV_CHIP_MEMBER_4AA, 25
+ 2533              	.set CYDEV_CHIP_MEMBER_4AB, 30
+ 2534              	.set CYDEV_CHIP_MEMBER_4AC, 14
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 280
 
 
- 2535              	.set CYIPBLOCK_m0s8srssv2_VERSION, 2
- 2536              	.set CYIPBLOCK_m0s8tcpwm_VERSION, 2
- 2537              	.set CYIPBLOCK_m0s8udb_VERSION, 1
- 2538              	.set CYIPBLOCK_m0s8usbdss_VERSION, 2
- 2539              	.set CYIPBLOCK_m0s8wco_VERSION, 1
- 2540              	.set CYIPBLOCK_s8pass4al_VERSION, 1
- 2541              	.set DMA_CHANNELS_USED__MASK, 0
- 2542              	.set CYDEV_BOOTLOADER_ENABLE, 0
- 2543              	.endif
+ 2535              	.set CYDEV_CHIP_MEMBER_4AD, 15
+ 2536              	.set CYDEV_CHIP_MEMBER_4AE, 16
+ 2537              	.set CYDEV_CHIP_MEMBER_4D, 20
+ 2538              	.set CYDEV_CHIP_MEMBER_4E, 6
+ 2539              	.set CYDEV_CHIP_MEMBER_4F, 27
+ 2540              	.set CYDEV_CHIP_MEMBER_4G, 4
+ 2541              	.set CYDEV_CHIP_MEMBER_4H, 24
+ 2542              	.set CYDEV_CHIP_MEMBER_4I, 32
+ 2543              	.set CYDEV_CHIP_MEMBER_4J, 21
+ 2544              	.set CYDEV_CHIP_MEMBER_4K, 22
+ 2545              	.set CYDEV_CHIP_MEMBER_4L, 31
+ 2546              	.set CYDEV_CHIP_MEMBER_4M, 29
+ 2547              	.set CYDEV_CHIP_MEMBER_4N, 11
+ 2548              	.set CYDEV_CHIP_MEMBER_4O, 8
+ 2549              	.set CYDEV_CHIP_MEMBER_4P, 28
+ 2550              	.set CYDEV_CHIP_MEMBER_4Q, 17
+ 2551              	.set CYDEV_CHIP_MEMBER_4R, 9
+ 2552              	.set CYDEV_CHIP_MEMBER_4S, 12
+ 2553              	.set CYDEV_CHIP_MEMBER_4T, 10
+ 2554              	.set CYDEV_CHIP_MEMBER_4U, 5
+ 2555              	.set CYDEV_CHIP_MEMBER_4V, 23
+ 2556              	.set CYDEV_CHIP_MEMBER_4W, 13
+ 2557              	.set CYDEV_CHIP_MEMBER_4X, 7
+ 2558              	.set CYDEV_CHIP_MEMBER_4Y, 18
+ 2559              	.set CYDEV_CHIP_MEMBER_4Z, 19
+ 2560              	.set CYDEV_CHIP_MEMBER_5A, 3
+ 2561              	.set CYDEV_CHIP_MEMBER_5B, 2
+ 2562              	.set CYDEV_CHIP_MEMBER_6A, 33
+ 2563              	.set CYDEV_CHIP_MEMBER_FM3, 37
+ 2564              	.set CYDEV_CHIP_MEMBER_FM4, 38
+ 2565              	.set CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE1, 34
+ 2566              	.set CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE2, 35
+ 2567              	.set CYDEV_CHIP_MEMBER_PDL_FM0P_TYPE3, 36
+ 2568              	.set CYDEV_CHIP_MEMBER_UNKNOWN, 0
+ 2569              	.set CYDEV_CHIP_MEMBER_USED, CYDEV_CHIP_MEMBER_4L
+ 2570              	.set CYDEV_CHIP_DIE_EXPECT, CYDEV_CHIP_MEMBER_USED
+ 2571              	.set CYDEV_CHIP_DIE_ACTUAL, CYDEV_CHIP_DIE_EXPECT
+ 2572              	.set CYDEV_CHIP_REV_LEOPARD_ES1, 0
+ 2573              	.set CYDEV_CHIP_REV_LEOPARD_ES2, 1
+ 2574              	.set CYDEV_CHIP_REV_LEOPARD_ES3, 3
+ 2575              	.set CYDEV_CHIP_REV_LEOPARD_PRODUCTION, 3
+ 2576              	.set CYDEV_CHIP_REV_PSOC4A_ES0, 17
+ 2577              	.set CYDEV_CHIP_REV_PSOC4A_PRODUCTION, 17
+ 2578              	.set CYDEV_CHIP_REV_PSOC5LP_ES0, 0
+ 2579              	.set CYDEV_CHIP_REV_PSOC5LP_PRODUCTION, 0
+ 2580              	.set CYDEV_CHIP_REV_PSOC5TM_ES0, 0
+ 2581              	.set CYDEV_CHIP_REV_PSOC5TM_ES1, 1
+ 2582              	.set CYDEV_CHIP_REV_PSOC5TM_PRODUCTION, 1
+ 2583              	.set CYDEV_CHIP_REV_TMA4_ES, 17
+ 2584              	.set CYDEV_CHIP_REV_TMA4_ES2, 33
+ 2585              	.set CYDEV_CHIP_REV_TMA4_PRODUCTION, 17
+ 2586              	.set CYDEV_CHIP_REVISION_3A_ES1, 0
+ 2587              	.set CYDEV_CHIP_REVISION_3A_ES2, 1
+ 2588              	.set CYDEV_CHIP_REVISION_3A_ES3, 3
+ 2589              	.set CYDEV_CHIP_REVISION_3A_PRODUCTION, 3
+ 2590              	.set CYDEV_CHIP_REVISION_4A_ES0, 17
+ 2591              	.set CYDEV_CHIP_REVISION_4A_PRODUCTION, 17
+ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 281
+
+
+ 2592              	.set CYDEV_CHIP_REVISION_4AA_PRODUCTION, 0
+ 2593              	.set CYDEV_CHIP_REVISION_4AB_PRODUCTION, 0
+ 2594              	.set CYDEV_CHIP_REVISION_4AC_PRODUCTION, 0
+ 2595              	.set CYDEV_CHIP_REVISION_4AD_PRODUCTION, 0
+ 2596              	.set CYDEV_CHIP_REVISION_4AE_PRODUCTION, 0
+ 2597              	.set CYDEV_CHIP_REVISION_4D_PRODUCTION, 0
+ 2598              	.set CYDEV_CHIP_REVISION_4E_CCG2_NO_USBPD, 0
+ 2599              	.set CYDEV_CHIP_REVISION_4E_PRODUCTION, 0
+ 2600              	.set CYDEV_CHIP_REVISION_4F_PRODUCTION, 0
+ 2601              	.set CYDEV_CHIP_REVISION_4F_PRODUCTION_256DMA, 0
+ 2602              	.set CYDEV_CHIP_REVISION_4F_PRODUCTION_256K, 0
+ 2603              	.set CYDEV_CHIP_REVISION_4G_ES, 17
+ 2604              	.set CYDEV_CHIP_REVISION_4G_ES2, 33
+ 2605              	.set CYDEV_CHIP_REVISION_4G_PRODUCTION, 17
+ 2606              	.set CYDEV_CHIP_REVISION_4H_PRODUCTION, 0
+ 2607              	.set CYDEV_CHIP_REVISION_4I_PRODUCTION, 0
+ 2608              	.set CYDEV_CHIP_REVISION_4J_PRODUCTION, 0
+ 2609              	.set CYDEV_CHIP_REVISION_4K_PRODUCTION, 0
+ 2610              	.set CYDEV_CHIP_REVISION_4L_PRODUCTION, 0
+ 2611              	.set CYDEV_CHIP_REVISION_4M_PRODUCTION, 0
+ 2612              	.set CYDEV_CHIP_REVISION_4N_PRODUCTION, 0
+ 2613              	.set CYDEV_CHIP_REVISION_4O_PRODUCTION, 0
+ 2614              	.set CYDEV_CHIP_REVISION_4P_PRODUCTION, 0
+ 2615              	.set CYDEV_CHIP_REVISION_4Q_PRODUCTION, 0
+ 2616              	.set CYDEV_CHIP_REVISION_4R_PRODUCTION, 0
+ 2617              	.set CYDEV_CHIP_REVISION_4S_PRODUCTION, 0
+ 2618              	.set CYDEV_CHIP_REVISION_4T_PRODUCTION, 0
+ 2619              	.set CYDEV_CHIP_REVISION_4U_PRODUCTION, 0
+ 2620              	.set CYDEV_CHIP_REVISION_4V_PRODUCTION, 0
+ 2621              	.set CYDEV_CHIP_REVISION_4W_PRODUCTION, 0
+ 2622              	.set CYDEV_CHIP_REVISION_4X_PRODUCTION, 0
+ 2623              	.set CYDEV_CHIP_REVISION_4Y_PRODUCTION, 0
+ 2624              	.set CYDEV_CHIP_REVISION_4Z_PRODUCTION, 0
+ 2625              	.set CYDEV_CHIP_REVISION_5A_ES0, 0
+ 2626              	.set CYDEV_CHIP_REVISION_5A_ES1, 1
+ 2627              	.set CYDEV_CHIP_REVISION_5A_PRODUCTION, 1
+ 2628              	.set CYDEV_CHIP_REVISION_5B_ES0, 0
+ 2629              	.set CYDEV_CHIP_REVISION_5B_PRODUCTION, 0
+ 2630              	.set CYDEV_CHIP_REVISION_6A_ES, 17
+ 2631              	.set CYDEV_CHIP_REVISION_6A_NO_UDB, 33
+ 2632              	.set CYDEV_CHIP_REVISION_6A_PRODUCTION, 33
+ 2633              	.set CYDEV_CHIP_REVISION_FM3_PRODUCTION, 0
+ 2634              	.set CYDEV_CHIP_REVISION_FM4_PRODUCTION, 0
+ 2635              	.set CYDEV_CHIP_REVISION_PDL_FM0P_TYPE1_PRODUCTION, 0
+ 2636              	.set CYDEV_CHIP_REVISION_PDL_FM0P_TYPE2_PRODUCTION, 0
+ 2637              	.set CYDEV_CHIP_REVISION_PDL_FM0P_TYPE3_PRODUCTION, 0
+ 2638              	.set CYDEV_CHIP_REVISION_USED, CYDEV_CHIP_REVISION_4L_PRODUCTION
+ 2639              	.set CYDEV_CHIP_REV_EXPECT, CYDEV_CHIP_REVISION_USED
+ 2640              	.set CYDEV_CONFIG_READ_ACCELERATOR, 1
+ 2641              	.set CYDEV_CONFIG_UNUSED_IO_AllowButWarn, 0
+ 2642              	.set CYDEV_CONFIG_UNUSED_IO_AllowWithInfo, 1
+ 2643              	.set CYDEV_CONFIG_UNUSED_IO_Disallowed, 2
+ 2644              	.set CYDEV_CONFIG_UNUSED_IO, CYDEV_CONFIG_UNUSED_IO_Disallowed
+ 2645              	.set CYDEV_CONFIGURATION_COMPRESSED, 1
+ 2646              	.set CYDEV_CONFIGURATION_MODE_COMPRESSED, 0
+ 2647              	.set CYDEV_CONFIGURATION_MODE, CYDEV_CONFIGURATION_MODE_COMPRESSED
+ 2648              	.set CYDEV_CONFIGURATION_MODE_DMA, 2
+ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 282
+
+
+ 2649              	.set CYDEV_CONFIGURATION_MODE_UNCOMPRESSED, 1
+ 2650              	.set CYDEV_DEBUG_PROTECT_KILL, 4
+ 2651              	.set CYDEV_DEBUG_PROTECT_OPEN, 1
+ 2652              	.set CYDEV_DEBUG_PROTECT, CYDEV_DEBUG_PROTECT_OPEN
+ 2653              	.set CYDEV_DEBUG_PROTECT_PROTECTED, 2
+ 2654              	.set CYDEV_DEBUGGING_DPS_Disable, 3
+ 2655              	.set CYDEV_DEBUGGING_DPS_SWD, 2
+ 2656              	.set CYDEV_DEBUGGING_DPS, CYDEV_DEBUGGING_DPS_SWD
+ 2657              	.set CYDEV_DEBUGGING_ENABLE, 1
+ 2658              	.set CYDEV_DFT_SELECT_CLK0, 8
+ 2659              	.set CYDEV_DFT_SELECT_CLK1, 9
+ 2660              	.set CYDEV_DMA_CHANNELS_AVAILABLE, 32
+ 2661              	.set CYDEV_HEAP_SIZE, 0x80
+ 2662              	.set CYDEV_IMO_TRIMMED_BY_USB, 0
+ 2663              	.set CYDEV_IMO_TRIMMED_BY_WCO, 0
+ 2664              	.set CYDEV_INTR_NUMBER_DMA, 14
+ 2665              	.set CYDEV_IS_EXPORTING_CODE, 0
+ 2666              	.set CYDEV_IS_IMPORTING_CODE, 0
+ 2667              	.set CYDEV_PROJ_TYPE, 0
+ 2668              	.set CYDEV_PROJ_TYPE_BOOTLOADER, 1
+ 2669              	.set CYDEV_PROJ_TYPE_LAUNCHER, 5
+ 2670              	.set CYDEV_PROJ_TYPE_LOADABLE, 2
+ 2671              	.set CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER, 4
+ 2672              	.set CYDEV_PROJ_TYPE_MULTIAPPBOOTLOADER, 3
+ 2673              	.set CYDEV_PROJ_TYPE_STANDARD, 0
+ 2674              	.set CYDEV_STACK_SIZE, 0x0800
+ 2675              	.set CYDEV_USE_BUNDLED_CMSIS, 1
+ 2676              	.set CYDEV_VARIABLE_VDDA, 1
+ 2677              	.set CYDEV_VBUS_MV, 5000
+ 2678              	.set CYDEV_VDDA_MV, 3300
+ 2679              	.set CYDEV_VDDD_MV, 3300
+ 2680              	.set CYDEV_VDDIO_MV, 3300
+ 2681              	.set CYDEV_WDT_GENERATE_ISR, 0
+ 2682              	.set CYIPBLOCK_m0s8can_VERSION, 1
+ 2683              	.set CYIPBLOCK_m0s8cpussv2_VERSION, 1
+ 2684              	.set CYIPBLOCK_m0s8csd_VERSION, 1
+ 2685              	.set CYIPBLOCK_m0s8ioss_VERSION, 1
+ 2686              	.set CYIPBLOCK_m0s8lcd_VERSION, 2
+ 2687              	.set CYIPBLOCK_m0s8lpcomp_VERSION, 2
+ 2688              	.set CYIPBLOCK_m0s8peri_VERSION, 1
+ 2689              	.set CYIPBLOCK_m0s8scb_VERSION, 2
+ 2690              	.set CYIPBLOCK_m0s8srssv2_VERSION, 2
+ 2691              	.set CYIPBLOCK_m0s8tcpwm_VERSION, 2
+ 2692              	.set CYIPBLOCK_m0s8udb_VERSION, 1
+ 2693              	.set CYIPBLOCK_m0s8usbdss_VERSION, 2
+ 2694              	.set CYIPBLOCK_m0s8wco_VERSION, 1
+ 2695              	.set CYIPBLOCK_s8pass4al_VERSION, 1
+ 2696              	.set DMA_CHANNELS_USED__MASK, 0
+ 2697              	.set CYDEV_BOOTLOADER_ENABLE, 0
+ 2698              	.endif
   19              	
   20              	
   21              	/*******************************************************************************
@@ -16757,6 +16918,9 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
   23              	****************************************************************************//**
   24              	*
   25              	*  Delays for the specified number of cycles.
+ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 283
+
+
   26              	*
   27              	*  \param uint32 cycles: number of cycles to delay.
   28              	*
@@ -16798,9 +16962,6 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
   64              	    ADDS r0, r0, #1         /*    1    2    Increment counter */
   65              	    SUBS r0, r0, #2         /*    1    2    Decrement counter by 2 */
   66              	    BNE CyDelayCycles_loop  /*    2    2    2 CPU cycles (if branche is taken)*/
-ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 281
-
-
   67              	    NOP                     /*    1    2    Loop alignment padding */	
   68              	.ELSE
   69 0006 0138     	    SUBS r0, r0, #1         /*    1    2    Decrement counter */
@@ -16817,6 +16978,9 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
   80              	/*******************************************************************************
   81              	* Function Name: CyEnterCriticalSection
   82              	****************************************************************************//**
+ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 284
+
+
   83              	*
   84              	*  CyEnterCriticalSection disables interrupts and returns a value indicating
   85              	*  whether interrupts were previously enabled (the actual value depends on
@@ -16858,9 +17022,6 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  121              	*   Saved interrupt status returned by the CyEnterCriticalSection function.
  122              	*
  123              	* \return
-ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 282
-
-
  124              	*  None
  125              	*
  126              	*******************************************************************************/

@@ -1,5 +1,5 @@
 # science wow
-# 2022-08-09 04:26:22Z
+# 2023-02-21 02:21:11Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: ExtClkEnabled
 dont_use_io iocell 0 6
@@ -34,28 +34,41 @@ set_io "Dip_1(0)" iocell 4 3
 set_io "Dip_2(0)" iocell 4 2
 set_io "Dip_3(0)" iocell 4 1
 set_io "Dip_4(0)" iocell 4 0
-set_location "Net_911" 1 0 0 1
-set_location "Net_912" 0 0 1 0
-set_location "Net_913" 1 0 0 2
-set_location "Net_914" 1 0 0 0
+set_location "Net_911" 0 2 0 0
+set_location "Net_912" 0 2 1 2
+set_location "Net_913" 0 2 0 3
+set_location "Net_914" 0 2 0 2
+set_location "\Timer_LEDs:TimerUDB:status_tc\" 1 1 1 1
+set_location "\Timer_1ms:TimerUDB:status_tc\" 0 0 0 1
 set_location "\CAN:isr\" interrupt -1 -1 29
 set_location "\CAN:CanIP\" cancell -1 -1 1
 set_location "\I2C:SCB_IRQ\" interrupt -1 -1 11
 set_location "\I2C:SCB\" m0s8scbcell -1 -1 2
 set_location "\ADC:IRQ\" interrupt -1 -1 17
 set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0
-set_location "\Status_Reg_LIM:sts_intr:sts_reg\" 0 0 4
-set_location "isr_LIM" interrupt -1 -1 0
+set_location "\Status_Reg_LIM:sts_intr:sts_reg\" 0 1 4
+set_location "isr_LIM" interrupt -1 -1 2
 set_location "\QuadDec_2:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 1
 set_location "\UART:SCB\" m0s8scbcell -1 -1 1
-set_location "\Timer_1ms:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
-set_location "isr_1ms" interrupt -1 -1 20
-set_location "CC1_isr" interrupt -1 -1 22
+set_location "isr_1ms" interrupt -1 -1 0
+set_location "CC1_isr" interrupt -1 -1 20
 set_location "CC2_isr" interrupt -1 -1 21
-set_location "\QuadDec_1:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 2
-set_location "\Can_addr:sts:sts_reg\" 1 0 3
-set_location "Net_565_0" 0 0 0 2
-set_location "Net_565_1" 0 0 0 1
-set_location "Net_565_2" 0 0 1 3
-set_location "Net_565_3" 0 0 0 3
-set_location "Net_565_4" 0 0 0 0
+set_location "\QuadDec_1:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
+set_location "\Can_addr:sts:sts_reg\" 0 2 3
+set_location "isr_LEDs" interrupt -1 -1 1
+set_location "\Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 1 2 6
+set_location "\Timer_LEDs:TimerUDB:rstSts:stsreg\" 1 1 4
+set_location "\Timer_LEDs:TimerUDB:sT24:timerdp:u0\" 1 2 2
+set_location "\Timer_LEDs:TimerUDB:sT24:timerdp:u1\" 0 2 2
+set_location "\Timer_LEDs:TimerUDB:sT24:timerdp:u2\" 0 1 2
+set_location "\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" 0 0 6
+set_location "\Timer_1ms:TimerUDB:rstSts:stsreg\" 0 0 4
+set_location "\Timer_1ms:TimerUDB:sT16:timerdp:u0\" 1 0 2
+set_location "\Timer_1ms:TimerUDB:sT16:timerdp:u1\" 0 0 2
+set_location "Net_565_0" 0 0 1 1
+set_location "Net_565_1" 0 0 1 3
+set_location "Net_565_2" 0 0 1 0
+set_location "Net_565_3" 0 1 0 3
+set_location "Net_565_4" 0 0 1 2
+set_location "Net_1012" 1 1 0 0
+set_location "Net_1018" 0 0 0 0

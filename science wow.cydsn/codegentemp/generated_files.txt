@@ -121,11 +121,6 @@
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\UART_SPI_UART_PVT.h" value="HEADER;;;;;UART" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\UART_PVT.h" value="HEADER;;;;;UART" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\UART_BOOT.h" value="HEADER;;;;;UART" />
-  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_1ms.c" value="SOURCE_C;CortexM0;;;;Timer_1ms" />
-  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_1ms.h" value="HEADER;;;;;Timer_1ms" />
-  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_1ms_PM.c" value="SOURCE_C;CortexM0;;;;Timer_1ms" />
-  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Clock_1ms.c" value="SOURCE_C;CortexM0;;;;Clock_1ms" />
-  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Clock_1ms.h" value="HEADER;;;;;Clock_1ms" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\isr_1ms.c" value="SOURCE_C;CortexM0;;;;isr_1ms" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\isr_1ms.h" value="HEADER;;;;;isr_1ms" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CC1_isr.c" value="SOURCE_C;CortexM0;;;;CC1_isr" />
@@ -153,6 +148,16 @@
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4.h" value="HEADER;;;;;Dip_4" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4_aliases.h" value="HEADER;;;;;Dip_4" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Dip_4_PM.c" value="SOURCE_C;CortexM0;;;;Dip_4" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\timer_clock.c" value="SOURCE_C;CortexM0;;;;timer_clock" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\timer_clock.h" value="HEADER;;;;;timer_clock" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\isr_LEDs.c" value="SOURCE_C;CortexM0;;;;isr_LEDs" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\isr_LEDs.h" value="HEADER;;;;;isr_LEDs" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_LEDs.c" value="SOURCE_C;CortexM0;;;;Timer_LEDs" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_LEDs.h" value="HEADER;;;;;Timer_LEDs" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_LEDs_PM.c" value="SOURCE_C;CortexM0;;;;Timer_LEDs" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_1ms.c" value="SOURCE_C;CortexM0;;;;Timer_1ms" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_1ms.h" value="HEADER;;;;;Timer_1ms" />
+  <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\Timer_1ms_PM.c" value="SOURCE_C;CortexM0;;;;Timer_1ms" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_isr.c" value="SOURCE_C;CortexM0;;;;CAN_isr" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_isr.h" value="HEADER;;;;;CAN_isr" />
   <file name="C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\codegentemp\CAN_HFCLK.c" value="SOURCE_C;CortexM0;;;;CAN_HFCLK" />

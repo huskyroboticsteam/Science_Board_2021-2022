@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
   28:Milliseconds.c **** volatile uint32 milliseconds;
   29:Milliseconds.c **** //volatile uint16 ms,seconds, minutes, hours;
   30:Milliseconds.c **** //volatile int16 MsLedCounter;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 2
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 2
 
 
   31:Milliseconds.c **** 
@@ -74,8 +74,9 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
   35 0002 1368     		ldr	r3, [r2]
   36 0004 0133     		adds	r3, r3, #1
   37 0006 1360     		str	r3, [r2]
-  34:Milliseconds.c **** }
-  38              		.loc 1 34 0
+  34:Milliseconds.c ****     
+  35:Milliseconds.c **** }
+  38              		.loc 1 35 0
   39              		@ sp needed
   40 0008 7047     		bx	lr
   41              	.L3:
@@ -93,9 +94,9 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
   53              		.type	init_milliseconds, %function
   54              	init_milliseconds:
   55              	.LFB35:
-  35:Milliseconds.c **** 
-  36:Milliseconds.c **** void init_milliseconds() {
-  56              		.loc 1 36 0
+  36:Milliseconds.c **** 
+  37:Milliseconds.c **** void init_milliseconds() {
+  56              		.loc 1 37 0
   57              		.cfi_startproc
   58              		@ args = 0, pretend = 0, frame = 0
   59              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -103,24 +104,24 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
   61              		.cfi_def_cfa_offset 8
   62              		.cfi_offset 4, -8
   63              		.cfi_offset 14, -4
-  37:Milliseconds.c ****     milliseconds = 0;
-  64              		.loc 1 37 0
+  38:Milliseconds.c ****     milliseconds = 0;
+  64              		.loc 1 38 0
   65 0002 0022     		movs	r2, #0
   66 0004 024B     		ldr	r3, .L5
   67 0006 1A60     		str	r2, [r3]
-  38:Milliseconds.c ****     isr_1ms_StartEx(MillisecondInterrupt);
-  68              		.loc 1 38 0
+  39:Milliseconds.c ****     isr_1ms_StartEx(MillisecondInterrupt);
+  68              		.loc 1 39 0
   69 0008 0248     		ldr	r0, .L5+4
   70 000a FFF7FEFF 		bl	isr_1ms_StartEx
   71              	.LVL0:
-  39:Milliseconds.c ****     
-  40:Milliseconds.c **** }
-  72              		.loc 1 40 0
+  40:Milliseconds.c ****     
+  41:Milliseconds.c **** }
+  72              		.loc 1 41 0
   73              		@ sp needed
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 3
+
+
   74 000e 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 3
-
-
   75              	.L6:
   76              		.align	2
   77              	.L5:
@@ -177,10 +178,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  128 0051 05       		.byte	0x5
  129 0052 00000000 		.4byte	.LASF6
  130 0056 02       		.uleb128 0x2
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 4
+
+
  131 0057 08       		.byte	0x8
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 4
-
-
  132 0058 07       		.byte	0x7
  133 0059 E7000000 		.4byte	.LASF7
  134 005d 03       		.uleb128 0x3
@@ -229,7 +230,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  177 00b0 07       		.uleb128 0x7
  178 00b1 FE000000 		.4byte	.LASF19
  179 00b5 01       		.byte	0x1
- 180 00b6 24       		.byte	0x24
+ 180 00b6 25       		.byte	0x25
  181 00b7 00000000 		.4byte	.LFB35
  182 00bb 18000000 		.4byte	.LFE35-.LFB35
  183 00bf 01       		.uleb128 0x1
@@ -237,10 +238,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  185 00c1 D9000000 		.4byte	0xd9
  186 00c5 08       		.uleb128 0x8
  187 00c6 0E000000 		.4byte	.LVL0
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 5
+
+
  188 00ca EA000000 		.4byte	0xea
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 5
-
-
  189 00ce 09       		.uleb128 0x9
  190 00cf 01       		.uleb128 0x1
  191 00d0 50       		.byte	0x50
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  242 001d 00       		.byte	0
  243 001e 03       		.uleb128 0x3
  244 001f 24       		.uleb128 0x24
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 6
+
+
  245 0020 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 6
-
-
  246 0021 0B       		.uleb128 0xb
  247 0022 0B       		.uleb128 0xb
  248 0023 3E       		.uleb128 0x3e
@@ -357,10 +358,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  299 0057 01       		.byte	0x1
  300 0058 3F       		.uleb128 0x3f
  301 0059 19       		.uleb128 0x19
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 7
+
+
  302 005a 03       		.uleb128 0x3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 7
-
-
  303 005b 0E       		.uleb128 0xe
  304 005c 3A       		.uleb128 0x3a
  305 005d 0B       		.uleb128 0xb
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  356 0096 2E       		.uleb128 0x2e
  357 0097 00       		.byte	0
  358 0098 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 8
+
+
  359 0099 19       		.uleb128 0x19
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 8
-
-
  360 009a 3C       		.uleb128 0x3c
  361 009b 19       		.uleb128 0x19
  362 009c 6E       		.uleb128 0x6e
@@ -477,10 +478,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  402 0041 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
  402      20726576 
  402      6973696F 
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 9
+
+
  402      6E203233 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 9
-
-
  402      37373135 
  403 0074 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  403      66756E63 
@@ -537,10 +538,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 1
  420      3032312D 
  421              	.LASF1:
  422 0169 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccWvjEj5.s 			page 10
+
+
  422      676E6564 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\cc5bapVd.s 			page 10
-
-
  422      20636861 
  422      7200
  423              	.LASF11:

@@ -1,544 +1,434 @@
 /*******************************************************************************
 * File Name: Timer_1ms.h
-* Version 2.10
+* Version 2.80
 *
-* Description:
-*  This file provides constants and parameter values for the Timer_1ms
-*  component.
+*  Description:
+*     Contains the function prototypes and constants available to the timer
+*     user module.
 *
-* Note:
-*  None
+*   Note:
+*     None
 *
 ********************************************************************************
-* Copyright 2013-2015, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2017, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
-*******************************************************************************/
+********************************************************************************/
 
-#if !defined(CY_TCPWM_Timer_1ms_H)
-#define CY_TCPWM_Timer_1ms_H
+#if !defined(CY_TIMER_Timer_1ms_H)
+#define CY_TIMER_Timer_1ms_H
 
-
-#include "CyLib.h"
 #include "cytypes.h"
 #include "cyfitter.h"
+#include "CyLib.h" /* For CyEnterCriticalSection() and CyExitCriticalSection() functions */
+
+extern uint8 Timer_1ms_initVar;
+
+/* Check to see if required defines such as CY_PSOC5LP are available */
+/* They are defined starting with cy_boot v3.0 */
+#if !defined (CY_PSOC5LP)
+    #error Component Timer_v2_80 requires cy_boot v3.0 or later
+#endif /* (CY_ PSOC5LP) */
 
 
-/*******************************************************************************
-* Internal Type defines
-*******************************************************************************/
+/**************************************
+*           Parameter Defaults
+**************************************/
 
-/* Structure to save state before go to sleep */
+#define Timer_1ms_Resolution                 16u
+#define Timer_1ms_UsingFixedFunction         0u
+#define Timer_1ms_UsingHWCaptureCounter      0u
+#define Timer_1ms_SoftwareCaptureMode        0u
+#define Timer_1ms_SoftwareTriggerMode        0u
+#define Timer_1ms_UsingHWEnable              0u
+#define Timer_1ms_EnableTriggerMode          0u
+#define Timer_1ms_InterruptOnCaptureCount    0u
+#define Timer_1ms_RunModeUsed                0u
+#define Timer_1ms_ControlRegRemoved          0u
+
+#if defined(Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG)
+    #define Timer_1ms_UDB_CONTROL_REG_REMOVED            (0u)
+#elif  (Timer_1ms_UsingFixedFunction)
+    #define Timer_1ms_UDB_CONTROL_REG_REMOVED            (0u)
+#else 
+    #define Timer_1ms_UDB_CONTROL_REG_REMOVED            (1u)
+#endif /* End Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG */
+
+
+/***************************************
+*       Type defines
+***************************************/
+
+
+/**************************************************************************
+ * Sleep Wakeup Backup structure for Timer Component
+ *************************************************************************/
 typedef struct
 {
-    uint8  enableState;
-} Timer_1ms_BACKUP_STRUCT;
+    uint8 TimerEnableState;
+    #if(!Timer_1ms_UsingFixedFunction)
 
+        uint16 TimerUdb;
+        uint8 InterruptMaskValue;
+        #if (Timer_1ms_UsingHWCaptureCounter)
+            uint8 TimerCaptureCounter;
+        #endif /* variable declarations for backing up non retention registers in CY_UDB_V1 */
 
-/*******************************************************************************
-* Variables
-*******************************************************************************/
-extern uint8  Timer_1ms_initVar;
+        #if (!Timer_1ms_UDB_CONTROL_REG_REMOVED)
+            uint8 TimerControlRegister;
+        #endif /* variable declaration for backing up enable state of the Timer */
+    #endif /* define backup variables only for UDB implementation. Fixed function registers are all retention */
 
-
-/***************************************
-*   Conditional Compilation Parameters
-****************************************/
-
-#define Timer_1ms_CY_TCPWM_V2                    (CYIPBLOCK_m0s8tcpwm_VERSION == 2u)
-#define Timer_1ms_CY_TCPWM_4000                  (CY_PSOC4_4000)
-
-/* TCPWM Configuration */
-#define Timer_1ms_CONFIG                         (1lu)
-
-/* Quad Mode */
-/* Parameters */
-#define Timer_1ms_QUAD_ENCODING_MODES            (0lu)
-#define Timer_1ms_QUAD_AUTO_START                (1lu)
-
-/* Signal modes */
-#define Timer_1ms_QUAD_INDEX_SIGNAL_MODE         (0lu)
-#define Timer_1ms_QUAD_PHIA_SIGNAL_MODE          (3lu)
-#define Timer_1ms_QUAD_PHIB_SIGNAL_MODE          (3lu)
-#define Timer_1ms_QUAD_STOP_SIGNAL_MODE          (0lu)
-
-/* Signal present */
-#define Timer_1ms_QUAD_INDEX_SIGNAL_PRESENT      (0lu)
-#define Timer_1ms_QUAD_STOP_SIGNAL_PRESENT       (0lu)
-
-/* Interrupt Mask */
-#define Timer_1ms_QUAD_INTERRUPT_MASK            (1lu)
-
-/* Timer/Counter Mode */
-/* Parameters */
-#define Timer_1ms_TC_RUN_MODE                    (0lu)
-#define Timer_1ms_TC_COUNTER_MODE                (1lu)
-#define Timer_1ms_TC_COMP_CAP_MODE               (2lu)
-#define Timer_1ms_TC_PRESCALER                   (0lu)
-
-/* Signal modes */
-#define Timer_1ms_TC_RELOAD_SIGNAL_MODE          (0lu)
-#define Timer_1ms_TC_COUNT_SIGNAL_MODE           (3lu)
-#define Timer_1ms_TC_START_SIGNAL_MODE           (0lu)
-#define Timer_1ms_TC_STOP_SIGNAL_MODE            (0lu)
-#define Timer_1ms_TC_CAPTURE_SIGNAL_MODE         (0lu)
-
-/* Signal present */
-#define Timer_1ms_TC_RELOAD_SIGNAL_PRESENT       (0lu)
-#define Timer_1ms_TC_COUNT_SIGNAL_PRESENT        (0lu)
-#define Timer_1ms_TC_START_SIGNAL_PRESENT        (0lu)
-#define Timer_1ms_TC_STOP_SIGNAL_PRESENT         (0lu)
-#define Timer_1ms_TC_CAPTURE_SIGNAL_PRESENT      (0lu)
-
-/* Interrupt Mask */
-#define Timer_1ms_TC_INTERRUPT_MASK              (1lu)
-
-/* PWM Mode */
-/* Parameters */
-#define Timer_1ms_PWM_KILL_EVENT                 (0lu)
-#define Timer_1ms_PWM_STOP_EVENT                 (0lu)
-#define Timer_1ms_PWM_MODE                       (4lu)
-#define Timer_1ms_PWM_OUT_N_INVERT               (0lu)
-#define Timer_1ms_PWM_OUT_INVERT                 (0lu)
-#define Timer_1ms_PWM_ALIGN                      (0lu)
-#define Timer_1ms_PWM_RUN_MODE                   (0lu)
-#define Timer_1ms_PWM_DEAD_TIME_CYCLE            (0lu)
-#define Timer_1ms_PWM_PRESCALER                  (0lu)
-
-/* Signal modes */
-#define Timer_1ms_PWM_RELOAD_SIGNAL_MODE         (0lu)
-#define Timer_1ms_PWM_COUNT_SIGNAL_MODE          (3lu)
-#define Timer_1ms_PWM_START_SIGNAL_MODE          (0lu)
-#define Timer_1ms_PWM_STOP_SIGNAL_MODE           (0lu)
-#define Timer_1ms_PWM_SWITCH_SIGNAL_MODE         (0lu)
-
-/* Signal present */
-#define Timer_1ms_PWM_RELOAD_SIGNAL_PRESENT      (0lu)
-#define Timer_1ms_PWM_COUNT_SIGNAL_PRESENT       (0lu)
-#define Timer_1ms_PWM_START_SIGNAL_PRESENT       (0lu)
-#define Timer_1ms_PWM_STOP_SIGNAL_PRESENT        (0lu)
-#define Timer_1ms_PWM_SWITCH_SIGNAL_PRESENT      (0lu)
-
-/* Interrupt Mask */
-#define Timer_1ms_PWM_INTERRUPT_MASK             (1lu)
+}Timer_1ms_backupStruct;
 
 
 /***************************************
-*    Initial Parameter Constants
+*       Function Prototypes
 ***************************************/
 
-/* Timer/Counter Mode */
-#define Timer_1ms_TC_PERIOD_VALUE                (1lu)
-#define Timer_1ms_TC_COMPARE_VALUE               (65535lu)
-#define Timer_1ms_TC_COMPARE_BUF_VALUE           (65535lu)
-#define Timer_1ms_TC_COMPARE_SWAP                (0lu)
+void    Timer_1ms_Start(void) ;
+void    Timer_1ms_Stop(void) ;
 
-/* PWM Mode */
-#define Timer_1ms_PWM_PERIOD_VALUE               (65535lu)
-#define Timer_1ms_PWM_PERIOD_BUF_VALUE           (65535lu)
-#define Timer_1ms_PWM_PERIOD_SWAP                (0lu)
-#define Timer_1ms_PWM_COMPARE_VALUE              (65535lu)
-#define Timer_1ms_PWM_COMPARE_BUF_VALUE          (65535lu)
-#define Timer_1ms_PWM_COMPARE_SWAP               (0lu)
+void    Timer_1ms_SetInterruptMode(uint8 interruptMode) ;
+uint8   Timer_1ms_ReadStatusRegister(void) ;
+/* Deprecated function. Do not use this in future. Retained for backward compatibility */
+#define Timer_1ms_GetInterruptSource() Timer_1ms_ReadStatusRegister()
+
+#if(!Timer_1ms_UDB_CONTROL_REG_REMOVED)
+    uint8   Timer_1ms_ReadControlRegister(void) ;
+    void    Timer_1ms_WriteControlRegister(uint8 control) ;
+#endif /* (!Timer_1ms_UDB_CONTROL_REG_REMOVED) */
+
+uint16  Timer_1ms_ReadPeriod(void) ;
+void    Timer_1ms_WritePeriod(uint16 period) ;
+uint16  Timer_1ms_ReadCounter(void) ;
+void    Timer_1ms_WriteCounter(uint16 counter) ;
+uint16  Timer_1ms_ReadCapture(void) ;
+void    Timer_1ms_SoftwareCapture(void) ;
+
+#if(!Timer_1ms_UsingFixedFunction) /* UDB Prototypes */
+    #if (Timer_1ms_SoftwareCaptureMode)
+        void    Timer_1ms_SetCaptureMode(uint8 captureMode) ;
+    #endif /* (!Timer_1ms_UsingFixedFunction) */
+
+    #if (Timer_1ms_SoftwareTriggerMode)
+        void    Timer_1ms_SetTriggerMode(uint8 triggerMode) ;
+    #endif /* (Timer_1ms_SoftwareTriggerMode) */
+
+    #if (Timer_1ms_EnableTriggerMode)
+        void    Timer_1ms_EnableTrigger(void) ;
+        void    Timer_1ms_DisableTrigger(void) ;
+    #endif /* (Timer_1ms_EnableTriggerMode) */
+
+
+    #if(Timer_1ms_InterruptOnCaptureCount)
+        void    Timer_1ms_SetInterruptCount(uint8 interruptCount) ;
+    #endif /* (Timer_1ms_InterruptOnCaptureCount) */
+
+    #if (Timer_1ms_UsingHWCaptureCounter)
+        void    Timer_1ms_SetCaptureCount(uint8 captureCount) ;
+        uint8   Timer_1ms_ReadCaptureCount(void) ;
+    #endif /* (Timer_1ms_UsingHWCaptureCounter) */
+
+    void Timer_1ms_ClearFIFO(void) ;
+#endif /* UDB Prototypes */
+
+/* Sleep Retention APIs */
+void Timer_1ms_Init(void)          ;
+void Timer_1ms_Enable(void)        ;
+void Timer_1ms_SaveConfig(void)    ;
+void Timer_1ms_RestoreConfig(void) ;
+void Timer_1ms_Sleep(void)         ;
+void Timer_1ms_Wakeup(void)        ;
 
 
 /***************************************
-*    Enumerated Types and Parameters
+*   Enumerated Types and Parameters
 ***************************************/
 
-#define Timer_1ms__LEFT 0
-#define Timer_1ms__RIGHT 1
-#define Timer_1ms__CENTER 2
-#define Timer_1ms__ASYMMETRIC 3
-
-#define Timer_1ms__X1 0
-#define Timer_1ms__X2 1
-#define Timer_1ms__X4 2
-
-#define Timer_1ms__PWM 4
-#define Timer_1ms__PWM_DT 5
-#define Timer_1ms__PWM_PR 6
-
-#define Timer_1ms__INVERSE 1
-#define Timer_1ms__DIRECT 0
-
-#define Timer_1ms__CAPTURE 2
-#define Timer_1ms__COMPARE 0
-
-#define Timer_1ms__TRIG_LEVEL 3
-#define Timer_1ms__TRIG_RISING 0
-#define Timer_1ms__TRIG_FALLING 1
-#define Timer_1ms__TRIG_BOTH 2
-
-#define Timer_1ms__INTR_MASK_TC 1
-#define Timer_1ms__INTR_MASK_CC_MATCH 2
-#define Timer_1ms__INTR_MASK_NONE 0
-#define Timer_1ms__INTR_MASK_TC_CC 3
-
-#define Timer_1ms__UNCONFIG 8
-#define Timer_1ms__TIMER 1
-#define Timer_1ms__QUAD 3
-#define Timer_1ms__PWM_SEL 7
-
-#define Timer_1ms__COUNT_UP 0
-#define Timer_1ms__COUNT_DOWN 1
-#define Timer_1ms__COUNT_UPDOWN0 2
-#define Timer_1ms__COUNT_UPDOWN1 3
+/* Enumerated Type B_Timer__CaptureModes, Used in Capture Mode */
+#define Timer_1ms__B_TIMER__CM_NONE 0
+#define Timer_1ms__B_TIMER__CM_RISINGEDGE 1
+#define Timer_1ms__B_TIMER__CM_FALLINGEDGE 2
+#define Timer_1ms__B_TIMER__CM_EITHEREDGE 3
+#define Timer_1ms__B_TIMER__CM_SOFTWARE 4
 
 
-/* Prescaler */
-#define Timer_1ms_PRESCALE_DIVBY1                ((uint32)(0u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY2                ((uint32)(1u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY4                ((uint32)(2u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY8                ((uint32)(3u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY16               ((uint32)(4u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY32               ((uint32)(5u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY64               ((uint32)(6u << Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_PRESCALE_DIVBY128              ((uint32)(7u << Timer_1ms_PRESCALER_SHIFT))
 
-/* TCPWM set modes */
-#define Timer_1ms_MODE_TIMER_COMPARE             ((uint32)(Timer_1ms__COMPARE         <<  \
-                                                                  Timer_1ms_MODE_SHIFT))
-#define Timer_1ms_MODE_TIMER_CAPTURE             ((uint32)(Timer_1ms__CAPTURE         <<  \
-                                                                  Timer_1ms_MODE_SHIFT))
-#define Timer_1ms_MODE_QUAD                      ((uint32)(Timer_1ms__QUAD            <<  \
-                                                                  Timer_1ms_MODE_SHIFT))
-#define Timer_1ms_MODE_PWM                       ((uint32)(Timer_1ms__PWM             <<  \
-                                                                  Timer_1ms_MODE_SHIFT))
-#define Timer_1ms_MODE_PWM_DT                    ((uint32)(Timer_1ms__PWM_DT          <<  \
-                                                                  Timer_1ms_MODE_SHIFT))
-#define Timer_1ms_MODE_PWM_PR                    ((uint32)(Timer_1ms__PWM_PR          <<  \
-                                                                  Timer_1ms_MODE_SHIFT))
+/* Enumerated Type B_Timer__TriggerModes, Used in Trigger Mode */
+#define Timer_1ms__B_TIMER__TM_NONE 0x00u
+#define Timer_1ms__B_TIMER__TM_RISINGEDGE 0x04u
+#define Timer_1ms__B_TIMER__TM_FALLINGEDGE 0x08u
+#define Timer_1ms__B_TIMER__TM_EITHEREDGE 0x0Cu
+#define Timer_1ms__B_TIMER__TM_SOFTWARE 0x10u
 
-/* Quad Modes */
-#define Timer_1ms_MODE_X1                        ((uint32)(Timer_1ms__X1              <<  \
-                                                                  Timer_1ms_QUAD_MODE_SHIFT))
-#define Timer_1ms_MODE_X2                        ((uint32)(Timer_1ms__X2              <<  \
-                                                                  Timer_1ms_QUAD_MODE_SHIFT))
-#define Timer_1ms_MODE_X4                        ((uint32)(Timer_1ms__X4              <<  \
-                                                                  Timer_1ms_QUAD_MODE_SHIFT))
 
-/* Counter modes */
-#define Timer_1ms_COUNT_UP                       ((uint32)(Timer_1ms__COUNT_UP        <<  \
-                                                                  Timer_1ms_UPDOWN_SHIFT))
-#define Timer_1ms_COUNT_DOWN                     ((uint32)(Timer_1ms__COUNT_DOWN      <<  \
-                                                                  Timer_1ms_UPDOWN_SHIFT))
-#define Timer_1ms_COUNT_UPDOWN0                  ((uint32)(Timer_1ms__COUNT_UPDOWN0   <<  \
-                                                                  Timer_1ms_UPDOWN_SHIFT))
-#define Timer_1ms_COUNT_UPDOWN1                  ((uint32)(Timer_1ms__COUNT_UPDOWN1   <<  \
-                                                                  Timer_1ms_UPDOWN_SHIFT))
+/***************************************
+*    Initialial Parameter Constants
+***************************************/
 
-/* PWM output invert */
-#define Timer_1ms_INVERT_LINE                    ((uint32)(Timer_1ms__INVERSE         <<  \
-                                                                  Timer_1ms_INV_OUT_SHIFT))
-#define Timer_1ms_INVERT_LINE_N                  ((uint32)(Timer_1ms__INVERSE         <<  \
-                                                                  Timer_1ms_INV_COMPL_OUT_SHIFT))
-
-/* Trigger modes */
-#define Timer_1ms_TRIG_RISING                    ((uint32)Timer_1ms__TRIG_RISING)
-#define Timer_1ms_TRIG_FALLING                   ((uint32)Timer_1ms__TRIG_FALLING)
-#define Timer_1ms_TRIG_BOTH                      ((uint32)Timer_1ms__TRIG_BOTH)
-#define Timer_1ms_TRIG_LEVEL                     ((uint32)Timer_1ms__TRIG_LEVEL)
-
-/* Interrupt mask */
-#define Timer_1ms_INTR_MASK_TC                   ((uint32)Timer_1ms__INTR_MASK_TC)
-#define Timer_1ms_INTR_MASK_CC_MATCH             ((uint32)Timer_1ms__INTR_MASK_CC_MATCH)
-
-/* PWM Output Controls */
-#define Timer_1ms_CC_MATCH_SET                   (0x00u)
-#define Timer_1ms_CC_MATCH_CLEAR                 (0x01u)
-#define Timer_1ms_CC_MATCH_INVERT                (0x02u)
-#define Timer_1ms_CC_MATCH_NO_CHANGE             (0x03u)
-#define Timer_1ms_OVERLOW_SET                    (0x00u)
-#define Timer_1ms_OVERLOW_CLEAR                  (0x04u)
-#define Timer_1ms_OVERLOW_INVERT                 (0x08u)
-#define Timer_1ms_OVERLOW_NO_CHANGE              (0x0Cu)
-#define Timer_1ms_UNDERFLOW_SET                  (0x00u)
-#define Timer_1ms_UNDERFLOW_CLEAR                (0x10u)
-#define Timer_1ms_UNDERFLOW_INVERT               (0x20u)
-#define Timer_1ms_UNDERFLOW_NO_CHANGE            (0x30u)
-
-/* PWM Align */
-#define Timer_1ms_PWM_MODE_LEFT                  (Timer_1ms_CC_MATCH_CLEAR        |   \
-                                                         Timer_1ms_OVERLOW_SET           |   \
-                                                         Timer_1ms_UNDERFLOW_NO_CHANGE)
-#define Timer_1ms_PWM_MODE_RIGHT                 (Timer_1ms_CC_MATCH_SET          |   \
-                                                         Timer_1ms_OVERLOW_NO_CHANGE     |   \
-                                                         Timer_1ms_UNDERFLOW_CLEAR)
-#define Timer_1ms_PWM_MODE_ASYM                  (Timer_1ms_CC_MATCH_INVERT       |   \
-                                                         Timer_1ms_OVERLOW_SET           |   \
-                                                         Timer_1ms_UNDERFLOW_CLEAR)
-
-#if (Timer_1ms_CY_TCPWM_V2)
-    #if(Timer_1ms_CY_TCPWM_4000)
-        #define Timer_1ms_PWM_MODE_CENTER                (Timer_1ms_CC_MATCH_INVERT       |   \
-                                                                 Timer_1ms_OVERLOW_NO_CHANGE     |   \
-                                                                 Timer_1ms_UNDERFLOW_CLEAR)
-    #else
-        #define Timer_1ms_PWM_MODE_CENTER                (Timer_1ms_CC_MATCH_INVERT       |   \
-                                                                 Timer_1ms_OVERLOW_SET           |   \
-                                                                 Timer_1ms_UNDERFLOW_CLEAR)
-    #endif /* (Timer_1ms_CY_TCPWM_4000) */
+#define Timer_1ms_INIT_PERIOD             39999u
+#define Timer_1ms_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << Timer_1ms_CTRL_CAP_MODE_SHIFT))
+#define Timer_1ms_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << Timer_1ms_CTRL_TRIG_MODE_SHIFT))
+#if (Timer_1ms_UsingFixedFunction)
+    #define Timer_1ms_INIT_INTERRUPT_MODE (((uint8)((uint8)1u << Timer_1ms_STATUS_TC_INT_MASK_SHIFT)) | \
+                                                  ((uint8)((uint8)0 << Timer_1ms_STATUS_CAPTURE_INT_MASK_SHIFT)))
 #else
-    #define Timer_1ms_PWM_MODE_CENTER                (Timer_1ms_CC_MATCH_INVERT       |   \
-                                                             Timer_1ms_OVERLOW_NO_CHANGE     |   \
-                                                             Timer_1ms_UNDERFLOW_CLEAR)
-#endif /* (Timer_1ms_CY_TCPWM_NEW) */
-
-/* Command operations without condition */
-#define Timer_1ms_CMD_CAPTURE                    (0u)
-#define Timer_1ms_CMD_RELOAD                     (8u)
-#define Timer_1ms_CMD_STOP                       (16u)
-#define Timer_1ms_CMD_START                      (24u)
-
-/* Status */
-#define Timer_1ms_STATUS_DOWN                    (1u)
-#define Timer_1ms_STATUS_RUNNING                 (2u)
+    #define Timer_1ms_INIT_INTERRUPT_MODE (((uint8)((uint8)1u << Timer_1ms_STATUS_TC_INT_MASK_SHIFT)) | \
+                                                 ((uint8)((uint8)0 << Timer_1ms_STATUS_CAPTURE_INT_MASK_SHIFT)) | \
+                                                 ((uint8)((uint8)0 << Timer_1ms_STATUS_FIFOFULL_INT_MASK_SHIFT)))
+#endif /* (Timer_1ms_UsingFixedFunction) */
+#define Timer_1ms_INIT_CAPTURE_COUNT      (2u)
+#define Timer_1ms_INIT_INT_CAPTURE_COUNT  ((uint8)((uint8)(1u - 1u) << Timer_1ms_CTRL_INTCNT_SHIFT))
 
 
 /***************************************
-*        Function Prototypes
-****************************************/
-
-void   Timer_1ms_Init(void);
-void   Timer_1ms_Enable(void);
-void   Timer_1ms_Start(void);
-void   Timer_1ms_Stop(void);
-
-void   Timer_1ms_SetMode(uint32 mode);
-void   Timer_1ms_SetCounterMode(uint32 counterMode);
-void   Timer_1ms_SetPWMMode(uint32 modeMask);
-void   Timer_1ms_SetQDMode(uint32 qdMode);
-
-void   Timer_1ms_SetPrescaler(uint32 prescaler);
-void   Timer_1ms_TriggerCommand(uint32 mask, uint32 command);
-void   Timer_1ms_SetOneShot(uint32 oneShotEnable);
-uint32 Timer_1ms_ReadStatus(void);
-
-void   Timer_1ms_SetPWMSyncKill(uint32 syncKillEnable);
-void   Timer_1ms_SetPWMStopOnKill(uint32 stopOnKillEnable);
-void   Timer_1ms_SetPWMDeadTime(uint32 deadTime);
-void   Timer_1ms_SetPWMInvert(uint32 mask);
-
-void   Timer_1ms_SetInterruptMode(uint32 interruptMask);
-uint32 Timer_1ms_GetInterruptSourceMasked(void);
-uint32 Timer_1ms_GetInterruptSource(void);
-void   Timer_1ms_ClearInterrupt(uint32 interruptMask);
-void   Timer_1ms_SetInterrupt(uint32 interruptMask);
-
-void   Timer_1ms_WriteCounter(uint32 count);
-uint32 Timer_1ms_ReadCounter(void);
-
-uint32 Timer_1ms_ReadCapture(void);
-uint32 Timer_1ms_ReadCaptureBuf(void);
-
-void   Timer_1ms_WritePeriod(uint32 period);
-uint32 Timer_1ms_ReadPeriod(void);
-void   Timer_1ms_WritePeriodBuf(uint32 periodBuf);
-uint32 Timer_1ms_ReadPeriodBuf(void);
-
-void   Timer_1ms_WriteCompare(uint32 compare);
-uint32 Timer_1ms_ReadCompare(void);
-void   Timer_1ms_WriteCompareBuf(uint32 compareBuf);
-uint32 Timer_1ms_ReadCompareBuf(void);
-
-void   Timer_1ms_SetPeriodSwap(uint32 swapEnable);
-void   Timer_1ms_SetCompareSwap(uint32 swapEnable);
-
-void   Timer_1ms_SetCaptureMode(uint32 triggerMode);
-void   Timer_1ms_SetReloadMode(uint32 triggerMode);
-void   Timer_1ms_SetStartMode(uint32 triggerMode);
-void   Timer_1ms_SetStopMode(uint32 triggerMode);
-void   Timer_1ms_SetCountMode(uint32 triggerMode);
-
-void   Timer_1ms_SaveConfig(void);
-void   Timer_1ms_RestoreConfig(void);
-void   Timer_1ms_Sleep(void);
-void   Timer_1ms_Wakeup(void);
-
-
-/***************************************
-*             Registers
+*           Registers
 ***************************************/
 
-#define Timer_1ms_BLOCK_CONTROL_REG              (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL )
-#define Timer_1ms_BLOCK_CONTROL_PTR              ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL )
-#define Timer_1ms_COMMAND_REG                    (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMD )
-#define Timer_1ms_COMMAND_PTR                    ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CMD )
-#define Timer_1ms_INTRRUPT_CAUSE_REG             (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE )
-#define Timer_1ms_INTRRUPT_CAUSE_PTR             ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE )
-#define Timer_1ms_CONTROL_REG                    (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__CTRL )
-#define Timer_1ms_CONTROL_PTR                    ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__CTRL )
-#define Timer_1ms_STATUS_REG                     (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__STATUS )
-#define Timer_1ms_STATUS_PTR                     ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__STATUS )
-#define Timer_1ms_COUNTER_REG                    (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__COUNTER )
-#define Timer_1ms_COUNTER_PTR                    ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__COUNTER )
-#define Timer_1ms_COMP_CAP_REG                   (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__CC )
-#define Timer_1ms_COMP_CAP_PTR                   ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__CC )
-#define Timer_1ms_COMP_CAP_BUF_REG               (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__CC_BUFF )
-#define Timer_1ms_COMP_CAP_BUF_PTR               ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__CC_BUFF )
-#define Timer_1ms_PERIOD_REG                     (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__PERIOD )
-#define Timer_1ms_PERIOD_PTR                     ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__PERIOD )
-#define Timer_1ms_PERIOD_BUF_REG                 (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__PERIOD_BUFF )
-#define Timer_1ms_PERIOD_BUF_PTR                 ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__PERIOD_BUFF )
-#define Timer_1ms_TRIG_CONTROL0_REG              (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL0 )
-#define Timer_1ms_TRIG_CONTROL0_PTR              ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL0 )
-#define Timer_1ms_TRIG_CONTROL1_REG              (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL1 )
-#define Timer_1ms_TRIG_CONTROL1_PTR              ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL1 )
-#define Timer_1ms_TRIG_CONTROL2_REG              (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL2 )
-#define Timer_1ms_TRIG_CONTROL2_PTR              ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__TR_CTRL2 )
-#define Timer_1ms_INTERRUPT_REQ_REG              (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR )
-#define Timer_1ms_INTERRUPT_REQ_PTR              ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR )
-#define Timer_1ms_INTERRUPT_SET_REG              (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR_SET )
-#define Timer_1ms_INTERRUPT_SET_PTR              ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR_SET )
-#define Timer_1ms_INTERRUPT_MASK_REG             (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASK )
-#define Timer_1ms_INTERRUPT_MASK_PTR             ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASK )
-#define Timer_1ms_INTERRUPT_MASKED_REG           (*(reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASKED )
-#define Timer_1ms_INTERRUPT_MASKED_PTR           ( (reg32 *) Timer_1ms_cy_m0s8_tcpwm_1__INTR_MASKED )
+#if (Timer_1ms_UsingFixedFunction) /* Implementation Specific Registers and Register Constants */
 
 
-/***************************************
-*       Registers Constants
-***************************************/
+    /***************************************
+    *    Fixed Function Registers
+    ***************************************/
 
-/* Mask */
-#define Timer_1ms_MASK                           ((uint32)Timer_1ms_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK)
+    #define Timer_1ms_STATUS         (*(reg8 *) Timer_1ms_TimerHW__SR0 )
+    /* In Fixed Function Block Status and Mask are the same register */
+    #define Timer_1ms_STATUS_MASK    (*(reg8 *) Timer_1ms_TimerHW__SR0 )
+    #define Timer_1ms_CONTROL        (*(reg8 *) Timer_1ms_TimerHW__CFG0)
+    #define Timer_1ms_CONTROL2       (*(reg8 *) Timer_1ms_TimerHW__CFG1)
+    #define Timer_1ms_CONTROL2_PTR   ( (reg8 *) Timer_1ms_TimerHW__CFG1)
+    #define Timer_1ms_RT1            (*(reg8 *) Timer_1ms_TimerHW__RT1)
+    #define Timer_1ms_RT1_PTR        ( (reg8 *) Timer_1ms_TimerHW__RT1)
 
-/* Shift constants for control register */
-#define Timer_1ms_RELOAD_CC_SHIFT                (0u)
-#define Timer_1ms_RELOAD_PERIOD_SHIFT            (1u)
-#define Timer_1ms_PWM_SYNC_KILL_SHIFT            (2u)
-#define Timer_1ms_PWM_STOP_KILL_SHIFT            (3u)
-#define Timer_1ms_PRESCALER_SHIFT                (8u)
-#define Timer_1ms_UPDOWN_SHIFT                   (16u)
-#define Timer_1ms_ONESHOT_SHIFT                  (18u)
-#define Timer_1ms_QUAD_MODE_SHIFT                (20u)
-#define Timer_1ms_INV_OUT_SHIFT                  (20u)
-#define Timer_1ms_INV_COMPL_OUT_SHIFT            (21u)
-#define Timer_1ms_MODE_SHIFT                     (24u)
+    #if (CY_PSOC3 || CY_PSOC5LP)
+        #define Timer_1ms_CONTROL3       (*(reg8 *) Timer_1ms_TimerHW__CFG2)
+        #define Timer_1ms_CONTROL3_PTR   ( (reg8 *) Timer_1ms_TimerHW__CFG2)
+    #endif /* (CY_PSOC3 || CY_PSOC5LP) */
+    #define Timer_1ms_GLOBAL_ENABLE  (*(reg8 *) Timer_1ms_TimerHW__PM_ACT_CFG)
+    #define Timer_1ms_GLOBAL_STBY_ENABLE  (*(reg8 *) Timer_1ms_TimerHW__PM_STBY_CFG)
 
-/* Mask constants for control register */
-#define Timer_1ms_RELOAD_CC_MASK                 ((uint32)(Timer_1ms_1BIT_MASK        <<  \
-                                                                            Timer_1ms_RELOAD_CC_SHIFT))
-#define Timer_1ms_RELOAD_PERIOD_MASK             ((uint32)(Timer_1ms_1BIT_MASK        <<  \
-                                                                            Timer_1ms_RELOAD_PERIOD_SHIFT))
-#define Timer_1ms_PWM_SYNC_KILL_MASK             ((uint32)(Timer_1ms_1BIT_MASK        <<  \
-                                                                            Timer_1ms_PWM_SYNC_KILL_SHIFT))
-#define Timer_1ms_PWM_STOP_KILL_MASK             ((uint32)(Timer_1ms_1BIT_MASK        <<  \
-                                                                            Timer_1ms_PWM_STOP_KILL_SHIFT))
-#define Timer_1ms_PRESCALER_MASK                 ((uint32)(Timer_1ms_8BIT_MASK        <<  \
-                                                                            Timer_1ms_PRESCALER_SHIFT))
-#define Timer_1ms_UPDOWN_MASK                    ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                            Timer_1ms_UPDOWN_SHIFT))
-#define Timer_1ms_ONESHOT_MASK                   ((uint32)(Timer_1ms_1BIT_MASK        <<  \
-                                                                            Timer_1ms_ONESHOT_SHIFT))
-#define Timer_1ms_QUAD_MODE_MASK                 ((uint32)(Timer_1ms_3BIT_MASK        <<  \
-                                                                            Timer_1ms_QUAD_MODE_SHIFT))
-#define Timer_1ms_INV_OUT_MASK                   ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                            Timer_1ms_INV_OUT_SHIFT))
-#define Timer_1ms_MODE_MASK                      ((uint32)(Timer_1ms_3BIT_MASK        <<  \
-                                                                            Timer_1ms_MODE_SHIFT))
-
-/* Shift constants for trigger control register 1 */
-#define Timer_1ms_CAPTURE_SHIFT                  (0u)
-#define Timer_1ms_COUNT_SHIFT                    (2u)
-#define Timer_1ms_RELOAD_SHIFT                   (4u)
-#define Timer_1ms_STOP_SHIFT                     (6u)
-#define Timer_1ms_START_SHIFT                    (8u)
-
-/* Mask constants for trigger control register 1 */
-#define Timer_1ms_CAPTURE_MASK                   ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                  Timer_1ms_CAPTURE_SHIFT))
-#define Timer_1ms_COUNT_MASK                     ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                  Timer_1ms_COUNT_SHIFT))
-#define Timer_1ms_RELOAD_MASK                    ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                  Timer_1ms_RELOAD_SHIFT))
-#define Timer_1ms_STOP_MASK                      ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                  Timer_1ms_STOP_SHIFT))
-#define Timer_1ms_START_MASK                     ((uint32)(Timer_1ms_2BIT_MASK        <<  \
-                                                                  Timer_1ms_START_SHIFT))
-
-/* MASK */
-#define Timer_1ms_1BIT_MASK                      ((uint32)0x01u)
-#define Timer_1ms_2BIT_MASK                      ((uint32)0x03u)
-#define Timer_1ms_3BIT_MASK                      ((uint32)0x07u)
-#define Timer_1ms_6BIT_MASK                      ((uint32)0x3Fu)
-#define Timer_1ms_8BIT_MASK                      ((uint32)0xFFu)
-#define Timer_1ms_16BIT_MASK                     ((uint32)0xFFFFu)
-
-/* Shift constant for status register */
-#define Timer_1ms_RUNNING_STATUS_SHIFT           (30u)
+    #define Timer_1ms_CAPTURE_LSB         (* (reg16 *) Timer_1ms_TimerHW__CAP0 )
+    #define Timer_1ms_CAPTURE_LSB_PTR       ((reg16 *) Timer_1ms_TimerHW__CAP0 )
+    #define Timer_1ms_PERIOD_LSB          (* (reg16 *) Timer_1ms_TimerHW__PER0 )
+    #define Timer_1ms_PERIOD_LSB_PTR        ((reg16 *) Timer_1ms_TimerHW__PER0 )
+    #define Timer_1ms_COUNTER_LSB         (* (reg16 *) Timer_1ms_TimerHW__CNT_CMP0 )
+    #define Timer_1ms_COUNTER_LSB_PTR       ((reg16 *) Timer_1ms_TimerHW__CNT_CMP0 )
 
 
-/***************************************
-*    Initial Constants
-***************************************/
+    /***************************************
+    *    Register Constants
+    ***************************************/
 
-#define Timer_1ms_CTRL_QUAD_BASE_CONFIG                                                          \
-        (((uint32)(Timer_1ms_QUAD_ENCODING_MODES     << Timer_1ms_QUAD_MODE_SHIFT))       |\
-         ((uint32)(Timer_1ms_CONFIG                  << Timer_1ms_MODE_SHIFT)))
+    /* Fixed Function Block Chosen */
+    #define Timer_1ms_BLOCK_EN_MASK                     Timer_1ms_TimerHW__PM_ACT_MSK
+    #define Timer_1ms_BLOCK_STBY_EN_MASK                Timer_1ms_TimerHW__PM_STBY_MSK
 
-#define Timer_1ms_CTRL_PWM_BASE_CONFIG                                                           \
-        (((uint32)(Timer_1ms_PWM_STOP_EVENT          << Timer_1ms_PWM_STOP_KILL_SHIFT))   |\
-         ((uint32)(Timer_1ms_PWM_OUT_INVERT          << Timer_1ms_INV_OUT_SHIFT))         |\
-         ((uint32)(Timer_1ms_PWM_OUT_N_INVERT        << Timer_1ms_INV_COMPL_OUT_SHIFT))   |\
-         ((uint32)(Timer_1ms_PWM_MODE                << Timer_1ms_MODE_SHIFT)))
+    /* Control Register Bit Locations */
+    /* Interrupt Count - Not valid for Fixed Function Block */
+    #define Timer_1ms_CTRL_INTCNT_SHIFT                  0x00u
+    /* Trigger Polarity - Not valid for Fixed Function Block */
+    #define Timer_1ms_CTRL_TRIG_MODE_SHIFT               0x00u
+    /* Trigger Enable - Not valid for Fixed Function Block */
+    #define Timer_1ms_CTRL_TRIG_EN_SHIFT                 0x00u
+    /* Capture Polarity - Not valid for Fixed Function Block */
+    #define Timer_1ms_CTRL_CAP_MODE_SHIFT                0x00u
+    /* Timer Enable - As defined in Register Map, part of TMRX_CFG0 register */
+    #define Timer_1ms_CTRL_ENABLE_SHIFT                  0x00u
 
-#define Timer_1ms_CTRL_PWM_RUN_MODE                                                              \
-            ((uint32)(Timer_1ms_PWM_RUN_MODE         << Timer_1ms_ONESHOT_SHIFT))
-            
-#define Timer_1ms_CTRL_PWM_ALIGN                                                                 \
-            ((uint32)(Timer_1ms_PWM_ALIGN            << Timer_1ms_UPDOWN_SHIFT))
+    /* Control Register Bit Masks */
+    #define Timer_1ms_CTRL_ENABLE                        ((uint8)((uint8)0x01u << Timer_1ms_CTRL_ENABLE_SHIFT))
 
-#define Timer_1ms_CTRL_PWM_KILL_EVENT                                                            \
-             ((uint32)(Timer_1ms_PWM_KILL_EVENT      << Timer_1ms_PWM_SYNC_KILL_SHIFT))
+    /* Control2 Register Bit Masks */
+    /* As defined in Register Map, Part of the TMRX_CFG1 register */
+    #define Timer_1ms_CTRL2_IRQ_SEL_SHIFT                 0x00u
+    #define Timer_1ms_CTRL2_IRQ_SEL                      ((uint8)((uint8)0x01u << Timer_1ms_CTRL2_IRQ_SEL_SHIFT))
 
-#define Timer_1ms_CTRL_PWM_DEAD_TIME_CYCLE                                                       \
-            ((uint32)(Timer_1ms_PWM_DEAD_TIME_CYCLE  << Timer_1ms_PRESCALER_SHIFT))
+    #if (CY_PSOC5A)
+        /* Use CFG1 Mode bits to set run mode */
+        /* As defined by Verilog Implementation */
+        #define Timer_1ms_CTRL_MODE_SHIFT                 0x01u
+        #define Timer_1ms_CTRL_MODE_MASK                 ((uint8)((uint8)0x07u << Timer_1ms_CTRL_MODE_SHIFT))
+    #endif /* (CY_PSOC5A) */
+    #if (CY_PSOC3 || CY_PSOC5LP)
+        /* Control3 Register Bit Locations */
+        #define Timer_1ms_CTRL_RCOD_SHIFT        0x02u
+        #define Timer_1ms_CTRL_ENBL_SHIFT        0x00u
+        #define Timer_1ms_CTRL_MODE_SHIFT        0x00u
 
-#define Timer_1ms_CTRL_PWM_PRESCALER                                                             \
-            ((uint32)(Timer_1ms_PWM_PRESCALER        << Timer_1ms_PRESCALER_SHIFT))
+        /* Control3 Register Bit Masks */
+        #define Timer_1ms_CTRL_RCOD_MASK  ((uint8)((uint8)0x03u << Timer_1ms_CTRL_RCOD_SHIFT)) /* ROD and COD bit masks */
+        #define Timer_1ms_CTRL_ENBL_MASK  ((uint8)((uint8)0x80u << Timer_1ms_CTRL_ENBL_SHIFT)) /* HW_EN bit mask */
+        #define Timer_1ms_CTRL_MODE_MASK  ((uint8)((uint8)0x03u << Timer_1ms_CTRL_MODE_SHIFT)) /* Run mode bit mask */
 
-#define Timer_1ms_CTRL_TIMER_BASE_CONFIG                                                         \
-        (((uint32)(Timer_1ms_TC_PRESCALER            << Timer_1ms_PRESCALER_SHIFT))       |\
-         ((uint32)(Timer_1ms_TC_COUNTER_MODE         << Timer_1ms_UPDOWN_SHIFT))          |\
-         ((uint32)(Timer_1ms_TC_RUN_MODE             << Timer_1ms_ONESHOT_SHIFT))         |\
-         ((uint32)(Timer_1ms_TC_COMP_CAP_MODE        << Timer_1ms_MODE_SHIFT)))
-        
-#define Timer_1ms_QUAD_SIGNALS_MODES                                                             \
-        (((uint32)(Timer_1ms_QUAD_PHIA_SIGNAL_MODE   << Timer_1ms_COUNT_SHIFT))           |\
-         ((uint32)(Timer_1ms_QUAD_INDEX_SIGNAL_MODE  << Timer_1ms_RELOAD_SHIFT))          |\
-         ((uint32)(Timer_1ms_QUAD_STOP_SIGNAL_MODE   << Timer_1ms_STOP_SHIFT))            |\
-         ((uint32)(Timer_1ms_QUAD_PHIB_SIGNAL_MODE   << Timer_1ms_START_SHIFT)))
+        #define Timer_1ms_CTRL_RCOD       ((uint8)((uint8)0x03u << Timer_1ms_CTRL_RCOD_SHIFT))
+        #define Timer_1ms_CTRL_ENBL       ((uint8)((uint8)0x80u << Timer_1ms_CTRL_ENBL_SHIFT))
+    #endif /* (CY_PSOC3 || CY_PSOC5LP) */
 
-#define Timer_1ms_PWM_SIGNALS_MODES                                                              \
-        (((uint32)(Timer_1ms_PWM_SWITCH_SIGNAL_MODE  << Timer_1ms_CAPTURE_SHIFT))         |\
-         ((uint32)(Timer_1ms_PWM_COUNT_SIGNAL_MODE   << Timer_1ms_COUNT_SHIFT))           |\
-         ((uint32)(Timer_1ms_PWM_RELOAD_SIGNAL_MODE  << Timer_1ms_RELOAD_SHIFT))          |\
-         ((uint32)(Timer_1ms_PWM_STOP_SIGNAL_MODE    << Timer_1ms_STOP_SHIFT))            |\
-         ((uint32)(Timer_1ms_PWM_START_SIGNAL_MODE   << Timer_1ms_START_SHIFT)))
+    /*RT1 Synch Constants: Applicable for PSoC3 and PSoC5LP */
+    #define Timer_1ms_RT1_SHIFT                       0x04u
+    /* Sync TC and CMP bit masks */
+    #define Timer_1ms_RT1_MASK                        ((uint8)((uint8)0x03u << Timer_1ms_RT1_SHIFT))
+    #define Timer_1ms_SYNC                            ((uint8)((uint8)0x03u << Timer_1ms_RT1_SHIFT))
+    #define Timer_1ms_SYNCDSI_SHIFT                   0x00u
+    /* Sync all DSI inputs with Mask  */
+    #define Timer_1ms_SYNCDSI_MASK                    ((uint8)((uint8)0x0Fu << Timer_1ms_SYNCDSI_SHIFT))
+    /* Sync all DSI inputs */
+    #define Timer_1ms_SYNCDSI_EN                      ((uint8)((uint8)0x0Fu << Timer_1ms_SYNCDSI_SHIFT))
 
-#define Timer_1ms_TIMER_SIGNALS_MODES                                                            \
-        (((uint32)(Timer_1ms_TC_CAPTURE_SIGNAL_MODE  << Timer_1ms_CAPTURE_SHIFT))         |\
-         ((uint32)(Timer_1ms_TC_COUNT_SIGNAL_MODE    << Timer_1ms_COUNT_SHIFT))           |\
-         ((uint32)(Timer_1ms_TC_RELOAD_SIGNAL_MODE   << Timer_1ms_RELOAD_SHIFT))          |\
-         ((uint32)(Timer_1ms_TC_STOP_SIGNAL_MODE     << Timer_1ms_STOP_SHIFT))            |\
-         ((uint32)(Timer_1ms_TC_START_SIGNAL_MODE    << Timer_1ms_START_SHIFT)))
-        
-#define Timer_1ms_TIMER_UPDOWN_CNT_USED                                                          \
-                ((Timer_1ms__COUNT_UPDOWN0 == Timer_1ms_TC_COUNTER_MODE)                  ||\
-                 (Timer_1ms__COUNT_UPDOWN1 == Timer_1ms_TC_COUNTER_MODE))
+    #define Timer_1ms_CTRL_MODE_PULSEWIDTH            ((uint8)((uint8)0x01u << Timer_1ms_CTRL_MODE_SHIFT))
+    #define Timer_1ms_CTRL_MODE_PERIOD                ((uint8)((uint8)0x02u << Timer_1ms_CTRL_MODE_SHIFT))
+    #define Timer_1ms_CTRL_MODE_CONTINUOUS            ((uint8)((uint8)0x00u << Timer_1ms_CTRL_MODE_SHIFT))
 
-#define Timer_1ms_PWM_UPDOWN_CNT_USED                                                            \
-                ((Timer_1ms__CENTER == Timer_1ms_PWM_ALIGN)                               ||\
-                 (Timer_1ms__ASYMMETRIC == Timer_1ms_PWM_ALIGN))               
-        
-#define Timer_1ms_PWM_PR_INIT_VALUE              (1u)
-#define Timer_1ms_QUAD_PERIOD_INIT_VALUE         (0x8000u)
+    /* Status Register Bit Locations */
+    /* As defined in Register Map, part of TMRX_SR0 register */
+    #define Timer_1ms_STATUS_TC_SHIFT                 0x07u
+    /* As defined in Register Map, part of TMRX_SR0 register, Shared with Compare Status */
+    #define Timer_1ms_STATUS_CAPTURE_SHIFT            0x06u
+    /* As defined in Register Map, part of TMRX_SR0 register */
+    #define Timer_1ms_STATUS_TC_INT_MASK_SHIFT        (Timer_1ms_STATUS_TC_SHIFT - 0x04u)
+    /* As defined in Register Map, part of TMRX_SR0 register, Shared with Compare Status */
+    #define Timer_1ms_STATUS_CAPTURE_INT_MASK_SHIFT   (Timer_1ms_STATUS_CAPTURE_SHIFT - 0x04u)
+
+    /* Status Register Bit Masks */
+    #define Timer_1ms_STATUS_TC                       ((uint8)((uint8)0x01u << Timer_1ms_STATUS_TC_SHIFT))
+    #define Timer_1ms_STATUS_CAPTURE                  ((uint8)((uint8)0x01u << Timer_1ms_STATUS_CAPTURE_SHIFT))
+    /* Interrupt Enable Bit-Mask for interrupt on TC */
+    #define Timer_1ms_STATUS_TC_INT_MASK              ((uint8)((uint8)0x01u << Timer_1ms_STATUS_TC_INT_MASK_SHIFT))
+    /* Interrupt Enable Bit-Mask for interrupt on Capture */
+    #define Timer_1ms_STATUS_CAPTURE_INT_MASK         ((uint8)((uint8)0x01u << Timer_1ms_STATUS_CAPTURE_INT_MASK_SHIFT))
+
+#else   /* UDB Registers and Register Constants */
 
 
+    /***************************************
+    *           UDB Registers
+    ***************************************/
 
-#endif /* End CY_TCPWM_Timer_1ms_H */
+    #define Timer_1ms_STATUS              (* (reg8 *) Timer_1ms_TimerUDB_rstSts_stsreg__STATUS_REG )
+    #define Timer_1ms_STATUS_MASK         (* (reg8 *) Timer_1ms_TimerUDB_rstSts_stsreg__MASK_REG)
+    #define Timer_1ms_STATUS_AUX_CTRL     (* (reg8 *) Timer_1ms_TimerUDB_rstSts_stsreg__STATUS_AUX_CTL_REG)
+    #define Timer_1ms_CONTROL             (* (reg8 *) Timer_1ms_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG )
+    
+    #if(Timer_1ms_Resolution <= 8u) /* 8-bit Timer */
+        #define Timer_1ms_CAPTURE_LSB         (* (reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define Timer_1ms_CAPTURE_LSB_PTR       ((reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define Timer_1ms_PERIOD_LSB          (* (reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define Timer_1ms_PERIOD_LSB_PTR        ((reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define Timer_1ms_COUNTER_LSB         (* (reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #define Timer_1ms_COUNTER_LSB_PTR       ((reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+    #elif(Timer_1ms_Resolution <= 16u) /* 8-bit Timer */
+        #if(CY_PSOC3) /* 8-bit addres space */
+            #define Timer_1ms_CAPTURE_LSB         (* (reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define Timer_1ms_CAPTURE_LSB_PTR       ((reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define Timer_1ms_PERIOD_LSB          (* (reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define Timer_1ms_PERIOD_LSB_PTR        ((reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define Timer_1ms_COUNTER_LSB         (* (reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+            #define Timer_1ms_COUNTER_LSB_PTR       ((reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #else /* 16-bit address space */
+            #define Timer_1ms_CAPTURE_LSB         (* (reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG )
+            #define Timer_1ms_CAPTURE_LSB_PTR       ((reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG )
+            #define Timer_1ms_PERIOD_LSB          (* (reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG )
+            #define Timer_1ms_PERIOD_LSB_PTR        ((reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG )
+            #define Timer_1ms_COUNTER_LSB         (* (reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG )
+            #define Timer_1ms_COUNTER_LSB_PTR       ((reg16 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG )
+        #endif /* CY_PSOC3 */
+    #elif(Timer_1ms_Resolution <= 24u)/* 24-bit Timer */
+        #define Timer_1ms_CAPTURE_LSB         (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define Timer_1ms_CAPTURE_LSB_PTR       ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define Timer_1ms_PERIOD_LSB          (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define Timer_1ms_PERIOD_LSB_PTR        ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define Timer_1ms_COUNTER_LSB         (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #define Timer_1ms_COUNTER_LSB_PTR       ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+    #else /* 32-bit Timer */
+        #if(CY_PSOC3 || CY_PSOC5) /* 8-bit address space */
+            #define Timer_1ms_CAPTURE_LSB         (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define Timer_1ms_CAPTURE_LSB_PTR       ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define Timer_1ms_PERIOD_LSB          (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define Timer_1ms_PERIOD_LSB_PTR        ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define Timer_1ms_COUNTER_LSB         (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+            #define Timer_1ms_COUNTER_LSB_PTR       ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #else /* 32-bit address space */
+            #define Timer_1ms_CAPTURE_LSB         (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__32BIT_F0_REG )
+            #define Timer_1ms_CAPTURE_LSB_PTR       ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__32BIT_F0_REG )
+            #define Timer_1ms_PERIOD_LSB          (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__32BIT_D0_REG )
+            #define Timer_1ms_PERIOD_LSB_PTR        ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__32BIT_D0_REG )
+            #define Timer_1ms_COUNTER_LSB         (* (reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__32BIT_A0_REG )
+            #define Timer_1ms_COUNTER_LSB_PTR       ((reg32 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__32BIT_A0_REG )
+        #endif /* CY_PSOC3 || CY_PSOC5 */ 
+    #endif
+
+    #define Timer_1ms_COUNTER_LSB_PTR_8BIT       ((reg8 *) Timer_1ms_TimerUDB_sT16_timerdp_u0__A0_REG )
+    
+    #if (Timer_1ms_UsingHWCaptureCounter)
+        #define Timer_1ms_CAP_COUNT              (*(reg8 *) Timer_1ms_TimerUDB_sCapCount_counter__PERIOD_REG )
+        #define Timer_1ms_CAP_COUNT_PTR          ( (reg8 *) Timer_1ms_TimerUDB_sCapCount_counter__PERIOD_REG )
+        #define Timer_1ms_CAPTURE_COUNT_CTRL     (*(reg8 *) Timer_1ms_TimerUDB_sCapCount_counter__CONTROL_AUX_CTL_REG )
+        #define Timer_1ms_CAPTURE_COUNT_CTRL_PTR ( (reg8 *) Timer_1ms_TimerUDB_sCapCount_counter__CONTROL_AUX_CTL_REG )
+    #endif /* (Timer_1ms_UsingHWCaptureCounter) */
+
+
+    /***************************************
+    *       Register Constants
+    ***************************************/
+
+    /* Control Register Bit Locations */
+    #define Timer_1ms_CTRL_INTCNT_SHIFT              0x00u       /* As defined by Verilog Implementation */
+    #define Timer_1ms_CTRL_TRIG_MODE_SHIFT           0x02u       /* As defined by Verilog Implementation */
+    #define Timer_1ms_CTRL_TRIG_EN_SHIFT             0x04u       /* As defined by Verilog Implementation */
+    #define Timer_1ms_CTRL_CAP_MODE_SHIFT            0x05u       /* As defined by Verilog Implementation */
+    #define Timer_1ms_CTRL_ENABLE_SHIFT              0x07u       /* As defined by Verilog Implementation */
+
+    /* Control Register Bit Masks */
+    #define Timer_1ms_CTRL_INTCNT_MASK               ((uint8)((uint8)0x03u << Timer_1ms_CTRL_INTCNT_SHIFT))
+    #define Timer_1ms_CTRL_TRIG_MODE_MASK            ((uint8)((uint8)0x03u << Timer_1ms_CTRL_TRIG_MODE_SHIFT))
+    #define Timer_1ms_CTRL_TRIG_EN                   ((uint8)((uint8)0x01u << Timer_1ms_CTRL_TRIG_EN_SHIFT))
+    #define Timer_1ms_CTRL_CAP_MODE_MASK             ((uint8)((uint8)0x03u << Timer_1ms_CTRL_CAP_MODE_SHIFT))
+    #define Timer_1ms_CTRL_ENABLE                    ((uint8)((uint8)0x01u << Timer_1ms_CTRL_ENABLE_SHIFT))
+
+    /* Bit Counter (7-bit) Control Register Bit Definitions */
+    /* As defined by the Register map for the AUX Control Register */
+    #define Timer_1ms_CNTR_ENABLE                    0x20u
+
+    /* Status Register Bit Locations */
+    #define Timer_1ms_STATUS_TC_SHIFT                0x00u  /* As defined by Verilog Implementation */
+    #define Timer_1ms_STATUS_CAPTURE_SHIFT           0x01u  /* As defined by Verilog Implementation */
+    #define Timer_1ms_STATUS_TC_INT_MASK_SHIFT       Timer_1ms_STATUS_TC_SHIFT
+    #define Timer_1ms_STATUS_CAPTURE_INT_MASK_SHIFT  Timer_1ms_STATUS_CAPTURE_SHIFT
+    #define Timer_1ms_STATUS_FIFOFULL_SHIFT          0x02u  /* As defined by Verilog Implementation */
+    #define Timer_1ms_STATUS_FIFONEMP_SHIFT          0x03u  /* As defined by Verilog Implementation */
+    #define Timer_1ms_STATUS_FIFOFULL_INT_MASK_SHIFT Timer_1ms_STATUS_FIFOFULL_SHIFT
+
+    /* Status Register Bit Masks */
+    /* Sticky TC Event Bit-Mask */
+    #define Timer_1ms_STATUS_TC                      ((uint8)((uint8)0x01u << Timer_1ms_STATUS_TC_SHIFT))
+    /* Sticky Capture Event Bit-Mask */
+    #define Timer_1ms_STATUS_CAPTURE                 ((uint8)((uint8)0x01u << Timer_1ms_STATUS_CAPTURE_SHIFT))
+    /* Interrupt Enable Bit-Mask */
+    #define Timer_1ms_STATUS_TC_INT_MASK             ((uint8)((uint8)0x01u << Timer_1ms_STATUS_TC_SHIFT))
+    /* Interrupt Enable Bit-Mask */
+    #define Timer_1ms_STATUS_CAPTURE_INT_MASK        ((uint8)((uint8)0x01u << Timer_1ms_STATUS_CAPTURE_SHIFT))
+    /* NOT-Sticky FIFO Full Bit-Mask */
+    #define Timer_1ms_STATUS_FIFOFULL                ((uint8)((uint8)0x01u << Timer_1ms_STATUS_FIFOFULL_SHIFT))
+    /* NOT-Sticky FIFO Not Empty Bit-Mask */
+    #define Timer_1ms_STATUS_FIFONEMP                ((uint8)((uint8)0x01u << Timer_1ms_STATUS_FIFONEMP_SHIFT))
+    /* Interrupt Enable Bit-Mask */
+    #define Timer_1ms_STATUS_FIFOFULL_INT_MASK       ((uint8)((uint8)0x01u << Timer_1ms_STATUS_FIFOFULL_SHIFT))
+
+    #define Timer_1ms_STATUS_ACTL_INT_EN             0x10u   /* As defined for the ACTL Register */
+
+    /* Datapath Auxillary Control Register definitions */
+    #define Timer_1ms_AUX_CTRL_FIFO0_CLR             0x01u   /* As defined by Register map */
+    #define Timer_1ms_AUX_CTRL_FIFO1_CLR             0x02u   /* As defined by Register map */
+    #define Timer_1ms_AUX_CTRL_FIFO0_LVL             0x04u   /* As defined by Register map */
+    #define Timer_1ms_AUX_CTRL_FIFO1_LVL             0x08u   /* As defined by Register map */
+    #define Timer_1ms_STATUS_ACTL_INT_EN_MASK        0x10u   /* As defined for the ACTL Register */
+
+#endif /* Implementation Specific Registers and Register Constants */
+
+#endif  /* CY_TIMER_Timer_1ms_H */
+
 
 /* [] END OF FILE */

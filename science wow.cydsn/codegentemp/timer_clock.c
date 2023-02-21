@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Clock_1ms.c
+* File Name: timer_clock.c
 * Version 2.20
 *
 *  Description:
@@ -17,12 +17,12 @@
 *******************************************************************************/
 
 #include <cydevice_trm.h>
-#include "Clock_1ms.h"
+#include "timer_clock.h"
 
 #if defined CYREG_PERI_DIV_CMD
 
 /*******************************************************************************
-* Function Name: Clock_1ms_StartEx
+* Function Name: timer_clock_StartEx
 ********************************************************************************
 *
 * Summary:
@@ -36,24 +36,24 @@
 *  None
 *
 *******************************************************************************/
-void Clock_1ms_StartEx(uint32 alignClkDiv)
+void timer_clock_StartEx(uint32 alignClkDiv)
 {
     /* Make sure any previous start command has finished. */
-    while((Clock_1ms_CMD_REG & Clock_1ms_CMD_ENABLE_MASK) != 0u)
+    while((timer_clock_CMD_REG & timer_clock_CMD_ENABLE_MASK) != 0u)
     {
     }
     
     /* Specify the target divider and it's alignment divider, and enable. */
-    Clock_1ms_CMD_REG =
-        ((uint32)Clock_1ms__DIV_ID << Clock_1ms_CMD_DIV_SHIFT)|
-        (alignClkDiv << Clock_1ms_CMD_PA_DIV_SHIFT) |
-        (uint32)Clock_1ms_CMD_ENABLE_MASK;
+    timer_clock_CMD_REG =
+        ((uint32)timer_clock__DIV_ID << timer_clock_CMD_DIV_SHIFT)|
+        (alignClkDiv << timer_clock_CMD_PA_DIV_SHIFT) |
+        (uint32)timer_clock_CMD_ENABLE_MASK;
 }
 
 #else
 
 /*******************************************************************************
-* Function Name: Clock_1ms_Start
+* Function Name: timer_clock_Start
 ********************************************************************************
 *
 * Summary:
@@ -67,17 +67,17 @@ void Clock_1ms_StartEx(uint32 alignClkDiv)
 *
 *******************************************************************************/
 
-void Clock_1ms_Start(void)
+void timer_clock_Start(void)
 {
     /* Set the bit to enable the clock. */
-    Clock_1ms_ENABLE_REG |= Clock_1ms__ENABLE_MASK;
+    timer_clock_ENABLE_REG |= timer_clock__ENABLE_MASK;
 }
 
 #endif /* CYREG_PERI_DIV_CMD */
 
 
 /*******************************************************************************
-* Function Name: Clock_1ms_Stop
+* Function Name: timer_clock_Stop
 ********************************************************************************
 *
 * Summary:
@@ -92,31 +92,31 @@ void Clock_1ms_Start(void)
 *  None
 *
 *******************************************************************************/
-void Clock_1ms_Stop(void)
+void timer_clock_Stop(void)
 {
 #if defined CYREG_PERI_DIV_CMD
 
     /* Make sure any previous start command has finished. */
-    while((Clock_1ms_CMD_REG & Clock_1ms_CMD_ENABLE_MASK) != 0u)
+    while((timer_clock_CMD_REG & timer_clock_CMD_ENABLE_MASK) != 0u)
     {
     }
     
     /* Specify the target divider and it's alignment divider, and disable. */
-    Clock_1ms_CMD_REG =
-        ((uint32)Clock_1ms__DIV_ID << Clock_1ms_CMD_DIV_SHIFT)|
-        ((uint32)Clock_1ms_CMD_DISABLE_MASK);
+    timer_clock_CMD_REG =
+        ((uint32)timer_clock__DIV_ID << timer_clock_CMD_DIV_SHIFT)|
+        ((uint32)timer_clock_CMD_DISABLE_MASK);
 
 #else
 
     /* Clear the bit to disable the clock. */
-    Clock_1ms_ENABLE_REG &= (uint32)(~Clock_1ms__ENABLE_MASK);
+    timer_clock_ENABLE_REG &= (uint32)(~timer_clock__ENABLE_MASK);
     
 #endif /* CYREG_PERI_DIV_CMD */
 }
 
 
 /*******************************************************************************
-* Function Name: Clock_1ms_SetFractionalDividerRegister
+* Function Name: timer_clock_SetFractionalDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -131,35 +131,35 @@ void Clock_1ms_Stop(void)
 *  None
 *
 *******************************************************************************/
-void Clock_1ms_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
+void timer_clock_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
 {
     uint32 maskVal;
     uint32 regVal;
     
-#if defined (Clock_1ms__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
+#if defined (timer_clock__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
     
 	/* get all but divider bits */
-    maskVal = Clock_1ms_DIV_REG & 
-                    (uint32)(~(uint32)(Clock_1ms_DIV_INT_MASK | Clock_1ms_DIV_FRAC_MASK)); 
+    maskVal = timer_clock_DIV_REG & 
+                    (uint32)(~(uint32)(timer_clock_DIV_INT_MASK | timer_clock_DIV_FRAC_MASK)); 
 	/* combine mask and new divider vals into 32-bit value */
     regVal = maskVal |
-        ((uint32)((uint32)clkDivider <<  Clock_1ms_DIV_INT_SHIFT) & Clock_1ms_DIV_INT_MASK) |
-        ((uint32)((uint32)clkFractional << Clock_1ms_DIV_FRAC_SHIFT) & Clock_1ms_DIV_FRAC_MASK);
+        ((uint32)((uint32)clkDivider <<  timer_clock_DIV_INT_SHIFT) & timer_clock_DIV_INT_MASK) |
+        ((uint32)((uint32)clkFractional << timer_clock_DIV_FRAC_SHIFT) & timer_clock_DIV_FRAC_MASK);
     
 #else
     /* get all but integer divider bits */
-    maskVal = Clock_1ms_DIV_REG & (uint32)(~(uint32)Clock_1ms__DIVIDER_MASK);
+    maskVal = timer_clock_DIV_REG & (uint32)(~(uint32)timer_clock__DIVIDER_MASK);
     /* combine mask and new divider val into 32-bit value */
     regVal = clkDivider | maskVal;
     
-#endif /* Clock_1ms__FRAC_MASK || CYREG_PERI_DIV_CMD */
+#endif /* timer_clock__FRAC_MASK || CYREG_PERI_DIV_CMD */
 
-    Clock_1ms_DIV_REG = regVal;
+    timer_clock_DIV_REG = regVal;
 }
 
 
 /*******************************************************************************
-* Function Name: Clock_1ms_GetDividerRegister
+* Function Name: timer_clock_GetDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -173,15 +173,15 @@ void Clock_1ms_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFraction
 *  divide by 2, the return value will be 1.
 *
 *******************************************************************************/
-uint16 Clock_1ms_GetDividerRegister(void)
+uint16 timer_clock_GetDividerRegister(void)
 {
-    return (uint16)((Clock_1ms_DIV_REG & Clock_1ms_DIV_INT_MASK)
-        >> Clock_1ms_DIV_INT_SHIFT);
+    return (uint16)((timer_clock_DIV_REG & timer_clock_DIV_INT_MASK)
+        >> timer_clock_DIV_INT_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: Clock_1ms_GetFractionalDividerRegister
+* Function Name: timer_clock_GetFractionalDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -195,15 +195,15 @@ uint16 Clock_1ms_GetDividerRegister(void)
 *  0 if the fractional divider is not in use.
 *
 *******************************************************************************/
-uint8 Clock_1ms_GetFractionalDividerRegister(void)
+uint8 timer_clock_GetFractionalDividerRegister(void)
 {
-#if defined (Clock_1ms__FRAC_MASK)
+#if defined (timer_clock__FRAC_MASK)
     /* return fractional divider bits */
-    return (uint8)((Clock_1ms_DIV_REG & Clock_1ms_DIV_FRAC_MASK)
-        >> Clock_1ms_DIV_FRAC_SHIFT);
+    return (uint8)((timer_clock_DIV_REG & timer_clock_DIV_FRAC_MASK)
+        >> timer_clock_DIV_FRAC_SHIFT);
 #else
     return 0u;
-#endif /* Clock_1ms__FRAC_MASK */
+#endif /* timer_clock__FRAC_MASK */
 }
 
 

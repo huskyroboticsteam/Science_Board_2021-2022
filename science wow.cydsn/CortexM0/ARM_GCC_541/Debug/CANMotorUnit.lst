@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
   36              		.cfi_offset 5, -12
   37              		.cfi_offset 6, -8
   38              		.cfi_offset 14, -4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 2
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 2
 
 
   39 0002 0400     		movs	r4, r0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
   83              		@ sp needed
   84 0002 7047     		bx	lr
   85              		.cfi_endproc
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 3
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 3
 
 
   86              	.LFE1:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  129 0020 2000     		movs	r0, r4
  130              	.LVL13:
  131 0022 FFF7FEFF 		bl	PackShortIntoDataMSBFirst
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 4
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 4
 
 
  132              	.LVL14:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
   48:..\HindsightCAN-master/CANMotorUnit.c **** //Returns 2's compliment MSB (0 for stopped or forward, 1 for reverse)
   49:..\HindsightCAN-master/CANMotorUnit.c **** int32_t GetDirectionFromPacket(CANPacket *packet)
   50:..\HindsightCAN-master/CANMotorUnit.c **** {
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 5
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 5
 
 
  179              		.loc 1 50 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  223 000e 0523     		movs	r3, #5
  224 0010 A370     		strb	r3, [r4, #2]
   61:..\HindsightCAN-master/CANMotorUnit.c ****     int nextByte = WritePacketIDOnly(packetToAssemble->data, ID_MOTOR_UNIT_PID_POS_TGT_SET);
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 6
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 6
 
 
  225              		.loc 1 61 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  272              		.loc 1 68 0
  273              		@ sp needed
  274 000c 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 7
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 7
 
 
  275              		.cfi_endproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  319 0020 2000     		movs	r0, r4
  320              	.LVL40:
  321 0022 FFF7FEFF 		bl	PackIntIntoDataMSBFirst
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 8
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 8
 
 
  322              	.LVL41:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
   86:..\HindsightCAN-master/CANMotorUnit.c **** void AssembleISetPacket(CANPacket *packetToAssemble,
   87:..\HindsightCAN-master/CANMotorUnit.c ****     uint8_t targetDeviceGroup,
   88:..\HindsightCAN-master/CANMotorUnit.c ****     uint8_t targetDeviceSerial,
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 9
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 9
 
 
   89:..\HindsightCAN-master/CANMotorUnit.c ****     int32_t iCoef)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  416              		.global	GetIFromPacket
  417              		.code	16
  418              		.thumb_func
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 10
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 10
 
 
  419              		.type	GetIFromPacket, %function
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  462              		.cfi_offset 14, -4
  463 0002 0400     		movs	r4, r0
  464 0004 1D00     		movs	r5, r3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 11
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 11
 
 
  107:..\HindsightCAN-master/CANMotorUnit.c ****     packetToAssemble->id = ConstructCANID(PACKET_PRIORITY_NORMAL, targetDeviceGroup, targetDeviceSe
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  511              		.cfi_def_cfa_offset 8
  512              		.cfi_offset 4, -8
  513              		.cfi_offset 14, -4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 12
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 12
 
 
  115:..\HindsightCAN-master/CANMotorUnit.c ****     return DecodeBytesToIntMSBFirst(packet->data, DLC_MOTOR_UNIT_PID_D_SET - 4, DLC_MOTOR_UNIT_PID_
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  557              		.loc 1 125 0
  558 0012 E01C     		adds	r0, r4, #3
  559 0014 0821     		movs	r1, #8
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 13
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 13
 
 
  560 0016 FFF7FEFF 		bl	WritePacketIDOnly
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  137:..\HindsightCAN-master/CANMotorUnit.c **** {
  603              		.loc 1 137 0
  604              		.cfi_startproc
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 14
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 14
 
 
  605              		@ args = 0, pretend = 0, frame = 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  652              		@ link register save eliminated.
  653              	.LVL85:
  145:..\HindsightCAN-master/CANMotorUnit.c ****     return packet->data[1];
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 15
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 15
 
 
  654              		.loc 1 145 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  698 0018 FFF7FEFF 		bl	WritePacketIDOnly
  699              	.LVL91:
  700 001c 0200     		movs	r2, r0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 16
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 16
 
 
  701              	.LVL92:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  748              		.global	AssembleMaxJointRevolutionPacket
  749              		.code	16
  750              		.thumb_func
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 17
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 17
 
 
  751              		.type	AssembleMaxJointRevolutionPacket, %function
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  793              	.LVL108:
  794              	.LVL109:
  795 0026 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 18
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 18
 
 
  796              		.cfi_endproc
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  839              		@ args = 4, pretend = 0, frame = 0
  840              		@ frame_needed = 0, uses_anonymous_args = 0
  841              	.LVL113:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 19
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 19
 
 
  842 0000 70B5     		push	{r4, r5, r6, lr}
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  888              		.cfi_endproc
  889              	.LFE21:
  890              		.size	AssemblePotHiSetPacket, .-AssemblePotHiSetPacket
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 20
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 20
 
 
  891              		.section	.text.AssemblePotLoSetPacket,"ax",%progbits
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  933 0022 2000     		movs	r0, r4
  934              	.LVL131:
  935 0024 FFF7FEFF 		bl	PackShortIntoDataMSBFirst
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 21
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 21
 
 
  936              	.LVL132:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  982              	.LFE23:
  983              		.size	GetPotADCFromPacket, .-GetPotADCFromPacket
  984              		.section	.text.GetPotmDegFromPacket,"ax",%progbits
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 22
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 22
 
 
  985              		.align	2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1026              	.LVL143:
  1027 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  1028              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 23
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 23
 
 
  1029              		.cfi_offset 3, -24
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1072 0034 2218     		adds	r2, r4, r0
  1073 0036 D178     		ldrb	r1, [r2, #3]
  1074 0038 0223     		movs	r3, #2
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 24
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 24
 
 
  1075 003a 0B43     		orrs	r3, r1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1118              		.cfi_endproc
  1119              	.LFE26:
  1120              		.size	GetEncoderTypeFromPacket, .-GetEncoderTypeFromPacket
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 25
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 25
 
 
  1121              		.section	.text.GetEncoderDirectionFromPacket,"ax",%progbits
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1167 0006 7047     		bx	lr
  1168              		.cfi_endproc
  1169              	.LFE28:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 26
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 26
 
 
  1170              		.size	GetEncoderZeroFromPacket, .-GetEncoderZeroFromPacket
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1214 0022 FFF7FEFF 		bl	PackShortIntoDataMSBFirst
  1215              	.LVL164:
  267:..\HindsightCAN-master/CANMotorUnit.c **** }
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 27
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 27
 
 
  1216              		.loc 1 267 0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1266 000c 61010000 		.4byte	.LASF82
  1267 0010 0C       		.byte	0xc
  1268 0011 56030000 		.4byte	.LASF83
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 28
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 28
 
 
  1269 0015 A2000000 		.4byte	.LASF84
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1323 0087 08       		.byte	0x8
  1324 0088 05       		.byte	0x5
  1325 0089 48020000 		.4byte	.LASF11
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 29
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 29
 
 
  1326 008d 02       		.uleb128 0x2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1380 00f8 07       		.uleb128 0x7
  1381 00f9 52040000 		.4byte	.LASF19
  1382 00fd 04       		.byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 30
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 30
 
 
  1383 00fe 13       		.byte	0x13
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1437 0179 99000000 		.4byte	.LASF30
  1438 017d 01       		.byte	0x1
  1439 017e 16       		.byte	0x16
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 31
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 31
 
 
  1440 017f 94000000 		.4byte	0x94
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1494 01e8 28000000 		.4byte	.LFE2-.LFB2
  1495 01ec 01       		.uleb128 0x1
  1496 01ed 9C       		.byte	0x9c
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 32
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 32
 
 
  1497 01ee 80020000 		.4byte	0x280
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1551 0266 01       		.uleb128 0x1
  1552 0267 33       		.byte	0x33
  1553 0268 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 33
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 33
 
 
  1554 0269 0F       		.uleb128 0xf
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1608 02c3 32       		.byte	0x32
  1609 02c4 00       		.byte	0
  1610 02c5 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 34
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 34
 
 
  1611 02c6 11       		.uleb128 0x11
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1665 0347 94000000 		.4byte	0x94
  1666 034b 60020000 		.4byte	.LLST16
  1667 034f 0D       		.uleb128 0xd
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 35
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 35
 
 
  1668 0350 0C000000 		.4byte	.LVL23
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1722 03b0 01       		.byte	0x1
  1723 03b1 41       		.byte	0x41
  1724 03b2 AE010000 		.4byte	0x1ae
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 36
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 36
 
 
  1725 03b6 7E020000 		.4byte	.LLST17
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1779 041f 01       		.byte	0x1
  1780 0420 49       		.byte	0x49
  1781 0421 C3000000 		.4byte	0xc3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 37
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 37
 
 
  1782 0425 27030000 		.4byte	.LLST21
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1836 0482 C3000000 		.4byte	0xc3
  1837 0486 00000000 		.4byte	.LFB8
  1838 048a 0E000000 		.4byte	.LFE8-.LFB8
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 38
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 38
 
 
  1839 048e 01       		.uleb128 0x1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1893 04f4 0B       		.uleb128 0xb
  1894 04f5 16040000 		.4byte	.LASF24
  1895 04f9 01       		.byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 39
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 39
 
 
  1896 04fa 58       		.byte	0x58
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  1950 0560 75       		.byte	0x75
  1951 0561 00       		.sleb128 0
  1952 0562 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 40
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 40
 
 
  1953 0563 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2007 05c6 AE010000 		.4byte	0x1ae
  2008 05ca 92040000 		.4byte	.LLST30
  2009 05ce 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 41
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 41
 
 
  2010 05cf E2030000 		.4byte	.LASF23
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2064 0641 50       		.byte	0x50
  2065 0642 02       		.uleb128 0x2
  2066 0643 74       		.byte	0x74
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 42
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 42
 
 
  2067 0644 00       		.sleb128 0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2121 069e 20000000 		.4byte	.LFE13-.LFB13
  2122 06a2 01       		.uleb128 0x1
  2123 06a3 9C       		.byte	0x9c
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 43
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 43
 
 
  2124 06a4 1A070000 		.4byte	0x71a
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2178 0716 01       		.uleb128 0x1
  2179 0717 38       		.byte	0x38
  2180 0718 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 44
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 44
 
 
  2181 0719 00       		.byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2235 079a 8C       		.byte	0x8c
  2236 079b 94000000 		.4byte	0x94
  2237 079f 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 45
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 45
 
 
  2238 07a0 50       		.byte	0x50
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2292 0809 06000000 		.4byte	.LASF22
  2293 080d 01       		.byte	0x1
  2294 080e 94       		.byte	0x94
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 46
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 46
 
 
  2295 080f AE010000 		.4byte	0x1ae
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2349 0884 4B0E0000 		.4byte	0xe4b
  2350 0888 0E       		.uleb128 0xe
  2351 0889 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 47
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 47
 
 
  2352 088a 50       		.byte	0x50
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2406 08e1 01       		.byte	0x1
  2407 08e2 A4       		.byte	0xa4
  2408 08e3 00000000 		.4byte	.LFB19
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 48
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 48
 
 
  2409 08e7 28000000 		.4byte	.LFE19-.LFB19
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2463 0962 0E       		.uleb128 0xe
  2464 0963 01       		.uleb128 0x1
  2465 0964 51       		.byte	0x51
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 49
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 49
 
 
  2466 0965 01       		.uleb128 0x1
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2520 09bf 01       		.uleb128 0x1
  2521 09c0 52       		.byte	0x52
  2522 09c1 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 50
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 50
 
 
  2523 09c2 34       		.byte	0x34
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2577 0a40 0E       		.uleb128 0xe
  2578 0a41 01       		.uleb128 0x1
  2579 0a42 50       		.byte	0x50
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 51
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 51
 
 
  2580 0a43 01       		.uleb128 0x1
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2634 0a91 03       		.uleb128 0x3
  2635 0a92 91       		.byte	0x91
  2636 0a93 00       		.sleb128 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 52
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 52
 
 
  2637 0a94 06       		.byte	0x6
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2691 0b03 94000000 		.4byte	0x94
  2692 0b07 440A0000 		.4byte	.LLST67
  2693 0b0b 0D       		.uleb128 0xd
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 53
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 53
 
 
  2694 0b0c 0C000000 		.4byte	.LVL127
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2748 0b63 02       		.uleb128 0x2
  2749 0b64 74       		.byte	0x74
  2750 0b65 00       		.sleb128 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 54
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 54
 
 
  2751 0b66 0E       		.uleb128 0xe
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2805 0bba 00       		.byte	0
  2806 0bbb 10       		.uleb128 0x10
  2807 0bbc 04       		.byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 55
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 55
 
 
  2808 0bbd C10B0000 		.4byte	0xbc1
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2862 0c26 01       		.byte	0x1
  2863 0c27 DC       		.byte	0xdc
  2864 0c28 AE010000 		.4byte	0x1ae
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 56
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 56
 
 
  2865 0c2c E10A0000 		.4byte	.LLST70
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2919 0caa 74       		.byte	0x74
  2920 0cab 03       		.sleb128 3
  2921 0cac 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 57
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 57
 
 
  2922 0cad 01       		.uleb128 0x1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  2976 0d25 AE010000 		.4byte	0x1ae
  2977 0d29 290C0000 		.4byte	.LLST79
  2978 0d2d 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 58
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 58
 
 
  2979 0d2e 16       		.uleb128 0x16
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3033 0db5 01       		.uleb128 0x1
  3034 0db6 50       		.byte	0x50
  3035 0db7 02       		.uleb128 0x2
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 59
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 59
 
 
  3036 0db8 74       		.byte	0x74
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3090 0e14 01       		.uleb128 0x1
  3091 0e15 51       		.byte	0x51
  3092 0e16 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 60
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 60
 
 
  3093 0e17 31       		.byte	0x31
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3147 000d 11       		.uleb128 0x11
  3148 000e 01       		.uleb128 0x1
  3149 000f 10       		.uleb128 0x10
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 61
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 61
 
 
  3150 0010 17       		.uleb128 0x17
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3204 0046 03       		.uleb128 0x3
  3205 0047 08       		.uleb128 0x8
  3206 0048 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 62
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 62
 
 
  3207 0049 0B       		.uleb128 0xb
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3261 007f 19       		.uleb128 0x19
  3262 0080 11       		.uleb128 0x11
  3263 0081 01       		.uleb128 0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 63
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 63
 
 
  3264 0082 12       		.uleb128 0x12
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3318 00bd 02       		.uleb128 0x2
  3319 00be 18       		.uleb128 0x18
  3320 00bf 9142     		.uleb128 0x2111
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 64
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 64
 
 
  3321 00c1 18       		.uleb128 0x18
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3375 00fa 0B       		.uleb128 0xb
  3376 00fb 3B       		.uleb128 0x3b
  3377 00fc 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 65
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 65
 
 
  3378 00fd 49       		.uleb128 0x49
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3432 0133 27       		.uleb128 0x27
  3433 0134 19       		.uleb128 0x19
  3434 0135 11       		.uleb128 0x11
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 66
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 66
 
 
  3435 0136 01       		.uleb128 0x1
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3489 016d 49       		.uleb128 0x49
  3490 016e 13       		.uleb128 0x13
  3491 016f 11       		.uleb128 0x11
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 67
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 67
 
 
  3492 0170 01       		.uleb128 0x1
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3546 0037 0B000000 		.4byte	.LVL2-1
  3547 003b 20000000 		.4byte	.LFE0
  3548 003f 0400     		.2byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 68
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 68
 
 
  3549 0041 F3       		.byte	0xf3
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3603 00bf 14000000 		.4byte	.LVL10
  3604 00c3 0100     		.2byte	0x1
  3605 00c5 54       		.byte	0x54
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 69
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 69
 
 
  3606 00c6 14000000 		.4byte	.LVL10
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3660 0143 9F       		.byte	0x9f
  3661 0144 00000000 		.4byte	0
  3662 0148 00000000 		.4byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 70
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 70
 
 
  3663              	.LLST9:
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3717 01cf 14000000 		.4byte	.LVL24
  3718 01d3 26000000 		.4byte	.LVL29
  3719 01d7 0300     		.2byte	0x3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 71
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 71
 
 
  3720 01d9 74       		.byte	0x74
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3774 0256 53       		.byte	0x53
  3775 0257 9F       		.byte	0x9f
  3776 0258 00000000 		.4byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 72
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 72
 
 
  3777 025c 00000000 		.4byte	0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3831 02dd 00000000 		.4byte	0
  3832 02e1 00000000 		.4byte	0
  3833              	.LLST19:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 73
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 73
 
 
  3834 02e5 00000000 		.4byte	.LVL34
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3888 0369 00000000 		.4byte	0
  3889 036d 00000000 		.4byte	0
  3890              	.LLST23:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 74
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 74
 
 
  3891 0371 00000000 		.4byte	.LVL44
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  3945 03f0 9F       		.byte	0x9f
  3946 03f1 00000000 		.4byte	0
  3947 03f5 00000000 		.4byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 75
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 75
 
 
  3948              	.LLST26:
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4002 047c 0B000000 		.4byte	.LVL59-1
  4003 0480 0E000000 		.4byte	.LFE10
  4004 0484 0400     		.2byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 76
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 76
 
 
  4005 0486 F3       		.byte	0xf3
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4059 0503 52       		.byte	0x52
  4060 0504 9F       		.byte	0x9f
  4061 0505 00000000 		.4byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 77
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 77
 
 
  4062 0509 00000000 		.4byte	0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4116 058f 50       		.byte	0x50
  4117 0590 08000000 		.4byte	.LVL74
  4118 0594 1C000000 		.4byte	.LVL77
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 78
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 78
 
 
  4119 0598 0100     		.2byte	0x1
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4173 0614 00000000 		.4byte	.LVL78
  4174 0618 02000000 		.4byte	.LVL79
  4175 061c 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 79
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 79
 
 
  4176 061e 50       		.byte	0x50
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4230 069b 00000000 		.4byte	0
  4231 069f 00000000 		.4byte	0
  4232              	.LLST44:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 80
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 80
 
 
  4233 06a3 00000000 		.4byte	.LVL80
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4287 0726 0100     		.2byte	0x1
  4288 0728 51       		.byte	0x51
  4289 0729 0B000000 		.4byte	.LVL89-1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 81
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 81
 
 
  4290 072d 28000000 		.4byte	.LFE17
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4344 07b2 0100     		.2byte	0x1
  4345 07b4 50       		.byte	0x50
  4346 07b5 04000000 		.4byte	.LVL98
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 82
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 82
 
 
  4347 07b9 0B000000 		.4byte	.LVL99-1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4401 0836 0B000000 		.4byte	.LVL102-1
  4402 083a 0100     		.2byte	0x1
  4403 083c 52       		.byte	0x52
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 83
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 83
 
 
  4404 083d 0B000000 		.4byte	.LVL102-1
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4458 08c1 50       		.byte	0x50
  4459 08c2 9F       		.byte	0x9f
  4460 08c3 00000000 		.4byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 84
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 84
 
 
  4461 08c7 00000000 		.4byte	0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4515 0946 00000000 		.4byte	.LVL113
  4516 094a 0B000000 		.4byte	.LVL115-1
  4517 094e 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 85
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 85
 
 
  4518 0950 53       		.byte	0x53
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4572 09d6 01       		.uleb128 0x1
  4573 09d7 50       		.byte	0x50
  4574 09d8 9F       		.byte	0x9f
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 86
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 86
 
 
  4575 09d9 00000000 		.4byte	0
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4629 0a5e 2A000000 		.4byte	.LVL133
  4630 0a62 0100     		.2byte	0x1
  4631 0a64 55       		.byte	0x55
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 87
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 87
 
 
  4632 0a65 2A000000 		.4byte	.LVL133
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4686 0ae5 10000000 		.4byte	.LVL146
  4687 0ae9 0100     		.2byte	0x1
  4688 0aeb 50       		.byte	0x50
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 88
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 88
 
 
  4689 0aec 10000000 		.4byte	.LVL146
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4743 0b6c 00000000 		.4byte	0
  4744              	.LLST74:
  4745 0b70 00000000 		.4byte	.LVL143
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 89
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 89
 
 
  4746 0b74 08000000 		.4byte	.LVL144
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4800 0bfc F3       		.byte	0xf3
  4801 0bfd 01       		.uleb128 0x1
  4802 0bfe 50       		.byte	0x50
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 90
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 90
 
 
  4803 0bff 9F       		.byte	0x9f
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4857 0c7f 00000000 		.4byte	0
  4858              	.LLST81:
  4859 0c83 00000000 		.4byte	.LVL157
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 91
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 91
 
 
  4860 0c87 0B000000 		.4byte	.LVL159-1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4914 0d0c 0100     		.2byte	0x1
  4915 0d0e 50       		.byte	0x50
  4916 0d0f 04000000 		.4byte	.LVL167
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 92
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 92
 
 
  4917 0d13 0B000000 		.4byte	.LVL168-1
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  4971 0090 00000000 		.4byte	.LFB16
  4972 0094 04000000 		.4byte	.LFE16-.LFB16
  4973 0098 00000000 		.4byte	.LFB17
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 93
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 93
 
 
  4974 009c 28000000 		.4byte	.LFE17-.LFB17
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5028 005c 28000000 		.4byte	.LFE11
  5029 0060 00000000 		.4byte	.LFB12
  5030 0064 0E000000 		.4byte	.LFE12
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 94
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 94
 
 
  5031 0068 00000000 		.4byte	.LFB13
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5076              	.LASF58:
  5077 0017 41737365 		.ascii	"AssemblePotHiSetPacket\000"
  5077      6D626C65 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 95
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 95
 
 
  5077      506F7448 
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5100 00fb 47657445 		.ascii	"GetEncoderZeroFromPacket\000"
  5100      6E636F64 
  5100      65725A65 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 96
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 96
 
 
  5100      726F4672 
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5122      385F7400 
  5123              	.LASF62:
  5124 020f 6164634C 		.ascii	"adcLo\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 97
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 97
 
 
  5124      6F00
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5147              	.LASF74:
  5148 02c6 50574D53 		.ascii	"PWMSetMax\000"
  5148      65744D61 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 98
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 98
 
 
  5148      7800
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5168      68617200 
  5169              	.LASF12:
  5170 03a5 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 99
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 99
 
 
  5170      206C6F6E 
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5192      365F7400 
  5193              	.LASF53:
  5194 044b 70756C73 		.ascii	"pulses\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 100
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 100
 
 
  5194      657300
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5216      6E69744D 
  5216      6F646546 
  5216      726F6D50 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 101
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 101
 
 
  5216      61636B65 
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 1
  5236      53424669 
  5237              	.LASF40:
  5238 05f3 41737365 		.ascii	"AssembleISetPacket\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccDo4V76.s 			page 102
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccktBpen.s 			page 102
 
 
  5238      6D626C65 
