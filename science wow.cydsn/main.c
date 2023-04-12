@@ -82,8 +82,16 @@ int main(void)
     current_cup_pos = 0;
     
     ERR_LED_Write(0);
+    
+    
+    //test
+
     for(;;)
     {      
+        
+        
+        //testing
+        
         
         //uint32 count = QuadDec_2_ReadCounter();
 //         Testing area
@@ -107,7 +115,8 @@ int main(void)
 //        VEML6070_init();
 //        uint32_t sensor_val = read_uv_sensor();
 //        
-//        char out[32];
+//     
+        char out[32];
         //show results
 //        UART_UartPutString(itoa(Hum_val, out1, 10));
         //UART_UartPutString("\n\r");
@@ -118,21 +127,31 @@ int main(void)
 //        
 //        int servo = 7;
 //        int degrees = 31;
-//        setPWMFromDutyCycle(9, 50);
-
-        
+        //setPWMFromDutyCycle(15, 7);
+//        setPWMFromDutyCycle(9, 30);
+        uint8_t L90 = 0b00110011; //307 /4096
+        uint8_t H90 = 0b00000001; //307
+        uint8_t L180 = 0b10011010; //410
+        uint8_t H180 = 0b00000001; //410
+        uint8_t L0 = 0b11001101; //205
+        uint8_t H0 = 0b00000000; //205
+//        setPWMFromBytes(9, TurnOnTimeL(), TurnOnTimeH(), L180, H180);
+        //setPWMFromBytes(9, TurnOnTimeL(), TurnOnTimeH(), L90, H90);
+        //setPWMFromDutyCycle(9, 15);
         /* Place your application code here. */
+        
+        
         
         
         volatile int error = PollAndReceiveCANPacket(&current); 
         if (!error) {  // packet on 0
-            CAN_LED_Write(1); //on
+            //CAN_LED_Write(1); //on+
             CAN_time_LED = 0;
             int ID = GetPacketID(&current);
             switch (ID) {
                 case ID_SCIENCE_LAZY_SUSAN_POS_SET : //pos set on lazy susan
                     {
-                        CAN_LED_Write(0);
+                        //CAN_LED_Write(0);
                         current_cup_pos = GetScienceLazySusanPosFromPacket(&current);
 //                        uint8_t goal_cup_pos = GetScienceLazySusanPosFromPacket(current);
                         //uint32_t tick_goal = QuadDec_2_ReadCounter() + cups_forward(goal_cup_pos, current_cup_pos);
@@ -140,7 +159,7 @@ int main(void)
                     break;
                 case ID_TELEMETRY_TIMING : //wip
                     {
-                        CAN_LED_Write(0); 
+                        //CAN_LED_Write(0); 
                         // the enableInterrupts variable saves the current interrupt 
                         // masking state inside the cpu registers. We pause interrupts
                         // so that it does not interfere with the reading of 32 bits
@@ -156,38 +175,39 @@ int main(void)
                             //stop millisecond counter
                             isr_1ms_Stop();
                         }
-                        CAN_LED_Write(1);
+                        //CAN_LED_Write(1);
                     }
                     break;
                 case ID_SCIENCE_SERVO_SET : //servo set 
                     {   
-                        CAN_LED_Write(0);
+                        CAN_LED_Write(1);
                         //CyDelay(500);
                         uint8_t servoID = GetScienceServoIDFromPacket(&current);
                         uint8_t angle = GetScienceServoAngleFromPacket(&current);
                         set_servo_position(servoID, angle);
+                        setPWMFromDutyCycle(9, (angle/180.0)*5 + 5); //TODO remove
                         CAN_LED_Write(1);
                     }
                     break;
                 case ID_SCIENCE_CONT_SERVO_POWER_SET :
                     {
-                        CAN_LED_Write(0);
+                        //CAN_LED_Write(0);
                         //CyDelay(500);
                         uint8_t servoID = GetScienceServoIDFromPacket(&current);
                         //uint8_t miliDegrees = GetScienceServoAngleFromPacket(current); //tell davis SCUFFED CODE NOT IMPLEMENTED PLACEHOLDER
                         uint8_t power = GetScienceContServoPowerFromPacket(&current);
                         set_servo_continuous(servoID, power);
-                        CAN_LED_Write(1);
+                        //CAN_LED_Write(1);
                     }
                 case ID_TELEMETRY_PULL : //sensor pull
                     {
-                        CAN_LED_Write(0);
+                        //CAN_LED_Write(0);
                         //CyDelay(500);
                         uint8_t sensor_type = DecodeTelemetryType(&current);
                         uint8_t target_group = GetSenderDeviceGroupCode(&current);
                         uint8_t target_serial = GetSenderDeviceSerialNumber(&current);
                         get_data(sensor_type, target_group, target_serial); //fetch sensor data with ADC read & send new Telemetry Packet to CAN
-                        CAN_LED_Write(1);
+                        //CAN_LED_Write(1);
                     }
                     break;
                 default :

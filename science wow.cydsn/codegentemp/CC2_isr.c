@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: CC2_isr.c  
-* Version 1.70
+* Version 1.71
 *
 *  Description:
 *   API for controlling the state of an interrupt.
@@ -252,7 +252,7 @@ void CC2_isr_SetPriority(uint8 priority)
     uint32 priorityOffset = ((CC2_isr__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *CC2_isr_INTC_PRIOR = (*CC2_isr_INTC_PRIOR & (uint32)(~CC2_isr__INTC_PRIOR_MASK)) |
+    *CC2_isr_INTC_PRIOR = (*CC2_isr_INTC_PRIOR & (uint32)(~(uint32)CC2_isr__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }

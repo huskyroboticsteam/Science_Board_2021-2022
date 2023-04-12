@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
   28:Generated_Source\PSoC4/QuadDec_1.c **** * Summary:
   29:Generated_Source\PSoC4/QuadDec_1.c **** *  Initialize/Restore default QuadDec_1 configuration.
   30:Generated_Source\PSoC4/QuadDec_1.c **** *
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 2
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 2
 
 
   31:Generated_Source\PSoC4/QuadDec_1.c **** * Parameters:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
   85:Generated_Source\PSoC4/QuadDec_1.c ****         #endif /* (QuadDec_1_CY_TCPWM_V2 && QuadDec_1_TIMER_UPDOWN_CNT_USED && !QuadDec_1_CY_TCPWM_
   86:Generated_Source\PSoC4/QuadDec_1.c ****     #endif  /* (QuadDec_1__TIMER == QuadDec_1_CONFIG) */
   87:Generated_Source\PSoC4/QuadDec_1.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 3
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 3
 
 
   88:Generated_Source\PSoC4/QuadDec_1.c ****     #if (QuadDec_1__PWM_SEL == QuadDec_1_CONFIG)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  142:Generated_Source\PSoC4/QuadDec_1.c ****             #endif  /* (QuadDec_1__ASYMMETRIC == QuadDec_1_PWM_ALIGN) */
  143:Generated_Source\PSoC4/QuadDec_1.c ****         #endif  /* (QuadDec_1__PWM_PR == QuadDec_1_PWM_MODE) */
  144:Generated_Source\PSoC4/QuadDec_1.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 4
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 4
 
 
  145:Generated_Source\PSoC4/QuadDec_1.c ****         /* Set other values from customizer */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  199:Generated_Source\PSoC4/QuadDec_1.c ****         #if (0u != QuadDec_1_QUAD_AUTO_START)
  200:Generated_Source\PSoC4/QuadDec_1.c ****             QuadDec_1_TriggerCommand(QuadDec_1_MASK, QuadDec_1_CMD_RELOAD);
  201:Generated_Source\PSoC4/QuadDec_1.c ****         #endif /* (0u != QuadDec_1_QUAD_AUTO_START) */
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 5
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 5
 
 
  202:Generated_Source\PSoC4/QuadDec_1.c ****     #endif  /* (QuadDec_1__QUAD == QuadDec_1_CONFIG) */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  256:Generated_Source\PSoC4/QuadDec_1.c **** void QuadDec_1_Stop(void)
  257:Generated_Source\PSoC4/QuadDec_1.c **** {
   28              		.loc 1 257 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 6
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 6
 
 
   29              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  275:Generated_Source\PSoC4/QuadDec_1.c **** *  set at runtime. The mode must be set while the component is disabled.
  276:Generated_Source\PSoC4/QuadDec_1.c **** *
  277:Generated_Source\PSoC4/QuadDec_1.c **** * Parameters:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 7
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 7
 
 
  278:Generated_Source\PSoC4/QuadDec_1.c **** *  mode: Mode for the QuadDec_1 to operate in
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
   94              		@ sp needed
   95 001c 10BD     		pop	{r4, pc}
   96              	.L6:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 8
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 8
 
 
   97 001e C046     		.align	2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  124              	.LVL7:
  331:Generated_Source\PSoC4/QuadDec_1.c **** 
  332:Generated_Source\PSoC4/QuadDec_1.c ****     QuadDec_1_CONTROL_REG &= (uint32)~QuadDec_1_QUAD_MODE_MASK;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 9
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 9
 
 
  125              		.loc 1 332 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  354:Generated_Source\PSoC4/QuadDec_1.c **** *         - QuadDec_1_PRESCALE_DIVBY16   - Divide by 16
  355:Generated_Source\PSoC4/QuadDec_1.c **** *         - QuadDec_1_PRESCALE_DIVBY32   - Divide by 32
  356:Generated_Source\PSoC4/QuadDec_1.c **** *         - QuadDec_1_PRESCALE_DIVBY64   - Divide by 64
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 10
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 10
 
 
  357:Generated_Source\PSoC4/QuadDec_1.c **** *         - QuadDec_1_PRESCALE_DIVBY128  - Divide by 128
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  195              		.size	QuadDec_1_SetPrescaler, .-QuadDec_1_SetPrescaler
  196              		.section	.text.QuadDec_1_SetOneShot,"ax",%progbits
  197              		.align	2
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 11
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 11
 
 
  198              		.global	QuadDec_1_SetOneShot
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  224 0010 0B60     		str	r3, [r1]
  402:Generated_Source\PSoC4/QuadDec_1.c ****     QuadDec_1_CONTROL_REG |= ((uint32)((oneShotEnable & QuadDec_1_1BIT_MASK) <<
  225              		.loc 1 402 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 12
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 12
 
 
  226 0012 0D68     		ldr	r5, [r1]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  427:Generated_Source\PSoC4/QuadDec_1.c **** *     - CC_MATCH_NO_CHANGE  - No change on comparison match
  428:Generated_Source\PSoC4/QuadDec_1.c **** *     - OVERLOW_SET         - Set on overflow
  429:Generated_Source\PSoC4/QuadDec_1.c **** *     - OVERLOW_CLEAR       - Clear on  overflow
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 13
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 13
 
 
  430:Generated_Source\PSoC4/QuadDec_1.c **** *     - OVERLOW_INVERT      - Invert on overflow
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  454:Generated_Source\PSoC4/QuadDec_1.c **** 
  455:Generated_Source\PSoC4/QuadDec_1.c **** 
  456:Generated_Source\PSoC4/QuadDec_1.c **** /*******************************************************************************
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 14
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 14
 
 
  457:Generated_Source\PSoC4/QuadDec_1.c **** * Function Name: QuadDec_1_SetPWMSyncKill
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  305 000e 8B43     		bics	r3, r1
  306 0010 1360     		str	r3, [r2]
  492:Generated_Source\PSoC4/QuadDec_1.c ****     QuadDec_1_CONTROL_REG |= ((uint32)((syncKillEnable & QuadDec_1_1BIT_MASK)  <<
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 15
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 15
 
 
  307              		.loc 1 492 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  518:Generated_Source\PSoC4/QuadDec_1.c **** *******************************************************************************/
  519:Generated_Source\PSoC4/QuadDec_1.c **** void QuadDec_1_SetPWMStopOnKill(uint32 stopOnKillEnable)
  520:Generated_Source\PSoC4/QuadDec_1.c **** {
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 16
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 16
 
 
  336              		.loc 1 520 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  380              		.global	QuadDec_1_SetPWMDeadTime
  381              		.code	16
  382              		.thumb_func
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 17
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 17
 
 
  383              		.type	QuadDec_1_SetPWMDeadTime, %function
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  408              	.LVL30:
  409 0016 240C     		lsrs	r4, r4, #16
  410 0018 1443     		orrs	r4, r2
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 18
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 18
 
 
  411 001a 1C60     		str	r4, [r3]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  438              	.LVL32:
  439 0000 10B5     		push	{r4, lr}
  440              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 19
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 19
 
 
  441              		.cfi_offset 4, -8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  602:Generated_Source\PSoC4/QuadDec_1.c **** *
  603:Generated_Source\PSoC4/QuadDec_1.c **** * Summary:
  604:Generated_Source\PSoC4/QuadDec_1.c **** *  Writes a new 16bit counter value directly into the counter register, thus
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 20
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 20
 
 
  605:Generated_Source\PSoC4/QuadDec_1.c **** *  setting the counter (not the period) to the value written. It is not
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  629:Generated_Source\PSoC4/QuadDec_1.c **** *  None
  630:Generated_Source\PSoC4/QuadDec_1.c **** *
  631:Generated_Source\PSoC4/QuadDec_1.c **** * Return:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 21
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 21
 
 
  632:Generated_Source\PSoC4/QuadDec_1.c **** *  Current counter value
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  658:Generated_Source\PSoC4/QuadDec_1.c **** *                                         and period
  659:Generated_Source\PSoC4/QuadDec_1.c **** *
  660:Generated_Source\PSoC4/QuadDec_1.c **** * Return:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 22
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 22
 
 
  661:Generated_Source\PSoC4/QuadDec_1.c **** *  None
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  578              		.global	QuadDec_1_WritePeriod
  579              		.code	16
  580              		.thumb_func
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 23
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 23
 
 
  581              		.type	QuadDec_1_WritePeriod, %function
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  613              	.LFB18:
  697:Generated_Source\PSoC4/QuadDec_1.c **** 
  698:Generated_Source\PSoC4/QuadDec_1.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 24
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 24
 
 
  699:Generated_Source\PSoC4/QuadDec_1.c **** /*******************************************************************************
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  725:Generated_Source\PSoC4/QuadDec_1.c **** *  swapped. When enabled in the Timer/Counter mode(without capture) the swap
  726:Generated_Source\PSoC4/QuadDec_1.c **** *  occurs at a TC event. In the PWM mode the swap occurs at the next TC event
  727:Generated_Source\PSoC4/QuadDec_1.c **** *  following a hardware switch event.
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 25
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 25
 
 
  728:Generated_Source\PSoC4/QuadDec_1.c **** *
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  674              		.align	2
  675              	.L47:
  676 0020 00012040 		.word	1075839232
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 26
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 26
 
 
  677              		.cfi_endproc
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  711              		.align	2
  712              		.global	QuadDec_1_ReadPeriodBuf
  713              		.code	16
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 27
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 27
 
 
  714              		.thumb_func
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  792:Generated_Source\PSoC4/QuadDec_1.c **** /*******************************************************************************
  793:Generated_Source\PSoC4/QuadDec_1.c **** * Function Name: QuadDec_1_SetPeriodSwap
  794:Generated_Source\PSoC4/QuadDec_1.c **** ********************************************************************************
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 28
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 28
 
 
  795:Generated_Source\PSoC4/QuadDec_1.c **** *
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  820:Generated_Source\PSoC4/QuadDec_1.c ****                                                             QuadDec_1_RELOAD_PERIOD_SHIFT));
  821:Generated_Source\PSoC4/QuadDec_1.c **** 
  822:Generated_Source\PSoC4/QuadDec_1.c ****     CyExitCriticalSection(enableInterrupts);
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 29
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 29
 
 
  775              		.loc 1 822 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  801              	.LVL54:
  851:Generated_Source\PSoC4/QuadDec_1.c ****     #if (QuadDec_1_CY_TCPWM_4000)
  852:Generated_Source\PSoC4/QuadDec_1.c ****         uint32 currentMode;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 30
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 30
 
 
  853:Generated_Source\PSoC4/QuadDec_1.c ****     #endif /* (QuadDec_1_CY_TCPWM_4000) */
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  883:Generated_Source\PSoC4/QuadDec_1.c **** *  or in Quadrature Decoder modes.
  884:Generated_Source\PSoC4/QuadDec_1.c **** *  PSoC 4000 devices read the incremented compare register value in the 
  885:Generated_Source\PSoC4/QuadDec_1.c **** *  Up counting mode (except 0xFFFFu), and the decremented value in the 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 31
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 31
 
 
  886:Generated_Source\PSoC4/QuadDec_1.c **** *  Down counting mode (except 0x0u).
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  837              		@ sp needed
  838 0008 7047     		bx	lr
  839              	.L63:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 32
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 32
 
 
  840 000a C046     		.align	2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  963:Generated_Source\PSoC4/QuadDec_1.c ****         if (((uint32)QuadDec_1__COUNT_DOWN == currentMode) && (0xFFFFu != compareBuf))
  964:Generated_Source\PSoC4/QuadDec_1.c ****         {
  965:Generated_Source\PSoC4/QuadDec_1.c ****             compareBuf++;
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 33
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 33
 
 
  966:Generated_Source\PSoC4/QuadDec_1.c ****         }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  996:Generated_Source\PSoC4/QuadDec_1.c **** *  Up counting mode (except 0xFFFFu), and the decremented value in the 
  997:Generated_Source\PSoC4/QuadDec_1.c **** *  Down counting mode (except 0x0u).
  998:Generated_Source\PSoC4/QuadDec_1.c **** *
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 34
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 34
 
 
  999:Generated_Source\PSoC4/QuadDec_1.c **** *******************************************************************************/
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  908              		.thumb_func
  909              		.type	QuadDec_1_ReadCapture, %function
  910              	QuadDec_1_ReadCapture:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 35
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 35
 
 
  911              	.LFB27:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1054:Generated_Source\PSoC4/QuadDec_1.c **** ********************************************************************************
 1055:Generated_Source\PSoC4/QuadDec_1.c **** *
 1056:Generated_Source\PSoC4/QuadDec_1.c **** * Summary:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 36
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 36
 
 
 1057:Generated_Source\PSoC4/QuadDec_1.c **** *  Reads the capture buffer register. This API is applicable only for
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1083:Generated_Source\PSoC4/QuadDec_1.c **** *  triggerMode: Enumerated trigger mode value
 1084:Generated_Source\PSoC4/QuadDec_1.c **** *   Values:
 1085:Generated_Source\PSoC4/QuadDec_1.c **** *     - QuadDec_1_TRIG_LEVEL     - Level
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 37
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 37
 
 
 1086:Generated_Source\PSoC4/QuadDec_1.c **** *     - QuadDec_1_TRIG_RISING    - Rising edge
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1003              	.LFE29:
  1004              		.size	QuadDec_1_SetCaptureMode, .-QuadDec_1_SetCaptureMode
  1005              		.section	.text.QuadDec_1_SetReloadMode,"ax",%progbits
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 38
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 38
 
 
  1006              		.align	2
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1031 0010 1A60     		str	r2, [r3]
 1134:Generated_Source\PSoC4/QuadDec_1.c ****     QuadDec_1_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << QuadDec_1_RELOAD_SHIFT));
  1032              		.loc 1 1134 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 39
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 39
 
 
  1033 0012 1A68     		ldr	r2, [r3]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1060              		.cfi_startproc
  1061              		@ args = 0, pretend = 0, frame = 0
  1062              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 40
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 40
 
 
  1063              	.LVL66:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1173:Generated_Source\PSoC4/QuadDec_1.c **** /*******************************************************************************
 1174:Generated_Source\PSoC4/QuadDec_1.c **** * Function Name: QuadDec_1_SetStopMode
 1175:Generated_Source\PSoC4/QuadDec_1.c **** ********************************************************************************
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 41
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 41
 
 
 1176:Generated_Source\PSoC4/QuadDec_1.c **** *
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1202:Generated_Source\PSoC4/QuadDec_1.c **** }
  1134              		.loc 1 1202 0
  1135              		@ sp needed
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 42
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 42
 
 
  1136 001e 10BD     		pop	{r4, pc}
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1163 0004 FFF7FEFF 		bl	CyEnterCriticalSection
  1164              	.LVL75:
 1230:Generated_Source\PSoC4/QuadDec_1.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 43
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 43
 
 
 1231:Generated_Source\PSoC4/QuadDec_1.c ****     QuadDec_1_TRIG_CONTROL1_REG &= (uint32)~QuadDec_1_COUNT_MASK;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1252:Generated_Source\PSoC4/QuadDec_1.c **** *        define.
 1253:Generated_Source\PSoC4/QuadDec_1.c **** *  command: Enumerated command values. Capture command only applicable for
 1254:Generated_Source\PSoC4/QuadDec_1.c **** *           Timer/Counter with Capture and PWM modes.
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 44
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 44
 
 
 1255:Generated_Source\PSoC4/QuadDec_1.c **** *   Values:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1232              		.size	QuadDec_1_TriggerCommand, .-QuadDec_1_TriggerCommand
  1233              		.section	.text.QuadDec_1_Enable,"ax",%progbits
  1234              		.align	2
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 45
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 45
 
 
  1235              		.global	QuadDec_1_Enable
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1283              	.LFB35:
 1275:Generated_Source\PSoC4/QuadDec_1.c **** 
 1276:Generated_Source\PSoC4/QuadDec_1.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 46
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 46
 
 
 1277:Generated_Source\PSoC4/QuadDec_1.c **** /*******************************************************************************
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1315              	QuadDec_1_SetInterruptMode:
  1316              	.LFB36:
 1299:Generated_Source\PSoC4/QuadDec_1.c **** 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 47
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 47
 
 
 1300:Generated_Source\PSoC4/QuadDec_1.c **** 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1347              		@ frame_needed = 0, uses_anonymous_args = 0
  1348 0000 10B5     		push	{r4, lr}
  1349              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 48
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 48
 
 
  1350              		.cfi_offset 4, -8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1397              		.type	QuadDec_1_Start, %function
  1398              	QuadDec_1_Start:
  1399              	.LFB3:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 49
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 49
 
 
  231:Generated_Source\PSoC4/QuadDec_1.c ****     if (0u == QuadDec_1_initVar)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1329:Generated_Source\PSoC4/QuadDec_1.c **** * Summary:
 1330:Generated_Source\PSoC4/QuadDec_1.c **** *  Gets the interrupt requests masked by the interrupt mask.
 1331:Generated_Source\PSoC4/QuadDec_1.c **** *
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 50
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 50
 
 
 1332:Generated_Source\PSoC4/QuadDec_1.c **** * Parameters:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
 1360:Generated_Source\PSoC4/QuadDec_1.c **** *   Values:
 1361:Generated_Source\PSoC4/QuadDec_1.c **** *     - QuadDec_1_INTR_MASK_TC       - Terminal count mask
 1362:Generated_Source\PSoC4/QuadDec_1.c **** *     - QuadDec_1_INTR_MASK_CC_MATCH - Compare count / capture mask
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 51
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 51
 
 
 1363:Generated_Source\PSoC4/QuadDec_1.c **** *
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1495              		.cfi_startproc
  1496              		@ args = 0, pretend = 0, frame = 0
  1497              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 52
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 52
 
 
  1498              		@ link register save eliminated.
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1528 0000 014B     		ldr	r3, .L120
  1529 0002 1860     		str	r0, [r3]
 1414:Generated_Source\PSoC4/QuadDec_1.c **** }
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 53
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 53
 
 
  1530              		.loc 1 1414 0
@@ -3151,8 +3151,8 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1557 000b 01       		.uleb128 0x1
  1558 000c 65000000 		.4byte	.LASF79
  1559 0010 0C       		.byte	0xc
- 1560 0011 99030000 		.4byte	.LASF80
- 1561 0015 3C050000 		.4byte	.LASF81
+ 1560 0011 E9030000 		.4byte	.LASF80
+ 1561 0015 49020000 		.4byte	.LASF81
  1562 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1563 001d 00000000 		.4byte	0
  1564 0021 00000000 		.4byte	.Ldebug_line0
@@ -3163,26 +3163,26 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1569 002c 02       		.uleb128 0x2
  1570 002d 01       		.byte	0x1
  1571 002e 08       		.byte	0x8
- 1572 002f 6A040000 		.4byte	.LASF1
+ 1572 002f BA040000 		.4byte	.LASF1
  1573 0033 02       		.uleb128 0x2
  1574 0034 02       		.byte	0x2
  1575 0035 05       		.byte	0x5
- 1576 0036 89040000 		.4byte	.LASF2
+ 1576 0036 D9040000 		.4byte	.LASF2
  1577 003a 02       		.uleb128 0x2
  1578 003b 02       		.byte	0x2
  1579 003c 07       		.byte	0x7
- 1580 003d CB020000 		.4byte	.LASF3
+ 1580 003d 1B030000 		.4byte	.LASF3
  1581 0041 02       		.uleb128 0x2
  1582 0042 04       		.byte	0x4
  1583 0043 05       		.byte	0x5
  1584 0044 85010000 		.4byte	.LASF4
  1585 0048 02       		.uleb128 0x2
  1586 0049 04       		.byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 54
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 54
 
 
  1587 004a 07       		.byte	0x7
- 1588 004b 51020000 		.4byte	.LASF5
+ 1588 004b A1020000 		.4byte	.LASF5
  1589 004f 02       		.uleb128 0x2
  1590 0050 08       		.byte	0x8
  1591 0051 05       		.byte	0x5
@@ -3202,17 +3202,17 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1605 006b 04       		.uleb128 0x4
  1606 006c B6010000 		.4byte	.LASF9
  1607 0070 02       		.byte	0x2
- 1608 0071 FB01     		.2byte	0x1fb
+ 1608 0071 FC01     		.2byte	0x1fc
  1609 0073 2C000000 		.4byte	0x2c
  1610 0077 04       		.uleb128 0x4
  1611 0078 D5010000 		.4byte	.LASF10
  1612 007c 02       		.byte	0x2
- 1613 007d FD01     		.2byte	0x1fd
+ 1613 007d FE01     		.2byte	0x1fe
  1614 007f 48000000 		.4byte	0x48
  1615 0083 02       		.uleb128 0x2
  1616 0084 04       		.byte	0x4
  1617 0085 04       		.byte	0x4
- 1618 0086 1F040000 		.4byte	.LASF11
+ 1618 0086 6F040000 		.4byte	.LASF11
  1619 008a 02       		.uleb128 0x2
  1620 008b 08       		.byte	0x8
  1621 008c 04       		.byte	0x4
@@ -3220,25 +3220,25 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1623 0091 02       		.uleb128 0x2
  1624 0092 01       		.byte	0x1
  1625 0093 08       		.byte	0x8
- 1626 0094 E5040000 		.4byte	.LASF13
+ 1626 0094 35050000 		.4byte	.LASF13
  1627 0098 04       		.uleb128 0x4
- 1628 0099 7C030000 		.4byte	.LASF14
+ 1628 0099 CC030000 		.4byte	.LASF14
  1629 009d 02       		.byte	0x2
- 1630 009e A702     		.2byte	0x2a7
+ 1630 009e A802     		.2byte	0x2a8
  1631 00a0 A4000000 		.4byte	0xa4
  1632 00a4 05       		.uleb128 0x5
  1633 00a5 77000000 		.4byte	0x77
  1634 00a9 02       		.uleb128 0x2
  1635 00aa 08       		.byte	0x8
  1636 00ab 04       		.byte	0x4
- 1637 00ac C5030000 		.4byte	.LASF15
+ 1637 00ac 15040000 		.4byte	.LASF15
  1638 00b0 02       		.uleb128 0x2
  1639 00b1 04       		.byte	0x4
  1640 00b2 07       		.byte	0x7
- 1641 00b3 BC030000 		.4byte	.LASF16
+ 1641 00b3 0C040000 		.4byte	.LASF16
  1642 00b7 06       		.uleb128 0x6
- 1643 00b8 93040000 		.4byte	.LASF17
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 55
+ 1643 00b8 E3040000 		.4byte	.LASF17
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 55
 
 
  1644 00bc 01       		.byte	0x1
@@ -3249,7 +3249,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1649 00c8 9C       		.byte	0x9c
  1650 00c9 F0000000 		.4byte	0xf0
  1651 00cd 07       		.uleb128 0x7
- 1652 00ce 14060000 		.4byte	.LASF19
+ 1652 00ce 0B060000 		.4byte	.LASF19
  1653 00d2 01       		.byte	0x1
  1654 00d3 0201     		.2byte	0x102
  1655 00d5 6B000000 		.4byte	0x6b
@@ -3271,13 +3271,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1671 0101 9C       		.byte	0x9c
  1672 0102 39010000 		.4byte	0x139
  1673 0106 09       		.uleb128 0x9
- 1674 0107 EA040000 		.4byte	.LASF21
+ 1674 0107 3A050000 		.4byte	.LASF21
  1675 010b 01       		.byte	0x1
  1676 010c 2501     		.2byte	0x125
  1677 010e 77000000 		.4byte	0x77
  1678 0112 13000000 		.4byte	.LLST1
  1679 0116 07       		.uleb128 0x7
- 1680 0117 14060000 		.4byte	.LASF19
+ 1680 0117 0B060000 		.4byte	.LASF19
  1681 011b 01       		.byte	0x1
  1682 011c 2701     		.2byte	0x127
  1683 011e 6B000000 		.4byte	0x6b
@@ -3290,7 +3290,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1690 0134 FF080000 		.4byte	0x8ff
  1691 0138 00       		.byte	0
  1692 0139 06       		.uleb128 0x6
- 1693 013a D1040000 		.4byte	.LASF20
+ 1693 013a 21050000 		.4byte	.LASF20
  1694 013e 01       		.byte	0x1
  1695 013f 4601     		.2byte	0x146
  1696 0141 00000000 		.4byte	.LFB6
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1698 0149 01       		.uleb128 0x1
  1699 014a 9C       		.byte	0x9c
  1700 014b 82010000 		.4byte	0x182
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 56
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 56
 
 
  1701 014f 09       		.uleb128 0x9
@@ -3308,7 +3308,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1705 0157 77000000 		.4byte	0x77
  1706 015b 52000000 		.4byte	.LLST3
  1707 015f 07       		.uleb128 0x7
- 1708 0160 14060000 		.4byte	.LASF19
+ 1708 0160 0B060000 		.4byte	.LASF19
  1709 0164 01       		.byte	0x1
  1710 0165 4801     		.2byte	0x148
  1711 0167 6B000000 		.4byte	0x6b
@@ -3321,7 +3321,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1718 017d FF080000 		.4byte	0x8ff
  1719 0181 00       		.byte	0
  1720 0182 06       		.uleb128 0x6
- 1721 0183 25060000 		.4byte	.LASF23
+ 1721 0183 1C060000 		.4byte	.LASF23
  1722 0187 01       		.byte	0x1
  1723 0188 6B01     		.2byte	0x16b
  1724 018a 00000000 		.4byte	.LFB7
@@ -3330,13 +3330,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1727 0193 9C       		.byte	0x9c
  1728 0194 CB010000 		.4byte	0x1cb
  1729 0198 09       		.uleb128 0x9
- 1730 0199 33040000 		.4byte	.LASF24
+ 1730 0199 83040000 		.4byte	.LASF24
  1731 019d 01       		.byte	0x1
  1732 019e 6B01     		.2byte	0x16b
  1733 01a0 77000000 		.4byte	0x77
  1734 01a4 91000000 		.4byte	.LLST5
  1735 01a8 07       		.uleb128 0x7
- 1736 01a9 14060000 		.4byte	.LASF19
+ 1736 01a9 0B060000 		.4byte	.LASF19
  1737 01ad 01       		.byte	0x1
  1738 01ae 6D01     		.2byte	0x16d
  1739 01b0 6B000000 		.4byte	0x6b
@@ -3349,7 +3349,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1746 01c6 FF080000 		.4byte	0x8ff
  1747 01ca 00       		.byte	0
  1748 01cb 06       		.uleb128 0x6
- 1749 01cc F5020000 		.4byte	.LASF25
+ 1749 01cc 45030000 		.4byte	.LASF25
  1750 01d0 01       		.byte	0x1
  1751 01d1 8B01     		.2byte	0x18b
  1752 01d3 00000000 		.4byte	.LFB8
@@ -3358,16 +3358,16 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1755 01dc 9C       		.byte	0x9c
  1756 01dd 14020000 		.4byte	0x214
  1757 01e1 09       		.uleb128 0x9
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 57
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 57
 
 
- 1758 01e2 0A030000 		.4byte	.LASF26
+ 1758 01e2 5A030000 		.4byte	.LASF26
  1759 01e6 01       		.byte	0x1
  1760 01e7 8B01     		.2byte	0x18b
  1761 01e9 77000000 		.4byte	0x77
  1762 01ed D0000000 		.4byte	.LLST7
  1763 01f1 07       		.uleb128 0x7
- 1764 01f2 14060000 		.4byte	.LASF19
+ 1764 01f2 0B060000 		.4byte	.LASF19
  1765 01f6 01       		.byte	0x1
  1766 01f7 8D01     		.2byte	0x18d
  1767 01f9 6B000000 		.4byte	0x6b
@@ -3380,7 +3380,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1774 020f FF080000 		.4byte	0x8ff
  1775 0213 00       		.byte	0
  1776 0214 06       		.uleb128 0x6
- 1777 0215 D9030000 		.4byte	.LASF27
+ 1777 0215 29040000 		.4byte	.LASF27
  1778 0219 01       		.byte	0x1
  1779 021a C101     		.2byte	0x1c1
  1780 021c 00000000 		.4byte	.LFB9
@@ -3389,14 +3389,14 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1783 0225 9C       		.byte	0x9c
  1784 0226 3B020000 		.4byte	0x23b
  1785 022a 09       		.uleb128 0x9
- 1786 022b 63020000 		.4byte	.LASF28
+ 1786 022b B3020000 		.4byte	.LASF28
  1787 022f 01       		.byte	0x1
  1788 0230 C101     		.2byte	0x1c1
  1789 0232 77000000 		.4byte	0x77
  1790 0236 0F010000 		.4byte	.LLST9
  1791 023a 00       		.byte	0
  1792 023b 06       		.uleb128 0x6
- 1793 023c 86020000 		.4byte	.LASF29
+ 1793 023c D6020000 		.4byte	.LASF29
  1794 0240 01       		.byte	0x1
  1795 0241 E501     		.2byte	0x1e5
  1796 0243 00000000 		.4byte	.LFB10
@@ -3405,20 +3405,20 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1799 024c 9C       		.byte	0x9c
  1800 024d 84020000 		.4byte	0x284
  1801 0251 09       		.uleb128 0x9
- 1802 0252 4C060000 		.4byte	.LASF30
+ 1802 0252 43060000 		.4byte	.LASF30
  1803 0256 01       		.byte	0x1
  1804 0257 E501     		.2byte	0x1e5
  1805 0259 77000000 		.4byte	0x77
  1806 025d 30010000 		.4byte	.LLST10
  1807 0261 07       		.uleb128 0x7
- 1808 0262 14060000 		.4byte	.LASF19
+ 1808 0262 0B060000 		.4byte	.LASF19
  1809 0266 01       		.byte	0x1
  1810 0267 E701     		.2byte	0x1e7
  1811 0269 6B000000 		.4byte	0x6b
  1812 026d 5C010000 		.4byte	.LLST11
  1813 0271 08       		.uleb128 0x8
  1814 0272 08000000 		.4byte	.LVL21
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 58
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 58
 
 
  1815 0276 F4080000 		.4byte	0x8f4
@@ -3427,7 +3427,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1818 027f FF080000 		.4byte	0x8ff
  1819 0283 00       		.byte	0
  1820 0284 06       		.uleb128 0x6
- 1821 0285 F9050000 		.4byte	.LASF31
+ 1821 0285 F0050000 		.4byte	.LASF31
  1822 0289 01       		.byte	0x1
  1823 028a 0702     		.2byte	0x207
  1824 028c 00000000 		.4byte	.LFB11
@@ -3436,13 +3436,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1827 0295 9C       		.byte	0x9c
  1828 0296 CD020000 		.4byte	0x2cd
  1829 029a 09       		.uleb128 0x9
- 1830 029b 78040000 		.4byte	.LASF32
+ 1830 029b C8040000 		.4byte	.LASF32
  1831 029f 01       		.byte	0x1
  1832 02a0 0702     		.2byte	0x207
  1833 02a2 77000000 		.4byte	0x77
  1834 02a6 6F010000 		.4byte	.LLST12
  1835 02aa 07       		.uleb128 0x7
- 1836 02ab 14060000 		.4byte	.LASF19
+ 1836 02ab 0B060000 		.4byte	.LASF19
  1837 02af 01       		.byte	0x1
  1838 02b0 0902     		.2byte	0x209
  1839 02b2 6B000000 		.4byte	0x6b
@@ -3470,7 +3470,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1861 02eb 77000000 		.4byte	0x77
  1862 02ef AE010000 		.4byte	.LLST14
  1863 02f3 07       		.uleb128 0x7
- 1864 02f4 14060000 		.4byte	.LASF19
+ 1864 02f4 0B060000 		.4byte	.LASF19
  1865 02f8 01       		.byte	0x1
  1866 02f9 2A02     		.2byte	0x22a
  1867 02fb 6B000000 		.4byte	0x6b
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1869 0303 08       		.uleb128 0x8
  1870 0304 08000000 		.4byte	.LVL29
  1871 0308 F4080000 		.4byte	0x8f4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 59
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 59
 
 
  1872 030c 08       		.uleb128 0x8
@@ -3501,7 +3501,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1889 0334 77000000 		.4byte	0x77
  1890 0338 ED010000 		.4byte	.LLST16
  1891 033c 07       		.uleb128 0x7
- 1892 033d 14060000 		.4byte	.LASF19
+ 1892 033d 0B060000 		.4byte	.LASF19
  1893 0341 01       		.byte	0x1
  1894 0342 4B02     		.2byte	0x24b
  1895 0344 6B000000 		.4byte	0x6b
@@ -3514,7 +3514,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1902 035a FF080000 		.4byte	0x8ff
  1903 035e 00       		.byte	0
  1904 035f 06       		.uleb128 0x6
- 1905 0360 53040000 		.4byte	.LASF37
+ 1905 0360 A3040000 		.4byte	.LASF37
  1906 0364 01       		.byte	0x1
  1907 0365 6702     		.2byte	0x267
  1908 0367 00000000 		.4byte	.LFB14
@@ -3530,7 +3530,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1918 0381 2C020000 		.4byte	.LLST18
  1919 0385 00       		.byte	0
  1920 0386 0A       		.uleb128 0xa
- 1921 0387 AE050000 		.4byte	.LASF43
+ 1921 0387 A5050000 		.4byte	.LASF43
  1922 038b 01       		.byte	0x1
  1923 038c 7B02     		.2byte	0x27b
  1924 038e 77000000 		.4byte	0x77
@@ -3538,11 +3538,11 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1926 0396 10000000 		.4byte	.LFE15-.LFB15
  1927 039a 01       		.uleb128 0x1
  1928 039b 9C       		.byte	0x9c
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 60
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 60
 
 
  1929 039c 06       		.uleb128 0x6
- 1930 039d 06040000 		.4byte	.LASF39
+ 1930 039d 56040000 		.4byte	.LASF39
  1931 03a1 01       		.byte	0x1
  1932 03a2 9802     		.2byte	0x298
  1933 03a4 00000000 		.4byte	.LFB16
@@ -3551,13 +3551,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1936 03ad 9C       		.byte	0x9c
  1937 03ae E5030000 		.4byte	0x3e5
  1938 03b2 09       		.uleb128 0x9
- 1939 03b3 18050000 		.4byte	.LASF40
+ 1939 03b3 68050000 		.4byte	.LASF40
  1940 03b7 01       		.byte	0x1
  1941 03b8 9802     		.2byte	0x298
  1942 03ba 77000000 		.4byte	0x77
  1943 03be 4D020000 		.4byte	.LLST19
  1944 03c2 07       		.uleb128 0x7
- 1945 03c3 14060000 		.4byte	.LASF19
+ 1945 03c3 0B060000 		.4byte	.LASF19
  1946 03c7 01       		.byte	0x1
  1947 03c8 9A02     		.2byte	0x29a
  1948 03ca 6B000000 		.4byte	0x6b
@@ -3570,7 +3570,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1955 03e0 FF080000 		.4byte	0x8ff
  1956 03e4 00       		.byte	0
  1957 03e5 06       		.uleb128 0x6
- 1958 03e6 49030000 		.4byte	.LASF41
+ 1958 03e6 99030000 		.4byte	.LASF41
  1959 03ea 01       		.byte	0x1
  1960 03eb B502     		.2byte	0x2b5
  1961 03ed 00000000 		.4byte	.LFB17
@@ -3586,7 +3586,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1971 0407 8C020000 		.4byte	.LLST21
  1972 040b 00       		.byte	0
  1973 040c 0A       		.uleb128 0xa
- 1974 040d B6020000 		.4byte	.LASF44
+ 1974 040d 06030000 		.4byte	.LASF44
  1975 0411 01       		.byte	0x1
  1976 0412 C902     		.2byte	0x2c9
  1977 0414 77000000 		.4byte	0x77
@@ -3595,10 +3595,10 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1980 0420 01       		.uleb128 0x1
  1981 0421 9C       		.byte	0x9c
  1982 0422 06       		.uleb128 0x6
- 1983 0423 C4050000 		.4byte	.LASF45
+ 1983 0423 BB050000 		.4byte	.LASF45
  1984 0427 01       		.byte	0x1
  1985 0428 E302     		.2byte	0x2e3
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 61
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 61
 
 
  1986 042a 00000000 		.4byte	.LFB19
@@ -3607,13 +3607,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  1989 0433 9C       		.byte	0x9c
  1990 0434 6B040000 		.4byte	0x46b
  1991 0438 09       		.uleb128 0x9
- 1992 0439 5B060000 		.4byte	.LASF46
+ 1992 0439 52060000 		.4byte	.LASF46
  1993 043d 01       		.byte	0x1
  1994 043e E302     		.2byte	0x2e3
  1995 0440 77000000 		.4byte	0x77
  1996 0444 AD020000 		.4byte	.LLST22
  1997 0448 07       		.uleb128 0x7
- 1998 0449 14060000 		.4byte	.LASF19
+ 1998 0449 0B060000 		.4byte	.LASF19
  1999 044d 01       		.byte	0x1
  2000 044e E502     		.2byte	0x2e5
  2001 0450 6B000000 		.4byte	0x6b
@@ -3635,14 +3635,14 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2017 047c 9C       		.byte	0x9c
  2018 047d 92040000 		.4byte	0x492
  2019 0481 09       		.uleb128 0x9
- 2020 0482 66060000 		.4byte	.LASF48
+ 2020 0482 5D060000 		.4byte	.LASF48
  2021 0486 01       		.byte	0x1
  2022 0487 FE02     		.2byte	0x2fe
  2023 0489 77000000 		.4byte	0x77
  2024 048d EC020000 		.4byte	.LLST24
  2025 0491 00       		.byte	0
  2026 0492 0A       		.uleb128 0xa
- 2027 0493 EE030000 		.4byte	.LASF49
+ 2027 0493 3E040000 		.4byte	.LASF49
  2028 0497 01       		.byte	0x1
  2029 0498 1203     		.2byte	0x312
  2030 049a 77000000 		.4byte	0x77
@@ -3651,25 +3651,25 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2033 04a6 01       		.uleb128 0x1
  2034 04a7 9C       		.byte	0x9c
  2035 04a8 06       		.uleb128 0x6
- 2036 04a9 31030000 		.4byte	.LASF50
+ 2036 04a9 81030000 		.4byte	.LASF50
  2037 04ad 01       		.byte	0x1
  2038 04ae 2C03     		.2byte	0x32c
  2039 04b0 00000000 		.4byte	.LFB22
  2040 04b4 28000000 		.4byte	.LFE22-.LFB22
  2041 04b8 01       		.uleb128 0x1
  2042 04b9 9C       		.byte	0x9c
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 62
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 62
 
 
  2043 04ba F1040000 		.4byte	0x4f1
  2044 04be 09       		.uleb128 0x9
- 2045 04bf 5B060000 		.4byte	.LASF46
+ 2045 04bf 52060000 		.4byte	.LASF46
  2046 04c3 01       		.byte	0x1
  2047 04c4 2C03     		.2byte	0x32c
  2048 04c6 77000000 		.4byte	0x77
  2049 04ca 0D030000 		.4byte	.LLST25
  2050 04ce 07       		.uleb128 0x7
- 2051 04cf 14060000 		.4byte	.LASF19
+ 2051 04cf 0B060000 		.4byte	.LASF19
  2052 04d3 01       		.byte	0x1
  2053 04d4 2E03     		.2byte	0x32e
  2054 04d6 6B000000 		.4byte	0x6b
@@ -3682,7 +3682,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2061 04ec FF080000 		.4byte	0x8ff
  2062 04f0 00       		.byte	0
  2063 04f1 06       		.uleb128 0x6
- 2064 04f2 82030000 		.4byte	.LASF51
+ 2064 04f2 D2030000 		.4byte	.LASF51
  2065 04f6 01       		.byte	0x1
  2066 04f7 5103     		.2byte	0x351
  2067 04f9 00000000 		.4byte	.LFB23
@@ -3691,14 +3691,14 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2070 0502 9C       		.byte	0x9c
  2071 0503 18050000 		.4byte	0x518
  2072 0507 09       		.uleb128 0x9
- 2073 0508 D1030000 		.4byte	.LASF52
+ 2073 0508 21040000 		.4byte	.LASF52
  2074 050c 01       		.byte	0x1
  2075 050d 5103     		.2byte	0x351
  2076 050f 77000000 		.4byte	0x77
  2077 0513 4C030000 		.4byte	.LLST27
  2078 0517 00       		.byte	0
  2079 0518 0A       		.uleb128 0xa
- 2080 0519 BB040000 		.4byte	.LASF53
+ 2080 0519 0B050000 		.4byte	.LASF53
  2081 051d 01       		.byte	0x1
  2082 051e 8403     		.2byte	0x384
  2083 0520 77000000 		.4byte	0x77
@@ -3707,7 +3707,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2086 052c 01       		.uleb128 0x1
  2087 052d 9C       		.byte	0x9c
  2088 052e 06       		.uleb128 0x6
- 2089 052f 6C020000 		.4byte	.LASF54
+ 2089 052f BC020000 		.4byte	.LASF54
  2090 0533 01       		.byte	0x1
  2091 0534 BA03     		.2byte	0x3ba
  2092 0536 00000000 		.4byte	.LFB25
@@ -3716,9 +3716,9 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2095 053f 9C       		.byte	0x9c
  2096 0540 55050000 		.4byte	0x555
  2097 0544 09       		.uleb128 0x9
- 2098 0545 DD050000 		.4byte	.LASF55
+ 2098 0545 D4050000 		.4byte	.LASF55
  2099 0549 01       		.byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 63
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 63
 
 
  2100 054a BA03     		.2byte	0x3ba
@@ -3726,7 +3726,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2102 0550 6D030000 		.4byte	.LLST28
  2103 0554 00       		.byte	0
  2104 0555 0A       		.uleb128 0xa
- 2105 0556 95050000 		.4byte	.LASF56
+ 2105 0556 8C050000 		.4byte	.LASF56
  2106 055a 01       		.byte	0x1
  2107 055b E803     		.2byte	0x3e8
  2108 055d 77000000 		.4byte	0x77
@@ -3735,7 +3735,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2111 0569 01       		.uleb128 0x1
  2112 056a 9C       		.byte	0x9c
  2113 056b 0A       		.uleb128 0xa
- 2114 056c 3D040000 		.4byte	.LASF57
+ 2114 056c 8D040000 		.4byte	.LASF57
  2115 0570 01       		.byte	0x1
  2116 0571 1604     		.2byte	0x416
  2117 0573 77000000 		.4byte	0x77
@@ -3744,7 +3744,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2120 057f 01       		.uleb128 0x1
  2121 0580 9C       		.byte	0x9c
  2122 0581 0A       		.uleb128 0xa
- 2123 0582 18030000 		.4byte	.LASF58
+ 2123 0582 68030000 		.4byte	.LASF58
  2124 0586 01       		.byte	0x1
  2125 0587 2B04     		.2byte	0x42b
  2126 0589 77000000 		.4byte	0x77
@@ -3753,7 +3753,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2129 0595 01       		.uleb128 0x1
  2130 0596 9C       		.byte	0x9c
  2131 0597 06       		.uleb128 0x6
- 2132 0598 A2040000 		.4byte	.LASF59
+ 2132 0598 F2040000 		.4byte	.LASF59
  2133 059c 01       		.byte	0x1
  2134 059d 4604     		.2byte	0x446
  2135 059f 00000000 		.4byte	.LFB29
@@ -3768,7 +3768,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2144 05b5 77000000 		.4byte	0x77
  2145 05b9 8E030000 		.4byte	.LLST29
  2146 05bd 07       		.uleb128 0x7
- 2147 05be 14060000 		.4byte	.LASF19
+ 2147 05be 0B060000 		.4byte	.LASF19
  2148 05c2 01       		.byte	0x1
  2149 05c3 4804     		.2byte	0x448
  2150 05c5 6B000000 		.4byte	0x6b
@@ -3778,13 +3778,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2154 05d2 F4080000 		.4byte	0x8f4
  2155 05d6 08       		.uleb128 0x8
  2156 05d7 1C000000 		.4byte	.LVL61
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 64
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 64
 
 
  2157 05db FF080000 		.4byte	0x8ff
  2158 05df 00       		.byte	0
  2159 05e0 06       		.uleb128 0x6
- 2160 05e1 24050000 		.4byte	.LASF61
+ 2160 05e1 74050000 		.4byte	.LASF61
  2161 05e5 01       		.byte	0x1
  2162 05e6 6704     		.2byte	0x467
  2163 05e8 00000000 		.4byte	.LFB30
@@ -3799,7 +3799,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2172 05fe 77000000 		.4byte	0x77
  2173 0602 CD030000 		.4byte	.LLST31
  2174 0606 07       		.uleb128 0x7
- 2175 0607 14060000 		.4byte	.LASF19
+ 2175 0607 0B060000 		.4byte	.LASF19
  2176 060b 01       		.byte	0x1
  2177 060c 6904     		.2byte	0x469
  2178 060e 6B000000 		.4byte	0x6b
@@ -3812,7 +3812,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2185 0624 FF080000 		.4byte	0x8ff
  2186 0628 00       		.byte	0
  2187 0629 06       		.uleb128 0x6
- 2188 062a EF040000 		.4byte	.LASF62
+ 2188 062a 3F050000 		.4byte	.LASF62
  2189 062e 01       		.byte	0x1
  2190 062f 8804     		.2byte	0x488
  2191 0631 00000000 		.4byte	.LFB31
@@ -3827,7 +3827,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2200 0647 77000000 		.4byte	0x77
  2201 064b 0C040000 		.4byte	.LLST33
  2202 064f 07       		.uleb128 0x7
- 2203 0650 14060000 		.4byte	.LASF19
+ 2203 0650 0B060000 		.4byte	.LASF19
  2204 0654 01       		.byte	0x1
  2205 0655 8A04     		.2byte	0x48a
  2206 0657 6B000000 		.4byte	0x6b
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2211 0668 08       		.uleb128 0x8
  2212 0669 1E000000 		.4byte	.LVL69
  2213 066d FF080000 		.4byte	0x8ff
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 65
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 65
 
 
  2214 0671 00       		.byte	0
@@ -3858,7 +3858,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2228 0690 77000000 		.4byte	0x77
  2229 0694 4B040000 		.4byte	.LLST35
  2230 0698 07       		.uleb128 0x7
- 2231 0699 14060000 		.4byte	.LASF19
+ 2231 0699 0B060000 		.4byte	.LASF19
  2232 069d 01       		.byte	0x1
  2233 069e AA04     		.2byte	0x4aa
  2234 06a0 6B000000 		.4byte	0x6b
@@ -3871,7 +3871,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2241 06b6 FF080000 		.4byte	0x8ff
  2242 06ba 00       		.byte	0
  2243 06bb 06       		.uleb128 0x6
- 2244 06bc DE020000 		.4byte	.LASF64
+ 2244 06bc 2E030000 		.4byte	.LASF64
  2245 06c0 01       		.byte	0x1
  2246 06c1 C904     		.2byte	0x4c9
  2247 06c3 00000000 		.4byte	.LFB33
@@ -3886,7 +3886,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2256 06d9 77000000 		.4byte	0x77
  2257 06dd 8A040000 		.4byte	.LLST37
  2258 06e1 07       		.uleb128 0x7
- 2259 06e2 14060000 		.4byte	.LASF19
+ 2259 06e2 0B060000 		.4byte	.LASF19
  2260 06e6 01       		.byte	0x1
  2261 06e7 CB04     		.2byte	0x4cb
  2262 06e9 6B000000 		.4byte	0x6b
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2268 06fb 1E000000 		.4byte	.LVL77
  2269 06ff FF080000 		.4byte	0x8ff
  2270 0703 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 66
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 66
 
 
  2271 0704 06       		.uleb128 0x6
@@ -3917,13 +3917,13 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2284 0722 77000000 		.4byte	0x77
  2285 0726 C9040000 		.4byte	.LLST39
  2286 072a 09       		.uleb128 0x9
- 2287 072b 49020000 		.4byte	.LASF66
+ 2287 072b 99020000 		.4byte	.LASF66
  2288 072f 01       		.byte	0x1
  2289 0730 F104     		.2byte	0x4f1
  2290 0732 77000000 		.4byte	0x77
  2291 0736 F5040000 		.4byte	.LLST40
  2292 073a 07       		.uleb128 0x7
- 2293 073b 14060000 		.4byte	.LASF19
+ 2293 073b 0B060000 		.4byte	.LASF19
  2294 073f 01       		.byte	0x1
  2295 0740 F304     		.2byte	0x4f3
  2296 0742 6B000000 		.4byte	0x6b
@@ -3936,7 +3936,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2303 0758 FF080000 		.4byte	0x8ff
  2304 075c 00       		.byte	0
  2305 075d 0B       		.uleb128 0xb
- 2306 075e E8050000 		.4byte	.LASF67
+ 2306 075e DF050000 		.4byte	.LASF67
  2307 0762 01       		.byte	0x1
  2308 0763 B1       		.byte	0xb1
  2309 0764 00000000 		.4byte	.LFB2
@@ -3945,7 +3945,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2312 076d 9C       		.byte	0x9c
  2313 076e A8070000 		.4byte	0x7a8
  2314 0772 0C       		.uleb128 0xc
- 2315 0773 14060000 		.4byte	.LASF19
+ 2315 0773 0B060000 		.4byte	.LASF19
  2316 0777 01       		.byte	0x1
  2317 0778 B3       		.byte	0xb3
  2318 0779 6B000000 		.4byte	0x6b
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2325 078f FF080000 		.4byte	0x8ff
  2326 0793 0D       		.uleb128 0xd
  2327 0794 1C000000 		.4byte	.LVL85
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 67
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 67
 
 
  2328 0798 04070000 		.4byte	0x704
@@ -3993,7 +3993,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2357 07cf 9C       		.byte	0x9c
  2358 07d0 E3070000 		.4byte	0x7e3
  2359 07d4 0F       		.uleb128 0xf
- 2360 07d5 25040000 		.4byte	.LASF70
+ 2360 07d5 75040000 		.4byte	.LASF70
  2361 07d9 01       		.byte	0x1
  2362 07da 2705     		.2byte	0x527
  2363 07dc 77000000 		.4byte	0x77
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2382 0807 50       		.byte	0x50
  2383 0808 01       		.uleb128 0x1
  2384 0809 32       		.byte	0x32
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 68
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 68
 
 
  2385 080a 00       		.byte	0
@@ -4057,7 +4057,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2418 0843 00       		.byte	0
  2419 0844 00       		.byte	0
  2420 0845 0B       		.uleb128 0xb
- 2421 0846 3C060000 		.4byte	.LASF72
+ 2421 0846 33060000 		.4byte	.LASF72
  2422 084a 01       		.byte	0x1
  2423 084b E6       		.byte	0xe6
  2424 084c 00000000 		.4byte	.LFB3
@@ -4078,14 +4078,14 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2439 0873 3E05     		.2byte	0x53e
  2440 0875 77000000 		.4byte	0x77
  2441 0879 00000000 		.4byte	.LFB37
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 69
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 69
 
 
  2442 087d 0C000000 		.4byte	.LFE37-.LFB37
  2443 0881 01       		.uleb128 0x1
  2444 0882 9C       		.byte	0x9c
  2445 0883 0A       		.uleb128 0xa
- 2446 0884 5F030000 		.4byte	.LASF74
+ 2446 0884 AF030000 		.4byte	.LASF74
  2447 0888 01       		.byte	0x1
  2448 0889 5505     		.2byte	0x555
  2449 088b 77000000 		.4byte	0x77
@@ -4103,7 +4103,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2461 08aa 9C       		.byte	0x9c
  2462 08ab BE080000 		.4byte	0x8be
  2463 08af 0F       		.uleb128 0xf
- 2464 08b0 25040000 		.4byte	.LASF70
+ 2464 08b0 75040000 		.4byte	.LASF70
  2465 08b4 01       		.byte	0x1
  2466 08b5 6C05     		.2byte	0x56c
  2467 08b7 77000000 		.4byte	0x77
@@ -4120,7 +4120,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2478 08cf 9C       		.byte	0x9c
  2479 08d0 E3080000 		.4byte	0x8e3
  2480 08d4 0F       		.uleb128 0xf
- 2481 08d5 25040000 		.4byte	.LASF70
+ 2481 08d5 75040000 		.4byte	.LASF70
  2482 08d9 01       		.byte	0x1
  2483 08da 8305     		.2byte	0x583
  2484 08dc 77000000 		.4byte	0x77
@@ -4128,7 +4128,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2486 08e1 50       		.byte	0x50
  2487 08e2 00       		.byte	0
  2488 08e3 11       		.uleb128 0x11
- 2489 08e4 06050000 		.4byte	.LASF82
+ 2489 08e4 56050000 		.4byte	.LASF82
  2490 08e8 01       		.byte	0x1
  2491 08e9 15       		.byte	0x15
  2492 08ea 6B000000 		.4byte	0x6b
@@ -4136,9 +4136,9 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2494 08ef 03       		.byte	0x3
  2495 08f0 00000000 		.4byte	QuadDec_1_initVar
  2496 08f4 12       		.uleb128 0x12
- 2497 08f5 9F020000 		.4byte	.LASF77
- 2498 08f9 9F020000 		.4byte	.LASF77
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 70
+ 2497 08f5 EF020000 		.4byte	.LASF77
+ 2498 08f9 EF020000 		.4byte	.LASF77
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 70
 
 
  2499 08fd 03       		.byte	0x3
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2553 002c 03       		.uleb128 0x3
  2554 002d 0E       		.uleb128 0xe
  2555 002e 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 71
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 71
 
 
  2556 002f 0B       		.uleb128 0xb
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2610 0066 08       		.uleb128 0x8
  2611 0067 898201   		.uleb128 0x4109
  2612 006a 00       		.byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 72
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 72
 
 
  2613 006b 11       		.uleb128 0x11
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2667 00a2 0B       		.uleb128 0xb
  2668 00a3 3B       		.uleb128 0x3b
  2669 00a4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 73
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 73
 
 
  2670 00a5 27       		.uleb128 0x27
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2724 00e1 3B       		.uleb128 0x3b
  2725 00e2 05       		.uleb128 0x5
  2726 00e3 49       		.uleb128 0x49
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 74
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 74
 
 
  2727 00e4 13       		.uleb128 0x13
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2781 0000 06000000 		.4byte	.LVL0
  2782 0004 13000000 		.4byte	.LVL1-1
  2783 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 75
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 75
 
 
  2784 000a 50       		.byte	0x50
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2838 0091 00000000 		.4byte	.LVL10
  2839 0095 07000000 		.4byte	.LVL11-1
  2840 0099 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 76
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 76
 
 
  2841 009b 50       		.byte	0x50
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2895 0124 F3       		.byte	0xf3
  2896 0125 01       		.uleb128 0x1
  2897 0126 50       		.byte	0x50
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 77
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 77
 
 
  2898 0127 9F       		.byte	0x9f
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  2952 01ae 00000000 		.4byte	.LVL28
  2953 01b2 07000000 		.4byte	.LVL29-1
  2954 01b6 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 78
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 78
 
 
  2955 01b8 50       		.byte	0x50
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3009 0241 F3       		.byte	0xf3
  3010 0242 01       		.uleb128 0x1
  3011 0243 50       		.byte	0x50
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 79
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 79
 
 
  3012 0244 9F       		.byte	0x9f
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3066 02cd F3       		.byte	0xf3
  3067 02ce 01       		.uleb128 0x1
  3068 02cf 50       		.byte	0x50
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 80
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 80
 
 
  3069 02d0 9F       		.byte	0x9f
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3123 0357 02000000 		.4byte	.LVL55
  3124 035b 10000000 		.4byte	.LFE23
  3125 035f 0400     		.2byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 81
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 81
 
 
  3126 0361 F3       		.byte	0xf3
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3180 03e3 16000000 		.4byte	.LVL64
  3181 03e7 24000000 		.4byte	.LFE30
  3182 03eb 0400     		.2byte	0x4
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 82
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 82
 
 
  3183 03ed F3       		.byte	0xf3
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3237 046f 00000000 		.4byte	0
  3238 0473 00000000 		.4byte	0
  3239              	.LLST36:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 83
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 83
 
 
  3240 0477 08000000 		.4byte	.LVL71
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3294 0500 09000000 		.4byte	.LVL79-1
  3295 0504 14000000 		.4byte	.LVL82
  3296 0508 0100     		.2byte	0x1
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 84
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 84
 
 
  3297 050a 55       		.byte	0x55
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3351 0068 00000000 		.4byte	.LFB15
  3352 006c 10000000 		.4byte	.LFE15-.LFB15
  3353 0070 00000000 		.4byte	.LFB16
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 85
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 85
 
 
  3354 0074 28000000 		.4byte	.LFE16-.LFB16
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3408 014c 0C000000 		.4byte	.LFE40-.LFB40
  3409 0150 00000000 		.4byte	0
  3410 0154 00000000 		.4byte	0
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 86
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 86
 
 
  3411              		.section	.debug_ranges,"",%progbits
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3465 00d0 00000000 		.4byte	.LFB30
  3466 00d4 24000000 		.4byte	.LFE30
  3467 00d8 00000000 		.4byte	.LFB31
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 87
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 87
 
 
  3468 00dc 28000000 		.4byte	.LFE31
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3505      72436F6D 
  3506              	.LASF75:
  3507 004c 51756164 		.ascii	"QuadDec_1_ClearInterrupt\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 88
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 88
 
 
  3507      4465635F 
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3527 0170 51756164 		.ascii	"QuadDec_1_ReadStatus\000"
  3527      4465635F 
  3527      315F5265 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 89
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 89
 
 
  3527      61645374 
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3551      704D6F64 
  3552              	.LASF8:
  3553 0223 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 90
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 90
 
 
  3553      676E6564 
@@ -5350,312 +5350,312 @@ ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 1
  3555      315F5772 
  3555      69746550 
  3555      6572696F 
- 3556              	.LASF66:
- 3557 0249 636F6D6D 		.ascii	"command\000"
- 3557      616E6400 
- 3558              	.LASF5:
- 3559 0251 6C6F6E67 		.ascii	"long unsigned int\000"
- 3559      20756E73 
- 3559      69676E65 
- 3559      6420696E 
- 3559      7400
- 3560              	.LASF28:
- 3561 0263 6D6F6465 		.ascii	"modeMask\000"
- 3561      4D61736B 
- 3561      00
- 3562              	.LASF54:
- 3563 026c 51756164 		.ascii	"QuadDec_1_WriteCompareBuf\000"
- 3563      4465635F 
- 3563      315F5772 
- 3563      69746543 
- 3563      6F6D7061 
- 3564              	.LASF29:
- 3565 0286 51756164 		.ascii	"QuadDec_1_SetPWMSyncKill\000"
- 3565      4465635F 
- 3565      315F5365 
- 3565      7450574D 
- 3565      53796E63 
- 3566              	.LASF77:
- 3567 029f 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 3567      74657243 
- 3567      72697469 
- 3567      63616C53 
- 3567      65637469 
- 3568              	.LASF44:
- 3569 02b6 51756164 		.ascii	"QuadDec_1_ReadPeriod\000"
- 3569      4465635F 
- 3569      315F5265 
- 3569      61645065 
- 3569      72696F64 
- 3570              	.LASF3:
- 3571 02cb 73686F72 		.ascii	"short unsigned int\000"
- 3571      7420756E 
- 3571      7369676E 
- 3571      65642069 
- 3571      6E7400
- 3572              	.LASF64:
- 3573 02de 51756164 		.ascii	"QuadDec_1_SetCountMode\000"
- 3573      4465635F 
- 3573      315F5365 
- 3573      74436F75 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 91
+ 3556              	.LASF81:
+ 3557 0249 433A5C55 		.ascii	"C:\\Users\\mewin\\Documents\\PSoC Creator\\Science_"
+ 3557      73657273 
+ 3557      5C6D6577 
+ 3557      696E5C44 
+ 3557      6F63756D 
+ 3558 0277 426F6172 		.ascii	"Board_2021-2022\\science wow.cydsn\000"
+ 3558      645F3230 
+ 3558      32312D32 
+ 3558      3032325C 
+ 3558      73636965 
+ 3559              	.LASF66:
+ 3560 0299 636F6D6D 		.ascii	"command\000"
+ 3560      616E6400 
+ 3561              	.LASF5:
+ 3562 02a1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3562      20756E73 
+ 3562      69676E65 
+ 3562      6420696E 
+ 3562      7400
+ 3563              	.LASF28:
+ 3564 02b3 6D6F6465 		.ascii	"modeMask\000"
+ 3564      4D61736B 
+ 3564      00
+ 3565              	.LASF54:
+ 3566 02bc 51756164 		.ascii	"QuadDec_1_WriteCompareBuf\000"
+ 3566      4465635F 
+ 3566      315F5772 
+ 3566      69746543 
+ 3566      6F6D7061 
+ 3567              	.LASF29:
+ 3568 02d6 51756164 		.ascii	"QuadDec_1_SetPWMSyncKill\000"
+ 3568      4465635F 
+ 3568      315F5365 
+ 3568      7450574D 
+ 3568      53796E63 
+ 3569              	.LASF77:
+ 3570 02ef 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 3570      74657243 
+ 3570      72697469 
+ 3570      63616C53 
+ 3570      65637469 
+ 3571              	.LASF44:
+ 3572 0306 51756164 		.ascii	"QuadDec_1_ReadPeriod\000"
+ 3572      4465635F 
+ 3572      315F5265 
+ 3572      61645065 
+ 3572      72696F64 
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 91
 
 
- 3573      6E744D6F 
- 3574              	.LASF25:
- 3575 02f5 51756164 		.ascii	"QuadDec_1_SetOneShot\000"
- 3575      4465635F 
- 3575      315F5365 
- 3575      744F6E65 
- 3575      53686F74 
- 3576              	.LASF26:
- 3577 030a 6F6E6553 		.ascii	"oneShotEnable\000"
- 3577      686F7445 
- 3577      6E61626C 
- 3577      6500
- 3578              	.LASF58:
- 3579 0318 51756164 		.ascii	"QuadDec_1_ReadCaptureBuf\000"
- 3579      4465635F 
- 3579      315F5265 
- 3579      61644361 
- 3579      70747572 
- 3580              	.LASF50:
- 3581 0331 51756164 		.ascii	"QuadDec_1_SetPeriodSwap\000"
- 3581      4465635F 
- 3581      315F5365 
- 3581      74506572 
- 3581      696F6453 
- 3582              	.LASF41:
- 3583 0349 51756164 		.ascii	"QuadDec_1_WritePeriod\000"
- 3583      4465635F 
- 3583      315F5772 
- 3583      69746550 
- 3583      6572696F 
- 3584              	.LASF74:
- 3585 035f 51756164 		.ascii	"QuadDec_1_GetInterruptSource\000"
- 3585      4465635F 
- 3585      315F4765 
- 3585      74496E74 
- 3585      65727275 
- 3586              	.LASF14:
- 3587 037c 72656733 		.ascii	"reg32\000"
- 3587      3200
- 3588              	.LASF51:
- 3589 0382 51756164 		.ascii	"QuadDec_1_WriteCompare\000"
- 3589      4465635F 
- 3589      315F5772 
- 3589      69746543 
- 3589      6F6D7061 
- 3590              	.LASF80:
- 3591 0399 47656E65 		.ascii	"Generated_Source\\PSoC4\\QuadDec_1.c\000"
- 3591      72617465 
- 3591      645F536F 
- 3591      75726365 
- 3591      5C50536F 
- 3592              	.LASF16:
- 3593 03bc 73697A65 		.ascii	"sizetype\000"
- 3593      74797065 
- 3593      00
- 3594              	.LASF15:
- 3595 03c5 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 92
+ 3573              	.LASF3:
+ 3574 031b 73686F72 		.ascii	"short unsigned int\000"
+ 3574      7420756E 
+ 3574      7369676E 
+ 3574      65642069 
+ 3574      6E7400
+ 3575              	.LASF64:
+ 3576 032e 51756164 		.ascii	"QuadDec_1_SetCountMode\000"
+ 3576      4465635F 
+ 3576      315F5365 
+ 3576      74436F75 
+ 3576      6E744D6F 
+ 3577              	.LASF25:
+ 3578 0345 51756164 		.ascii	"QuadDec_1_SetOneShot\000"
+ 3578      4465635F 
+ 3578      315F5365 
+ 3578      744F6E65 
+ 3578      53686F74 
+ 3579              	.LASF26:
+ 3580 035a 6F6E6553 		.ascii	"oneShotEnable\000"
+ 3580      686F7445 
+ 3580      6E61626C 
+ 3580      6500
+ 3581              	.LASF58:
+ 3582 0368 51756164 		.ascii	"QuadDec_1_ReadCaptureBuf\000"
+ 3582      4465635F 
+ 3582      315F5265 
+ 3582      61644361 
+ 3582      70747572 
+ 3583              	.LASF50:
+ 3584 0381 51756164 		.ascii	"QuadDec_1_SetPeriodSwap\000"
+ 3584      4465635F 
+ 3584      315F5365 
+ 3584      74506572 
+ 3584      696F6453 
+ 3585              	.LASF41:
+ 3586 0399 51756164 		.ascii	"QuadDec_1_WritePeriod\000"
+ 3586      4465635F 
+ 3586      315F5772 
+ 3586      69746550 
+ 3586      6572696F 
+ 3587              	.LASF74:
+ 3588 03af 51756164 		.ascii	"QuadDec_1_GetInterruptSource\000"
+ 3588      4465635F 
+ 3588      315F4765 
+ 3588      74496E74 
+ 3588      65727275 
+ 3589              	.LASF14:
+ 3590 03cc 72656733 		.ascii	"reg32\000"
+ 3590      3200
+ 3591              	.LASF51:
+ 3592 03d2 51756164 		.ascii	"QuadDec_1_WriteCompare\000"
+ 3592      4465635F 
+ 3592      315F5772 
+ 3592      69746543 
+ 3592      6F6D7061 
+ 3593              	.LASF80:
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 92
 
 
- 3595      20646F75 
- 3595      626C6500 
- 3596              	.LASF52:
- 3597 03d1 636F6D70 		.ascii	"compare\000"
- 3597      61726500 
- 3598              	.LASF27:
- 3599 03d9 51756164 		.ascii	"QuadDec_1_SetPWMMode\000"
- 3599      4465635F 
- 3599      315F5365 
- 3599      7450574D 
- 3599      4D6F6465 
- 3600              	.LASF49:
- 3601 03ee 51756164 		.ascii	"QuadDec_1_ReadPeriodBuf\000"
- 3601      4465635F 
- 3601      315F5265 
- 3601      61645065 
- 3601      72696F64 
- 3602              	.LASF39:
- 3603 0406 51756164 		.ascii	"QuadDec_1_SetCounterMode\000"
- 3603      4465635F 
- 3603      315F5365 
- 3603      74436F75 
- 3603      6E746572 
- 3604              	.LASF11:
- 3605 041f 666C6F61 		.ascii	"float\000"
- 3605      7400
- 3606              	.LASF70:
- 3607 0425 696E7465 		.ascii	"interruptMask\000"
- 3607      72727570 
- 3607      744D6173 
- 3607      6B00
- 3608              	.LASF24:
- 3609 0433 70726573 		.ascii	"prescaler\000"
- 3609      63616C65 
- 3609      7200
- 3610              	.LASF57:
- 3611 043d 51756164 		.ascii	"QuadDec_1_ReadCapture\000"
- 3611      4465635F 
- 3611      315F5265 
- 3611      61644361 
- 3611      70747572 
- 3612              	.LASF37:
- 3613 0453 51756164 		.ascii	"QuadDec_1_WriteCounter\000"
- 3613      4465635F 
- 3613      315F5772 
- 3613      69746543 
- 3613      6F756E74 
- 3614              	.LASF1:
- 3615 046a 756E7369 		.ascii	"unsigned char\000"
- 3615      676E6564 
- 3615      20636861 
- 3615      7200
- 3616              	.LASF32:
- 3617 0478 73746F70 		.ascii	"stopOnKillEnable\000"
- 3617      4F6E4B69 
- 3617      6C6C456E 
- 3617      61626C65 
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 93
+ 3594 03e9 47656E65 		.ascii	"Generated_Source\\PSoC4\\QuadDec_1.c\000"
+ 3594      72617465 
+ 3594      645F536F 
+ 3594      75726365 
+ 3594      5C50536F 
+ 3595              	.LASF16:
+ 3596 040c 73697A65 		.ascii	"sizetype\000"
+ 3596      74797065 
+ 3596      00
+ 3597              	.LASF15:
+ 3598 0415 6C6F6E67 		.ascii	"long double\000"
+ 3598      20646F75 
+ 3598      626C6500 
+ 3599              	.LASF52:
+ 3600 0421 636F6D70 		.ascii	"compare\000"
+ 3600      61726500 
+ 3601              	.LASF27:
+ 3602 0429 51756164 		.ascii	"QuadDec_1_SetPWMMode\000"
+ 3602      4465635F 
+ 3602      315F5365 
+ 3602      7450574D 
+ 3602      4D6F6465 
+ 3603              	.LASF49:
+ 3604 043e 51756164 		.ascii	"QuadDec_1_ReadPeriodBuf\000"
+ 3604      4465635F 
+ 3604      315F5265 
+ 3604      61645065 
+ 3604      72696F64 
+ 3605              	.LASF39:
+ 3606 0456 51756164 		.ascii	"QuadDec_1_SetCounterMode\000"
+ 3606      4465635F 
+ 3606      315F5365 
+ 3606      74436F75 
+ 3606      6E746572 
+ 3607              	.LASF11:
+ 3608 046f 666C6F61 		.ascii	"float\000"
+ 3608      7400
+ 3609              	.LASF70:
+ 3610 0475 696E7465 		.ascii	"interruptMask\000"
+ 3610      72727570 
+ 3610      744D6173 
+ 3610      6B00
+ 3611              	.LASF24:
+ 3612 0483 70726573 		.ascii	"prescaler\000"
+ 3612      63616C65 
+ 3612      7200
+ 3613              	.LASF57:
+ 3614 048d 51756164 		.ascii	"QuadDec_1_ReadCapture\000"
+ 3614      4465635F 
+ 3614      315F5265 
+ 3614      61644361 
+ 3614      70747572 
+ 3615              	.LASF37:
+ 3616 04a3 51756164 		.ascii	"QuadDec_1_WriteCounter\000"
+ 3616      4465635F 
+ 3616      315F5772 
+ 3616      69746543 
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 93
 
 
- 3617      00
- 3618              	.LASF2:
- 3619 0489 73686F72 		.ascii	"short int\000"
- 3619      7420696E 
- 3619      7400
- 3620              	.LASF17:
- 3621 0493 51756164 		.ascii	"QuadDec_1_Stop\000"
- 3621      4465635F 
- 3621      315F5374 
- 3621      6F7000
- 3622              	.LASF59:
- 3623 04a2 51756164 		.ascii	"QuadDec_1_SetCaptureMode\000"
- 3623      4465635F 
- 3623      315F5365 
- 3623      74436170 
- 3623      74757265 
- 3624              	.LASF53:
- 3625 04bb 51756164 		.ascii	"QuadDec_1_ReadCompare\000"
- 3625      4465635F 
- 3625      315F5265 
- 3625      6164436F 
- 3625      6D706172 
- 3626              	.LASF20:
- 3627 04d1 51756164 		.ascii	"QuadDec_1_SetQDMode\000"
- 3627      4465635F 
- 3627      315F5365 
- 3627      7451444D 
- 3627      6F646500 
- 3628              	.LASF13:
- 3629 04e5 63686172 		.ascii	"char\000"
- 3629      00
- 3630              	.LASF21:
- 3631 04ea 6D6F6465 		.ascii	"mode\000"
- 3631      00
- 3632              	.LASF62:
- 3633 04ef 51756164 		.ascii	"QuadDec_1_SetStartMode\000"
- 3633      4465635F 
- 3633      315F5365 
- 3633      74537461 
- 3633      72744D6F 
- 3634              	.LASF82:
- 3635 0506 51756164 		.ascii	"QuadDec_1_initVar\000"
- 3635      4465635F 
- 3635      315F696E 
- 3635      69745661 
- 3635      7200
- 3636              	.LASF40:
- 3637 0518 636F756E 		.ascii	"counterMode\000"
- 3637      7465724D 
- 3637      6F646500 
- 3638              	.LASF61:
- 3639 0524 51756164 		.ascii	"QuadDec_1_SetReloadMode\000"
- 3639      4465635F 
- 3639      315F5365 
- 3639      7452656C 
- 3639      6F61644D 
- 3640              	.LASF81:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 94
+ 3616      6F756E74 
+ 3617              	.LASF1:
+ 3618 04ba 756E7369 		.ascii	"unsigned char\000"
+ 3618      676E6564 
+ 3618      20636861 
+ 3618      7200
+ 3619              	.LASF32:
+ 3620 04c8 73746F70 		.ascii	"stopOnKillEnable\000"
+ 3620      4F6E4B69 
+ 3620      6C6C456E 
+ 3620      61626C65 
+ 3620      00
+ 3621              	.LASF2:
+ 3622 04d9 73686F72 		.ascii	"short int\000"
+ 3622      7420696E 
+ 3622      7400
+ 3623              	.LASF17:
+ 3624 04e3 51756164 		.ascii	"QuadDec_1_Stop\000"
+ 3624      4465635F 
+ 3624      315F5374 
+ 3624      6F7000
+ 3625              	.LASF59:
+ 3626 04f2 51756164 		.ascii	"QuadDec_1_SetCaptureMode\000"
+ 3626      4465635F 
+ 3626      315F5365 
+ 3626      74436170 
+ 3626      74757265 
+ 3627              	.LASF53:
+ 3628 050b 51756164 		.ascii	"QuadDec_1_ReadCompare\000"
+ 3628      4465635F 
+ 3628      315F5265 
+ 3628      6164436F 
+ 3628      6D706172 
+ 3629              	.LASF20:
+ 3630 0521 51756164 		.ascii	"QuadDec_1_SetQDMode\000"
+ 3630      4465635F 
+ 3630      315F5365 
+ 3630      7451444D 
+ 3630      6F646500 
+ 3631              	.LASF13:
+ 3632 0535 63686172 		.ascii	"char\000"
+ 3632      00
+ 3633              	.LASF21:
+ 3634 053a 6D6F6465 		.ascii	"mode\000"
+ 3634      00
+ 3635              	.LASF62:
+ 3636 053f 51756164 		.ascii	"QuadDec_1_SetStartMode\000"
+ 3636      4465635F 
+ 3636      315F5365 
+ 3636      74537461 
+ 3636      72744D6F 
+ 3637              	.LASF82:
+ 3638 0556 51756164 		.ascii	"QuadDec_1_initVar\000"
+ 3638      4465635F 
+ 3638      315F696E 
+ 3638      69745661 
+ 3638      7200
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 94
 
 
- 3641 053c 433A5C55 		.ascii	"C:\\Users\\mewin\\OneDrive\\Documents\\PSoC Creator"
- 3641      73657273 
- 3641      5C6D6577 
- 3641      696E5C4F 
- 3641      6E654472 
- 3642 056a 5C536369 		.ascii	"\\Science_Board_2021-2022\\science wow.cydsn\000"
- 3642      656E6365 
- 3642      5F426F61 
- 3642      72645F32 
- 3642      3032312D 
+ 3639              	.LASF40:
+ 3640 0568 636F756E 		.ascii	"counterMode\000"
+ 3640      7465724D 
+ 3640      6F646500 
+ 3641              	.LASF61:
+ 3642 0574 51756164 		.ascii	"QuadDec_1_SetReloadMode\000"
+ 3642      4465635F 
+ 3642      315F5365 
+ 3642      7452656C 
+ 3642      6F61644D 
  3643              	.LASF56:
- 3644 0595 51756164 		.ascii	"QuadDec_1_ReadCompareBuf\000"
+ 3644 058c 51756164 		.ascii	"QuadDec_1_ReadCompareBuf\000"
  3644      4465635F 
  3644      315F5265 
  3644      6164436F 
  3644      6D706172 
  3645              	.LASF43:
- 3646 05ae 51756164 		.ascii	"QuadDec_1_ReadCounter\000"
+ 3646 05a5 51756164 		.ascii	"QuadDec_1_ReadCounter\000"
  3646      4465635F 
  3646      315F5265 
  3646      6164436F 
  3646      756E7465 
  3647              	.LASF45:
- 3648 05c4 51756164 		.ascii	"QuadDec_1_SetCompareSwap\000"
+ 3648 05bb 51756164 		.ascii	"QuadDec_1_SetCompareSwap\000"
  3648      4465635F 
  3648      315F5365 
  3648      74436F6D 
  3648      70617265 
  3649              	.LASF55:
- 3650 05dd 636F6D70 		.ascii	"compareBuf\000"
+ 3650 05d4 636F6D70 		.ascii	"compareBuf\000"
  3650      61726542 
  3650      756600
  3651              	.LASF67:
- 3652 05e8 51756164 		.ascii	"QuadDec_1_Enable\000"
+ 3652 05df 51756164 		.ascii	"QuadDec_1_Enable\000"
  3652      4465635F 
  3652      315F456E 
  3652      61626C65 
  3652      00
  3653              	.LASF31:
- 3654 05f9 51756164 		.ascii	"QuadDec_1_SetPWMStopOnKill\000"
+ 3654 05f0 51756164 		.ascii	"QuadDec_1_SetPWMStopOnKill\000"
  3654      4465635F 
  3654      315F5365 
  3654      7450574D 
  3654      53746F70 
  3655              	.LASF19:
- 3656 0614 656E6162 		.ascii	"enableInterrupts\000"
+ 3656 060b 656E6162 		.ascii	"enableInterrupts\000"
  3656      6C65496E 
  3656      74657272 
  3656      75707473 
  3656      00
  3657              	.LASF23:
- 3658 0625 51756164 		.ascii	"QuadDec_1_SetPrescaler\000"
+ 3658 061c 51756164 		.ascii	"QuadDec_1_SetPrescaler\000"
  3658      4465635F 
  3658      315F5365 
  3658      74507265 
  3658      7363616C 
  3659              	.LASF72:
-ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccmeo4i3.s 			page 95
+ARM GAS  C:\Users\mewin\AppData\Local\Temp\ccM1U6Ug.s 			page 95
 
 
- 3660 063c 51756164 		.ascii	"QuadDec_1_Start\000"
+ 3660 0633 51756164 		.ascii	"QuadDec_1_Start\000"
  3660      4465635F 
  3660      315F5374 
  3660      61727400 
  3661              	.LASF30:
- 3662 064c 73796E63 		.ascii	"syncKillEnable\000"
+ 3662 0643 73796E63 		.ascii	"syncKillEnable\000"
  3662      4B696C6C 
  3662      456E6162 
  3662      6C6500
  3663              	.LASF46:
- 3664 065b 73776170 		.ascii	"swapEnable\000"
+ 3664 0652 73776170 		.ascii	"swapEnable\000"
  3664      456E6162 
  3664      6C6500
  3665              	.LASF48:
- 3666 0666 70657269 		.ascii	"periodBuf\000"
+ 3666 065d 70657269 		.ascii	"periodBuf\000"
  3666      6F644275 
  3666      6600
  3667              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

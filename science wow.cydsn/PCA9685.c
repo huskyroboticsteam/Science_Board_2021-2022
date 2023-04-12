@@ -16,8 +16,15 @@
 void pca_init(){
     I2C_Start();
     I2C_Enable();
-    uint8 mode_buf[2] = {0,0b10000000};
+    
+    uint8 mode_buf[2] = {0,0b10010000}; // put to sleep (bit 4) to enable prescaler update
     writeBuffer(mode_buf, PCA9685ADDY);
+    
+    uint8 freq_buf[2] = {254, 121};     // write to register 254 the magic num 121 to set 50hz pwm
+    writeBuffer(freq_buf, PCA9685ADDY);
+    
+    uint8 mode_buf2[2] = {0,0b10000000}; // unsleep to resume normal operation
+    writeBuffer(mode_buf2, PCA9685ADDY);
 }
 
 /*Writes a single byte over i2c*/
@@ -25,6 +32,7 @@ void writeByte(uint8 chip_register, uint8 value){
      uint8 buf[2] = {chip_register, value};
      writeBuffer(buf, PCA9685ADDY);
 }
+
 
 /*Casting delayTime as uint8_t gets rid of the four left most significant bits*/
 uint8 TurnOnTimeL(){
@@ -42,10 +50,10 @@ uint8 TurnOnTimeH(){
         return delayTime;
 }
 
-uint8 TurnOffTimeL(int dutyCycle){
+uint8 TurnOffTimeL(float32 dutyCycle){
     int delayTime = DELAYTIME;
     int offTime=0;
-    if(delayTime+dutyCycle<=100){
+    if(delayTime+((int)dutyCycle)<=100){
     delayTime = (4095*delayTime)/100 - 1;
     dutyCycle = (4095*dutyCycle)/100;
     offTime = delayTime + dutyCycle;
@@ -57,10 +65,10 @@ uint8 TurnOffTimeL(int dutyCycle){
     }
        return offTime;}
 
-uint8 TurnOffTimeH(int dutyCycle){
+uint8 TurnOffTimeH(float32 dutyCycle){
     int delayTime = DELAYTIME;
     int offTime = 0; //initialized because program giving a warning
-    if(delayTime+dutyCycle<=100){
+    if(delayTime+((int)dutyCycle)<=100){
     delayTime = (4095*delayTime)/100 - 1;
     dutyCycle = (4095*dutyCycle)/100;
     offTime = delayTime + dutyCycle;
@@ -96,16 +104,28 @@ uint32 writeBuffer(uint8 *buff, uint32_t PCA9685Address){
     
     return status;}
 
+//void setPWMFromBytes(int pinN, uint8 onTimeL, uint8 onTimeH, uint8 offTimeL, uint8 offTimeH){
+//    uint8 registerNum = 0;
+//    registerNum = 0x06 + pinN * 4;
+//    uint8 buf[5] = {registerNum, onTimeL, onTimeH, offTimeL, offTimeH};
+//    writeBuffer(buf, PCA9685ADDY);
+//    
+////    writeByte(registerNum, onTimeL);
+////    writeByte(registerNum+1, onTimeH);
+////    writeByte(registerNum+2, offTimeL);
+////    writeByte(registerNum+3, offTimeH);
+//}
 void setPWMFromBytes(int pinN, uint8 onTimeL, uint8 onTimeH, uint8 offTimeL, uint8 offTimeH){
     uint8 registerNum = 0;
     registerNum = 0x06 + pinN * 4;
+    
     writeByte(registerNum, onTimeL);
     writeByte(registerNum+1, onTimeH);
     writeByte(registerNum+2, offTimeL);
     writeByte(registerNum+3, offTimeH);
 }
 
-void setPWMFromDutyCycle(int pinN, int dutyCycle){
+void setPWMFromDutyCycle(int pinN, float32 dutyCycle){
     uint8 registerNum = 0;
     registerNum = 0x06 + pinN * 4;
        

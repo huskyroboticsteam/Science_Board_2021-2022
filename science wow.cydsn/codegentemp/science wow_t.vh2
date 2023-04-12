@@ -1,5 +1,5 @@
--- Project:   C:\Users\mewin\OneDrive\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj
--- Generated: 02/20/2023 18:21:13
+-- Project:   C:\Users\mewin\Documents\PSoC Creator\Science_Board_2021-2022\science wow.cydsn\science wow.cyprj
+-- Generated: 04/06/2023 18:20:16
 -- PSoC Creator  4.4
 
 ENTITY \science wow\ IS
@@ -76,6 +76,8 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     ATTRIBUTE placement_force OF Net_1012 : SIGNAL IS "U(1,1,A)0";
     SIGNAL Net_1018 : bit;
     ATTRIBUTE placement_force OF Net_1018 : SIGNAL IS "U(0,0,A)0";
+    SIGNAL Net_1048 : bit;
+    SIGNAL Net_1049 : bit;
     SIGNAL Net_333 : bit;
     SIGNAL Net_334 : bit;
     SIGNAL Net_373 : bit;
@@ -97,8 +99,6 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     SIGNAL Net_687 : bit;
     SIGNAL Net_696 : bit;
     SIGNAL Net_705 : bit;
-    SIGNAL Net_759 : bit;
-    SIGNAL Net_760 : bit;
     SIGNAL Net_763 : bit;
     SIGNAL Net_764 : bit;
     SIGNAL Net_802 : bit;
@@ -3258,7 +3258,7 @@ BEGIN
             cy_registers => "")
         PORT MAP(
             clock => \ADC:Net_1845_ff10\,
-            sample_done => Net_760,
+            sample_done => Net_1049,
             chan_id_valid => \ADC:Net_3108\,
             chan_id_3 => \ADC:Net_3109_3\,
             chan_id_2 => \ADC:Net_3109_2\,
@@ -3277,7 +3277,7 @@ BEGIN
             data_2 => \ADC:Net_3111_2\,
             data_1 => \ADC:Net_3111_1\,
             data_0 => \ADC:Net_3111_0\,
-            tr_sar_out => Net_759,
+            tr_sar_out => Net_1048,
             irq => \ADC:Net_3112\,
             sw_negvref => open,
             cfg_st_sel_1 => open,

@@ -2,7 +2,7 @@
 --	Conversion of science wow.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Feb 20 18:21:05 2023
+--	Thu Apr 06 18:20:03 2023
 --
 
 USE cypress.cypress.all;
@@ -167,7 +167,7 @@ TERMINAL \ADC:Net_3167\ : bit;
 TERMINAL \ADC:Net_3166\ : bit;
 TERMINAL \ADC:Net_8\ : bit;
 SIGNAL \ADC:Net_17\ : bit;
-SIGNAL Net_760 : bit;
+SIGNAL Net_1049 : bit;
 SIGNAL \ADC:Net_3108\ : bit;
 SIGNAL \ADC:Net_3109_3\ : bit;
 SIGNAL \ADC:Net_3109_2\ : bit;
@@ -186,7 +186,7 @@ SIGNAL \ADC:Net_3111_3\ : bit;
 SIGNAL \ADC:Net_3111_2\ : bit;
 SIGNAL \ADC:Net_3111_1\ : bit;
 SIGNAL \ADC:Net_3111_0\ : bit;
-SIGNAL Net_759 : bit;
+SIGNAL Net_1048 : bit;
 SIGNAL \ADC:Net_3207_1\ : bit;
 SIGNAL \ADC:Net_3207_0\ : bit;
 SIGNAL \ADC:Net_3235\ : bit;
@@ -1698,14 +1698,14 @@ CAN_LED:cy_psoc3_pins_v1_10
 		vref=>\ADC:Net_8\,
 		ext_vref=>\ADC:Net_43\,
 		clock=>\ADC:Net_1845\,
-		sample_done=>Net_760,
+		sample_done=>Net_1049,
 		chan_id_valid=>\ADC:Net_3108\,
 		chan_id=>(\ADC:Net_3109_3\, \ADC:Net_3109_2\, \ADC:Net_3109_1\, \ADC:Net_3109_0\),
 		data_valid=>\ADC:Net_3110\,
 		data=>(\ADC:Net_3111_11\, \ADC:Net_3111_10\, \ADC:Net_3111_9\, \ADC:Net_3111_8\,
 			\ADC:Net_3111_7\, \ADC:Net_3111_6\, \ADC:Net_3111_5\, \ADC:Net_3111_4\,
 			\ADC:Net_3111_3\, \ADC:Net_3111_2\, \ADC:Net_3111_1\, \ADC:Net_3111_0\),
-		eos_intr=>Net_759,
+		eos_intr=>Net_1048,
 		irq=>\ADC:Net_3112\,
 		sw_negvref=>zero,
 		cfg_st_sel=>(zero, zero),
@@ -2058,7 +2058,7 @@ Clock_1:cy_clock_v1_0
 		divisor=>0,
 		period=>"10000000000000",
 		is_direct=>'0',
-		is_digital=>'0')
+		is_digital=>'1')
 	PORT MAP(clock_out=>Net_874,
 		dig_domain_out=>open);
 GND_1:cy_annotation_universal_v1_0
@@ -3244,7 +3244,7 @@ timer_clock:cy_clock_v1_0
 		divisor=>2,
 		period=>"0",
 		is_direct=>'0',
-		is_digital=>'0')
+		is_digital=>'1')
 	PORT MAP(clock_out=>Net_926,
 		dig_domain_out=>open);
 isr_LEDs:cy_isr_v1_0

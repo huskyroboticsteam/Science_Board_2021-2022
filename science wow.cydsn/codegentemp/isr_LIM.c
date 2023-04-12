@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: isr_LIM.c  
-* Version 1.70
+* Version 1.71
 *
 *  Description:
 *   API for controlling the state of an interrupt.
@@ -252,7 +252,7 @@ void isr_LIM_SetPriority(uint8 priority)
     uint32 priorityOffset = ((isr_LIM__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *isr_LIM_INTC_PRIOR = (*isr_LIM_INTC_PRIOR & (uint32)(~isr_LIM__INTC_PRIOR_MASK)) |
+    *isr_LIM_INTC_PRIOR = (*isr_LIM_INTC_PRIOR & (uint32)(~(uint32)isr_LIM__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }

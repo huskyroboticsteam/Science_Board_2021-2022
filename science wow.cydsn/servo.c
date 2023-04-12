@@ -12,7 +12,7 @@
 #include "project.h"
 #include "servo.h"
 
-#define PWM_PERIOD 5 //pwm period ms
+#define PWM_PERIOD 20 //pwm period ms
 
 //constants for actual LED pin number on board
 #define CUP_LIDS_SERVO 1
@@ -25,10 +25,10 @@
 
 
 void set_servo_position(int servo, int degrees){
-    float32 min;
-    float32 range;
-    float32 offset;
-    uint16_t pwmDuty;
+    // float32 min;
+    // float32 range;
+    // float32 offset;
+    float32 pwmDuty;
     int found = 1;
     if(degrees > 179) degrees = 179; //may be different for each case
 	if(degrees < 1) degrees = 1;
@@ -39,21 +39,12 @@ void set_servo_position(int servo, int degrees){
         //case numbers were arbitrarily defined by software
         case 1 : //Lids
             servo = CUP_LIDS_SERVO;
-            min = 1.1;
-            range = 0.8;
-            offset = ((float32)degrees / 180) * range;
             break;
         case 4 : //Tower Pro SG90 //CAMERA TILT
             servo = CAMERA_SERVO;
-            min = 1;
-            range = 1;
-            offset = ((float32)degrees / 180) * range; 
             break;
         case 5: //Tower Pro SG90 //DRILL ARM
             servo = DRILL_ARM;
-            min = 1;
-            range = 1;
-            offset = ((float32)degrees / 180) * range; 
             break;
         default: 
             found = 0;
@@ -61,15 +52,14 @@ void set_servo_position(int servo, int degrees){
             //CyDelay(500);
             ERR_LED_Write(1);
             break;
-    }    
+    }
     //offset = ((float)degrees / 180) * range; 
     if (found) {
-        pwmDuty = ((min + offset) / PWM_PERIOD) * 100;
+        pwmDuty = (degrees/180.0)*5 + 5;
    	    setPWMFromDutyCycle(servo, pwmDuty);
-        //setPWMFromBytes(servo, (4095 - pwm) & 0xFF, (4095 - pwm) >> 8, pwm & 0xFF, pwm >> 8);
     }
-
 }
+
 void reset_servo_cont() {
     set_servo_continuous(0, 0);
     set_servo_continuous(2, 0);
@@ -81,22 +71,22 @@ void set_servo_continuous(int servo, int power) {
     //vector gives speed and direction, from -100 to 100. negative is counter-clockwise
     
     //int32_t tickGoal = miliDegrees;
-    float32 range = 0;
+    //float32 range = 0;
     float32 offset = 0;
-    uint32_t pwmDuty = 0;
+    float32 pwmDuty = 0;
     int found = 1;
     switch(servo) {
         case 0: //SM-S4303R //Lazy Susan
             servo = LSUSAN_CONT_SERVO;
-            range = 0.5;
+            //range = 0.5;
             break;
         case 2: //Parallax Rotation //Microscope
             servo = MSCOPE_CONT_SERVO;
-            range = 0.4;
+            //range = 0.4;
             break;
         case 3: //SM-S4303R //camera PAN
             servo = CAMERA_CONT_SERVO;
-            range = 0.5;
+            //range = 0.5;
             break;
         default:
             found = 0;
@@ -105,8 +95,7 @@ void set_servo_continuous(int servo, int power) {
             ERR_LED_Write(1);
             break;
     }
-    offset = ((float32)power / 100) * range;     
-    pwmDuty = (1.5 + offset) / PWM_PERIOD;
+    pwmDuty = (((float32)power + 100) / 200)* 5 + 5;     
     
     if (found) { //if correct servo id
         //setPWMFromBytes(servo, ((int)(4095 - pwm) & 0xFF), (int)(4095 - pwm) >> 8, (int)pwm & 0xFF, (int)pwm >> 8);

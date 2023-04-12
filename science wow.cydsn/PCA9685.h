@@ -27,12 +27,12 @@
 #define bufferSize 2
 
  /*Prototype*/
-    void setPWMFromDutyCycle(int Ledn, int dutyCycle);
+    void setPWMFromDutyCycle(int Ledn, float32 dutyCycle);
     void setPWMFromBytes(int pinN, uint8 onTimeL, uint8 onTimeH, uint8 offTimeL, uint8 offTimeH);
     uint8 TurnOnTimeL();
     uint8 TurnOnTimeH();
-    uint8 TurnOffTimeH(int dutyCycle);
-    uint8 TurnOffTimeL(int dutyCycle);
+    uint8 TurnOffTimeH(float32 dutyCycle);
+    uint8 TurnOffTimeL(float32 dutyCycle);
     uint32 writeBuffer(uint8 buff[],uint32_t PCA9685Address);
     void writeByte(uint8 chip_register, uint8 value);
     void pca_init();
