@@ -1,5 +1,5 @@
 # science wow
-# 2023-04-07 01:20:13Z
+# 2023-04-19 01:21:08Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: ExtClkEnabled
 dont_use_io iocell 0 6
@@ -16,7 +16,6 @@ set_io "\I2C:scl(0)\" iocell 5 0
 set_io "DBG_LED(0)" iocell 4 5
 set_io "ERR_LED(0)" iocell 4 6
 set_io "CAN_LED(0)" iocell 4 4
-set_io "\ADC:Bypass(0)\" iocell 1 7
 set_io "Humidity(0)" iocell 2 6
 set_io "Temp(0)" iocell 2 7
 set_io "LIM1(0)" iocell 3 1

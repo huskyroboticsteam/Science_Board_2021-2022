@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Apr 6 2023 18:20:08
+#File Generated:     Apr 18 2023 18:21:06
 
 #Purpose:            
 
@@ -55,7 +55,7 @@ Design Statistics after Packing
 Device Utilization Summary after Packing
     Macrocells                  :	13/64
     UDBS                        :	7/8
-    IOs                         :	25/76
+    IOs                         :	24/76
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -77,8 +77,8 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 16
-Clock: ADC_intClock         | Frequency: N/A       | Target:   5.7 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   5.7 MHz
+Clock: ADC_intClock         | Frequency: N/A       | Target:   1.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   1.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_1(FFB)         | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyExtClk             | Frequency: N/A       | Target:  40.0 MHz
@@ -98,15 +98,15 @@ Clock: timer_clock          | Frequency:  32.9 MHz | Target:  20.0 MHz
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.1 (sec)
+D2088: Phase 6, elapsed time : 0.0 (sec)
 
 Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
 Number of clocks: 16
-Clock: ADC_intClock         | Frequency: N/A       | Target:   5.7 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   5.7 MHz
+Clock: ADC_intClock         | Frequency: N/A       | Target:   1.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   1.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_1(FFB)         | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyExtClk             | Frequency: N/A       | Target:  40.0 MHz
@@ -125,7 +125,7 @@ Clock: timer_clock          | Frequency:  32.9 MHz | Target:  20.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 1.7 (sec)
+D2088: Phase 7, elapsed time : 0.7 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	6
@@ -135,11 +135,11 @@ Final Design Statistics
     Number of Status            	:	4
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
-    Number of IOs       	:	25
+    Number of IOs       	:	24
 
 Device Utilization Summary
     Macrocells                  :	13/64
-    IOs                         :	25/76
+    IOs                         :	24/76
 
 
 
@@ -156,8 +156,8 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 16
-Clock: ADC_intClock         | Frequency: N/A       | Target:   5.7 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   5.7 MHz
+Clock: ADC_intClock         | Frequency: N/A       | Target:   1.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   1.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:   0.0 MHz
 Clock: Clock_1(FFB)         | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyExtClk             | Frequency: N/A       | Target:  40.0 MHz
@@ -182,5 +182,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 3.9 sec.
+I2076: Total run-time: 1.4 sec.
 

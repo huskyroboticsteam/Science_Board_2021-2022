@@ -60,7 +60,6 @@ set_location "\QuadDec_2:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 1
 set_io "DBG_LED(0)" iocell 4 5
 set_io "ERR_LED(0)" iocell 4 6
 set_io "CAN_LED(0)" iocell 4 4
-set_io "\ADC:Bypass(0)\" iocell 1 7
 set_io "Humidity(0)" iocell 2 6
 set_io "Temp(0)" iocell 2 7
 set_io "Dip_4(0)" iocell 4 0

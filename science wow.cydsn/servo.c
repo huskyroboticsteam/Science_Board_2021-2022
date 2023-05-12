@@ -38,7 +38,8 @@ void set_servo_position(int servo, int degrees){
     switch(servo) {
         //case numbers were arbitrarily defined by software
         case 1 : //Lids
-            servo = CUP_LIDS_SERVO;
+            //servo = CUP_LIDS_SERVO;
+        servo = 9;
             break;
         case 4 : //Tower Pro SG90 //CAMERA TILT
             servo = CAMERA_SERVO;
@@ -55,7 +56,7 @@ void set_servo_position(int servo, int degrees){
     }
     //offset = ((float)degrees / 180) * range; 
     if (found) {
-        pwmDuty = (degrees/180.0)*5 + 5;
+        pwmDuty = (degrees/((float32)180))*5 + 5;
    	    setPWMFromDutyCycle(servo, pwmDuty);
     }
 }
@@ -66,6 +67,8 @@ void reset_servo_cont() {
     set_servo_continuous(4, 0);
 }
 
+void lazy_susan_pos_set() {
+}
 void set_servo_continuous(int servo, int power) {
 // Do math to control servo, stable is 1.5, so use given direction and speed to determine what pulse length to use
     //vector gives speed and direction, from -100 to 100. negative is counter-clockwise
@@ -130,18 +133,18 @@ void set_servo_continuous(int servo, int power) {
 //}
 
 //not needed probably - Jordan
-void correctPosition(int servo, int power){
-    switch(servo){
-        case PIN3:
-            break;
-        case PIN4:
-            break;
-        default:
-            ERR_LED_Write(0);
-            CyDelay(500);
-            ERR_LED_Write(1);
-            break;
-    }   
-}
+//void correctPosition(int servo, int power){
+//    switch(servo){
+//        case PIN3:
+//            break;
+//        case PIN4:
+//            break;
+//        default:
+//            ERR_LED_Write(0);
+//            CyDelay(500);
+//            ERR_LED_Write(1);
+//            break;
+//    }   
+//}
 
 /* [] END OF FILE */
