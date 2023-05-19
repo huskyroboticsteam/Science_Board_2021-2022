@@ -19,8 +19,8 @@
 #define CAMERA_SERVO 5
 #define DRILL_ARM 7
 
-#define MSCOPE_CONT_SERVO 9  
-#define LSUSAN_CONT_SERVO 8
+#define MSCOPE_CONT_SERVO 8  
+#define LSUSAN_CONT_SERVO 9
 #define CAMERA_CONT_SERVO 15
 
 
@@ -62,6 +62,7 @@ void set_servo_position(int servo, int degrees){
 }
 
 void reset_servo_cont() {
+    //setPWMFromDutyCycle(9, 7.6);
     set_servo_continuous(0, 0);
     set_servo_continuous(2, 0);
     set_servo_continuous(4, 0);
@@ -98,7 +99,7 @@ void set_servo_continuous(int servo, int power) {
             ERR_LED_Write(1);
             break;
     }
-    pwmDuty = (((float32)power + 100) / 200)* 5 + 5;     
+    pwmDuty = (((float32)power + 100) / 200)* 5 + 5.1;     
     
     if (found) { //if correct servo id
         //setPWMFromBytes(servo, ((int)(4095 - pwm) & 0xFF), (int)(4095 - pwm) >> 8, (int)pwm & 0xFF, (int)pwm >> 8);

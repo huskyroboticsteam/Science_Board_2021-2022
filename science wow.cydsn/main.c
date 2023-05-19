@@ -23,7 +23,7 @@ uint32_t time_ms;
 int8_t target_cup_pos;
 int8_t first_cup_pos;
 int32_t encoder_val;
-// int32_t first_cup_encoder_val;
+// int32_t first_cup_encoder_val;j
 int32_t target_encoder_val;
 uint8_t has_moved;
 uint8_t moving;
@@ -134,6 +134,9 @@ int main(void)
         UART_UartPutString("Humidity Value: ");
         UART_UartPutString(itoa(Hum_val, out, 10));
         UART_UartPutString(", ");
+        char out3[32];
+        UART_UartPutString("target encval: ");
+        UART_UartPutString(itoa(target_encoder_val, out3, 10));
         UART_UartPutString("\n\r");
         CyDelay(100);
         //uint32_t Temp_val = read_ADC(1);
@@ -178,6 +181,8 @@ int main(void)
             switch (ID) {
                 case ID_SCIENCE_LAZY_SUSAN_POS_SET : //pos set on lazy susan
                     {
+                        UART_UartPutString("enter ");
+                        UART_UartPutString("\n\r");
                         //CAN_LED_Write(0);
                         target_cup_pos = GetScienceLazySusanPosFromPacket(&current);
                         // first move
@@ -194,19 +199,19 @@ int main(void)
                             if (diff > 0) {
                                 if (diff > 5) {  // if "far" we go other direction
                                     next_pow = -50;  // TODO: may have to reverse
-                                    target_encoder_val = encoder_val - ((sum - target_cup_pos) * 7);  //TODO: Verify
+                                    target_encoder_val = encoder_val - ((11 - target_cup_pos + 1) * 6.5);  //TODO: Verify
                                 } else {
                                     next_pow = 50;
-                                    target_encoder_val = encoder_val + (diff * 7);
+                                    target_encoder_val = encoder_val + (diff * 6.5);
                                 }
                             }
                             if (diff < 0) {
                                 if (diff < -5) {
                                     next_pow = 50;
-                                    target_encoder_val = encoder_val + ((sum - first_cup_pos) * 7);  //TODO: Verify
+                                    target_encoder_val = encoder_val + ((sum - first_cup_pos) * 6.5);  //TODO: Verify
                                 } else {
                                     next_pow = -50;
-                                    target_encoder_val = encoder_val + (diff * 7);  // TODO: Verify signs
+                                    target_encoder_val = encoder_val + (diff * 6.5);  // TODO: Verify signs
                                 }
                             }
                             moving = 1;
