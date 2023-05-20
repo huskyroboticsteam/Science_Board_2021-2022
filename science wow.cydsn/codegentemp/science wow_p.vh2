@@ -1,5 +1,5 @@
 -- Project:   science wow
--- Generated: 04/18/2023 18:21:05
+-- Generated: 05/20/2023 13:07:39
 -- PSoC Creator  4.4
 
 ENTITY \science wow\ IS
@@ -327,8 +327,7 @@ ARCHITECTURE __DEFAULT__ OF \science wow\ IS
     ATTRIBUTE lib_model OF Net_565_2 : LABEL IS "macrocell9";
     ATTRIBUTE lib_model OF Net_565_3 : LABEL IS "macrocell10";
     ATTRIBUTE lib_model OF Net_565_4 : LABEL IS "macrocell11";
-    ATTRIBUTE lib_model OF Net_1012 : LABEL IS "macrocell12";
-    ATTRIBUTE lib_model OF Net_1018 : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF Net_1018 : LABEL IS "macrocell12";
     COMPONENT cancell
         PORT (
             clock : IN std_ulogic;
@@ -3328,7 +3327,8 @@ BEGIN
             status_3 => \Timer_LEDs:TimerUDB:status_3\,
             status_2 => \Timer_LEDs:TimerUDB:status_2\,
             status_1 => open,
-            status_0 => \Timer_LEDs:TimerUDB:status_tc\);
+            status_0 => \Timer_LEDs:TimerUDB:status_tc\,
+            interrupt => Net_1012);
 
     \Timer_LEDs:TimerUDB:sT24:timerdp:u0\:datapathcell
         GENERIC MAP(
@@ -3671,18 +3671,6 @@ BEGIN
             q => Net_565_4,
             clock_0 => Net_874_digital,
             main_0 => Net_896);
-
-    Net_1012:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * main_1)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => Net_1012,
-            clock_0 => Net_926_digital,
-            main_0 => \Timer_LEDs:TimerUDB:control_7\,
-            main_1 => \Timer_LEDs:TimerUDB:per_zero\);
 
     Net_1018:macrocell
         GENERIC MAP(

@@ -1,6 +1,6 @@
 // ======================================================================
 // science wow.v generated from TopDesign.cysch
-// 04/18/2023 at 18:21
+// 05/20/2023 at 13:07
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1741,7 +1741,7 @@ module top ;
           wire  Net_1034;
           wire  Net_1046;
           wire  Net_951;
-          wire  Net_949;
+          wire  Net_1057;
           wire  Net_948;
           wire  Net_947;
           wire  Net_946;
@@ -1850,10 +1850,10 @@ module top ;
           wire  Net_333;
           wire  Net_764;
           wire  Net_763;
+          wire  Net_1012;
           wire  Net_12;
           wire  Net_10;
           wire  Net_1018;
-          wire  Net_1012;
           wire  Net_929;
           wire  Net_926;
           wire  Net_829;
@@ -3670,9 +3670,9 @@ module top ;
         .capture_out(Net_947),
         .clock(Net_926),
         .enable(1'b1),
-        .interrupt(Net_949),
+        .interrupt(Net_1012),
         .reset(Net_929),
-        .tc(Net_1012),
+        .tc(Net_1057),
         .trigger(1'b1));
     defparam Timer_LEDs.CaptureCount = 2;
     defparam Timer_LEDs.CaptureCounterEnabled = 0;

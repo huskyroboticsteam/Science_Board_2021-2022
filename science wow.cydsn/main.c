@@ -15,6 +15,8 @@
 
 #define LED_COLOR_ID 0xF7
 #define TICKS_TO_NEXT_CUP 20
+#define LED_ON 1
+#define LED_OFF 0
 
 CANPacket can_send;
 CANPacket current;
@@ -54,7 +56,7 @@ CY_ISR(LED_Timer_Handler) {
         DBG_LED_Write(0);
     }
     if(CAN_time_LED >= 3){
-        CAN_LED_Write(0);
+        CAN_LED_Write(LED_OFF);
     }
 }
 
@@ -74,7 +76,8 @@ int main(void)
     InitCAN(DEVICE_GROUP_SCIENCE, 0x1); //1 because only 1 science board
     ADC_Start();
     pca_init();
-    
+    Timer_LEDs_Start();
+    Timer_1ms_Start();
     QuadDec_1_Start();
     QuadDec_2_Start();
     //set index trigger
@@ -108,11 +111,13 @@ int main(void)
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      * * * * * * * * * * E N C O D E R _ T E S T I N G * * * * * * * *
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */        
-        uint32 count = QuadDec_2_ReadCounter();
-        char out_enc[32];        uint32_t value = QuadDec_2_ReadCounter();
-        UART_UartPutString("Encoder Value: ");
-        UART_UartPutString(itoa(value, out_enc, 10));
-        UART_UartPutString(", ");
+//        uint32 count = QuadDec_2_ReadCounter();
+//        char out_enc[32];        uint32_t value = QuadDec_2_ReadCounter();
+//        UART_UartPutString("Encoder Value: ");
+//        UART_UartPutString(itoa(value, out_enc, 10));
+//        UART_UartPutString(", ");
+        
+        
         //UART_UartPutString("\n\r");
         
         
@@ -128,22 +133,21 @@ int main(void)
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      * * * * * * * * * * S E N S O R _ T E S T I N G * * * * * * * * *
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */  
-        uint32_t Hum_val = read_ADC(0);
-        ADC_StartConvert();
-        char out[32];
-        UART_UartPutString("Humidity Value: ");
-        UART_UartPutString(itoa(Hum_val, out, 10));
-        UART_UartPutString(", ");
-        char out3[32];
-        UART_UartPutString("target encval: ");
-        UART_UartPutString(itoa(target_encoder_val, out3, 10));
-        UART_UartPutString("\n\r");
-        CyDelay(100);
+//        uint32_t Hum_val = read_ADC(0);
+//        ADC_StartConvert();
+//        char out[32];
+//        UART_UartPutString("Humidity Value: ");
+//        UART_UartPutString(itoa(Hum_val, out, 10));
+//        UART_UartPutString(", ");
+//        char out3[32];
+//        UART_UartPutString("target encval: ");
+//        UART_UartPutString(itoa(target_encoder_val, out3, 10));
+//        UART_UartPutString("\n\r");
+//        CyDelay(100);
+        
         //uint32_t Temp_val = read_ADC(1);
 //        VEML6070_init();
-//        uint32_t sensor_val = read_uv_sensor();
-//        
-//     
+//        uint32_t sensor_val = read_uv_sensor(); 
         //char out[32];
         //show results
 //        UART_UartPutString(itoa(Hum_val, out1, 10));
@@ -172,10 +176,23 @@ int main(void)
             moving = 0;
             first_cup_pos = target_cup_pos;
         }
-        
+        char out4[32];
+        UART_UartPutString("ms: ");
+        UART_UartPutString(itoa(milliseconds, out4, 10));
+        UART_UartPutString(", time_ms: ");
+        UART_UartPutString(itoa(time_ms, out4, 10));
+        UART_UartPutString("\n\r");
         volatile int error = PollAndReceiveCANPacket(&current); 
+        
+        // when the compare time is greater than 0 and the current milliseconds is greater than
+        // or equal to the compare time, we send sensor data.
+        if (milliseconds > time_ms) {
+            milliseconds = 0;
+            periodicSend();
+        }
+        
         if (!error) {  // packet on 0
-            //CAN_LED_Write(1); //on+
+            CAN_LED_Write(LED_ON); //on+
             CAN_time_LED = 0;
             int ID = GetPacketID(&current);
             switch (ID) {
@@ -229,7 +246,7 @@ int main(void)
                         // masking state inside the cpu registers. We pause interrupts
                         // so that it does not interfere with the reading of 32 bits
                         uint8 enableInterrupts = CyEnterCriticalSection();
-                        uint32_t time_ms = GetTelemetryTimingFromPacket(&current);
+                        time_ms = GetTelemetryTimingFromPacket(&current);
                         // restore the interrupt masking state
                         CyExitCriticalSection(enableInterrupts);
                         // if compare time is not 0
@@ -280,27 +297,22 @@ int main(void)
                     // no packet, do nothing
                     break;
             }
-            // when the compare time is greater than 0 and the current milliseconds is greater than
-            // or equal to the compare time, we send sensor data.
-            if ((time_ms > 0) && (milliseconds >= time_ms)) {
-                milliseconds = 0;
-                periodicSend();
-            }
-        } 
+        }
     }            
 }
 
-void nextCup() {
-    set_servo_continuous(LAZY_SUSAN, 100);
-    while(QuadDec_2_ReadCounter() < encoder_val + 12) {}
-    set_servo_continuous(LAZY_SUSAN, 0);
-}
-
-void prevCup() {
-    set_servo_continuous(LAZY_SUSAN, -100);
-    while(QuadDec_2_ReadCounter() > encoder_val - 12) {}
-    set_servo_continuous(LAZY_SUSAN, 0);
-} 
+//blocking, bad
+//void nextCup() {
+//    set_servo_continuous(LAZY_SUSAN, 100);
+//    while(QuadDec_2_ReadCounter() < encoder_val + 12) {}
+//    set_servo_continuous(LAZY_SUSAN, 0);
+//}
+//
+//void prevCup() {
+//    set_servo_continuous(LAZY_SUSAN, -100);
+//    while(QuadDec_2_ReadCounter() > encoder_val - 12) {}
+//    set_servo_continuous(LAZY_SUSAN, 0);
+//} 
 
 
 

@@ -37,7 +37,7 @@ Clock: I2C_SCBCLK           | N/A                   | Target: 1.60 MHz    |
 Clock: I2C_SCBCLK(FFB)      | N/A                   | Target: 1.60 MHz    | 
 Clock: UART_SCBCLK          | N/A                   | Target: 1.38 MHz    | 
 Clock: UART_SCBCLK(FFB)     | N/A                   | Target: 1.38 MHz    | 
-Clock: timer_clock          | Frequency: 34.48 MHz  | Target: 20.00 MHz   | 
+Clock: timer_clock          | Frequency: 35.07 MHz  | Target: 20.00 MHz   | 
 
  =====================================================================
                     End of Clock Frequency Summary
@@ -51,7 +51,7 @@ Clock: timer_clock          | Frequency: 34.48 MHz  | Target: 20.00 MHz   |
 Launch Clock  Capture Clock  Constraint(R-R)  Slack(R-R)  Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
 ------------  -------------  ---------------  ----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
 CyHFClk       CyHFClk        25000            1927        N/A              N/A         N/A              N/A         N/A              N/A         
-timer_clock   timer_clock    50000            20994       N/A              N/A         N/A              N/A         N/A              N/A         
+timer_clock   timer_clock    50000            21485       N/A              N/A         N/A              N/A         N/A              N/A         
 
  =====================================================================
                     End of Clock Relationship Summary
@@ -69,10 +69,10 @@ All values are in Picoseconds
 
 Port Name    Setup to Clk  Clock Name:Phase  
 -----------  ------------  ----------------  
-LIM1(0)_PAD  17263         Clock_1:R         
-LIM2(0)_PAD  17178         Clock_1:R         
+LIM1(0)_PAD  18369         Clock_1:R         
+LIM2(0)_PAD  17206         Clock_1:R         
 LIM3(0)_PAD  17954         Clock_1:R         
-LIM4(0)_PAD  18242         Clock_1:R         
+LIM4(0)_PAD  18209         Clock_1:R         
 LIM5(0)_PAD  17948         Clock_1:R         
 
 
@@ -147,14 +147,14 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 4.2::Critical Path Report for timer_clock
 *****************************************
 Clock: timer_clock
-Frequency: 34.48 MHz | Target: 20.00 MHz
+Frequency: 35.07 MHz | Target: 20.00 MHz
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/clock
-Path slack     : 20994p
+Path slack     : 21485p
 
 Capture Clock Arrival Time                                 0
 + Clock path delay                                         0
@@ -165,9 +165,9 @@ End-of-path required time (ps)                         44910
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       23916
++ Data path delay                       23425
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           23916
+End-of-path arrival time (ps)           23425
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -180,16 +180,16 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   4186  10896  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/co_msb     datapathcell2   3310  23916  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci         datapathcell3      0  23916  20994  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   3695  10405  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/co_msb     datapathcell2   3310  23425  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci         datapathcell3      0  23425  21485  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -264,7 +264,7 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/clock
-Path slack     : 20994p
+Path slack     : 21485p
 
 Capture Clock Arrival Time                                 0
 + Clock path delay                                         0
@@ -275,9 +275,9 @@ End-of-path required time (ps)                         44910
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       23916
++ Data path delay                       23425
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           23916
+End-of-path arrival time (ps)           23425
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -290,16 +290,16 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   4186  10896  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/co_msb     datapathcell2   3310  23916  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci         datapathcell3      0  23916  20994  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   3695  10405  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/co_msb     datapathcell2   3310  23425  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci         datapathcell3      0  23425  21485  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -452,7 +452,7 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 Path Begin     : \Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : \Timer_1ms:TimerUDB:sT16:timerdp:u1\/cs_addr_1
 Capture Clock  : \Timer_1ms:TimerUDB:sT16:timerdp:u1\/clock
-Path slack     : 7860p
+Path slack     : 7907p
 
 Capture Clock Arrival Time                          0
 + Clock path delay                                  0
@@ -463,9 +463,9 @@ End-of-path required time (ps)                  13480
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       5620
++ Data path delay                       5573
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           5620
+End-of-path arrival time (ps)           5573
  
 Launch Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
@@ -476,8 +476,8 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 Data path
 pin name                                                 model name     delay     AT  slack  edge  Fanout
 -------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   4734  RISE       1
-\Timer_1ms:TimerUDB:sT16:timerdp:u1\/cs_addr_1           datapathcell5   3040   5620   7860  RISE       1
+\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   4770  RISE       1
+\Timer_1ms:TimerUDB:sT16:timerdp:u1\/cs_addr_1           datapathcell5   2993   5573   7907  RISE       1
 
 Capture Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
@@ -492,7 +492,7 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 Path Begin     : \Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : \Timer_1ms:TimerUDB:sT16:timerdp:u0\/cs_addr_1
 Capture Clock  : \Timer_1ms:TimerUDB:sT16:timerdp:u0\/clock
-Path slack     : 8014p
+Path slack     : 8050p
 
 Capture Clock Arrival Time                          0
 + Clock path delay                                  0
@@ -503,9 +503,9 @@ End-of-path required time (ps)                  13480
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       5466
++ Data path delay                       5430
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           5466
+End-of-path arrival time (ps)           5430
  
 Launch Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
@@ -516,8 +516,8 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 Data path
 pin name                                                 model name     delay     AT  slack  edge  Fanout
 -------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   4734  RISE       1
-\Timer_1ms:TimerUDB:sT16:timerdp:u0\/cs_addr_1           datapathcell4   2886   5466   8014  RISE       1
+\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   4770  RISE       1
+\Timer_1ms:TimerUDB:sT16:timerdp:u0\/cs_addr_1           datapathcell4   2850   5430   8050  RISE       1
 
 Capture Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
@@ -603,13 +603,13 @@ pin name                                      model name     delay     AT  slack
 \Timer_1ms:TimerUDB:sT16:timerdp:u0\/z0       datapathcell4   2320   2320   1927  RISE       1
 \Timer_1ms:TimerUDB:sT16:timerdp:u1\/z0i      datapathcell5      0   2320   1927  RISE       1
 \Timer_1ms:TimerUDB:sT16:timerdp:u1\/z0_comb  datapathcell5   2960   5280   1927  RISE       1
-Net_1018/main_1                               macrocell13     3010   8290  13200  RISE       1
+Net_1018/main_1                               macrocell12     3010   8290  13200  RISE       1
 
 Capture Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
 ----------------------------------------------------  ------------------  -----  -----  ----  ------
 ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
-Net_1018/clock_0                                      macrocell13             0      0  RISE       1
+Net_1018/clock_0                                      macrocell12             0      0  RISE       1
 
 
 
@@ -618,7 +618,7 @@ Net_1018/clock_0                                      macrocell13             0 
 Path Begin     : \Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : Net_1018/main_0
 Capture Clock  : Net_1018/clock_0
-Path slack     : 15854p
+Path slack     : 15902p
 
 Capture Clock Arrival Time                         0
 + Clock path delay                                 0
@@ -629,9 +629,9 @@ End-of-path required time (ps)                 21490
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       5636
++ Data path delay                       5588
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           5636
+End-of-path arrival time (ps)           5588
  
 Launch Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
@@ -642,14 +642,14 @@ ClockBlock/hfclk                                      m0s8clockblockcell      0 
 Data path
 pin name                                                 model name    delay     AT  slack  edge  Fanout
 -------------------------------------------------------  ------------  -----  -----  -----  ----  ------
-\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2   2580   2580   4734  RISE       1
-Net_1018/main_0                                          macrocell13    3056   5636  15854  RISE       1
+\Timer_1ms:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2   2580   2580   4770  RISE       1
+Net_1018/main_0                                          macrocell12    3008   5588  15902  RISE       1
 
 Capture Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
 ----------------------------------------------------  ------------------  -----  -----  ----  ------
 ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
-Net_1018/clock_0                                      macrocell13             0      0  RISE       1
+Net_1018/clock_0                                      macrocell12             0      0  RISE       1
 
 
 
@@ -658,7 +658,7 @@ Net_1018/clock_0                                      macrocell13             0 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/clock
-Path slack     : 20994p
+Path slack     : 21485p
 
 Capture Clock Arrival Time                                 0
 + Clock path delay                                         0
@@ -669,9 +669,9 @@ End-of-path required time (ps)                         44910
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       23916
++ Data path delay                       23425
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           23916
+End-of-path arrival time (ps)           23425
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -684,16 +684,16 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   4186  10896  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/co_msb     datapathcell2   3310  23916  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci         datapathcell3      0  23916  20994  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   3695  10405  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/co_msb     datapathcell2   3310  23425  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/ci         datapathcell3      0  23425  21485  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -710,7 +710,7 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u1\/clock
-Path slack     : 24304p
+Path slack     : 24795p
 
 Capture Clock Arrival Time                                 0
 + Clock path delay                                         0
@@ -721,9 +721,9 @@ End-of-path required time (ps)                         44910
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       20606
++ Data path delay                       20115
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           20606
+End-of-path arrival time (ps)           20115
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -736,14 +736,14 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   4186  10896  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20606  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20606  24304  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   3695  10405  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/co_msb     datapathcell1   9710  20115  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/ci         datapathcell2      0  20115  24795  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -760,7 +760,7 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/clock
-Path slack     : 27584p
+Path slack     : 28075p
 
 Capture Clock Arrival Time                                  0
 + Clock path delay                                          0
@@ -771,9 +771,9 @@ End-of-path required time (ps)                          38480
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       10896
++ Data path delay                       10405
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           10896
+End-of-path arrival time (ps)           10405
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -786,12 +786,12 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   4186  10896  27584  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_0  datapathcell1   3695  10405  28075  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -808,7 +808,7 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u1\/cs_addr_0
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u1\/clock
-Path slack     : 27597p
+Path slack     : 28081p
 
 Capture Clock Arrival Time                                  0
 + Clock path delay                                          0
@@ -819,9 +819,9 @@ End-of-path required time (ps)                          38480
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       10883
++ Data path delay                       10399
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           10883
+End-of-path arrival time (ps)           10399
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -834,12 +834,12 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/cs_addr_0  datapathcell2   4173  10883  27597  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/cs_addr_0  datapathcell2   3689  10399  28081  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -856,7 +856,7 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/cs_addr_0
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/clock
-Path slack     : 28507p
+Path slack     : 28992p
 
 Capture Clock Arrival Time                                  0
 + Clock path delay                                          0
@@ -867,9 +867,9 @@ End-of-path required time (ps)                          38480
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       9973
++ Data path delay                       9488
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           9973
+End-of-path arrival time (ps)           9488
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -882,12 +882,12 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                         model name     delay     AT  slack  edge  Fanout
 -----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/cs_addr_0  datapathcell3   3263   9973  28507  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0         datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i        datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0         datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i        datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb    datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/cs_addr_0  datapathcell3   2778   9488  28992  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -904,7 +904,7 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Path Begin     : \Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/cs_addr_1
 Capture Clock  : \Timer_LEDs:TimerUDB:sT24:timerdp:u2\/clock
-Path slack     : 31833p
+Path slack     : 32003p
 
 Capture Clock Arrival Time                                  0
 + Clock path delay                                          0
@@ -915,9 +915,9 @@ End-of-path required time (ps)                          38480
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       6647
++ Data path delay                       6477
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           6647
+End-of-path arrival time (ps)           6477
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -931,7 +931,7 @@ Data path
 pin name                                                  model name     delay     AT  slack  edge  Fanout
 --------------------------------------------------------  -------------  -----  -----  -----  ----  ------
 \Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell1    2580   2580  26519  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/cs_addr_1           datapathcell3   4067   6647  31833  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/cs_addr_1           datapathcell3   3897   6477  32003  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -944,56 +944,6 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 
 
 ++++ Path 15 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
-Path End       : \Timer_LEDs:TimerUDB:rstSts:stsreg\/status_0
-Capture Clock  : \Timer_LEDs:TimerUDB:rstSts:stsreg\/clock
-Path slack     : 32779p
-
-Capture Clock Arrival Time                                 0
-+ Clock path delay                                         0
-+ Cycle adjust (timer_clock:R#1 vs. timer_clock:R#2)   50000
-- Setup time                                           -1570
-----------------------------------------------------   ----- 
-End-of-path required time (ps)                         48430
-
-Launch Clock Arrival Time                       0
-+ Clock path delay                          0
-+ Data path delay                       15651
--------------------------------------   ----- 
-End-of-path arrival time (ps)           15651
- 
-Launch Clock Path
-pin name                                                  model name             delay     AT  edge  Fanout
---------------------------------------------------------  ---------------------  -----  -----  ----  ------
-ClockBlock/udb_div_0                                      m0s8clockblockcell         0      0  RISE       1
-ClockGenBlock/gen_clk_in_0                                m0s8clockgenblockcell      0      0  RISE       1
-ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell      0      0  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/clock               datapathcell1              0      0  RISE       1
-
-Data path
-pin name                                       model name     delay     AT  slack  edge  Fanout
----------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0       datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i      datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0       datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i      datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb  datapathcell3   2960   6710  20994  RISE       1
-\Timer_LEDs:TimerUDB:status_tc\/main_1         macrocell5      3283   9993  32779  RISE       1
-\Timer_LEDs:TimerUDB:status_tc\/q              macrocell5      3350  13343  32779  RISE       1
-\Timer_LEDs:TimerUDB:rstSts:stsreg\/status_0   statusicell2    2308  15651  32779  RISE       1
-
-Capture Clock Path
-pin name                                                  model name             delay     AT  edge  Fanout
---------------------------------------------------------  ---------------------  -----  -----  ----  ------
-ClockBlock/udb_div_0                                      m0s8clockblockcell         0      0  RISE       1
-ClockGenBlock/gen_clk_in_0                                m0s8clockgenblockcell      0      0  RISE       1
-ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell      0      0  RISE       1
-\Timer_LEDs:TimerUDB:rstSts:stsreg\/clock                 statusicell2               0      0  RISE       1
-
-
-
-++++ Path 16 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u1\/cs_addr_1
@@ -1037,7 +987,7 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 
 
 
-++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+++++ Path 16 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/cs_addr_1
@@ -1081,25 +1031,25 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 
 
 
-++++ Path 18 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0
-Path End       : Net_1012/main_1
-Capture Clock  : Net_1012/clock_0
-Path slack     : 36489p
+Path End       : \Timer_LEDs:TimerUDB:rstSts:stsreg\/status_0
+Capture Clock  : \Timer_LEDs:TimerUDB:rstSts:stsreg\/clock
+Path slack     : 33258p
 
 Capture Clock Arrival Time                                 0
 + Clock path delay                                         0
 + Cycle adjust (timer_clock:R#1 vs. timer_clock:R#2)   50000
-- Setup time                                           -3510
+- Setup time                                           -1570
 ----------------------------------------------------   ----- 
-End-of-path required time (ps)                         46490
+End-of-path required time (ps)                         48430
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       10001
++ Data path delay                       15172
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           10001
+End-of-path arrival time (ps)           15172
  
 Launch Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -1112,12 +1062,14 @@ ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell 
 Data path
 pin name                                       model name     delay     AT  slack  edge  Fanout
 ---------------------------------------------  -------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0       datapathcell1   2320   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i      datapathcell2      0   2320  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0       datapathcell2   1430   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i      datapathcell3      0   3750  20994  RISE       1
-\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb  datapathcell3   2960   6710  20994  RISE       1
-Net_1012/main_1                                macrocell12     3291  10001  36489  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u0\/z0       datapathcell1   2320   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0i      datapathcell2      0   2320  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u1\/z0       datapathcell2   1430   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0i      datapathcell3      0   3750  21485  RISE       1
+\Timer_LEDs:TimerUDB:sT24:timerdp:u2\/z0_comb  datapathcell3   2960   6710  21485  RISE       1
+\Timer_LEDs:TimerUDB:status_tc\/main_1         macrocell5      2801   9511  33258  RISE       1
+\Timer_LEDs:TimerUDB:status_tc\/q              macrocell5      3350  12861  33258  RISE       1
+\Timer_LEDs:TimerUDB:rstSts:stsreg\/status_0   statusicell2    2311  15172  33258  RISE       1
 
 Capture Clock Path
 pin name                                                  model name             delay     AT  edge  Fanout
@@ -1125,51 +1077,7 @@ pin name                                                  model name            
 ClockBlock/udb_div_0                                      m0s8clockblockcell         0      0  RISE       1
 ClockGenBlock/gen_clk_in_0                                m0s8clockgenblockcell      0      0  RISE       1
 ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell      0      0  RISE       1
-Net_1012/clock_0                                          macrocell12                0      0  RISE       1
-
-
-
-++++ Path 19 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin     : \Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
-Path End       : Net_1012/main_0
-Capture Clock  : Net_1012/clock_0
-Path slack     : 39816p
-
-Capture Clock Arrival Time                                 0
-+ Clock path delay                                         0
-+ Cycle adjust (timer_clock:R#1 vs. timer_clock:R#2)   50000
-- Setup time                                           -3510
-----------------------------------------------------   ----- 
-End-of-path required time (ps)                         46490
-
-Launch Clock Arrival Time                      0
-+ Clock path delay                         0
-+ Data path delay                       6674
--------------------------------------   ---- 
-End-of-path arrival time (ps)           6674
- 
-Launch Clock Path
-pin name                                                  model name             delay     AT  edge  Fanout
---------------------------------------------------------  ---------------------  -----  -----  ----  ------
-ClockBlock/udb_div_0                                      m0s8clockblockcell         0      0  RISE       1
-ClockGenBlock/gen_clk_in_0                                m0s8clockgenblockcell      0      0  RISE       1
-ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell      0      0  RISE       1
-\Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock      controlcell1               0      0  RISE       1
-
-Data path
-pin name                                                  model name    delay     AT  slack  edge  Fanout
---------------------------------------------------------  ------------  -----  -----  -----  ----  ------
-\Timer_LEDs:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell1   2580   2580  26519  RISE       1
-Net_1012/main_0                                           macrocell12    4094   6674  39816  RISE       1
-
-Capture Clock Path
-pin name                                                  model name             delay     AT  edge  Fanout
---------------------------------------------------------  ---------------------  -----  -----  ----  ------
-ClockBlock/udb_div_0                                      m0s8clockblockcell         0      0  RISE       1
-ClockGenBlock/gen_clk_in_0                                m0s8clockgenblockcell      0      0  RISE       1
-ClockGenBlock/gen_clk_out_0                               m0s8clockgenblockcell      0      0  RISE       1
-Net_1012/clock_0                                          macrocell12                0      0  RISE       1
+\Timer_LEDs:TimerUDB:rstSts:stsreg\/clock                 statusicell2               0      0  RISE       1
 
 
 ===================================================================== 

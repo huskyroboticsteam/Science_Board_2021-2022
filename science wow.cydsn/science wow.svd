@@ -2482,7 +2482,7 @@
         <register>
           <name>Timer_1ms_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x400F0077</addressOffset>
+          <addressOffset>0x400F0076</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
