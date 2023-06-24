@@ -15,12 +15,12 @@
 #include "PCA9685.h"
 #include "project.h"
 
-#define LAZY_SUSAN 0 
-#define CUP_LIDS 1
-#define MICROSCOPE 2
-#define CAM_PAN 3
-#define CAM_TILT 4
-#define DRILL_COVER 5
+#define LAZY_SUSAN_ID 0 
+#define CUP_LIDS_ID 1
+#define MICROSCOPE_ID 2
+#define CAM_PAN_ID 3
+#define CAM_TILT_ID 4
+#define DRILL_COVER_ID 5
 
 void set_servo_position(int servo, int degrees);
 void set_servo_continuous(int servo, int power);

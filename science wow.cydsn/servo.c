@@ -15,13 +15,15 @@
 #define PWM_PERIOD 20 //pwm period ms
 
 //constants for actual LED pin number on board
-#define CUP_LIDS_SERVO 1
-#define CAMERA_SERVO 5
-#define DRILL_ARM 7
+//#define CUP_LIDS_SERVO 1
+//#define CAMERA_SERVO 5
+//#define DRILL_ARM 7
 
-#define MSCOPE_CONT_SERVO 8  
-#define LSUSAN_CONT_SERVO 9
-#define CAMERA_CONT_SERVO 15
+//#define MSCOPE_CONT_SERVO 8  
+#define LSUSAN_CONT_SERVO_LED_NUM 9
+//#define CAMERA_CONT_SERVO 15
+
+#define DRILL_COVER_SERVO_LED_NUM 8
 
 
 void set_servo_position(int servo, int degrees){
@@ -37,16 +39,15 @@ void set_servo_position(int servo, int degrees){
 	}
     switch(servo) {
         //case numbers were arbitrarily defined by software
-        case 1 : //Lids
-            //servo = CUP_LIDS_SERVO;
-        servo = 9;
+        case DRILL_COVER_ID : // Drill Cover Servo
+            servo = DRILL_COVER_SERVO_LED_NUM;
             break;
-        case 4 : //Tower Pro SG90 //CAMERA TILT
-            servo = CAMERA_SERVO;
-            break;
-        case 5: //Tower Pro SG90 //DRILL ARM
-            servo = DRILL_ARM;
-            break;
+//        case 4 : //Tower Pro SG90 //CAMERA TILT
+//            servo = CAMERA_SERVO;
+//            break;
+//        case 5: //Tower Pro SG90 //DRILL ARM
+//            servo = DRILL_ARM;
+//            break;
         default: 
             found = 0;
             ERR_LED_Write(0);
@@ -80,18 +81,18 @@ void set_servo_continuous(int servo, int power) {
     float32 pwmDuty = 0;
     int found = 1;
     switch(servo) {
-        case 0: //SM-S4303R //Lazy Susan
-            servo = LSUSAN_CONT_SERVO;
+        case LAZY_SUSAN_ID: //SM-S4303R //Lazy Susan
+            servo = LSUSAN_CONT_SERVO_LED_NUM;
             //range = 0.5;
             break;
-        case 2: //Parallax Rotation //Microscope
-            servo = MSCOPE_CONT_SERVO;
-            //range = 0.4;
-            break;
-        case 3: //SM-S4303R //camera PAN
-            servo = CAMERA_CONT_SERVO;
-            //range = 0.5;
-            break;
+//        case 2: //Parallax Rotation //Microscope
+//            servo = MSCOPE_CONT_SERVO;
+//            //range = 0.4;
+//            break;
+//        case 3: //SM-S4303R //camera PAN
+//            servo = CAMERA_CONT_SERVO;
+//            //range = 0.5;
+//            break;
         default:
             found = 0;
             ERR_LED_Write(0);

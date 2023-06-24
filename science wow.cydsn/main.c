@@ -225,14 +225,14 @@ int main(void)
                             if (diff < 0) {
                                 if (diff < -5) {
                                     next_pow = 50;
-                                    target_encoder_val = encoder_val + ((sum - first_cup_pos) * 6.5);  //TODO: Verify
+                                    target_encoder_val = encoder_val + (11 - first_cup_pos + target_cup_pos + 1) * 6.5;//((sum - first_cup_pos) * 6.5);  //TODO: Verify
                                 } else {
                                     next_pow = -50;
                                     target_encoder_val = encoder_val + (diff * 6.5);  // TODO: Verify signs
                                 }
                             }
                             moving = 1;
-                            set_servo_continuous(0, next_pow); // check servo num
+                            set_servo_continuous(LAZY_SUSAN_ID, next_pow); // check servo num
                             curr_power = next_pow;
                         } // dont process packet if moving
 //                        uint8_t goal_cup_pos = GetScienceLazySusanPosFromPacket(current);
@@ -267,7 +267,7 @@ int main(void)
                         uint8_t servoID = GetScienceServoIDFromPacket(&current);
                         uint8_t angle = GetScienceServoAngleFromPacket(&current);
                         set_servo_position(servoID, angle);
-                        setPWMFromDutyCycle(9, (angle/180.0)*5 + 5); // TODO remove, map ids correctly
+                        //setPWMFromDutyCycle(7, (angle/180.0)*5 + 5); // TODO remove, map ids correctly
                         CAN_LED_Write(1);
                     }
                     break;
