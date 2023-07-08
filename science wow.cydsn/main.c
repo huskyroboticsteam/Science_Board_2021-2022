@@ -11,6 +11,7 @@
 #include "PCA9685.h"
 #include "servo.h"
 #include <stdlib.h>
+#include <math.h>
 #include "Milliseconds.h"
 
 #define LED_COLOR_ID 0xF7
@@ -25,8 +26,8 @@ uint32_t time_ms;
 int8_t target_cup_pos;
 int8_t first_cup_pos;
 int32_t encoder_val;
-// int32_t first_cup_encoder_val;j
-int32_t target_encoder_val;
+double ideal_encoder_val;
+double target_encoder_val;
 uint8_t has_moved;
 uint8_t moving;
 int curr_power;
@@ -91,6 +92,7 @@ int main(void)
     // lazy susan load regs 
     encoder_val = QuadDec_2_ReadCounter();
     target_encoder_val = encoder_val; //TODO: verify
+    ideal_encoder_val = encoder_val;
     target_cup_pos = 0;
     first_cup_pos = 0;
     has_moved = 0;
@@ -170,18 +172,19 @@ int main(void)
         encoder_val = QuadDec_2_ReadCounter();
         
         // check lazy susan movement
-        if (moving && (((curr_power > 0) && (encoder_val >= target_encoder_val)) 
-                         || ((curr_power < 0) &&  (encoder_val <= target_encoder_val)))) {
+        if (moving && (((curr_power > 0) && (encoder_val >= round(target_encoder_val))) 
+                         || ((curr_power < 0) &&  (encoder_val <= round(target_encoder_val))))) {
             set_servo_continuous(0, 0);
             moving = 0;
             first_cup_pos = target_cup_pos;
+            ideal_encoder_val = target_encoder_val;
         }
         char out4[32];
-        UART_UartPutString("ms: ");
-        UART_UartPutString(itoa(milliseconds, out4, 10));
-        UART_UartPutString(", time_ms: ");
-        UART_UartPutString(itoa(time_ms, out4, 10));
-        UART_UartPutString("\n\r");
+//        UART_UartPutString("ms: ");
+//        UART_UartPutString(itoa(milliseconds, out4, 10));
+//        UART_UartPutString(", time_ms: ");
+//        UART_UartPutString(itoa(time_ms, out4, 10));
+//        UART_UartPutString("\n\r");
         volatile int error = PollAndReceiveCANPacket(&current); 
         
         // when the compare time is greater than 0 and the current milliseconds is greater than
@@ -198,14 +201,14 @@ int main(void)
             switch (ID) {
                 case ID_SCIENCE_LAZY_SUSAN_POS_SET : //pos set on lazy susan
                     {
-                        UART_UartPutString("enter ");
-                        UART_UartPutString("\n\r");
+//                        UART_UartPutString("enter ");
+//                        UART_UartPutString("\n\r");
                         //CAN_LED_Write(0);
                         target_cup_pos = GetScienceLazySusanPosFromPacket(&current);
                         // first move
                         if (!has_moved) {
                             first_cup_pos = 0;
-                            //first_cup_encoder_val = encoder_val; // load first cup starting pos (cup closest to funnel)
+                            ideal_encoder_val = encoder_val; // load first cup starting pos (cup closest to funnel)
                             has_moved = 1;
                         }
                         if (first_cup_pos == target_cup_pos) break;
@@ -215,20 +218,23 @@ int main(void)
                             int8_t sum = target_cup_pos + first_cup_pos + 1; // plus 1 because zero indexed
                             if (diff > 0) {
                                 if (diff > 5) {  // if "far" we go other direction
-                                    next_pow = -50;  // TODO: may have to reverse
-                                    target_encoder_val = encoder_val - ((11 - target_cup_pos + 1) * 6.5);  //TODO: Verify
+                                    next_pow = -5;  // TODO: may have to reverse
+                                    target_encoder_val = ideal_encoder_val - ((11 - target_cup_pos + 1) * 6.67);  //TODO: Verify
                                 } else {
-                                    next_pow = 50;
-                                    target_encoder_val = encoder_val + (diff * 6.5);
+//                                    UART_UartPutString("case 2\r\n");
+                                    next_pow = 3;
+                                    target_encoder_val = ideal_encoder_val + (diff * 6.67);
                                 }
                             }
                             if (diff < 0) {
                                 if (diff < -5) {
-                                    next_pow = 50;
-                                    target_encoder_val = encoder_val + (11 - first_cup_pos + target_cup_pos + 1) * 6.5;//((sum - first_cup_pos) * 6.5);  //TODO: Verify
+//                                    UART_UartPutString("case 3\r\n");
+                                    next_pow = 3;
+                                    target_encoder_val = ideal_encoder_val + (11 - first_cup_pos + target_cup_pos + 1) * 6.67;//((sum - first_cup_pos) * 6.5);  //TODO: Verify
                                 } else {
-                                    next_pow = -50;
-                                    target_encoder_val = encoder_val + (diff * 6.5);  // TODO: Verify signs
+//                                    UART_UartPutString("case 4\r\n");
+                                    next_pow = -5;
+                                    target_encoder_val = ideal_encoder_val + (diff * 6.67);  // TODO: Verify signs
                                 }
                             }
                             moving = 1;
