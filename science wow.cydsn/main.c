@@ -307,6 +307,12 @@ int main(void)
     }            
 }
 
+int8_t goto_position(int32_t target, int32_t current) {
+    if (target > current+1) return 3;
+    else if (target < current-1) return -5;
+    else return 0;
+}
+
 //blocking, bad
 //void nextCup() {
 //    set_servo_continuous(LAZY_SUSAN, 100);
