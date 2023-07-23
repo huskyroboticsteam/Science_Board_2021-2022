@@ -26,7 +26,7 @@
 #define DRILL_COVER_SERVO_LED_NUM 8
 
 
-void set_servo_position(int servo, int degrees){
+void set_servo_position(uint8_t servo, uint8_t degrees){
     // float32 min;
     // float32 range;
     // float32 offset;
@@ -34,7 +34,7 @@ void set_servo_position(int servo, int degrees){
     int found = 1;
     if(degrees > 179) degrees = 179; //may be different for each case
 	if(degrees < 1) degrees = 1;
-	if(servo < 0 || servo > 4){
+	if (servo < 0) {// || servo > 4){
 		return;
 	}
     switch(servo) {

@@ -22,7 +22,7 @@
 #define CAM_TILT_ID 4
 #define DRILL_COVER_ID 5
 
-void set_servo_position(int servo, int degrees);
+void set_servo_position(uint8_t servo, uint8_t degrees);
 void set_servo_continuous(int servo, int power);
 void correctPosition(int servo, int power);
 uint32_t cups_forward (uint8_t goal_cup_pos, uint32_t current_cup_pos);
