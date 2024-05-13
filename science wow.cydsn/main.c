@@ -12,13 +12,19 @@
 #include "servo.h"
 #include <stdlib.h>
 #include <math.h>
-#include "Milliseconds.h"
+
+// TODO: put this stuff in main.h
+#define Print(message) DBG_UART_UartPutString(message)
+#define PrintChar(character) DBG_UART_UartPutChar(character)
+#define PrintInt(integer) DBG_UART_UartPutString(itoa(integer, txData, 10))
+#define PrintIntBin(integer) DBG_UART_UartPutString(itoa(integer, txData, 2))
 
 #define LED_COLOR_ID 0xF7
 #define TICKS_TO_NEXT_CUP 20
 #define LED_ON 1
 #define LED_OFF 0
 
+char txData[200];
 CANPacket can_send;
 CANPacket current;
 uint32_t time_ms;
@@ -38,12 +44,12 @@ uint8_t ERRORTimeLED = 0;
 
 CY_ISR(Enc2_Handler) {
     QuadDec_2_ClearInterrupt(QuadDec_2_INTR_MASK_CC_MATCH);
-}    
+}
 
 CY_ISR(Limit_Handler){
     //Stuff to do during interupt
     AssembleLimitSwitchAlertPacket(&can_send, DEVICE_GROUP_JETSON, 
-        DEVICE_SERIAL_JETSON, Status_Reg_LIM_Read() & 0b11);
+        DEVICE_SERIAL_JETSON, Status_Reg_LIM_Read() & 0b11111);
     SendCANPacket(&can_send);
 }
 
@@ -61,14 +67,12 @@ CY_ISR(LED_Timer_Handler) {
     }
 }
 
-int main(void)
-{
+void Initialize() {
     CyGlobalIntEnable;
     Status_Reg_LIM_InterruptEnable();
     isr_LIM_StartEx(Limit_Handler);
     CC2_isr_StartEx(Enc2_Handler);
     isr_LEDs_StartEx(LED_Timer_Handler);
-    
     
     //wip
     //isr_sensor_StartEx(Sensor_Handler);
@@ -78,14 +82,22 @@ int main(void)
     ADC_Start();
     pca_init();
     Timer_LEDs_Start();
-    Timer_1ms_Start();
     QuadDec_1_Start();
     QuadDec_2_Start();
+    
     //set index trigger
     QuadDec_2_TriggerCommand(QuadDec_2_MASK, QuadDec_2_CMD_RELOAD);
     
-    UART_Start();
+    DBG_UART_Start();
     VEML6070_init();
+}
+
+int main(void)
+{
+    Initialize();
+    
+    Print("Hello\r\n");
+    
     reset_servo_cont();
     time_ms = 0;
     
@@ -101,23 +113,18 @@ int main(void)
     
     ERR_LED_Write(0);
     
-    
-    //test
 
-    for(;;)
-    {      
-        
-        
+    for(;;) {
         //testing
         
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-     * * * * * * * * * * E N C O D E R _ T E S T I N G * * * * * * * *
-     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */        
-//        uint32 count = QuadDec_2_ReadCounter();
-//        char out_enc[32];        uint32_t value = QuadDec_2_ReadCounter();
-//        UART_UartPutString("Encoder Value: ");
-//        UART_UartPutString(itoa(value, out_enc, 10));
-//        UART_UartPutString(", ");
+        /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         * * * * * * * * * * E N C O D E R _ T E S T I N G * * * * * * * *
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */        
+        // uint32 count = QuadDec_2_ReadCounter();
+        // char out_enc[32];        uint32_t value = QuadDec_2_ReadCounter();
+        // DBG_UART_UartPutString("Encoder Value: ");
+        // DBG_UART_UartPutString(itoa(value, out_enc, 10));
+        // DBG_UART_UartPutString(", ");
         
         
         //UART_UartPutString("\n\r");
@@ -132,9 +139,9 @@ int main(void)
             CyDelay(300);
         } */
         
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-     * * * * * * * * * * S E N S O R _ T E S T I N G * * * * * * * * *
-     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */  
+        /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         * * * * * * * * * * S E N S O R _ T E S T I N G * * * * * * * * *
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */  
 //        uint32_t Hum_val = read_ADC(0);
 //        ADC_StartConvert();
 //        char out[32];
@@ -187,12 +194,6 @@ int main(void)
 //        UART_UartPutString("\n\r");
         volatile int error = PollAndReceiveCANPacket(&current); 
         
-        // when the compare time is greater than 0 and the current milliseconds is greater than
-        // or equal to the compare time, we send sensor data.
-        if (milliseconds > time_ms) {
-            milliseconds = 0;
-            periodicSend();
-        }
         
         if (!error) {  // packet on 0
             CAN_LED_Write(LED_ON); //on+
@@ -238,7 +239,7 @@ int main(void)
                                 }
                             }
                             moving = 1;
-                            set_servo_continuous(LAZY_SUSAN_ID, next_pow); // check servo num
+                            set_servo_continuous(LAZY_SUSAN, next_pow); // check servo num
                             curr_power = next_pow;
                         } // dont process packet if moving
 //                        uint8_t goal_cup_pos = GetScienceLazySusanPosFromPacket(current);
@@ -253,17 +254,11 @@ int main(void)
                         // so that it does not interfere with the reading of 32 bits
                         uint8 enableInterrupts = CyEnterCriticalSection();
                         time_ms = GetTelemetryTimingFromPacket(&current);
+                        
+                        // TODO: enable/set periodic timer
+                        
                         // restore the interrupt masking state
                         CyExitCriticalSection(enableInterrupts);
-                        // if compare time is not 0
-                        if (time_ms) {
-                            // start millisecond counter
-                            init_milliseconds();
-                        } else {
-                            // stop millisecond counter
-                            isr_1ms_Stop();
-                        }
-                        //CAN_LED_Write(1);
                     }
                     break;
                 case ID_SCIENCE_SERVO_SET : //servo set 
@@ -304,7 +299,25 @@ int main(void)
                     break;
             }
         }
+        
+        if (DBG_UART_SpiUartGetRxBufferSize()) {
+            DebugPrint(DBG_UART_UartGetByte());
+        }
     }            
+}
+
+void DebugPrint(char input) {
+    switch(input) {
+        case 'p': // Position
+            sprintf(txData, "Pos:%li PWM:%li", 
+                1, 2);
+            Print(txData);
+            break;
+        default:
+            Print("what");
+            break;
+    }
+    Print("\r\n");
 }
 
 //blocking, bad
@@ -319,7 +332,5 @@ int main(void)
 //    while(QuadDec_2_ReadCounter() > encoder_val - 12) {}
 //    set_servo_continuous(LAZY_SUSAN, 0);
 //} 
-
-
 
 /* [] END OF FILE */
