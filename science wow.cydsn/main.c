@@ -113,6 +113,7 @@ int main(void)
     
     ERR_LED_Write(0);
     
+    DBG_UART_UartPutString("Hi");
 
     for(;;) {
         //testing
@@ -301,7 +302,13 @@ int main(void)
         }
         
         if (DBG_UART_SpiUartGetRxBufferSize()) {
-            DebugPrint(DBG_UART_UartGetByte());
+            switch (DBG_UART_UartGetByte()) {
+                case 'L':
+                    Print("Setting Lazy Susan Position...\r\n");
+                    
+                default:
+                    DebugPrint(DBG_UART_UartGetByte());       
+            }
         }
     }            
 }
