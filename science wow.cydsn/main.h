@@ -10,6 +10,8 @@
  * ========================================
 */
 
+#include <stdint.h>
+
 #ifndef __MAIN__
 #define __MAIN__
     
@@ -24,6 +26,8 @@
 #define LED_OFF 0
     
 void DebugPrint(char input);
+
+void setLazySusan(uint8_t target_cup_pos);
     
 #endif // __MAIN__
 

@@ -47,6 +47,14 @@ void setSign(uint8_t sign);
 
 void setVal(uint32_t val);
 
+uint32_t getVal();
+
+uint8_t getServoID();
+
+uint8_t getFlag();
+
+void resetFlag();
+
 void resetFSM();
 
 #endif // __FSM__

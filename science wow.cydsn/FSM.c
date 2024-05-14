@@ -19,8 +19,9 @@
 uint8_t state;
 uint8_t mode;
 int8_t pos;
-uint32_t val;
+int32_t val;
 uint8_t servoID;
+uint8_t runFlag;
 
 void UART_FSM(char rxByte) {
     switch (state) {
@@ -39,6 +40,7 @@ void UART_FSM(char rxByte) {
                     PrintChar(rxByte);
                     Print("\r\n");
                     Print("Setting Servos...\r\n");
+                    Print("Select Servo: ");
                     break;
                 case 'c':
                     setFSMMode(CONT_SERVO_MODE);
@@ -46,6 +48,7 @@ void UART_FSM(char rxByte) {
                     PrintChar(rxByte);
                     Print("\r\n");
                     Print("Setting Continuous Servos...\r\n");
+                    Print("Select Servo: ");
                     break;
                 default:
                     DebugPrint(rxByte);
@@ -53,6 +56,7 @@ void UART_FSM(char rxByte) {
             break;
         case (READ_DATA):
             if (rxByte == '\r' || rxByte == '\n') {
+                if (!pos) setVal(-1*val); 
                 switch (mode) {
                     case LAZY_SUSAN_MODE:
                         setFSMState(SET_LAZY_SUSAN);
@@ -92,12 +96,28 @@ void UART_FSM(char rxByte) {
             }
             break;
         case SERVO_SELECT:
+            servoID = rxByte - 48;
+            PrintChar(rxByte);
+            Print("\r\n");
+            if (servoID < 0 || servoID > 7) {
+                Print("Invalid Servo ID. Try Again.");
+                servoID = 0;
+            } else {
+                if (mode == SCI_SERVO_MODE || mode == CONT_SERVO_MODE) {
+                    setFSMState(READ_DATA);
+                } else {
+                    resetFSM();
+                }
+            }
             break;
         case SET_LAZY_SUSAN:
+            runFlag = 1;
             break;
         case SET_SCI_SERVO:
+            runFlag = 2;
             break;
         case SET_CONT_SERVO_POWER:
+            runFlag = 3;
             break;
         default:
             resetFSM();
@@ -112,12 +132,21 @@ void setSign(uint8_t sign) { pos = sign; }
 
 void setVal(uint32_t val) { val = val; }
 
+uint32_t getVal() { return val; }
+
+uint8_t getServoID() { return servoID; }
+
+uint8_t getFlag() { return runFlag; }
+
+void resetFlag() { runFlag = 0; }
+
 void resetFSM() {
     setFSMState(IDLE);
     setFSMMode(MICHAEL_MODE);
     setSign(1);
     setVal(0);
     servoID = 0;
+    runFlag = 0;
 }
 
 /* [] END OF FILE */
