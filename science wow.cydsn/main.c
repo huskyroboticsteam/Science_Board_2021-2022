@@ -15,6 +15,7 @@
 #include <stdio.h>
 
 #include "main.h"
+#include "FSM.h"
 
 char txData[200];
 CANPacket can_send;
@@ -82,13 +83,20 @@ void Initialize() {
     
     DBG_UART_Start();
     VEML6070_init();
+    
+    Print("\r\n");
+    Print("Select Mode:\r\n");
+    Print("\tl: Lazy Susan\r\n");
+    Print("\ts: Science Servos\r\n");
+    Print("\tc: Continuous Servos\r\n");
+    DBG_UART_SpiUartClearRxBuffer();
 }
 
 int main(void)
 {
     Initialize();
     
-    Print("Hello\r\n");
+    // Print("Hello\r\n");
     
     reset_servo_cont();
     time_ms = 0;
@@ -105,7 +113,7 @@ int main(void)
     
     ERR_LED_Write(0);
     
-    DBG_UART_UartPutString("Hi");
+    DBG_UART_SpiUartClearRxBuffer();
 
     for(;;) {
         //testing
@@ -294,6 +302,9 @@ int main(void)
         }
         
         if (DBG_UART_SpiUartGetRxBufferSize()) {
+            char rx = DBG_UART_UartGetByte();
+            UART_FSM(rx);
+            /*
             switch (DBG_UART_UartGetByte()) {
                 case 'L':
                     Print("Setting Lazy Susan Position...\r\n");
@@ -301,6 +312,7 @@ int main(void)
                 default:
                     DebugPrint(DBG_UART_UartGetByte());       
             }
+            */
         }
     }            
 }
@@ -317,6 +329,48 @@ void DebugPrint(char input) {
             break;
     }
     Print("\r\n");
+}
+
+void setLazySusan(uint8_t target_cup_pos) {
+// first move
+    if (!has_moved) {
+        first_cup_pos = 0;
+        ideal_encoder_val = encoder_val; // load first cup starting pos (cup closest to funnel)
+        has_moved = 1;
+    }
+    if (first_cup_pos != target_cup_pos) {
+        if (!moving) {
+            int8_t next_pow;
+            int8_t diff = target_cup_pos - first_cup_pos;
+            int8_t sum = target_cup_pos + first_cup_pos + 1; // plus 1 because zero indexed
+            if (diff > 0) {
+                if (diff > 5) {  // if "far" we go other direction
+                    next_pow = -5;  // TODO: may have to reverse
+                    target_encoder_val = ideal_encoder_val - ((11 - target_cup_pos + 1) * 6.67);  //TODO: Verify
+                } else {
+                    // UART_UartPutString("case 2\r\n");
+                    next_pow = 3;
+                    target_encoder_val = ideal_encoder_val + (diff * 6.67);
+                }
+            }
+            if (diff < 0) {
+                if (diff < -5) {
+                    // UART_UartPutString("case 3\r\n");
+                    next_pow = 3;
+                    target_encoder_val = ideal_encoder_val + (11 - first_cup_pos + target_cup_pos + 1) * 6.67;//((sum - first_cup_pos) * 6.5);  //TODO: Verify
+                } else {
+                    // UART_UartPutString("case 4\r\n");
+                    next_pow = -5;
+                    target_encoder_val = ideal_encoder_val + (diff * 6.67);  // TODO: Verify signs
+                }
+            }
+            moving = 1;
+            set_servo_continuous(LAZY_SUSAN, next_pow); // check servo num
+            curr_power = next_pow;
+        } // dont process packet if moving
+        // uint8_t goal_cup_pos = GetScienceLazySusanPosFromPacket(current);
+        // uint32_t tick_goal = QuadDec_2_ReadCounter() + cups_forward(goal_cup_pos, current_cup_pos); 
+    }
 }
 
 //blocking, bad
