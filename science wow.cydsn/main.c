@@ -11,6 +11,7 @@
 #include "PCA9685.h"
 #include "servo.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 
 // TODO: put this stuff in main.h
@@ -18,13 +19,13 @@
 #define PrintChar(character) DBG_UART_UartPutChar(character)
 #define PrintInt(integer) DBG_UART_UartPutString(itoa(integer, txData, 10))
 #define PrintIntBin(integer) DBG_UART_UartPutString(itoa(integer, txData, 2))
+void DebugOptions(char input);
 
 #define LED_COLOR_ID 0xF7
 #define TICKS_TO_NEXT_CUP 20
 #define LED_ON 1
 #define LED_OFF 0
 
-char txData[200];
 CANPacket can_send;
 CANPacket current;
 uint32_t time_ms;
@@ -37,6 +38,11 @@ double target_encoder_val;
 uint8_t has_moved;
 uint8_t moving;
 int curr_power;
+
+// debugging
+char txData[200];
+uint8 dbg_servo_sel = 0;
+extern int16 current_servo_values[16];
 
 // leds
 uint8_t CAN_time_LED = 0;
@@ -112,8 +118,6 @@ int main(void)
     curr_power = 0;
     
     ERR_LED_Write(0);
-    
-    DBG_UART_UartPutString("Hi");
 
     for(;;) {
         //testing
@@ -302,27 +306,51 @@ int main(void)
         }
         
         if (DBG_UART_SpiUartGetRxBufferSize()) {
-            switch (DBG_UART_UartGetByte()) {
-                case 'L':
-                    Print("Setting Lazy Susan Position...\r\n");
-                    
-                default:
-                    DebugPrint(DBG_UART_UartGetByte());       
-            }
+            DebugOptions(DBG_UART_UartGetByte());
         }
     }            
 }
 
-void DebugPrint(char input) {
-    switch(input) {
-        case 'p': // Position
-            sprintf(txData, "Pos:%li PWM:%li", 
-                1, 2);
-            Print(txData);
-            break;
-        default:
-            Print("what");
-            break;
+void DebugOptions(char input) {
+    if (input >= '0' && input <= '9') {
+        switch(input) {
+            case '1':
+                dbg_servo_sel = SERVO1;
+                break;
+            case '2':
+                dbg_servo_sel = SERVO2;
+                break;
+            case '3':
+                dbg_servo_sel = SERVO3;
+                break;
+            case '4':
+                dbg_servo_sel = SERVO4;
+                break;
+            case '5':
+                dbg_servo_sel = SERVO5;
+                break;
+            case '6':
+                dbg_servo_sel = SERVO6;
+                break;
+            case '7':
+                dbg_servo_sel = SERVO7;
+                break;
+            case '8':
+                dbg_servo_sel = SERVO8;
+                break;
+            case '9':
+                set_servo_position(dbg_servo_sel, current_servo_values[dbg_servo_sel]+1);
+                break;
+            case '0':
+                set_servo_position(dbg_servo_sel, current_servo_values[dbg_servo_sel]-1);
+                break;
+            default:
+                break;
+        }
+        sprintf(txData, "Servo %i at %i", dbg_servo_sel, current_servo_values[dbg_servo_sel]);
+        Print(txData);
+    } else {
+        Print("what");
     }
     Print("\r\n");
 }
