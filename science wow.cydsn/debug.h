@@ -24,7 +24,7 @@ void PrintInt(int integer);
 
 void PrintIntBin(int integer);
     
-void DebugPrint(char* input);
+void DebugPrint(char input);
     
 #endif // __DEBUG
 

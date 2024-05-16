@@ -16,6 +16,7 @@
 
 #include "main.h"
 #include "FSM.h"
+#include "debug.h"
 
 char txData[200];
 CANPacket can_send;
@@ -84,11 +85,6 @@ void Initialize() {
     DBG_UART_Start();
     VEML6070_init();
     
-    Print("\r\n");
-    Print("Select Mode:\r\n");
-    Print("\tl: Lazy Susan\r\n");
-    Print("\ts: Science Servos\r\n");
-    Print("\tc: Continuous Servos\r\n");
     DBG_UART_SpiUartClearRxBuffer();
 }
 
@@ -284,10 +280,6 @@ int main(void)
                 Print("\r\nLazy Susan position set.");
                 break;
             case 2: // servos
-                PrintInt(getServoID());
-                set_servo_position(getServoID(), getVal());
-                sprintf(txData, "Position: %d\r\n", getVal());
-                Print(txData);
                 set_servo_position(getServoID(), getVal());
                 Print("\r\nServo position set.");
                 break;

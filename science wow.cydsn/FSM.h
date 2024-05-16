@@ -23,29 +23,27 @@
 */
 
 // STATE DECLARATIONS
-#define IDLE                    (uint8_t) 0x0
-#define READ_DATA               (uint8_t) 0x1
-#define SERVO_SELECT            (uint8_t) 0x2
-#define SET_LAZY_SUSAN          (uint8_t) 0x3
-#define SET_SCI_SERVO           (uint8_t) 0x4
-#define SET_CONT_SERVO_POWER    (uint8_t) 0x5
-    
+#define IDLE            (uint8_t) 0x0
+#define READ_SET_DATA   (uint8_t) 0x1
+#define SERVO_SELECT    (uint8_t) 0x2    
 // MODE DECLARATIONS
-#define MICHAEL_MODE            (uint8_t) 0x0 // default mode
-#define LAZY_SUSAN_MODE         (uint8_t) 0x1
-#define SCI_SERVO_MODE          (uint8_t) 0x2
-#define CONT_SERVO_MODE         (uint8_t) 0x3
+#define MICHAEL_MODE        (uint8_t) 0x0 // default mode
+#define LAZY_SUSAN_MODE     (uint8_t) 0x1
+#define SCI_SERVO_MODE      (uint8_t) 0x2
+#define CONT_SERVO_MODE     (uint8_t) 0x3
     
 void UART_FSM(char rxByte);
 
-void setFSMState(uint8_t next_state);
+void setFSMState(uint8_t nextState);
 
-void setFSMMode(uint8_t next_mode);
+void setFSMMode(uint8_t nextMode);
 
 // > 0 --> positive, 0 --> negative
 void setSign(uint8_t sign);
 
-void setVal(uint32_t next_val);
+void setVal(uint32_t nextVal);
+
+void setFlag(uint8_t nextFlag);
 
 uint32_t getVal();
 
@@ -56,6 +54,14 @@ uint8_t getFlag();
 void resetFlag();
 
 void resetFSM();
+
+// State Actions
+
+void idleAction(char rxByte);
+
+void readDataAction(char rxByte);
+
+void servoSelectAction(char rxByte);
 
 #endif // __FSM__
 

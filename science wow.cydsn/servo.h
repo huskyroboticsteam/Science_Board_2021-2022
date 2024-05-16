@@ -24,6 +24,8 @@
 #define SERVO7 6
 #define SERVO8 7
 
+#define SERVO_COUNT 8
+
 #define CONT_SERVO1 9
 #define CONT_SERVO2 8
 #define CONT_SERVO_SPARE 15

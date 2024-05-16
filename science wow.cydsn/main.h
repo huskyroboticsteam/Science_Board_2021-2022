@@ -19,8 +19,6 @@
 #define TICKS_TO_NEXT_CUP 20
 #define LED_ON 1
 #define LED_OFF 0
-    
-void DebugPrint(char input);
 
 void setLazySusan(uint8_t target_cup_pos);
     
