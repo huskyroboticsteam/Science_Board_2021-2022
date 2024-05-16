@@ -10,21 +10,22 @@
  * ========================================
 */
 
-#include <stdint.h>
+#include "project.h"
+#include <stdlib.h>
 
-#ifndef __MAIN__
-#define __MAIN__
-
-#define LED_COLOR_ID 0xF7
-#define TICKS_TO_NEXT_CUP 20
-#define LED_ON 1
-#define LED_OFF 0
+#ifndef __DEBUG__
+#define __DEBUG__
     
-void DebugPrint(char input);
+void Print(char* message);
 
-void setLazySusan(uint8_t target_cup_pos);
+void PrintChar(char character);
+
+void PrintInt(int integer);
+
+void PrintIntBin(int integer);
     
-#endif // __MAIN__
-
+void DebugPrint(char* input);
+    
+#endif // __DEBUG
 
 /* [] END OF FILE */

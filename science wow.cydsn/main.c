@@ -299,20 +299,6 @@ int main(void)
     }            
 }
 
-void DebugPrint(char input) {
-    switch(input) {
-        case 'p': // Position
-            sprintf(txData, "Pos:%li PWM:%li", 
-                1, 2);
-            Print(txData);
-            break;
-        default:
-            Print("what");
-            break;
-    }
-    Print("\r\n");
-}
-
 void setLazySusan(uint8_t target_cup_pos) {
 // first move
     if (!has_moved) {
