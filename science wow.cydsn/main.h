@@ -14,7 +14,7 @@
 
 #ifndef __MAIN__
 #define __MAIN__
-    
+
 #define Print(message) DBG_UART_UartPutString(message)
 #define PrintChar(character) DBG_UART_UartPutChar(character)
 #define PrintInt(integer) DBG_UART_UartPutString(itoa(integer, txData, 10))

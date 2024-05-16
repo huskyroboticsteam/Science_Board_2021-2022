@@ -15,6 +15,7 @@
 #include "project.h"
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdio.h>
 
 uint8_t state;
 uint8_t mode;
@@ -26,6 +27,8 @@ uint8_t runFlag;
 void UART_FSM(char rxByte) {
     switch (state) {
         case (IDLE):
+            setVal(0);
+            setSign(1);
             switch (rxByte) {
                 case 'l':
                     setFSMMode(LAZY_SUSAN_MODE);
@@ -66,7 +69,7 @@ void UART_FSM(char rxByte) {
                     case SCI_SERVO_MODE:
                         setFSMState(SET_SCI_SERVO);
                         setFSMMode(MICHAEL_MODE);
-                        Print("\r\n");
+                        Print("\r\n");                
                         break;
                     case CONT_SERVO_MODE:
                         setFSMState(SET_CONT_SERVO_POWER);
@@ -93,6 +96,9 @@ void UART_FSM(char rxByte) {
             } else {
                 setVal(val*10 + rxByte - 48);
                 PrintChar(rxByte);
+                char txData[50];
+                sprintf(txData, "\r\nVal: %d", getVal());
+                Print(txData);
             }
             break;
         case SERVO_SELECT:
@@ -112,12 +118,31 @@ void UART_FSM(char rxByte) {
             break;
         case SET_LAZY_SUSAN:
             runFlag = 1;
+            setFSMState(IDLE);
+            Print("\r\n");
+            Print("Select Mode:\r\n");
+            Print("\tl: Lazy Susan\r\n");
+            Print("\ts: Science Servos\r\n");
+            Print("\tc: Continuous Servos\r\n");
             break;
         case SET_SCI_SERVO:
+            Print("SET_SCI_SERVO");
             runFlag = 2;
+            setFSMState(IDLE);
+            Print("\r\n");
+            Print("Select Mode:\r\n");
+            Print("\tl: Lazy Susan\r\n");
+            Print("\ts: Science Servos\r\n");
+            Print("\tc: Continuous Servos\r\n");
             break;
         case SET_CONT_SERVO_POWER:
             runFlag = 3;
+            setFSMState(IDLE);
+            Print("\r\n");
+            Print("Select Mode:\r\n");
+            Print("\tl: Lazy Susan\r\n");
+            Print("\ts: Science Servos\r\n");
+            Print("\tc: Continuous Servos\r\n");
             break;
         default:
             resetFSM();
@@ -130,7 +155,7 @@ void setFSMMode(uint8_t next_mode) { mode = next_mode; }
 
 void setSign(uint8_t sign) { pos = sign; }
 
-void setVal(uint32_t val) { val = val; }
+void setVal(uint32_t next_val) { val = next_val; }
 
 uint32_t getVal() { return val; }
 

@@ -284,6 +284,10 @@ int main(void)
                 Print("\r\nLazy Susan position set.");
                 break;
             case 2: // servos
+                PrintInt(getServoID());
+                set_servo_position(getServoID(), getVal());
+                sprintf(txData, "Position: %d\r\n", getVal());
+                Print(txData);
                 set_servo_position(getServoID(), getVal());
                 Print("\r\nServo position set.");
                 break;

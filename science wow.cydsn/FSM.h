@@ -45,7 +45,7 @@ void setFSMMode(uint8_t next_mode);
 // > 0 --> positive, 0 --> negative
 void setSign(uint8_t sign);
 
-void setVal(uint32_t val);
+void setVal(uint32_t next_val);
 
 uint32_t getVal();
 
