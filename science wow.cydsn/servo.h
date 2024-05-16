@@ -25,6 +25,10 @@
 #define SERVO8 7
 
 #define SERVO_COUNT 8
+#define SERVO_MAX_ANGLE 180
+#define SERVO_MIN_ANGLE 0
+#define CONT_SERVO_MAX_ANGLE -100
+#define CONT_SERVO_MIN_ANGLE 100
 
 #define CONT_SERVO1 9
 #define CONT_SERVO2 8

@@ -17,6 +17,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "debug.h"
+#include "servo.h"
 
 uint8_t state;
 uint8_t mode;
@@ -25,7 +26,7 @@ int32_t val;
 uint8_t servoID;
 uint8_t runFlag;
 
-uint8_t servoPosList[SERVO_COUNT];
+uint8_t servoPosList[SERVO_COUNT]; // for future use, in case need to incr or decr
 
 void UART_FSM(char rxByte) {
     switch (state) {
@@ -73,7 +74,9 @@ void resetFSM() {
 }
 
 void resetAllServos() {
-    servoPosList = {0,0,0,0,0,0,0,0};
+    for (uint8_t i = 0; i < SERVO_COUNT; i++) {
+        servoPosList[i] = 0;   
+    }
 }
 
 // State Actions
@@ -127,16 +130,10 @@ void readDataAction(char rxByte) {
                 setFSMMode(MICHAEL_MODE);
                 break;
             case SCI_SERVO_MODE:
-                setFlag(2);
-                
-                setFSMState(IDLE);
-                setFSMMode(MICHAEL_MODE);               
+                setScienceServo();
                 break;
             case CONT_SERVO_MODE:
-                setFlag(3);
-                
-                setFSMState(IDLE);
-                setFSMMode(MICHAEL_MODE);
+                setContinuousScienceServo();
                 break;
             default:
                 resetFSM();
@@ -165,16 +162,55 @@ void servoSelectAction(char rxByte) {
     setServoID(rxByte - 48);
     PrintChar(rxByte);
     Print("\r\n");
-    if (servoID < 0 || servoID > 7) {
+    if (servoID < 0 || servoID > SERVO_COUNT - 1) {
         Print("Invalid Servo ID. Try Again.");
         setServoID(0);;
     } else {
-        if (mode == SCI_SERVO_MODE || mode == CONT_SERVO_MODE) {
+        if (mode == SCI_SERVO_MODE) {
             setFSMState(READ_SET_DATA);
+            Print("Position: ");
+        } else if (mode == CONT_SERVO_MODE) {
+            setFSMState(READ_SET_DATA);
+            Print("Power: ");
         } else {
             resetFSM();
         }
     }   
+}
+
+void setScienceServo() {
+    if (val >= SERVO_MIN_ANGLE && val <= SERVO_MAX_ANGLE) {
+        setFlag(2);
+        servoPosList[servoID] = val;
+        
+        setFSMState(IDLE);
+        setFSMMode(MICHAEL_MODE);
+    } else {
+        char txData[200];
+        setVal(0);
+        setSign(1);
+        Print("Invalid angle entered. Servo angle must be between");
+        sprintf(txData, "%d and %d\r\n", SERVO_MIN_ANGLE, SERVO_MAX_ANGLE);
+        Print(txData);
+        Print("Position: ");
+    }   
+}
+
+void setContinuousScienceServo() {
+    if (val >= CONT_SERVO_MIN_ANGLE && val <= CONT_SERVO_MAX_ANGLE) {
+        setFlag(3);
+        
+        setFSMState(IDLE);
+        setFSMMode(MICHAEL_MODE);
+    } else {
+        char txData[200];
+        setVal(0);
+        setSign(1);
+        Print("Invalid angle entered. Continuous servo power must be between");
+        sprintf(txData, "%d and %d\r\n", CONT_SERVO_MIN_ANGLE, CONT_SERVO_MAX_ANGLE);
+        Print(txData);
+        Print("Power: ");
+    }
 }
 
 /* [] END OF FILE */

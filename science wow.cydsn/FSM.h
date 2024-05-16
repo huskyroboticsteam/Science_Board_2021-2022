@@ -55,6 +55,8 @@ void resetFlag();
 
 void resetFSM();
 
+void resetAllServos();
+
 // State Actions
 
 void idleAction(char rxByte);
@@ -62,6 +64,10 @@ void idleAction(char rxByte);
 void readDataAction(char rxByte);
 
 void servoSelectAction(char rxByte);
+
+void setScienceServo();
+
+void setContinuousScienceServo();
 
 #endif // __FSM__
 
