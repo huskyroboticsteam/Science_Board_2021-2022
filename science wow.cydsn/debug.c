@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "project.h"
+#include "CANLibrary.h"
 
 void Print(char* message) {
     DBG_UART_UartPutString(message);
@@ -32,6 +33,16 @@ void PrintIntBin(int integer) {
     DBG_UART_UartPutString(itoa(integer, txData, 2));
 }
     
+void PrintCanPacket(CANPacket* packet) {
+    char txData[200];
+    sprintf(txData, "ID %X DLC %X DATA", packet->id, packet->dlc);
+    Print(txData);
+    for(int i = 0; i < packet->dlc; i++ ) {
+        sprintf(txData," %02X", packet->data[i]);
+        Print(txData);
+    }
+    Print("\r\n");
+}
 
 void DebugPrint(char input) {
     char txData[200];

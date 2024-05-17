@@ -195,6 +195,7 @@ int main(void)
         if (!error) {  // packet on 0
             CAN_LED_Write(LED_ON); //on+
             CAN_time_LED = 0;
+            PrintCanPacket(&current);
             int ID = GetPacketID(&current);
             switch (ID) {
                 case ID_SCIENCE_LAZY_SUSAN_POS_SET : //pos set on lazy susan

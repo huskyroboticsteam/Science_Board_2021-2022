@@ -11,6 +11,7 @@
 */
 
 #include "project.h"
+#include "CANLibrary.h"
 #include <stdlib.h>
 
 #ifndef __DEBUG__
@@ -23,6 +24,8 @@ void PrintChar(char character);
 void PrintInt(int integer);
 
 void PrintIntBin(int integer);
+
+void PrintCanPacket(CANPacket* packet);
     
 void DebugPrint(char input);
     
