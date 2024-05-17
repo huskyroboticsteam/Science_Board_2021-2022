@@ -12,29 +12,33 @@
 #include "project.h"
 #include "servo.h"
 
-float32 current_duty_cycles[16] = {};
+int16 current_servo_values[16] = {};
 
 // sets the PCA duty cycle for positional servos 1-8
 // degrees is from 0 to 180
 int set_servo_position(int servo, int degrees){
+    float32 duty;
     if(degrees > 180) degrees = 180;
 	if(degrees < 0) degrees = 0;
 	if (servo < 0 || servo > 7) return 1;
+    current_servo_values[servo] = degrees;
     
-    current_duty_cycles[servo] = (degrees/180.0)*5 + 5;
-   	setPWMFromDutyCycle(servo, current_duty_cycles[servo]);
+    duty = (degrees/180.0)*5 + 5;
+   	setPWMFromDutyCycle(servo, duty);
     return 0;
 }
 
 // sets the PCA duty cycle for continuous servos 1,2,spare
 // power is from -100 to 100
 int set_servo_continuous(int servo, int power) {
+    float32 duty;
     if (servo < 8 || servo > 15) return 1;
     if (power > 100) power = 100;
 	if (power < -100) power = -100;
+    current_servo_values[servo] = power;
     
-    current_duty_cycles[servo] = (power + 100) / 40.0 + 5.1;     
-    setPWMFromDutyCycle(servo, current_duty_cycles[servo]);
+    duty = (power + 100) / 40.0 + 5.1;     
+    setPWMFromDutyCycle(servo, duty);
     return 0;
 }
 

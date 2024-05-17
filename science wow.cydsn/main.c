@@ -11,6 +11,7 @@
 #include "PCA9685.h"
 #include "servo.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 #include <stdio.h>
 
@@ -18,7 +19,6 @@
 #include "FSM.h"
 #include "debug.h"
 
-char txData[200];
 CANPacket can_send;
 CANPacket current;
 uint32_t time_ms;
@@ -31,6 +31,11 @@ double target_encoder_val;
 uint8_t has_moved;
 uint8_t moving;
 int curr_power;
+
+// debugging
+char txData[200];
+uint8 dbg_servo_sel = 0;
+extern int16 current_servo_values[16];
 
 // leds
 uint8_t CAN_time_LED = 0;
