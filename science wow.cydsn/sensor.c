@@ -17,6 +17,7 @@
 #define VEML6070_ADDR_CMD 0x70//(0x70 >> 1)
 #define VEML6070_ADDR_DATA_LSB 0x71 //(0x71 >> 1)
 #define VEML6070_ADDR_DATA_MSB 0x73 //(0x73 >> 1)
+#define ADC_channel 0 
 
 
 //referenced John's past work
@@ -58,7 +59,19 @@ uint16_t read_ADC(uint32_t channel) {
     return ADC_GetResult16(channel); //channel 0 for humidity and 1 for temperature
 }
 
-
+uint32_t readKeroseneSensor() {
+    
+    uint32_t sum = 0;
+    
+    // Change the range of the loop based on speed of the ADC reading 
+    for(int i = 0; i < 200; i++) {
+        sum += read_ADC(ADC_channel);
+    }
+    
+    uint32_t average = sum /200;
+    return average; 
+} 
+    
 void VEML6070_init(){
     I2C_Start();
     I2C_Enable();
