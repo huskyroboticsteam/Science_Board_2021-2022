@@ -82,11 +82,6 @@ void resetAllServos() {
 // State Actions
 
 void idleAction(char rxByte) {
-    Print("\r\n");
-    Print("Select Mode:\r\n");
-    Print("\tl: Lazy Susan\r\n");
-    Print("\ts: Science Servos\r\n");
-    Print("\tc: Continuous Servos\r\n");
     setVal(0);
     setSign(1);
     switch (rxByte) {
@@ -94,24 +89,19 @@ void idleAction(char rxByte) {
             setFSMMode(LAZY_SUSAN_MODE);
             setFSMState(READ_SET_DATA);
             PrintChar(rxByte);
-            Print("\r\n");
-            Print("Setting Lazy Susan...\r\n");
+            Print("\r\nSetting Lazy Susan...\r\n");
             break;
         case 's':
             setFSMMode(SCI_SERVO_MODE);
             setFSMState(SERVO_SELECT);
             PrintChar(rxByte);
-            Print("\r\n");
-            Print("Setting Servos...\r\n");
-            Print("Select Servo: ");
+            Print("\r\nSetting Servos...\r\nSelect Servo: ");
             break;
         case 'c':
             setFSMMode(CONT_SERVO_MODE);
             setFSMState(SERVO_SELECT);
             PrintChar(rxByte);
-            Print("\r\n");
-            Print("Setting Continuous Servos...\r\n");
-            Print("Select Servo: ");
+            Print("\r\nSetting Continuous Servos...\r\nSelect Servo: ");
             break;
         default:
             DebugPrint(rxByte);

@@ -114,6 +114,11 @@ int main(void)
     
     ERR_LED_Write(0);
     
+    Print("Select Mode:\r\n");
+    Print("\tl: Lazy Susan\r\n");
+    Print("\ts: Science Servos\r\n");
+    Print("\tc: Continuous Servos\r\n");
+    
     DBG_UART_SpiUartClearRxBuffer();
 
     for(;;) {
@@ -196,7 +201,7 @@ int main(void)
 //        UART_UartPutString("\n\r");
         volatile int error = PollAndReceiveCANPacket(&current); 
         
-        
+        /*
         if (!error) {  // packet on 0
             CAN_LED_Write(LED_ON); //on+
             CAN_time_LED = 0;
@@ -265,36 +270,37 @@ int main(void)
                     break;
             }
         }
+        */
         
         if (DBG_UART_SpiUartGetRxBufferSize()) {
-            char rx = DBG_UART_UartGetByte();
+            char rx = DBG_UART_UartGetChar();
             UART_FSM(rx);
-            /*
-            switch (DBG_UART_UartGetByte()) {
-                case 'L':
-                    Print("Setting Lazy Susan Position...\r\n");
-                    
-                default:
-                    DebugPrint(DBG_UART_UartGetByte());       
-            }
-            */
         }
         
-        switch (getFlag()) {
-            case 1: // lazy susan
-                setLazySusan(getVal());
-                Print("\r\nLazy Susan position set.");
-                break;
-            case 2: // servos
-                set_servo_position(getServoID(), getVal());
-                Print("\r\nServo position set.");
-                break;
-            case 3: // continuous servos
-                set_servo_continuous(getServoID(), getVal());
-                Print("\r\nContinuous servo power set.");
+        if (getFlag()) {
+            switch (getFlag()) {
+                case 1: // lazy susan
+                    setLazySusan(getVal());
+                    Print("\r\nLazy Susan position set.");
+                    break;
+                case 2: // servos
+                    set_servo_position(getServoID(), getVal());
+                    Print("\r\nServo position set.");
+                    break;
+                case 3: // continuous servos
+                    set_servo_continuous(getServoID(), getVal());
+                    Print("\r\nContinuous servo power set.");
+            }
+            resetFlag();
+            Print("\r\n");
+            Print("Select Mode:\r\n");
+            Print("\tl: Lazy Susan\r\n");
+            Print("\ts: Science Servos\r\n");
+            Print("\tc: Continuous Servos\r\n");
         }
-        resetFlag();
-    }            
+    }     
+    
+    CyDelay(1000);
 }
 
 void setLazySusan(uint8_t target_cup_pos) {
