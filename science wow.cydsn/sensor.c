@@ -75,17 +75,17 @@ uint32_t readKeroseneSensor() {
         sum += read_ADC(ADC_channel);
     }
     
-    uint32_t average = sum /200;
-    
-    uint32_t Rs = (R1 * average) / ( Vin - average);
-    
-    float ratio = Rs/R1;
-    
-    float concentration = pow( y_int / ratio, 1.0/slope);
     char txData[200];
-    sprintf(txData, "The concentration is %f", concentration);
-    Print(txData);
     
+    float32 average = sum * 3.3 / 4096 / 200;
+    
+    float32 Rs = (R1 * average) / ( Vin - average);
+
+    float32 ratio = Rs/R1;
+    
+    float32 concentration = pow( (y_int / ratio), (1.0/slope))*1000000;
+    sprintf(txData, "The concentration is %d\r\n", (int)(concentration));
+    Print(txData);
     return concentration; 
 } 
     

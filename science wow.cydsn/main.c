@@ -18,6 +18,7 @@
 #include "main.h"
 #include "FSM.h"
 #include "debug.h"
+#include "sensor.h"
 
 CANPacket can_send;
 CANPacket current;
