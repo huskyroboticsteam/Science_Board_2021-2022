@@ -17,7 +17,11 @@
 #define VEML6070_ADDR_CMD 0x70//(0x70 >> 1)
 #define VEML6070_ADDR_DATA_LSB 0x71 //(0x71 >> 1)
 #define VEML6070_ADDR_DATA_MSB 0x73 //(0x73 >> 1)
-#define ADC_channel 0 
+#define ADC_channel 0
+#define R1 2200
+#define Vin 5
+#define y_int 44
+#define slope -0.38
 
 
 //referenced John's past work
@@ -69,7 +73,13 @@ uint32_t readKeroseneSensor() {
     }
     
     uint32_t average = sum /200;
-    return average; 
+    
+    uint32_t Rs = (R1 * average) / ( Vin - average);
+    
+    float ratio = Rs/R1 
+    
+    float concentration = pow( y_int / ratio, 1.0/slope);
+    return concentration; 
 } 
     
 void VEML6070_init(){
