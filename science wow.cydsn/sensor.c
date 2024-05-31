@@ -6,11 +6,14 @@
  * Science Board allowing reading from an ADC
  */
 #include "project.h"
+#include <math.h>
 #include "CANLibrary.h"
 #include "CANScience.h"
 #include "sensor.h"
 #include <stdint.h>
 #include "PCA9685.h"
+#include <stdio.h>
+#include "debug.h"
 
 
 #define VEML6070_ADDR_ARA 0x18//(0x18 >> 1)
@@ -20,8 +23,8 @@
 #define ADC_channel 0
 #define R1 2200
 #define Vin 5
-#define y_int 44
-#define slope -0.38
+#define y_int 63
+#define slope -0.4
 
 
 //referenced John's past work
@@ -76,9 +79,13 @@ uint32_t readKeroseneSensor() {
     
     uint32_t Rs = (R1 * average) / ( Vin - average);
     
-    float ratio = Rs/R1 
+    float ratio = Rs/R1;
     
     float concentration = pow( y_int / ratio, 1.0/slope);
+    char txData[200];
+    sprintf(txData, "The concentration is %f", concentration);
+    Print(txData);
+    
     return concentration; 
 } 
     

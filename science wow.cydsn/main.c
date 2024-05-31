@@ -117,6 +117,7 @@ int main(void)
     DBG_UART_SpiUartClearRxBuffer();
 
     for(;;) {
+        readKeroseneSensor();
         //testing
         
         /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
