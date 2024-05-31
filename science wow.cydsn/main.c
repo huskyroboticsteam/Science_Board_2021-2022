@@ -201,7 +201,6 @@ int main(void)
 //        UART_UartPutString("\n\r");
         volatile int error = PollAndReceiveCANPacket(&current); 
         
-        /*
         if (!error) {  // packet on 0
             CAN_LED_Write(LED_ON); //on+
             CAN_time_LED = 0;
@@ -270,7 +269,6 @@ int main(void)
                     break;
             }
         }
-        */
         
         if (DBG_UART_SpiUartGetRxBufferSize()) {
             char rx = DBG_UART_UartGetChar();
@@ -299,8 +297,6 @@ int main(void)
             Print("\tc: Continuous Servos\r\n");
         }
     }     
-    
-    CyDelay(1000);
 }
 
 void setLazySusan(uint8_t target_cup_pos) {
