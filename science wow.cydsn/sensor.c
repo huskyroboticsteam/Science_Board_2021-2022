@@ -20,11 +20,11 @@
 #define VEML6070_ADDR_CMD 0x70//(0x70 >> 1)
 #define VEML6070_ADDR_DATA_LSB 0x71 //(0x71 >> 1)
 #define VEML6070_ADDR_DATA_MSB 0x73 //(0x73 >> 1)
-#define ADC_channel 0
-#define R1 2200
-#define Vin 5
-#define y_int 63
-#define slope -0.4
+#define TGS2611_SLOPE_CHAN 0
+#define TGS2611_R0 6700
+#define TGS2611_R1 2200
+#define TGS2611_YINT 63 // calibrate this
+#define TGS2611_SLOPE -0.4
 
 
 //referenced John's past work
@@ -67,24 +67,24 @@ uint16_t read_ADC(uint32_t channel) {
 }
 
 uint32_t readKeroseneSensor() {
-    
-    uint32_t sum = 0;
+    uint16 N = 200;
+    uint32 sum = 0;
     
     // Change the range of the loop based on speed of the ADC reading 
-    for(int i = 0; i < 200; i++) {
-        sum += read_ADC(ADC_channel);
+    for(int i = 0; i < N; i++) {
+        sum += read_ADC(TGS2611_SLOPE_CHAN);
     }
     
     char txData[200];
     
-    float32 average = sum * 3.3 / 4096 / 200;
+    float32 adc_avg = sum / N;
     
-    float32 Rs = (R1 * average) / ( Vin - average);
+    float32 Rs = (TGS2611_R1 * adc_avg) / (2048 - adc_avg);
 
-    float32 ratio = Rs/R1;
+    float32 ratio = Rs/TGS2611_R0;
     
-    float32 concentration = pow( (y_int / ratio), (1.0/slope))*1000000;
-    sprintf(txData, "The concentration is %d\r\n", (int)(concentration));
+    float32 concentration = pow((ratio / TGS2611_YINT), (1.0/TGS2611_SLOPE));
+    sprintf(txData, "The concentration is %d ppm\r\n", (int)(concentration));
     Print(txData);
     return concentration; 
 } 
